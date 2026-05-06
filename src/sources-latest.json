@@ -42,8 +42,8 @@
   },
   "amplerevanced": {
     "repo": "AmpleReVanced/revanced-patches",
-    "tag": "v1.0.0-dev.28",
-    "created_at": "2026-05-04T15:31:20",
+    "tag": "v1.0.0-dev.31",
+    "created_at": "2026-05-06T05:50:58",
     "apps": [
       "com.dcinside.app.android",
       "com.kakao.talk"
@@ -326,8 +326,8 @@
   },
   "piko": {
     "repo": "crimera/piko",
-    "tag": "v3.3.0-dev.4",
-    "created_at": "2026-05-05T18:15:10",
+    "tag": "v3.3.0-dev.5",
+    "created_at": "2026-05-06T05:42:38",
     "apps": [
       "com.instagram.android",
       "com.twitter.android"
