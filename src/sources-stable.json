@@ -31,6 +31,15 @@
       "com.roidapp.photogrid"
     ]
   },
+  "amplerevanced": {
+    "repo": "AmpleReVanced/revanced-patches",
+    "tag": "v1.0.1",
+    "created_at": "2026-05-06T06:44:48",
+    "apps": [
+      "com.dcinside.app.android",
+      "com.kakao.talk"
+    ]
+  },
   "anddea": {
     "repo": "anddea/revanced-patches",
     "tag": "v4.0.0",
