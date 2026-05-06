@@ -1,12 +1,12 @@
 # [nvbangg/awesome-for-morphe](https://github.com/nvbangg/awesome-for-morphe)
 [nvbangg.github.io/awesome-for-morphe](https://nvbangg.github.io/awesome-for-morphe)
 
+**Jump to:** [✅ Official](#-official) • [📚 Resources](#-resources) • [🛠️ Projects](#️-projects) • [📱 Apps & 🧩 Patches](#-apps---patches)
+
 > [!NOTE]
 > 🌐 A curated list of all Morphe resources and projects.  
 > 🔍 Explore [all supported apps and patches](https://nvbangg.github.io/awesome-for-morphe), automatically updated.    
 > 🔔 Get release notifications for new apps and patch sources.   
-
-**Jump to:** [✅ Official](#-official) • [📚 Resources](#-resources) • [🛠️ Projects](#️-projects) • [📱 Apps & 🧩 Patches](#-apps---patches)
 
 > [!TIP]
 > 🔔 Click the 👁️ **`Watch`** button for email notifications, or ⭐ **`Star`** to get updates on new apps and patch sources in your GitHub feed.  
