@@ -1,7 +1,11 @@
 # [nvbangg/awesome-for-morphe](https://github.com/nvbangg/awesome-for-morphe)
-[nvbangg.github.io/awesome-for-morphe](https://nvbangg.github.io/awesome-for-morphe)
 
-**Jump to:** [✅ Official](#-official) • [📚 Resources](#-resources) • [🛠️ Projects](#️-projects) • [📱 Apps & 🧩 Patches](#-apps---patches)
+**Jump to:** 
+- 🔍 [nvbangg.github.io/awesome-for-morphe](https://nvbangg.github.io/awesome-for-morphe)
+- [✅ Official](#-official)
+- [📚 Resources](#-resources)
+- [🛠️ Projects](#️-projects)
+- [📱 Apps & 🧩 Patches](#-apps---patches)
 
 > [!NOTE]
 > 🌐 A curated list of all Morphe resources and projects.  
