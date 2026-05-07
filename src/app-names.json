@@ -218,5 +218,7 @@
   "org.withouthat.acalendar": "aCalendar",
   "ru.yandex.yandexnavi": "Yandex Navigator",
   "videoeditor.videorecorder.screenrecorder": "XRecorder",
-  "com.roidapp.photogrid": "PhotoGrid"
+  "com.roidapp.photogrid": "PhotoGrid",
+  "com.intsig.camscanner": "CamScanner",
+  "com.example.app": "Example App"
 }

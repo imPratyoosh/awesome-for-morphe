@@ -14,6 +14,7 @@ permissions:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v6
 
@@ -52,7 +53,7 @@ jobs:
           fi
           
           git add patch-bundles/** src/sources-stable.json src/sources-latest.json src/app-names.json
-          git commit -m "Sync patch-bundles (${RELEASE_TAG})"
+          git commit -m "Sync patch-bundles (${DATE}-${TIME})"
           git push
           
           echo "RELEASE_TAG=${RELEASE_TAG}" >> $GITHUB_ENV
