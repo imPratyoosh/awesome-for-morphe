@@ -27,7 +27,11 @@ def write_json(path, data):
 
 def get_info_bundle(bundle_json):
     download_url = bundle_json["download_url"].split("/")
-    return "/".join(download_url[3:5]), download_url[7], bundle_json.get("created_at", "")
+    return (
+        "/".join(download_url[3:5]),
+        download_url[7],
+        bundle_json.get("created_at", ""),
+    )
 
 
 def collect_apps(list_json, app_names):
@@ -52,7 +56,18 @@ def collect_apps(list_json, app_names):
 
 # Inspired by code from Paresh Maheshwari
 def derive_name(pkg):
-    skip = {"com", "org", "net", "android", "app", "apps", "player", "client", "mobile", "thirdpartyclient"}
+    skip = {
+        "com",
+        "org",
+        "net",
+        "android",
+        "app",
+        "apps",
+        "player",
+        "client",
+        "mobile",
+        "thirdpartyclient",
+    }
     parts = [p for p in pkg.split(".") if p not in skip and len(p) > 1]
     name = parts[-1] if parts else pkg.split(".")[-1]
     return name.replace("-", " ").replace("_", " ").title()
@@ -81,7 +96,11 @@ def build_notes(label, old_sources, new_sources, app_names):
         added = [pkg for pkg in apps if pkg not in old_apps]
         if added:
             heading = f"## {key}"
-            new_apps_groups.append("\n".join([heading] + [format_app(p, app_names, key, label) for p in added]))
+            new_apps_groups.append(
+                "\n".join(
+                    [heading] + [format_app(p, app_names, key, label) for p in added]
+                )
+            )
     sections = []
     if new_bundles:
         sections.append(f"# 🧩 New Patch Sources ({label})\n" + "\n".join(new_bundles))
@@ -118,7 +137,9 @@ def build_sources(app_names):
 
 def main():
     if not BUNDLES_DIR.exists() or not any(BUNDLES_DIR.iterdir()):
-        raise SystemExit("patch-bundles/ is empty — run download-patch-bundles.py first")
+        raise SystemExit(
+            "patch-bundles/ is empty — run download-patch-bundles.py first"
+        )
 
     old_stable = read_json(STABLE_OUT, {}) or {}
     old_latest = read_json(LATEST_OUT, {}) or {}

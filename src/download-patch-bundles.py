@@ -38,7 +38,11 @@ def fetch_base(base):
             bundle_text = download(bundle_url)
             bundle_json = json.loads(bundle_text)
             url = bundle_json.get("download_url", "")
-            if not isinstance(url, str) or not url.lower().endswith(".mpp") or len(url.split("/")) < 8:
+            if (
+                not isinstance(url, str)
+                or not url.lower().endswith(".mpp")
+                or len(url.split("/")) < 8
+            ):
                 break
             list_text = download(list_url)
             results.append((base, channel, bundle_dir, bundle_text, list_text))
@@ -69,8 +73,12 @@ def main():
     for base, channel, bundle_dir, bundle_text, list_text in entries:
         out = OUT_DIR / bundle_dir
         out.mkdir(parents=True, exist_ok=True)
-        (out / f"{base}-{channel}-patches-bundle.json").write_text(normalize(bundle_text), encoding="utf8")
-        (out / f"{base}-{channel}-patches-list.json").write_text(normalize(list_text), encoding="utf8")
+        (out / f"{base}-{channel}-patches-bundle.json").write_text(
+            normalize(bundle_text), encoding="utf8"
+        )
+        (out / f"{base}-{channel}-patches-list.json").write_text(
+            normalize(list_text), encoding="utf8"
+        )
 
     print(f"Updated {len(entries)} Morphe bundles.")
 
