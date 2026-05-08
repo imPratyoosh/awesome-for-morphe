@@ -113,9 +113,9 @@
               <button @click="channel = 'stable'"
                 class="h-8 px-5 rounded-full text-sm font-medium transition-all border"
                 :class="channel === 'stable' ? 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20' : 'text-slate-400 bg-white/5 border-white/5 hover:bg-white/10'">Stable</button>
-              <button @click="channel = 'latest'"
+              <button @click="channel = 'dev'"
                 class="h-8 px-5 rounded-full text-sm font-medium transition-all border"
-                :class="channel === 'latest' ? 'text-amber-400 bg-amber-500/10 border-amber-500/20' : 'text-slate-400 bg-white/5 border-white/5 hover:bg-white/10'">Latest</button>
+                :class="channel === 'dev' ? 'text-amber-400 bg-amber-500/10 border-amber-500/20' : 'text-slate-400 bg-white/5 border-white/5 hover:bg-white/10'">Dev</button>
             </div>
             <div class="flex flex-wrap gap-2 text-xs text-slate-400 shrink-0 justify-center md:justify-end"
               aria-live="polite">

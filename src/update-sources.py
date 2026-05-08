@@ -7,7 +7,7 @@ ROOT = Path.cwd()
 SRC_DIR = ROOT / "src"
 BUNDLES_DIR = ROOT / "patch-bundles"
 STABLE_OUT = SRC_DIR / "sources-stable.json"
-LATEST_OUT = SRC_DIR / "sources-latest.json"
+DEV_OUT = SRC_DIR / "sources-dev.json"
 APP_NAMES_PATH = SRC_DIR / "app-names.json"
 CHANGELOG_PATH = ROOT / "changelog.md"
 CHANGELOG_PRE_PATH = ROOT / "changelog-pre-release.md"
@@ -77,7 +77,7 @@ def format_app(pkg, app_names, source_key, label):
     name = app_names.get(pkg) or derive_name(pkg)
     url = f"https://nvbangg.github.io/awesome-for-morphe/?source={source_key}&app={pkg}"
     if label == "pre-release":
-        url += "&channel=latest"
+        url += "&channel=dev"
     return f"- [{name}]({url})"
 
 
@@ -89,7 +89,7 @@ def build_notes(label, old_sources, new_sources, app_names):
         if key not in old_sources:
             url = f"https://nvbangg.github.io/awesome-for-morphe/?source={key}"
             if label == "pre-release":
-                url += "&channel=latest"
+                url += "&channel=dev"
             link = f"[{key}]({url})"
             new_bundles.append(f"- {link}")
         old_apps = set(old_sources.get(key, {}).get("apps") or [])
@@ -110,12 +110,12 @@ def build_notes(label, old_sources, new_sources, app_names):
 
 
 def build_sources(app_names):
-    stable, latest = {}, {}
+    stable, dev = {}, {}
     for bundle_dir in sorted(BUNDLES_DIR.iterdir()):
         if not bundle_dir.is_dir():
             continue
         base = bundle_dir.name.removesuffix("-patch-bundles")
-        for channel, out in (("stable", stable), ("latest", latest)):
+        for channel, out in (("stable", stable), ("dev", dev)):
             bundle_path = bundle_dir / f"{base}-{channel}-patches-bundle.json"
             list_path = bundle_dir / f"{base}-{channel}-patches-list.json"
             bundle_json = read_json(bundle_path)
@@ -132,7 +132,7 @@ def build_sources(app_names):
                 "apps": collect_apps(list_json, app_names),
             }
 
-    return dict(sorted(stable.items())), dict(sorted(latest.items()))
+    return dict(sorted(stable.items())), dict(sorted(dev.items()))
 
 
 def main():
@@ -142,13 +142,13 @@ def main():
         )
 
     old_stable = read_json(STABLE_OUT, {}) or {}
-    old_latest = read_json(LATEST_OUT, {}) or {}
+    old_dev = read_json(DEV_OUT, {}) or {}
     app_names = read_json(APP_NAMES_PATH, {}) or {}
 
-    new_stable, new_latest = build_sources(app_names)
+    new_stable, new_dev = build_sources(app_names)
 
     write_json(STABLE_OUT, new_stable)
-    write_json(LATEST_OUT, new_latest)
+    write_json(DEV_OUT, new_dev)
     write_json(APP_NAMES_PATH, app_names)
 
     is_first_run = not any(e.get("apps") for e in old_stable.values())
@@ -162,15 +162,15 @@ def main():
         CHANGELOG_PATH.write_text(stable_notes + "\n", encoding="utf8")
         print("Stable changelog created.")
 
-    # Pre-release changelog: new_latest vs (new_stable + old_latest)
+    # Pre-release changelog: new_dev vs (new_stable + old_dev)
     pre_baseline = {}
-    for key in set(new_stable) | set(old_latest):
+    for key in set(new_stable) | set(old_dev):
         stable_apps = set((new_stable.get(key) or {}).get("apps") or [])
-        prev_apps = set((old_latest.get(key) or {}).get("apps") or [])
-        repo = ((new_stable.get(key) or old_latest.get(key)) or {}).get("repo")
+        prev_apps = set((old_dev.get(key) or {}).get("apps") or [])
+        repo = ((new_stable.get(key) or old_dev.get(key)) or {}).get("repo")
         pre_baseline[key] = {"repo": repo, "apps": sorted(stable_apps | prev_apps)}
 
-    pre_notes = build_notes("pre-release", pre_baseline, new_latest, app_names)
+    pre_notes = build_notes("pre-release", pre_baseline, new_dev, app_names)
     if pre_notes:
         CHANGELOG_PRE_PATH.write_text(pre_notes + "\n", encoding="utf8")
         print("Pre-release changelog created.")

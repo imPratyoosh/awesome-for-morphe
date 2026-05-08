@@ -9,6 +9,7 @@ import json
 
 RAW = "https://raw.githubusercontent.com/Jman-Github/ReVanced-Patch-Bundles/bundles/patch-bundles"
 OUT_DIR = Path("patch-bundles")
+CHANNELS = ("stable", "dev")
 CONCURRENCY = 8
 
 
@@ -28,28 +29,40 @@ def normalize(text):
     return text if text.endswith("\n") else text + "\n"
 
 
-def fetch_base(base):
+def is_morphe(bundle_json):
+    url = bundle_json.get("download_url", "")
+    return (
+        isinstance(url, str)
+        and url.lower().endswith(".mpp")
+        and len(url.split("/")) >= 8
+    )
+
+
+def fetch_bundle(args):
+    base, channel = args
     bundle_dir = f"{base}-patch-bundles"
-    results = []
-    for channel in ("latest", "stable"):
-        bundle_url = f"{RAW}/{bundle_dir}/{base}-{channel}-patches-bundle.json"
-        list_url = f"{RAW}/{bundle_dir}/{base}-{channel}-patches-list.json"
-        try:
-            bundle_text = download(bundle_url)
-            bundle_json = json.loads(bundle_text)
-            url = bundle_json.get("download_url", "")
-            if (
-                not isinstance(url, str)
-                or not url.lower().endswith(".mpp")
-                or len(url.split("/")) < 8
-            ):
-                break
-            list_text = download(list_url)
-            results.append((base, channel, bundle_dir, bundle_text, list_text))
-        except Exception as exc:
-            print(f"Skip {base}-{channel} ({exc})")
-            break
-    return results
+    url = f"{RAW}/{bundle_dir}/{base}-{channel}-patches-bundle.json"
+    try:
+        text = download(url)
+        bundle_json = json.loads(text)
+        if not is_morphe(bundle_json):
+            return None
+        return (base, channel, text)
+    except Exception as exc:
+        print(f"Skip {base}-{channel} ({exc})")
+        return None
+
+
+def fetch_list(args):
+    base, channel = args
+    bundle_dir = f"{base}-patch-bundles"
+    url = f"{RAW}/{bundle_dir}/{base}-{channel}-patches-list.json"
+    try:
+        text = download(url)
+        return (base, channel, text)
+    except Exception as exc:
+        print(f"Skip list {base}-{channel} ({exc})")
+        return None
 
 
 def main():
@@ -61,16 +74,34 @@ def main():
 
     suffix_pattern = re.compile(r"-(stable|latest|dev)$")
     base_names = sorted({suffix_pattern.sub("", k) for k in sources})
-
-    with ThreadPoolExecutor(max_workers=CONCURRENCY) as pool:
-        grouped = list(pool.map(fetch_base, base_names))
-
-    entries = [e for group in grouped for e in group]
+    all_pairs = [(base, channel) for base in base_names for channel in CHANNELS]
 
     shutil.rmtree(OUT_DIR, ignore_errors=True)
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    for base, channel, bundle_dir, bundle_text, list_text in entries:
+    with ThreadPoolExecutor(max_workers=CONCURRENCY) as pool:
+        bundle_results = list(pool.map(fetch_bundle, all_pairs))
+
+    morphe_entries = [r for r in bundle_results if r is not None]
+
+    list_pairs = [(base, channel) for base, channel, _ in morphe_entries]
+    with ThreadPoolExecutor(max_workers=CONCURRENCY) as pool:
+        list_results = list(pool.map(fetch_list, list_pairs))
+
+    list_map = {
+        (base, channel): text
+        for r in list_results
+        if r is not None
+        for base, channel, text in [r]
+    }
+
+    # Save files to disk
+    saved = 0
+    for base, channel, bundle_text in morphe_entries:
+        list_text = list_map.get((base, channel))
+        if not list_text:
+            continue
+        bundle_dir = f"{base}-patch-bundles"
         out = OUT_DIR / bundle_dir
         out.mkdir(parents=True, exist_ok=True)
         (out / f"{base}-{channel}-patches-bundle.json").write_text(
@@ -79,8 +110,9 @@ def main():
         (out / f"{base}-{channel}-patches-list.json").write_text(
             normalize(list_text), encoding="utf8"
         )
+        saved += 1
 
-    print(f"Updated {len(entries)} Morphe bundles.")
+    print(f"Updated {saved} Morphe bundles.")
 
 
 if __name__ == "__main__":

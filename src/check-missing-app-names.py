@@ -3,15 +3,15 @@
 import json
 import os
 
-sources_latest = os.path.join("src", "sources-latest.json")
+sources_dev = os.path.join("src", "sources-dev.json")
 sources_stable = os.path.join("src", "sources-stable.json")
 names_path = os.path.join("src", "app-names.json")
 
 all_apps = set()
 
-with open(sources_latest, "r", encoding="utf-8") as f:
-    latest = json.load(f)
-    for source in latest.values():
+with open(sources_dev, "r", encoding="utf-8") as f:
+    dev = json.load(f)
+    for source in dev.values():
         for app in source.get("apps", []):
             all_apps.add(app)
 

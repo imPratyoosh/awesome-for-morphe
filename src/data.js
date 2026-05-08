@@ -1,6 +1,6 @@
 // Copyright (c) 2026 nvbangg (github.com/nvbangg)
 
-const CHANNELS = new Set(["stable", "latest"]);
+const CHANNELS = new Set(["stable", "dev"]);
 const DEFAULT_CHANNEL = "stable";
 const jsonCache = new Map();
 const dataCache = new Map();

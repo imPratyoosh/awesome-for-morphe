@@ -43,7 +43,7 @@ jobs:
           DATE=$(date +'%Y.%m.%d')
           DAY=$(date +'%b %d, %Y')
           TIME=$(date +'%H.%M')
-          
+
           if gh release view "$DATE" >/dev/null 2>&1; then
             RELEASE_TAG="${DATE}-${TIME}"
             RELEASE_DAY="${DAY} - ${TIME}"
@@ -51,11 +51,11 @@ jobs:
             RELEASE_TAG="${DATE}"
             RELEASE_DAY="${DAY}"
           fi
-          
-          git add patch-bundles/** src/sources-stable.json src/sources-latest.json src/app-names.json
+
+          git add patch-bundles/** src/sources-stable.json src/sources-dev.json src/app-names.json
           git commit -m "Sync patch-bundles (${DATE}-${TIME})"
           git push
-          
+
           echo "RELEASE_TAG=${RELEASE_TAG}" >> $GITHUB_ENV
           echo "RELEASE_DAY=${RELEASE_DAY}" >> $GITHUB_ENV
 
