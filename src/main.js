@@ -39,9 +39,6 @@ createApp({
       errorMsg.value = "";
       try {
         activeData.value = await loadChannelData(channel.value);
-        const options = getFilterOptions(activeData.value.rows);
-        if (!options.sourceOptions.some((o) => o.value === source.value)) source.value = "";
-        if (!options.appOptions.some((o) => o.value === app.value)) app.value = "";
       } catch (err) {
         errorMsg.value = err.message || err;
       } finally {
