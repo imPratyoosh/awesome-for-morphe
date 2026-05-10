@@ -52,7 +52,7 @@ function appName(packageName, names) {
 
 function versions(value) {
   if (!Array.isArray(value)) return [];
-  return value
+  const vList = value
     .map((item) => {
       if (typeof item === "string") return { version: item, isExperimental: false };
       if (item && typeof item === "object" && item.version) {
@@ -61,6 +61,17 @@ function versions(value) {
       return null;
     })
     .filter(Boolean);
+
+  if (vList.length === 0) return [];
+
+  vList.sort((a, b) => b.version.localeCompare(a.version, undefined, { numeric: true, sensitivity: 'base' }));
+
+  if (vList.length === 1) return vList;
+
+  const main = vList.find((v) => !v.isExperimental) || vList[0];
+  const others = vList.filter((v) => v !== main);
+
+  return [...others, main];
 }
 
 function packages(patch) {
