@@ -232,17 +232,24 @@
 
                           <template v-if="app.versions && app.versions.length">
                             <span
-                              class="px-1.5 py-0.5 text-[10px] text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 rounded-full font-mono font-bold">{{
-                              app.versions[app.versions.length - 1] }}</span>
+                              class="px-1.5 py-0.5 text-[10px] text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 rounded-full font-mono font-bold inline-flex items-center gap-1"
+                              :title="app.versions[app.versions.length - 1].isExperimental ? 'Experimental version' : ''">
+                              <i v-if="app.versions[app.versions.length - 1].isExperimental"
+                                class="fa-solid fa-flask text-amber-400"></i>
+                              {{ app.versions[app.versions.length - 1].version }}
+                            </span>
                             <button v-if="app.versions.length > 1 && !expandedVersions.has(app.id)"
                               @click.stop="toggleVersions(app.id)"
                               class="px-1.5 py-0.5 text-[10px] text-blue-400 bg-blue-500/10 border border-blue-500/20 rounded-full font-mono font-bold hover:bg-blue-500/20 transition-colors">
                               +{{ app.versions.length - 1 }}
                             </button>
                             <template v-if="expandedVersions.has(app.id)">
-                              <span v-for="v in [...app.versions].slice(0, -1).reverse()" :key="v"
-                                class="px-1.5 py-0.5 text-[10px] text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 rounded-full font-mono font-bold">{{
-                                v }}</span>
+                              <span v-for="v in [...app.versions].slice(0, -1).reverse()" :key="v.version"
+                                class="px-1.5 py-0.5 text-[10px] text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 rounded-full font-mono font-bold inline-flex items-center gap-1"
+                                :title="v.isExperimental ? 'Experimental version' : ''">
+                                <i v-if="v.isExperimental" class="fa-solid fa-flask text-amber-400"></i>
+                                {{ v.version }}
+                              </span>
                               <button @click.stop="toggleVersions(app.id)"
                                 class="px-1.5 py-0.5 text-[10px] text-blue-400 bg-blue-500/10 border border-blue-500/20 rounded-full font-mono font-bold hover:bg-blue-500/20 transition-colors">
                                 Less

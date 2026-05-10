@@ -51,7 +51,16 @@ function appName(packageName, names) {
 }
 
 function versions(value) {
-  return Array.isArray(value) ? value.map(String).filter(Boolean) : [];
+  if (!Array.isArray(value)) return [];
+  return value
+    .map((item) => {
+      if (typeof item === "string") return { version: item, isExperimental: false };
+      if (item && typeof item === "object" && item.version) {
+        return { version: String(item.version), isExperimental: !!item.isExperimental };
+      }
+      return null;
+    })
+    .filter(Boolean);
 }
 
 function packages(patch) {
@@ -69,7 +78,7 @@ function packages(patch) {
     if (!item || typeof item !== "object") return [];
 
     const packageName = item.packageName || item.name;
-    const targetVersions = item.targets?.map((target) => target.version).filter(Boolean);
+    const targetVersions = item.targets || [];
     return packageName ? [{ packageName, versions: versions(item.versions || targetVersions) }] : [];
   });
 
