@@ -11,7 +11,7 @@
   <link rel="canonical" href="https://nvbangg.github.io/awesome-for-morphe/">
   <meta name="theme-color" content="#030712">
   <link rel="icon" type="image/svg+xml" href="https://github.githubassets.com/favicons/favicon.svg">
-  <link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml">
+  <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
@@ -298,6 +298,17 @@
     btn.addEventListener('click', function () {
       window.scrollTo(0, 0);
     });
+  </script>
+
+  <!-- PWA Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+          .then(reg => console.log('Service Worker registered successfully.', reg))
+          .catch(err => console.error('Service Worker registration failed.', err));
+      });
+    }
   </script>
 </body>
 
