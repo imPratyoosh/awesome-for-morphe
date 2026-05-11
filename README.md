@@ -45,7 +45,7 @@
   - [Frequently asked questions](https://github.com/MorpheApp/morphe-documentation/blob/main/docs/morphe-resources/questions.md)
   - [Troubleshooting Help](https://github.com/MorpheApp/morphe-documentation/blob/main/docs/morphe-resources/troubleshooting.md)
 - [Morphe links, help, guides, and troubleshooting](https://www.reddit.com/r/MorpheApp/comments/1pverk7/morphe_links_help_guides_and_troubleshooting/)
-- [Morphe Manager & Patch Index](https://www.reddit.com/r/MorpheApp/comments/1recqxc/morphe_manager_patch_index/)
+- [How To Patch More Apps With Morphe](https://www.reddit.com/r/MorpheApp/comments/1ta0bek/how_to_patch_more_apps_with_morphe/)
 - [Regarding the Morphe DMCA](https://www.reddit.com/r/MorpheApp/comments/1s3w1er/regarding_the_morphe_dmca/)
 - [How to patch X with Piko patches, and how to login](https://www.reddit.com/r/MorpheApp/comments/1r4xt24/x_twitter_can_now_be_patched_with_piko_patches/)
 
@@ -64,7 +64,7 @@
 
 🔍 Browse and explore [all supported Morphe apps and patches on the website](https://nvbangg.github.io/awesome-for-morphe/), automatically updated.
 
-Or see the [Patch Index sticky post](https://www.reddit.com/r/MorpheApp/comments/1recqxc/morphe_manager_patch_index/) for official releases, updated regularly.
+Or see the [Patch Index sticky post](https://www.reddit.com/r/MorpheApp/comments/1ta0bek/how_to_patch_more_apps_with_morphe/) for official releases, updated regularly.
 
 ## ⬇️ Builder
 
