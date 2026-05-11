@@ -50,15 +50,32 @@
 - [How to patch X with Piko patches, and how to login](https://www.reddit.com/r/MorpheApp/comments/1r4xt24/x_twitter_can_now_be_patched_with_piko_patches/)
 
 ## 🛠️ Projects
+- [nvbangg/awesome-for-morphe](https://github.com/nvbangg/awesome-for-morphe)
+> [![Website](https://img.shields.io/badge/Website-4285F4?logo=googlechrome&logoColor=white)](https://nvbangg.github.io/awesome-for-morphe/)　![Stars](https://img.shields.io/github/stars/nvbangg/awesome-for-morphe?logo=github)　![Last Commit](https://img.shields.io/github/last-commit/nvbangg/awesome-for-morphe?logo=github)　![Release Date](https://img.shields.io/github/release-date-pre/nvbangg/awesome-for-morphe?logo=github)
 
-- [![Jman-Github/ReVanced-Patch-Bundles](https://img.shields.io/github/last-commit/Jman-Github/ReVanced-Patch-Bundles?label=Jman-Github%2FReVanced-Patch-Bundles&logo=github)](https://github.com/Jman-Github/ReVanced-Patch-Bundles)
-- [![Jman-Github/Awesome-ReVanced](https://img.shields.io/github/last-commit/Jman-Github/Awesome-ReVanced?label=Jman-Github%2FAwesome-ReVanced&logo=github)](https://github.com/Jman-Github/Awesome-ReVanced)
-- [![Jman-Github/Universal-ReVanced-Manager](https://img.shields.io/github/release-date-pre/Jman-Github/Universal-ReVanced-Manager?label=Jman-Github%2FUniversal-ReVanced-Manager&logo=github)](https://github.com/Jman-Github/Universal-ReVanced-Manager)
-- [![Graywizard888/Enhancify](https://img.shields.io/github/last-commit/Graywizard888/Enhancify?label=Graywizard888%2FEnhancify&logo=github)](https://github.com/Graywizard888/Enhancify)
-- [![Xisrr1/Revancify-Xisr](https://img.shields.io/github/last-commit/Xisrr1/Revancify-Xisr?label=Xisrr1%2FRevancify-Xisr&logo=github)](https://github.com/Xisrr1/Revancify-Xisr)
-- [![Paresh-Maheshwari/patch-explorer](https://img.shields.io/github/last-commit/Paresh-Maheshwari/patch-explorer?label=Paresh-Maheshwari%2Fpatch-explorer&logo=github)](https://github.com/Paresh-Maheshwari/patch-explorer)
-- [![brosssh/revanced-external-bundles](https://img.shields.io/github/last-commit/brosssh/revanced-external-bundles?label=brosssh%2Frevanced-external-bundles&logo=github)](https://github.com/brosssh/revanced-external-bundles)
-- [![hoo-dles/jadx-morphe](https://img.shields.io/github/last-commit/hoo-dles/jadx-morphe?label=hoo-dles%2Fjadx-morphe&logo=github)](https://github.com/hoo-dles/jadx-morphe)
+- [Jman-Github/ReVanced-Patch-Bundles](https://github.com/Jman-Github/ReVanced-Patch-Bundles)
+> ![Stars](https://img.shields.io/github/stars/Jman-Github/ReVanced-Patch-Bundles?logo=github)　![Last Commit](https://img.shields.io/github/last-commit/Jman-Github/ReVanced-Patch-Bundles?logo=github)
+
+- [Jman-Github/Awesome-ReVanced](https://github.com/Jman-Github/Awesome-ReVanced)
+> ![Stars](https://img.shields.io/github/stars/Jman-Github/Awesome-ReVanced?logo=github)　![Last Commit](https://img.shields.io/github/last-commit/Jman-Github/Awesome-ReVanced?logo=github)
+
+- [Jman-Github/Universal-ReVanced-Manager](https://github.com/Jman-Github/Universal-ReVanced-Manager)
+> ![Stars](https://img.shields.io/github/stars/Jman-Github/Universal-ReVanced-Manager?logo=github)　![Last Commit](https://img.shields.io/github/last-commit/Jman-Github/Universal-ReVanced-Manager?logo=github)　![Release Date](https://img.shields.io/github/release-date-pre/Jman-Github/Universal-ReVanced-Manager?logo=github)
+
+- [Graywizard888/Enhancify](https://github.com/Graywizard888/Enhancify)
+> ![Stars](https://img.shields.io/github/stars/Graywizard888/Enhancify?logo=github)　![Last Commit](https://img.shields.io/github/last-commit/Graywizard888/Enhancify?logo=github)　![Release Date](https://img.shields.io/github/release-date-pre/Graywizard888/Enhancify?logo=github)
+
+- [Xisrr1/Revancify-Xisr](https://github.com/Xisrr1/Revancify-Xisr)
+> ![Stars](https://img.shields.io/github/stars/Xisrr1/Revancify-Xisr?logo=github)　![Last Commit](https://img.shields.io/github/last-commit/Xisrr1/Revancify-Xisr?logo=github)　![Release Date](https://img.shields.io/github/release-date-pre/Xisrr1/Revancify-Xisr?logo=github)
+
+- [Paresh-Maheshwari/patch-explorer](https://gitlab.com/Paresh-Maheshwari/patch-explorer)
+> [![Website](https://img.shields.io/badge/Website-4285F4?logo=googlechrome&logoColor=white)](https://patch-explorer.web.app/)　![Stars](https://img.shields.io/gitlab/stars/Paresh-Maheshwari/patch-explorer?logo=gitlab)　![Last Commit](https://img.shields.io/gitlab/last-commit/Paresh-Maheshwari/patch-explorer?logo=gitlab)
+
+- [brosssh/revanced-external-bundles](https://github.com/brosssh/revanced-external-bundles)
+> [![Website](https://img.shields.io/badge/Website-4285F4?logo=googlechrome&logoColor=white)](https://revanced-external-bundles.brosssh.com/)　![Stars](https://img.shields.io/github/stars/brosssh/revanced-external-bundles?logo=github)　![Last Commit](https://img.shields.io/github/last-commit/brosssh/revanced-external-bundles?logo=github)　![Release Date](https://img.shields.io/github/release-date-pre/brosssh/revanced-external-bundles?logo=github)
+
+- [hoo-dles/jadx-morphe](https://github.com/hoo-dles/jadx-morphe)
+> ![Stars](https://img.shields.io/github/stars/hoo-dles/jadx-morphe?logo=github)　![Last Commit](https://img.shields.io/github/last-commit/hoo-dles/jadx-morphe?logo=github)　![Release Date](https://img.shields.io/github/release-date-pre/hoo-dles/jadx-morphe?logo=github)
 
 ## 📱 Apps & 🧩 Patches
 
@@ -75,7 +92,7 @@ Or see the [Patch Index sticky post](https://www.reddit.com/r/MorpheApp/comments
 
 ## 🙏 Credits
 
-- This project is inspired by [Awesome ReVanced](https://github.com/Jman-Github/Awesome-ReVanced) and [Patch Explorer](https://github.com/Paresh-Maheshwari/patch-explorer).
+- This project is inspired by [Awesome ReVanced](https://github.com/Jman-Github/Awesome-ReVanced) and [Patch Explorer](https://gitlab.com/Paresh-Maheshwari/patch-explorer).
 - Patch sources data is sourced directly from [ReVanced Patch Bundles](https://github.com/Jman-Github/ReVanced-Patch-Bundles) by Jman.
 
 ## ⭐ Star History
