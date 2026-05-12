@@ -251,8 +251,8 @@
   },
   "morphe": {
     "repo": "MorpheApp/morphe-patches",
-    "tag": "v1.26.0",
-    "created_at": "2026-05-05T19:36:51",
+    "tag": "v1.27.0",
+    "created_at": "2026-05-12T13:51:54",
     "apps": [
       "com.google.android.apps.youtube.music",
       "com.google.android.youtube",
