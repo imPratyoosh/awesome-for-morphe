@@ -75,8 +75,8 @@
   },
   "bholeykabhakt": {
     "repo": "BholeyKaBhakt/android-patches-xtra",
-    "tag": "v2.0.2",
-    "created_at": "2026-05-12T09:49:46",
+    "tag": "v2.0.3",
+    "created_at": "2026-05-12T10:35:14",
     "apps": [
       "com.llamalab.automate",
       "com.ttxapps.autosync",
