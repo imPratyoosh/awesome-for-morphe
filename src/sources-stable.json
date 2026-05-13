@@ -151,10 +151,11 @@
   },
   "hoo-dles": {
     "repo": "hoo-dles/morphe-patches",
-    "tag": "v1.30.0",
-    "created_at": "2026-05-07T15:42:45",
+    "tag": "v1.31.0",
+    "created_at": "2026-05-13T04:35:20",
     "apps": [
       "app.ttmikstories.android",
+      "bitpit.launcher",
       "ch.protonvpn.android",
       "cn.ommiao.iconpacker",
       "cn.wps.moffice_eng",
@@ -170,6 +171,7 @@
       "com.intsig.camscanner",
       "com.lyfta",
       "com.merriamwebster",
+      "com.mirinae.mirinae",
       "com.mobilefootie.wc2010",
       "com.myfitnesspal.android",
       "com.pandora.android",
