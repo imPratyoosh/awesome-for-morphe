@@ -45,8 +45,8 @@
   },
   "amplerevanced": {
     "repo": "AmpleReVanced/revanced-patches",
-    "tag": "v1.1.0-dev.4",
-    "created_at": "2026-05-13T12:11:31",
+    "tag": "v1.1.0-dev.5",
+    "created_at": "2026-05-13T14:54:31",
     "apps": [
       "com.dcinside.app.android",
       "com.kakao.talk",
@@ -139,8 +139,8 @@
   },
   "hoo-dles": {
     "repo": "hoo-dles/morphe-patches",
-    "tag": "v1.31.0-dev.4",
-    "created_at": "2026-05-13T03:45:17",
+    "tag": "v1.31.1-dev.1",
+    "created_at": "2026-05-13T17:01:20",
     "apps": [
       "app.ttmikstories.android",
       "bitpit.launcher",
