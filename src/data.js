@@ -214,7 +214,7 @@ export function getFilterOptions(rows) {
     .sort((a, b) => a.label.localeCompare(b.label) || a.value.localeCompare(b.value));
 
   if (hasUniversal) {
-    appOptions.unshift({ value: "universal", label: "Universal" });
+    appOptions.unshift({ value: "universal", label: "Any app" });
   }
 
   return {
