@@ -120,9 +120,11 @@
   },
   "cryptomator": {
     "repo": "joganubaid/cryptomator-morphe-patches",
-    "tag": "v1.0.3",
-    "created_at": "2026-05-04T18:12:18",
-    "apps": []
+    "tag": "v1.1.0",
+    "created_at": "2026-05-14T10:54:35",
+    "apps": [
+      "org.cryptomator"
+    ]
   },
   "docbt": {
     "repo": "docbt/patched-up",

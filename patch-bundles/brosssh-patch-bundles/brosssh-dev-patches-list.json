@@ -1,5 +1,5 @@
 {
-    "version": "v2.6.1-dev.3",
+    "version": "v2.6.2-dev.2",
     "patches": [
         {
             "compatiblePackages": [
@@ -411,6 +411,7 @@
             ],
             "default": true,
             "dependencies": [
+                "BytecodePatch",
                 "BytecodePatch"
             ],
             "description": "Hides suggested stories, reels, threads and survey from feed (Suggested posts will still be shown).",
@@ -560,7 +561,7 @@
                             "description": null,
                             "isExperimental": false,
                             "minSdk": null,
-                            "version": "26.3.1"
+                            "version": "26.5.0"
                         }
                     ]
                 }
