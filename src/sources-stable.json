@@ -128,8 +128,8 @@
   },
   "docbt": {
     "repo": "docbt/patched-up",
-    "tag": "v1.7.0",
-    "created_at": "2026-04-19T03:45:24",
+    "tag": "v1.8.0",
+    "created_at": "2026-05-15T04:25:17",
     "apps": [
       "com.ebay.kleinanzeigen",
       "com.google.android.apps.magazines"
