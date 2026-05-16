@@ -143,7 +143,7 @@
   "videoeditor.videorecorder.screenrecorder": "XRecorder",
   "com.roidapp.photogrid": "PhotoGrid",
   "com.intsig.camscanner": "CamScanner",
-  "com.example.app": "Example App",
+  "com.example.app": "XYZ app",
   "com.unicornsoft.android.unicornpro": "Unicorn Pro",
   "io.foodvisor.foodvisor": "Foodvisor",
   "com.eksiteknoloji.eksisozluk": "Ek\u015fi S\u00f6zl\u00fck",
@@ -154,5 +154,6 @@
   "com.idamob.tinkoff.android": "TBank",
   "bitpit.launcher": "Niagara Launcher",
   "org.cryptomator": "Cryptomator",
-  "com.github.android": "GitHub"
+  "com.github.android": "GitHub",
+  "cz.mafra.jizdnirady": "IDOS"
 }

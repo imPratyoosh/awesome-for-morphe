@@ -1,4 +1,12 @@
 {
+  "ImmortalZeus": {
+    "repo": "ImmortalZeus/ImmortalZeus-Morphe-Patches",
+    "tag": "v1.0.0-dev.1",
+    "created_at": "2026-05-15T03:20:18",
+    "apps": [
+      "com.example.app"
+    ]
+  },
   "abhis1n": {
     "repo": "abhis1n/Morphe-Patches",
     "tag": "v1.0.0-dev.1",
@@ -196,6 +204,14 @@
     "created_at": "2026-03-30T01:20:04",
     "apps": [
       "tv.trakt.trakt"
+    ]
+  },
+  "kolaron": {
+    "repo": "kolaron/morphe-patches",
+    "tag": "v1.1.0-dev.1",
+    "created_at": "2026-05-15T06:39:27",
+    "apps": [
+      "cz.mafra.jizdnirady"
     ]
   },
   "loskutov": {
