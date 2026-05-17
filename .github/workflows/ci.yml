@@ -17,6 +17,8 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v6
+        with:
+          ref: gh-pages
 
       - name: Download patch-bundles
         run: python src/download-patch-bundles.py
@@ -54,7 +56,7 @@ jobs:
 
           git add patch-bundles/** src/sources-stable.json src/sources-dev.json src/app-names.json
           git commit -m "Sync patch-bundles (${DATE}-${TIME})"
-          git push
+          git push origin HEAD:gh-pages
 
           echo "RELEASE_TAG=${RELEASE_TAG}" >> $GITHUB_ENV
           echo "RELEASE_DAY=${RELEASE_DAY}" >> $GITHUB_ENV
@@ -63,19 +65,19 @@ jobs:
         if: steps.changes.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh workflow run deploy.yml
+        run: gh workflow run deploy.yml --ref main
 
       - name: Create release
         if: steps.changes.outputs.changed == 'true' && hashFiles('changelog.md') != ''
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh release create "${{ env.RELEASE_TAG }}" --title "🔔 Updates (${{ env.RELEASE_DAY }})" --notes-file changelog.md
+        run: gh release create "${{ env.RELEASE_TAG }}" --target "$(git rev-parse HEAD)" --title "🔔 Updates (${{ env.RELEASE_DAY }})" --notes-file changelog.md
 
       - name: Create pre-release
         if: steps.changes.outputs.changed == 'true' && hashFiles('changelog-pre-release.md') != ''
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh release create "${{ env.RELEASE_TAG }}-pre" --prerelease --title "🧪 Pre-release (${{ env.RELEASE_DAY }})" --notes-file changelog-pre-release.md
+        run: gh release create "${{ env.RELEASE_TAG }}-pre" --target "$(git rev-parse HEAD)" --prerelease --title "🧪 Pre-release (${{ env.RELEASE_DAY }})" --notes-file changelog-pre-release.md
 
       - name: Cleanup old workflow runs
         env:
