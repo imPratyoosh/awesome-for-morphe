@@ -15,8 +15,8 @@
 
 > [!TIP]
 > 🔔 Click the 👁️ **`Watch`** button for email notifications, or ⭐ **`Star`** to get updates on new apps and patch sources in your GitHub feed.  
-> 📌 To follow specific patches, please visit the corresponding repositories.    
-> 💡 Do not be afraid to [open an issue](https://github.com/nvbangg/awesome-for-morphe/issues/new) if you have any suggestions. 
+> 💡 Do not be afraid to [open an issue](https://github.com/nvbangg/awesome-for-morphe/issues/new) if you have any suggestions.   
+> 📦 Website source code is on the [`gh-pages`](https://github.com/nvbangg/awesome-for-morphe/tree/gh-pages) branch.   
 
 <div align="center"> 
 <picture>
