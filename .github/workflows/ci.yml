@@ -1,0 +1,84 @@
+# Copyright (c) 2026 nvbangg (github.com/nvbangg)
+
+name: Sync Patch Bundles
+
+on:
+  schedule:
+    - cron: "0 */4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Download patch-bundles
+        run: python src/download-patch-bundles.py
+
+      - name: Check git changes
+        id: changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "changed=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit changes
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          python src/update-sources.py
+                    
+          DATE=$(date +'%Y.%m.%d')
+          DAY=$(date +'%b %d, %Y')
+          TIME=$(date +'%H.%M')
+
+          if gh release view "$DATE" >/dev/null 2>&1; then
+            RELEASE_TAG="${DATE}-${TIME}"
+            RELEASE_DAY="${DAY} - ${TIME}"
+          else
+            RELEASE_TAG="${DATE}"
+            RELEASE_DAY="${DAY}"
+          fi
+
+          git add patch-bundles/** src/sources-stable.json src/sources-dev.json src/app-names.json
+          git commit -m "Sync patch-bundles (${DATE}-${TIME})"
+          git push
+
+          echo "RELEASE_TAG=${RELEASE_TAG}" >> $GITHUB_ENV
+          echo "RELEASE_DAY=${RELEASE_DAY}" >> $GITHUB_ENV
+
+      - name: Deploy to GitHub Pages
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run deploy.yml
+
+      - name: Create release
+        if: steps.changes.outputs.changed == 'true' && hashFiles('changelog.md') != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh release create "${{ env.RELEASE_TAG }}" --title "🔔 Updates (${{ env.RELEASE_DAY }})" --notes-file changelog.md
+
+      - name: Create pre-release
+        if: steps.changes.outputs.changed == 'true' && hashFiles('changelog-pre-release.md') != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh release create "${{ env.RELEASE_TAG }}-pre" --prerelease --title "🧪 Pre-release (${{ env.RELEASE_DAY }})" --notes-file changelog-pre-release.md
+
+      - name: Cleanup old workflow runs
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh run list -L 200 --json databaseId -q '.[].databaseId' | tail -n +41 | xargs -IID gh api "repos/$GITHUB_REPOSITORY/actions/runs/ID" -X DELETE || :
