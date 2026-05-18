@@ -4,7 +4,7 @@ name: Sync Patch Bundles
 
 on:
   schedule:
-    - cron: "0 */4 * * *"
+    - cron: "0 0 * * *"
   workflow_dispatch:
 
 permissions:
@@ -42,24 +42,15 @@ jobs:
 
           python src/update-sources.py
                     
-          DATE=$(date +'%Y.%m.%d')
+          TAG=$(date +'%Y.%m.%d')
           DAY=$(date +'%b %d, %Y')
-          TIME=$(date +'%H.%M')
-
-          if gh release view "$DATE" >/dev/null 2>&1; then
-            RELEASE_TAG="${DATE}-${TIME}"
-            RELEASE_DAY="${DAY} - ${TIME}"
-          else
-            RELEASE_TAG="${DATE}"
-            RELEASE_DAY="${DAY}"
-          fi
 
           git add patch-bundles/** src/sources-stable.json src/sources-dev.json src/app-names.json
-          git commit -m "Sync patch-bundles (${DATE}-${TIME})"
+          git commit -m "Sync patch-bundles (${TAG})"
           git push origin HEAD:gh-pages
 
-          echo "RELEASE_TAG=${RELEASE_TAG}" >> $GITHUB_ENV
-          echo "RELEASE_DAY=${RELEASE_DAY}" >> $GITHUB_ENV
+          echo "TAG=${TAG}" >> $GITHUB_ENV
+          echo "DAY=${DAY}" >> $GITHUB_ENV
 
       - name: Deploy to GitHub Pages
         if: steps.changes.outputs.changed == 'true'
@@ -71,16 +62,16 @@ jobs:
         if: steps.changes.outputs.changed == 'true' && hashFiles('changelog.md') != ''
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh release create "${{ env.RELEASE_TAG }}" --target "$(git rev-parse HEAD)" --title "🔔 Updates (${{ env.RELEASE_DAY }})" --notes-file changelog.md
+        run: gh release create "${{ env.TAG }}" --target "$(git rev-parse HEAD)" --title "🔔 Updates (${{ env.DAY }})" --notes-file changelog.md
 
       - name: Create pre-release
         if: steps.changes.outputs.changed == 'true' && hashFiles('changelog-pre-release.md') != ''
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh release create "${{ env.RELEASE_TAG }}-pre" --target "$(git rev-parse HEAD)" --prerelease --title "🧪 Pre-release (${{ env.RELEASE_DAY }})" --notes-file changelog-pre-release.md
+        run: gh release create "${{ env.TAG }}-pre" --target "$(git rev-parse HEAD)" --prerelease --title "🧪 Pre-release (${{ env.DAY }})" --notes-file changelog-pre-release.md
 
       - name: Cleanup old workflow runs
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh run list -L 200 --json databaseId -q '.[].databaseId' | tail -n +41 | xargs -IID gh api "repos/$GITHUB_REPOSITORY/actions/runs/ID" -X DELETE || :
+          gh run list -L 200 --json databaseId -q '.[].databaseId' | tail -n +21 | xargs -IID gh api "repos/$GITHUB_REPOSITORY/actions/runs/ID" -X DELETE || :
