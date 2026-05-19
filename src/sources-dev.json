@@ -53,10 +53,11 @@
   },
   "amplerevanced": {
     "repo": "AmpleReVanced/revanced-patches",
-    "tag": "v1.1.0-dev.7",
-    "created_at": "2026-05-14T17:01:58",
+    "tag": "v1.1.0-dev.9",
+    "created_at": "2026-05-18T14:11:40",
     "apps": [
       "com.dcinside.app.android",
+      "com.flexcil.flexcilnote",
       "com.kakao.talk",
       "com.unicornsoft.android.unicornpro"
     ]
@@ -147,8 +148,8 @@
   },
   "hoo-dles": {
     "repo": "hoo-dles/morphe-patches",
-    "tag": "v1.32.0-dev.1",
-    "created_at": "2026-05-15T18:09:15",
+    "tag": "v1.32.1-dev.1",
+    "created_at": "2026-05-18T21:08:31",
     "apps": [
       "app.ttmikstories.android",
       "bitpit.launcher",
@@ -225,8 +226,8 @@
   },
   "morphe": {
     "repo": "MorpheApp/morphe-patches",
-    "tag": "v1.28.0-dev.4",
-    "created_at": "2026-05-16T06:48:12",
+    "tag": "v1.29.0-dev.1",
+    "created_at": "2026-05-18T19:34:20",
     "apps": [
       "com.google.android.apps.youtube.music",
       "com.google.android.youtube",
