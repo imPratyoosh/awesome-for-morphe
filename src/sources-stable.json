@@ -214,16 +214,16 @@
   },
   "imxeren": {
     "repo": "IMXEren/mix-patches",
-    "tag": "v1.1.0",
-    "created_at": "2026-03-26T23:03:39",
+    "tag": "v1.2.0",
+    "created_at": "2026-05-20T00:57:43",
     "apps": [
       "tv.trakt.trakt"
     ]
   },
   "jasonwu1994": {
     "repo": "jasonwu1994/Gboard-patches",
-    "tag": "v1.4.0",
-    "created_at": "2026-04-13T07:07:47",
+    "tag": "v1.5.0",
+    "created_at": "2026-05-19T21:26:28",
     "apps": [
       "com.google.android.inputmethod.latin"
     ]
@@ -343,8 +343,8 @@
   },
   "piko": {
     "repo": "crimera/piko",
-    "tag": "v3.3.0",
-    "created_at": "2026-05-12T06:55:36",
+    "tag": "v3.4.0",
+    "created_at": "2026-05-19T12:22:55",
     "apps": [
       "com.instagram.android",
       "com.twitter.android"
@@ -429,6 +429,14 @@
     "apps": [
       "com.google.android.apps.youtube.music",
       "com.google.android.youtube"
+    ]
+  },
+  "takano536": {
+    "repo": "takano536/morphe-patches",
+    "tag": "v1.0.0",
+    "created_at": "2026-05-18T14:12:28",
+    "apps": [
+      "jp.co.yahoo.android.apps.transit"
     ]
   },
   "vladon": {

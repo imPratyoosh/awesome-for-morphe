@@ -207,6 +207,14 @@
       "tv.trakt.trakt"
     ]
   },
+  "jasonwu1994": {
+    "repo": "jasonwu1994/Gboard-patches",
+    "tag": "v1.5.0-dev.3",
+    "created_at": "2026-05-19T20:59:56",
+    "apps": [
+      "com.google.android.inputmethod.latin"
+    ]
+  },
   "kolaron": {
     "repo": "kolaron/morphe-patches",
     "tag": "v1.1.0-dev.1",
@@ -226,8 +234,8 @@
   },
   "morphe": {
     "repo": "MorpheApp/morphe-patches",
-    "tag": "v1.29.0-dev.1",
-    "created_at": "2026-05-18T19:34:20",
+    "tag": "v1.29.0-dev.2",
+    "created_at": "2026-05-19T18:19:23",
     "apps": [
       "com.google.android.apps.youtube.music",
       "com.google.android.youtube",
@@ -353,6 +361,14 @@
     "apps": [
       "com.google.android.apps.youtube.music",
       "com.google.android.youtube"
+    ]
+  },
+  "takano536": {
+    "repo": "takano536/morphe-patches",
+    "tag": "v1.0.0-dev.1",
+    "created_at": "2026-05-18T13:57:22",
+    "apps": [
+      "jp.co.yahoo.android.apps.transit"
     ]
   },
   "xob0t": {
