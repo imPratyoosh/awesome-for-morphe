@@ -2,7 +2,7 @@
 
 🔍 [nvbangg.github.io/awesome-for-morphe](https://nvbangg.github.io/awesome-for-morphe)
 
-**Jump to:** 
+### 🔗 Jump to: 
 - [✅ Official](#official)
 - [📚 Resources](#resources)
 - [📱 Apps & 🧩 Patches](#apps-patches)
@@ -32,12 +32,16 @@
 </picture>
 </div> 
 
+---
+
 ## <a id="official"></a> ✅ Official
 
 [![GitHub](https://img.shields.io/badge/GitHub-MorpheApp-gray?logo=github&labelColor=24292F)](https://github.com/MorpheApp)
 > [![Morphe Manager](https://img.shields.io/badge/%F0%9F%92%8A%20Morphe%20Manager-gray)](https://github.com/MorpheApp/morphe-manager)　[![Morphe Patches](https://img.shields.io/badge/%F0%9F%A7%A9%20Morphe%20Patches-gray)](https://github.com/MorpheApp/morphe-patches)　[![MicroG RE](https://img.shields.io/badge/%E2%9A%99%EF%B8%8F%20MicroG%20RE-gray)](https://github.com/MorpheApp/MicroG-RE/releases)　[![Morphe CLI](https://img.shields.io/badge/%F0%9F%92%BB%20Morphe%20CLI-gray)](https://github.com/MorpheApp/morphe-cli)　[![Morphe Patcher](https://img.shields.io/badge/%F0%9F%92%89%20Morphe%20Patcher-gray)](https://github.com/MorpheApp/morphe-patcher)　[![Morphe Website](https://img.shields.io/badge/%F0%9F%8C%90%20Morphe%20Website-gray)](https://github.com/MorpheApp/morphe-website)　[![Morphe Patches Template](https://img.shields.io/badge/%F0%9F%91%8B%F0%9F%A7%A9%20Morphe%20Patches%20Template-gray)](https://github.com/MorpheApp/morphe-patches-template)
 
 [![Website](https://img.shields.io/badge/Website-morphe.software-gray?logo=google-chrome&logoColor=white&labelColor=4285F4)](https://morphe.software)　[![Website](https://img.shields.io/badge/Website-morphe--patches.software-gray?logo=google-chrome&logoColor=white&labelColor=4285F4)](https://morphe-patches.software)　[![Reddit](https://img.shields.io/badge/Reddit-r%2FMorpheApp-gray?logo=reddit&logoColor=white&labelColor=FF4500)](https://www.reddit.com/r/MorpheApp)　[![X](https://img.shields.io/badge/Twitter-%40MorpheApp-gray?logo=x&logoColor=white&labelColor=24292F)](https://x.com/MorpheApp)　[![Crowdin](https://img.shields.io/badge/Crowdin-morphe-gray?logo=crowdin&logoColor=white&labelColor=2E3340)](https://crowdin.com/project/morphe)　[![OpenCollective](https://img.shields.io/badge/OpenCollective-morpheapp-gray?logo=opencollective&logoColor=white&labelColor=4773AC)](https://opencollective.com/morpheapp)
+
+---
 
 ## <a id="resources"></a> 📚 Resources
 
@@ -52,6 +56,7 @@
 - [Regarding the Morphe DMCA](https://www.reddit.com/r/MorpheApp/comments/1s3w1er/regarding_the_morphe_dmca/)
 - [How to patch X with Piko patches, and how to login](https://www.reddit.com/r/MorpheApp/comments/1r4xt24/x_twitter_can_now_be_patched_with_piko_patches/)
 
+---
 
 ## <a id="apps-patches"></a> 📱 Apps & 🧩 Patches
 
@@ -64,6 +69,8 @@
 - [Patch Index sticky post](https://www.reddit.com/r/MorpheApp/comments/1ta0bek/how_to_patch_more_apps_with_morphe/)
 - [ReVanced Patch Bundles](https://github.com/Jman-Github/ReVanced-Patch-Bundles)
 
+---
+
 ## <a id="projects"></a> 🛠️ Other Projects
 
 - [Jman-Github/Awesome-ReVanced](https://github.com/Jman-Github/Awesome-ReVanced)
@@ -75,6 +82,8 @@
 - [Xisrr1/Revancify-Xisr](https://github.com/Xisrr1/Revancify-Xisr)
 
 - [hoo-dles/jadx-morphe](https://github.com/hoo-dles/jadx-morphe)
+
+---
 
 ## ⬇️ Builder
 
@@ -90,7 +99,7 @@
 
 ## ⭐ Star History
 
-<a href="https://github.com/nvbangg/awesome-for-morphe"><img src="https://img.shields.io/github/stars/nvbangg/awesome-for-morphe?label=Star%20this%20repo%20if%20useful%20%E2%AD%90&logo=github" alt="Stars"></a>　<a href="https://github.com/sponsors/nvbangg"><img src="https://img.shields.io/badge/Support-pink?style=social&logo=github-sponsors" alt="Sponsor"></a>
+<a href="https://github.com/nvbangg/awesome-for-morphe"><img src="https://img.shields.io/github/stars/nvbangg/awesome-for-morphe?label=Star%20this%20repo%20if%20useful%20%E2%AD%90&logo=github-sponsors" alt="Stars"></a>
 
 <a href="https://www.star-history.com/?repos=nvbangg%2Fawesome-for-morphe&type=date&legend=top-left">
  <picture>
