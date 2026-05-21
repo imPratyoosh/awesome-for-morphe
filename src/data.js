@@ -64,7 +64,7 @@ function versions(value) {
 
   if (vList.length === 0) return [];
 
-  vList.sort((a, b) => b.version.localeCompare(a.version, undefined, { numeric: true, sensitivity: 'base' }));
+  vList.sort((a, b) => b.version.localeCompare(a.version, undefined, { numeric: true, sensitivity: "base" }));
 
   if (vList.length === 1) return vList;
 
