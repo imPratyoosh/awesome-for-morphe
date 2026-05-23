@@ -64,12 +64,11 @@
   },
   "anddea": {
     "repo": "anddea/revanced-patches",
-    "tag": "v4.0.1-dev.1",
-    "created_at": "2026-05-15T10:31:07",
+    "tag": "v4.1.0-dev.1",
+    "created_at": "2026-05-22T08:48:24",
     "apps": [
       "com.google.android.apps.youtube.music",
-      "com.google.android.youtube",
-      "com.reddit.frontpage"
+      "com.google.android.youtube"
     ]
   },
   "anddea-morphed": {
@@ -148,8 +147,8 @@
   },
   "hoo-dles": {
     "repo": "hoo-dles/morphe-patches",
-    "tag": "v1.32.1-dev.1",
-    "created_at": "2026-05-18T21:08:31",
+    "tag": "v1.33.0-dev.2",
+    "created_at": "2026-05-22T23:12:57",
     "apps": [
       "app.ttmikstories.android",
       "bitpit.launcher",
@@ -234,8 +233,8 @@
   },
   "morphe": {
     "repo": "MorpheApp/morphe-patches",
-    "tag": "v1.29.0-dev.3",
-    "created_at": "2026-05-20T08:00:20",
+    "tag": "v1.29.1-dev.2",
+    "created_at": "2026-05-22T10:51:07",
     "apps": [
       "com.google.android.apps.youtube.music",
       "com.google.android.youtube",
@@ -289,8 +288,8 @@
   },
   "piko": {
     "repo": "crimera/piko",
-    "tag": "v3.4.0-dev.2",
-    "created_at": "2026-05-17T08:58:01",
+    "tag": "v3.4.1-dev.1",
+    "created_at": "2026-05-22T17:09:22",
     "apps": [
       "com.instagram.android",
       "com.twitter.android"
