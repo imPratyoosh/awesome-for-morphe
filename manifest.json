@@ -1,6 +1,6 @@
 {
-  "name": "Awesome for Morphe",
-  "short_name": "Awesome for Morphe",
+  "name": "Awesome for Morphe Website",
+  "short_name": "Awesome Morphe",
   "description": "Explore all supported apps and patches, automatically updated.",
   "start_url": "./",
   "display": "standalone",
@@ -8,7 +8,7 @@
   "theme_color": "#030712",
   "icons": [
     {
-      "src": "https://github.githubassets.com/favicons/favicon.svg",
+      "src": "src/favicon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"
