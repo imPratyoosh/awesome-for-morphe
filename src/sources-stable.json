@@ -33,12 +33,13 @@
   },
   "ajstrick81-androidtv": {
     "repo": "ajstrick81/morphe-androidtv-patches",
-    "tag": "v1.4.15",
-    "created_at": "2026-05-28T00:11:04",
+    "tag": "v1.4.17",
+    "created_at": "2026-05-28T22:32:10",
     "apps": [
       "com.amazon.amazonvideo.livingroom",
       "com.cbs.ott",
       "com.disney.disneyplus",
+      "com.tubitv",
       "com.wbd.stream"
     ]
   },
@@ -127,8 +128,8 @@
   },
   "brosssh": {
     "repo": "brosssh/morphe-patches",
-    "tag": "v2.6.1",
-    "created_at": "2026-05-11T14:08:14",
+    "tag": "v2.6.2",
+    "created_at": "2026-05-28T21:07:45",
     "apps": [
       "com.instagram.android",
       "cz.seznam.mapy",
@@ -172,8 +173,8 @@
   },
   "hoo-dles": {
     "repo": "hoo-dles/morphe-patches",
-    "tag": "v1.33.0",
-    "created_at": "2026-05-23T00:02:09",
+    "tag": "v1.34.0",
+    "created_at": "2026-05-28T23:01:07",
     "apps": [
       "app.ttmikstories.android",
       "bitpit.launcher",
@@ -204,6 +205,7 @@
       "com.sofascore.results",
       "com.soundcloud.android",
       "com.teslacoilsw.launcher",
+      "com.urbandroid.sleep",
       "com.wallpaperscraft.wallpaper",
       "com.windyty.android",
       "com.xodo.pdf.reader",

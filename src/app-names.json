@@ -30,7 +30,7 @@
   "com.getmimo": "Mimo",
   "com.strava": "Strava",
   "com.myfitnesspal.android": "MyFitnessPal",
-  "com.sbs.diet": "Macro Factor",
+  "com.sbs.diet": "MacroFactor",
   "com.adobe.photoshopmix": "Photoshop Mix",
   "com.microblink.photomath": "Photomath",
   "com.microsoft.office.officelens": "Microsoft Lens",
@@ -132,7 +132,7 @@
   "com.overlook.android.fing": "Fing",
   "com.pinterest": "Pinterest",
   "com.quickcursor": "Quick Cursor",
-  "com.sbs.train": "Macro Factor Workouts",
+  "com.sbs.train": "MacroFactor Workouts",
   "com.solid.teleprompter": "Teleprompter",
   "com.truecaller": "Truecaller",
   "com.vladlee.easyblacklist": "Calls Blacklist",
@@ -157,5 +157,6 @@
   "com.github.android": "GitHub",
   "cz.mafra.jizdnirady": "IDOS",
   "com.flexcil.flexcilnote": "Flexcil",
-  "jp.co.yahoo.android.apps.transit": "Yahoo Transit"
+  "jp.co.yahoo.android.apps.transit": "Yahoo Transit",
+  "com.urbandroid.sleep": "Sleep as Android"
 }
