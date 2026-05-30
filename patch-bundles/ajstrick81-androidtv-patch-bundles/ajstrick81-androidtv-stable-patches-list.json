@@ -1,5 +1,5 @@
 {
-    "version": "v1.4.17",
+    "version": "v1.4.20",
     "patches": [
         {
             "compatibility": [
@@ -11,14 +11,14 @@
                     "targets": [
                         {
                             "experimental": false,
-                            "version": "26.6.0-rc5"
+                            "version": "26.6.0+rc5-2026.04.21"
                         }
                     ]
                 }
             ],
             "compatiblePackages": {
                 "com.disney.disneyplus": [
-                    "26.6.0-rc5"
+                    "26.6.0+rc5-2026.04.21"
                 ]
             },
             "dependencies": [],
@@ -33,7 +33,7 @@
                     "appIconColor": 16777215,
                     "description": null,
                     "name": "HBO Max Android TV",
-                    "packageName": "com.wbd.stream",
+                    "packageName": "com.wbd.hbomax",
                     "targets": [
                         {
                             "experimental": false,
@@ -43,7 +43,7 @@
                 }
             ],
             "compatiblePackages": {
-                "com.wbd.stream": [
+                "com.wbd.hbomax": [
                     "7.2.0.41"
                 ]
             },
@@ -108,6 +108,58 @@
         {
             "compatibility": [
                 {
+                    "appIconColor": 14183,
+                    "description": null,
+                    "name": "Fox Sports",
+                    "packageName": "com.foxsports.android",
+                    "targets": [
+                        {
+                            "experimental": false,
+                            "version": "5.152.0"
+                        }
+                    ]
+                }
+            ],
+            "compatiblePackages": {
+                "com.foxsports.android": [
+                    "5.152.0"
+                ]
+            },
+            "dependencies": [],
+            "description": "Suppresses Yospace SSAI ad events from reaching FoxPlayer and unlocks fast-forward during ad breaks.",
+            "name": "Skip ads",
+            "options": [],
+            "use": true
+        },
+        {
+            "compatibility": [
+                {
+                    "appIconColor": 0,
+                    "description": null,
+                    "name": "Peacock TV Android TV",
+                    "packageName": "com.peacocktv.peacockandroid",
+                    "targets": [
+                        {
+                            "experimental": false,
+                            "version": "7.5.102"
+                        }
+                    ]
+                }
+            ],
+            "compatiblePackages": {
+                "com.peacocktv.peacockandroid": [
+                    "7.5.102"
+                ]
+            },
+            "dependencies": [],
+            "description": "Blocks Helio CSAI ad delivery via two hooks: a coroutine sentinel that prevents the ad schedule coroutine from constructing HelioAdPlaybackState, and a return-void on ComponentListener.a() that silences any AdPlaybackState updates that reach the media3 ExoPlayer timeline.",
+            "name": "Skip ads",
+            "options": [],
+            "use": true
+        },
+        {
+            "compatibility": [
+                {
                     "appIconColor": 1539022,
                     "description": null,
                     "name": "Prime Video",
@@ -154,7 +206,7 @@
                 ]
             },
             "dependencies": [],
-            "description": "Prevents IMA DAI ad events from reaching FoxPlayer, suppressing all ad breaks.",
+            "description": "Eliminates all Tubi ad types: blocks IMA DAI mid-roll and post-roll events from reaching FoxPlayer, prevents the IMA AdsManager from priming the cold-launch pre-roll, and suppresses the pause-screen image overlay ad.",
             "name": "Skip ads",
             "options": [],
             "use": true
