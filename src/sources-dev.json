@@ -200,6 +200,14 @@
       "videoeditor.videorecorder.screenrecorder"
     ]
   },
+  "icysymmetra-tiktok": {
+    "repo": "icysymmetra/tiktok-patches-for-morphe",
+    "tag": "v0.1.5-dev.1",
+    "created_at": "2026-05-31T19:32:47",
+    "apps": [
+      "com.zhiliaoapp.musically"
+    ]
+  },
   "imxeren": {
     "repo": "IMXEren/mix-patches",
     "tag": "v1.2.0-dev.1",
@@ -235,8 +243,8 @@
   },
   "morphe": {
     "repo": "MorpheApp/morphe-patches",
-    "tag": "v1.31.0-dev.1",
-    "created_at": "2026-05-30T09:28:01",
+    "tag": "v1.31.0-dev.2",
+    "created_at": "2026-05-31T14:12:30",
     "apps": [
       "com.google.android.apps.youtube.music",
       "com.google.android.youtube",
@@ -290,8 +298,8 @@
   },
   "piko": {
     "repo": "crimera/piko",
-    "tag": "v3.5.0-dev.2",
-    "created_at": "2026-05-27T14:48:14",
+    "tag": "v3.5.0-dev.4",
+    "created_at": "2026-05-31T11:33:48",
     "apps": [
       "com.instagram.android",
       "com.twitter.android"
@@ -366,8 +374,8 @@
   },
   "xob0t": {
     "repo": "xob0t/morphe-patches",
-    "tag": "v1.3.2-dev.1",
-    "created_at": "2026-05-16T19:04:35",
+    "tag": "v1.3.7-dev.1",
+    "created_at": "2026-05-31T11:49:31",
     "apps": [
       "com.avito.android",
       "com.idamob.tinkoff.android",
