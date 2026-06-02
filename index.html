@@ -12,7 +12,6 @@
   <meta name="theme-color" content="#030712">
   <meta name="color-scheme" content="only dark">
   <link rel="icon" type="image/svg+xml" href="src/favicon.svg">
-  <link rel="manifest" href="manifest.json">
   <meta property="og:url" content="https://nvbangg.github.io/awesome-for-morphe/" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://nvbangg.github.io/awesome-for-morphe/src/favicon.svg" />
@@ -340,17 +339,6 @@
     btn.addEventListener('click', function () {
       window.scrollTo(0, 0);
     });
-  </script>
-
-  <!-- PWA Service Worker Registration -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js')
-          .then(reg => console.log('Service Worker registered successfully.', reg))
-          .catch(err => console.error('Service Worker registration failed.', err));
-      });
-    }
   </script>
 </body>
 

@@ -164,5 +164,12 @@
   "com.cloudflare.onedotonedotonedotone": "1.1.1.1 + WARP",
   "com.saldous.casetracker": "Case Tracker - Immigration",
   "com.catalinagroup.callrecorder": "Call Recorder - Automatic",
-  "sp0n.citizen": "Citizen - Safety Alert"
+  "sp0n.citizen": "Citizen - Safety Alert",
+  "com.amazon.amazonvideo.livingroom": "Prime Video",
+  "com.cbs.ott": "Paramount+",
+  "com.fox.foxone": "FOX One",
+  "com.foxsports.android": "FOX Sports",
+  "com.tubitv": "Tubi",
+  "com.wbd.hbomax": "HBO Max",
+  "se.matlistan.free": "Matlistan"
 }
