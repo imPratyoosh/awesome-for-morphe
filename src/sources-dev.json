@@ -126,8 +126,8 @@
   },
   "brosssh": {
     "repo": "brosssh/morphe-patches",
-    "tag": "v2.6.2-dev.3",
-    "created_at": "2026-05-28T20:53:25",
+    "tag": "v2.6.3-dev.1",
+    "created_at": "2026-06-02T20:30:36",
     "apps": [
       "com.instagram.android",
       "cz.seznam.mapy",
@@ -243,8 +243,8 @@
   },
   "morphe": {
     "repo": "MorpheApp/morphe-patches",
-    "tag": "v1.31.0-dev.2",
-    "created_at": "2026-05-31T14:12:30",
+    "tag": "v1.31.0-dev.3",
+    "created_at": "2026-06-02T11:33:05",
     "apps": [
       "com.google.android.apps.youtube.music",
       "com.google.android.youtube",
@@ -365,11 +365,13 @@
   },
   "rushiranpise": {
     "repo": "rushiranpise/morphe-patches",
-    "tag": "v1.1.0-dev.1",
-    "created_at": "2026-06-02T00:47:18",
+    "tag": "v1.3.0-dev.1",
+    "created_at": "2026-06-03T01:56:07",
     "apps": [
+      "com.Splitwise.SplitwiseMobile",
       "com.catalinagroup.callrecorder",
       "com.cloudflare.onedotonedotonedotone",
+      "com.newsbreak.crimeradar",
       "com.saldous.casetracker",
       "sensustech.universal.tv.remote.control",
       "sp0n.citizen"

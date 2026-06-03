@@ -41,8 +41,8 @@
   },
   "ajstrick81-androidtv": {
     "repo": "ajstrick81/morphe-androidtv-patches",
-    "tag": "v1.4.37",
-    "created_at": "2026-06-02T00:45:44",
+    "tag": "v1.4.40",
+    "created_at": "2026-06-02T22:47:27",
     "apps": [
       "com.amazon.amazonvideo.livingroom",
       "com.cbs.ott",
@@ -51,6 +51,7 @@
       "com.foxsports.android",
       "com.peacocktv.peacockandroid",
       "com.tubitv",
+      "com.univision.prendetv",
       "com.wbd.hbomax"
     ]
   },
@@ -456,11 +457,13 @@
   },
   "rushiranpise": {
     "repo": "rushiranpise/morphe-patches",
-    "tag": "v1.1.0",
-    "created_at": "2026-06-02T00:52:15",
+    "tag": "v1.3.0",
+    "created_at": "2026-06-03T01:59:05",
     "apps": [
+      "com.Splitwise.SplitwiseMobile",
       "com.catalinagroup.callrecorder",
       "com.cloudflare.onedotonedotonedotone",
+      "com.newsbreak.crimeradar",
       "com.saldous.casetracker",
       "sensustech.universal.tv.remote.control",
       "sp0n.citizen"
