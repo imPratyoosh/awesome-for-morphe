@@ -41,8 +41,8 @@
   },
   "ajstrick81-androidtv": {
     "repo": "ajstrick81/morphe-androidtv-patches",
-    "tag": "v1.4.42",
-    "created_at": "2026-06-03T20:52:15",
+    "tag": "v1.4.45",
+    "created_at": "2026-06-04T23:28:38",
     "apps": [
       "com.amazon.amazonvideo.livingroom",
       "com.cbs.ott",
@@ -480,8 +480,8 @@
   },
   "sjshb57-pairip": {
     "repo": "sjshb57/pairip-patches",
-    "tag": "v1.2.0",
-    "created_at": "2026-06-01T12:19:14",
+    "tag": "v1.3.0",
+    "created_at": "2026-06-04T16:07:04",
     "apps": []
   },
   "vladon": {
