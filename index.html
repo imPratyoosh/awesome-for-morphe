@@ -1,7 +1,7 @@
 <!-- Copyright (c) 2026 nvbangg (github.com/nvbangg) -->
 
 <!doctype html>
-<html lang="en" class="bg-darker text-white antialiased" style="color-scheme: dark;">
+<html lang="en" class="bg-black text-white antialiased" style="color-scheme: dark;">
 
 <head>
   <meta charset="utf-8">
@@ -9,7 +9,7 @@
   <title>Awesome for Morphe Website</title>
   <meta name="description" content="Explore all supported apps and patches, automatically updated.">
   <link rel="canonical" href="https://nvbangg.github.io/awesome-for-morphe/">
-  <meta name="theme-color" content="#030712">
+  <meta name="theme-color" content="#0C0C0D">
   <meta name="color-scheme" content="only dark">
   <link rel="icon" type="image/svg+xml" href="src/favicon.svg">
   <meta property="og:url" content="https://nvbangg.github.io/awesome-for-morphe/" />
@@ -33,15 +33,15 @@
       theme: {
         extend: {
           colors: {
-            darker: '#030712',
-            dark: '#0f172a',
-            grayDark: '#1e293b',
-            gray: '#334155',
-            blue: '#3b82f6',
-            green: '#10b981',
-            yellow: '#eab308',
-            light: '#94a3b8',
-            white: '#cbd5e1',
+            black: '#0C0C0D',
+            dark: '#18181B',
+            gray: '#27272A',
+            lightGray: '#3F3F46',
+            blue: '#3B82F6',
+            green: '#10B981',
+            yellow: '#EAB308',
+            light: '#A1A1AA',
+            white: '#FAFAFA',
           }
         }
       }
@@ -62,19 +62,19 @@
     }
 
     ::-webkit-scrollbar-track {
-      background: #030712;
-      /* darker */
+      background: #0C0C0D;
+      /* black */
     }
 
     ::-webkit-scrollbar-thumb {
-      background: #1e293b;
-      /* grayDark */
+      background: #27272A;
+      /* gray */
       border-radius: 5px;
     }
 
     ::-webkit-scrollbar-thumb:hover {
-      background: #334155;
-      /* gray */
+      background: #3F3F46;
+      /* lightGray */
     }
 
     input[type="search"]::-webkit-search-decoration,
@@ -83,44 +83,96 @@
     input[type="search"]::-webkit-search-results-decoration {
       display: none;
     }
+
+    .patches-scroll {
+      scrollbar-width: thin;
+      scrollbar-color: #3F3F46 rgba(255, 255, 255, 0.05);
+    }
+
+    .patches-scroll::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .patches-scroll::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 3px;
+    }
+
+    .patches-scroll::-webkit-scrollbar-thumb {
+      background: #3F3F46;
+      border-radius: 3px;
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0.5;
+        transform: translateX(16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0.5;
+        transform: translateX(-16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .swipe-transition-left {
+      animation: slideInLeft 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .swipe-transition-right {
+      animation: slideInRight 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
   </style>
 </head>
 
-<body class="bg-darker min-h-screen">
+<body class="bg-black min-h-screen">
   <div id="app" v-cloak>
     <section class="mt-2 md:mt-12 max-w-4xl mx-auto px-3 flex flex-col gap-2 md:gap-4" aria-label="Main Content">
       <div class="flex flex-col sm:flex-row items-center justify-center gap-1.5 md:gap-3 text-[11px] md:text-sm">
         <a href="https://github.com/nvbangg/awesome-for-morphe" target="_blank" rel="noreferrer"
-          class="flex items-center gap-1.5 md:gap-2 px-2.5 py-1 md:px-3 md:py-1.5 bg-dark border border-grayDark rounded-full text-light hover:text-white hover:bg-grayDark hover:border-gray transition-all shadow-sm">
+          class="flex items-center gap-1.5 md:gap-2 px-2.5 py-1 md:px-3 md:py-1.5 bg-dark border border-gray rounded-full text-light hover:text-white hover:bg-gray hover:border-lightGray transition-all shadow-sm">
           <i class="fa-brands fa-github text-sm md:text-base"></i>
           <span class="font-medium">github.com/nvbangg/awesome-for-morphe</span>
         </a>
         <a href="https://nvbangg.github.io/awesome-for-morphe/" target="_blank" rel="noreferrer"
-          class="flex items-center gap-1.5 md:gap-2 px-2.5 py-1 md:px-3 md:py-1.5 bg-dark border border-grayDark rounded-full text-light hover:text-white hover:bg-grayDark hover:border-gray transition-all shadow-sm">
+          class="flex items-center gap-1.5 md:gap-2 px-2.5 py-1 md:px-3 md:py-1.5 bg-dark border border-gray rounded-full text-light hover:text-white hover:bg-gray hover:border-lightGray transition-all shadow-sm">
           <i class="fa-solid fa-globe text-sm md:text-base"></i>
           <span class="font-medium">nvbangg.github.io/awesome-for-morphe</span>
         </a>
       </div>
-      <div class="bg-dark border-2 border-green/20 rounded-2xl overflow-hidden shadow-lg relative z-10">
-        <div class="flex items-center justify-center border-b-2 border-green/10 h-12">
+      <div class="bg-dark border-2 border-blue/20 rounded-2xl overflow-hidden shadow-lg relative z-10">
+        <div class="flex items-center justify-center border-b-2 border-blue/10 h-12">
           <h1
             class="text-2xl font-extrabold whitespace-nowrap flex items-center text-transparent bg-clip-text bg-gradient-to-r from-blue to-green">
             Awesome for Morphe</h1>
         </div>
 
         <div class="flex flex-col gap-3 p-2 md:p-3">
-          <div class="grid grid-cols-2 md:grid-cols-[auto_360px_1fr_1fr] gap-2 md:gap-3">
-            <div class="col-span-2 md:col-span-2 flex gap-2">
+          <div class="flex flex-col sm:flex-row gap-2.5 items-stretch sm:items-center">
+            <div class="flex flex-row gap-2.5 items-center flex-1 min-w-0">
               <button @click="resetFilters"
-                class="h-10 w-10 flex items-center justify-center bg-darker border border-grayDark rounded-md hover:bg-white/5 transition-colors text-white shrink-0"
+                class="h-10 w-10 flex items-center justify-center bg-black border border-gray rounded-md hover:bg-white/5 transition-colors text-white shrink-0"
                 title="Reset Filters">
                 <i class="fa-solid fa-arrow-rotate-left text-sm"></i>
               </button>
-
-              <form @submit.prevent="$event.target.querySelector('input').blur()" class="relative flex-1">
+              
+              <form @submit.prevent="$event.target.querySelector('input').blur()" class="relative flex-1 min-w-0">
+                <span class="absolute left-3 top-0 h-10 flex items-center text-light pointer-events-none">
+                  <i class="fa-solid fa-magnifying-glass text-xs"></i>
+                </span>
                 <input type="search" v-model="query" autocomplete="off" enterkeyhint="search"
-                  placeholder="Search apps, sources, patches"
-                  class="w-full h-10 pl-3 pr-9 bg-darker border border-grayDark rounded-md focus:border-blue focus:ring-2 focus:ring-blue/20 outline-none transition-all text-sm text-white">
+                  placeholder="Search apps, bundles"
+                  class="w-full h-10 pl-8 pr-9 bg-black border border-gray rounded-md focus:border-light focus:ring-2 focus:ring-light/20 outline-none transition-all text-sm text-white">
                 <button v-if="query" type="button" @click="query = ''"
                   class="absolute right-0 top-0 h-10 w-9 flex items-center justify-center text-light hover:text-white transition-colors"
                   title="Clear search">
@@ -129,36 +181,49 @@
               </form>
             </div>
 
-            <select v-model="app" aria-label="Apps filter"
-              class="col-span-1 w-full h-10 pl-3 pr-8 bg-darker border border-grayDark rounded-md focus:border-blue focus:ring-2 focus:ring-blue/20 outline-none transition-all cursor-pointer text-sm appearance-none text-white bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22none%22%20viewBox%3D%220%200%2020%2020%22%3E%3Cpath%20stroke%3D%22%236b7280%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%221.5%22%20d%3D%22m6%208%204%204%204-4%22%2F%3E%3C%2Fsvg%3E')] bg-[length:1.25rem_1.25rem] bg-[right_0.5rem_center] bg-no-repeat">
-              <option value="">All Apps</option>
-              <option v-for="opt in filterOptions.appOptions" :key="opt.value" :value="opt.value">{{ opt.label }}
-              </option>
-            </select>
-
-            <select v-model="source" aria-label="Patch Sources filter"
-              class="col-span-1 w-full h-10 pl-3 pr-8 bg-darker border border-grayDark rounded-md focus:border-blue focus:ring-2 focus:ring-blue/20 outline-none transition-all cursor-pointer text-sm appearance-none text-white bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22none%22%20viewBox%3D%220%200%2020%2020%22%3E%3Cpath%20stroke%3D%22%236b7280%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%221.5%22%20d%3D%22m6%208%204%204%204-4%22%2F%3E%3C%2Fsvg%3E')] bg-[length:1.25rem_1.25rem] bg-[right_0.5rem_center] bg-no-repeat">
-              <option value="">All Sources</option>
-              <option v-for="opt in filterOptions.sourceOptions" :key="opt.value" :value="opt.value">{{ opt.label }}
-              </option>
-            </select>
+            <form @submit.prevent="$event.target.querySelector('input').blur()" class="relative flex-1 min-w-0">
+              <span class="absolute left-3 top-0 h-10 flex items-center text-light pointer-events-none">
+                <i class="fa-solid fa-magnifying-glass text-xs"></i>
+              </span>
+              <input type="search" v-model="patchQuery" autocomplete="off" enterkeyhint="search"
+                placeholder="Search patches"
+                class="w-full h-10 pl-8 pr-9 bg-black border border-gray rounded-md focus:border-light focus:ring-2 focus:ring-light/20 outline-none transition-all text-sm text-white">
+              <button v-if="patchQuery" type="button" @click="patchQuery = ''"
+                class="absolute right-0 top-0 h-10 w-9 flex items-center justify-center text-light hover:text-white transition-colors"
+                title="Clear search">
+                <i class="fa-solid fa-circle-xmark"></i>
+              </button>
+            </form>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-3">
-            <div class="hidden md:block"></div>
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 mt-1">
+            <div class="flex flex-row gap-2 w-full md:w-auto">
+              <select v-model="app" aria-label="Apps filter"
+                class="w-1/2 md:w-[180px] h-10 pl-3 pr-8 bg-black border border-gray rounded-md focus:border-light focus:ring-2 focus:ring-light/20 outline-none transition-all cursor-pointer text-sm appearance-none text-white bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22none%22%20viewBox%3D%220%200%2020%2020%22%3E%3Cpath%20stroke%3D%22%236b7280%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%221.5%22%20d%3D%22m6%208%204%204%204-4%22%2F%3E%3C%2Fsvg%3E')] bg-[length:1.25rem_1.25rem] bg-[right_0.5rem_center] bg-no-repeat">
+                <option value="">📱 All Apps</option>
+                <option v-for="opt in filterOptions.appOptions" :key="opt.value" :value="opt.value">{{ opt.label }}</option>
+              </select>
+              <select v-model="bundle" aria-label="Patch Bundles filter"
+                class="w-1/2 md:w-[180px] h-10 pl-3 pr-8 bg-black border border-gray rounded-md focus:border-light focus:ring-2 focus:ring-light/20 outline-none transition-all cursor-pointer text-sm appearance-none text-white bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22none%22%20viewBox%3D%220%200%2020%2020%22%3E%3Cpath%20stroke%3D%22%236b7280%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%221.5%22%20d%3D%22m6%208%204%204%204-4%22%2F%3E%3C%2Fsvg%3E')] bg-[length:1.25rem_1.25rem] bg-[right_0.5rem_center] bg-no-repeat">
+                <option value="">📦 All Bundles</option>
+                <option v-for="opt in filterOptions.bundleOptions" :key="opt.value" :value="opt.value">{{ opt.label }}</option>
+              </select>
+            </div>
+
             <div class="flex items-center justify-center gap-2">
               <button @click="channel = 'stable'"
                 class="h-8 px-5 rounded-full text-sm font-medium transition-all border"
-                :class="channel === 'stable' ? 'text-green bg-green/10 border-green/20' : 'text-white bg-white/5 border-white/5 hover:bg-white/10'">Stable</button>
+                :class="channel === 'stable' ? 'text-blue bg-blue/10 border-blue/20' : 'text-white bg-white/5 border-white/5 hover:bg-white/10'">Stable</button>
               <button @click="channel = 'dev'" class="h-8 px-5 rounded-full text-sm font-medium transition-all border"
                 :class="channel === 'dev' ? 'text-yellow bg-yellow/10 border-yellow/20' : 'text-white bg-white/5 border-white/5 hover:bg-white/10'">Dev</button>
             </div>
+
             <div class="flex flex-wrap gap-2 text-xs text-light shrink-0 justify-center md:justify-end"
               aria-live="polite">
               <span class="px-1.5 py-0.5 bg-white/5 rounded-full border border-white/5">{{ stats?.apps || 0 }}
                 apps</span>
-              <span class="px-1.5 py-0.5 bg-white/5 rounded-full border border-white/5">{{ stats?.sources || 0 }}
-                sources</span>
+              <span class="px-1.5 py-0.5 bg-white/5 rounded-full border border-white/5">{{ stats?.bundles || 0 }}
+                bundles</span>
               <span class="px-1.5 py-0.5 bg-white/5 rounded-full border border-white/5">{{ stats?.patches || 0 }}
                 patches</span>
             </div>
@@ -172,152 +237,154 @@
         <div v-if="isLoading" class="grid min-h-[220px] place-items-center text-light">Loading {{ channel }} data...
         </div>
         <div v-else-if="errorMsg" class="grid min-h-[220px] place-items-center">
-          <div class="text-center p-8 bg-grayDark/40 border border-gray rounded-2xl shadow-sm">
+          <div class="text-center p-8 bg-gray/40 border border-lightGray rounded-2xl shadow-sm">
             <h2 class="text-lg font-bold mb-2">Could not load data</h2>
             <p class="text-light">{{ errorMsg }}</p>
           </div>
         </div>
 
         <div v-else>
-          <div v-if="!sourcesGroups.length" class="grid min-h-[220px] place-items-center">
-            <div class="text-center p-8 bg-grayDark/40 border border-gray rounded-2xl max-w-lg w-full shadow-sm">
-              <h2 class="text-lg font-bold mb-2">No patch sources found</h2>
+          <div v-if="!bundlesGroups.length" class="grid min-h-[220px] place-items-center">
+            <div class="text-center p-8 bg-gray/40 border border-lightGray rounded-2xl max-w-lg w-full shadow-sm">
+              <h2 class="text-lg font-bold mb-2">No patch bundles found</h2>
               <p class="text-light mb-4">Try changing the search or filters.</p>
               <button @click="resetFilters"
-                class="inline-flex items-center gap-2 px-4 py-2 bg-blue hover:bg-blue/80 text-white rounded-lg text-sm font-medium transition-colors shadow-lg shadow-blue/30">
+                class="inline-flex items-center gap-2 px-4 py-2 bg-green hover:bg-green/80 text-white rounded-lg text-sm font-medium transition-colors shadow-lg shadow-green/30">
                 <i class="fa-solid fa-arrow-rotate-left text-xs"></i> Reset filters
               </button>
             </div>
           </div>
           <div v-else class="grid gap-4">
-            <details v-for="group in sourcesGroups" :key="group.key" :open="sourcesGroups.length === 1"
-              class="bg-grayDark/40 border-2 border-gray rounded-2xl overflow-hidden group/source shadow-sm">
-              <summary
-                class="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 p-4 cursor-pointer transition-colors">
+            <div v-for="group in bundlesGroups" :key="group.key"
+              class="bg-dark border-2 border-lightGray rounded-2xl overflow-hidden group/bundle shadow-sm flex flex-col">
+              <div @click="toggleBundle(group)" class="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 p-4 cursor-pointer select-none">
                 <span
                   class="flex flex-wrap items-center justify-center md:justify-start gap-2 text-light shrink-0 w-full md:w-auto">
                   <div class="flex items-center justify-center md:justify-start gap-2 w-full md:w-auto">
                     <strong
                       class="font-bold text-xl flex items-center text-transparent bg-clip-text bg-gradient-to-r from-blue to-green">{{
                       group.key }}</strong>
-                    <template v-if="group.source.version">
-                      <a v-if="releaseUrl(group.source)" :href="releaseUrl(group.source)" target="_blank"
+                    <template v-if="group.bundle.version">
+                      <a v-if="releaseUrl(group.bundle)" :href="releaseUrl(group.bundle)" target="_blank"
                         rel="noreferrer" @click.stop
                         class="px-1.5 py-0.5 text-xs text-white bg-white/5 border border-white/10 rounded-full font-medium hover:bg-blue/10 hover:text-blue hover:border-blue/20 transition-colors">{{
-                        group.source.version }}</a>
+                        group.bundle.version }}</a>
                       <span v-else
                         class="px-1.5 py-0.5 text-xs text-white bg-white/5 border border-white/10 rounded-full font-medium hover:bg-blue/10 hover:text-blue hover:border-blue/20 transition-colors">{{
-                        group.source.version }}</span>
+                        group.bundle.version }}</span>
                     </template>
                   </div>
                   <div class="flex items-center justify-center w-full md:w-auto md:justify-start gap-2">
-                    <a v-if="group.source.repo" :href="'https://github.com/' + group.source.repo" target="_blank"
+                    <a v-if="group.bundle.repo" :href="'https://github.com/' + group.bundle.repo" target="_blank"
                       rel="noreferrer" @click.stop
                       class="text-white hover:text-blue transition-colors flex items-center justify-center w-8 h-8"
                       aria-label="GitHub" title="GitHub">
                       <i class="fa-brands fa-github text-2xl leading-none"></i>
                     </a>
-                    <a v-if="group.source.repo" :href="morpheUrl(group.source.repo)" target="_blank" rel="noreferrer"
+                    <a v-if="group.bundle.repo" :href="morpheUrl(group.bundle.repo)" target="_blank" rel="noreferrer"
                       @click.stop
-                      class="px-1.5 py-0.5 text-sm text-blue bg-blue/10 border border-blue/20 rounded-full font-medium hover:bg-blue/20 hover:text-blue transition-colors">Add
+                      class="px-1.5 py-0.5 text-sm text-green bg-green/10 border border-green/20 rounded-full font-medium hover:bg-green/20 hover:text-green transition-colors">Add
                       to Morphe</a>
                   </div>
                 </span>
                 <span
                   class="flex flex-wrap gap-2 text-xs text-light shrink-0 justify-center md:justify-end w-full md:w-auto">
-                  <span v-if="group.source.createdAt"
+                  <span v-if="group.bundle.createdAt"
                     class="px-1.5 py-0.5 bg-white/5 rounded-full border border-white/5">{{
-                    formatDate(group.source.createdAt) }}</span>
+                    formatDate(group.bundle.createdAt) }}</span>
                   <span class="px-1.5 py-0.5 bg-white/5 rounded-full border border-white/5">{{ countBy(group.rows, r =>
                     r.packageName) }} apps</span>
                   <span class="px-1.5 py-0.5 bg-white/5 rounded-full border border-white/5">{{ countBy(group.rows, r =>
                     r.patchId) }} patches</span>
                 </span>
-              </summary>
+              </div>
 
-              <div class="border-t-2 border-gray bg-darker/80 shadow-inner">
-                <div class="divide-y divide-white/10">
-                  <div v-for="patch in group.patches" :key="patch.id" class="p-4 transition-colors"
-                    :class="{'cursor-pointer': patch.options.length}"
-                    @click="patch.options.length && toggleOptions(patch.id)">
-                    <div class="flex items-center justify-between gap-2">
-                      <div class="flex items-center gap-2">
-                        <strong class="font-bold text-white text-sm">{{ patch.patchName }}</strong>
-                        <span v-if="!patch.enabled"
-                          class="px-1.5 py-0.5 text-[10px] text-yellow bg-yellow/10 rounded-full font-bold inline-flex items-center">off</span>
+              <div class="border-t-2 border-lightGray bg-dark shadow-inner flex flex-col">
+                <template v-for="appsList in [group.appsList]">
+                  <div class="flex overflow-x-auto gap-2.5 py-2 px-3 border-b border-lightGray" style="scrollbar-width: thin;">
+                    <button v-for="(app, index) in appsList"
+                      :key="app.id"
+                      @click.stop="selectApp(group.key, app, appsList)"
+                      class="px-3 py-1 rounded-lg text-sm font-bold whitespace-nowrap transition-colors border outline-none"
+                      :class="expandedOptions.has('app_' + group.key + '_' + app.id) ? 'bg-transparent text-blue border-blue' : 'bg-dark text-white border-white/10 hover:border-white/30'">
+                      {{ (!app.appName || app.appName === 'Unspecified') ? 'Any app' : app.appName }}
+                    </button>
+                  </div>
+
+                  <template v-for="(app, index) in appsList" :key="'content-'+app.id">
+                    <div v-if="expandedOptions.has('app_' + group.key + '_' + app.id)"
+                      @touchstart="handleTouchStart"
+                      @touchend="handleTouchEnd($event, group.key, app, appsList)"
+                      class="p-3 pt-2 flex flex-col gap-3 shadow-inner"
+                      :class="activeSwipeGroup === group.key && swipeDirection ? 'swipe-transition-' + swipeDirection : ''">
+                      <div class="flex flex-wrap items-center gap-2.5 min-w-0">
+                        <template v-if="app.packageName && app.appName && app.appName !== 'Unspecified'">
+                          <button @click.stop="filterByApp(app.packageName)" class="px-2.5 py-1 bg-blue hover:bg-blue/80 text-white rounded-md text-xs font-semibold shrink-0 transition-colors shadow-sm">Filter by this app</button>
+                          <a :href="playUrl(app.packageName)" class="inline-block px-1.5 py-0.5 border border-blue/30 hover:border-blue/50 rounded-full text-xs font-medium text-blue underline hover:text-blue/80 transition-colors break-all shadow-sm" target="_blank" @click.stop>{{ app.packageName }}</a>
+                        </template>
+                        <template v-else>
+                          <button @click.stop="filterByApp('universal')" class="px-2.5 py-1 bg-blue hover:bg-blue/80 text-white rounded-md text-xs font-semibold shrink-0 transition-colors shadow-sm">Filter by this app</button>
+                        </template>
                       </div>
-                      <button v-if="patch.options.length" @click.stop="toggleOptions(patch.id)"
-                        class="text-light hover:text-white transition-colors px-2 py-1" aria-label="Toggle Options"
-                        :title="expandedOptions.has(patch.id) ? 'Hide options' : 'Show options'">
-                        <i class="fa-solid fa-chevron-down transition-transform"
-                          :class="{'rotate-180': expandedOptions.has(patch.id)}"></i>
-                      </button>
-                    </div>
-                    <p class="text-xs text-light mt-1 mb-3 max-w-3xl">{{ patch.description }}</p>
-
-                    <div class="flex flex-col gap-2">
-                      <div v-for="app in patch.apps" :key="app.id" class="flex flex-wrap items-center gap-2">
-                        <button v-if="app.packageName" @click.stop="filterByApp(app.packageName)"
-                          class="px-2 py-1 text-xs font-bold text-blue bg-blue/10 border border-blue/20 rounded hover:bg-blue/20 transition-colors focus:outline-none"
-                          title="Filter by this app">{{ app.appName }}</button>
-                        <span v-else
-                          class="px-2 py-1 text-xs font-bold text-light bg-white/5 border border-white/10 rounded">Any
-                          app</span>
-
-                        <div class="flex flex-wrap gap-1 items-center ml-auto">
-                          <a v-if="app.packageName" :href="playUrl(app.packageName)" target="_blank" rel="noreferrer"
-                            @click.stop
-                            class="px-1.5 py-0.5 text-[10px] text-blue bg-blue/10 border border-blue/20 rounded-full font-mono font-bold hover:bg-blue/20 transition-colors"
-                            title="Open in Play Store">{{ app.packageName }}</a>
-
-                          <template v-if="app.versions && app.versions.length">
-                            <template v-if="!expandedVersions.has(app.id)">
-                              <span
-                                class="px-1.5 py-0.5 text-[10px] text-green bg-green/10 border border-green/20 rounded-full font-mono font-bold inline-flex items-center gap-1"
-                                :title="app.versions[app.versions.length - 1].isExperimental ? 'Experimental version' : ''">
-                                <i v-if="app.versions[app.versions.length - 1].isExperimental"
-                                  class="fa-solid fa-flask text-yellow"></i>
-                                {{ app.versions[app.versions.length - 1].version }}
-                              </span>
-                              <button v-if="app.versions.length > 1" @click.stop="toggleVersions(app.id)"
-                                class="px-1.5 py-0.5 text-[10px] text-blue bg-blue/10 border border-blue/20 rounded-full font-mono font-bold hover:bg-blue/20 transition-colors">
-                                +{{ app.versions.length - 1 }}
-                              </button>
-                            </template>
-
-                            <template v-else>
-                              <span
-                                v-for="v in [...app.versions].sort((a, b) => a.version.localeCompare(b.version, undefined, { numeric: true }))"
-                                :key="v.version"
-                                class="px-1.5 py-0.5 text-[10px] text-green bg-green/10 border border-green/20 rounded-full font-mono font-bold inline-flex items-center gap-1"
-                                :title="v.isExperimental ? 'Experimental version' : ''">
-                                <i v-if="v.isExperimental" class="fa-solid fa-flask text-yellow"></i>
-                                {{ v.version }}
-                              </span>
-                              <button @click.stop="toggleVersions(app.id)"
-                                class="px-1.5 py-0.5 text-[10px] text-blue bg-blue/10 border border-blue/20 rounded-full font-mono font-bold hover:bg-blue/20 transition-colors">
-                                Less
-                              </button>
-                            </template>
-                          </template>
-                          <span v-else
-                            class="px-1.5 py-0.5 text-[10px] text-green bg-green/10 border border-green/20 rounded-full font-mono font-bold">Any
-                            version</span>
+                      
+                      <div class="flex flex-col gap-1.5 mt-1 max-h-[60vh] overflow-y-auto pr-1.5 py-0.5 patches-scroll">
+                        <div v-for="patch in group.patches.filter(p => p.apps.some(a => (a.packageName || a.appName || 'any') === (app.packageName || app.appName || 'any')))"
+                          :key="patch.id"
+                          @click="patch.options.length && toggleOptions(patch.id)"
+                          class="bg-gray py-2 px-3 rounded-xl border border-lightGray shadow-sm flex flex-col"
+                          :class="{'cursor-pointer select-none': patch.options.length}">
+                          <div class="flex items-start justify-between gap-2 mb-0.5">
+                            <div class="flex items-center gap-2 flex-wrap">
+                              <strong class="font-bold text-white text-sm">{{ patch.patchName }}</strong>
+                              <span v-if="!patch.enabled" class="px-1.5 py-0.5 text-[10px] text-yellow bg-yellow/10 rounded-full font-bold">off</span>
+                            </div>
+                            <button v-if="patch.options.length" @click.stop="toggleOptions(patch.id)" class="text-light hover:text-white px-1 shrink-0" :title="expandedOptions.has(patch.id) ? 'Hide options' : 'Show options'">
+                              <i class="fa-solid fa-chevron-down transition-transform" :class="{'rotate-180': expandedOptions.has(patch.id)}"></i>
+                            </button>
+                          </div>
+                          
+                          <div class="flex flex-wrap items-start justify-between gap-x-4 gap-y-1.5">
+                            <p class="text-xs text-light flex-1 min-w-[200px]">{{ patch.description }}</p>
+                            <div class="flex flex-wrap gap-1 items-center justify-end min-w-0">
+                              <template v-for="a in patch.apps.filter(x => (x.packageName || x.appName || 'any') === (app.packageName || app.appName || 'any'))" :key="a.id">
+                                <template v-if="a.versions && a.versions.length">
+                                  <template v-if="!expandedVersions.has(a.id)">
+                                    <span class="px-1.5 py-0.5 text-[10px] text-green bg-green/10 border border-green/20 rounded-full font-mono font-bold inline-flex items-center gap-1" :title="a.versions[a.versions.length - 1].isExperimental ? 'Experimental version' : ''">
+                                      <i v-if="a.versions[a.versions.length - 1].isExperimental" class="fa-solid fa-flask text-yellow"></i>
+                                      {{ a.versions[a.versions.length - 1].version }}
+                                    </span>
+                                    <button v-if="a.versions.length > 1" @click.stop="toggleVersions(a.id)" class="px-1.5 py-0.5 text-[10px] text-blue bg-blue/10 border border-blue/20 rounded-full font-mono font-bold hover:bg-blue/20 transition-colors">
+                                      +{{ a.versions.length - 1 }}
+                                    </button>
+                                  </template>
+                                  <template v-else>
+                                    <span v-for="v in [...a.versions].sort((v1, v2) => v1.version.localeCompare(v2.version, undefined, { numeric: true }))" :key="v.version" class="px-1.5 py-0.5 text-[10px] text-green bg-green/10 border border-green/20 rounded-full font-mono font-bold inline-flex items-center gap-1" :title="v.isExperimental ? 'Experimental version' : ''">
+                                      <i v-if="v.isExperimental" class="fa-solid fa-flask text-yellow"></i>
+                                      {{ v.version }}
+                                    </span>
+                                    <button @click.stop="toggleVersions(a.id)" class="px-1.5 py-0.5 text-[10px] text-blue bg-blue/10 border border-blue/20 rounded-full font-mono font-bold hover:bg-blue/20 transition-colors">
+                                      Less
+                                    </button>
+                                  </template>
+                                </template>
+                                <span v-else class="px-1.5 py-0.5 text-[10px] text-green bg-green/10 border border-green/20 rounded-full font-mono font-bold">Any version</span>
+                              </template>
+                            </div>
+                          </div>
+                          
+                          <div v-if="expandedOptions.has(patch.id)" class="mt-2.5 p-2 bg-lightGray border border-lightGray rounded flex flex-col gap-1.5 shadow-inner">
+                            <div v-for="opt in patch.options" :key="opt.key">
+                              <strong class="font-bold text-xs text-white block">{{ opt.title || opt.key }}</strong>
+                              <p class="text-[10px] text-light">{{ opt.description }}</p>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
-
-                    <div v-if="expandedOptions.has(patch.id)"
-                      class="mt-4 p-3 bg-grayDark/40 border border-gray rounded-2xl flex flex-col gap-3 shadow-sm">
-                      <div v-for="opt in patch.options" :key="opt.key" class="text-sm">
-                        <strong class="font-bold text-sm text-white block mb-1">{{ opt.title || opt.key }}</strong>
-                        <p class="text-xs text-light">{{ opt.description }}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                  </template>
+                </template>
               </div>
-            </details>
+            </div>
           </div>
         </div>
       </div>

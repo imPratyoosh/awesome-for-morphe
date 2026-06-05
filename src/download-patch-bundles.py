@@ -67,13 +67,13 @@ def fetch_list(args):
 
 def main():
     try:
-        sources_text = download(f"{RAW}/bundle-sources.json")
-        sources = json.loads(sources_text)
+        bundles_text = download(f"{RAW}/bundle-sources.json")
+        bundles = json.loads(bundles_text)
     except Exception as exc:
         raise SystemExit(f"Failed to fetch bundle-sources.json: {exc}")
 
     suffix_pattern = re.compile(r"-(stable|latest|dev)$")
-    base_names = sorted({suffix_pattern.sub("", k) for k in sources})
+    base_names = sorted({suffix_pattern.sub("", k) for k in bundles})
     all_pairs = [(base, channel) for base in base_names for channel in CHANNELS]
 
     shutil.rmtree(OUT_DIR, ignore_errors=True)

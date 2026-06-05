@@ -6,8 +6,8 @@ from pathlib import Path
 ROOT = Path.cwd()
 SRC_DIR = ROOT / "src"
 BUNDLES_DIR = ROOT / "patch-bundles"
-STABLE_OUT = SRC_DIR / "sources-stable.json"
-DEV_OUT = SRC_DIR / "sources-dev.json"
+STABLE_OUT = SRC_DIR / "bundles-stable.json"
+DEV_OUT = SRC_DIR / "bundles-dev.json"
 APP_NAMES_PATH = SRC_DIR / "app-names.json"
 CHANGELOG_PATH = ROOT / "changelog.md"
 CHANGELOG_PRE_PATH = ROOT / "changelog-pre-release.md"
@@ -73,26 +73,26 @@ def derive_name(pkg):
     return name.replace("-", " ").replace("_", " ").title()
 
 
-def format_app(pkg, app_names, source_key, label):
+def format_app(pkg, app_names, bundle_key, label):
     name = app_names.get(pkg) or derive_name(pkg)
-    url = f"https://nvbangg.github.io/awesome-for-morphe/?source={source_key}&app={pkg}"
+    url = f"https://nvbangg.github.io/awesome-for-morphe/?bundle={bundle_key}&app={pkg}"
     if label == "pre-release":
         url += "&channel=dev"
     return f"- [{name}]({url})"
 
 
-def build_notes(label, old_sources, new_sources, app_names):
-    new_bundles, new_apps_groups = [], []
-    for key in sorted(new_sources.keys()):
-        entry = new_sources.get(key) or {}
+def build_notes(label, old_bundles, new_bundles, app_names):
+    new_bundles_notes, new_apps_groups = [], []
+    for key in sorted(new_bundles.keys()):
+        entry = new_bundles.get(key) or {}
         apps = entry.get("apps") or []
-        if key not in old_sources:
-            url = f"https://nvbangg.github.io/awesome-for-morphe/?source={key}"
+        if key not in old_bundles:
+            url = f"https://nvbangg.github.io/awesome-for-morphe/?bundle={key}"
             if label == "pre-release":
                 url += "&channel=dev"
             link = f"[{key}]({url})"
-            new_bundles.append(f"- {link}")
-        old_apps = set(old_sources.get(key, {}).get("apps") or [])
+            new_bundles_notes.append(f"- {link}")
+        old_apps = set(old_bundles.get(key, {}).get("apps") or [])
         added = [pkg for pkg in apps if pkg not in old_apps]
         if added:
             heading = f"## {key}"
@@ -102,14 +102,14 @@ def build_notes(label, old_sources, new_sources, app_names):
                 )
             )
     sections = []
-    if new_bundles:
-        sections.append(f"# 🧩 New Patch Sources ({label})\n" + "\n".join(new_bundles))
+    if new_bundles_notes:
+        sections.append(f"# 🧩 New Patch Bundles ({label})\n" + "\n".join(new_bundles_notes))
     if new_apps_groups:
         sections.append(f"# 📱 New Apps ({label})\n" + "\n\n".join(new_apps_groups))
     return "\n\n".join(sections)
 
 
-def build_sources(app_names):
+def build_bundles(app_names):
     stable, dev = {}, {}
     for bundle_dir in sorted(BUNDLES_DIR.iterdir()):
         if not bundle_dir.is_dir():
@@ -145,7 +145,7 @@ def main():
     old_dev = read_json(DEV_OUT, {}) or {}
     app_names = read_json(APP_NAMES_PATH, {}) or {}
 
-    new_stable, new_dev = build_sources(app_names)
+    new_stable, new_dev = build_bundles(app_names)
 
     write_json(STABLE_OUT, new_stable)
     write_json(DEV_OUT, new_dev)
@@ -153,7 +153,7 @@ def main():
 
     is_first_run = not any(e.get("apps") for e in old_stable.values())
     if is_first_run:
-        print("Initialized sources.")
+        print("Initialized bundles.")
         return
 
     # Stable changelog: new_stable vs old_stable
@@ -175,7 +175,7 @@ def main():
         CHANGELOG_PRE_PATH.write_text(pre_notes + "\n", encoding="utf8")
         print("Pre-release changelog created.")
 
-    print("Updated sources.")
+    print("Updated bundles.")
 
 
 if __name__ == "__main__":

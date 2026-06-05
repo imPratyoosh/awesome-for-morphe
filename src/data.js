@@ -100,7 +100,7 @@ async function loadSource(key, meta, channel, names) {
   const list = await json(
     new URL(`../patch-bundles/${key}-patch-bundles/${key}-${channel}-patches-list.json`, import.meta.url),
   );
-  const source = {
+  const bundle = {
     key,
     repo: meta.repo || "",
     version: list.version || meta.tag || "",
@@ -117,10 +117,10 @@ async function loadSource(key, meta, channel, names) {
       return {
         id: `${patchId}:${targetIndex}`,
         patchId,
-        sourceKey: key,
-        repo: source.repo,
-        sourceVersion: source.version,
-        sourceCreatedAt: source.createdAt,
+        bundleKey: key,
+        repo: bundle.repo,
+        bundleVersion: bundle.version,
+        bundleCreatedAt: bundle.createdAt,
         patchName: patch.name || "Unnamed patch",
         description: patch.description || "",
         packageName,
@@ -128,13 +128,18 @@ async function loadSource(key, meta, channel, names) {
         versions: target.versions,
         enabled: patch.use ?? patch.default ?? true,
         options: Array.isArray(patch.options) ? patch.options : [],
-        searchText: [
+        searchAppsText: [
           key,
-          source.repo,
-          patch.name,
-          patch.description,
+          bundle.repo,
           packageName,
           name,
+        ]
+          .filter(Boolean)
+          .join(" ")
+          .toLowerCase(),
+        searchPatchesText: [
+          patch.name,
+          patch.description,
           ...(Array.isArray(patch.options) ? patch.options : []).flatMap((opt) => [
             opt.title,
             opt.key,
@@ -148,7 +153,7 @@ async function loadSource(key, meta, channel, names) {
     });
   });
 
-  return { source, rows };
+  return { bundle, rows };
 }
 
 export async function loadChannelData(channelInput) {
@@ -157,20 +162,20 @@ export async function loadChannelData(channelInput) {
 
   const promise = Promise.all([
     json(new URL("./app-names.json", import.meta.url)),
-    json(new URL(`./sources-${channel}.json`, import.meta.url)),
-  ]).then(async ([names, sources]) => {
+    json(new URL(`./bundles-${channel}.json`, import.meta.url)),
+  ]).then(async ([names, bundles]) => {
     const loaded = await Promise.all(
-      Object.entries(sources)
+      Object.entries(bundles)
         .sort(([a], [b]) => a.localeCompare(b))
         .map(([key, meta]) => loadSource(key, meta, channel, names)),
     );
-    const sourceList = loaded.map((item) => item.source);
+    const bundleList = loaded.map((item) => item.bundle);
 
     return {
       channel,
-      sources: sourceList,
+      bundles: bundleList,
       rows: loaded.flatMap((item) => item.rows),
-      sourceMap: Object.fromEntries(sourceList.map((source) => [source.key, source])),
+      bundleMap: Object.fromEntries(bundleList.map((bundle) => [bundle.key, bundle])),
     };
   });
 
@@ -179,9 +184,11 @@ export async function loadChannelData(channelInput) {
 }
 
 export function filterRows(data, filters) {
-  const words = filters.query.split(/\s+/).map(simplify).filter(Boolean);
+  const appWords = (filters.query || "").split(/\s+/).map(simplify).filter(Boolean);
+  const patchWords = (filters.patchQuery || "").split(/\s+/).map(simplify).filter(Boolean);
+
   return data.rows.filter((row) => {
-    if (filters.source && row.sourceKey !== filters.source) return false;
+    if (filters.bundle && row.bundleKey !== filters.bundle) return false;
     if (filters.app) {
       if (filters.app === "universal") {
         if (row.packageName) return false;
@@ -189,19 +196,25 @@ export function filterRows(data, filters) {
         return false;
       }
     }
-    if (words.length === 0) return true;
-    const searchTarget = simplify(row.searchText);
-    return words.every((word) => searchTarget.includes(word));
+    if (appWords.length > 0) {
+      const searchTarget = simplify(row.searchAppsText);
+      if (!appWords.every((word) => searchTarget.includes(word))) return false;
+    }
+    if (patchWords.length > 0) {
+      const searchTarget = simplify(row.searchPatchesText);
+      if (!patchWords.every((word) => searchTarget.includes(word))) return false;
+    }
+    return true;
   });
 }
 
 export function getFilterOptions(rows) {
   const appMap = new Map();
-  const sourceSet = new Set();
+  const bundleSet = new Set();
   let hasUniversal = false;
 
   for (const row of rows) {
-    sourceSet.add(row.sourceKey);
+    bundleSet.add(row.bundleKey);
     if (row.packageName) {
       if (!appMap.has(row.packageName)) appMap.set(row.packageName, row.appName);
     } else {
@@ -214,11 +227,11 @@ export function getFilterOptions(rows) {
     .sort((a, b) => a.label.localeCompare(b.label) || a.value.localeCompare(b.value));
 
   if (hasUniversal) {
-    appOptions.unshift({ value: "universal", label: "Any app" });
+    appOptions.unshift({ value: "universal", label: "📱 Any app" });
   }
 
   return {
-    sourceOptions: Array.from(sourceSet)
+    bundleOptions: Array.from(bundleSet)
       .sort((a, b) => a.localeCompare(b))
       .map((value) => ({ value, label: value })),
     appOptions,
@@ -227,7 +240,7 @@ export function getFilterOptions(rows) {
 
 export function summarizeRows(rows) {
   return {
-    sources: new Set(rows.map((row) => row.sourceKey)).size,
+    bundles: new Set(rows.map((row) => row.bundleKey)).size,
     patches: new Set(rows.map((row) => row.patchId)).size,
     apps: new Set(rows.filter((row) => row.packageName).map((row) => row.packageName)).size,
   };
