@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-06-04T23:28:38",
-  "description": "## [1.4.45](https://github.com/ajstrick81/morphe-androidtv-patches/compare/v1.4.44...v1.4.45) (2026-06-04)\n\n\n### Bug Fixes\n\n* force new version update Fingerprints.kt ([201af65](https://github.com/ajstrick81/morphe-androidtv-patches/commit/201af65cb7aa8251c5da327e503fbf7138ae23a5))\n\n\n\n",
-  "download_url": "https://github.com/ajstrick81/morphe-androidtv-patches/releases/download/v1.4.45/patches-1.4.45.mpp",
+  "created_at": "2026-06-05T22:44:19",
+  "description": "## [1.4.47](https://github.com/ajstrick81/morphe-androidtv-patches/compare/v1.4.46...v1.4.47) (2026-06-05)\n\n\n### Bug Fixes\n\n* Refactor ad playback state handling in SkipAdsPatch ([cb0b454](https://github.com/ajstrick81/morphe-androidtv-patches/commit/cb0b454f85b9cef1e8b8625f425320d8fc160686))\n\n\n\n",
+  "download_url": "https://github.com/ajstrick81/morphe-androidtv-patches/releases/download/v1.4.47/patches-1.4.47.mpp",
   "signature_download_url": "N/A",
-  "version": "v1.4.45"
+  "version": "v1.4.47"
 }

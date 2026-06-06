@@ -232,6 +232,15 @@
       "cz.mafra.jizdnirady"
     ]
   },
+  "lain": {
+    "repo": "kiraio-moe/Lain-Patches",
+    "tag": "v1.0.0-dev.3",
+    "created_at": "2026-06-05T04:19:30",
+    "apps": [
+      "cn.adonet.proxyevery",
+      "com.flavionet.android.camera.lite"
+    ]
+  },
   "loskutov": {
     "repo": "loskutov/youtube-domain-fronting-patch",
     "tag": "v1.0.1-dev.1",
@@ -243,8 +252,8 @@
   },
   "morphe": {
     "repo": "MorpheApp/morphe-patches",
-    "tag": "v1.31.0-dev.5",
-    "created_at": "2026-06-04T11:12:25",
+    "tag": "v1.31.0-dev.6",
+    "created_at": "2026-06-05T07:38:04",
     "apps": [
       "com.google.android.apps.youtube.music",
       "com.google.android.youtube",
@@ -256,19 +265,26 @@
     "tag": "v1.18.1-dev.1",
     "created_at": "2026-06-03T16:02:43",
     "apps": [
+      "app.vinztech.trackit",
       "ch.protonvpn.android",
       "com.arlosoft.macrodroid",
+      "com.bytesong.missionalarm",
+      "com.celestron.skybox",
+      "com.cricbuzz.android",
       "com.cv.docscanner",
       "com.eyecon.global",
       "com.frontrow.vlog",
+      "com.lumina.wallpapers",
       "com.markOne.ss_app",
       "com.overlook.android.fing",
       "com.solid.teleprompter",
       "com.ticktick.task",
       "com.truecaller",
+      "eu.darken.sdmse",
       "in.cricketexchange.app.cricketexchange",
       "in.startv.hotstar",
-      "org.telegram.messenger.web"
+      "org.telegram.messenger.web",
+      "org.telegram.plus"
     ]
   },
   "patcheddit": {
@@ -298,8 +314,8 @@
   },
   "piko": {
     "repo": "crimera/piko",
-    "tag": "v3.5.0-dev.4",
-    "created_at": "2026-05-31T11:33:48",
+    "tag": "v3.5.0-dev.5",
+    "created_at": "2026-06-05T16:27:03",
     "apps": [
       "com.instagram.android",
       "com.twitter.android"
