@@ -27,8 +27,9 @@ def write_json(path, data):
 
 def get_info_bundle(bundle_json):
     download_url = bundle_json["download_url"].split("/")
+    repo_url = "/".join(download_url[0:5])
     return (
-        "/".join(download_url[3:5]),
+        repo_url,
         download_url[7],
         bundle_json.get("created_at", ""),
     )

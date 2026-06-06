@@ -1,6 +1,6 @@
 {
   "ImmortalZeus": {
-    "repo": "ImmortalZeus/ImmortalZeus-Morphe-Patches",
+    "repo": "https://github.com/ImmortalZeus/ImmortalZeus-Morphe-Patches",
     "tag": "v1.0.0-dev.1",
     "created_at": "2026-05-15T03:20:18",
     "apps": [
@@ -8,7 +8,7 @@
     ]
   },
   "abhis1n": {
-    "repo": "abhis1n/Morphe-Patches",
+    "repo": "https://github.com/abhis1n/Morphe-Patches",
     "tag": "v1.0.0-dev.1",
     "created_at": "2026-04-29T19:35:15",
     "apps": [
@@ -16,7 +16,7 @@
     ]
   },
   "adobo": {
-    "repo": "jkennethcarino/adobo",
+    "repo": "https://github.com/jkennethcarino/adobo",
     "tag": "v1.2.0-dev.2",
     "created_at": "2026-05-03T15:39:50",
     "apps": [
@@ -26,7 +26,7 @@
     ]
   },
   "almewty": {
-    "repo": "Almewty/my-morphe-patches",
+    "repo": "https://github.com/Almewty/my-morphe-patches",
     "tag": "v1.0.0-dev.1",
     "created_at": "2026-01-30T07:54:21",
     "apps": [
@@ -35,7 +35,7 @@
     ]
   },
   "ameen-morphe": {
-    "repo": "ameenalasady/ameen-morphe",
+    "repo": "https://github.com/ameenalasady/ameen-morphe",
     "tag": "v1.1.0-dev.1",
     "created_at": "2026-05-07T22:54:46",
     "apps": [
@@ -44,7 +44,7 @@
     ]
   },
   "ameenalasady": {
-    "repo": "ameenalasady/photogrid-morphe",
+    "repo": "https://github.com/ameenalasady/photogrid-morphe",
     "tag": "v1.0.1-dev.1",
     "created_at": "2026-05-04T02:02:43",
     "apps": [
@@ -52,7 +52,7 @@
     ]
   },
   "amplerevanced": {
-    "repo": "AmpleReVanced/revanced-patches",
+    "repo": "https://github.com/AmpleReVanced/revanced-patches",
     "tag": "v1.1.0-dev.11",
     "created_at": "2026-05-25T15:59:54",
     "apps": [
@@ -63,7 +63,7 @@
     ]
   },
   "anddea": {
-    "repo": "anddea/revanced-patches",
+    "repo": "https://github.com/anddea/revanced-patches",
     "tag": "v4.1.0-dev.4",
     "created_at": "2026-06-04T17:30:28",
     "apps": [
@@ -72,7 +72,7 @@
     ]
   },
   "anddea-morphed": {
-    "repo": "wchill/anddea-rvx-morphed",
+    "repo": "https://github.com/wchill/anddea-rvx-morphed",
     "tag": "v3.17.0-dev.2",
     "created_at": "2026-02-11T15:55:58",
     "apps": [
@@ -84,7 +84,7 @@
     ]
   },
   "andronedev": {
-    "repo": "andronedev/morphe-patches",
+    "repo": "https://github.com/andronedev/morphe-patches",
     "tag": "v2.3.0-dev.1",
     "created_at": "2026-04-01T21:09:44",
     "apps": [
@@ -92,7 +92,7 @@
     ]
   },
   "ariecos": {
-    "repo": "ariecos/gemini-patches",
+    "repo": "https://github.com/ariecos/gemini-patches",
     "tag": "v1.1.16",
     "created_at": "2026-05-16T23:26:44",
     "apps": [
@@ -101,7 +101,7 @@
     ]
   },
   "bholeykabhakt": {
-    "repo": "BholeyKaBhakt/android-patches-xtra",
+    "repo": "https://github.com/BholeyKaBhakt/android-patches-xtra",
     "tag": "v2.0.4-dev.1",
     "created_at": "2026-05-20T08:17:53",
     "apps": [
@@ -111,7 +111,7 @@
     ]
   },
   "binarymend": {
-    "repo": "binarymend/morphe-patches",
+    "repo": "https://github.com/binarymend/morphe-patches",
     "tag": "v1.3.1-dev.1",
     "created_at": "2026-04-26T08:22:08",
     "apps": [
@@ -125,7 +125,7 @@
     ]
   },
   "brosssh": {
-    "repo": "brosssh/morphe-patches",
+    "repo": "https://github.com/brosssh/morphe-patches",
     "tag": "v2.6.3-dev.1",
     "created_at": "2026-06-02T20:30:36",
     "apps": [
@@ -137,7 +137,7 @@
     ]
   },
   "docbt": {
-    "repo": "docbt/patched-up",
+    "repo": "https://github.com/docbt/patched-up",
     "tag": "v1.3.1-dev.2",
     "created_at": "2026-03-21T15:09:32",
     "apps": [
@@ -146,7 +146,7 @@
     ]
   },
   "hoo-dles": {
-    "repo": "hoo-dles/morphe-patches",
+    "repo": "https://github.com/hoo-dles/morphe-patches",
     "tag": "v1.35.0-dev.1",
     "created_at": "2026-05-29T06:04:49",
     "apps": [
@@ -201,7 +201,7 @@
     ]
   },
   "icysymmetra-tiktok": {
-    "repo": "icysymmetra/tiktok-patches-for-morphe",
+    "repo": "https://github.com/icysymmetra/tiktok-patches-for-morphe",
     "tag": "v0.2.0-dev.1",
     "created_at": "2026-06-04T22:48:34",
     "apps": [
@@ -209,7 +209,7 @@
     ]
   },
   "imxeren": {
-    "repo": "IMXEren/mix-patches",
+    "repo": "https://github.com/IMXEren/mix-patches",
     "tag": "v1.2.0-dev.1",
     "created_at": "2026-03-30T01:20:04",
     "apps": [
@@ -217,7 +217,7 @@
     ]
   },
   "jasonwu1994": {
-    "repo": "jasonwu1994/Gboard-patches",
+    "repo": "https://github.com/jasonwu1994/Gboard-patches",
     "tag": "v1.5.0-dev.3",
     "created_at": "2026-05-19T20:59:56",
     "apps": [
@@ -225,7 +225,7 @@
     ]
   },
   "kolaron": {
-    "repo": "kolaron/morphe-patches",
+    "repo": "https://github.com/kolaron/morphe-patches",
     "tag": "v1.1.0-dev.1",
     "created_at": "2026-05-15T06:39:27",
     "apps": [
@@ -233,7 +233,7 @@
     ]
   },
   "lain": {
-    "repo": "kiraio-moe/Lain-Patches",
+    "repo": "https://github.com/kiraio-moe/Lain-Patches",
     "tag": "v1.0.0-dev.3",
     "created_at": "2026-06-05T04:19:30",
     "apps": [
@@ -242,7 +242,7 @@
     ]
   },
   "loskutov": {
-    "repo": "loskutov/youtube-domain-fronting-patch",
+    "repo": "https://github.com/loskutov/youtube-domain-fronting-patch",
     "tag": "v1.0.1-dev.1",
     "created_at": "2026-04-28T23:06:10",
     "apps": [
@@ -251,7 +251,7 @@
     ]
   },
   "morphe": {
-    "repo": "MorpheApp/morphe-patches",
+    "repo": "https://github.com/MorpheApp/morphe-patches",
     "tag": "v1.31.0-dev.6",
     "created_at": "2026-06-05T07:38:04",
     "apps": [
@@ -261,7 +261,7 @@
     ]
   },
   "paresh-maheshwari": {
-    "repo": "Paresh-Maheshwari/paresh-patches",
+    "repo": "https://gitlab.com/Paresh-Maheshwari/paresh-patches",
     "tag": "v1.18.1-dev.1",
     "created_at": "2026-06-03T16:02:43",
     "apps": [
@@ -288,7 +288,7 @@
     ]
   },
   "patcheddit": {
-    "repo": "wchill/patcheddit",
+    "repo": "https://github.com/wchill/patcheddit",
     "tag": "v1.4.1-dev.1",
     "created_at": "2026-04-09T06:59:40",
     "apps": [
@@ -313,7 +313,7 @@
     ]
   },
   "piko": {
-    "repo": "crimera/piko",
+    "repo": "https://github.com/crimera/piko",
     "tag": "v3.5.0-dev.5",
     "created_at": "2026-06-05T16:27:03",
     "apps": [
@@ -322,7 +322,7 @@
     ]
   },
   "polka-bear": {
-    "repo": "polka-bear/morphe-patches",
+    "repo": "https://github.com/polka-bear/morphe-patches",
     "tag": "v1.4.1-dev.1",
     "created_at": "2026-04-14T10:04:57",
     "apps": [
@@ -331,7 +331,7 @@
     ]
   },
   "rabilrbl": {
-    "repo": "rabilrbl/fluffy-patches",
+    "repo": "https://github.com/rabilrbl/fluffy-patches",
     "tag": "v1.0.0-dev.19",
     "created_at": "2026-06-04T10:28:44",
     "apps": [
@@ -339,7 +339,7 @@
     ]
   },
   "rookieenough": {
-    "repo": "RookieEnough/De-Vanced",
+    "repo": "https://github.com/RookieEnough/De-Vanced",
     "tag": "v1.0.3-dev.1",
     "created_at": "2026-04-02T03:58:26",
     "apps": [
@@ -380,7 +380,7 @@
     ]
   },
   "rushiranpise": {
-    "repo": "rushiranpise/morphe-patches",
+    "repo": "https://github.com/rushiranpise/morphe-patches",
     "tag": "v1.3.0-dev.1",
     "created_at": "2026-06-03T01:56:07",
     "apps": [
@@ -394,7 +394,7 @@
     ]
   },
   "rvx-morphed": {
-    "repo": "wchill/rvx-morphed",
+    "repo": "https://github.com/wchill/rvx-morphed",
     "tag": "v5.16.4-dev.1",
     "created_at": "2026-03-05T13:52:42",
     "apps": [
@@ -403,7 +403,7 @@
     ]
   },
   "xob0t": {
-    "repo": "xob0t/morphe-patches",
+    "repo": "https://github.com/xob0t/morphe-patches",
     "tag": "v1.3.7-dev.1",
     "created_at": "2026-05-31T11:49:31",
     "apps": [

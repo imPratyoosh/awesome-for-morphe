@@ -251,9 +251,26 @@ createApp({
     };
     const countBy = (items, keyFn) => new Set(items.map(keyFn).filter(Boolean)).size;
     const playUrl = (pkg) => `https://play.google.com/store/apps/details?id=${encodeURIComponent(pkg)}`;
-    const releaseUrl = (s) =>
-      s.repo && s.tag ? `https://github.com/${s.repo}/releases/tag/${encodeURIComponent(s.tag)}` : "";
-    const morpheUrl = (repo) => `https://morphe.software/add-bundle?github=${encodeURI(repo)}`;
+    const getRepoInfo = (repoUrl) => {
+      if (!repoUrl) return { isGitLab: false, path: "" };
+      const isGitLab = repoUrl.includes("gitlab.com");
+      const path = repoUrl.split("/").slice(3, 5).join("/");
+      return { isGitLab, path };
+    };
+    const releaseUrl = (s) => {
+      if (!s.repo || !s.tag) return "";
+      const info = getRepoInfo(s.repo);
+      if (info.isGitLab) {
+        return `${s.repo}/-/releases/${encodeURIComponent(s.tag)}`;
+      }
+      return `${s.repo}/releases/tag/${encodeURIComponent(s.tag)}`;
+    };
+    const morpheUrl = (repoUrl) => {
+      const info = getRepoInfo(repoUrl);
+      const param = info.isGitLab ? "gitlab" : "github";
+      return `https://morphe.software/add-source?${param}=${encodeURI(info.path)}`;
+    };
+
 
     const resetFilters = () => {
       query.value = "";

@@ -275,11 +275,13 @@
                     </template>
                   </div>
                   <div class="flex items-center justify-center w-full md:w-auto md:justify-start gap-2">
-                    <a v-if="group.bundle.repo" :href="'https://github.com/' + group.bundle.repo" target="_blank"
+                    <a v-if="group.bundle.repo" :href="group.bundle.repo" target="_blank"
                       rel="noreferrer" @click.stop
-                      class="text-white hover:text-blue transition-colors flex items-center justify-center w-8 h-8"
-                      aria-label="GitHub" title="GitHub">
-                      <i class="fa-brands fa-github text-2xl leading-none"></i>
+                      class="transition-colors flex items-center justify-center w-8 h-8"
+                      :class="group.bundle.repo.includes('gitlab.com') ? 'text-[#FC6D26] hover:text-[#e24329]' : 'text-white hover:text-blue'"
+                      :aria-label="group.bundle.repo.includes('gitlab.com') ? 'GitLab' : 'GitHub'"
+                      :title="group.bundle.repo.includes('gitlab.com') ? 'GitLab' : 'GitHub'">
+                      <i :class="group.bundle.repo.includes('gitlab.com') ? 'fa-brands fa-gitlab' : 'fa-brands fa-github'" class="text-2xl leading-none"></i>
                     </a>
                     <a v-if="group.bundle.repo" :href="morpheUrl(group.bundle.repo)" target="_blank" rel="noreferrer"
                       @click.stop
