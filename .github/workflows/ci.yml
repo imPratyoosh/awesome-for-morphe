@@ -40,12 +40,12 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-          python src/update-sources.py
+          python src/update-bundles.py
                     
           TAG=$(date +'%Y.%m.%d')
           DAY=$(date +'%b %d, %Y')
 
-          git add patch-bundles/** src/sources-stable.json src/sources-dev.json src/app-names.json
+          git add patch-bundles/** src/bundles-stable.json src/bundles-dev.json src/app-names.json
           git commit -m "Sync patch-bundles (${TAG})"
           git push origin HEAD:gh-pages
 
