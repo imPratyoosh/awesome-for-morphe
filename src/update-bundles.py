@@ -103,7 +103,7 @@ def build_notes(label, old_bundles, new_bundles, app_names):
             )
     sections = []
     if new_bundles_notes:
-        sections.append(f"# 🧩 New Patch Bundles ({label})\n" + "\n".join(new_bundles_notes))
+        sections.append(f"# 🧩 New Bundles ({label})\n" + "\n".join(new_bundles_notes))
     if new_apps_groups:
         sections.append(f"# 📱 New Apps ({label})\n" + "\n\n".join(new_apps_groups))
     return "\n\n".join(sections)
