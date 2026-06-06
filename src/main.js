@@ -1,6 +1,6 @@
 // Copyright (c) 2026 nvbangg (github.com/nvbangg)
 
-import { createApp, ref, computed, onMounted, watch, reactive } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
+import { createApp, ref, computed, onMounted, watch, reactive, nextTick } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
 import { filterRows, getFilterOptions, loadChannelData, normalizeChannel, summarizeRows } from "./data.js";
 
 const DEFAULT_CHANNEL = "stable";
@@ -189,6 +189,12 @@ createApp({
       });
       if (!isCurrentlyExpanded) {
         expandedOptions.add(clickedKey);
+        nextTick(() => {
+          const btn = document.getElementById('tab_' + groupKey + '_' + clickedApp.id);
+          if (btn) {
+            btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+          }
+        });
       }
     };
 

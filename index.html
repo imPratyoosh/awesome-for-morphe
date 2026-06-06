@@ -103,6 +103,25 @@
       border-radius: 3px;
     }
 
+    .apps-scroll {
+      scrollbar-width: thin;
+      scrollbar-color: #3F3F46 rgba(255, 255, 255, 0.05);
+    }
+
+    .apps-scroll::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .apps-scroll::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 3px;
+    }
+
+    .apps-scroll::-webkit-scrollbar-thumb {
+      background: #3F3F46;
+      border-radius: 3px;
+    }
+
     @keyframes slideInLeft {
       from {
         opacity: 0.5;
@@ -232,12 +251,12 @@
       </div>
     </section>
 
-    <main class="max-w-4xl mx-auto px-3 py-4 pb-16">
+    <main class="max-w-4xl mx-auto px-0 sm:px-3 py-4 pb-16">
       <div>
         <div v-if="isLoading" class="grid min-h-[220px] place-items-center text-light">Loading {{ channel }} data...
         </div>
         <div v-else-if="errorMsg" class="grid min-h-[220px] place-items-center">
-          <div class="text-center p-8 bg-gray/40 border border-lightGray rounded-2xl shadow-sm">
+          <div class="text-center p-8 bg-gray/40 border border-lightGray rounded-2xl shadow-sm mx-3 sm:mx-0">
             <h2 class="text-lg font-bold mb-2">Could not load data</h2>
             <p class="text-light">{{ errorMsg }}</p>
           </div>
@@ -245,7 +264,7 @@
 
         <div v-else>
           <div v-if="!bundlesGroups.length" class="grid min-h-[220px] place-items-center">
-            <div class="text-center p-8 bg-gray/40 border border-lightGray rounded-2xl max-w-lg w-full shadow-sm">
+            <div class="text-center p-8 bg-gray/40 border border-lightGray rounded-2xl max-w-lg w-auto sm:w-full mx-3 sm:mx-0 shadow-sm">
               <h2 class="text-lg font-bold mb-2">No patch bundles found</h2>
               <p class="text-light mb-4">Try changing the search or filters.</p>
               <button @click="resetFilters"
@@ -257,7 +276,7 @@
           <div v-else class="grid gap-4">
             <div v-for="group in bundlesGroups" :key="group.key"
               class="bg-dark border-2 border-lightGray rounded-2xl overflow-hidden group/bundle shadow-sm flex flex-col">
-              <div @click="toggleBundle(group)" class="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 p-4 cursor-pointer select-none">
+              <div @click="toggleBundle(group)" class="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 py-2 px-4 cursor-pointer">
                 <span
                   class="flex flex-wrap items-center justify-center md:justify-start gap-2 text-light shrink-0 w-full md:w-auto">
                   <div class="flex items-center justify-center md:justify-start gap-2 w-full md:w-auto">
@@ -303,12 +322,13 @@
 
               <div class="border-t-2 border-lightGray bg-dark shadow-inner flex flex-col">
                 <template v-for="appsList in [group.appsList]">
-                  <div class="flex overflow-x-auto gap-2.5 py-2 px-3 border-b border-lightGray" style="scrollbar-width: thin;">
+                  <div class="flex overflow-x-auto gap-1.5 py-1 px-3 border-b border-lightGray" style="scrollbar-width: thin;">
                     <button v-for="(app, index) in appsList"
                       :key="app.id"
+                      :id="'tab_' + group.key + '_' + app.id"
                       @click.stop="selectApp(group.key, app, appsList)"
-                      class="px-3 py-1 rounded-lg text-sm font-bold whitespace-nowrap transition-colors border outline-none"
-                      :class="expandedOptions.has('app_' + group.key + '_' + app.id) ? 'bg-transparent text-blue border-blue' : 'bg-dark text-white border-white/10 hover:border-white/30'">
+                      class="px-1.5 py-1 rounded-lg text-xs font-bold whitespace-nowrap transition-colors border-2 outline-none"
+                      :class="expandedOptions.has('app_' + group.key + '_' + app.id) ? 'bg-transparent text-blue border-blue' : 'bg-dark text-white border-lightGray hover:border-white/30'">
                       {{ (!app.appName || app.appName === 'Unspecified') ? 'Any app' : app.appName }}
                     </button>
                   </div>
@@ -329,25 +349,21 @@
                         </template>
                       </div>
                       
-                      <div class="flex flex-col gap-1.5 mt-1 max-h-[60vh] overflow-y-auto pr-1.5 py-0.5 patches-scroll">
+                      <div class="flex flex-col gap-1.5 mt-1 max-h-[50vh] overflow-y-auto pr-1.5 py-0.5 patches-scroll">
                         <div v-for="patch in group.patches.filter(p => p.apps.some(a => (a.packageName || a.appName || 'any') === (app.packageName || app.appName || 'any')))"
                           :key="patch.id"
                           @click="patch.options.length && toggleOptions(patch.id)"
-                          class="bg-gray py-2 px-3 rounded-xl border border-lightGray shadow-sm flex flex-col"
-                          :class="{'cursor-pointer select-none': patch.options.length}">
-                          <div class="flex items-start justify-between gap-2 mb-0.5">
-                            <div class="flex items-center gap-2 flex-wrap">
+                          class="bg-gray py-1.5 px-3 rounded-xl border border-lightGray shadow-sm flex flex-col"
+                          :class="{'cursor-pointer': patch.options.length}">
+                          <div class="flex flex-wrap items-start justify-between gap-2 mb-0.5">
+                            <div class="flex items-center gap-2 flex-wrap min-w-0">
                               <strong class="font-bold text-white text-sm">{{ patch.patchName }}</strong>
                               <span v-if="!patch.enabled" class="px-1.5 py-0.5 text-[10px] text-yellow bg-yellow/10 rounded-full font-bold">off</span>
+                              <button v-if="patch.options.length" @click.stop="toggleOptions(patch.id)" class="text-light hover:text-white px-1 shrink-0" :title="expandedOptions.has(patch.id) ? 'Hide options' : 'Show options'">
+                                <i class="fa-solid fa-chevron-down transition-transform" :class="{'rotate-180': expandedOptions.has(patch.id)}"></i>
+                              </button>
                             </div>
-                            <button v-if="patch.options.length" @click.stop="toggleOptions(patch.id)" class="text-light hover:text-white px-1 shrink-0" :title="expandedOptions.has(patch.id) ? 'Hide options' : 'Show options'">
-                              <i class="fa-solid fa-chevron-down transition-transform" :class="{'rotate-180': expandedOptions.has(patch.id)}"></i>
-                            </button>
-                          </div>
-                          
-                          <div class="flex flex-wrap items-start justify-between gap-x-4 gap-y-1.5">
-                            <p class="text-xs text-light flex-1 min-w-[200px]">{{ patch.description }}</p>
-                            <div class="flex flex-wrap gap-1 items-center justify-end min-w-0">
+                            <div class="flex flex-wrap gap-1 items-center justify-end min-w-0 ml-auto max-w-full">
                               <template v-for="a in patch.apps.filter(x => (x.packageName || x.appName || 'any') === (app.packageName || app.appName || 'any'))" :key="a.id">
                                 <template v-if="a.versions && a.versions.length">
                                   <template v-if="!expandedVersions.has(a.id)">
@@ -374,7 +390,9 @@
                             </div>
                           </div>
                           
-                          <div v-if="expandedOptions.has(patch.id)" class="mt-2.5 p-2 bg-lightGray border border-lightGray rounded flex flex-col gap-1.5 shadow-inner">
+                          <p class="text-xs text-light">{{ patch.description }}</p>
+                          
+                          <div v-if="expandedOptions.has(patch.id)" class="mt-1.5 py-1 px-2 bg-lightGray border border-lightGray rounded flex flex-col gap-1 shadow-inner">
                             <div v-for="opt in patch.options" :key="opt.key">
                               <strong class="font-bold text-xs text-white block">{{ opt.title || opt.key }}</strong>
                               <p class="text-[10px] text-light">{{ opt.description }}</p>
