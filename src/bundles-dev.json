@@ -17,8 +17,8 @@
   },
   "adobo": {
     "repo": "https://github.com/jkennethcarino/adobo",
-    "tag": "v1.2.0-dev.2",
-    "created_at": "2026-05-03T15:39:50",
+    "tag": "v1.2.0-dev.3",
+    "created_at": "2026-06-06T16:48:10",
     "apps": [
       "com.google.android.inputmethod.latin",
       "com.imdb.mobile",
@@ -53,8 +53,8 @@
   },
   "amplerevanced": {
     "repo": "https://github.com/AmpleReVanced/revanced-patches",
-    "tag": "v1.1.0-dev.11",
-    "created_at": "2026-05-25T15:59:54",
+    "tag": "v1.1.0-dev.12",
+    "created_at": "2026-06-06T15:06:29",
     "apps": [
       "com.dcinside.app.android",
       "com.flexcil.flexcilnote",
@@ -64,8 +64,8 @@
   },
   "anddea": {
     "repo": "https://github.com/anddea/revanced-patches",
-    "tag": "v4.1.0-dev.4",
-    "created_at": "2026-06-04T17:30:28",
+    "tag": "v4.1.0-dev.5",
+    "created_at": "2026-06-06T08:56:15",
     "apps": [
       "com.google.android.apps.youtube.music",
       "com.google.android.youtube"
@@ -252,8 +252,8 @@
   },
   "morphe": {
     "repo": "https://github.com/MorpheApp/morphe-patches",
-    "tag": "v1.31.0-dev.6",
-    "created_at": "2026-06-05T07:38:04",
+    "tag": "v1.31.0-dev.7",
+    "created_at": "2026-06-06T08:29:28",
     "apps": [
       "com.google.android.apps.youtube.music",
       "com.google.android.youtube",
