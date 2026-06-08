@@ -147,8 +147,8 @@
   },
   "hoo-dles": {
     "repo": "https://github.com/hoo-dles/morphe-patches",
-    "tag": "v1.35.0-dev.1",
-    "created_at": "2026-05-29T06:04:49",
+    "tag": "v1.35.0-dev.3",
+    "created_at": "2026-06-07T19:32:52",
     "apps": [
       "app.ttmikstories.android",
       "bitpit.launcher",
@@ -234,11 +234,12 @@
   },
   "lain": {
     "repo": "https://github.com/kiraio-moe/Lain-Patches",
-    "tag": "v1.0.0-dev.3",
-    "created_at": "2026-06-05T04:19:30",
+    "tag": "v1.1.0-dev.1",
+    "created_at": "2026-06-07T14:30:54",
     "apps": [
       "cn.adonet.proxyevery",
-      "com.flavionet.android.camera.lite"
+      "com.flavionet.android.camera.lite",
+      "com.flavionet.android.cinema.lite"
     ]
   },
   "loskutov": {
@@ -252,8 +253,8 @@
   },
   "morphe": {
     "repo": "https://github.com/MorpheApp/morphe-patches",
-    "tag": "v1.31.0-dev.7",
-    "created_at": "2026-06-06T08:29:28",
+    "tag": "v1.31.0-dev.8",
+    "created_at": "2026-06-07T08:13:09",
     "apps": [
       "com.google.android.apps.youtube.music",
       "com.google.android.youtube",
