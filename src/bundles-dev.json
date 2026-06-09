@@ -53,12 +53,13 @@
   },
   "amplerevanced": {
     "repo": "https://github.com/AmpleReVanced/revanced-patches",
-    "tag": "v1.1.0-dev.12",
-    "created_at": "2026-06-06T15:06:29",
+    "tag": "v1.1.0-dev.13",
+    "created_at": "2026-06-08T13:20:47",
     "apps": [
       "com.dcinside.app.android",
       "com.flexcil.flexcilnote",
       "com.kakao.talk",
+      "com.navercorp.game.android.community",
       "com.unicornsoft.android.unicornpro"
     ]
   },
@@ -102,10 +103,11 @@
   },
   "bholeykabhakt": {
     "repo": "https://github.com/BholeyKaBhakt/android-patches-xtra",
-    "tag": "v2.0.4-dev.1",
-    "created_at": "2026-05-20T08:17:53",
+    "tag": "v2.1.0-dev.1",
+    "created_at": "2026-06-08T16:08:30",
     "apps": [
       "com.llamalab.automate",
+      "com.proto.circuitsimulator",
       "com.ttxapps.autosync",
       "org.zwanoo.android.speedtest"
     ]
@@ -253,8 +255,8 @@
   },
   "morphe": {
     "repo": "https://github.com/MorpheApp/morphe-patches",
-    "tag": "v1.31.0-dev.8",
-    "created_at": "2026-06-07T08:13:09",
+    "tag": "v1.31.0-dev.9",
+    "created_at": "2026-06-08T11:25:33",
     "apps": [
       "com.google.android.apps.youtube.music",
       "com.google.android.youtube",
@@ -315,8 +317,8 @@
   },
   "piko": {
     "repo": "https://github.com/crimera/piko",
-    "tag": "v3.5.0-dev.5",
-    "created_at": "2026-06-05T16:27:03",
+    "tag": "v3.5.0-dev.6",
+    "created_at": "2026-06-08T17:23:34",
     "apps": [
       "com.instagram.android",
       "com.twitter.android"
@@ -382,16 +384,19 @@
   },
   "rushiranpise": {
     "repo": "https://github.com/rushiranpise/morphe-patches",
-    "tag": "v1.3.0-dev.1",
-    "created_at": "2026-06-03T01:56:07",
+    "tag": "v1.4.0-dev.3",
+    "created_at": "2026-06-08T09:08:16",
     "apps": [
+      "ai.topicfinder.podcastdiscovery",
       "com.Splitwise.SplitwiseMobile",
       "com.catalinagroup.callrecorder",
       "com.cloudflare.onedotonedotonedotone",
       "com.newsbreak.crimeradar",
+      "com.oasisfeng.greenify",
       "com.saldous.casetracker",
       "sensustech.universal.tv.remote.control",
-      "sp0n.citizen"
+      "sp0n.citizen",
+      "verbosus.pialytic"
     ]
   },
   "rvx-morphed": {
