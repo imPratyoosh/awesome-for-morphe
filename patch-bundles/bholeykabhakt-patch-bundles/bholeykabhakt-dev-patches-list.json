@@ -1,5 +1,5 @@
 {
-    "version": "v2.1.0-dev.1",
+    "version": "v2.4.0-dev.1",
     "patches": [
         {
             "compatiblePackages": [
@@ -15,7 +15,7 @@
                             "description": null,
                             "isExperimental": false,
                             "minSdk": null,
-                            "version": null
+                            "version": "7.0.3"
                         }
                     ]
                 }
@@ -48,7 +48,7 @@
                             "description": null,
                             "isExperimental": false,
                             "minSdk": null,
-                            "version": null
+                            "version": "1.51.1"
                         }
                     ]
                 }
@@ -57,6 +57,14 @@
             "dependencies": [],
             "description": null,
             "name": "Bypass Blocks Limit",
+            "options": []
+        },
+        {
+            "compatiblePackages": null,
+            "default": false,
+            "dependencies": [],
+            "description": null,
+            "name": "Disable Facebook SDK Tracking",
             "options": []
         },
         {
@@ -73,6 +81,31 @@
                     "apkFileType": null,
                     "appIconColor": null,
                     "description": null,
+                    "name": "Sky Tonight",
+                    "packageName": "com.vitotechnology.sky.tonight.map.star.walk",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": null,
+                            "version": "2.5.0"
+                        }
+                    ]
+                }
+            ],
+            "default": false,
+            "dependencies": [],
+            "description": null,
+            "name": "Disable In-App Telemetry",
+            "options": []
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": null,
+                    "appIconColor": null,
+                    "description": null,
                     "name": "Speedtest",
                     "packageName": "org.zwanoo.android.speedtest",
                     "signatures": null,
@@ -81,7 +114,7 @@
                             "description": null,
                             "isExperimental": false,
                             "minSdk": null,
-                            "version": null
+                            "version": "7.0.3"
                         }
                     ]
                 }
@@ -106,63 +139,16 @@
                             "description": null,
                             "isExperimental": false,
                             "minSdk": null,
-                            "version": null
+                            "version": "7.5.10"
                         }
                     ]
                 }
             ],
             "default": true,
-            "dependencies": [],
-            "description": null,
-            "name": "Disable PairIP License Check",
-            "options": []
-        },
-        {
-            "compatiblePackages": [
-                {
-                    "apkFileType": null,
-                    "appIconColor": null,
-                    "description": null,
-                    "name": "Autosync",
-                    "packageName": "com.ttxapps.autosync",
-                    "signatures": null,
-                    "targets": [
-                        {
-                            "description": null,
-                            "isExperimental": false,
-                            "minSdk": null,
-                            "version": null
-                        }
-                    ]
-                }
+            "dependencies": [
+                "BytecodePatch",
+                "BytecodePatch"
             ],
-            "default": true,
-            "dependencies": [],
-            "description": null,
-            "name": "Force Stable Integrity State (Critical)",
-            "options": []
-        },
-        {
-            "compatiblePackages": [
-                {
-                    "apkFileType": null,
-                    "appIconColor": null,
-                    "description": null,
-                    "name": "Autosync",
-                    "packageName": "com.ttxapps.autosync",
-                    "signatures": null,
-                    "targets": [
-                        {
-                            "description": null,
-                            "isExperimental": false,
-                            "minSdk": null,
-                            "version": null
-                        }
-                    ]
-                }
-            ],
-            "default": true,
-            "dependencies": [],
             "description": null,
             "name": "Purchase All Items",
             "options": []
@@ -173,7 +159,7 @@
                     "apkFileType": null,
                     "appIconColor": null,
                     "description": null,
-                    "name": "Circuit Simulator",
+                    "name": "PROTO - circuit simulator",
                     "packageName": "com.proto.circuitsimulator",
                     "signatures": null,
                     "targets": [
@@ -181,7 +167,7 @@
                             "description": null,
                             "isExperimental": false,
                             "minSdk": null,
-                            "version": null
+                            "version": "1.48.0"
                         }
                     ]
                 }
@@ -190,6 +176,31 @@
             "dependencies": [],
             "description": null,
             "name": "Unlock All Features",
+            "options": []
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": null,
+                    "appIconColor": null,
+                    "description": null,
+                    "name": "Sky Tonight",
+                    "packageName": "com.vitotechnology.sky.tonight.map.star.walk",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": null,
+                            "version": "2.5.0"
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [],
+            "description": null,
+            "name": "Unlock Premium",
             "options": []
         }
     ]
