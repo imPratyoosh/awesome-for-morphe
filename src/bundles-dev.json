@@ -65,8 +65,8 @@
   },
   "anddea": {
     "repo": "https://github.com/anddea/revanced-patches",
-    "tag": "v4.1.0-dev.5",
-    "created_at": "2026-06-06T08:56:15",
+    "tag": "v4.1.0-dev.6",
+    "created_at": "2026-06-10T09:25:45",
     "apps": [
       "com.google.android.apps.youtube.music",
       "com.google.android.youtube"
@@ -103,10 +103,11 @@
   },
   "bholeykabhakt": {
     "repo": "https://github.com/BholeyKaBhakt/android-patches-xtra",
-    "tag": "v2.4.0-dev.1",
-    "created_at": "2026-06-09T20:24:06",
+    "tag": "v2.5.0-dev.1",
+    "created_at": "2026-06-10T13:47:03",
     "apps": [
       "com.llamalab.automate",
+      "com.noctuasoftware.stellarium_free",
       "com.proto.circuitsimulator",
       "com.ttxapps.autosync",
       "com.vitotechnology.sky.tonight.map.star.walk",
@@ -235,6 +236,15 @@
       "cz.mafra.jizdnirady"
     ]
   },
+  "kondratjev": {
+    "repo": "https://github.com/kondratjev/morphe-patches",
+    "tag": "v1.1.0-dev.2",
+    "created_at": "2026-06-10T19:45:58",
+    "apps": [
+      "com.lyfta",
+      "xyz.rtrvr.pillo"
+    ]
+  },
   "lain": {
     "repo": "https://github.com/kiraio-moe/Lain-Patches",
     "tag": "v1.1.0-dev.1",
@@ -243,6 +253,14 @@
       "cn.adonet.proxyevery",
       "com.flavionet.android.camera.lite",
       "com.flavionet.android.cinema.lite"
+    ]
+  },
+  "lakaka": {
+    "repo": "https://github.com/LaKakaReal/LaKakaShitPatches",
+    "tag": "v1.1.0-dev.1",
+    "created_at": "2026-06-10T21:01:27",
+    "apps": [
+      "com.jndapp.depth.live.wallpaper"
     ]
   },
   "loskutov": {
@@ -256,8 +274,8 @@
   },
   "morphe": {
     "repo": "https://github.com/MorpheApp/morphe-patches",
-    "tag": "v1.31.0-dev.10",
-    "created_at": "2026-06-09T07:55:24",
+    "tag": "v1.31.0-dev.11",
+    "created_at": "2026-06-10T06:59:50",
     "apps": [
       "com.google.android.apps.youtube.music",
       "com.google.android.youtube",
@@ -385,16 +403,25 @@
   },
   "rushiranpise": {
     "repo": "https://github.com/rushiranpise/morphe-patches",
-    "tag": "v1.4.0-dev.3",
-    "created_at": "2026-06-08T09:08:16",
+    "tag": "v1.5.0-dev.8",
+    "created_at": "2026-06-10T17:18:49",
     "apps": [
       "ai.topicfinder.podcastdiscovery",
       "com.Splitwise.SplitwiseMobile",
       "com.catalinagroup.callrecorder",
       "com.cloudflare.onedotonedotonedotone",
+      "com.iudesk.android.photo.editor",
+      "com.javiersantos.mlmanager",
+      "com.mobond.mindicator",
       "com.newsbreak.crimeradar",
       "com.oasisfeng.greenify",
+      "com.rarlab.rar",
       "com.saldous.casetracker",
+      "com.tafayor.hibernator",
+      "com.tafayor.killall",
+      "com.twtapp",
+      "com.yatrirailways.yatri",
+      "it.mirko.beta",
       "sensustech.universal.tv.remote.control",
       "sp0n.citizen",
       "verbosus.pialytic"

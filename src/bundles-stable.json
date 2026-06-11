@@ -33,16 +33,10 @@
       "com.reddit.frontpage"
     ]
   },
-  "ajstrick81": {
-    "repo": "https://github.com/ajstrick81/peacock-atv-patches",
-    "tag": "v1.6.40",
-    "created_at": "2026-04-22T20:22:02",
-    "apps": []
-  },
   "ajstrick81-androidtv": {
     "repo": "https://github.com/ajstrick81/morphe-androidtv-patches",
-    "tag": "v1.4.52",
-    "created_at": "2026-06-09T23:44:59",
+    "tag": "v1.4.55",
+    "created_at": "2026-06-11T00:02:20",
     "apps": [
       "com.amazon.amazonvideo.livingroom",
       "com.cbs.ott",
@@ -110,10 +104,11 @@
   },
   "bholeykabhakt": {
     "repo": "https://github.com/BholeyKaBhakt/android-patches-xtra",
-    "tag": "v2.3.1",
-    "created_at": "2026-06-09T17:06:15",
+    "tag": "v2.5.0",
+    "created_at": "2026-06-10T13:54:00",
     "apps": [
       "com.llamalab.automate",
+      "com.noctuasoftware.stellarium_free",
       "com.proto.circuitsimulator",
       "com.ttxapps.autosync",
       "com.vitotechnology.sky.tonight.map.star.walk",
@@ -146,6 +141,14 @@
       "fr.tramb.park4night"
     ]
   },
+  "chiggi": {
+    "repo": "https://github.com/durgesh0505/chiggi_morphe_patches",
+    "tag": "v1.2.1",
+    "created_at": "2026-05-30T23:07:12",
+    "apps": [
+      "com.sonyliv"
+    ]
+  },
   "docbt": {
     "repo": "https://github.com/docbt/patched-up",
     "tag": "v1.8.0",
@@ -161,6 +164,16 @@
     "created_at": "2026-06-06T06:45:48",
     "apps": [
       "com.microsoft.emmx"
+    ]
+  },
+  "ee-morphe": {
+    "repo": "https://gitlab.com/early.egg3707/ee-morphe-patches",
+    "tag": "v1.2.1",
+    "created_at": "2026-06-03T15:27:55",
+    "apps": [
+      "com.byairapp.android",
+      "com.wanderlog.android",
+      "epixler.de.hypnobox_android"
     ]
   },
   "eksi": {
@@ -284,6 +297,15 @@
       "cz.mafra.jizdnirady"
     ]
   },
+  "kondratjev": {
+    "repo": "https://github.com/kondratjev/morphe-patches",
+    "tag": "v1.1.0",
+    "created_at": "2026-06-10T20:12:11",
+    "apps": [
+      "com.lyfta",
+      "xyz.rtrvr.pillo"
+    ]
+  },
   "lain": {
     "repo": "https://github.com/kiraio-moe/Lain-Patches",
     "tag": "v1.0.0",
@@ -291,6 +313,14 @@
     "apps": [
       "cn.adonet.proxyevery",
       "com.flavionet.android.camera.lite"
+    ]
+  },
+  "lakaka": {
+    "repo": "https://github.com/LaKakaReal/LaKakaShitPatches",
+    "tag": "v1.1.0",
+    "created_at": "2026-06-10T21:03:31",
+    "apps": [
+      "com.jndapp.depth.live.wallpaper"
     ]
   },
   "loskutov": {
@@ -380,12 +410,37 @@
       "reddit.news"
     ]
   },
+  "pepper-morphe": {
+    "repo": "https://github.com/PawiX25/pepper-morphe-patches",
+    "tag": "v1.0.1",
+    "created_at": "2026-05-14T00:53:02",
+    "apps": [
+      "Chollometros",
+      "Dealabs",
+      "HotUKDeals",
+      "Mydealz",
+      "Pepper NL",
+      "Pepper PL",
+      "Pepper SE",
+      "Pepper.com",
+      "Preisj\u0102\u00a4ger",
+      "PromoDescuentos"
+    ]
+  },
   "piko": {
     "repo": "https://github.com/crimera/piko",
     "tag": "v3.4.0",
     "created_at": "2026-05-19T12:22:55",
     "apps": [
       "com.instagram.android",
+      "com.twitter.android"
+    ]
+  },
+  "piko-shim": {
+    "repo": "https://gitlab.com/inotia00/piko-shim",
+    "tag": "v1.2.1",
+    "created_at": "2026-06-10T04:23:11",
+    "apps": [
       "com.twitter.android"
     ]
   },
@@ -471,16 +526,25 @@
   },
   "rushiranpise": {
     "repo": "https://github.com/rushiranpise/morphe-patches",
-    "tag": "v1.4.0",
-    "created_at": "2026-06-08T09:12:56",
+    "tag": "v1.5.0",
+    "created_at": "2026-06-10T17:36:38",
     "apps": [
       "ai.topicfinder.podcastdiscovery",
       "com.Splitwise.SplitwiseMobile",
       "com.catalinagroup.callrecorder",
       "com.cloudflare.onedotonedotonedotone",
+      "com.iudesk.android.photo.editor",
+      "com.javiersantos.mlmanager",
+      "com.mobond.mindicator",
       "com.newsbreak.crimeradar",
       "com.oasisfeng.greenify",
+      "com.rarlab.rar",
       "com.saldous.casetracker",
+      "com.tafayor.hibernator",
+      "com.tafayor.killall",
+      "com.twtapp",
+      "com.yatrirailways.yatri",
+      "it.mirko.beta",
       "sensustech.universal.tv.remote.control",
       "sp0n.citizen",
       "verbosus.pialytic"
@@ -497,8 +561,8 @@
   },
   "sjshb57-pairip": {
     "repo": "https://github.com/sjshb57/Pairip-Patches",
-    "tag": "v1.5.0",
-    "created_at": "2026-06-09T10:01:56",
+    "tag": "v1.5.1",
+    "created_at": "2026-06-10T13:00:47",
     "apps": []
   },
   "vladon": {
