@@ -35,8 +35,8 @@
   },
   "ajstrick81-androidtv": {
     "repo": "https://github.com/ajstrick81/morphe-androidtv-patches",
-    "tag": "v1.4.55",
-    "created_at": "2026-06-11T00:02:20",
+    "tag": "v1.4.56",
+    "created_at": "2026-06-11T21:18:35",
     "apps": [
       "com.amazon.amazonvideo.livingroom",
       "com.cbs.ott",
@@ -104,9 +104,10 @@
   },
   "bholeykabhakt": {
     "repo": "https://github.com/BholeyKaBhakt/android-patches-xtra",
-    "tag": "v2.5.0",
-    "created_at": "2026-06-10T13:54:00",
+    "tag": "v2.6.0",
+    "created_at": "2026-06-11T04:01:53",
     "apps": [
+      "com.atmfee",
       "com.llamalab.automate",
       "com.noctuasoftware.stellarium_free",
       "com.proto.circuitsimulator",
@@ -143,8 +144,8 @@
   },
   "chiggi": {
     "repo": "https://github.com/durgesh0505/chiggi_morphe_patches",
-    "tag": "v1.2.1",
-    "created_at": "2026-05-30T23:07:12",
+    "tag": "v1.4.0",
+    "created_at": "2026-06-12T00:07:54",
     "apps": [
       "com.sonyliv"
     ]
@@ -160,8 +161,8 @@
   },
   "edge-morphe": {
     "repo": "https://github.com/quantavil/edge-morphe-patches",
-    "tag": "v1.31.0",
-    "created_at": "2026-06-06T06:45:48",
+    "tag": "v1.32.0",
+    "created_at": "2026-06-11T08:29:13",
     "apps": [
       "com.microsoft.emmx"
     ]
@@ -299,10 +300,12 @@
   },
   "kondratjev": {
     "repo": "https://github.com/kondratjev/morphe-patches",
-    "tag": "v1.1.0",
-    "created_at": "2026-06-10T20:12:11",
+    "tag": "v1.4.0",
+    "created_at": "2026-06-11T20:57:31",
     "apps": [
       "com.lyfta",
+      "com.medisafe.android.client",
+      "ru.vk.store",
       "xyz.rtrvr.pillo"
     ]
   },
@@ -438,8 +441,8 @@
   },
   "piko-shim": {
     "repo": "https://gitlab.com/inotia00/piko-shim",
-    "tag": "v1.2.1",
-    "created_at": "2026-06-10T04:23:11",
+    "tag": "v1.3.0",
+    "created_at": "2026-06-11T03:56:07",
     "apps": [
       "com.twitter.android"
     ]
