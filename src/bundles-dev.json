@@ -53,14 +53,15 @@
   },
   "amplerevanced": {
     "repo": "https://github.com/AmpleReVanced/revanced-patches",
-    "tag": "v1.1.0-dev.13",
-    "created_at": "2026-06-08T13:20:47",
+    "tag": "v1.2.0-dev.2",
+    "created_at": "2026-06-13T08:47:05",
     "apps": [
       "com.dcinside.app.android",
       "com.flexcil.flexcilnote",
       "com.kakao.talk",
       "com.navercorp.game.android.community",
-      "com.unicornsoft.android.unicornpro"
+      "com.unicornsoft.android.unicornpro",
+      "kr.co.nowcom.mobile.afreeca"
     ]
   },
   "anddea": {
@@ -103,8 +104,8 @@
   },
   "bholeykabhakt": {
     "repo": "https://github.com/BholeyKaBhakt/android-patches-xtra",
-    "tag": "v2.7.0-dev.2",
-    "created_at": "2026-06-12T15:47:30",
+    "tag": "v2.7.0-dev.1",
+    "created_at": "2026-06-13T15:32:15",
     "apps": [
       "com.atmfee",
       "com.llamalab.automate",
@@ -153,8 +154,8 @@
   },
   "hk-morphe": {
     "repo": "https://github.com/humzakh/HK-Morphe-Patches",
-    "tag": "v1.0.0-dev.1",
-    "created_at": "2026-06-12T01:30:47",
+    "tag": "v1.4.0-dev.1",
+    "created_at": "2026-06-14T00:36:58",
     "apps": [
       "com.laurencedawson.reddit_sync",
       "com.laurencedawson.reddit_sync.dev",
@@ -163,8 +164,8 @@
   },
   "hoo-dles": {
     "repo": "https://github.com/hoo-dles/morphe-patches",
-    "tag": "v1.35.1-dev.1",
-    "created_at": "2026-06-09T04:05:29",
+    "tag": "v1.36.0-dev.1",
+    "created_at": "2026-06-13T07:44:15",
     "apps": [
       "app.ttmikstories.android",
       "bitpit.launcher",
@@ -190,6 +191,7 @@
       "com.myfitnesspal.android",
       "com.pandora.android",
       "com.qbis.guessthecountry",
+      "com.rp.hypertrophy",
       "com.sbs.diet",
       "com.sbs.train",
       "com.snorelab.app",
@@ -234,8 +236,8 @@
   },
   "jasonwu1994": {
     "repo": "https://github.com/jasonwu1994/Gboard-patches",
-    "tag": "v1.8.0-dev.1",
-    "created_at": "2026-06-09T09:31:30",
+    "tag": "v1.9.0-dev.1",
+    "created_at": "2026-06-13T01:31:22",
     "apps": [
       "com.google.android.inputmethod.latin"
     ]
@@ -250,11 +252,14 @@
   },
   "kondratjev": {
     "repo": "https://github.com/kondratjev/morphe-patches",
-    "tag": "v1.6.0-dev.2",
-    "created_at": "2026-06-12T11:56:41",
+    "tag": "v1.9.0-dev.13",
+    "created_at": "2026-06-13T21:16:04",
     "apps": [
+      "com.fatsecret.android",
       "com.lyfta",
       "com.medisafe.android.client",
+      "com.soundcloud.android",
+      "com.yazio.android",
       "ru.vk.store",
       "xyz.rtrvr.pillo"
     ]
@@ -373,6 +378,14 @@
     "created_at": "2026-06-04T10:28:44",
     "apps": [
       "droom.sleepIfUCan"
+    ]
+  },
+  "realme-link": {
+    "repo": "https://github.com/lyyako/realme-link-patches",
+    "tag": "v1.0.0",
+    "created_at": "2026-06-12T18:29:37",
+    "apps": [
+      "com.realme.link"
     ]
   },
   "rookieenough": {

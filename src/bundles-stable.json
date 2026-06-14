@@ -35,8 +35,8 @@
   },
   "ajstrick81-androidtv": {
     "repo": "https://github.com/ajstrick81/morphe-androidtv-patches",
-    "tag": "v1.4.64",
-    "created_at": "2026-06-13T00:54:38",
+    "tag": "v1.4.68",
+    "created_at": "2026-06-14T00:22:38",
     "apps": [
       "com.amazon.amazonvideo.livingroom",
       "com.cbs.ott",
@@ -68,11 +68,14 @@
   },
   "amplerevanced": {
     "repo": "https://github.com/AmpleReVanced/revanced-patches",
-    "tag": "v1.0.1",
-    "created_at": "2026-05-06T06:44:48",
+    "tag": "v1.1.0",
+    "created_at": "2026-06-13T06:21:09",
     "apps": [
       "com.dcinside.app.android",
-      "com.kakao.talk"
+      "com.flexcil.flexcilnote",
+      "com.kakao.talk",
+      "com.navercorp.game.android.community",
+      "com.unicornsoft.android.unicornpro"
     ]
   },
   "anddea": {
@@ -104,11 +107,12 @@
   },
   "bholeykabhakt": {
     "repo": "https://github.com/BholeyKaBhakt/android-patches-xtra",
-    "tag": "v2.6.1",
-    "created_at": "2026-06-12T14:32:01",
+    "tag": "v2.7.0",
+    "created_at": "2026-06-13T15:35:11",
     "apps": [
       "com.atmfee",
       "com.llamalab.automate",
+      "com.nis.app",
       "com.noctuasoftware.stellarium_free",
       "com.proto.circuitsimulator",
       "com.ttxapps.autosync",
@@ -144,9 +148,10 @@
   },
   "chiggi": {
     "repo": "https://github.com/durgesh0505/chiggi_morphe_patches",
-    "tag": "v1.4.0",
-    "created_at": "2026-06-12T00:07:54",
+    "tag": "v1.7.0",
+    "created_at": "2026-06-14T00:32:49",
     "apps": [
+      "com.fox.foxone",
       "com.sonyliv"
     ]
   },
@@ -195,8 +200,8 @@
   },
   "hk-morphe": {
     "repo": "https://github.com/humzakh/HK-Morphe-Patches",
-    "tag": "v1.0.0",
-    "created_at": "2026-06-12T01:39:39",
+    "tag": "v1.3.0",
+    "created_at": "2026-06-13T22:37:19",
     "apps": [
       "com.laurencedawson.reddit_sync",
       "com.laurencedawson.reddit_sync.dev",
@@ -205,8 +210,8 @@
   },
   "hoo-dles": {
     "repo": "https://github.com/hoo-dles/morphe-patches",
-    "tag": "v1.35.1",
-    "created_at": "2026-06-12T16:13:42",
+    "tag": "v1.36.0",
+    "created_at": "2026-06-13T18:35:32",
     "apps": [
       "app.ttmikstories.android",
       "bitpit.launcher",
@@ -232,6 +237,7 @@
       "com.myfitnesspal.android",
       "com.pandora.android",
       "com.qbis.guessthecountry",
+      "com.rp.hypertrophy",
       "com.sbs.diet",
       "com.sbs.train",
       "com.snorelab.app",
@@ -276,8 +282,8 @@
   },
   "jasonwu1994": {
     "repo": "https://github.com/jasonwu1994/Gboard-patches",
-    "tag": "v1.8.0",
-    "created_at": "2026-06-09T10:53:17",
+    "tag": "v1.9.0",
+    "created_at": "2026-06-13T01:49:32",
     "apps": [
       "com.google.android.inputmethod.latin"
     ]
@@ -310,11 +316,14 @@
   },
   "kondratjev": {
     "repo": "https://github.com/kondratjev/morphe-patches",
-    "tag": "v1.6.0",
-    "created_at": "2026-06-12T12:20:22",
+    "tag": "v1.9.0",
+    "created_at": "2026-06-13T21:24:54",
     "apps": [
+      "com.fatsecret.android",
       "com.lyfta",
       "com.medisafe.android.client",
+      "com.soundcloud.android",
+      "com.yazio.android",
       "ru.vk.store",
       "xyz.rtrvr.pillo"
     ]
@@ -363,8 +372,8 @@
   },
   "morphe": {
     "repo": "https://github.com/MorpheApp/morphe-patches",
-    "tag": "v1.30.0",
-    "created_at": "2026-05-29T07:25:50",
+    "tag": "v1.31.0",
+    "created_at": "2026-06-13T06:31:55",
     "apps": [
       "com.google.android.apps.youtube.music",
       "com.google.android.youtube",
@@ -496,6 +505,14 @@
       "ru.oneme.app"
     ]
   },
+  "realme-link": {
+    "repo": "https://github.com/lyyako/realme-link-patches",
+    "tag": "v1.0.0",
+    "created_at": "2026-06-12T19:32:24",
+    "apps": [
+      "com.realme.link"
+    ]
+  },
   "rookieenough": {
     "repo": "https://github.com/RookieEnough/De-Vanced",
     "tag": "v1.0.4",
@@ -574,8 +591,8 @@
   },
   "sjshb57-pairip": {
     "repo": "https://github.com/sjshb57/Pairip-Patches",
-    "tag": "v1.5.1",
-    "created_at": "2026-06-10T13:00:47",
+    "tag": "v1.6.0",
+    "created_at": "2026-06-13T14:15:10",
     "apps": []
   },
   "vladon": {

@@ -1,5 +1,5 @@
 {
-    "version": "v1.6.0",
+    "version": "v1.9.0",
     "patches": [
         {
             "compatiblePackages": null,
@@ -80,6 +80,33 @@
             "dependencies": [],
             "description": "Disables the periodic Kaspersky background device scan.",
             "name": "Disable background scan",
+            "options": []
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": null,
+                    "appIconColor": "#00897B",
+                    "description": null,
+                    "name": "FatSecret",
+                    "packageName": "com.fatsecret.android",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": null,
+                            "version": "11.5.0.4"
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [
+                "ResourcePatch"
+            ],
+            "description": "Hides the News/Community tab from the bottom navigation.",
+            "name": "Disable community tab",
             "options": []
         },
         {
@@ -171,6 +198,56 @@
             "compatiblePackages": [
                 {
                     "apkFileType": null,
+                    "appIconColor": "#FF5500",
+                    "description": null,
+                    "name": "SoundCloud",
+                    "packageName": "com.soundcloud.android",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": null,
+                            "version": "2026.06.03-release"
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [],
+            "description": "Disables SoundCloud's telemetry system.",
+            "name": "Disable telemetry",
+            "options": []
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": null,
+                    "appIconColor": "#FF5500",
+                    "description": null,
+                    "name": "SoundCloud",
+                    "packageName": "com.soundcloud.android",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": null,
+                            "version": "2026.06.03-release"
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [],
+            "description": "Enables all premium features, hides upsell UI and ads.",
+            "name": "Enable SoundCloud Go+",
+            "options": []
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": null,
                     "appIconColor": "#0077FF",
                     "description": null,
                     "name": "RuStore",
@@ -190,6 +267,33 @@
             "dependencies": [],
             "description": "Removes the login requirement when updating apps.",
             "name": "Skip update auth",
+            "options": []
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": null,
+                    "appIconColor": "#00897B",
+                    "description": null,
+                    "name": "FatSecret",
+                    "packageName": "com.fatsecret.android",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": null,
+                            "version": "11.5.0.4"
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [
+                "ResourcePatch"
+            ],
+            "description": "Unlocks all FatSecret Gold features and hides the Premium tab.",
+            "name": "Unlock Premium",
             "options": []
         },
         {
@@ -266,6 +370,31 @@
             "default": true,
             "dependencies": [],
             "description": "Unlocks premium features and removes ads.",
+            "name": "Unlock Premium",
+            "options": []
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": null,
+                    "appIconColor": "#00C853",
+                    "description": null,
+                    "name": "Yazio",
+                    "packageName": "com.yazio.android",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": null,
+                            "version": "12.87.0"
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [],
+            "description": "Unlocks all Yazio Pro features.",
             "name": "Unlock Premium",
             "options": []
         }
