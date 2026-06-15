@@ -1,5 +1,5 @@
 {
-    "version": "v1.3.0",
+    "version": "v1.3.4",
     "patches": [
         {
             "compatiblePackages": [
@@ -54,8 +54,8 @@
             ],
             "default": true,
             "dependencies": [],
-            "description": "Fixes the Other Discussions feature.",
-            "name": "Fix Other Discussions",
+            "description": "Fixes the \"Other Discussions\" feature.",
+            "name": "Fix \"Other Discussions\"",
             "options": []
         },
         {
@@ -111,74 +111,15 @@
             ],
             "default": true,
             "dependencies": [],
-            "description": "Fixes the random button by fetching from an alternative API.",
-            "name": "Fix random subreddit",
-            "options": []
-        },
-        {
-            "compatiblePackages": [
-                {
-                    "apkFileType": null,
-                    "appIconColor": null,
-                    "description": null,
-                    "name": "Sync for Reddit",
-                    "packageName": "com.laurencedawson.reddit_sync",
-                    "signatures": null,
-                    "targets": [
-                        {
-                            "description": null,
-                            "isExperimental": false,
-                            "minSdk": null,
-                            "version": "v23.06.30-13:39"
-                        }
-                    ]
-                },
-                {
-                    "apkFileType": null,
-                    "appIconColor": null,
-                    "description": null,
-                    "name": "Sync for Reddit Pro",
-                    "packageName": "com.laurencedawson.reddit_sync.pro",
-                    "signatures": null,
-                    "targets": [
-                        {
-                            "description": null,
-                            "isExperimental": false,
-                            "minSdk": null,
-                            "version": null
-                        }
-                    ]
-                },
-                {
-                    "apkFileType": null,
-                    "appIconColor": null,
-                    "description": null,
-                    "name": "Sync for Reddit Dev",
-                    "packageName": "com.laurencedawson.reddit_sync.dev",
-                    "signatures": null,
-                    "targets": [
-                        {
-                            "description": null,
-                            "isExperimental": false,
-                            "minSdk": null,
-                            "version": null
-                        }
-                    ]
-                }
-            ],
-            "default": true,
-            "dependencies": [
-                "BytecodePatch"
-            ],
-            "description": "Fixes the Restore Comment feature (requires Sync Ultra).",
-            "name": "Fix Restore Comment",
+            "description": "Restores random subreddit functionality by fetching from an alternative API.",
+            "name": "Fix r/random",
             "options": []
         },
         {
             "compatiblePackages": null,
-            "default": true,
+            "default": false,
             "dependencies": [],
-            "description": "Enables the predictive back gesture introduced on Android 13.",
+            "description": "Enables the predictive back gesture introduced in Android 13.",
             "name": "Predictive back gesture",
             "options": []
         },
@@ -234,15 +175,72 @@
                 }
             ],
             "default": true,
+            "dependencies": [],
+            "description": "Enables the predictive back gesture with fixes for Reddit Sync.",
+            "name": "Predictive back gesture (Reddit Sync)",
+            "options": []
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": null,
+                    "appIconColor": null,
+                    "description": null,
+                    "name": "Sync for Reddit",
+                    "packageName": "com.laurencedawson.reddit_sync",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": null,
+                            "version": "v23.06.30-13:39"
+                        }
+                    ]
+                },
+                {
+                    "apkFileType": null,
+                    "appIconColor": null,
+                    "description": null,
+                    "name": "Sync for Reddit Pro",
+                    "packageName": "com.laurencedawson.reddit_sync.pro",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": null,
+                            "version": null
+                        }
+                    ]
+                },
+                {
+                    "apkFileType": null,
+                    "appIconColor": null,
+                    "description": null,
+                    "name": "Sync for Reddit Dev",
+                    "packageName": "com.laurencedawson.reddit_sync.dev",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": null,
+                            "version": null
+                        }
+                    ]
+                }
+            ],
+            "default": true,
             "dependencies": [
                 "BytecodePatch"
             ],
-            "description": "Restores functionality of the app by using custom client ID.",
+            "description": "Restores functionality of the app by using custom client ID (default included).",
             "name": "Spoof client",
             "options": [
                 {
                     "default": "yH0aTnJEt6qUgGn835B4vg",
-                    "description": "The Reddit OAuth client ID. Refer to Patcheddit documentation for more information on what to put here.",
+                    "description": "The Reddit OAuth client ID. Refer to Patcheddit documentation for more information on what to put here. Default value is RedReader's client ID.",
                     "key": "client-id",
                     "required": true,
                     "title": "OAuth client ID",
@@ -321,8 +319,10 @@
                 }
             ],
             "default": true,
-            "dependencies": [],
-            "description": "Unlocks Sync Ultra.",
+            "dependencies": [
+                "BytecodePatch"
+            ],
+            "description": "Unlocks Sync Ultra and fixes the \"Restore Comment\" premium feature by fetching from an alternative API.",
             "name": "Unlock Sync Ultra",
             "options": []
         }

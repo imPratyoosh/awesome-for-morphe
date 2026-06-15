@@ -1,5 +1,5 @@
 {
-    "version": "v1.4.68",
+    "version": "v1.4.71",
     "patches": [
         {
             "compatibility": [
@@ -74,17 +74,22 @@
                         {
                             "experimental": false,
                             "version": "16.12.0"
+                        },
+                        {
+                            "experimental": false,
+                            "version": "16.8.0"
                         }
                     ]
                 }
             ],
             "compatiblePackages": {
                 "com.cbs.ott": [
-                    "16.12.0"
+                    "16.12.0",
+                    "16.8.0"
                 ]
             },
             "dependencies": [],
-            "description": "Removes pause ads, pre-roll ads, and mid-roll ads.",
+            "description": "Removes VOD ads and pause ads while preserving live TV.",
             "name": "Paramount+ Android TV",
             "options": [],
             "use": true
@@ -94,7 +99,7 @@
                 {
                     "appIconColor": 1539022,
                     "description": null,
-                    "name": "Prime Video",
+                    "name": "Prime Video Android TV",
                     "packageName": "com.amazon.amazonvideo.livingroom",
                     "targets": [
                         {
@@ -198,7 +203,7 @@
                 {
                     "appIconColor": 1539022,
                     "description": null,
-                    "name": "Prime Video",
+                    "name": "Prime Video Android TV",
                     "packageName": "com.amazon.amazonvideo.livingroom",
                     "targets": [
                         {

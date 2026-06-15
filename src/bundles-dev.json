@@ -17,11 +17,12 @@
   },
   "adobo": {
     "repo": "https://github.com/jkennethcarino/adobo",
-    "tag": "v1.2.0-dev.6",
-    "created_at": "2026-06-12T16:14:04",
+    "tag": "v1.2.0-dev.9",
+    "created_at": "2026-06-14T11:46:04",
     "apps": [
       "com.google.android.inputmethod.latin",
       "com.imdb.mobile",
+      "com.ninegag.android.app",
       "com.reddit.frontpage"
     ]
   },
@@ -104,8 +105,8 @@
   },
   "bholeykabhakt": {
     "repo": "https://github.com/BholeyKaBhakt/android-patches-xtra",
-    "tag": "v2.7.0-dev.1",
-    "created_at": "2026-06-13T15:32:15",
+    "tag": "v2.9.0-dev.1",
+    "created_at": "2026-06-15T10:33:48",
     "apps": [
       "com.atmfee",
       "com.llamalab.automate",
@@ -113,7 +114,9 @@
       "com.noctuasoftware.stellarium_free",
       "com.proto.circuitsimulator",
       "com.ttxapps.autosync",
+      "com.vitotechnology.StarWalk2Free",
       "com.vitotechnology.sky.tonight.map.star.walk",
+      "com.vpn.free.hotspot.secure.vpnify",
       "org.zwanoo.android.speedtest"
     ]
   },
@@ -154,8 +157,8 @@
   },
   "hk-morphe": {
     "repo": "https://github.com/humzakh/HK-Morphe-Patches",
-    "tag": "v1.4.0-dev.1",
-    "created_at": "2026-06-14T00:36:58",
+    "tag": "v1.3.4-dev.1",
+    "created_at": "2026-06-15T04:48:09",
     "apps": [
       "com.laurencedawson.reddit_sync",
       "com.laurencedawson.reddit_sync.dev",
@@ -218,6 +221,14 @@
       "videoeditor.videorecorder.screenrecorder"
     ]
   },
+  "hoomans-morphe": {
+    "repo": "https://github.com/arandomhooman/hoomans-morphe-patches",
+    "tag": "v1.0.2",
+    "created_at": "2026-06-14T21:04:25",
+    "apps": [
+      "com.blockerhero"
+    ]
+  },
   "icysymmetra-tiktok": {
     "repo": "https://github.com/icysymmetra/tiktok-patches-for-morphe",
     "tag": "v0.2.0-dev.1",
@@ -252,12 +263,15 @@
   },
   "kondratjev": {
     "repo": "https://github.com/kondratjev/morphe-patches",
-    "tag": "v1.9.0-dev.13",
-    "created_at": "2026-06-13T21:16:04",
+    "tag": "v1.11.0-dev.1",
+    "created_at": "2026-06-14T17:59:48",
     "apps": [
+      "com.brightstripe.parcels",
       "com.fatsecret.android",
       "com.lyfta",
       "com.medisafe.android.client",
+      "com.quvideo.wisemeal",
+      "com.sillens.shapeupclub",
       "com.soundcloud.android",
       "com.yazio.android",
       "ru.vk.store",
@@ -266,13 +280,16 @@
   },
   "lain": {
     "repo": "https://github.com/kiraio-moe/Lain-Patches",
-    "tag": "v1.1.0-dev.2",
-    "created_at": "2026-06-11T16:52:00",
+    "tag": "v1.1.0-dev.3",
+    "created_at": "2026-06-14T03:54:46",
     "apps": [
       "cn.adonet.proxyevery",
       "com.flavionet.android.camera.lite",
       "com.flavionet.android.cinema.lite",
-      "com.imaginstudio.imagetools.pixellab"
+      "com.imaginstudio.imagetools.pixellab",
+      "com.jeyluta.timestampcamerafree",
+      "com.jeyluta.timestampcamerafreeent",
+      "com.kcstream.cing"
     ]
   },
   "lakaka": {
@@ -294,8 +311,8 @@
   },
   "morphe": {
     "repo": "https://github.com/MorpheApp/morphe-patches",
-    "tag": "v1.31.0-dev.13",
-    "created_at": "2026-06-12T05:44:02",
+    "tag": "v1.32.0-dev.1",
+    "created_at": "2026-06-15T06:34:29",
     "apps": [
       "com.google.android.apps.youtube.music",
       "com.google.android.youtube",
@@ -356,8 +373,8 @@
   },
   "piko": {
     "repo": "https://github.com/crimera/piko",
-    "tag": "v3.5.0-dev.6",
-    "created_at": "2026-06-08T17:23:34",
+    "tag": "v3.5.0-dev.7",
+    "created_at": "2026-06-14T12:43:56",
     "apps": [
       "com.instagram.android",
       "com.twitter.android"
@@ -431,16 +448,20 @@
   },
   "rushiranpise": {
     "repo": "https://github.com/rushiranpise/morphe-patches",
-    "tag": "v1.6.0-dev.3",
-    "created_at": "2026-06-11T20:06:41",
+    "tag": "v1.6.0-dev.8",
+    "created_at": "2026-06-15T05:05:55",
     "apps": [
       "ai.topicfinder.podcastdiscovery",
       "com.Splitwise.SplitwiseMobile",
+      "com.blockerhero",
       "com.catalinagroup.callrecorder",
       "com.cloudflare.onedotonedotonedotone",
+      "com.dubox.drive",
       "com.iudesk.android.photo.editor",
       "com.javiersantos.mlmanager",
+      "com.kevinforeman.nzb360",
       "com.mobond.mindicator",
+      "com.mtv.sai",
       "com.newsbreak.crimeradar",
       "com.oasisfeng.greenify",
       "com.proxyman.proxymanandroid",

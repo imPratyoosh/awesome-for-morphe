@@ -25,18 +25,19 @@
   },
   "adobo": {
     "repo": "https://github.com/jkennethcarino/adobo",
-    "tag": "v1.1.0",
-    "created_at": "2026-04-12T10:47:53",
+    "tag": "v1.2.0",
+    "created_at": "2026-06-14T11:51:20",
     "apps": [
       "com.google.android.inputmethod.latin",
       "com.imdb.mobile",
+      "com.ninegag.android.app",
       "com.reddit.frontpage"
     ]
   },
   "ajstrick81-androidtv": {
     "repo": "https://github.com/ajstrick81/morphe-androidtv-patches",
-    "tag": "v1.4.68",
-    "created_at": "2026-06-14T00:22:38",
+    "tag": "v1.4.71",
+    "created_at": "2026-06-15T01:13:26",
     "apps": [
       "com.amazon.amazonvideo.livingroom",
       "com.cbs.ott",
@@ -107,8 +108,8 @@
   },
   "bholeykabhakt": {
     "repo": "https://github.com/BholeyKaBhakt/android-patches-xtra",
-    "tag": "v2.7.0",
-    "created_at": "2026-06-13T15:35:11",
+    "tag": "v2.8.2",
+    "created_at": "2026-06-14T11:35:08",
     "apps": [
       "com.atmfee",
       "com.llamalab.automate",
@@ -117,6 +118,7 @@
       "com.proto.circuitsimulator",
       "com.ttxapps.autosync",
       "com.vitotechnology.sky.tonight.map.star.walk",
+      "com.vpn.free.hotspot.secure.vpnify",
       "org.zwanoo.android.speedtest"
     ]
   },
@@ -148,10 +150,9 @@
   },
   "chiggi": {
     "repo": "https://github.com/durgesh0505/chiggi_morphe_patches",
-    "tag": "v1.7.0",
-    "created_at": "2026-06-14T00:32:49",
+    "tag": "v1.8.0",
+    "created_at": "2026-06-14T14:28:12",
     "apps": [
-      "com.fox.foxone",
       "com.sonyliv"
     ]
   },
@@ -200,8 +201,8 @@
   },
   "hk-morphe": {
     "repo": "https://github.com/humzakh/HK-Morphe-Patches",
-    "tag": "v1.3.0",
-    "created_at": "2026-06-13T22:37:19",
+    "tag": "v1.3.4",
+    "created_at": "2026-06-15T04:52:01",
     "apps": [
       "com.laurencedawson.reddit_sync",
       "com.laurencedawson.reddit_sync.dev",
@@ -264,6 +265,16 @@
       "videoeditor.videorecorder.screenrecorder"
     ]
   },
+  "hoomans-morphe": {
+    "repo": "https://github.com/arandomhooman/hoomans-morphe-patches",
+    "tag": "v1.2.4",
+    "created_at": "2026-06-15T07:33:41",
+    "apps": [
+      "com.atomengineapps.teachmeanatomy",
+      "com.blockerhero",
+      "com.cronometer.android.gold"
+    ]
+  },
   "icysymmetra-tiktok": {
     "repo": "https://github.com/icysymmetra/tiktok-patches-for-morphe",
     "tag": "v0.2.0",
@@ -316,12 +327,15 @@
   },
   "kondratjev": {
     "repo": "https://github.com/kondratjev/morphe-patches",
-    "tag": "v1.9.0",
-    "created_at": "2026-06-13T21:24:54",
+    "tag": "v1.11.0",
+    "created_at": "2026-06-14T19:06:54",
     "apps": [
+      "com.brightstripe.parcels",
       "com.fatsecret.android",
       "com.lyfta",
       "com.medisafe.android.client",
+      "com.quvideo.wisemeal",
+      "com.sillens.shapeupclub",
       "com.soundcloud.android",
       "com.yazio.android",
       "ru.vk.store",
@@ -605,8 +619,8 @@
   },
   "xob0t": {
     "repo": "https://github.com/xob0t/morphe-patches",
-    "tag": "v1.3.7",
-    "created_at": "2026-05-31T11:49:40",
+    "tag": "v1.3.8",
+    "created_at": "2026-06-14T02:11:06",
     "apps": [
       "com.avito.android",
       "com.idamob.tinkoff.android",

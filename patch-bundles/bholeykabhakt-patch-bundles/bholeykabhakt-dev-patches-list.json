@@ -1,5 +1,5 @@
 {
-    "version": "v2.7.0-dev.1",
+    "version": "v2.9.0-dev.1",
     "patches": [
         {
             "compatiblePackages": [
@@ -13,9 +13,15 @@
                     "targets": [
                         {
                             "description": null,
+                            "isExperimental": true,
+                            "minSdk": null,
+                            "version": null
+                        },
+                        {
+                            "description": null,
                             "isExperimental": false,
                             "minSdk": null,
-                            "version": "7.0.3"
+                            "version": "7.0.4"
                         }
                     ]
                 }
@@ -44,6 +50,12 @@
                     "packageName": "com.llamalab.automate",
                     "signatures": null,
                     "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": true,
+                            "minSdk": null,
+                            "version": null
+                        },
                         {
                             "description": null,
                             "isExperimental": false,
@@ -106,15 +118,46 @@
                     "apkFileType": null,
                     "appIconColor": null,
                     "description": null,
+                    "name": "Star Walk 2",
+                    "packageName": "com.vitotechnology.StarWalk2Free",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": true,
+                            "minSdk": null,
+                            "version": "2.20.3"
+                        }
+                    ]
+                }
+            ],
+            "default": false,
+            "dependencies": [],
+            "description": null,
+            "name": "Disable In-App Telemetry",
+            "options": []
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": null,
+                    "appIconColor": null,
+                    "description": null,
                     "name": "Speedtest",
                     "packageName": "org.zwanoo.android.speedtest",
                     "signatures": null,
                     "targets": [
                         {
                             "description": null,
+                            "isExperimental": true,
+                            "minSdk": null,
+                            "version": null
+                        },
+                        {
+                            "description": null,
                             "isExperimental": false,
                             "minSdk": null,
-                            "version": "7.0.3"
+                            "version": "7.0.4"
                         }
                     ]
                 }
@@ -139,6 +182,12 @@
                             "description": null,
                             "isExperimental": true,
                             "minSdk": null,
+                            "version": null
+                        },
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": null,
                             "version": "3.7.9"
                         }
                     ]
@@ -162,7 +211,7 @@
                     "targets": [
                         {
                             "description": null,
-                            "isExperimental": true,
+                            "isExperimental": false,
                             "minSdk": null,
                             "version": "1.16.2"
                         }
@@ -187,6 +236,12 @@
                     "packageName": "com.ttxapps.autosync",
                     "signatures": null,
                     "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": true,
+                            "minSdk": null,
+                            "version": null
+                        },
                         {
                             "description": null,
                             "isExperimental": false,
@@ -219,6 +274,12 @@
                             "description": null,
                             "isExperimental": true,
                             "minSdk": null,
+                            "version": null
+                        },
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": null,
                             "version": "6.12.15"
                         }
                     ]
@@ -244,6 +305,12 @@
                             "description": null,
                             "isExperimental": true,
                             "minSdk": null,
+                            "version": null
+                        },
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": null,
                             "version": "6.12.15"
                         }
                     ]
@@ -265,6 +332,12 @@
                     "packageName": "com.proto.circuitsimulator",
                     "signatures": null,
                     "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": true,
+                            "minSdk": null,
+                            "version": null
+                        },
                         {
                             "description": null,
                             "isExperimental": false,
@@ -292,7 +365,7 @@
                     "targets": [
                         {
                             "description": null,
-                            "isExperimental": true,
+                            "isExperimental": false,
                             "minSdk": null,
                             "version": "1.16.2"
                         }
@@ -318,6 +391,12 @@
                         {
                             "description": null,
                             "isExperimental": true,
+                            "minSdk": null,
+                            "version": null
+                        },
+                        {
+                            "description": null,
+                            "isExperimental": false,
                             "minSdk": null,
                             "version": "3.7.9"
                         }
@@ -351,6 +430,59 @@
             ],
             "default": true,
             "dependencies": [],
+            "description": null,
+            "name": "Unlock Premium",
+            "options": []
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": null,
+                    "appIconColor": null,
+                    "description": null,
+                    "name": "Star Walk 2",
+                    "packageName": "com.vitotechnology.StarWalk2Free",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": true,
+                            "minSdk": null,
+                            "version": "2.20.3"
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [],
+            "description": null,
+            "name": "Unlock Premium",
+            "options": []
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": null,
+                    "appIconColor": null,
+                    "description": null,
+                    "name": "vpnify",
+                    "packageName": "com.vpn.free.hotspot.secure.vpnify",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": null,
+                            "version": "2.2.9"
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [
+                "BytecodePatch",
+                "BytecodePatch"
+            ],
             "description": null,
             "name": "Unlock Premium",
             "options": []
