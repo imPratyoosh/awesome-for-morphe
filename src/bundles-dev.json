@@ -67,8 +67,8 @@
   },
   "anddea": {
     "repo": "https://github.com/anddea/revanced-patches",
-    "tag": "v4.1.0-dev.8",
-    "created_at": "2026-06-12T18:27:22",
+    "tag": "v4.1.0-dev.9",
+    "created_at": "2026-06-15T15:03:20",
     "apps": [
       "com.google.android.apps.youtube.music",
       "com.google.android.youtube"
@@ -105,18 +105,11 @@
   },
   "bholeykabhakt": {
     "repo": "https://github.com/BholeyKaBhakt/android-patches-xtra",
-    "tag": "v2.9.0-dev.1",
-    "created_at": "2026-06-15T10:33:48",
+    "tag": "v2.0.4-dev.1",
+    "created_at": "2026-05-20T08:17:53",
     "apps": [
-      "com.atmfee",
       "com.llamalab.automate",
-      "com.nis.app",
-      "com.noctuasoftware.stellarium_free",
-      "com.proto.circuitsimulator",
       "com.ttxapps.autosync",
-      "com.vitotechnology.StarWalk2Free",
-      "com.vitotechnology.sky.tonight.map.star.walk",
-      "com.vpn.free.hotspot.secure.vpnify",
       "org.zwanoo.android.speedtest"
     ]
   },
@@ -136,8 +129,8 @@
   },
   "brosssh": {
     "repo": "https://github.com/brosssh/morphe-patches",
-    "tag": "v2.6.4-dev.1",
-    "created_at": "2026-06-09T19:52:56",
+    "tag": "v2.7.0-dev.1",
+    "created_at": "2026-06-15T19:32:40",
     "apps": [
       "com.instagram.android",
       "cz.seznam.mapy",
@@ -157,8 +150,8 @@
   },
   "hk-morphe": {
     "repo": "https://github.com/humzakh/HK-Morphe-Patches",
-    "tag": "v1.3.4-dev.1",
-    "created_at": "2026-06-15T04:48:09",
+    "tag": "v1.4.0-dev.1",
+    "created_at": "2026-06-16T06:12:23",
     "apps": [
       "com.laurencedawson.reddit_sync",
       "com.laurencedawson.reddit_sync.dev",
@@ -223,32 +216,45 @@
   },
   "hoomans-morphe": {
     "repo": "https://github.com/arandomhooman/hoomans-morphe-patches",
-    "tag": "v1.0.2",
-    "created_at": "2026-06-14T21:04:25",
+    "tag": "v1.3.0-dev.1",
+    "created_at": "2026-06-15T19:45:33",
     "apps": [
-      "com.blockerhero"
+      "com.atomengineapps.teachmeanatomy",
+      "com.blockerhero",
+      "com.cronometer.android.gold",
+      "com.quizlet.quizletandroid",
+      "com.soepic.photogallery.release"
     ]
   },
   "icysymmetra-tiktok": {
     "repo": "https://github.com/icysymmetra/tiktok-patches-for-morphe",
-    "tag": "v0.2.0-dev.1",
-    "created_at": "2026-06-04T22:48:34",
+    "tag": "v0.2.0-dev.2",
+    "created_at": "2026-06-15T14:43:54",
     "apps": [
       "com.zhiliaoapp.musically"
     ]
   },
+  "ihealth-morphe": {
+    "repo": "https://github.com/bdgerszewski/morphe-patches-ihealth",
+    "tag": "v1.0.1-dev.1",
+    "created_at": "2026-06-16T01:40:02",
+    "apps": [
+      "com.ihealthlabs.MyVitalsPro"
+    ]
+  },
   "imxeren": {
     "repo": "https://github.com/IMXEren/mix-patches",
-    "tag": "v1.2.0-dev.1",
-    "created_at": "2026-03-30T01:20:04",
+    "tag": "v1.3.0-dev.1",
+    "created_at": "2026-06-16T04:03:20",
     "apps": [
+      "com.laurencedawson.reddit_sync",
       "tv.trakt.trakt"
     ]
   },
   "jasonwu1994": {
     "repo": "https://github.com/jasonwu1994/Gboard-patches",
-    "tag": "v1.9.0-dev.1",
-    "created_at": "2026-06-13T01:31:22",
+    "tag": "v1.9.1-dev.1",
+    "created_at": "2026-06-16T09:17:22",
     "apps": [
       "com.google.android.inputmethod.latin"
     ]
@@ -263,8 +269,8 @@
   },
   "kondratjev": {
     "repo": "https://github.com/kondratjev/morphe-patches",
-    "tag": "v1.11.0-dev.1",
-    "created_at": "2026-06-14T17:59:48",
+    "tag": "v1.12.0-dev.3",
+    "created_at": "2026-06-15T19:00:10",
     "apps": [
       "com.brightstripe.parcels",
       "com.fatsecret.android",
@@ -373,8 +379,8 @@
   },
   "piko": {
     "repo": "https://github.com/crimera/piko",
-    "tag": "v3.5.0-dev.7",
-    "created_at": "2026-06-14T12:43:56",
+    "tag": "v3.5.0-dev.8",
+    "created_at": "2026-06-16T04:11:23",
     "apps": [
       "com.instagram.android",
       "com.twitter.android"
@@ -448,15 +454,17 @@
   },
   "rushiranpise": {
     "repo": "https://github.com/rushiranpise/morphe-patches",
-    "tag": "v1.6.0-dev.8",
-    "created_at": "2026-06-15T05:05:55",
+    "tag": "v1.6.0-dev.13",
+    "created_at": "2026-06-16T04:16:14",
     "apps": [
       "ai.topicfinder.podcastdiscovery",
       "com.Splitwise.SplitwiseMobile",
       "com.blockerhero",
+      "com.canva.editor",
       "com.catalinagroup.callrecorder",
       "com.cloudflare.onedotonedotonedotone",
       "com.dubox.drive",
+      "com.inscode.autoclicker",
       "com.iudesk.android.photo.editor",
       "com.javiersantos.mlmanager",
       "com.kevinforeman.nzb360",
@@ -472,7 +480,9 @@
       "com.twtapp",
       "com.yatrirailways.yatri",
       "cz.mroczis.netmonster",
+      "eu.faircode.netguard",
       "it.mirko.beta",
+      "net.dinglisch.android.taskerm",
       "sensustech.universal.tv.remote.control",
       "shareit.premium",
       "sp0n.citizen",

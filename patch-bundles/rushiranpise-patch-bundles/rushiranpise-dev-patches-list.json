@@ -1,5 +1,5 @@
 {
-    "version": "v1.6.0-dev.8",
+    "version": "v1.6.0-dev.13",
     "patches": [
         {
             "compatiblePackages": [
@@ -105,6 +105,31 @@
             "compatiblePackages": [
                 {
                     "apkFileType": null,
+                    "appIconColor": "#8B3DFF",
+                    "description": null,
+                    "name": "Canva",
+                    "packageName": "com.canva.editor",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": null,
+                            "version": null
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [],
+            "description": "Removes restricted/locked indicators on premium media in Canva.",
+            "name": "Disable Restricted Access",
+            "options": []
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": null,
                     "appIconColor": "#1565C0",
                     "description": null,
                     "name": "Case Tracker - Immigration",
@@ -180,6 +205,31 @@
             "compatiblePackages": [
                 {
                     "apkFileType": null,
+                    "appIconColor": "#8B3DFF",
+                    "description": null,
+                    "name": "Canva",
+                    "packageName": "com.canva.editor",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": null,
+                            "version": null
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [],
+            "description": "Removes watermarks from Canva exports and previews.",
+            "name": "Remove Watermark",
+            "options": []
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": null,
                     "appIconColor": "#F48120",
                     "description": null,
                     "name": "1.1.1.1 + WARP",
@@ -249,6 +299,31 @@
             "dependencies": [],
             "description": "Supress all premium promotions in-app.",
             "name": "Suppress Premium Promotions",
+            "options": []
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": null,
+                    "appIconColor": "#1565C0",
+                    "description": null,
+                    "name": "nzb360",
+                    "packageName": "com.kevinforeman.nzb360",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": null,
+                            "version": null
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [],
+            "description": "Unlocks All access in Nzb360.",
+            "name": "Unlock All Access",
             "options": []
         },
         {
@@ -399,31 +474,6 @@
             "dependencies": [],
             "description": "Unlocks SHAREit lifetime premium.",
             "name": "Unlock Lifetime",
-            "options": []
-        },
-        {
-            "compatiblePackages": [
-                {
-                    "apkFileType": null,
-                    "appIconColor": "#1565C0",
-                    "description": null,
-                    "name": "nzb360",
-                    "packageName": "com.kevinforeman.nzb360",
-                    "signatures": null,
-                    "targets": [
-                        {
-                            "description": null,
-                            "isExperimental": false,
-                            "minSdk": null,
-                            "version": "23.4"
-                        }
-                    ]
-                }
-            ],
-            "default": true,
-            "dependencies": [],
-            "description": "Unlocks Lifetime access in Nzb360.",
-            "name": "Unlock Lifetime Access",
             "options": []
         },
         {
@@ -582,7 +632,7 @@
                     "apkFileType": null,
                     "appIconColor": "#1565C0",
                     "description": null,
-                    "name": "SAI - Split APKs Installer",
+                    "name": "SAI",
                     "packageName": "com.mtv.sai",
                     "signatures": null,
                     "targets": [
@@ -649,6 +699,31 @@
             "dependencies": [],
             "description": "Unlocks Premium Features In the App.",
             "name": "Unlock Premium",
+            "options": []
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": null,
+                    "appIconColor": "#4CAF50",
+                    "description": null,
+                    "name": "Clickmate",
+                    "packageName": "com.inscode.autoclicker",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": null,
+                            "version": null
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [],
+            "description": "Unlocks premium in Clickmate",
+            "name": "Unlock Premium ",
             "options": []
         },
         {
@@ -757,6 +832,31 @@
                     "apkFileType": null,
                     "appIconColor": "#4CAF50",
                     "description": null,
+                    "name": "NetGuard",
+                    "packageName": "eu.faircode.netguard",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": null,
+                            "version": null
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [],
+            "description": "Unlocks all pro features in NetGuard.",
+            "name": "Unlock Pro",
+            "options": []
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": null,
+                    "appIconColor": "#4CAF50",
+                    "description": null,
                     "name": "RAR",
                     "packageName": "com.rarlab.rar",
                     "signatures": null,
@@ -805,6 +905,31 @@
             "compatiblePackages": [
                 {
                     "apkFileType": null,
+                    "appIconColor": "#263238",
+                    "description": null,
+                    "name": "Tasker",
+                    "packageName": "net.dinglisch.android.taskerm",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": null,
+                            "version": "6.6.20"
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [],
+            "description": "Unlocks Tasker Pro features.",
+            "name": "Unlock Pro",
+            "options": []
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": null,
                     "appIconColor": "#1A1A2E",
                     "description": null,
                     "name": "Stargazing Hub",
@@ -832,7 +957,7 @@
                     "apkFileType": null,
                     "appIconColor": "#2EAAFF",
                     "description": null,
-                    "name": "Dubox Drive",
+                    "name": "TeraBox",
                     "packageName": "com.dubox.drive",
                     "signatures": null,
                     "targets": [
