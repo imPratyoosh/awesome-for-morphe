@@ -17,8 +17,8 @@
   },
   "abhis1n": {
     "repo": "https://github.com/abhis1n/Morphe-Patches",
-    "tag": "v1.0.0",
-    "created_at": "2026-04-29T19:40:01",
+    "tag": "v1.0.1",
+    "created_at": "2026-06-17T06:24:45",
     "apps": [
       "com.Splitwise.SplitwiseMobile"
     ]
@@ -36,8 +36,8 @@
   },
   "ajstrick81-androidtv": {
     "repo": "https://github.com/ajstrick81/morphe-androidtv-patches",
-    "tag": "v1.4.72",
-    "created_at": "2026-06-16T02:07:05",
+    "tag": "v1.4.80",
+    "created_at": "2026-06-17T02:09:06",
     "apps": [
       "com.amazon.amazonvideo.livingroom",
       "com.bamnetworks.mobile.android.gameday.atbat",
@@ -82,12 +82,11 @@
   },
   "anddea": {
     "repo": "https://github.com/anddea/revanced-patches",
-    "tag": "v4.0.0",
-    "created_at": "2026-03-27T16:50:39",
+    "tag": "v4.1.0",
+    "created_at": "2026-06-16T15:37:39",
     "apps": [
       "com.google.android.apps.youtube.music",
-      "com.google.android.youtube",
-      "com.reddit.frontpage"
+      "com.google.android.youtube"
     ]
   },
   "andronedev": {
@@ -109,10 +108,11 @@
   },
   "bholeykabhakt": {
     "repo": "https://github.com/BholeyKaBhakt/android-patches-xtra",
-    "tag": "v2.10.0",
-    "created_at": "2026-06-16T07:48:02",
+    "tag": "v2.11.2",
+    "created_at": "2026-06-17T09:50:43",
     "apps": [
       "com.atmfee",
+      "com.backdrops.wallpapers",
       "com.llamalab.automate",
       "com.nis.app",
       "com.noctuasoftware.stellarium_free",
@@ -122,7 +122,8 @@
       "com.vitotechnology.StarWalk2Free",
       "com.vitotechnology.sky.tonight.map.star.walk",
       "com.vpn.free.hotspot.secure.vpnify",
-      "org.zwanoo.android.speedtest"
+      "org.zwanoo.android.speedtest",
+      "pl.solidexplorer2"
     ]
   },
   "binarymend": {
@@ -153,8 +154,8 @@
   },
   "chiggi": {
     "repo": "https://github.com/durgesh0505/chiggi_morphe_patches",
-    "tag": "v1.9.3",
-    "created_at": "2026-06-16T03:04:54",
+    "tag": "v1.9.4",
+    "created_at": "2026-06-16T12:26:47",
     "apps": [
       "com.sonyliv",
       "net.nutrilio"
@@ -271,11 +272,13 @@
   },
   "hoomans-morphe": {
     "repo": "https://github.com/arandomhooman/hoomans-morphe-patches",
-    "tag": "v1.6.0",
-    "created_at": "2026-06-16T03:57:50",
+    "tag": "v1.8.0",
+    "created_at": "2026-06-17T08:36:11",
     "apps": [
       "com.alphaprogression.alphaprogression",
+      "com.appfactory.essence",
       "com.atomengineapps.teachmeanatomy",
+      "com.bandlab.bandlab",
       "com.blockerhero",
       "com.cronometer.android.gold",
       "com.quizlet.quizletandroid",
@@ -309,8 +312,8 @@
   },
   "jasonwu1994": {
     "repo": "https://github.com/jasonwu1994/Gboard-patches",
-    "tag": "v1.9.0",
-    "created_at": "2026-06-13T01:49:32",
+    "tag": "v1.9.1",
+    "created_at": "2026-06-16T19:52:10",
     "apps": [
       "com.google.android.inputmethod.latin"
     ]
@@ -481,8 +484,8 @@
   },
   "piko": {
     "repo": "https://github.com/crimera/piko",
-    "tag": "v3.4.0",
-    "created_at": "2026-05-19T12:22:55",
+    "tag": "v3.5.0",
+    "created_at": "2026-06-16T18:26:21",
     "apps": [
       "com.instagram.android",
       "com.twitter.android"

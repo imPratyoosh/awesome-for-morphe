@@ -9,8 +9,8 @@
   },
   "abhis1n": {
     "repo": "https://github.com/abhis1n/Morphe-Patches",
-    "tag": "v1.0.0-dev.1",
-    "created_at": "2026-04-29T19:35:15",
+    "tag": "v1.0.1-dev.1",
+    "created_at": "2026-06-17T06:17:24",
     "apps": [
       "com.Splitwise.SplitwiseMobile"
     ]
@@ -317,8 +317,8 @@
   },
   "morphe": {
     "repo": "https://github.com/MorpheApp/morphe-patches",
-    "tag": "v1.32.0-dev.1",
-    "created_at": "2026-06-15T06:34:29",
+    "tag": "v1.32.0-dev.2",
+    "created_at": "2026-06-17T09:01:26",
     "apps": [
       "com.google.android.apps.youtube.music",
       "com.google.android.youtube",
