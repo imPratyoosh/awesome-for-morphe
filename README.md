@@ -51,7 +51,9 @@
   - [Shorts player has no buttons](https://www.reddit.com/r/MorpheApp/comments/1pverk7/comment/ogdw6mk/)
   - [Cannot login to Reddit](https://www.reddit.com/r/MorpheApp/comments/1pverk7/comment/oot13cq/)
 - [How To Patch More Apps With Morphe](https://www.reddit.com/r/MorpheApp/comments/1ta0bek/how_to_patch_more_apps_with_morphe/)
-- [How to patch X with Piko patches, and how to login](https://www.reddit.com/r/MorpheApp/comments/1r4xt24/x_twitter_can_now_be_patched_with_piko_patches/)
+- [Morphe Desktop (Currently Morphe CLI)](https://www.reddit.com/r/MorpheApp/comments/1rtr3ee/morphe_desktop_currently_morphe_cli/)
+- [How to patch X with Piko patches](https://www.reddit.com/r/MorpheApp/comments/1r4xt24/x_twitter_can_now_be_patched_with_piko_patches/)
+- [Likes count not showing](https://www.reddit.com/r/MorpheApp/comments/1u4kjms/likes_count_not_showing/)
 - [Regarding the Morphe DMCA](https://www.reddit.com/r/MorpheApp/comments/1s3w1er/regarding_the_morphe_dmca/)
 
 ## <a id="apps-patches"></a> 📱 Apps & 🧩 Patches
@@ -71,6 +73,8 @@
 
 - [Jman-Github/Universal-ReVanced-Manager](https://github.com/Jman-Github/Universal-ReVanced-Manager)
 
+- [nvbangg/builder-for-morphe](https://github.com/nvbangg/builder-for-morphe)
+
 - [Graywizard888/Enhancify](https://github.com/Graywizard888/Enhancify)
 
 - [Xisrr1/Revancify-Xisr](https://github.com/Xisrr1/Revancify-Xisr)
@@ -81,7 +85,7 @@
 
 > [!NOTE]
 > Pre-patched sources are not listed here for safety and liability reasons.  
-> ⚠️ Only download or [build your own APKs](https://github.com/ngbangg/builder-for-morphe#-build-your-own-apks) from trusted open-source builder repositories.  
+> ⚠️ Only download or [build your own APKs](https://github.com/nvbangg/builder-for-morphe#-build-your-own-apks) from trusted open-source builder repositories.  
 > If you still want to explore them, see [Jman’s list](https://github.com/Jman-Github/Awesome-ReVanced#%EF%B8%8F-builder)
 
 ## 🙏 Credits
