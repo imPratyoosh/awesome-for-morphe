@@ -36,8 +36,8 @@
   },
   "ajstrick81-androidtv": {
     "repo": "https://github.com/ajstrick81/morphe-androidtv-patches",
-    "tag": "v1.4.80",
-    "created_at": "2026-06-17T02:09:06",
+    "tag": "v1.4.81",
+    "created_at": "2026-06-18T01:01:11",
     "apps": [
       "com.amazon.amazonvideo.livingroom",
       "com.bamnetworks.mobile.android.gameday.atbat",
@@ -272,8 +272,8 @@
   },
   "hoomans-morphe": {
     "repo": "https://github.com/arandomhooman/hoomans-morphe-patches",
-    "tag": "v1.8.0",
-    "created_at": "2026-06-17T08:36:11",
+    "tag": "v1.9.1",
+    "created_at": "2026-06-17T23:15:40",
     "apps": [
       "com.alphaprogression.alphaprogression",
       "com.appfactory.essence",
@@ -288,8 +288,8 @@
   },
   "icysymmetra-tiktok": {
     "repo": "https://github.com/icysymmetra/tiktok-patches-for-morphe",
-    "tag": "v0.2.0",
-    "created_at": "2026-06-06T13:25:39",
+    "tag": "v0.3.1",
+    "created_at": "2026-06-17T16:13:14",
     "apps": [
       "com.zhiliaoapp.musically"
     ]
@@ -645,6 +645,15 @@
       "com.idamob.tinkoff.android",
       "com.wildberries.ru",
       "ru.ozon.app.android"
+    ]
+  },
+  "zpatches": {
+    "repo": "https://github.com/cesbar/zpatches",
+    "tag": "v1.5.1",
+    "created_at": "2026-06-15T17:16:26",
+    "apps": [
+      "com.jcdecaux.vls.lyon",
+      "ee.dustland.android.minesweeper"
     ]
   }
 }
