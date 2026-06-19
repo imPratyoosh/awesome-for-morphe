@@ -15,6 +15,7 @@
 > 🌐 A curated list of all Morphe resources and projects.  
 > 🔍 Explore [all supported apps and patches](https://nvbangg.github.io/awesome-for-morphe), automatically updated.  
 > 🔔 Release [notifications](https://github.com/nvbangg/awesome-for-morphe/releases) for new apps and patch sources.
+> [![Telegram Channel](https://img.shields.io/badge/Telegram_Channel-blue?style=social&logo=telegram)](https://t.me/awesome_for_morphe)
 
 <div align="center"> 
 <picture>

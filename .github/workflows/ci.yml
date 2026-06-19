@@ -58,11 +58,25 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: gh release create "${{ env.TAG }}" --target "$(git rev-parse HEAD)" --title "🔔 Updates (${{ env.DAY }})" --notes-file changelog.md
 
+      - name: Send Telegram release notification
+        if: steps.changes.outputs.changed == 'true' && hashFiles('changelog.md') != ''
+        env:
+          TG_CHAT: ${{ secrets.TG_CHAT }}
+          TG_TOKEN: ${{ secrets.TG_TOKEN }}
+        run: python src/telegram-notify.py "🔔 Updates (${{ env.DAY }})" changelog.md
+
       - name: Create pre-release
         if: steps.changes.outputs.changed == 'true' && hashFiles('changelog-pre-release.md') != ''
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: gh release create "${{ env.TAG }}-pre" --target "$(git rev-parse HEAD)" --prerelease --title "🧪 Pre-release (${{ env.DAY }})" --notes-file changelog-pre-release.md
+
+      - name: Send Telegram pre-release notification
+        if: steps.changes.outputs.changed == 'true' && hashFiles('changelog-pre-release.md') != ''
+        env:
+          TG_CHAT: ${{ secrets.TG_CHAT }}
+          TG_TOKEN: ${{ secrets.TG_TOKEN }}
+        run: python src/telegram-notify.py "🧪 Pre-release (${{ env.DAY }})" changelog-pre-release.md
 
       - name: Cleanup old workflow runs
         env:
