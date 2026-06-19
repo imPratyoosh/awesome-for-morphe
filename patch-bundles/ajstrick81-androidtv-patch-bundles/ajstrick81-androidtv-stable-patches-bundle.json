@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-06-18T01:01:11",
-  "description": "## [1.4.81](https://github.com/ajstrick81/morphe-androidtv-patches/compare/v1.4.80...v1.4.81) (2026-06-18)\n\n\n### Bug Fixes\n\n* Refactor patches and update fingerprint comments ([8bee5e3](https://github.com/ajstrick81/morphe-androidtv-patches/commit/8bee5e3d66f4d33d79f31fc9e51e428a126e1257))\n\n\n\n",
-  "download_url": "https://github.com/ajstrick81/morphe-androidtv-patches/releases/download/v1.4.81/patches-1.4.81.mpp",
+  "created_at": "2026-06-19T00:47:09",
+  "description": "## [1.4.85](https://github.com/ajstrick81/morphe-androidtv-patches/compare/v1.4.84...v1.4.85) (2026-06-19)\n\n\n### Bug Fixes\n\n* Refactor metadata handling and patch DAI events ([ec8c6cc](https://github.com/ajstrick81/morphe-androidtv-patches/commit/ec8c6cc9d17d6617f80c4359616d56cb0afac6ed))\n\n\n\n",
+  "download_url": "https://github.com/ajstrick81/morphe-androidtv-patches/releases/download/v1.4.85/patches-1.4.85.mpp",
   "signature_download_url": "N/A",
-  "version": "v1.4.81"
+  "version": "v1.4.85"
 }

@@ -54,8 +54,8 @@
   },
   "amplerevanced": {
     "repo": "https://github.com/AmpleReVanced/revanced-patches",
-    "tag": "v1.2.0-dev.2",
-    "created_at": "2026-06-13T08:47:05",
+    "tag": "v1.2.0-dev.3",
+    "created_at": "2026-06-19T10:55:43",
     "apps": [
       "com.dcinside.app.android",
       "com.flexcil.flexcilnote",
@@ -105,12 +105,23 @@
   },
   "bholeykabhakt": {
     "repo": "https://github.com/BholeyKaBhakt/android-patches-xtra",
-    "tag": "v2.0.4-dev.1",
-    "created_at": "2026-05-20T08:17:53",
+    "tag": "v2.12.0-dev.1",
+    "created_at": "2026-06-19T07:44:04",
     "apps": [
+      "com.atmfee",
+      "com.backdrops.wallpapers",
       "com.llamalab.automate",
+      "com.nis.app",
+      "com.noctuasoftware.stellarium_free",
+      "com.proto.circuitsimulator",
       "com.ttxapps.autosync",
-      "org.zwanoo.android.speedtest"
+      "com.ufovpn.connect.velnet",
+      "com.vitotechnology.StarWalk2Free",
+      "com.vitotechnology.sky.tonight.map.star.walk",
+      "com.vpn.free.hotspot.secure.vpnify",
+      "io.funswitch.blocker",
+      "org.zwanoo.android.speedtest",
+      "pl.solidexplorer2"
     ]
   },
   "binarymend": {
@@ -150,8 +161,8 @@
   },
   "hk-morphe": {
     "repo": "https://github.com/humzakh/HK-Morphe-Patches",
-    "tag": "v1.4.0-dev.1",
-    "created_at": "2026-06-16T06:12:23",
+    "tag": "v1.3.4-dev.1",
+    "created_at": "2026-06-15T04:48:09",
     "apps": [
       "com.laurencedawson.reddit_sync",
       "com.laurencedawson.reddit_sync.dev",
@@ -236,10 +247,11 @@
   },
   "ihealth-morphe": {
     "repo": "https://github.com/bdgerszewski/morphe-patches-ihealth",
-    "tag": "v1.0.1-dev.1",
-    "created_at": "2026-06-16T01:40:02",
+    "tag": "v1.1.0-dev.1",
+    "created_at": "2026-06-19T03:50:13",
     "apps": [
-      "com.ihealthlabs.MyVitalsPro"
+      "com.ihealthlabs.MyVitalsPro",
+      "com.persapps.multitimer"
     ]
   },
   "imxeren": {
@@ -253,8 +265,8 @@
   },
   "jasonwu1994": {
     "repo": "https://github.com/jasonwu1994/Gboard-patches",
-    "tag": "v1.9.1-dev.1",
-    "created_at": "2026-06-16T09:17:22",
+    "tag": "v1.10.0-dev.2",
+    "created_at": "2026-06-19T00:12:15",
     "apps": [
       "com.google.android.inputmethod.latin"
     ]
@@ -286,16 +298,19 @@
   },
   "lain": {
     "repo": "https://github.com/kiraio-moe/Lain-Patches",
-    "tag": "v1.1.0-dev.3",
-    "created_at": "2026-06-14T03:54:46",
+    "tag": "v1.1.0-dev.4",
+    "created_at": "2026-06-19T01:19:15",
     "apps": [
       "cn.adonet.proxyevery",
+      "com.ceyhan.sets",
       "com.flavionet.android.camera.lite",
       "com.flavionet.android.cinema.lite",
+      "com.hopefactory2021.fakegpslocation",
       "com.imaginstudio.imagetools.pixellab",
       "com.jeyluta.timestampcamerafree",
       "com.jeyluta.timestampcamerafreeent",
-      "com.kcstream.cing"
+      "com.kcstream.cing",
+      "com.medibang.android.paint.tablet"
     ]
   },
   "lakaka": {
@@ -317,8 +332,8 @@
   },
   "morphe": {
     "repo": "https://github.com/MorpheApp/morphe-patches",
-    "tag": "v1.32.0-dev.2",
-    "created_at": "2026-06-17T09:01:26",
+    "tag": "v1.32.0-dev.3",
+    "created_at": "2026-06-18T18:09:13",
     "apps": [
       "com.google.android.apps.youtube.music",
       "com.google.android.youtube",

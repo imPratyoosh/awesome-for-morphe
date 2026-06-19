@@ -36,8 +36,8 @@
   },
   "ajstrick81-androidtv": {
     "repo": "https://github.com/ajstrick81/morphe-androidtv-patches",
-    "tag": "v1.4.81",
-    "created_at": "2026-06-18T01:01:11",
+    "tag": "v1.4.85",
+    "created_at": "2026-06-19T00:47:09",
     "apps": [
       "com.amazon.amazonvideo.livingroom",
       "com.bamnetworks.mobile.android.gameday.atbat",
@@ -154,9 +154,10 @@
   },
   "chiggi": {
     "repo": "https://github.com/durgesh0505/chiggi_morphe_patches",
-    "tag": "v1.9.4",
-    "created_at": "2026-06-16T12:26:47",
+    "tag": "v1.10.0",
+    "created_at": "2026-06-19T01:53:00",
     "apps": [
+      "com.instagram.barcelona",
       "com.sonyliv",
       "net.nutrilio"
     ]
@@ -272,17 +273,20 @@
   },
   "hoomans-morphe": {
     "repo": "https://github.com/arandomhooman/hoomans-morphe-patches",
-    "tag": "v1.9.1",
-    "created_at": "2026-06-17T23:15:40",
+    "tag": "v1.12.0",
+    "created_at": "2026-06-19T09:54:58",
     "apps": [
+      "altergames.carlauncher",
       "com.alphaprogression.alphaprogression",
       "com.appfactory.essence",
       "com.atomengineapps.teachmeanatomy",
       "com.bandlab.bandlab",
       "com.blockerhero",
+      "com.collectrinc.collectr",
       "com.cronometer.android.gold",
       "com.quizlet.quizletandroid",
       "com.soepic.photogallery.release",
+      "com.tracked.mobile",
       "photo.editor.photoeditor.photoeditorpro"
     ]
   },
@@ -296,10 +300,11 @@
   },
   "ihealth-morphe": {
     "repo": "https://github.com/bdgerszewski/morphe-patches-ihealth",
-    "tag": "v1.0.1",
-    "created_at": "2026-06-16T01:42:33",
+    "tag": "v1.1.0",
+    "created_at": "2026-06-19T03:53:00",
     "apps": [
-      "com.ihealthlabs.MyVitalsPro"
+      "com.ihealthlabs.MyVitalsPro",
+      "com.persapps.multitimer"
     ]
   },
   "imxeren": {
@@ -312,8 +317,8 @@
   },
   "jasonwu1994": {
     "repo": "https://github.com/jasonwu1994/Gboard-patches",
-    "tag": "v1.9.1",
-    "created_at": "2026-06-16T19:52:10",
+    "tag": "v1.10.0",
+    "created_at": "2026-06-19T03:20:00",
     "apps": [
       "com.google.android.inputmethod.latin"
     ]
@@ -363,11 +368,19 @@
   },
   "lain": {
     "repo": "https://github.com/kiraio-moe/Lain-Patches",
-    "tag": "v1.0.0",
-    "created_at": "2026-06-05T04:23:54",
+    "tag": "v1.1.0",
+    "created_at": "2026-06-19T01:28:39",
     "apps": [
       "cn.adonet.proxyevery",
-      "com.flavionet.android.camera.lite"
+      "com.ceyhan.sets",
+      "com.flavionet.android.camera.lite",
+      "com.flavionet.android.cinema.lite",
+      "com.hopefactory2021.fakegpslocation",
+      "com.imaginstudio.imagetools.pixellab",
+      "com.jeyluta.timestampcamerafree",
+      "com.jeyluta.timestampcamerafreeent",
+      "com.kcstream.cing",
+      "com.medibang.android.paint.tablet"
     ]
   },
   "lakaka": {
@@ -484,17 +497,17 @@
   },
   "piko": {
     "repo": "https://github.com/crimera/piko",
-    "tag": "v3.5.0",
-    "created_at": "2026-06-16T18:26:21",
+    "tag": "v3.6.0",
+    "created_at": "2026-06-18T18:17:56",
     "apps": [
       "com.instagram.android",
       "com.twitter.android"
     ]
   },
   "piko-shim": {
-    "repo": "https://gitlab.com/inotia00/piko-shim",
-    "tag": "v1.5.0",
-    "created_at": "2026-06-16T06:55:29",
+    "repo": "https://gitlab.com/inotia00/x-shim",
+    "tag": "v1.6.2",
+    "created_at": "2026-06-19T07:55:03",
     "apps": [
       "com.twitter.android"
     ]
