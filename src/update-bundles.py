@@ -96,7 +96,7 @@ def build_notes(label, old_bundles, new_bundles, app_names):
         old_apps = set(old_bundles.get(key, {}).get("apps") or [])
         added = [pkg for pkg in apps if pkg not in old_apps]
         if added:
-            heading = f"## {key}"
+            heading = f"### {key}"
             new_apps_groups.append(
                 "\n".join(
                     [heading] + [format_app(p, app_names, key, label) for p in added]
@@ -104,9 +104,14 @@ def build_notes(label, old_bundles, new_bundles, app_names):
             )
     sections = []
     if new_bundles_notes:
-        sections.append(f"# 🧩 New Bundles ({label})\n" + "\n".join(new_bundles_notes))
+        sections.append(f"## 🧩 New Bundles ({label})\n" + "\n".join(new_bundles_notes))
     if new_apps_groups:
-        sections.append(f"# 📱 New Apps ({label})\n" + "\n\n".join(new_apps_groups))
+        sections.append(f"## 📱 New Apps ({label})\n" + "\n\n".join(new_apps_groups))
+    
+    if not sections:
+        return ""
+        
+    sections.insert(0, "Telegram channel: [t.me/awesome_for_morphe](https://t.me/awesome_for_morphe)")
     return "\n\n".join(sections)
 
 
