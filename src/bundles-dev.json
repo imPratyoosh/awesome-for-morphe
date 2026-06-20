@@ -54,8 +54,8 @@
   },
   "amplerevanced": {
     "repo": "https://github.com/AmpleReVanced/revanced-patches",
-    "tag": "v1.2.0-dev.3",
-    "created_at": "2026-06-19T10:55:43",
+    "tag": "v1.2.0-dev.7",
+    "created_at": "2026-06-20T09:06:42",
     "apps": [
       "com.dcinside.app.android",
       "com.flexcil.flexcilnote",
@@ -161,8 +161,8 @@
   },
   "hk-morphe": {
     "repo": "https://github.com/humzakh/HK-Morphe-Patches",
-    "tag": "v1.3.4-dev.1",
-    "created_at": "2026-06-15T04:48:09",
+    "tag": "v1.3.5-dev.1",
+    "created_at": "2026-06-19T17:13:56",
     "apps": [
       "com.laurencedawson.reddit_sync",
       "com.laurencedawson.reddit_sync.dev",
@@ -265,8 +265,8 @@
   },
   "jasonwu1994": {
     "repo": "https://github.com/jasonwu1994/Gboard-patches",
-    "tag": "v1.10.0-dev.2",
-    "created_at": "2026-06-19T00:12:15",
+    "tag": "v1.11.0-dev.1",
+    "created_at": "2026-06-19T21:51:06",
     "apps": [
       "com.google.android.inputmethod.latin"
     ]
@@ -338,6 +338,15 @@
       "com.google.android.apps.youtube.music",
       "com.google.android.youtube",
       "com.reddit.frontpage"
+    ]
+  },
+  "morphe-portal": {
+    "repo": "https://github.com/andronedev/morphe-portal-patch",
+    "tag": "v0.1.0",
+    "created_at": "2026-06-19T20:53:34",
+    "apps": [
+      "com.google.android.apps.youtube.music",
+      "com.google.android.youtube"
     ]
   },
   "paresh-maheshwari": {
@@ -513,10 +522,18 @@
       "com.google.android.youtube"
     ]
   },
+  "ts-patches": {
+    "repo": "https://github.com/osirisad/ts-patches",
+    "tag": "v1.0.4",
+    "created_at": "2026-06-20T03:02:19",
+    "apps": [
+      "com.teamsnap.teamsnap"
+    ]
+  },
   "xob0t": {
     "repo": "https://github.com/xob0t/morphe-patches",
-    "tag": "v1.3.7-dev.1",
-    "created_at": "2026-05-31T11:49:31",
+    "tag": "v1.4.0-dev.3",
+    "created_at": "2026-06-20T08:15:16",
     "apps": [
       "com.avito.android",
       "com.idamob.tinkoff.android",

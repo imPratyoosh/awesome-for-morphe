@@ -36,15 +36,14 @@
   },
   "ajstrick81-androidtv": {
     "repo": "https://github.com/ajstrick81/morphe-androidtv-patches",
-    "tag": "v1.4.85",
-    "created_at": "2026-06-19T00:47:09",
+    "tag": "v1.4.87",
+    "created_at": "2026-06-20T01:59:36",
     "apps": [
       "com.amazon.amazonvideo.livingroom",
       "com.bamnetworks.mobile.android.gameday.atbat",
       "com.cbs.ott",
       "com.disney.disneyplus",
       "com.fox.foxone",
-      "com.foxsports.android",
       "com.peacocktv.peacockandroid",
       "com.tubitv",
       "com.univision.prendetv",
@@ -154,9 +153,10 @@
   },
   "chiggi": {
     "repo": "https://github.com/durgesh0505/chiggi_morphe_patches",
-    "tag": "v1.10.0",
-    "created_at": "2026-06-19T01:53:00",
+    "tag": "v1.13.1",
+    "created_at": "2026-06-19T23:05:27",
     "apps": [
+      "com.easybrain.arrow.puzzle.game",
       "com.instagram.barcelona",
       "com.sonyliv",
       "net.nutrilio"
@@ -164,8 +164,8 @@
   },
   "docbt": {
     "repo": "https://github.com/docbt/patched-up",
-    "tag": "v1.8.0",
-    "created_at": "2026-05-15T04:25:17",
+    "tag": "v1.9.0",
+    "created_at": "2026-06-20T03:31:38",
     "apps": [
       "com.ebay.kleinanzeigen",
       "com.google.android.apps.magazines"
@@ -207,8 +207,8 @@
   },
   "hk-morphe": {
     "repo": "https://github.com/humzakh/HK-Morphe-Patches",
-    "tag": "v1.3.4",
-    "created_at": "2026-06-15T04:52:01",
+    "tag": "v1.3.5",
+    "created_at": "2026-06-19T17:32:40",
     "apps": [
       "com.laurencedawson.reddit_sync",
       "com.laurencedawson.reddit_sync.dev",
@@ -273,10 +273,11 @@
   },
   "hoomans-morphe": {
     "repo": "https://github.com/arandomhooman/hoomans-morphe-patches",
-    "tag": "v1.12.0",
-    "created_at": "2026-06-19T09:54:58",
+    "tag": "v1.17.0",
+    "created_at": "2026-06-20T07:10:55",
     "apps": [
       "altergames.carlauncher",
+      "com.adobe.reader",
       "com.alphaprogression.alphaprogression",
       "com.appfactory.essence",
       "com.atomengineapps.teachmeanatomy",
@@ -284,10 +285,14 @@
       "com.blockerhero",
       "com.collectrinc.collectr",
       "com.cronometer.android.gold",
+      "com.overdevs.at4k",
       "com.quizlet.quizletandroid",
       "com.soepic.photogallery.release",
       "com.tracked.mobile",
-      "photo.editor.photoeditor.photoeditorpro"
+      "com.tranzmate",
+      "dk.tacit.android.foldersync.lite",
+      "photo.editor.photoeditor.photoeditorpro",
+      "tv.twitch.android.app"
     ]
   },
   "icysymmetra-tiktok": {
@@ -317,8 +322,8 @@
   },
   "jasonwu1994": {
     "repo": "https://github.com/jasonwu1994/Gboard-patches",
-    "tag": "v1.10.0",
-    "created_at": "2026-06-19T03:20:00",
+    "tag": "v1.11.0",
+    "created_at": "2026-06-19T22:47:47",
     "apps": [
       "com.google.android.inputmethod.latin"
     ]
@@ -426,6 +431,15 @@
       "com.reddit.frontpage"
     ]
   },
+  "morphe-portal": {
+    "repo": "https://github.com/andronedev/morphe-portal-patch",
+    "tag": "v0.1.0",
+    "created_at": "2026-06-19T20:53:34",
+    "apps": [
+      "com.google.android.apps.youtube.music",
+      "com.google.android.youtube"
+    ]
+  },
   "paresh-maheshwari": {
     "repo": "https://gitlab.com/Paresh-Maheshwari/paresh-patches",
     "tag": "v1.18.0",
@@ -501,14 +515,6 @@
     "created_at": "2026-06-18T18:17:56",
     "apps": [
       "com.instagram.android",
-      "com.twitter.android"
-    ]
-  },
-  "piko-shim": {
-    "repo": "https://gitlab.com/inotia00/x-shim",
-    "tag": "v1.6.2",
-    "created_at": "2026-06-19T07:55:03",
-    "apps": [
       "com.twitter.android"
     ]
   },
@@ -641,12 +647,28 @@
     "created_at": "2026-06-13T14:15:10",
     "apps": []
   },
+  "ts-patches": {
+    "repo": "https://github.com/osirisad/ts-patches",
+    "tag": "v1.0.5",
+    "created_at": "2026-06-20T03:09:34",
+    "apps": [
+      "com.teamsnap.teamsnap"
+    ]
+  },
   "vladon": {
     "repo": "https://github.com/vladon/morphe-patches-navi",
     "tag": "v1.0.6",
     "created_at": "2026-04-20T14:53:42",
     "apps": [
       "ru.yandex.yandexnavi"
+    ]
+  },
+  "x-shim": {
+    "repo": "https://gitlab.com/inotia00/x-shim",
+    "tag": "v1.6.2",
+    "created_at": "2026-06-19T07:55:03",
+    "apps": [
+      "com.twitter.android"
     ]
   },
   "xob0t": {
