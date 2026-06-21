@@ -17,8 +17,8 @@
   },
   "adobo": {
     "repo": "https://github.com/jkennethcarino/adobo",
-    "tag": "v1.2.0-dev.9",
-    "created_at": "2026-06-14T11:46:04",
+    "tag": "v1.3.0-dev.1",
+    "created_at": "2026-06-20T16:24:40",
     "apps": [
       "com.google.android.inputmethod.latin",
       "com.imdb.mobile",
@@ -140,14 +140,22 @@
   },
   "brosssh": {
     "repo": "https://github.com/brosssh/morphe-patches",
-    "tag": "v2.7.0-dev.2",
-    "created_at": "2026-06-17T14:01:40",
+    "tag": "v2.7.0-dev.3",
+    "created_at": "2026-06-20T14:57:48",
     "apps": [
       "com.instagram.android",
       "cz.seznam.mapy",
       "de.komoot.android",
       "fr.chargeprice.app",
       "fr.tramb.park4night"
+    ]
+  },
+  "browzomje": {
+    "repo": "https://github.com/browzomje/browzomje-patches",
+    "tag": "v1.0.0-dev.1",
+    "created_at": "2026-06-20T21:47:50",
+    "apps": [
+      "com.pinterest"
     ]
   },
   "docbt": {
@@ -157,6 +165,17 @@
     "apps": [
       "com.ebay.kleinanzeigen",
       "com.google.android.apps.magazines"
+    ]
+  },
+  "ee-morphe": {
+    "repo": "https://gitlab.com/early.egg3707/ee-morphe-patches",
+    "tag": "v1.3.0-dev.2",
+    "created_at": "2026-06-20T23:41:44",
+    "apps": [
+      "com.byairapp.android",
+      "com.wanderlog.android",
+      "de.dwins.financeguru",
+      "epixler.de.hypnobox_android"
     ]
   },
   "hk-morphe": {
@@ -227,14 +246,27 @@
   },
   "hoomans-morphe": {
     "repo": "https://github.com/arandomhooman/hoomans-morphe-patches",
-    "tag": "v1.3.0-dev.1",
-    "created_at": "2026-06-15T19:45:33",
+    "tag": "v1.19.0",
+    "created_at": "2026-06-20T19:44:41",
     "apps": [
+      "altergames.carlauncher",
+      "com.adobe.reader",
+      "com.alphaprogression.alphaprogression",
+      "com.appfactory.essence",
       "com.atomengineapps.teachmeanatomy",
+      "com.bandlab.bandlab",
       "com.blockerhero",
+      "com.collectrinc.collectr",
       "com.cronometer.android.gold",
+      "com.flightradar24free",
+      "com.overdevs.at4k",
       "com.quizlet.quizletandroid",
-      "com.soepic.photogallery.release"
+      "com.soepic.photogallery.release",
+      "com.tracked.mobile",
+      "com.tranzmate",
+      "dk.tacit.android.foldersync.lite",
+      "photo.editor.photoeditor.photoeditorpro",
+      "tv.twitch.android.app"
     ]
   },
   "icysymmetra-tiktok": {
@@ -281,13 +313,14 @@
   },
   "kondratjev": {
     "repo": "https://github.com/kondratjev/morphe-patches",
-    "tag": "v1.12.0-dev.3",
-    "created_at": "2026-06-15T19:00:10",
+    "tag": "v1.13.0-dev.2",
+    "created_at": "2026-06-20T19:48:07",
     "apps": [
       "com.brightstripe.parcels",
       "com.fatsecret.android",
       "com.lyfta",
       "com.medisafe.android.client",
+      "com.ornament.monitor",
       "com.quvideo.wisemeal",
       "com.sillens.shapeupclub",
       "com.soundcloud.android",
@@ -298,10 +331,11 @@
   },
   "lain": {
     "repo": "https://github.com/kiraio-moe/Lain-Patches",
-    "tag": "v1.1.0-dev.4",
-    "created_at": "2026-06-19T01:19:15",
+    "tag": "v1.2.0-dev.1",
+    "created_at": "2026-06-20T11:10:38",
     "apps": [
       "cn.adonet.proxyevery",
+      "com.azefsw.audioconnect",
       "com.ceyhan.sets",
       "com.flavionet.android.camera.lite",
       "com.flavionet.android.cinema.lite",
@@ -310,6 +344,7 @@
       "com.jeyluta.timestampcamerafree",
       "com.jeyluta.timestampcamerafreeent",
       "com.kcstream.cing",
+      "com.medibang.android.medibangpro",
       "com.medibang.android.paint.tablet"
     ]
   },
@@ -332,8 +367,8 @@
   },
   "morphe": {
     "repo": "https://github.com/MorpheApp/morphe-patches",
-    "tag": "v1.32.0-dev.3",
-    "created_at": "2026-06-18T18:09:13",
+    "tag": "v1.32.0-dev.5",
+    "created_at": "2026-06-21T07:11:33",
     "apps": [
       "com.google.android.apps.youtube.music",
       "com.google.android.youtube",
@@ -478,16 +513,23 @@
   },
   "rushiranpise": {
     "repo": "https://github.com/rushiranpise/morphe-patches",
-    "tag": "v1.6.0-dev.13",
-    "created_at": "2026-06-16T04:16:14",
+    "tag": "v1.6.0-dev.14",
+    "created_at": "2026-06-21T06:03:37",
     "apps": [
       "ai.topicfinder.podcastdiscovery",
+      "ch.protonvpn.android",
       "com.Splitwise.SplitwiseMobile",
+      "com.adguard.android",
+      "com.anetcapture.mock",
+      "com.app.social_gamebox",
       "com.blockerhero",
       "com.canva.editor",
       "com.catalinagroup.callrecorder",
       "com.cloudflare.onedotonedotonedotone",
+      "com.cpuid.cpu_z",
       "com.dubox.drive",
+      "com.finalwire.aida64",
+      "com.flightradar24free",
       "com.inscode.autoclicker",
       "com.iudesk.android.photo.editor",
       "com.javiersantos.mlmanager",
@@ -497,16 +539,22 @@
       "com.newsbreak.crimeradar",
       "com.oasisfeng.greenify",
       "com.proxyman.proxymanandroid",
+      "com.psiphon3.subscription",
       "com.rarlab.rar",
       "com.saldous.casetracker",
+      "com.shexa.permissionmanager",
       "com.tafayor.hibernator",
       "com.tafayor.killall",
       "com.twtapp",
       "com.yatrirailways.yatri",
       "cz.mroczis.netmonster",
+      "eu.darken.myperm",
       "eu.faircode.netguard",
       "it.mirko.beta",
+      "kha.prog.mikrotik",
       "net.dinglisch.android.taskerm",
+      "org.hola.play",
+      "org.zwanoo.android.speedtest",
       "sensustech.universal.tv.remote.control",
       "shareit.premium",
       "sp0n.citizen",
@@ -532,8 +580,8 @@
   },
   "xob0t": {
     "repo": "https://github.com/xob0t/morphe-patches",
-    "tag": "v1.4.0-dev.3",
-    "created_at": "2026-06-20T08:15:16",
+    "tag": "v1.4.0-dev.11",
+    "created_at": "2026-06-21T02:56:33",
     "apps": [
       "com.avito.android",
       "com.idamob.tinkoff.android",

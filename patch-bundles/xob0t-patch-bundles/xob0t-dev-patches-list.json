@@ -1,5 +1,5 @@
 {
-    "version": "v1.4.0-dev.3",
+    "version": "v1.4.0-dev.11",
     "patches": [
         {
             "compatiblePackages": [
@@ -303,57 +303,6 @@
             ],
             "default": false,
             "dependencies": [
-                "BytecodePatch"
-            ],
-            "description": "Removes the Avi assistant button from Avito's bottom navigation bar. Toggleable in Настройки Morphe (needs an app restart to apply).",
-            "name": "Hide Avi bottom tab",
-            "options": []
-        },
-        {
-            "compatiblePackages": [
-                {
-                    "apkFileType": "APK",
-                    "appIconColor": "#00AAFF",
-                    "description": null,
-                    "name": "Avito",
-                    "packageName": "com.avito.android",
-                    "signatures": null,
-                    "targets": [
-                        {
-                            "description": null,
-                            "isExperimental": false,
-                            "minSdk": 28,
-                            "version": "227.0"
-                        },
-                        {
-                            "description": null,
-                            "isExperimental": false,
-                            "minSdk": 28,
-                            "version": "226.5"
-                        },
-                        {
-                            "description": null,
-                            "isExperimental": false,
-                            "minSdk": 28,
-                            "version": "225.5"
-                        },
-                        {
-                            "description": null,
-                            "isExperimental": false,
-                            "minSdk": 28,
-                            "version": "224.6"
-                        },
-                        {
-                            "description": null,
-                            "isExperimental": false,
-                            "minSdk": 28,
-                            "version": null
-                        }
-                    ]
-                }
-            ],
-            "default": false,
-            "dependencies": [
                 "ResourcePatch"
             ],
             "description": "Adds a \"Настройки Morphe\" entry to Avito's settings that hosts the configuration for the other Morphe patches.",
@@ -421,6 +370,12 @@
                     "packageName": "ru.ozon.app.android",
                     "signatures": null,
                     "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": 26,
+                            "version": "19.22.0"
+                        },
                         {
                             "description": null,
                             "isExperimental": false,
@@ -507,6 +462,12 @@
                             "description": null,
                             "isExperimental": false,
                             "minSdk": 26,
+                            "version": "7.6.8001"
+                        },
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": 26,
                             "version": "7.6.1000-rustore"
                         },
                         {
@@ -539,6 +500,38 @@
                     "values": null
                 }
             ]
+        },
+        {
+            "compatiblePackages": null,
+            "default": false,
+            "dependencies": [],
+            "description": "Spoofs emulator state through common Build, QEMU file, command, and system property checks.",
+            "name": "Spoof emulator status",
+            "options": []
+        },
+        {
+            "compatiblePackages": null,
+            "default": false,
+            "dependencies": [],
+            "description": "Spoofs package installer checks to report Google Play as the install source.",
+            "name": "Spoof install source",
+            "options": []
+        },
+        {
+            "compatiblePackages": null,
+            "default": false,
+            "dependencies": [],
+            "description": "Spoofs USB debugging and related developer settings through common Android APIs.",
+            "name": "Spoof USB debugging status",
+            "options": []
+        },
+        {
+            "compatiblePackages": null,
+            "default": false,
+            "dependencies": [],
+            "description": "Spoofs VPN state through common Android network APIs.",
+            "name": "Spoof VPN status",
+            "options": []
         },
         {
             "compatiblePackages": [
@@ -587,40 +580,8 @@
             "dependencies": [
                 "BytecodePatch"
             ],
-            "description": "Collapses the home-screen category rubricator from two rows into a single horizontally scrollable row. Toggleable in Настройки Morphe (needs an app restart to apply).",
-            "name": "Single-row home categories",
-            "options": []
-        },
-        {
-            "compatiblePackages": null,
-            "default": false,
-            "dependencies": [],
-            "description": "Spoofs emulator state through common Build, QEMU file, command, and system property checks.",
-            "name": "Spoof emulator status",
-            "options": []
-        },
-        {
-            "compatiblePackages": null,
-            "default": false,
-            "dependencies": [],
-            "description": "Spoofs package installer checks to report Google Play as the install source.",
-            "name": "Spoof install source",
-            "options": []
-        },
-        {
-            "compatiblePackages": null,
-            "default": false,
-            "dependencies": [],
-            "description": "Spoofs USB debugging and related developer settings through common Android APIs.",
-            "name": "Spoof USB debugging status",
-            "options": []
-        },
-        {
-            "compatiblePackages": null,
-            "default": false,
-            "dependencies": [],
-            "description": "Spoofs VPN state through common Android network APIs.",
-            "name": "Spoof VPN status",
+            "description": "Optional interface tweaks, each toggleable in Настройки Morphe: single-row home categories, hide the \"Подписки\" tab in Избранное, hide installments (Рассрочка) and the \"Спросите у продавца\" block on offers, and hide the Avi assistant tab in the bottom navigation.",
+            "name": "UI tweaks",
             "options": []
         }
     ]

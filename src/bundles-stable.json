@@ -36,8 +36,8 @@
   },
   "ajstrick81-androidtv": {
     "repo": "https://github.com/ajstrick81/morphe-androidtv-patches",
-    "tag": "v1.4.87",
-    "created_at": "2026-06-20T01:59:36",
+    "tag": "v1.4.93",
+    "created_at": "2026-06-21T01:19:47",
     "apps": [
       "com.amazon.amazonvideo.livingroom",
       "com.bamnetworks.mobile.android.gameday.atbat",
@@ -149,6 +149,14 @@
       "de.komoot.android",
       "fr.chargeprice.app",
       "fr.tramb.park4night"
+    ]
+  },
+  "browzomje": {
+    "repo": "https://github.com/browzomje/browzomje-patches",
+    "tag": "v1.0.0",
+    "created_at": "2026-06-20T21:44:48",
+    "apps": [
+      "com.pinterest"
     ]
   },
   "chiggi": {
@@ -273,8 +281,8 @@
   },
   "hoomans-morphe": {
     "repo": "https://github.com/arandomhooman/hoomans-morphe-patches",
-    "tag": "v1.17.0",
-    "created_at": "2026-06-20T07:10:55",
+    "tag": "v1.23.0",
+    "created_at": "2026-06-21T05:56:31",
     "apps": [
       "altergames.carlauncher",
       "com.adobe.reader",
@@ -283,8 +291,11 @@
       "com.atomengineapps.teachmeanatomy",
       "com.bandlab.bandlab",
       "com.blockerhero",
+      "com.camerasideas.instashot",
       "com.collectrinc.collectr",
       "com.cronometer.android.gold",
+      "com.flightradar24free",
+      "com.naver.linewebtoon",
       "com.overdevs.at4k",
       "com.quizlet.quizletandroid",
       "com.soepic.photogallery.release",
@@ -314,9 +325,10 @@
   },
   "imxeren": {
     "repo": "https://github.com/IMXEren/mix-patches",
-    "tag": "v1.2.0",
-    "created_at": "2026-05-20T00:57:43",
+    "tag": "v1.3.0",
+    "created_at": "2026-06-20T21:49:01",
     "apps": [
+      "com.laurencedawson.reddit_sync",
       "tv.trakt.trakt"
     ]
   },
@@ -356,13 +368,14 @@
   },
   "kondratjev": {
     "repo": "https://github.com/kondratjev/morphe-patches",
-    "tag": "v1.12.0",
-    "created_at": "2026-06-15T19:10:30",
+    "tag": "v1.13.0",
+    "created_at": "2026-06-20T19:49:44",
     "apps": [
       "com.brightstripe.parcels",
       "com.fatsecret.android",
       "com.lyfta",
       "com.medisafe.android.client",
+      "com.ornament.monitor",
       "com.quvideo.wisemeal",
       "com.sillens.shapeupclub",
       "com.soundcloud.android",
@@ -608,26 +621,50 @@
   },
   "rushiranpise": {
     "repo": "https://github.com/rushiranpise/morphe-patches",
-    "tag": "v1.5.0",
-    "created_at": "2026-06-10T17:36:38",
+    "tag": "v1.6.0",
+    "created_at": "2026-06-21T06:11:26",
     "apps": [
       "ai.topicfinder.podcastdiscovery",
+      "ch.protonvpn.android",
       "com.Splitwise.SplitwiseMobile",
+      "com.adguard.android",
+      "com.anetcapture.mock",
+      "com.app.social_gamebox",
+      "com.blockerhero",
+      "com.canva.editor",
       "com.catalinagroup.callrecorder",
       "com.cloudflare.onedotonedotonedotone",
+      "com.cpuid.cpu_z",
+      "com.dubox.drive",
+      "com.finalwire.aida64",
+      "com.flightradar24free",
+      "com.inscode.autoclicker",
       "com.iudesk.android.photo.editor",
       "com.javiersantos.mlmanager",
+      "com.kevinforeman.nzb360",
       "com.mobond.mindicator",
+      "com.mtv.sai",
       "com.newsbreak.crimeradar",
       "com.oasisfeng.greenify",
+      "com.proxyman.proxymanandroid",
+      "com.psiphon3.subscription",
       "com.rarlab.rar",
       "com.saldous.casetracker",
+      "com.shexa.permissionmanager",
       "com.tafayor.hibernator",
       "com.tafayor.killall",
       "com.twtapp",
       "com.yatrirailways.yatri",
+      "cz.mroczis.netmonster",
+      "eu.darken.myperm",
+      "eu.faircode.netguard",
       "it.mirko.beta",
+      "kha.prog.mikrotik",
+      "net.dinglisch.android.taskerm",
+      "org.hola.play",
+      "org.zwanoo.android.speedtest",
       "sensustech.universal.tv.remote.control",
+      "shareit.premium",
       "sp0n.citizen",
       "verbosus.pialytic"
     ]
@@ -649,8 +686,8 @@
   },
   "ts-patches": {
     "repo": "https://github.com/osirisad/ts-patches",
-    "tag": "v1.0.5",
-    "created_at": "2026-06-20T03:09:34",
+    "tag": "v1.0.0",
+    "created_at": "2026-06-21T02:17:19",
     "apps": [
       "com.teamsnap.teamsnap"
     ]
@@ -673,8 +710,8 @@
   },
   "xob0t": {
     "repo": "https://github.com/xob0t/morphe-patches",
-    "tag": "v1.3.8",
-    "created_at": "2026-06-14T02:11:06",
+    "tag": "v1.4.0",
+    "created_at": "2026-06-21T07:14:55",
     "apps": [
       "com.avito.android",
       "com.idamob.tinkoff.android",
