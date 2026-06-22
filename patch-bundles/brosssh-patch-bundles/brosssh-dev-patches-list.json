@@ -1,5 +1,5 @@
 {
-    "version": "v2.7.0-dev.3",
+    "version": "v2.8.0-dev.1",
     "patches": [
         {
             "compatiblePackages": [
@@ -15,7 +15,11 @@
                             "description": null,
                             "isExperimental": false,
                             "minSdk": null,
-                            "version": "430.0.0.53.80"
+                            "version": "430.0.0.53.80",
+                            "versionCodes": {
+                                "ARM64_V8A": 383611190,
+                                "ARMEABI_V7A": 383710475
+                            }
                         }
                     ]
                 }
@@ -40,7 +44,11 @@
                             "description": null,
                             "isExperimental": false,
                             "minSdk": null,
-                            "version": "430.0.0.53.80"
+                            "version": "430.0.0.53.80",
+                            "versionCodes": {
+                                "ARM64_V8A": 383611190,
+                                "ARMEABI_V7A": 383710475
+                            }
                         }
                     ]
                 }
@@ -86,7 +94,11 @@
                             "description": null,
                             "isExperimental": false,
                             "minSdk": null,
-                            "version": "430.0.0.53.80"
+                            "version": "430.0.0.53.80",
+                            "versionCodes": {
+                                "ARM64_V8A": 383611190,
+                                "ARMEABI_V7A": 383710475
+                            }
                         }
                     ]
                 }
@@ -113,7 +125,11 @@
                             "description": null,
                             "isExperimental": false,
                             "minSdk": null,
-                            "version": "430.0.0.53.80"
+                            "version": "430.0.0.53.80",
+                            "versionCodes": {
+                                "ARM64_V8A": 383611190,
+                                "ARMEABI_V7A": 383710475
+                            }
                         }
                     ]
                 }
@@ -138,7 +154,11 @@
                             "description": null,
                             "isExperimental": false,
                             "minSdk": null,
-                            "version": "430.0.0.53.80"
+                            "version": "430.0.0.53.80",
+                            "versionCodes": {
+                                "ARM64_V8A": 383611190,
+                                "ARMEABI_V7A": 383710475
+                            }
                         }
                     ]
                 }
@@ -163,7 +183,11 @@
                             "description": null,
                             "isExperimental": false,
                             "minSdk": null,
-                            "version": "430.0.0.53.80"
+                            "version": "430.0.0.53.80",
+                            "versionCodes": {
+                                "ARM64_V8A": 383611190,
+                                "ARMEABI_V7A": 383710475
+                            }
                         }
                     ]
                 }
@@ -190,7 +214,11 @@
                             "description": null,
                             "isExperimental": false,
                             "minSdk": null,
-                            "version": "430.0.0.53.80"
+                            "version": "430.0.0.53.80",
+                            "versionCodes": {
+                                "ARM64_V8A": 383611190,
+                                "ARMEABI_V7A": 383710475
+                            }
                         }
                     ]
                 }
@@ -215,7 +243,11 @@
                             "description": null,
                             "isExperimental": false,
                             "minSdk": null,
-                            "version": "430.0.0.53.80"
+                            "version": "430.0.0.53.80",
+                            "versionCodes": {
+                                "ARM64_V8A": 383611190,
+                                "ARMEABI_V7A": 383710475
+                            }
                         }
                     ]
                 }
@@ -240,7 +272,11 @@
                             "description": null,
                             "isExperimental": false,
                             "minSdk": null,
-                            "version": "430.0.0.53.80"
+                            "version": "430.0.0.53.80",
+                            "versionCodes": {
+                                "ARM64_V8A": 383611190,
+                                "ARMEABI_V7A": 383710475
+                            }
                         }
                     ]
                 }
@@ -268,7 +304,11 @@
                             "description": null,
                             "isExperimental": false,
                             "minSdk": null,
-                            "version": "430.0.0.53.80"
+                            "version": "430.0.0.53.80",
+                            "versionCodes": {
+                                "ARM64_V8A": 383611190,
+                                "ARMEABI_V7A": 383710475
+                            }
                         }
                     ]
                 }
@@ -350,7 +390,11 @@
                             "description": null,
                             "isExperimental": false,
                             "minSdk": null,
-                            "version": "430.0.0.53.80"
+                            "version": "430.0.0.53.80",
+                            "versionCodes": {
+                                "ARM64_V8A": 383611190,
+                                "ARMEABI_V7A": 383710475
+                            }
                         }
                     ]
                 }
@@ -375,7 +419,11 @@
                             "description": null,
                             "isExperimental": false,
                             "minSdk": null,
-                            "version": "430.0.0.53.80"
+                            "version": "430.0.0.53.80",
+                            "versionCodes": {
+                                "ARM64_V8A": 383611190,
+                                "ARMEABI_V7A": 383710475
+                            }
                         }
                     ]
                 }
@@ -402,7 +450,11 @@
                             "description": null,
                             "isExperimental": false,
                             "minSdk": null,
-                            "version": "430.0.0.53.80"
+                            "version": "430.0.0.53.80",
+                            "versionCodes": {
+                                "ARM64_V8A": 383611190,
+                                "ARMEABI_V7A": 383710475
+                            }
                         }
                     ]
                 }
@@ -427,7 +479,11 @@
                             "description": null,
                             "isExperimental": false,
                             "minSdk": null,
-                            "version": "430.0.0.53.80"
+                            "version": "430.0.0.53.80",
+                            "versionCodes": {
+                                "ARM64_V8A": 383611190,
+                                "ARMEABI_V7A": 383710475
+                            }
                         }
                     ]
                 }
@@ -452,18 +508,51 @@
                             "description": null,
                             "isExperimental": false,
                             "minSdk": null,
-                            "version": "430.0.0.53.80"
+                            "version": "430.0.0.53.80",
+                            "versionCodes": {
+                                "ARM64_V8A": 383611190,
+                                "ARMEABI_V7A": 383710475
+                            }
                         }
                     ]
                 }
             ],
             "default": true,
             "dependencies": [
+                "BytecodePatch",
                 "BytecodePatch"
             ],
-            "description": "Hides suggested stories, reels, threads and survey from feed (Suggested posts will still be shown).",
+            "description": "Choose the suggested content to hide using the patch options.",
             "name": "Hide suggested content",
-            "options": []
+            "options": [
+                {
+                    "default": true,
+                    "description": "Hides suggested reels from feed and reels tab.",
+                    "key": "hideSuggestedReels",
+                    "required": false,
+                    "title": "Hide suggested reels",
+                    "type": "kotlin.Boolean",
+                    "values": null
+                },
+                {
+                    "default": true,
+                    "description": "Hides suggested stories/users from story tray.",
+                    "key": "hideSuggestedStories",
+                    "required": false,
+                    "title": "Hide suggested stories",
+                    "type": "kotlin.Boolean",
+                    "values": null
+                },
+                {
+                    "default": true,
+                    "description": "Hides highlighted stories from story tray, sponsored stories which have no set expiration.",
+                    "key": "hideHighlightStories",
+                    "required": false,
+                    "title": "Hide highlights in stories",
+                    "type": "kotlin.Boolean",
+                    "values": null
+                }
+            ]
         },
         {
             "compatiblePackages": [
@@ -479,7 +568,11 @@
                             "description": null,
                             "isExperimental": false,
                             "minSdk": null,
-                            "version": "430.0.0.53.80"
+                            "version": "430.0.0.53.80",
+                            "versionCodes": {
+                                "ARM64_V8A": 383611190,
+                                "ARMEABI_V7A": 383710475
+                            }
                         }
                     ]
                 }
@@ -506,7 +599,11 @@
                             "description": null,
                             "isExperimental": false,
                             "minSdk": null,
-                            "version": "430.0.0.53.80"
+                            "version": "430.0.0.53.80",
+                            "versionCodes": {
+                                "ARM64_V8A": 383611190,
+                                "ARMEABI_V7A": 383710475
+                            }
                         }
                     ]
                 }
@@ -533,7 +630,11 @@
                             "description": null,
                             "isExperimental": false,
                             "minSdk": null,
-                            "version": "430.0.0.53.80"
+                            "version": "430.0.0.53.80",
+                            "versionCodes": {
+                                "ARM64_V8A": 383611190,
+                                "ARMEABI_V7A": 383710475
+                            }
                         }
                     ]
                 }
@@ -558,7 +659,8 @@
                             "description": null,
                             "isExperimental": false,
                             "minSdk": null,
-                            "version": "3.9.2"
+                            "version": "3.9.2",
+                            "versionCodes": null
                         }
                     ]
                 }
@@ -583,7 +685,8 @@
                             "description": null,
                             "isExperimental": false,
                             "minSdk": null,
-                            "version": "2025.38.2"
+                            "version": "2025.38.2",
+                            "versionCodes": null
                         }
                     ]
                 }
@@ -608,7 +711,8 @@
                             "description": null,
                             "isExperimental": false,
                             "minSdk": null,
-                            "version": "26.5.0"
+                            "version": "26.5.0",
+                            "versionCodes": null
                         }
                     ]
                 }
@@ -633,7 +737,8 @@
                             "description": null,
                             "isExperimental": false,
                             "minSdk": null,
-                            "version": "7.1.11"
+                            "version": "7.1.11",
+                            "versionCodes": null
                         }
                     ]
                 }

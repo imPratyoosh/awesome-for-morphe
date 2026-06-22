@@ -36,8 +36,8 @@
   },
   "ajstrick81-androidtv": {
     "repo": "https://github.com/ajstrick81/morphe-androidtv-patches",
-    "tag": "v1.4.93",
-    "created_at": "2026-06-21T01:19:47",
+    "tag": "v1.4.100",
+    "created_at": "2026-06-22T02:33:22",
     "apps": [
       "com.amazon.amazonvideo.livingroom",
       "com.bamnetworks.mobile.android.gameday.atbat",
@@ -141,8 +141,8 @@
   },
   "brosssh": {
     "repo": "https://github.com/brosssh/morphe-patches",
-    "tag": "v2.6.3",
-    "created_at": "2026-06-03T21:31:03",
+    "tag": "v2.7.0",
+    "created_at": "2026-06-21T17:31:48",
     "apps": [
       "com.instagram.android",
       "cz.seznam.mapy",
@@ -281,8 +281,8 @@
   },
   "hoomans-morphe": {
     "repo": "https://github.com/arandomhooman/hoomans-morphe-patches",
-    "tag": "v1.23.0",
-    "created_at": "2026-06-21T05:56:31",
+    "tag": "v1.26.0",
+    "created_at": "2026-06-22T03:30:40",
     "apps": [
       "altergames.carlauncher",
       "com.adobe.reader",
@@ -297,10 +297,15 @@
       "com.flightradar24free",
       "com.naver.linewebtoon",
       "com.overdevs.at4k",
+      "com.paget96.batteryguru",
       "com.quizlet.quizletandroid",
+      "com.realbyteapps.moneymanagerfree",
+      "com.rumble.battles",
       "com.soepic.photogallery.release",
       "com.tracked.mobile",
       "com.tranzmate",
+      "com.tumblr",
+      "com.wanderlog.android",
       "dk.tacit.android.foldersync.lite",
       "photo.editor.photoeditor.photoeditorpro",
       "tv.twitch.android.app"
@@ -334,8 +339,8 @@
   },
   "jasonwu1994": {
     "repo": "https://github.com/jasonwu1994/Gboard-patches",
-    "tag": "v1.11.0",
-    "created_at": "2026-06-19T22:47:47",
+    "tag": "v1.12.0",
+    "created_at": "2026-06-22T05:03:33",
     "apps": [
       "com.google.android.inputmethod.latin"
     ]
@@ -710,8 +715,8 @@
   },
   "xob0t": {
     "repo": "https://github.com/xob0t/morphe-patches",
-    "tag": "v1.4.0",
-    "created_at": "2026-06-21T07:14:55",
+    "tag": "v1.5.0",
+    "created_at": "2026-06-22T06:25:39",
     "apps": [
       "com.avito.android",
       "com.idamob.tinkoff.android",

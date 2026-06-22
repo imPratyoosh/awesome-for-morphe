@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-06-21T02:56:33",
-  "description": "## [1.4.0-dev.11](https://github.com/xob0t/morphe-patches/compare/v1.4.0-dev.10...v1.4.0-dev.11) (2026-06-21)\n\n### \ud83d\udc1b Bug Fixes\n\n* **avito:** compute dp from real density, not rounded ([334ca74](https://github.com/xob0t/morphe-patches/commit/334ca74f0ac8e021a4702f0969fc3674933d93bb))\n",
-  "download_url": "https://github.com/xob0t/morphe-patches/releases/download/v1.4.0-dev.11/patches-1.4.0-dev.11.mpp",
+  "created_at": "2026-06-22T06:22:26",
+  "description": "## [1.5.0-dev.4](https://github.com/xob0t/morphe-patches/compare/v1.5.0-dev.3...v1.5.0-dev.4) (2026-06-22)\n\n### \u2728 New Features\n\n* **ads:** make ad surfaces mandatory so version drift fails the patch ([#20](https://github.com/xob0t/morphe-patches/issues/20)) ([c13b2a8](https://github.com/xob0t/morphe-patches/commit/c13b2a831cf23b53d768f6953943b9d39cc22908))\n",
+  "download_url": "https://github.com/xob0t/morphe-patches/releases/download/v1.5.0-dev.4/patches-1.5.0-dev.4.mpp",
   "signature_download_url": "N/A",
-  "version": "v1.4.0-dev.11"
+  "version": "v1.5.0-dev.4"
 }

@@ -140,8 +140,8 @@
   },
   "brosssh": {
     "repo": "https://github.com/brosssh/morphe-patches",
-    "tag": "v2.7.0-dev.3",
-    "created_at": "2026-06-20T14:57:48",
+    "tag": "v2.8.0-dev.1",
+    "created_at": "2026-06-22T10:51:15",
     "apps": [
       "com.instagram.android",
       "cz.seznam.mapy",
@@ -297,8 +297,8 @@
   },
   "jasonwu1994": {
     "repo": "https://github.com/jasonwu1994/Gboard-patches",
-    "tag": "v1.11.0-dev.1",
-    "created_at": "2026-06-19T21:51:06",
+    "tag": "v1.12.0-dev.1",
+    "created_at": "2026-06-22T04:29:27",
     "apps": [
       "com.google.android.inputmethod.latin"
     ]
@@ -367,8 +367,8 @@
   },
   "morphe": {
     "repo": "https://github.com/MorpheApp/morphe-patches",
-    "tag": "v1.32.0-dev.5",
-    "created_at": "2026-06-21T07:11:33",
+    "tag": "v1.32.0-dev.7",
+    "created_at": "2026-06-22T09:25:34",
     "apps": [
       "com.google.android.apps.youtube.music",
       "com.google.android.youtube",
@@ -438,8 +438,8 @@
   },
   "piko": {
     "repo": "https://github.com/crimera/piko",
-    "tag": "v3.6.0-dev.1",
-    "created_at": "2026-06-18T05:44:53",
+    "tag": "v3.7.0-dev.3",
+    "created_at": "2026-06-21T18:29:56",
     "apps": [
       "com.instagram.android",
       "com.twitter.android"
@@ -580,8 +580,8 @@
   },
   "xob0t": {
     "repo": "https://github.com/xob0t/morphe-patches",
-    "tag": "v1.4.0-dev.11",
-    "created_at": "2026-06-21T02:56:33",
+    "tag": "v1.5.0-dev.4",
+    "created_at": "2026-06-22T06:22:26",
     "apps": [
       "com.avito.android",
       "com.idamob.tinkoff.android",
