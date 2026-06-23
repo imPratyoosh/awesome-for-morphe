@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-06-22T02:33:22",
-  "description": "## [1.4.100](https://github.com/ajstrick81/morphe-androidtv-patches/compare/v1.4.99...v1.4.100) (2026-06-22)\n\n\n### Bug Fixes\n\n* gradlew clean: Reorder Gradle commands in release workflow ([8d93490](https://github.com/ajstrick81/morphe-androidtv-patches/commit/8d93490bae60ba7eb543fc41a451a3f3a3f7e391))\n\n\n\n",
-  "download_url": "https://github.com/ajstrick81/morphe-androidtv-patches/releases/download/v1.4.100/patches-1.4.99.mpp",
+  "created_at": "2026-06-23T01:10:41",
+  "description": "## [1.4.105](https://github.com/ajstrick81/morphe-androidtv-patches/compare/v1.4.104...v1.4.105) (2026-06-23)\n\n\n### Bug Fixes\n\n* Peacock Layer 7 constructor coverage + HBO Max 7.5.0.73 support ([#21](https://github.com/ajstrick81/morphe-androidtv-patches/issues/21)) ([b4e862a](https://github.com/ajstrick81/morphe-androidtv-patches/commit/b4e862af3b8e974d485c7e9634f08210ec52d647))\n\n\n\n",
+  "download_url": "https://github.com/ajstrick81/morphe-androidtv-patches/releases/download/v1.4.105/patches-1.4.105.mpp",
   "signature_download_url": "N/A",
-  "version": "v1.4.100"
+  "version": "v1.4.105"
 }

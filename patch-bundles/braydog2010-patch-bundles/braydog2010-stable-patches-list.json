@@ -1,29 +1,30 @@
 {
-    "version": "v1.2.0-dev.1",
+    "version": "v1.0.0",
     "patches": [
         {
             "compatiblePackages": [
                 {
-                    "apkFileType": null,
-                    "appIconColor": "#1A1A2E",
+                    "apkFileType": "APK",
+                    "appIconColor": "#1A237E",
                     "description": null,
-                    "name": "Depth Wallpapers & Live Clock",
-                    "packageName": "com.jndapp.depth.live.wallpaper",
+                    "name": "Venabox Hub",
+                    "packageName": "com.dubani.dub",
                     "signatures": null,
                     "targets": [
                         {
                             "description": null,
                             "isExperimental": false,
                             "minSdk": null,
-                            "version": null
+                            "version": null,
+                            "versionCodes": null
                         }
                     ]
                 }
             ],
             "default": true,
             "dependencies": [],
-            "description": "Unlocks all premium wallpapers and removes license verification features.",
-            "name": "Unlock Premium",
+            "description": "Removes ads from Venabox Hub.",
+            "name": "Remove Ads",
             "options": []
         }
     ]

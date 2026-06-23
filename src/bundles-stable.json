@@ -36,8 +36,8 @@
   },
   "ajstrick81-androidtv": {
     "repo": "https://github.com/ajstrick81/morphe-androidtv-patches",
-    "tag": "v1.4.100",
-    "created_at": "2026-06-22T02:33:22",
+    "tag": "v1.4.105",
+    "created_at": "2026-06-23T01:10:41",
     "apps": [
       "com.amazon.amazonvideo.livingroom",
       "com.bamnetworks.mobile.android.gameday.atbat",
@@ -107,8 +107,8 @@
   },
   "bholeykabhakt": {
     "repo": "https://github.com/BholeyKaBhakt/android-patches-xtra",
-    "tag": "v2.11.2",
-    "created_at": "2026-06-17T09:50:43",
+    "tag": "v2.12.0",
+    "created_at": "2026-06-22T17:44:41",
     "apps": [
       "com.atmfee",
       "com.backdrops.wallpapers",
@@ -121,6 +121,7 @@
       "com.vitotechnology.StarWalk2Free",
       "com.vitotechnology.sky.tonight.map.star.walk",
       "com.vpn.free.hotspot.secure.vpnify",
+      "io.funswitch.blocker",
       "org.zwanoo.android.speedtest",
       "pl.solidexplorer2"
     ]
@@ -139,6 +140,14 @@
       "org.withouthat.acalendar"
     ]
   },
+  "braydog2010": {
+    "repo": "https://github.com/BrayDog2010/morphe-patches",
+    "tag": "v1.0.0",
+    "created_at": "2026-06-22T21:11:54",
+    "apps": [
+      "com.dubani.dub"
+    ]
+  },
   "brosssh": {
     "repo": "https://github.com/brosssh/morphe-patches",
     "tag": "v2.7.0",
@@ -153,8 +162,8 @@
   },
   "browzomje": {
     "repo": "https://github.com/browzomje/browzomje-patches",
-    "tag": "v1.0.0",
-    "created_at": "2026-06-20T21:44:48",
+    "tag": "v1.1.0",
+    "created_at": "2026-06-23T08:52:39",
     "apps": [
       "com.pinterest"
     ]
@@ -225,8 +234,8 @@
   },
   "hoo-dles": {
     "repo": "https://github.com/hoo-dles/morphe-patches",
-    "tag": "v1.36.0",
-    "created_at": "2026-06-13T18:35:32",
+    "tag": "v1.36.1",
+    "created_at": "2026-06-23T03:29:47",
     "apps": [
       "app.ttmikstories.android",
       "bitpit.launcher",
@@ -281,20 +290,24 @@
   },
   "hoomans-morphe": {
     "repo": "https://github.com/arandomhooman/hoomans-morphe-patches",
-    "tag": "v1.26.0",
-    "created_at": "2026-06-22T03:30:40",
+    "tag": "v1.27.0",
+    "created_at": "2026-06-23T02:51:55",
     "apps": [
       "altergames.carlauncher",
+      "app.remux.video.converter",
       "com.adobe.reader",
       "com.alphaprogression.alphaprogression",
       "com.appfactory.essence",
       "com.atomengineapps.teachmeanatomy",
       "com.bandlab.bandlab",
       "com.blockerhero",
+      "com.budget.tracker_app",
       "com.camerasideas.instashot",
       "com.collectrinc.collectr",
       "com.cronometer.android.gold",
+      "com.finch.finch",
       "com.flightradar24free",
+      "com.hv.replaio",
       "com.naver.linewebtoon",
       "com.overdevs.at4k",
       "com.paget96.batteryguru",
@@ -408,8 +421,8 @@
   },
   "lakaka": {
     "repo": "https://github.com/LaKakaReal/LaKakaShitPatches",
-    "tag": "v1.1.1",
-    "created_at": "2026-06-12T02:07:24",
+    "tag": "v1.2.0",
+    "created_at": "2026-06-22T23:30:27",
     "apps": [
       "com.jndapp.depth.live.wallpaper"
     ]
@@ -683,6 +696,14 @@
       "com.google.android.youtube"
     ]
   },
+  "samsung-morphe": {
+    "repo": "https://github.com/bigyank/morphe-patches-samsung",
+    "tag": "v1.1.0",
+    "created_at": "2026-06-22T21:07:12",
+    "apps": [
+      "com.sec.android.app.shealth"
+    ]
+  },
   "sjshb57-pairip": {
     "repo": "https://github.com/sjshb57/Pairip-Patches",
     "tag": "v1.6.0",
@@ -693,6 +714,14 @@
     "repo": "https://github.com/osirisad/ts-patches",
     "tag": "v1.0.0",
     "created_at": "2026-06-21T02:17:19",
+    "apps": [
+      "com.teamsnap.teamsnap"
+    ]
+  },
+  "ts2": {
+    "repo": "https://github.com/osirisad/teamsnap-patches",
+    "tag": "v1.0.1",
+    "created_at": "2026-06-22T02:56:46",
     "apps": [
       "com.teamsnap.teamsnap"
     ]
@@ -715,8 +744,8 @@
   },
   "xob0t": {
     "repo": "https://github.com/xob0t/morphe-patches",
-    "tag": "v1.5.0",
-    "created_at": "2026-06-22T06:25:39",
+    "tag": "v1.6.0",
+    "created_at": "2026-06-23T06:18:13",
     "apps": [
       "com.avito.android",
       "com.idamob.tinkoff.android",

@@ -1,29 +1,30 @@
 {
-    "version": "v1.2.0-dev.1",
+    "version": "v1.0.1",
     "patches": [
         {
             "compatiblePackages": [
                 {
                     "apkFileType": null,
-                    "appIconColor": "#1A1A2E",
+                    "appIconColor": null,
                     "description": null,
-                    "name": "Depth Wallpapers & Live Clock",
-                    "packageName": "com.jndapp.depth.live.wallpaper",
+                    "name": "TeamSnap",
+                    "packageName": "com.teamsnap.teamsnap",
                     "signatures": null,
                     "targets": [
                         {
                             "description": null,
                             "isExperimental": false,
                             "minSdk": null,
-                            "version": null
+                            "version": "7.63.0",
+                            "versionCodes": null
                         }
                     ]
                 }
             ],
             "default": true,
             "dependencies": [],
-            "description": "Unlocks all premium wallpapers and removes license verification features.",
-            "name": "Unlock Premium",
+            "description": "Removes ads by forcing TeamSnap+ Tier 1 subscription status.",
+            "name": "Disable ads",
             "options": []
         }
     ]
