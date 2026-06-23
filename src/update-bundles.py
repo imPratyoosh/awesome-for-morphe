@@ -111,7 +111,7 @@ def build_notes(label, old_bundles, new_bundles, app_names):
     if not sections:
         return ""
         
-    sections.insert(0, "Telegram channel: [t.me/awesome_for_morphe](https://t.me/awesome_for_morphe)")
+    sections.insert(0, "📢 *Telegram:* [@awesome_for_morphe](https://t.me/awesome_for_morphe)")
     return "\n\n".join(sections)
 
 
