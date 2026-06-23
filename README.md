@@ -2,8 +2,7 @@
 
 🔍 [Awesome for Morphe Website](https://nvbangg.github.io/awesome-for-morphe) [![Source](https://img.shields.io/badge/Source-gray?logo=github)](https://github.com/nvbangg/awesome-for-morphe/tree/gh-pages)
 
-[![Telegram Channel](https://img.shields.io/badge/Telegram_Channel-blue?style=social&logo=telegram)](https://t.me/awesome_for_morphe)
-[![Stars](https://img.shields.io/github/stars/nvbangg/awesome-for-morphe?label=Star%20this%20repo%20if%20useful%20%E2%AD%90&logo=github-sponsors)](https://github.com/nvbangg/awesome-for-morphe)　[![GitHub](https://img.shields.io/badge/nvbangg-black?style=social&logo=github)](https://github.com/nvbangg)
+[![Telegram Channel](https://img.shields.io/badge/Telegram_Channel-blue?style=social&logo=telegram)](https://t.me/awesome_for_morphe)　[![Stars](https://img.shields.io/github/stars/nvbangg/awesome-for-morphe?label=Star%20this%20repo%20if%20useful%20%E2%AD%90&logo=github-sponsors)](https://github.com/nvbangg/awesome-for-morphe)　[![GitHub](https://img.shields.io/badge/nvbangg-black?style=social&logo=github)](https://github.com/nvbangg)
 
 ### 🔗 Jump to:
 
@@ -60,6 +59,7 @@
 - [Likes count not showing](https://www.reddit.com/r/MorpheApp/comments/1u4kjms/likes_count_not_showing/)
 - [Regarding the Morphe DMCA](https://www.reddit.com/r/MorpheApp/comments/1s3w1er/regarding_the_morphe_dmca/)
 - [How can I make links open in a patched app?](https://github.com/MorpheApp/morphe-documentation/blob/main/docs/morphe-resources/questions.md#33-how-can-i-make-links-open-in-a-patched-app)
+- [How to install and use Shizuku](https://github.com/thedjchi/Shizuku/wiki)
 
 ## <a id="apps-patches"></a> 📱 Apps & 🧩 Patches
 
