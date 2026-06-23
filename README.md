@@ -2,6 +2,7 @@
 
 🔍 [Awesome for Morphe Website](https://nvbangg.github.io/awesome-for-morphe) [![Source](https://img.shields.io/badge/Source-gray?logo=github)](https://github.com/nvbangg/awesome-for-morphe/tree/gh-pages)
 
+[![Telegram Channel](https://img.shields.io/badge/Telegram_Channel-blue?style=social&logo=telegram)](https://t.me/awesome_for_morphe)
 [![Stars](https://img.shields.io/github/stars/nvbangg/awesome-for-morphe?label=Star%20this%20repo%20if%20useful%20%E2%AD%90&logo=github-sponsors)](https://github.com/nvbangg/awesome-for-morphe)　[![GitHub](https://img.shields.io/badge/nvbangg-black?style=social&logo=github)](https://github.com/nvbangg)
 
 ### 🔗 Jump to:
@@ -37,7 +38,9 @@
 
 [![GitHub](https://img.shields.io/badge/GitHub-MorpheApp-gray?logo=github&labelColor=24292F)](https://github.com/MorpheApp)
 
-- [![Morphe Manager](https://img.shields.io/badge/%F0%9F%92%8A%20Morphe%20Manager-gray)](https://github.com/MorpheApp/morphe-manager)　[![MicroG RE](https://img.shields.io/badge/%E2%9A%99%EF%B8%8F%20MicroG%20RE-gray)](https://github.com/MorpheApp/MicroG-RE/releases)　[![Morphe Patches](https://img.shields.io/badge/%F0%9F%A7%A9%20Morphe%20Patches-gray)](https://github.com/MorpheApp/morphe-patches)　[![Morphe CLI](https://img.shields.io/badge/%F0%9F%92%BB%20Morphe%20CLI-gray)](https://github.com/MorpheApp/morphe-cli)　[![Morphe Patcher](https://img.shields.io/badge/%F0%9F%92%89%20Morphe%20Patcher-gray)](https://github.com/MorpheApp/morphe-patcher)　[![Morphe Patches Template](https://img.shields.io/badge/%F0%9F%91%8B%F0%9F%A7%A9%20Morphe%20Patches%20Template-gray)](https://github.com/MorpheApp/morphe-patches-template)　[![Morphe Website](https://img.shields.io/badge/%F0%9F%8C%90%20Morphe%20Website-gray)](https://github.com/MorpheApp/morphe-website)　[![Morphe Branding](https://img.shields.io/badge/%C2%A9%EF%B8%8F%20Branding-gray)](https://github.com/MorpheApp/morphe-branding)
+- [![Morphe Manager](https://img.shields.io/badge/%F0%9F%92%8A%20Morphe%20Manager-gray)](https://github.com/MorpheApp/morphe-manager)　[![MicroG RE](https://img.shields.io/badge/%E2%9A%99%EF%B8%8F%20MicroG%20RE-gray)](https://github.com/MorpheApp/MicroG-RE/releases)　[![Morphe Patches](https://img.shields.io/badge/%F0%9F%A7%A9%20Morphe%20Patches-gray)](https://github.com/MorpheApp/morphe-patches)　[![Morphe CLI](https://img.shields.io/badge/%F0%9F%92%BB%20Morphe%20CLI-gray)](https://github.com/MorpheApp/morphe-cli)　
+- [![Morphe Patches Template](https://img.shields.io/badge/%F0%9F%91%8B%F0%9F%A7%A9%20Morphe%20Patches%20Template-gray)](https://github.com/MorpheApp/morphe-patches-template)　[![Morphe Patcher](https://img.shields.io/badge/%F0%9F%92%89%20Morphe%20Patcher-gray)](https://github.com/MorpheApp/morphe-patcher)　[![Morphe Website](https://img.shields.io/badge/%F0%9F%8C%90%20Morphe%20Website-gray)](https://github.com/MorpheApp/morphe-website)
+- [![Morphe Library](https://img.shields.io/badge/%F0%9F%93%9A%20Morphe%20Library-gray)](https://github.com/MorpheApp/morphe-library)　[![Morphe Patches Library](https://img.shields.io/badge/%F0%9F%93%9A%20Morphe%20Patches%20Library-gray)](https://github.com/MorpheApp/morphe-patches-library)　[![Morphe Patches Gradle plugin](https://img.shields.io/badge/%F0%9F%90%98%20Morphe%20Patches%20Gradle%20plugin-gray)](https://github.com/MorpheApp/morphe-patches-gradle-plugin)　[![Morphe Branding](https://img.shields.io/badge/%C2%A9%EF%B8%8F%20Branding-gray)](https://github.com/MorpheApp/morphe-branding)　[![jadb](https://img.shields.io/badge/jadb-gray)](https://github.com/MorpheApp/jadb)
 
 [![Website](https://img.shields.io/badge/Website-morphe.software-gray?logo=google-chrome&logoColor=white&labelColor=4285F4)](https://morphe.software)　[![Website](https://img.shields.io/badge/Website-morphe--patches.software-gray?logo=google-chrome&logoColor=white&labelColor=4285F4)](https://morphe-patches.software)　[![Reddit](https://img.shields.io/badge/Reddit-r%2FMorpheApp-gray?logo=reddit&logoColor=white&labelColor=FF4500)](https://www.reddit.com/r/MorpheApp)　[![X](https://img.shields.io/badge/Twitter-%40MorpheApp-gray?logo=x&logoColor=white&labelColor=24292F)](https://x.com/MorpheApp)　[![Crowdin](https://img.shields.io/badge/Crowdin-morphe-gray?logo=crowdin&logoColor=white&labelColor=2E3340)](https://crowdin.com/project/morphe)　[![OpenCollective](https://img.shields.io/badge/OpenCollective-morpheapp-gray?logo=opencollective&logoColor=white&labelColor=4773AC)](https://opencollective.com/morpheapp)
 
@@ -56,6 +59,7 @@
 - [How to patch X with Piko patches](https://www.reddit.com/r/MorpheApp/comments/1r4xt24/x_twitter_can_now_be_patched_with_piko_patches/)
 - [Likes count not showing](https://www.reddit.com/r/MorpheApp/comments/1u4kjms/likes_count_not_showing/)
 - [Regarding the Morphe DMCA](https://www.reddit.com/r/MorpheApp/comments/1s3w1er/regarding_the_morphe_dmca/)
+- [How can I make links open in a patched app?](https://github.com/MorpheApp/morphe-documentation/blob/main/docs/morphe-resources/questions.md#33-how-can-i-make-links-open-in-a-patched-app)
 
 ## <a id="apps-patches"></a> 📱 Apps & 🧩 Patches
 
@@ -65,36 +69,35 @@
 - [Awesome for Morphe Website](https://nvbangg.github.io/awesome-for-morphe/) [![Repo](https://img.shields.io/badge/Repo-black?style=social&logo=github)](https://github.com/nvbangg/awesome-for-morphe)
 - [Patch Explorer](https://patch-explorer.web.app/) [![Repo](https://img.shields.io/badge/Repo-black?style=social&logo=gitlab)](https://gitlab.com/Paresh-Maheshwari/patch-explorer)
 - [Revanced External Bundles](https://revanced-external-bundles.brosssh.com/) [![Repo](https://img.shields.io/badge/Repo-black?style=social&logo=github)](https://github.com/brosssh/revanced-external-bundles)
+- [Community Patch Space Explorer](https://dmh84.github.io/morphe-space-explorer/) [![Repo](https://img.shields.io/badge/Repo-black?style=social&logo=github)](https://github.com/dmh84/morphe-space-explorer)
+- [Morphe Patch Tracker](https://drnx64.github.io/morphe-track-patches/) [![Repo](https://img.shields.io/badge/Repo-black?style=social&logo=github)](https://github.com/drnx64/morphe-track-patches)
 - [Patch Index sticky post](https://www.reddit.com/r/MorpheApp/comments/1ta0bek/how_to_patch_more_apps_with_morphe/)
 - [ReVanced Patch Bundles](https://github.com/Jman-Github/ReVanced-Patch-Bundles)
 
 ## <a id="projects"></a> 🛠️ Other Projects
 
 - [Jman-Github/Awesome-ReVanced](https://github.com/Jman-Github/Awesome-ReVanced)
-
 - [Jman-Github/Universal-ReVanced-Manager](https://github.com/Jman-Github/Universal-ReVanced-Manager)
-
 - [nvbangg/builder-for-morphe](https://github.com/nvbangg/builder-for-morphe)
-
-- [Graywizard888/Enhancify](https://github.com/Graywizard888/Enhancify)
-
 - [Xisrr1/Revancify-Xisr](https://github.com/Xisrr1/Revancify-Xisr)
-
+- [Graywizard888/Enhancify](https://github.com/Graywizard888/Enhancify)
 - [hoo-dles/jadx-morphe](https://github.com/hoo-dles/jadx-morphe)
 
-## ⬇️ Builder
+## ⬇️ Pre-patched sources
 
 > [!NOTE]
 > Pre-patched sources are not listed here for safety and liability reasons.  
 > ⚠️ Only download or [build your own APKs](https://github.com/nvbangg/builder-for-morphe#-build-your-own-apks) from trusted open-source builder repositories.  
 > If you still want to explore them, see [Jman’s list](https://github.com/Jman-Github/Awesome-ReVanced#%EF%B8%8F-builder)
 
-## 🙏 Credits
-
-- This project is inspired by [Awesome ReVanced](https://github.com/Jman-Github/Awesome-ReVanced) and [Patch Explorer](https://gitlab.com/Paresh-Maheshwari/patch-explorer).
-- Patch sources data is sourced directly from [ReVanced Patch Bundles](https://github.com/Jman-Github/ReVanced-Patch-Bundles) by Jman.
-
 ---
 
-<p align="center"><i>Made with ❤️ by <a href="https://github.com/nvbangg">nvbangg</a></i></p>
+<details>
+<summary align="center"><i>Made with ❤️ by <a href="https://github.com/nvbangg">nvbangg</a></i></summary>
 
+### 🙏 Credits
+
+- This project is inspired by [Awesome ReVanced](https://github.com/Jman-Github/Awesome-ReVanced) and [Patch Explorer](https://gitlab.com/Paresh-Maheshwari/patch-explorer).
+- Website data is sourced from [ReVanced Patch Bundles](https://github.com/Jman-Github/ReVanced-Patch-Bundles) by Jman.
+
+</details>
