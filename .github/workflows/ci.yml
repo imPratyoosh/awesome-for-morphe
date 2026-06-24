@@ -4,7 +4,7 @@ name: Sync Patch Bundles
 
 on:
   schedule:
-    - cron: "0 8 * * *"
+    - cron: "0 */6 * * *"
   workflow_dispatch:
 
 permissions:
@@ -23,6 +23,9 @@ jobs:
       - name: Download patch-bundles
         run: python src/download-patch-bundles.py
 
+      - name: Update bundles and app names
+        run: python src/update-bundles.py
+
       - name: Check git changes
         id: changes
         run: |
@@ -32,51 +35,16 @@ jobs:
             echo "changed=false" >> $GITHUB_OUTPUT
           fi
 
-      - name: Commit changes
+      - name: Commit and push changes
         if: steps.changes.outputs.changed == 'true'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
-          python src/update-bundles.py
-                    
+          
           TAG=$(date +'%Y.%m.%d')
-          DAY=$(date +'%b %d, %Y')
-
-          git add patch-bundles/** src/bundles-stable.json src/bundles-dev.json src/app-names.json
+          git add patch-bundles/ data/
           git commit -m "Sync patch-bundles (${TAG})"
           git push origin HEAD:gh-pages
-
-          echo "TAG=${TAG}" >> $GITHUB_ENV
-          echo "DAY=${DAY}" >> $GITHUB_ENV
-
-      - name: Create release
-        if: steps.changes.outputs.changed == 'true' && hashFiles('changelog.md') != ''
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh release create "${{ env.TAG }}" --target "$(git rev-parse HEAD)" --title "🔔 Updates (${{ env.DAY }})" --notes-file changelog.md
-
-      - name: Send Telegram release notification
-        if: steps.changes.outputs.changed == 'true' && hashFiles('changelog.md') != ''
-        env:
-          TG_CHAT: ${{ secrets.TG_CHAT }}
-          TG_TOKEN: ${{ secrets.TG_TOKEN }}
-        run: python src/telegram-notify.py "🔔 Updates (${{ env.DAY }})" changelog.md
-
-      - name: Create pre-release
-        if: steps.changes.outputs.changed == 'true' && hashFiles('changelog-pre-release.md') != ''
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh release create "${{ env.TAG }}-pre" --target "$(git rev-parse HEAD)" --prerelease --title "🧪 Pre-release (${{ env.DAY }})" --notes-file changelog-pre-release.md
-
-      - name: Send Telegram pre-release notification
-        if: steps.changes.outputs.changed == 'true' && hashFiles('changelog-pre-release.md') != ''
-        env:
-          TG_CHAT: ${{ secrets.TG_CHAT }}
-          TG_TOKEN: ${{ secrets.TG_TOKEN }}
-        run: python src/telegram-notify.py "🧪 Pre-release (${{ env.DAY }})" changelog-pre-release.md
 
       - name: Cleanup old workflow runs
         env:

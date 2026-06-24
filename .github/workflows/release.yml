@@ -1,0 +1,75 @@
+# Copyright (c) 2026 nvbangg (github.com/nvbangg)
+
+name: Generate Release
+
+on:
+  schedule:
+    - cron: "0 8 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: gh-pages
+
+      - name: Generate changelog
+        run: python src/generate-changelog.py
+
+      - name: Check git changes
+        id: changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "changed=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push changes
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          TAG=$(date +'%Y.%m.%d')
+          DAY=$(date +'%b %d, %Y')
+          
+          git add data/
+          git commit -m "Update release history (${TAG})"
+          git push origin HEAD:gh-pages
+
+          echo "TAG=${TAG}" >> $GITHUB_ENV
+          echo "DAY=${DAY}" >> $GITHUB_ENV
+
+      - name: Create release
+        if: steps.changes.outputs.changed == 'true' && hashFiles('changelog.md') != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh release create "${{ env.TAG }}" --target "$(git rev-parse HEAD)" --title "🔔 Updates (${{ env.DAY }})" --notes-file changelog.md
+
+      - name: Send Telegram release notification
+        if: steps.changes.outputs.changed == 'true' && hashFiles('changelog.md') != ''
+        env:
+          TG_CHAT: ${{ secrets.TG_CHAT }}
+          TG_TOKEN: ${{ secrets.TG_TOKEN }}
+        run: python src/telegram-notify.py "🔔 Stable Release (${{ env.DAY }})" changelog.md
+
+      - name: Create pre-release
+        if: steps.changes.outputs.changed == 'true' && hashFiles('changelog-pre-release.md') != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh release create "${{ env.TAG }}-pre" --target "$(git rev-parse HEAD)" --prerelease --title "🧪 Pre-release (${{ env.DAY }})" --notes-file changelog-pre-release.md
+
+      - name: Send Telegram pre-release notification
+        if: steps.changes.outputs.changed == 'true' && hashFiles('changelog-pre-release.md') != ''
+        env:
+          TG_CHAT: ${{ secrets.TG_CHAT }}
+          TG_TOKEN: ${{ secrets.TG_TOKEN }}
+        run: python src/telegram-notify.py "🧪 Pre-release Updates (${{ env.DAY }})" changelog-pre-release.md
