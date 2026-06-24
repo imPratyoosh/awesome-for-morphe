@@ -53,18 +53,21 @@ def build_notes(label, old_bundles, new_bundles, app_names, skip_words):
 
     for key in sorted(new_bundles.keys()):
         patches_dict = new_bundles.get(key, {}).get("patches", {})
-        new_pkgs = set(patches_dict.keys())
+        new_pkgs = {pkg for pkg in patches_dict.keys() if " " not in pkg and "." in pkg}
 
         if key not in old_bundles:
             # 1. New Bundle
             link = f"[{key}]({make_url(key, is_dev=is_dev)})"
             bundle_lines = [f"- {link}"] + [
-                f"  - {format_app_name(pkg, app_names, skip_words)}" for pkg in sorted(new_pkgs)
+                f"  - {format_app_name(pkg, app_names, skip_words)}"
+                for pkg in sorted(new_pkgs)
             ]
             new_bundles_notes.append("\n".join(bundle_lines))
         else:
             old_patches_dict = old_bundles.get(key, {}).get("patches", {})
-            old_pkgs = set(old_patches_dict.keys())
+            old_pkgs = {
+                pkg for pkg in old_patches_dict.keys() if " " not in pkg and "." in pkg
+            }
 
             # 2. New Apps (in an existing bundle)
             if added_pkgs := new_pkgs - old_pkgs:
@@ -84,7 +87,9 @@ def build_notes(label, old_bundles, new_bundles, app_names, skip_words):
                 if isinstance(new_pkg_patches, list):
                     new_pkg_patches = {p: "" for p in new_pkg_patches}
 
-                added_patches = set(new_pkg_patches.keys()) - set(old_pkg_patches.keys())
+                added_patches = set(new_pkg_patches.keys()) - set(
+                    old_pkg_patches.keys()
+                )
                 if added_patches:
                     name = format_app_name(pkg, app_names, skip_words)
                     patch_lines = [f"- ({key}) [{name}]({make_url(key, pkg, is_dev)})"]
@@ -114,9 +119,15 @@ def build_notes(label, old_bundles, new_bundles, app_names, skip_words):
 
 
 def main():
-    missing = [f for f in ("bundles-stable.json", "bundles-dev.json") if not (BUNDLES_DIR / f).exists()]
+    missing = [
+        f
+        for f in ("bundles-stable.json", "bundles-dev.json")
+        if not (BUNDLES_DIR / f).exists()
+    ]
     if missing:
-        raise SystemExit(f"{', '.join(missing)} not found — run update-bundles.py first")
+        raise SystemExit(
+            f"{', '.join(missing)} not found — run update-bundles.py first"
+        )
 
     old_stable = read_json(STABLE_OUT, {}) or {}
     old_dev = read_json(DEV_OUT, {}) or {}
@@ -169,7 +180,8 @@ def main():
         CHANGELOG_PRE_PATH.write_text(pre_notes + "\n", encoding="utf8")
         print("Pre-release changelog created.")
 
-    print("Updated bundles.")
+    if not stable_notes and not pre_notes:
+        print("No changes.")
 
 
 if __name__ == "__main__":

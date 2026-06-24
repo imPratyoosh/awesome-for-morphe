@@ -114,13 +114,19 @@ def main():
         )
 
     if added:
-        names_path.write_text(json.dumps(app_names, indent=2, ensure_ascii=False) + "\n", encoding="utf8")
+        names_path.write_text(
+            json.dumps(app_names, indent=2, ensure_ascii=False) + "\n", encoding="utf8"
+        )
         print(f"Auto-added/updated {added} app name(s) to app-names.json.")
 
     print(f"Updated metadata for {processed} bundle files.")
 
     # Check missing app names
-    missing = sorted(pkg for pkg in all_pkgs if pkg not in app_names)
+    missing = sorted(
+        pkg
+        for pkg in all_pkgs
+        if pkg not in app_names and " " not in pkg and "." in pkg
+    )
     if missing:
         print("\n[WARNING] Missing app names for packages:")
         print(json.dumps(missing, indent=2))
