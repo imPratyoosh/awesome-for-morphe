@@ -29,22 +29,11 @@ export function normalizeChannel(channel) {
   return CHANNELS.has(channel) ? channel : DEFAULT_CHANNEL;
 }
 
-function appName(packageName, names) {
+function appName(packageName, names, skipSet) {
   if (!packageName) return "Unspecified";
   if (names[packageName]) return names[packageName];
 
-  const skip = new Set([
-    "com",
-    "org",
-    "net",
-    "android",
-    "app",
-    "apps",
-    "client",
-    "mobile",
-    "player",
-    "thirdpartyclient",
-  ]);
+  const skip = skipSet || new Set();
   const parts = packageName.split(".").filter((part) => part.length > 1 && !skip.has(part));
   const last = parts.at(-1) || packageName.split(".").at(-1) || packageName;
   return last.replace(/[-_]/g, " ").replace(/\b[a-z]/g, (char) => char.toUpperCase());
@@ -52,31 +41,24 @@ function appName(packageName, names) {
 
 function versions(value) {
   if (!Array.isArray(value)) return [];
-  const vList = value
-    .map((item) => {
-      if (typeof item === "string") return { version: item, isExperimental: false };
-      if (item && typeof item === "object" && item.version) {
-        return { version: String(item.version), isExperimental: !!item.isExperimental };
-      }
-      return null;
-    })
-    .filter(Boolean);
+  const vList = value.flatMap((item) => {
+    if (typeof item === "string") return [{ version: item, isExperimental: false }];
+    if (item?.version) return [{ version: String(item.version), isExperimental: !!item.isExperimental }];
+    return [];
+  });
 
-  if (vList.length === 0) return [];
-
+  if (!vList.length) return [];
   vList.sort((a, b) => b.version.localeCompare(a.version, undefined, { numeric: true, sensitivity: "base" }));
 
   if (vList.length === 1) return vList;
 
   const main = vList.find((v) => !v.isExperimental) || vList[0];
-  const others = vList.filter((v) => v !== main);
-
-  return [...others, main];
+  return [...vList.filter((v) => v !== main), main];
 }
 
 function packages(patch) {
   const value = patch.compatiblePackages;
-  if (!value || (Array.isArray(value) && !value.length) || (!Array.isArray(value) && !Object.keys(value).length)) {
+  if (!value || (typeof value === "object" && Object.keys(value).length === 0)) {
     return [{ packageName: "", versions: [] }];
   }
 
@@ -86,25 +68,30 @@ function packages(patch) {
 
   const rows = value.flatMap((item) => {
     if (typeof item === "string") return [{ packageName: item, versions: [] }];
-    if (!item || typeof item !== "object") return [];
-
-    const packageName = item.packageName || item.name;
-    const targetVersions = item.targets || [];
-    return packageName ? [{ packageName, versions: versions(item.versions || targetVersions) }] : [];
+    if (item?.packageName)
+      return [{ packageName: item.packageName, versions: versions(item.versions || item.targets || []) }];
+    return [];
   });
 
   return rows.length ? rows : [{ packageName: "", versions: [] }];
 }
 
-async function loadSource(key, meta, channel, names) {
-  const list = await json(
+async function loadSource(key, channel, names, sources, skipSet) {
+  const listPromise = json(
     new URL(`../patch-bundles/${key}-patch-bundles/${key}-${channel}-patches-list.json`, import.meta.url),
   );
+  const bundleMetaPromise = json(
+    new URL(`../patch-bundles/${key}-patch-bundles/${key}-${channel}-patches-bundle.json`, import.meta.url),
+  ).catch(() => ({}));
+
+  const [list, meta] = await Promise.all([listPromise, bundleMetaPromise]);
+  const sourceInfo = sources[key] || {};
+
   const bundle = {
     key,
-    repo: meta.repo || "",
-    version: list.version || meta.tag || "",
-    tag: meta.tag || "",
+    repo: sourceInfo.repo || "",
+    version: list.version || meta.version || "",
+    tag: meta.version || "",
     createdAt: meta.created_at || "",
   };
 
@@ -112,7 +99,7 @@ async function loadSource(key, meta, channel, names) {
     const patchId = `${key}:${patchIndex}`;
     return packages(patch).map((target, targetIndex) => {
       const packageName = target.packageName || "";
-      const name = appName(packageName, names);
+      const name = appName(packageName, names, skipSet);
 
       return {
         id: `${patchId}:${targetIndex}`,
@@ -128,15 +115,7 @@ async function loadSource(key, meta, channel, names) {
         versions: target.versions,
         enabled: patch.use ?? patch.default ?? true,
         options: Array.isArray(patch.options) ? patch.options : [],
-        searchAppsText: [
-          key,
-          bundle.repo,
-          packageName,
-          name,
-        ]
-          .filter(Boolean)
-          .join(" ")
-          .toLowerCase(),
+        searchAppsText: [key, bundle.repo, packageName, name].filter(Boolean).join(" ").toLowerCase(),
         searchPatchesText: [
           patch.name,
           patch.description,
@@ -161,20 +140,30 @@ export async function loadChannelData(channelInput) {
   if (dataCache.has(channel)) return dataCache.get(channel);
 
   const promise = Promise.all([
-    json(new URL("./app-names.json", import.meta.url)),
-    json(new URL(`./bundles-${channel}.json`, import.meta.url)),
-  ]).then(async ([names, bundles]) => {
+    json(new URL("../data/app-names.json", import.meta.url)).catch(() => ({})),
+    json(new URL(`../patch-bundles/bundles-${channel}.json`, import.meta.url)).catch(() => ({})),
+    json(new URL("../data/skip-words.json", import.meta.url)).catch(() => []),
+  ]).then(async ([names, sources, skipWordsArray]) => {
+    const skipSet = new Set(skipWordsArray);
+    const bundleKeys = Object.keys(sources);
+
     const loaded = await Promise.all(
-      Object.entries(bundles)
-        .sort(([a], [b]) => a.localeCompare(b))
-        .map(([key, meta]) => loadSource(key, meta, channel, names)),
+      bundleKeys
+        .sort((a, b) => a.localeCompare(b))
+        .map((key) =>
+          loadSource(key, channel, names, sources, skipSet).catch((err) => {
+            console.error(`Failed to load source ${key} for channel ${channel}:`, err);
+            return null;
+          }),
+        ),
     );
-    const bundleList = loaded.map((item) => item.bundle);
+    const validLoaded = loaded.filter(Boolean);
+    const bundleList = validLoaded.map((item) => item.bundle);
 
     return {
       channel,
       bundles: bundleList,
-      rows: loaded.flatMap((item) => item.rows),
+      rows: validLoaded.flatMap((item) => item.rows),
       bundleMap: Object.fromEntries(bundleList.map((bundle) => [bundle.key, bundle])),
     };
   });

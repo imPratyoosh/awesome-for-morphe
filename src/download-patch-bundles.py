@@ -76,8 +76,16 @@ def main():
     base_names = sorted({suffix_pattern.sub("", k) for k in bundles})
     all_pairs = [(base, channel) for base in base_names for channel in CHANNELS]
 
-    shutil.rmtree(OUT_DIR, ignore_errors=True)
     OUT_DIR.mkdir(parents=True, exist_ok=True)
+    for path in OUT_DIR.iterdir():
+        if path.name.endswith("-patch-bundles") and path.is_dir():
+            shutil.rmtree(path, ignore_errors=True)
+        elif path.name in (
+            "bundles-stable.json",
+            "bundles-dev.json",
+            "bundle-sources.json",
+        ):
+            path.unlink(missing_ok=True)
 
     with ThreadPoolExecutor(max_workers=CONCURRENCY) as pool:
         bundle_results = list(pool.map(fetch_bundle, all_pairs))
@@ -89,10 +97,7 @@ def main():
         list_results = list(pool.map(fetch_list, list_pairs))
 
     list_map = {
-        (base, channel): text
-        for r in list_results
-        if r is not None
-        for base, channel, text in [r]
+        (base, channel): text for base, channel, text in filter(None, list_results)
     }
 
     # Save files to disk
@@ -112,7 +117,7 @@ def main():
         )
         saved += 1
 
-    print(f"Updated {saved} Morphe bundles.")
+    print(f"Downloaded {saved} Morphe bundles.")
 
 
 if __name__ == "__main__":

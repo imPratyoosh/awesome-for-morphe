@@ -4,184 +4,122 @@ import json
 from pathlib import Path
 
 ROOT = Path.cwd()
-SRC_DIR = ROOT / "src"
+DATA_DIR = ROOT / "data"
 BUNDLES_DIR = ROOT / "patch-bundles"
-STABLE_OUT = SRC_DIR / "bundles-stable.json"
-DEV_OUT = SRC_DIR / "bundles-dev.json"
-APP_NAMES_PATH = SRC_DIR / "app-names.json"
-CHANGELOG_PATH = ROOT / "changelog.md"
-CHANGELOG_PRE_PATH = ROOT / "changelog-pre-release.md"
 
 
 def read_json(path, default=None):
     try:
         return json.loads(path.read_text(encoding="utf8"))
-    except FileNotFoundError:
+    except (FileNotFoundError, json.JSONDecodeError):
         return default
 
 
-def write_json(path, data):
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(data, indent=2) + "\n", encoding="utf8")
-
-
-def get_info_bundle(bundle_json):
-    download_url = bundle_json["download_url"].split("/")
-    repo_url = "/".join(download_url[0:5])
-    return (
-        repo_url,
-        download_url[7],
-        bundle_json.get("created_at", ""),
-    )
-
-
-def collect_apps(list_json, app_names):
-    apps = set()
+def collect_apps(list_json):
+    patches_dict = {}
+    discovered_names = {}
     for patch in list_json.get("patches") or []:
+        patch_name = patch.get("name")
+        if not patch_name:
+            continue
+
         compatible = patch.get("compatiblePackages")
+        pkgs = set()
+
         if isinstance(compatible, dict):
             # Old format: dict of package names
-            apps.update(compatible.keys())
+            pkgs.update(compatible.keys())
         elif isinstance(compatible, list):
             # New format: list of objects
-            for entry in compatible:
-                if isinstance(entry, dict):
-                    pkg = entry.get("packageName")
-                    if pkg:
-                        apps.add(pkg)
-                        app_name = entry.get("name")
-                        if app_name and app_names.get(pkg) != app_name:
-                            app_names[pkg] = app_name
-    return sorted(apps)
+            for e in compatible:
+                if isinstance(e, dict) and (pkg := e.get("packageName")):
+                    pkgs.add(pkg)
+                    if name := e.get("name"):
+                        discovered_names.setdefault(pkg, name)
+
+        for pkg in pkgs:
+            patches_dict.setdefault(pkg, []).append(patch_name)
+
+    return dict(sorted({k: sorted(v) for k, v in patches_dict.items()}.items())), discovered_names
 
 
-# Inspired by code from Paresh Maheshwari
-def derive_name(pkg):
-    skip = {
-        "com",
-        "org",
-        "net",
-        "android",
-        "app",
-        "apps",
-        "player",
-        "client",
-        "mobile",
-        "thirdpartyclient",
-    }
-    parts = [p for p in pkg.split(".") if p not in skip and len(p) > 1]
-    name = parts[-1] if parts else pkg.split(".")[-1]
-    return name.replace("-", " ").replace("_", " ").title()
-
-
-def format_app(pkg, app_names, bundle_key, label):
-    name = app_names.get(pkg) or derive_name(pkg)
-    url = f"https://nvbangg.github.io/awesome-for-morphe/?bundle={bundle_key}&app={pkg}"
-    if label == "pre-release":
-        url += "&channel=dev"
-    return f"- [{name}]({url})"
-
-
-def build_notes(label, old_bundles, new_bundles, app_names):
-    new_bundles_notes, new_apps_groups = [], []
-    for key in sorted(new_bundles.keys()):
-        entry = new_bundles.get(key) or {}
-        apps = entry.get("apps") or []
-        if key not in old_bundles:
-            url = f"https://nvbangg.github.io/awesome-for-morphe/?bundle={key}"
-            if label == "pre-release":
-                url += "&channel=dev"
-            link = f"[{key}]({url})"
-            new_bundles_notes.append(f"- {link}")
-        old_apps = set(old_bundles.get(key, {}).get("apps") or [])
-        added = [pkg for pkg in apps if pkg not in old_apps]
-        if added:
-            heading = f"### {key}"
-            new_apps_groups.append(
-                "\n".join(
-                    [heading] + [format_app(p, app_names, key, label) for p in added]
-                )
-            )
-    sections = []
-    if new_bundles_notes:
-        sections.append(f"## 🧩 New Bundles ({label})\n" + "\n".join(new_bundles_notes))
-    if new_apps_groups:
-        sections.append(f"## 📱 New Apps ({label})\n" + "\n\n".join(new_apps_groups))
-
-    if not sections:
-        return ""
-        
-    sections.insert(0, "📢 *Telegram:* [@awesome_for_morphe](https://t.me/awesome_for_morphe)")
-    return "\n\n".join(sections)
-
-
-def build_bundles(app_names):
-    stable, dev = {}, {}
-    for bundle_dir in sorted(BUNDLES_DIR.iterdir()):
-        if not bundle_dir.is_dir():
-            continue
-        base = bundle_dir.name.removesuffix("-patch-bundles")
-        for channel, out in (("stable", stable), ("dev", dev)):
-            bundle_path = bundle_dir / f"{base}-{channel}-patches-bundle.json"
-            list_path = bundle_dir / f"{base}-{channel}-patches-list.json"
-            bundle_json = read_json(bundle_path)
-            list_json = read_json(list_path)
-            if not bundle_json or not list_json:
-                continue
-            repo, tag, created_at = get_info_bundle(bundle_json)
-            if not repo:
-                continue
-            out[base] = {
-                "repo": repo,
-                "tag": tag,
-                "created_at": created_at,
-                "apps": collect_apps(list_json, app_names),
-            }
-
-    return dict(sorted(stable.items())), dict(sorted(dev.items()))
+def get_repo(bundle_json):
+    download_url = bundle_json.get("download_url", "")
+    parts = download_url.split("/")
+    return "/".join(parts[0:5]) if len(parts) >= 5 else ""
 
 
 def main():
-    if not BUNDLES_DIR.exists() or not any(BUNDLES_DIR.iterdir()):
-        raise SystemExit(
-            "patch-bundles/ is empty — run download-patch-bundles.py first"
-        )
-
-    old_stable = read_json(STABLE_OUT, {}) or {}
-    old_dev = read_json(DEV_OUT, {}) or {}
-    app_names = read_json(APP_NAMES_PATH, {}) or {}
-
-    new_stable, new_dev = build_bundles(app_names)
-
-    write_json(STABLE_OUT, new_stable)
-    write_json(DEV_OUT, new_dev)
-    write_json(APP_NAMES_PATH, app_names)
-
-    is_first_run = not any(e.get("apps") for e in old_stable.values())
-    if is_first_run:
-        print("Initialized bundles.")
+    if not BUNDLES_DIR.exists():
+        print("patch-bundles/ directory not found.")
         return
 
-    # Stable changelog: new_stable vs old_stable
-    stable_notes = build_notes("stable", old_stable, new_stable, app_names)
-    if stable_notes:
-        CHANGELOG_PATH.write_text(stable_notes + "\n", encoding="utf8")
-        print("Stable changelog created.")
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    names_path = DATA_DIR / "app-names.json"
+    app_names = read_json(names_path, {}) or {}
 
-    # Pre-release changelog: new_dev vs (new_stable + old_dev)
-    pre_baseline = {}
-    for key in set(new_stable) | set(old_dev):
-        stable_apps = set((new_stable.get(key) or {}).get("apps") or [])
-        prev_apps = set((old_dev.get(key) or {}).get("apps") or [])
-        repo = ((new_stable.get(key) or old_dev.get(key)) or {}).get("repo")
-        pre_baseline[key] = {"repo": repo, "apps": sorted(stable_apps | prev_apps)}
+    stable_dict = {}
+    dev_dict = {}
+    seen_pkgs = set()
+    all_pkgs = set()
+    added = 0
+    processed = 0
 
-    pre_notes = build_notes("pre-release", pre_baseline, new_dev, app_names)
-    if pre_notes:
-        CHANGELOG_PRE_PATH.write_text(pre_notes + "\n", encoding="utf8")
-        print("Pre-release changelog created.")
+    # Scan for directories like <base>-patch-bundles
+    for bundle_dir in sorted(BUNDLES_DIR.iterdir()):
+        if not bundle_dir.is_dir() or not bundle_dir.name.endswith("-patch-bundles"):
+            continue
 
-    print("Updated bundles.")
+        base = bundle_dir.name.replace("-patch-bundles", "")
+
+        for channel in ("stable", "dev"):
+            bundle_path = bundle_dir / f"{base}-{channel}-patches-bundle.json"
+            list_path = bundle_dir / f"{base}-{channel}-patches-list.json"
+
+            bundle_json = read_json(bundle_path)
+            list_json = read_json(list_path)
+
+            if not bundle_json or not list_json:
+                continue
+
+            repo = get_repo(bundle_json)
+            patches, discovered = collect_apps(list_json)
+
+            target_dict = stable_dict if channel == "stable" else dev_dict
+            target_dict[base] = {"repo": repo, "patches": patches}
+            processed += 1
+
+            for pkg, name in discovered.items():
+                if pkg not in seen_pkgs:
+                    seen_pkgs.add(pkg)
+                    if app_names.get(pkg) != name:
+                        app_names[pkg] = name
+                        added += 1
+
+            all_pkgs.update(patches.keys())
+
+    if stable_dict:
+        (BUNDLES_DIR / "bundles-stable.json").write_text(
+            json.dumps(stable_dict, indent=2) + "\n", encoding="utf8"
+        )
+    if dev_dict:
+        (BUNDLES_DIR / "bundles-dev.json").write_text(
+            json.dumps(dev_dict, indent=2) + "\n", encoding="utf8"
+        )
+
+    if added:
+        names_path.write_text(json.dumps(app_names, indent=2, ensure_ascii=False) + "\n", encoding="utf8")
+        print(f"Auto-added/updated {added} app name(s) to app-names.json.")
+
+    print(f"Updated metadata for {processed} bundle files.")
+
+    # Check missing app names
+    missing = sorted(pkg for pkg in all_pkgs if pkg not in app_names)
+    if missing:
+        print("\n[WARNING] Missing app names for packages:")
+        print(json.dumps(missing, indent=2))
+    else:
+        print("\nNo missing app names. Everything is up to date!")
 
 
 if __name__ == "__main__":

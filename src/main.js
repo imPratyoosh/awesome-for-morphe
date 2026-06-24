@@ -1,10 +1,18 @@
 // Copyright (c) 2026 nvbangg (github.com/nvbangg)
 
-import { createApp, ref, computed, onMounted, watch, reactive, nextTick } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
+import {
+  createApp,
+  ref,
+  computed,
+  onMounted,
+  watch,
+  reactive,
+  nextTick,
+} from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
 import { filterRows, getFilterOptions, loadChannelData, normalizeChannel, summarizeRows } from "./data.js";
 
 const DEFAULT_CHANNEL = "stable";
-const PRIORITY_ORDER = ['morphe', 'piko', 'rookieenough', 'hoo-dles', 'paresh-maheshwari', 'brosssh', 'patcheddit'];
+const PRIORITY_ORDER = ["morphe", "piko", "rookieenough", "hoo-dles", "paresh-maheshwari", "brosssh", "patcheddit"];
 
 createApp({
   setup() {
@@ -55,13 +63,23 @@ createApp({
 
     const filteredRows = computed(() => {
       if (!activeData.value) return [];
-      return filterRows(activeData.value, { query: query.value, patchQuery: patchQuery.value, bundle: bundle.value, app: app.value });
+      return filterRows(activeData.value, {
+        query: query.value,
+        patchQuery: patchQuery.value,
+        bundle: bundle.value,
+        app: app.value,
+      });
     });
 
     const filterOptions = computed(() => {
       if (!activeData.value) return { bundleOptions: [], appOptions: [] };
 
-      const rowsForSource = filterRows(activeData.value, { query: query.value, patchQuery: patchQuery.value, bundle: "", app: app.value });
+      const rowsForSource = filterRows(activeData.value, {
+        query: query.value,
+        patchQuery: patchQuery.value,
+        bundle: "",
+        app: app.value,
+      });
       let bundleOptions = getFilterOptions(rowsForSource).bundleOptions;
 
       bundleOptions = [...bundleOptions].sort((a, b) => {
@@ -75,7 +93,12 @@ createApp({
         return a.value.localeCompare(b.value);
       });
 
-      const rowsForApp = filterRows(activeData.value, { query: query.value, patchQuery: patchQuery.value, bundle: bundle.value, app: "" });
+      const rowsForApp = filterRows(activeData.value, {
+        query: query.value,
+        patchQuery: patchQuery.value,
+        bundle: bundle.value,
+        app: "",
+      });
       const appOptions = getFilterOptions(rowsForApp).appOptions;
 
       return { bundleOptions, appOptions };
@@ -127,17 +150,17 @@ createApp({
           const appsMap = new Map();
           for (const p of patches) {
             for (const app of p.apps) {
-              const appKey = app.packageName || app.appName || 'any';
+              const appKey = app.packageName || app.appName || "any";
               if (!appsMap.has(appKey)) {
                 appsMap.set(appKey, app);
               }
             }
           }
           const appsList = Array.from(appsMap.values()).sort((a, b) => {
-            const isAnyA = (!a.appName || a.appName === 'Unspecified') ? 1 : 0;
-            const isAnyB = (!b.appName || b.appName === 'Unspecified') ? 1 : 0;
+            const isAnyA = !a.appName || a.appName === "Unspecified" ? 1 : 0;
+            const isAnyB = !b.appName || b.appName === "Unspecified" ? 1 : 0;
             if (isAnyA !== isAnyB) return isAnyA - isAnyB;
-            return (a.appName || '').localeCompare(b.appName || '');
+            return (a.appName || "").localeCompare(b.appName || "");
           });
           return {
             key,
@@ -154,8 +177,10 @@ createApp({
         const singleGroup = newGroups[0];
         if (singleGroup.appsList && singleGroup.appsList.length > 0) {
           const firstApp = singleGroup.appsList[0];
-          const appKey = 'app_' + singleGroup.key + '_' + firstApp.id;
-          const isAnyExpanded = singleGroup.appsList.some(a => expandedOptions.has('app_' + singleGroup.key + '_' + a.id));
+          const appKey = "app_" + singleGroup.key + "_" + firstApp.id;
+          const isAnyExpanded = singleGroup.appsList.some((a) =>
+            expandedOptions.has("app_" + singleGroup.key + "_" + a.id),
+          );
           if (!isAnyExpanded) {
             expandedOptions.add(appKey);
           }
@@ -179,10 +204,10 @@ createApp({
     const selectApp = (groupKey, clickedApp, appsList) => {
       activeSwipeGroup.value = "";
       swipeDirection.value = "";
-      const clickedKey = 'app_' + groupKey + '_' + clickedApp.id;
+      const clickedKey = "app_" + groupKey + "_" + clickedApp.id;
       const isCurrentlyExpanded = expandedOptions.has(clickedKey);
-      appsList.forEach(a => {
-        const key = 'app_' + groupKey + '_' + a.id;
+      appsList.forEach((a) => {
+        const key = "app_" + groupKey + "_" + a.id;
         if (expandedOptions.has(key)) {
           expandedOptions.delete(key);
         }
@@ -190,9 +215,9 @@ createApp({
       if (!isCurrentlyExpanded) {
         expandedOptions.add(clickedKey);
         nextTick(() => {
-          const btn = document.getElementById('tab_' + groupKey + '_' + clickedApp.id);
+          const btn = document.getElementById("tab_" + groupKey + "_" + clickedApp.id);
           if (btn) {
-            btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+            btn.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "nearest" });
           }
         });
       }
@@ -200,13 +225,13 @@ createApp({
 
     const toggleBundle = (group) => {
       if (group.appsList && group.appsList.length > 0) {
-        const expandedApp = group.appsList.find(a => expandedOptions.has('app_' + group.key + '_' + a.id));
+        const expandedApp = group.appsList.find((a) => expandedOptions.has("app_" + group.key + "_" + a.id));
         if (expandedApp) {
-          group.appsList.forEach(a => {
-            expandedOptions.delete('app_' + group.key + '_' + a.id);
+          group.appsList.forEach((a) => {
+            expandedOptions.delete("app_" + group.key + "_" + a.id);
           });
         } else {
-          expandedOptions.add('app_' + group.key + '_' + group.appsList[0].id);
+          expandedOptions.add("app_" + group.key + "_" + group.appsList[0].id);
         }
       }
     };
@@ -226,7 +251,7 @@ createApp({
       const deltaX = e.changedTouches[0].clientX - touchStartX.value;
       const deltaY = e.changedTouches[0].clientY - touchStartY.value;
       if (Math.abs(deltaX) > 60 && Math.abs(deltaY) < 40) {
-        const currentIndex = appsList.findIndex(a => a.id === currentApp.id);
+        const currentIndex = appsList.findIndex((a) => a.id === currentApp.id);
         if (currentIndex !== -1) {
           if (deltaX < 0) {
             if (currentIndex < appsList.length - 1) {
@@ -258,25 +283,54 @@ createApp({
     const countBy = (items, keyFn) => new Set(items.map(keyFn).filter(Boolean)).size;
     const playUrl = (pkg) => `https://play.google.com/store/apps/details?id=${encodeURIComponent(pkg)}`;
     const getRepoInfo = (repoUrl) => {
-      if (!repoUrl) return { isGitLab: false, path: "" };
-      const isGitLab = repoUrl.includes("gitlab.com");
+      if (!repoUrl) return { path: "" };
       const path = repoUrl.split("/").slice(3, 5).join("/");
-      return { isGitLab, path };
+      return { path };
+    };
+    const getPlatform = (repoUrl) => {
+      if (!repoUrl) return "";
+      if (repoUrl.includes("github.com")) return "github";
+      if (repoUrl.includes("gitlab.com")) return "gitlab";
+      return "";
+    };
+    const getPlatformMeta = (repoUrl) => {
+      const platform = getPlatform(repoUrl);
+      const metas = {
+        gitlab: {
+          icon: "fa-brands fa-gitlab",
+          color: "text-[#FC6D26] hover:text-[#e24329]",
+          label: "GitLab",
+        },
+        github: {
+          icon: "fa-brands fa-github",
+          color: "text-white hover:text-blue",
+          label: "GitHub",
+        },
+      };
+      return (
+        metas[platform] || {
+          icon: "fa-solid fa-globe",
+          color: "text-gray-400 hover:text-white",
+          label: "Repository",
+        }
+      );
     };
     const releaseUrl = (s) => {
       if (!s.repo || !s.tag) return "";
-      const info = getRepoInfo(s.repo);
-      if (info.isGitLab) {
+      const platform = getPlatform(s.repo);
+      if (platform === "gitlab") {
         return `${s.repo}/-/releases/${encodeURIComponent(s.tag)}`;
+      } else if (platform === "github") {
+        return `${s.repo}/releases/tag/${encodeURIComponent(s.tag)}`;
       }
-      return `${s.repo}/releases/tag/${encodeURIComponent(s.tag)}`;
+      return `${s.repo}/releases`;
     };
     const morpheUrl = (repoUrl) => {
+      const platform = getPlatform(repoUrl);
+      if (!platform) return null;
       const info = getRepoInfo(repoUrl);
-      const param = info.isGitLab ? "gitlab" : "github";
-      return `https://morphe.software/add-source?${param}=${encodeURI(info.path)}`;
+      return `https://morphe.software/add-source?${platform}=${encodeURI(info.path)}`;
     };
-
 
     const resetFilters = () => {
       query.value = "";
@@ -314,6 +368,7 @@ createApp({
       playUrl,
       releaseUrl,
       morpheUrl,
+      getPlatformMeta,
       resetFilters,
     };
   },
