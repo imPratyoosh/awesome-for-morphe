@@ -39,7 +39,7 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
           TAG=$(date +'%Y.%m.%d')
-          DAY=$(date +'%b %d, %Y')
+          DAY=$(date +'%b %d')
           
           git add data/
           git commit -m "Update release history (${TAG})"
@@ -52,7 +52,7 @@ jobs:
         if: steps.changes.outputs.changed == 'true' && hashFiles('changelog.md') != ''
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh release create "${{ env.TAG }}" --target "$(git rev-parse HEAD)" --title "🔔 Updates (${{ env.DAY }})" --notes-file changelog.md
+        run: gh release create "${{ env.TAG }}" --target "$(git rev-parse HEAD)" --title "🔔 Stable Release (${{ env.DAY }})" --notes-file changelog.md
 
       - name: Send Telegram release notification
         if: steps.changes.outputs.changed == 'true' && hashFiles('changelog.md') != ''
