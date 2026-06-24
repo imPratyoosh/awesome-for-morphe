@@ -139,6 +139,20 @@
     .swipe-transition-right {
       animation: slideInRight 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
+
+    .dd-panel {
+      display: none;
+      position: fixed;
+      z-index: 9998;
+    }
+
+    .dd-root.open .dd-panel {
+      display: block;
+    }
+
+    .dd-root.open .dd-chevron {
+      transform: rotate(180deg);
+    }
   </style>
 
   <script type="application/ld+json">
@@ -225,18 +239,46 @@
 
           <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 mt-1">
             <div class="flex flex-row gap-2 w-full md:w-auto">
-              <select v-model="app" aria-label="Apps filter"
-                class="w-1/2 md:w-[180px] h-10 pl-3 pr-8 bg-black border border-gray rounded-md focus:border-light focus:ring-2 focus:ring-light/20 outline-none transition-all cursor-pointer text-sm appearance-none text-white bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22none%22%20viewBox%3D%220%200%2020%2020%22%3E%3Cpath%20stroke%3D%22%236b7280%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%221.5%22%20d%3D%22m6%208%204%204%204-4%22%2F%3E%3C%2Fsvg%3E')] bg-[length:1.25rem_1.25rem] bg-[right_0.5rem_center] bg-no-repeat">
-                <option value="">📱 All Apps</option>
-                <option v-for="opt in filterOptions.appOptions" :key="opt.value" :value="opt.value">{{ opt.label }}
-                </option>
-              </select>
-              <select v-model="bundle" aria-label="Patch Bundles filter"
-                class="w-1/2 md:w-[180px] h-10 pl-3 pr-8 bg-black border border-gray rounded-md focus:border-light focus:ring-2 focus:ring-light/20 outline-none transition-all cursor-pointer text-sm appearance-none text-white bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22none%22%20viewBox%3D%220%200%2020%2020%22%3E%3Cpath%20stroke%3D%22%236b7280%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%221.5%22%20d%3D%22m6%208%204%204%204-4%22%2F%3E%3C%2Fsvg%3E')] bg-[length:1.25rem_1.25rem] bg-[right_0.5rem_center] bg-no-repeat">
-                <option value="">📦 All Bundles</option>
-                <option v-for="opt in filterOptions.bundleOptions" :key="opt.value" :value="opt.value">{{ opt.label }}
-                </option>
-              </select>
+              <!-- App filter dropdown -->
+              <div class="relative w-1/2 md:w-[180px] dd-root" id="app-dd">
+                <button type="button" onclick="toggleDd('app-dd')"
+                  class="w-full h-10 pl-3 pr-2 bg-black border border-gray rounded-md text-sm text-white flex items-center gap-1.5 hover:border-lightGray transition-all cursor-pointer"
+                  aria-label="Apps filter">
+                  <span class="flex-1 truncate text-left">{{ app ? (filterOptions.appOptions.find(o => o.value === app)?.label || app) : '📱 All Apps' }}</span>
+                  <i class="fa-solid fa-chevron-down dd-chevron text-light text-xs flex-shrink-0 transition-transform duration-200"></i>
+                </button>
+                <div class="dd-panel max-h-[400px] overflow-y-auto apps-scroll bg-dark border border-gray rounded-md shadow-xl py-1 divide-y divide-white/5">
+                  <div :class="!app ? 'text-white bg-white/10 font-medium' : 'text-light hover:bg-white/5 hover:text-white'"
+                    :data-selected="!app ? 'true' : null"
+                    @click="app = ''; $event.target.closest('.dd-root').classList.remove('open')"
+                    class="px-3 py-2 text-sm cursor-pointer transition-colors">📱 All Apps</div>
+                  <div v-for="opt in filterOptions.appOptions" :key="opt.value"
+                    :class="app === opt.value ? 'text-white bg-white/10 font-medium' : 'text-light hover:bg-white/5 hover:text-white'"
+                    :data-selected="app === opt.value ? 'true' : null"
+                    @click="app = opt.value; $event.target.closest('.dd-root').classList.remove('open')"
+                    class="px-3 py-2 text-sm cursor-pointer transition-colors">{{ opt.label }}</div>
+                </div>
+              </div>
+              <!-- Bundle filter dropdown -->
+              <div class="relative w-1/2 md:w-[180px] dd-root" id="bundle-dd">
+                <button type="button" onclick="toggleDd('bundle-dd')"
+                  class="w-full h-10 pl-3 pr-2 bg-black border border-gray rounded-md text-sm text-white flex items-center gap-1.5 hover:border-lightGray transition-all cursor-pointer"
+                  aria-label="Patch Bundles filter">
+                  <span class="flex-1 truncate text-left">{{ bundle || '📦 All Bundles' }}</span>
+                  <i class="fa-solid fa-chevron-down dd-chevron text-light text-xs flex-shrink-0 transition-transform duration-200"></i>
+                </button>
+                <div class="dd-panel max-h-[400px] overflow-y-auto apps-scroll bg-dark border border-gray rounded-md shadow-xl py-1 divide-y divide-white/5">
+                  <div :class="!bundle ? 'text-white bg-white/10 font-medium' : 'text-light hover:bg-white/5 hover:text-white'"
+                    :data-selected="!bundle ? 'true' : null"
+                    @click="bundle = ''; $event.target.closest('.dd-root').classList.remove('open')"
+                    class="px-3 py-2 text-sm cursor-pointer transition-colors">📦 All Bundles</div>
+                  <div v-for="opt in filterOptions.bundleOptions" :key="opt.value"
+                    :class="bundle === opt.value ? 'text-white bg-white/10 font-medium' : 'text-light hover:bg-white/5 hover:text-white'"
+                    :data-selected="bundle === opt.value ? 'true' : null"
+                    @click="bundle = opt.value; $event.target.closest('.dd-root').classList.remove('open')"
+                    class="px-3 py-2 text-sm cursor-pointer transition-colors">{{ opt.label }}</div>
+                </div>
+              </div>
             </div>
 
             <div class="flex items-center justify-center gap-2">
@@ -456,9 +498,34 @@
     var btn = document.getElementById('back-to-top');
     window.addEventListener('scroll', function () {
       btn.style.display = window.scrollY > 300 ? 'flex' : 'none';
+      document.querySelectorAll('.dd-root').forEach(function (x) { x.classList.remove('open'); });
     });
     btn.addEventListener('click', function () {
       window.scrollTo(0, 0);
+    });
+  </script>
+  <script>
+    function toggleDd(id) {
+      var c = document.getElementById(id);
+      var wasOpen = c.classList.contains('open');
+      document.querySelectorAll('.dd-root').forEach(function (x) { x.classList.remove('open'); });
+      if (!wasOpen) {
+        c.classList.add('open');
+        var panel = c.querySelector('.dd-panel');
+        var rect = c.querySelector('button').getBoundingClientRect();
+        panel.style.top = (rect.bottom + 4) + 'px';
+        panel.style.left = rect.left + 'px';
+        panel.style.width = rect.width + 'px';
+        requestAnimationFrame(function () {
+          var sel = panel.querySelector('[data-selected]');
+          if (sel) sel.scrollIntoView({ block: 'nearest' });
+        });
+      }
+    }
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.dd-root')) {
+        document.querySelectorAll('.dd-root').forEach(function (x) { x.classList.remove('open'); });
+      }
     });
   </script>
 </body>
