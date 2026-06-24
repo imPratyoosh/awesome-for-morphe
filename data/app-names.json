@@ -146,7 +146,7 @@
   "com.example.app": "XYZ app",
   "com.unicornsoft.android.unicornpro": "Unicorn Pro",
   "io.foodvisor.foodvisor": "Foodvisor",
-  "com.eksiteknoloji.eksisozluk": "Ek\u015fi S\u00f6zl\u00fck",
+  "com.eksiteknoloji.eksisozluk": "Ekşi Sözlük",
   "com.mirinae.mirinae": "Mirinae",
   "com.avito.android": "Avito",
   "ru.ozon.app.android": "Ozon",
@@ -249,7 +249,7 @@
   "com.bandlab.bandlab": "BandLab",
   "com.appfactory.essence": "Essence",
   "com.bamnetworks.mobile.android.gameday.atbat": "MLB",
-  "com.jcdecaux.vls.lyon": "V\u00e9lo'v officiel",
+  "com.jcdecaux.vls.lyon": "Vélo'v officiel",
   "ee.dustland.android.minesweeper": "Minesweeper",
   "io.funswitch.blocker": "BlockerX",
   "altergames.carlauncher": "AGAMA Car Launcher",
@@ -292,5 +292,8 @@
   "com.waze": "Waze - GPS, Maps & Traffic",
   "com.truebill": "Rocket Money",
   "com.sec.android.app.shealth": "Samsung Health",
-  "Pepper.com": "hotukdeals"
+  "Pepper.com": "hotukdeals",
+  "com.crazygames.crazygamesapp": "CrazyGames",
+  "com.spocky.projengmenu": "Projectivy Launcher",
+  "io.stashteam.games.tracker.stashapp": "Stash"
 }

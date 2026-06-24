@@ -1,4 +1,12 @@
 {
+  "ImmortalZeus": {
+    "repo": "https://github.com/ImmortalZeus/ImmortalZeus-Morphe-Patches",
+    "patches": {
+      "com.example.app": {
+        "Example Patch": "Example patch to start with."
+      }
+    }
+  },
   "abhis1n": {
     "repo": "https://github.com/abhis1n/Morphe-Patches",
     "patches": {
@@ -721,6 +729,10 @@
       "com.github.android": {
         "AMOLED dark theme": "Changes the default dark theme to use true blacks for AMOLED screens."
       },
+      "com.google.android.apps.magazines": {
+        "Enable custom tabs": "Open articles using your default browser.",
+        "MicroG integration": "Allows the app to work without root by using MicroG instead of Google Play Services."
+      },
       "com.hellochinese": {
         "Enable Premium": "Enables app features locked behind the subscription paywall."
       },
@@ -937,14 +949,6 @@
       "com.persapps.multitimer": {
         "Bypass DRM": "Prevents PairIP license check from running so the app does not redirect to the Play Store paywall on launch.",
         "Enable PRO": "Unlocks all PRO features by short-circuiting the purchase status check to always return true."
-      }
-    }
-  },
-  "ImmortalZeus": {
-    "repo": "https://github.com/ImmortalZeus/ImmortalZeus-Morphe-Patches",
-    "patches": {
-      "com.example.app": {
-        "Example Patch": "Example patch to start with."
       }
     }
   },
@@ -1809,7 +1813,6 @@
         "Unlock Pro": "Unlock Pro Features in Cashew App"
       },
       "com.canva.editor": {
-        "Disable Restricted Access": "Removes restricted/locked indicators on premium media in Canva.",
         "Remove Watermark": "Removes watermarks from Canva exports and previews."
       },
       "com.catalinagroup.callrecorder": {
@@ -1823,7 +1826,7 @@
         "Unlock Premium": "Unlocks Premium features in app."
       },
       "com.dubox.drive": {
-        "Unlock VIP": "Unlocks Dubox Drive VIP/SVIP (Premium+)."
+        "Unlock VIP": "Unlocks Dubox Drive VIP/SVIP (Premium+)"
       },
       "com.finalwire.aida64": {
         "Remove ads": "Stubs all ad loading paths: banner/interstitial loaders, billing callbacks, and ad SDK init."
