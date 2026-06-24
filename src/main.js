@@ -12,7 +12,7 @@ import {
 import { filterRows, getFilterOptions, loadChannelData, normalizeChannel, summarizeRows } from "./data.js";
 
 const DEFAULT_CHANNEL = "stable";
-const PRIORITY_ORDER = ["morphe", "piko", "rookieenough", "hoo-dles", "paresh-maheshwari", "brosssh", "patcheddit"];
+const PRIORITY_ORDER = ["morphe", "hoo-dles", "rushiranpise", "rookieenough", "hoomans-morphe", "paresh-maheshwari", "patcheddit"];
 
 createApp({
   setup() {
