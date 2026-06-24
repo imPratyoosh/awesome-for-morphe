@@ -608,6 +608,7 @@
     "repo": "https://github.com/browzomje/browzomje-patches",
     "patches": {
       "com.pinterest": {
+        "Copy direct link": "Adds a 'Copy direct link' option to the pin menu to copy a link under the direct CDN media format instead of the standard Pinterest web link.",
         "Disable ads": "Removes sponsored pins.",
         "Neutralize advertising ID": "Returns an empty Google Advertising ID and forces \u2018limit ad tracking\u2019, disabling ad tracking without causing the app to crash.",
         "Set pin as wallpaper": "It adds the \u2018Set as wallpaper\u2019 option to the pin menu, which downloads uses the image and sets it as the device\u2019s wallpaper."
