@@ -609,9 +609,11 @@
     "patches": {
       "com.pinterest": {
         "Copy direct link": "Adds a 'Copy direct link' option to the pin menu to copy a link under the direct CDN media format instead of the standard Pinterest web link.",
-        "Disable ads": "Removes sponsored pins.",
+        "Disable ads": "Removes sponsored (promoted) pins from the home feed and from search/related/board feeds.",
+        "Download video": "Adds a 'Download video' option to the pin menu for video pins, saving the clip to the Downloads folder.",
         "Neutralize advertising ID": "Returns an empty Google Advertising ID and forces \u2018limit ad tracking\u2019, disabling ad tracking without causing the app to crash.",
-        "Set pin as wallpaper": "It adds the \u2018Set as wallpaper\u2019 option to the pin menu, which downloads uses the image and sets it as the device\u2019s wallpaper."
+        "Set pin as wallpaper": "It adds the \u2018Set as wallpaper\u2019 option to the pin menu, which downloads uses the image and sets it as the device\u2019s wallpaper.",
+        "Spoof signature": "Spoofs the application signature SHA-1 sent during App Integrity checks to bypass server-side signature validation."
       }
     }
   },
@@ -991,6 +993,20 @@
       }
     }
   },
+  "joristdh": {
+    "repo": "https://github.com/Joristdh/Platypatch",
+    "patches": {
+      "com.laurencedawson.reddit_sync": {
+        "Experimental: Restore \"Swipe to return\" translucency": "Fixes the opaque background when using the \"Swipe to return\" option. Experimental due to animation issues. Incompatible with the Predictive Back Gesture patch."
+      },
+      "com.laurencedawson.reddit_sync.dev": {
+        "Experimental: Restore \"Swipe to return\" translucency": "Fixes the opaque background when using the \"Swipe to return\" option. Experimental due to animation issues. Incompatible with the Predictive Back Gesture patch."
+      },
+      "com.laurencedawson.reddit_sync.pro": {
+        "Experimental: Restore \"Swipe to return\" translucency": "Fixes the opaque background when using the \"Swipe to return\" option. Experimental due to animation issues. Incompatible with the Predictive Back Gesture patch."
+      }
+    }
+  },
   "kolaron": {
     "repo": "https://github.com/kolaron/morphe-patches",
     "patches": {
@@ -1058,6 +1074,9 @@
       "com.ceyhan.sets": {
         "Unlock Premium": "Unlock premium features such as Disable Ads and access AI Assistant."
       },
+      "com.chimbori.hermitcrab": {
+        "Unlock Premium": "Enable premium features."
+      },
       "com.flavionet.android.camera.lite": {
         "Enable Raw Capture": "Force enable DNG raw capture option.",
         "Fix Video Recording Intent": "Fix opening Cinema FV-5 Lite from video recording menu.",
@@ -1090,6 +1109,11 @@
       "com.medibang.android.paint.tablet": {
         "Disable Analytics": "Disables app tracker, Google & Firebase Analytics",
         "Unlock Premium": "Unlock premium features such as No Ads, Premium Brushes, Filters & Fonts; Simultaneous Layer Operation. Server-side features is NOT included!"
+      },
+      "com.regasoftware.udisc": {
+        "Course Maps Fix": "Fix course maps not rendered by using your own Google Maps API key.",
+        "Login Fix": "Fix login issue by spoofing the installation source to Play Store.",
+        "Unlock Premium": "Enable premium features."
       }
     }
   },
@@ -1489,7 +1513,7 @@
         "Download media": "Adds ability to download posts, reels, stories and highlights",
         "Download voice message": "Enables ability to download voice messages",
         "External downloader": "Adds support to share post links directly to external downloader",
-        "Follow back indicator": "Adds a label on the profile page, indicating whether a user is follows you back.",
+        "Friendship status indicator": "Adds a follows you back status label on the profile page andshows a detailed friendship status breakdown on click",
         "Hide group creation button on sharesheet": null,
         "Hide navigation buttons": "Hides navigation bar buttons, such as the Reels and Create button.",
         "Hide notes tray": "Hides notes tray in DM section",
