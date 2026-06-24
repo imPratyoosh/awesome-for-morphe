@@ -20,6 +20,7 @@ def collect_apps(list_json):
     discovered_names = {}
     for patch in list_json.get("patches") or []:
         patch_name = patch.get("name")
+        patch_desc = patch.get("description", "")
         if not patch_name:
             continue
 
@@ -38,9 +39,14 @@ def collect_apps(list_json):
                         discovered_names.setdefault(pkg, name)
 
         for pkg in pkgs:
-            patches_dict.setdefault(pkg, []).append(patch_name)
+            patches_dict.setdefault(pkg, {})[patch_name] = patch_desc
 
-    return dict(sorted({k: sorted(v) for k, v in patches_dict.items()}.items())), discovered_names
+    sorted_patches = {}
+    for pkg in sorted(patches_dict.keys()):
+        pkg_patches = patches_dict[pkg]
+        sorted_patches[pkg] = {k: pkg_patches[k] for k in sorted(pkg_patches.keys())}
+
+    return sorted_patches, discovered_names
 
 
 def get_repo(bundle_json):

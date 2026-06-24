@@ -76,13 +76,24 @@ def build_notes(label, old_bundles, new_bundles, app_names, skip_words):
 
             # 3. New Patches (in an existing app)
             for pkg in sorted(old_pkgs & new_pkgs):
-                added_patches = set(patches_dict.get(pkg, [])) - set(
-                    old_patches_dict.get(pkg, [])
-                )
+                old_pkg_patches = old_patches_dict.get(pkg, {})
+                new_pkg_patches = patches_dict.get(pkg, {})
+
+                if isinstance(old_pkg_patches, list):
+                    old_pkg_patches = {p: "" for p in old_pkg_patches}
+                if isinstance(new_pkg_patches, list):
+                    new_pkg_patches = {p: "" for p in new_pkg_patches}
+
+                added_patches = set(new_pkg_patches.keys()) - set(old_pkg_patches.keys())
                 if added_patches:
                     name = format_app_name(pkg, app_names, skip_words)
                     patch_lines = [f"- ({key}) [{name}]({make_url(key, pkg, is_dev)})"]
-                    patch_lines.extend(f"  - {p}" for p in sorted(added_patches))
+                    for p in sorted(added_patches):
+                        desc = new_pkg_patches.get(p, "")
+                        if desc:
+                            patch_lines.append(f"  - {p}: *{desc}*")
+                        else:
+                            patch_lines.append(f"  - {p}")
                     new_patches_groups.append("\n".join(patch_lines))
 
     sections = []
@@ -137,10 +148,19 @@ def main():
         prev_patches = old_dev.get(key, {}).get("patches", {})
 
         merged_patches = {}
-        for pkg in set(stable_patches) | set(prev_patches):
-            s_set = set(stable_patches.get(pkg, []))
-            p_set = set(prev_patches.get(pkg, []))
-            merged_patches[pkg] = sorted(s_set | p_set)
+        for pkg in sorted(set(stable_patches) | set(prev_patches)):
+            s_val = stable_patches.get(pkg, {})
+            p_val = prev_patches.get(pkg, {})
+
+            if isinstance(s_val, list):
+                s_val = {p: "" for p in s_val}
+            if isinstance(p_val, list):
+                p_val = {p: "" for p in p_val}
+
+            merged = {}
+            for k in set(s_val.keys()) | set(p_val.keys()):
+                merged[k] = s_val.get(k) or p_val.get(k) or ""
+            merged_patches[pkg] = {k: merged[k] for k in sorted(merged.keys())}
 
         pre_baseline[key] = {"patches": merged_patches}
 
