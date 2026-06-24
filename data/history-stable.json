@@ -1,4 +1,21 @@
 {
+  "AlexNaga": {
+    "repo": "https://github.com/AlexNaga/android-patches",
+    "patches": {
+      "se.matlistan.free": {
+        "Dark mode": "Applies a dark theme to all backgrounds, dialogs, and popups.",
+        "Enable Premium": "Removes item/list limits and unlocks premium features (copy to list, manual sort, etc.)."
+      }
+    }
+  },
+  "ImmortalZeus": {
+    "repo": "https://github.com/ImmortalZeus/ImmortalZeus-Morphe-Patches",
+    "patches": {
+      "com.example.app": {
+        "Example Patch": "Example patch to start with."
+      }
+    }
+  },
   "abhis1n": {
     "repo": "https://github.com/abhis1n/Morphe-Patches",
     "patches": {
@@ -56,7 +73,7 @@
         "Skip ads": "Multi-layer ad suppression targeting the SSAI schedule, impression reporting, and the Volley network chokepoint."
       },
       "com.bamnetworks.mobile.android.gameday.atbat": {
-        "MLB At Bat Android TV": "Removes VOD ads and between-innings gambling ads while preserving live game playback."
+        "MLB At Bat Android TV": "Removes VOD ads and shows a commercial-break overlay over live gambling ads while preserving live game playback."
       },
       "com.cbs.ott": {
         "Paramount+ Android TV": "Removes VOD ads and pause ads while preserving live TV."
@@ -78,19 +95,6 @@
       },
       "com.wbd.hbomax": {
         "HBO Max - Disable Ads": "Suppresses nonlinear overlay ads (Bolt), SSAI linear ad timeline registration (GMSS/AdSparx), and live stream preroll ad timeline entry generation for all content types."
-      }
-    }
-  },
-  "ajstrick81": {
-    "repo": "https://github.com/ajstrick81/peacock-atv-patches",
-    "patches": {}
-  },
-  "AlexNaga": {
-    "repo": "https://github.com/AlexNaga/android-patches",
-    "patches": {
-      "se.matlistan.free": {
-        "Dark mode": "Applies a dark theme to all backgrounds, dialogs, and popups.",
-        "Enable Premium": "Removes item/list limits and unlocks premium features (copy to list, manual sort, etc.)."
       }
     }
   },
@@ -489,6 +493,13 @@
   "chiggi": {
     "repo": "https://github.com/durgesh0505/chiggi_morphe_patches",
     "patches": {
+      "com.crazygames.crazygamesapp": {
+        "Bypass Play license check": "Stops Google Play's Automatic Integrity Protection (PairIP) license check that, on a re-signed/sideloaded build, redirects the app to the Play Store (\"get it on Google Play\"). Neuters both entry points of com.pairip.licensecheck.LicenseClient (checkLicense / initializeLicenseCheck) so the check never runs. Required for the patched app to open at all.",
+        "Change app name": "Changes the app name shown under the launcher icon. Set the desired name in the patch options.",
+        "Disable analytics": "Stops native Sentry crash/telemetry upload by neutering the Capacitor Sentry plugin's native init (io.sentry.capacitor.SentryCapacitor.initNativeSdk), so it resolves without starting the native Sentry SDK. Firebase auth, ConfigCat and push are unaffected.",
+        "Remove AD_ID permission": "Removes the advertising-id and Ad Services (Privacy Sandbox) permissions so the device advertising id, Topics, Attribution and Custom Audience signals cannot be read for ad tracking.",
+        "Remove ads": "Removes native ads (AdMob and its Pangle/Audience Network mediation) by neutering the Capacitor AdMob plugin (com.getcapacitor.community.admob.AdMob): no video is shown for interstitial or rewarded ads \u2014 instead the show methods fire the ad's lifecycle events so the game's loading overlay dismisses and rewarded ads still credit their reward; banners never display. Note: in-page web video ads served remotely inside the WebView (from crazygames.com) are not part of the app bytecode and cannot be removed here."
+      },
       "com.easybrain.arrow.puzzle.game": {
         "Change app name": "Changes the app name shown under the launcher icon. Set the desired name in the patch options.",
         "Change package name": "Changes the app package name so the patched app installs alongside the original. Set the desired package name in the patch options. WARNING: this game ships native integrity/signing libraries; a renamed + re-signed package may trip a native tamper check. Disable this patch if the app crashes or closes on launch.",
@@ -854,6 +865,9 @@
       "com.soepic.photogallery.release": {
         "Unlock Pro": "Unlocks all of Liquid Gallery's Pro features without a purchase."
       },
+      "com.spocky.projengmenu": {
+        "Unlock Premium": "Unlocks Projectivy Launcher's premium so the paywall stops sending you to the upgrade screen. Display profiles, custom wallpapers and backgrounds, parental controls, and the locked settings and customization options all open up. The gate is decided on the device, so there is no account to sign in to."
+      },
       "com.tracked.mobile": {
         "Unlock Pro": "Unlocks Tracked's premium training tools without a subscription, like muscle analytics and training programs. They run on the workout data already on your device, so they keep working offline. The separate human-coaching marketplace still needs its own subscription."
       },
@@ -871,6 +885,9 @@
       },
       "dk.tacit.android.foldersync.lite": {
         "Unlock Premium": "Unlocks FolderSync's premium without the in-app purchase and removes the ads, so you get unlimited sync pairs and the advanced options."
+      },
+      "io.stashteam.games.tracker.stashapp": {
+        "Unlock Pro": "Turns on Stash Pro and removes the ads. Pro is a flag the server sends with your account, so the unlock takes effect on a signed-in account once it loads. With it on the ads go away and the Pro-gated UI opens up: the Become Pro upsell card, the home screen block layout, custom collection cover images, and the locked review detail fields. Anything the Stash server checks for a non-paying account is unaffected, so data kept behind a paid account does not sync. Re-signing breaks Google and Facebook login, so sign in with email."
       },
       "photo.editor.photoeditor.photoeditorpro": {
         "Unlock Pro": "Unlocks the Pro features in Photo Editor Polish without a subscription and drops the ads and upgrade prompts. The AI tools and cloud assets, which the developer runs on its servers, stay locked."
@@ -917,14 +934,6 @@
       "com.persapps.multitimer": {
         "Bypass DRM": "Prevents PairIP license check from running so the app does not redirect to the Play Store paywall on launch.",
         "Enable PRO": "Unlocks all PRO features by short-circuiting the purchase status check to always return true."
-      }
-    }
-  },
-  "ImmortalZeus": {
-    "repo": "https://github.com/ImmortalZeus/ImmortalZeus-Morphe-Patches",
-    "patches": {
-      "com.example.app": {
-        "Example Patch": "Example patch to start with."
       }
     }
   },
@@ -1154,7 +1163,7 @@
         "Sanitize sharing links": "Removes the tracking query parameters from shared links.",
         "Spoof video streams": "Adds options to spoof the client video streams to fix playback.",
         "Theme": "Adds options for theming and applies a custom background theme (dark background theme defaults to pure black).",
-        "Track crossfade": "Adds a true dual-player crossfade between consecutive tracks."
+        "Track crossfade": "Adds a true dual-player crossfade between consecutive tracks. Requires YouTube Music 9.00 or newer; on older versions the patch is a no-op."
       },
       "com.google.android.youtube": {
         "Alternative thumbnails": "Adds options to replace video thumbnails using the DeArrow API or image captures from the video.",
@@ -1173,6 +1182,7 @@
         "Disable QUIC protocol": "Adds an option to disable QUIC (Quick UDP Internet Connections) network protocol.",
         "Disable Shorts resuming on startup": "Adds an option to disable Shorts from resuming on app startup when Shorts were last being watched.",
         "Disable double tap actions": "Adds an option to disable player double tap gestures.",
+        "Disable fullscreen gestures": "Adds options to selectively disable gestures for entering and exiting fullscreen mode.",
         "Disable haptic feedback": "Adds an option to disable haptic feedback in the player for various actions.",
         "Disable layout updates": "Adds an option to disable server side layout updates and use an older UI.",
         "Disable player popup panels": "Adds an option to disable panels (such as live chat) from opening automatically.",
@@ -1206,7 +1216,7 @@
         "Open channel of live avatar": "Adds an option to prevent a channel's current live video from opening when tapping its avatar.",
         "Open links externally": "Adds an option to always open links in your browser instead of with the in-app browser.",
         "Open system share sheet": "Adds an option to always open the system share sheet instead of the in-app share sheet.",
-        "Open videos fullscreen": "Adds an option to open videos in full screen portrait mode.",
+        "Open videos fullscreen": "Adds options to automatically open videos in fullscreen portrait or landscape mode.",
         "Override YouTube Music buttons": "Overrides YouTube Music buttons to open Morphe Music or any compatible third-party client.",
         "Play all": "Adds an option to play all the videos from a channel and to display play all button in the video player.",
         "Playback speed": "Adds options to customize available playback speeds, set a default playback speed, and show a speed dialog button in the video player.",
@@ -1229,7 +1239,7 @@
       },
       "com.reddit.frontpage": {
         "Custom branding name for Reddit": "Changes the Reddit app name to the name specified in patch options.",
-        "Disable modern home": "Adds an option to disable the modern home UI.",
+        "Disable modern home": "Adds an option to disable the modern home UI. This patch works with Reddit 2026.24.0 and earlier.",
         "Disable screenshot popup": "Adds an option to disable the popup that appears when taking a screenshot.",
         "Hide Ask button": "Adds an option to hide Ask button in the search bar.",
         "Hide Reddit search": "Permanently hides the Reddit search in the contextual menu. This patch does not work with root mounting",
@@ -1787,16 +1797,6 @@
         "Show poll results": "Adds an option to show poll results without voting",
         "Show post source label": "Source label will be shown only on public posts",
         "Show sensitive media": null
-      }
-    }
-  },
-  "piko-shim": {
-    "repo": "https://gitlab.com/inotia00/x-shim",
-    "patches": {
-      "com.twitter.android": {
-        "Abstract shim layer": "Adds an abstracted shim layer for fields, which improves compatibility to allow legacy patches to work.",
-        "Abstract shim layer for method": "Adds an abstracted shim layer for methods, which improves compatibility to allow legacy patches to work.",
-        "Abstract shim layer for native library": "Adds an abstracted shim layer for native libraries, which improves compatibility to allow legacy patches to work."
       }
     }
   },
