@@ -2,7 +2,10 @@
 
 🔍 [Awesome for Morphe Website](https://nvbangg.github.io/awesome-for-morphe) [![Source](https://img.shields.io/badge/Source-gray?logo=github)](https://github.com/nvbangg/awesome-for-morphe/tree/gh-pages)
 
-[![Telegram Channel](https://img.shields.io/badge/Telegram_Channel-blue?style=social&logo=telegram)](https://t.me/awesome_for_morphe)　[![Stars](https://img.shields.io/github/stars/nvbangg/awesome-for-morphe?label=Star%20this%20repo%20if%20useful%20%E2%AD%90&logo=github-sponsors)](https://github.com/nvbangg/awesome-for-morphe)　[![GitHub](https://img.shields.io/badge/nvbangg-black?style=social&logo=github)](https://github.com/nvbangg)
+> [!NOTE]
+> 🌐 A curated list of all Morphe resources and projects.  
+> 🔍 Explore [all supported apps and patches](https://nvbangg.github.io/awesome-for-morphe), automatically updated.  
+> 🔔 Get [notifications](https://github.com/nvbangg/awesome-for-morphe/releases) whenever there are new updates. [![Telegram Channel](https://img.shields.io/badge/Telegram_Channel-blue?style=social&logo=telegram)](https://t.me/awesome_for_morphe)
 
 ### 🔗 Jump to:
 
@@ -10,12 +13,6 @@
 - [📚 Resources](#resources)
 - [📱 Apps & 🧩 Patches](#apps-patches)
 - [🛠️ Other Projects](#projects)
-
-> [!NOTE]
-> 🌐 A curated list of all Morphe resources and projects.  
-> 🔍 Explore [all supported apps and patches](https://nvbangg.github.io/awesome-for-morphe), automatically updated.  
-> 🔔 Release [notifications](https://github.com/nvbangg/awesome-for-morphe/releases) for new apps and patch sources.
-> [![Telegram Channel](https://img.shields.io/badge/Telegram_Channel-blue?style=social&logo=telegram)](https://t.me/awesome_for_morphe)
 
 <div align="center"> 
 <picture>
@@ -92,8 +89,10 @@
 
 ---
 
+<p align="center">⭐ Star <a href="https://github.com/nvbangg/awesome-for-morphe">this repo</a> if useful</p>
+
 <details>
-<summary align="center"><i>Made with ❤️ by <a href="https://github.com/nvbangg">nvbangg</a></i></summary>
+<summary align="center"><i>Maintained with ❤️ by <a href="https://github.com/nvbangg">nvbangg</a></i></summary>
 
 ### 🙏 Credits
 
