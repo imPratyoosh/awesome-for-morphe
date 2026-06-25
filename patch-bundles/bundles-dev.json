@@ -612,8 +612,7 @@
         "Disable ads": "Removes sponsored (promoted) pins from the home feed and from search/related/board feeds.",
         "Download video": "Adds a 'Download video' option to the pin menu for video pins, saving the clip to the Downloads folder.",
         "Neutralize advertising ID": "Returns an empty Google Advertising ID and forces \u2018limit ad tracking\u2019, disabling ad tracking without causing the app to crash.",
-        "Set pin as wallpaper": "It adds the \u2018Set as wallpaper\u2019 option to the pin menu, which downloads uses the image and sets it as the device\u2019s wallpaper.",
-        "Spoof signature": "Spoofs the application signature SHA-1 sent during App Integrity checks to bypass server-side signature validation."
+        "Set pin as wallpaper": "It adds the \u2018Set as wallpaper\u2019 option to the pin menu, which downloads uses the image and sets it as the device\u2019s wallpaper."
       }
     }
   },
@@ -1921,6 +1920,7 @@
       },
       "com.waze": {
         "Alert Distances": "Configures radar/camera and hazard alert announcement distances.\nCredits: Waze CGE Mod.\n",
+        "AudioKit Integration": "Allows third-party audio apps (like Morphe YouTube Music) to be recognized as official partners by Waze AudioKit.",
         "AutoZoom": "Controls how aggressively the map zooms in/out based on driving speed.\nCredits: Waze Chuppito Mod",
         "Disable Ads": "Suppresses all Waze ad systems via bundled preferences file:\n\u2022 AdMob SDK (Ad_.*)\n\u2022 Google Ads (Google_Ads.*)\n\u2022 Ads Inventory Prediction\n\u2022 ExternalPOI pins, coupons, popups (ExternalPO_ + Extern__POI both key variants)\n\u2022 Search autocomplete server ads\nCredits: Waze CGE Mod (ExternalPOI keys), Waze Chuppito (dual-key coverage).",
         "Disable Advil Ad Requests": "Stubs AdvilRequest.getPageUrl() \u2192 \"\" so the Advil ad server receives no page URL and returns no ad content. ",

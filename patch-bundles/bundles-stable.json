@@ -85,7 +85,7 @@
         "Skip ads": "Suppresses all ad delivery systems in Fox One Android TV: Google IMA/DAI for VOD, Yospace SSAI for live content."
       },
       "com.peacocktv.peacockandroid": {
-        "Skip ads": "Disables ad delivery via Sky SDK surgical targets (FreeWheel DI module skip, MediaTailor SSAI layers, ad-break-started no-op), OkHttp interceptor, and WebView shouldInterceptRequest wrapper. Validated v7.5.102 and v7.6.100."
+        "Skip ads": "Disables ad delivery via Sky SDK surgical targets (FreeWheel DI module skip, MediaTailor SSAI layers, ad-break-started no-op), AdBlockInterceptor wiring across all three OkHttp surfaces (app NetworkingKt client, Sky SDK addon network client, and the SDK root/media client), New Relic agent init no-op, and WebView shouldInterceptRequest wrapper. Validated v7.5.102 and v7.6.100."
       },
       "com.tubitv": {
         "Skip ads": "Suppresses all ad delivery systems in Tubi Android TV."
@@ -488,8 +488,7 @@
         "Disable ads": "Removes sponsored (promoted) pins from the home feed and from search/related/board feeds.",
         "Download video": "Adds a 'Download video' option to the pin menu for video pins, saving the clip to the Downloads folder.",
         "Neutralize advertising ID": "Returns an empty Google Advertising ID and forces \u2018limit ad tracking\u2019, disabling ad tracking without causing the app to crash.",
-        "Set pin as wallpaper": "It adds the \u2018Set as wallpaper\u2019 option to the pin menu, which downloads uses the image and sets it as the device\u2019s wallpaper.",
-        "Spoof signature": "Spoofs the application signature SHA-1 sent during App Integrity checks to bypass server-side signature validation."
+        "Set pin as wallpaper": "It adds the \u2018Set as wallpaper\u2019 option to the pin menu, which downloads uses the image and sets it as the device\u2019s wallpaper."
       }
     }
   },
