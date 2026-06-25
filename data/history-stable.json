@@ -85,7 +85,7 @@
         "Skip ads": "Suppresses all ad delivery systems in Fox One Android TV: Google IMA/DAI for VOD, Yospace SSAI for live content."
       },
       "com.peacocktv.peacockandroid": {
-        "Skip ads": "Disables ad delivery via Sky SDK surgical targets (FreeWheel DI module skip, MediaTailor SSAI layers, ad-break-started no-op), OkHttp interceptor, and WebView shouldInterceptRequest wrapper. Validated v7.5.102 and v7.6.100."
+        "Skip ads": "Disables ad delivery via Sky SDK surgical targets (FreeWheel DI module skip, MediaTailor SSAI layers, ad-break-started no-op), AdBlockInterceptor wiring across all three OkHttp surfaces (app NetworkingKt client, Sky SDK addon network client, and the SDK root/media client), New Relic agent init no-op, and WebView shouldInterceptRequest wrapper. Validated v7.5.102 and v7.6.100."
       },
       "com.tubitv": {
         "Skip ads": "Suppresses all ad delivery systems in Tubi Android TV."
@@ -484,7 +484,9 @@
     "repo": "https://github.com/browzomje/browzomje-patches",
     "patches": {
       "com.pinterest": {
-        "Disable ads": "Removes sponsored pins.",
+        "Copy direct link": "Adds a 'Copy direct link' option to the pin menu to copy a link under the direct CDN media format instead of the standard Pinterest web link.",
+        "Disable ads": "Removes sponsored (promoted) pins from the home feed and from search/related/board feeds.",
+        "Download video": "Adds a 'Download video' option to the pin menu for video pins, saving the clip to the Downloads folder.",
         "Neutralize advertising ID": "Returns an empty Google Advertising ID and forces \u2018limit ad tracking\u2019, disabling ad tracking without causing the app to crash.",
         "Set pin as wallpaper": "It adds the \u2018Set as wallpaper\u2019 option to the pin menu, which downloads uses the image and sets it as the device\u2019s wallpaper."
       }
@@ -676,6 +678,10 @@
       "com.github.android": {
         "AMOLED dark theme": "Changes the default dark theme to use true blacks for AMOLED screens."
       },
+      "com.google.android.apps.magazines": {
+        "Enable custom tabs": "Open articles using your default browser.",
+        "MicroG integration": "Allows the app to work without root by using MicroG instead of Google Play Services."
+      },
       "com.hellochinese": {
         "Enable Premium": "Enables app features locked behind the subscription paywall."
       },
@@ -827,6 +833,9 @@
       "com.camerasideas.instashot": {
         "Unlock Pro": "Unlocks InShot's Pro features without a subscription: no export watermark, no ads, and the paid filters, effects, transitions, stickers and HD export open. The on-device AI tools (background remover, AI retouch, auto captions) verify the original signing key in native code, so those may not run on a re-signed build; the rest of Pro works offline."
       },
+      "com.cfdrink": {
+        "Unlock Premium": "Unlocks Mixel's Premium tier without a subscription: the Pro feature gates open and the premium recipe packs show as entitled. Both gates are read client-side from RevenueCat's entitlements, so this lifts them on-device. Anything Mixel actually checks server-side (if a later build moves a gate there) won't be covered."
+      },
       "com.collectrinc.collectr": {
         "Unlock Premium": "Unlocks Collectr's premium features without a subscription, like unlimited collections, price alerts, and the advanced analytics. This is the arm64 build. Anything Collectr serves from its own servers still needs the real subscription."
       },
@@ -867,6 +876,9 @@
       },
       "com.spocky.projengmenu": {
         "Unlock Premium": "Unlocks Projectivy Launcher's premium so the paywall stops sending you to the upgrade screen. Display profiles, custom wallpapers and backgrounds, parental controls, and the locked settings and customization options all open up. The gate is decided on the device, so there is no account to sign in to."
+      },
+      "com.thehungrywasp.iamsober": {
+        "Unlock Sober Plus": "Unlocks the client-side Sober Plus gates backed by the app's local RevenueCat state, including locked-access settings, extra reaction types, skins, workbook and urge logging entries, and the Sober Plus dashboard. Server-hosted services can still require a real account subscription."
       },
       "com.tracked.mobile": {
         "Unlock Pro": "Unlocks Tracked's premium training tools without a subscription, like muscle analytics and training programs. They run on the workout data already on your device, so they keep working offline. The separate human-coaching marketplace still needs its own subscription."
