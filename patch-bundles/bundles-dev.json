@@ -1822,6 +1822,9 @@
       "com.Splitwise.SplitwiseMobile": {
         "Unlock Pro": "Unlocks Splitwise Pro features, removes ad banners, and suppresses all upgrade upsell prompts."
       },
+      "com.accuweather.android": {
+        "Unlock Premium+": "Unlocks AccuWeather's Premium+ subscription tier without a Play Store purchase. Enables the full 15-day and hourly forecast detail, MinuteCast extended precision, air quality and health indexes, real-feel temperature, severe weather notifications, and widget customisation."
+      },
       "com.adguard.android": {
         "Unlock Lifetime Premium": "Unlocks all features locked behind the subscription paywall."
       },
@@ -1929,6 +1932,9 @@
         "Report Speed Limit": "Adds a Report option when tapping the speedometer to report wrong or missing speed limits. Not available in the official version.\n",
         "Speed Limit Sign": "Sets the speed limit sign style shown on the map.",
         "Uncensored Radar / Camera Display": "Shows exact fixed and mobile speed camera locations, including those not yet in the official Waze radar zone. Enables enforcement alerts via preferences keys:\nCredits: Waze CGE Mod."
+      },
+      "com.windscribe.vpn": {
+        "Unlock Premium": "Unlocks Windscribe premium account."
       },
       "com.yatrirailways.yatri": {
         "Unlock VIP": "Unlocks Yatri VIP by forcing active plan status and spoofing active plan DB query."
