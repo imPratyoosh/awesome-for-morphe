@@ -27,7 +27,7 @@ def main():
     content = "\n".join(
         line.lstrip("# ") if line.startswith("#") else line
         for line in content.splitlines()
-        if not line.startswith("📢 *Telegram:*")
+        if not (line.startswith("📢 *Telegram:*") or line.startswith("📢 _Telegram:"))
     ).strip()
 
     message = f"*{title}*\n\n{content}"

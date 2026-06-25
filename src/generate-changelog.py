@@ -92,13 +92,13 @@ def build_notes(label, old_bundles, new_bundles, app_names, skip_words):
                 )
                 if added_patches:
                     name = format_app_name(pkg, app_names, skip_words)
-                    patch_lines = [f"- ({key}) [{name}]({make_url(key, pkg, is_dev)})"]
+                    patch_lines = [f"- [{name}]({make_url(key, pkg, is_dev)}) ({key})"]
                     for p in sorted(added_patches):
                         desc = new_pkg_patches.get(p, "")
                         if desc:
-                            patch_lines.append(f"  - {p}: *{desc}*")
+                            patch_lines.append(f"  + `{p}`: {desc}")
                         else:
-                            patch_lines.append(f"  - {p}")
+                            patch_lines.append(f"  + `{p}`")
                     new_patches_groups.append("\n".join(patch_lines))
 
     sections = []
@@ -113,7 +113,7 @@ def build_notes(label, old_bundles, new_bundles, app_names, skip_words):
         return ""
 
     sections.insert(
-        0, "📢 *Telegram:* [@awesome_for_morphe](https://t.me/awesome_for_morphe)"
+        0, "📢 _Telegram: [@awesome_for_morphe](https://t.me/awesome_for_morphe)_"
     )
     return "\n\n".join(sections)
 
