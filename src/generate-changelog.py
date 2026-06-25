@@ -96,9 +96,9 @@ def build_notes(label, old_bundles, new_bundles, app_names, skip_words):
                     for p in sorted(added_patches):
                         desc = new_pkg_patches.get(p, "")
                         if desc:
-                            patch_lines.append(f"  + `{p}`: {desc}")
+                            patch_lines.append(f"    + `{p}`: {desc}")
                         else:
-                            patch_lines.append(f"  + `{p}`")
+                            patch_lines.append(f"    + `{p}`")
                     new_patches_groups.append("\n".join(patch_lines))
 
     sections = []
