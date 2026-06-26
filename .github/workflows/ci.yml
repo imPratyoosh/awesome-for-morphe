@@ -4,7 +4,7 @@ name: Sync Patch Bundles
 
 on:
   schedule:
-    - cron: "0 */6 * * *"
+    - cron: "0 3/4 * * *"
   workflow_dispatch:
 
 permissions:
@@ -42,9 +42,8 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           
-          TAG=$(date +'%Y.%m.%d')
           git add patch-bundles/ data/
-          git commit -m "Sync patch-bundles (${TAG})"
+          git commit -m "Sync patch-bundles"
           git push origin HEAD:gh-pages
 
       - name: Cleanup old workflow runs
