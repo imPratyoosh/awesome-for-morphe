@@ -1,6 +1,7 @@
 # Copyright (c) 2026 nvbangg (github.com/nvbangg)
 
 import json
+import os
 from pathlib import Path
 
 ROOT = Path.cwd()
@@ -95,6 +96,8 @@ def main():
     if missing:
         print("\n[WARNING] Missing app names for packages:")
         print(json.dumps(missing, indent=2))
+        if "GITHUB_ACTIONS" in os.environ:
+            print(f"::warning::Missing app names for packages: {', '.join(missing)}")
     else:
         print("\nNo missing app names. Everything is up to date!")
 

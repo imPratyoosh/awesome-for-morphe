@@ -20,7 +20,7 @@ def download(url, retries=3):
                 return res.read().decode("utf8")
         except Exception as exc:
             if attempt < retries - 1:
-                print(f"Retry {attempt + 1}/{retries - 1} {url} ({exc})")
+                pass
             else:
                 raise
 
