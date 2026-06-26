@@ -52,7 +52,7 @@ jobs:
         if: steps.changes.outputs.changed == 'true' && hashFiles('changelog.md') != ''
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh release create "${{ env.TAG }}" --target "$(git rev-parse HEAD)" --title "🔔 Stable Release (${{ env.DAY }})" --notes-file changelog.md
+        run: gh release create "${{ env.TAG }}" --target "$(git rev-parse HEAD)" --title "🔔 Stable Release (${{ env.DAY }})" --notes-file changelog.md --latest=false
 
       - name: Send Telegram release notification
         if: steps.changes.outputs.changed == 'true' && hashFiles('changelog.md') != ''
