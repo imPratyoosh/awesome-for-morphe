@@ -17,8 +17,7 @@ def read_json(path, default=None):
 
 
 def collect_discovered_names(list_json):
-    discovered_names = {}
-    all_pkgs = set()
+    all_pkgs, discovered_names = set(), {}
     for patch in list_json.get("patches") or []:
         compatible = patch.get("compatiblePackages")
         pkgs = set()
@@ -33,8 +32,8 @@ def collect_discovered_names(list_json):
                     pkgs.add(pkg)
                     if name := e.get("name"):
                         discovered_names.setdefault(pkg, name)
-        
-        all_pkgs.update(pkgs)
+
+        all_pkgs.update(pkgs or {"universal"})
 
     return all_pkgs, discovered_names
 
@@ -48,27 +47,22 @@ def main():
     names_path = DATA_DIR / "app-names.json"
     app_names = read_json(names_path, {}) or {}
 
-    seen_pkgs = set()
-    all_pkgs = set()
-    added = 0
-    processed = 0
+    seen_pkgs, all_pkgs = set(), set()
+    added = processed = 0
 
-    # Scan for directories like <base>-patch-bundles
     for bundle_dir in sorted(BUNDLES_DIR.iterdir()):
         if not bundle_dir.is_dir() or not bundle_dir.name.endswith("-patch-bundles"):
             continue
-
         base = bundle_dir.name.replace("-patch-bundles", "")
 
         for channel in ("stable", "dev"):
-            list_path = bundle_dir / f"{base}-{channel}-patches-list.json"
-            list_json = read_json(list_path)
-
+            list_json = read_json(bundle_dir / f"{base}-{channel}-patches-list.json")
             if not list_json:
                 continue
+            processed += 1
 
             pkgs, discovered = collect_discovered_names(list_json)
-            processed += 1
+            all_pkgs.update(pkgs)
 
             for pkg, name in discovered.items():
                 if pkg not in seen_pkgs:
@@ -76,8 +70,6 @@ def main():
                     if app_names.get(pkg) != name:
                         app_names[pkg] = name
                         added += 1
-
-            all_pkgs.update(pkgs)
 
     if added:
         names_path.write_text(
@@ -87,7 +79,6 @@ def main():
 
     print(f"Scanned {processed} list files.")
 
-    # Check missing app names
     missing = sorted(
         pkg
         for pkg in all_pkgs

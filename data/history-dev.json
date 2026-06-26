@@ -39,6 +39,19 @@
       "Open external links directly": "Opens external links directly without going through out.reddit.com.",
       "Remove ads and telemetry": "Removes ads and telemetry everywhere.",
       "Sanitize share links": "Unshortens and removes the tracking query parameters from shared links."
+    },
+    "universal": {
+      "Block ads, trackers, and analytics": "Blocks ads, trackers, analytics, and unwanted content in apps and games using a hosts file.",
+      "Change package name": "Appends \".adobo\" to the package name by default. Changing the package name of the app can lead to unexpected issues.",
+      "Deactivate Firebase Analytics": "Deactivates Firebase Analytics and removes its associated broadcast receivers and services.",
+      "Deactivate Firebase Performance Monitoring": "Deactivates the collection of performance data on app start up time, network requests, and other related metrics.",
+      "Disable Google Safe Browsing in WebView": "Disables the Google Safe Browsing checks in WebView. This doesn't apply to WebView within the SDK Runtime.",
+      "Disable metrics collection in WebView": "Disables the collection of diagnostic data or usage statistics that are sent to Google.",
+      "Disable mobile ads": "Disables banner, interstitial, and other ad formats.",
+      "Remove internet permission": "Removes unnecessary internet permission from apps that can still work without internet access.",
+      "Spoof Advertising ID": "Spoofs the device's advertising ID with a string of zeros.",
+      "Spoof Firebase certificate hash": "Spoofs the app's package certificate hash used by Firebase Installations so that push notifications, remote config, and other Firebase services continue to work as expected.",
+      "Spoof signature verification": "Spoofs the signature verification when the app starts up. It is recommended to use the unmodified app to work properly."
     }
   },
   "almewty": {
@@ -160,6 +173,10 @@
     },
     "kr.co.nowcom.mobile.afreeca": {
       "Disable P2P": "Disables SOOP peer-assisted grid streaming."
+    },
+    "universal": {
+      "Add shared user ID": "Adds or updates the sharedUserId attribute in the app's manifest. This allows multiple apps with the same sharedUserId to share data and run in the same process. Use with caution as this can affect app permissions and data isolation.",
+      "Disable Sentry telemetry": "Disables Sentry telemetry. See https://sentry.io/for/android/ for more information."
     }
   },
   "anddea-morphed": {
@@ -304,6 +321,9 @@
     },
     "com.ysy.app.firewall": {
       "Unlock Premium": "Unlocks NetWall Premium features once 'Unlock Premium Now' button is clicked."
+    },
+    "universal": {
+      "Spoof signature": "Spoofs the signature of the app."
     }
   },
   "anddea": {
@@ -418,6 +438,14 @@
       "Video playback": "Adds options to customize settings related to video playback, such as default video quality and playback speed.",
       "Visual preferences icons for YouTube": "Adds icons to specific preferences in the settings.",
       "Voice Over Translation": "Adds an option to enable Yandex voice-over translation of video audio tracks."
+    },
+    "universal": {
+      "Change installer package name": "Spoof the installer package name to make it appear that the app was installed from the Google Play Store.",
+      "Change version code": "Changes the version code of the app to the value specified in patch options. Except when mounting, this can prevent app stores from updating the app and allow the app to be installed over an existing installation that has a higher version code. By default, the highest version code is set.",
+      "Disable edge-to-edge display": "Disable forced edge-to-edge display on Android 15+ by changing the app's target SDK version. This patch does not work if the app is installed by mounting.",
+      "Override certificate pinning": "Overrides certificate pinning, allowing to inspect traffic via a proxy.",
+      "Spoof Wi-Fi connection": "Spoofs an existing Wi-Fi connection.",
+      "Spoof signature": "Spoofs the signature of the app."
     }
   },
   "andronedev": {
@@ -485,6 +513,11 @@
     "pl.solidexplorer2": {
       "Disable Telemetry": null,
       "Unlock Pro": null
+    },
+    "universal": {
+      "Bypass ADB/Developer Options Detection": null,
+      "Disable Facebook SDK Tracking": null,
+      "Disable Firebase(Google) Analytics": null
     }
   },
   "binarymend": {
@@ -571,6 +604,9 @@
     "com.google.android.apps.magazines": {
       "Enable CustomTabs": "Enables CustomTabs to open articles in your default browser.",
       "GmsCore support": "Allows Google News to sign in via MicroG (GmsCore) instead of Google Play Services when installed under a renamed package."
+    },
+    "universal": {
+      "Change package name": "Appends \".morphe\" to the package name by default. Changing the package name of the app can lead to unexpected issues."
     }
   },
   "ee-morphe": {
@@ -587,6 +623,13 @@
     },
     "epixler.de.hypnobox_android": {
       "Enable Pro": "Forces HypnoBox subscription entitlement checks to always pass."
+    },
+    "universal": {
+      "Change package name": "Appends \".morphe\" to the package name by default. Changing the package name of the app can lead to unexpected issues.",
+      "Clone app": "Renames the app and manifest package so it can be installed alongside another copy. By default this appends \" B\" to the launcher name and appends \"B\" to the package's main segment.",
+      "Disable Pairip license check": "Disables Play Integrity API (pairip) client-side license check. This patch does not bypass Play Integrity attestation or pairipcore virtualization.",
+      "Enable debug": "Enables debugging on the app by setting android:debuggable=\"true\".",
+      "Hide app icon": "Hides the app icon from the Android launcher."
     }
   },
   "hk-morphe": {
@@ -613,6 +656,9 @@
       "Predictive back gesture (Reddit Sync)": "Enables the predictive back gesture with fixes for Reddit Sync.",
       "Spoof client": "Restores functionality of the app by using custom client ID (default included).",
       "Unlock Sync Ultra": "Unlocks Sync Ultra and fixes the \"Restore Comment\" premium feature by fetching from an alternative API."
+    },
+    "universal": {
+      "Predictive back gesture": "Enables the predictive back gesture introduced in Android 13."
     }
   },
   "hoo-dles": {
@@ -784,6 +830,12 @@
     "ru.iiec.pydroid3": {
       "Enable Premium": "Enables app features locked behind the subscription paywall."
     },
+    "universal": {
+      "Change package name": "Appends \".morphe\" to the package name by default. Changing the package name of the app can lead to unexpected issues.",
+      "Disable Pairip license check": "Disables Play Integrity API (pairip) client-side license check. This patch does not bypass Play Integrity attestation or pairipcore virtualization.",
+      "Enable debug": "Enables debugging on the app by setting android:debuggable=\"true\".",
+      "Hide app icon": "Hides the app icon from the Android launcher."
+    },
     "videoeditor.videorecorder.screenrecorder": {
       "Enable Pro": null
     }
@@ -883,6 +935,9 @@
   "ImmortalZeus": {
     "com.example.app": {
       "Example Patch": "Example patch to start with."
+    },
+    "universal": {
+      "Block hosts in string resources": "Blocks ads and trackers by replacing hosts in XML string resources. Works alongside bytecode hosts blocker for comprehensive coverage."
     }
   },
   "imxeren": {
@@ -926,6 +981,9 @@
     },
     "com.laurencedawson.reddit_sync.pro": {
       "Experimental: Restore \"Swipe to return\" translucency": "Fixes the opaque background when using the \"Swipe to return\" option. Experimental due to animation issues. Incompatible with the Predictive Back Gesture patch."
+    },
+    "universal": {
+      "Predictive back gesture": "Enables the predictive back gesture introduced on Android 13."
     }
   },
   "kolaron": {
@@ -971,6 +1029,11 @@
       "Disable background scan": "Disables the periodic Kaspersky background device scan.",
       "Disable gaming profile": "Removes the Game Profile section from the Mine screen, including the button and the usage statistics screen.",
       "Skip update auth": "Removes the login requirement when updating apps."
+    },
+    "universal": {
+      "Change version code": "Changes the app version code, allowing installation over existing versions.",
+      "Disable Pairip license check": "Disables the Pairip license verification check.",
+      "Disable analytics": "Disables analytics and tracking from multiple SDKs, including AppMetrica, MyTracker, Firebase, Sentry, Google Analytics, Amplitude, Mixpanel, Adjust, AppsFlyer, Facebook, MoEngage, and comScore."
     },
     "xyz.rtrvr.pillo": {
       "Disable Pulse tracking": "Disables PulseSDK analytics sending events to events.pillo.care.",
@@ -1027,6 +1090,13 @@
       "Course Maps Fix": "Fix course maps not rendered by using your own Google Maps API key.",
       "Login Fix": "Fix login issue by spoofing the installation source to Play Store.",
       "Unlock Premium": "Enable premium features."
+    },
+    "universal": {
+      "Change package name": "Appends \".morphe\" to the package name by default. Changing the package name of the app can lead to unexpected issues.",
+      "Disable Pairip license check": "Disables Play Integrity API (pairip) client-side license check. This patch does not bypass Play Integrity attestation or pairipcore virtualization.",
+      "Hide app icon": "Hides the app icon from the Android launcher.",
+      "Override certificate pinning": "Overrides certificate pinning, allowing to inspect traffic via a proxy.",
+      "Spoof Install Source": "Spoofs package installer checks to report the configured package name as the installation source. Default is Play Store."
     }
   },
   "lakaka": {
@@ -1162,6 +1232,11 @@
       "Sanitize sharing links": "Adds an option to sanitize sharing links by removing tracking query parameters.",
       "Show view count": "Adds an option to show the view count of Posts.",
       "Spoof signature": "Spoofs the signature of the app to fix notification issues."
+    },
+    "universal": {
+      "Change package name": "Appends \".morphe\" to the package name by default. Changing the package name of the app can lead to unexpected issues.",
+      "Disable Play Store updates": "Disables Play Store updates by setting the version code to the maximum allowed. This patch does not work if the app is installed by mounting and may cause unexpected issues with some apps.",
+      "Override certificate pinning": "Overrides certificate pinning, allowing to inspect traffic via a proxy."
     }
   },
   "morphe-portal": {
@@ -1378,6 +1453,9 @@
       "Fix /s/ links": null,
       "Modify login WebView": "Modify the WebView used for logging into reddit to prevent login issues",
       "Spoof client": "Restores functionality of the app by using custom client ID."
+    },
+    "universal": {
+      "Enable Android debugging": "Enables Android developer debugging capabilities. Including this patch can slow down the app."
     }
   },
   "piko": {
@@ -1689,6 +1767,10 @@
       "Block video ads": "Blocks video ads in streams and VODs.",
       "Debug mode": "Enables Twitch's internal debugging mode.",
       "Show deleted messages": "Shows deleted chat messages behind a clickable spoiler."
+    },
+    "universal": {
+      "Change package name": "Appends \".morphe\" to the package name by default. Changing the package name of the app can lead to unexpected issues. This patch does not work with Reddit.",
+      "Override certificate pinning": "Overrides certificate pinning, allowing to inspect traffic via a proxy. This patch does not work with Reddit."
     }
   },
   "rushiranpise": {
@@ -1965,6 +2047,14 @@
       "Video playback": "Adds options to customize settings related to video playback, such as default video quality and playback speed.",
       "Visual preferences icons for YouTube": "Adds icons to specific preferences in the settings.",
       "Watch history": "Adds an option to change the domain of the watch history or check its status."
+    },
+    "universal": {
+      "Change installer package name": "Spoof the installer package name to make it appear that the app was installed from the Google Play Store.",
+      "Change version code": "Changes the version code of the app to the value specified in patch options. Except when mounting, this can prevent app stores from updating the app and allow the app to be installed over an existing installation that has a higher version code. By default, the highest version code is set.",
+      "Disable edge-to-edge display": "Disable forced edge-to-edge display on Android 15+ by changing the app's target SDK version. This patch does not work if the app is installed by mounting.",
+      "Override certificate pinning": "Overrides certificate pinning, allowing to inspect traffic via a proxy.",
+      "Spoof Wi-Fi connection": "Spoofs an existing Wi-Fi connection.",
+      "Spoof signature": "Spoofs the signature of the app."
     }
   },
   "samsung-morphe": {
@@ -2002,6 +2092,21 @@
     },
     "ru.ozon.app.android": {
       "Remove Ozon ads": "Removes Ozon ad widgets, banner carousels, video ads, and PDP promo blocks."
+    },
+    "universal": {
+      "Disable Adjust": "Disables Adjust attribution manifest entry points.",
+      "Disable AppMetrica": "Disables AppMetrica and legacy Yandex Metrica SDK entry points.",
+      "Disable AppsFlyer": "Disables AppsFlyer install referrer and attribution manifest entry points.",
+      "Disable Firebase telemetry": "Disables Firebase telemetry collection flags and DataTransport sender entry points.",
+      "Disable Google Analytics": "Disables legacy Google Analytics manifest entry points.",
+      "Disable MyTracker": "Disables MyTracker manifest entry points.",
+      "Disable RuStore metrics": "Disables RuStore metrics manifest entry points.",
+      "Disable Sentry telemetry": "Disables Sentry telemetry by turning off SDK auto-init and clearing the DSN.",
+      "Disable freeRASP": "Disables the freeRASP mobile security SDK startup.",
+      "Spoof USB debugging status": "Spoofs USB debugging and related developer settings through common Android APIs.",
+      "Spoof VPN status": "Spoofs VPN state through common Android network APIs.",
+      "Spoof emulator status": "Spoofs emulator state through common Build, QEMU file, command, and system property checks.",
+      "Spoof install source": "Spoofs package installer checks to report Google Play as the install source."
     }
   },
   "zpatches": {
@@ -2013,6 +2118,9 @@
     },
     "ee.dustland.android.minesweeper": {
       "Premium": "Unlock all purchasables options"
+    },
+    "universal": {
+      "Export all activities": "Makes all activities launchable externally by setting android:exported=\"true\" in the manifest"
     }
   }
 }

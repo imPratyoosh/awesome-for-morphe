@@ -4,7 +4,6 @@ import json
 from pathlib import Path
 
 ROOT = Path.cwd()
-SRC_DIR = ROOT / "src"
 DATA_DIR = ROOT / "data"
 BUNDLES_DIR = ROOT / "patch-bundles"
 STABLE_OUT = DATA_DIR / "history-stable.json"
@@ -31,7 +30,6 @@ def collect_apps(list_json):
     patches_dict = {}
     for patch in list_json.get("patches") or []:
         patch_name = patch.get("name")
-        patch_desc = patch.get("description", "")
         if not patch_name:
             continue
 
@@ -47,40 +45,29 @@ def collect_apps(list_json):
                 if isinstance(e, dict) and (pkg := e.get("packageName")):
                     pkgs.add(pkg)
 
-        for pkg in pkgs:
-            patches_dict.setdefault(pkg, {})[patch_name] = patch_desc
+        for pkg in pkgs or {"universal"}:
+            patches_dict.setdefault(pkg, {})[patch_name] = patch.get("description", "")
 
-    sorted_patches = {}
-    for pkg in sorted(patches_dict.keys()):
-        pkg_patches = patches_dict[pkg]
-        sorted_patches[pkg] = {k: pkg_patches[k] for k in sorted(pkg_patches.keys())}
-
-    return sorted_patches
+    return {
+        pkg: {k: patches_dict[pkg][k] for k in sorted(patches_dict[pkg])}
+        for pkg in sorted(patches_dict)
+    }
 
 
 def build_current_bundles():
-    stable_dict = {}
-    dev_dict = {}
-    
-    # Scan for directories like <base>-patch-bundles
+    stable_dict, dev_dict = {}, {}
     for bundle_dir in sorted(BUNDLES_DIR.iterdir()):
         if not bundle_dir.is_dir() or not bundle_dir.name.endswith("-patch-bundles"):
             continue
-
         base = bundle_dir.name.replace("-patch-bundles", "")
 
         for channel in ("stable", "dev"):
-            list_path = bundle_dir / f"{base}-{channel}-patches-list.json"
-            list_json = read_json(list_path)
-
+            list_json = read_json(bundle_dir / f"{base}-{channel}-patches-list.json")
             if not list_json:
                 continue
+            target = stable_dict if channel == "stable" else dev_dict
+            target[base] = collect_apps(list_json)
 
-            patches = collect_apps(list_json)
-
-            target_dict = stable_dict if channel == "stable" else dev_dict
-            target_dict[base] = patches
-            
     return stable_dict, dev_dict
 
 
@@ -104,16 +91,20 @@ def make_url(bundle, app=None, is_dev=False):
     return url
 
 
+def is_valid_pkg(pkg):
+    return ("." in pkg and " " not in pkg) or pkg == "universal"
+
+
 def build_notes(label, old_bundles, new_bundles, app_names, skip_words):
     new_bundles_notes, new_apps_groups, new_patches_groups = [], [], []
     is_dev = label == "pre-release"
 
-    for key in sorted(new_bundles.keys()):
-        patches_dict = new_bundles.get(key, {})
-        new_pkgs = {pkg for pkg in patches_dict.keys() if " " not in pkg and "." in pkg}
+    for key in sorted(new_bundles):
+        patches_dict = new_bundles[key]
+        new_pkgs = {pkg for pkg in patches_dict if is_valid_pkg(pkg)}
 
         if key not in old_bundles:
-            # 1. New Bundle
+            # 1. New bundle
             link = f"[{key}]({make_url(key, is_dev=is_dev)})"
             bundle_lines = [f"- {link}"] + [
                 f"  - {format_app_name(pkg, app_names, skip_words)}"
@@ -121,20 +112,18 @@ def build_notes(label, old_bundles, new_bundles, app_names, skip_words):
             ]
             new_bundles_notes.append("\n".join(bundle_lines))
         else:
-            old_patches_dict = old_bundles.get(key, {})
-            old_pkgs = {
-                pkg for pkg in old_patches_dict.keys() if " " not in pkg and "." in pkg
-            }
+            old_patches_dict = old_bundles[key]
+            old_pkgs = {pkg for pkg in old_patches_dict if is_valid_pkg(pkg)}
 
-            # 2. New Apps (in an existing bundle)
+            # 2. New apps in an existing bundle
             if added_pkgs := new_pkgs - old_pkgs:
-                app_lines = [f"- {key}"]
-                for pkg in sorted(added_pkgs):
-                    name = format_app_name(pkg, app_names, skip_words)
-                    app_lines.append(f"  - [{name}]({make_url(key, pkg, is_dev)})")
+                app_lines = [f"- {key}"] + [
+                    f"  - [{format_app_name(pkg, app_names, skip_words)}]({make_url(key, pkg, is_dev)})"
+                    for pkg in sorted(added_pkgs)
+                ]
                 new_apps_groups.append("\n".join(app_lines))
 
-            # 3. New Patches (in an existing app)
+            # 3. New patches in an existing app
             for pkg in sorted(old_pkgs & new_pkgs):
                 old_pkg_patches = old_patches_dict.get(pkg, {})
                 new_pkg_patches = patches_dict.get(pkg, {})
@@ -144,19 +133,18 @@ def build_notes(label, old_bundles, new_bundles, app_names, skip_words):
                 if isinstance(new_pkg_patches, list):
                     new_pkg_patches = {p: "" for p in new_pkg_patches}
 
-                added_patches = set(new_pkg_patches.keys()) - set(
-                    old_pkg_patches.keys()
-                )
-                if added_patches:
-                    name = format_app_name(pkg, app_names, skip_words)
-                    patch_lines = [f"- [{name}]({make_url(key, pkg, is_dev)}) ({key})"]
-                    for p in sorted(added_patches):
-                        desc = new_pkg_patches.get(p, "")
-                        if desc:
-                            patch_lines.append(f"    + `{p}`: {desc}")
-                        else:
-                            patch_lines.append(f"    + `{p}`")
-                    new_patches_groups.append("\n".join(patch_lines))
+                added_patches = set(new_pkg_patches) - set(old_pkg_patches)
+                if not added_patches:
+                    continue
+
+                name = format_app_name(pkg, app_names, skip_words)
+                patch_lines = [f"- [{name}]({make_url(key, pkg, is_dev)}) ({key})"] + [
+                    f"    + `{p}`: {new_pkg_patches[p]}"
+                    if new_pkg_patches.get(p)
+                    else f"    + `{p}`"
+                    for p in sorted(added_patches)
+                ]
+                new_patches_groups.append("\n".join(patch_lines))
 
     sections = []
     if new_bundles_notes:
@@ -182,32 +170,29 @@ def main():
     old_stable = read_json(STABLE_OUT, {}) or {}
     old_dev = read_json(DEV_OUT, {}) or {}
     app_names = read_json(APP_NAMES_PATH, {}) or {}
-    skip_words_list = read_json(SKIP_WORDS_PATH, []) or []
-    skip_words = set(skip_words_list)
+    skip_words = set(read_json(SKIP_WORDS_PATH, []) or [])
 
     new_stable, new_dev = build_current_bundles()
-
     write_json(STABLE_OUT, new_stable)
     write_json(DEV_OUT, new_dev)
 
-    is_first_run = not old_stable
-    if is_first_run:
+    if not old_stable:
         print("Initialized bundles.")
         return
 
-    # Stable changelog: new_stable vs old_stable
+    # Stable changelog: new vs old
     stable_notes = build_notes("stable", old_stable, new_stable, app_names, skip_words)
     if stable_notes:
         CHANGELOG_PATH.write_text(stable_notes + "\n", encoding="utf8")
         print("Stable changelog created.")
 
-    # Pre-release changelog: new_dev vs (new_stable + old_dev)
+    # Pre-release changelog: new_dev vs (new_stable merged with old_dev)
     pre_baseline = {}
     for key in set(new_stable) | set(old_dev):
         stable_patches = new_stable.get(key, {})
         prev_patches = old_dev.get(key, {})
-
         merged_patches = {}
+
         for pkg in sorted(set(stable_patches) | set(prev_patches)):
             s_val = stable_patches.get(pkg, {})
             p_val = prev_patches.get(pkg, {})
@@ -217,10 +202,10 @@ def main():
             if isinstance(p_val, list):
                 p_val = {p: "" for p in p_val}
 
-            merged = {}
-            for k in set(s_val.keys()) | set(p_val.keys()):
-                merged[k] = s_val.get(k) or p_val.get(k) or ""
-            merged_patches[pkg] = {k: merged[k] for k in sorted(merged.keys())}
+            merged = {
+                k: s_val.get(k) or p_val.get(k) or "" for k in set(s_val) | set(p_val)
+            }
+            merged_patches[pkg] = {k: merged[k] for k in sorted(merged)}
 
         pre_baseline[key] = merged_patches
 
