@@ -23,9 +23,6 @@ jobs:
       - name: Download patch-bundles
         run: python src/download-patch-bundles.py
 
-      - name: Update bundles and app names
-        run: python src/update-bundles.py
-
       - name: Check git changes
         id: changes
         run: |
@@ -34,6 +31,10 @@ jobs:
           else
             echo "changed=false" >> $GITHUB_OUTPUT
           fi
+
+      - name: Update app names
+        if: steps.changes.outputs.changed == 'true'
+        run: python src/update-app-names.py
 
       - name: Commit and push changes
         if: steps.changes.outputs.changed == 'true'
