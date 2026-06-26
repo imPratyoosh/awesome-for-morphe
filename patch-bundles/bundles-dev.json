@@ -580,7 +580,7 @@
         "Hide Reels save button": null,
         "Hide Threads profile button": "Hides the Threads button from the profile page action bar (top right of the profile page).",
         "Hide ads": null,
-        "Hide all stories": "\n        Hides all stories from the tray in the feed page.\n        You may need to clean app data after the initial use of this patch to see its effects.\n    ",
+        "Hide all stories": "Hides all stories from the tray in the feed page.\nYou may need to clean app data after the initial use of this patch to see its effects.",
         "Hide explore feed": "Hides posts and reels from the explore/search page.",
         "Hide feed content": "Hide the feed content, leaving only stories in the home page.",
         "Hide navigation buttons": "Hides navigation bar buttons, such as the Reels and Create button. Choose what button to hide using the patch options.",
@@ -1922,7 +1922,6 @@
       },
       "com.waze": {
         "Alert Distances": "Configures radar/camera and hazard alert announcement distances.\nCredits: Waze CGE Mod.\n",
-        "AudioKit Integration": "Allows third-party audio apps (like Morphe YouTube Music) to be recognized as official partners by Waze AudioKit.",
         "AutoZoom": "Controls how aggressively the map zooms in/out based on driving speed.\nCredits: Waze Chuppito Mod",
         "Disable Ads": "Suppresses all Waze ad systems via bundled preferences file:\n\u2022 AdMob SDK (Ad_.*)\n\u2022 Google Ads (Google_Ads.*)\n\u2022 Ads Inventory Prediction\n\u2022 ExternalPOI pins, coupons, popups (ExternalPO_ + Extern__POI both key variants)\n\u2022 Search autocomplete server ads\nCredits: Waze CGE Mod (ExternalPOI keys), Waze Chuppito (dual-key coverage).",
         "Disable Advil Ad Requests": "Stubs AdvilRequest.getPageUrl() \u2192 \"\" so the Advil ad server receives no page URL and returns no ad content. ",
@@ -1955,9 +1954,6 @@
       },
       "kha.prog.mikrotik": {
         "Unlock Pro": "Unlocks Pro features in app."
-      },
-      "net.dinglisch.android.taskerm": {
-        "Unlock Pro": "Unlocks Tasker Pro features."
       },
       "org.hola.play": {
         "Unlock Premium": null

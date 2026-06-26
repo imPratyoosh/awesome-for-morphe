@@ -454,9 +454,9 @@
         "Disable video autoplay": "Disable video autoplay from feed",
         "Hide Instants": "Hides Instants from DMs page.",
         "Hide Reels save button": null,
-        "Hide Stories from Home": "Hides Stories from the main page, by removing the buttons.",
         "Hide Threads profile button": "Hides the Threads button from the profile page action bar (top right of the profile page).",
         "Hide ads": null,
+        "Hide all stories": "\n        Hides all stories from the tray in the feed page.\n        You may need to clean app data after the initial use of this patch to see its effects.\n    ",
         "Hide explore feed": "Hides posts and reels from the explore/search page.",
         "Hide feed content": "Hide the feed content, leaving only stories in the home page.",
         "Hide navigation buttons": "Hides navigation bar buttons, such as the Reels and Create button. Choose what button to hide using the patch options.",
@@ -2037,6 +2037,9 @@
       "com.Splitwise.SplitwiseMobile": {
         "Unlock Pro": "Unlocks Splitwise Pro features, removes ad banners, and suppresses all upgrade upsell prompts."
       },
+      "com.accuweather.android": {
+        "Unlock Premium+": "Unlocks AccuWeather's Premium+ subscription tier without a Play Store purchase. Enables the full 15-day and hourly forecast detail, MinuteCast extended precision, air quality and health indexes, real-feel temperature, severe weather notifications, and widget customisation."
+      },
       "com.adguard.android": {
         "Unlock Lifetime Premium": "Unlocks all features locked behind the subscription paywall."
       },
@@ -2049,8 +2052,10 @@
       "com.blockerhero": {
         "Unlock Lifetime": "Unlocks lifetime subscription features in BlockerHero."
       },
+      "com.budget.tracker_app": {
+        "Unlock Pro": "Unlock Pro Features in Cashew App"
+      },
       "com.canva.editor": {
-        "Disable Restricted Access": "Removes restricted/locked indicators on premium media in Canva.",
         "Remove Watermark": "Removes watermarks from Canva exports and previews."
       },
       "com.catalinagroup.callrecorder": {
@@ -2123,8 +2128,28 @@
       "com.tafayor.killall": {
         "Unlock Pro": "Unlocks all pro features in KillApps."
       },
+      "com.truebill": {
+        "Unlock Premium": "Unlocks Rocket Money Premium Features."
+      },
       "com.twtapp": {
         "Unlock Subscription": "Unlocks all subscription features in TWT App."
+      },
+      "com.waze": {
+        "Alert Distances": "Configures radar/camera and hazard alert announcement distances.\nCredits: Waze CGE Mod.\n",
+        "AutoZoom": "Controls how aggressively the map zooms in/out based on driving speed.\nCredits: Waze Chuppito Mod",
+        "Disable Ads": "Suppresses all Waze ad systems via bundled preferences file:\n\u2022 AdMob SDK (Ad_.*)\n\u2022 Google Ads (Google_Ads.*)\n\u2022 Ads Inventory Prediction\n\u2022 ExternalPOI pins, coupons, popups (ExternalPO_ + Extern__POI both key variants)\n\u2022 Search autocomplete server ads\nCredits: Waze CGE Mod (ExternalPOI keys), Waze Chuppito (dual-key coverage).",
+        "Disable Advil Ad Requests": "Stubs AdvilRequest.getPageUrl() \u2192 \"\" so the Advil ad server receives no page URL and returns no ad content. ",
+        "Enlarged Speedometer": "Increases speedometer digit size for better readability.",
+        "Map Skin (Vitamin C)": "Applies Chuppito's 'Vitamin C' map skin. All visual values configurable.\n\u2022 Night: true black AMOLED background (saves battery, prevents burn-in)\n\u2022 Day: warm beige background\n\u2022 Larger font labels across the board\n\u2022 Wider navigation arrow head for better visibility\n\u2022 Custom car 3D models: Batmobile, Riddler, race car, 3D arrow\nCredits: ALEX02-GTT (skin design), Waze Chuppito Mod (integration).",
+        "Navigation & Map": "Configures navigation and map behaviour:\n\u2022 Nearing destination distance (Credits: CGE Mod)\n\u2022 Android Auto head-up alert distances\n\u2022 Map turn mode (auto-zoom to upcoming turn)\n\u2022 Traffic bar minimum time threshold\n\u2022 GPS icon visibility\n\u2022 Route notifications (hazard, school zone) both disabled by default\nCredits: Waze CGE Mod (nearing destination), Waze Chuppito (remaining keys).",
+        "Popup Suppression": "Prevents promotional and ad popups from appearing while driving.\nRaises the minimum trigger speed to a near-impossible value so popups never appear.\nCredits: Waze Chuppito Mod.",
+        "Radar Sound (Any Speed)": "Plays radar/speed camera sound alerts regardless of current speed. Official Waze only alerts when over the speed limit.\n",
+        "Report Speed Limit": "Adds a Report option when tapping the speedometer to report wrong or missing speed limits. Not available in the official version.\n",
+        "Speed Limit Sign": "Sets the speed limit sign style shown on the map.",
+        "Uncensored Radar / Camera Display": "Shows exact fixed and mobile speed camera locations, including those not yet in the official Waze radar zone. Enables enforcement alerts via preferences keys:\nCredits: Waze CGE Mod."
+      },
+      "com.windscribe.vpn": {
+        "Unlock Premium": "Unlocks Windscribe premium account."
       },
       "com.yatrirailways.yatri": {
         "Unlock VIP": "Unlocks Yatri VIP by forcing active plan status and spoofing active plan DB query."
@@ -2143,9 +2168,6 @@
       },
       "kha.prog.mikrotik": {
         "Unlock Pro": "Unlocks Pro features in app."
-      },
-      "net.dinglisch.android.taskerm": {
-        "Unlock Pro": "Unlocks Tasker Pro features."
       },
       "org.hola.play": {
         "Unlock Premium": null
