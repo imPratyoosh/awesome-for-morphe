@@ -1,4 +1,12 @@
 {
+  "ImmortalZeus": {
+    "com.example.app": {
+      "Example Patch": "Example patch to start with."
+    },
+    "universal": {
+      "Block hosts in string resources": "Blocks ads and trackers by replacing hosts in XML string resources. Works alongside bytecode hosts blocker for comprehensive coverage."
+    }
+  },
   "abhis1n": {
     "com.Splitwise.SplitwiseMobile": {
       "Enable Features": "Enables features by skipping checks"
@@ -932,14 +940,6 @@
       "Enable PRO": "Unlocks all PRO features by short-circuiting the purchase status check to always return true."
     }
   },
-  "ImmortalZeus": {
-    "com.example.app": {
-      "Example Patch": "Example patch to start with."
-    },
-    "universal": {
-      "Block hosts in string resources": "Blocks ads and trackers by replacing hosts in XML string resources. Works alongside bytecode hosts blocker for comprehensive coverage."
-    }
-  },
   "imxeren": {
     "com.laurencedawson.reddit_sync": {
       "Fix Other discussions": "Fixes the 'Other discussions' tab showing '403 error loading page' by updating the API endpoint."
@@ -967,6 +967,7 @@
       "Latin Globe Key Ignore Interval": "\u65b0\u589e\u82f1\u6587\u9375\u76e4\u5730\u7403\u9375\u5ffd\u7565\u6642\u9593\u8986\u5beb\uff0c\u53ef\u7368\u7acb\u63a7\u5236\u8f38\u5165\u5f8c\u5207\u8a9e\u8a00\u5ef6\u9072\nAdd an independent English globe key ignore interval override for post-typing language-switch delay.",
       "Package Rename": "\u5c07\u5957\u4ef6\u540d\u7a31\u6539\u6210 dev.jason.com.google.android.inputmethod.latin \u4ee5\u4fbf\u5171\u5b58\u5b89\u88dd\nRename the package to dev.jason.com.google.android.inputmethod.latin so it can be installed alongside the official Gboard.",
       "Settings Homepage Override": "\u5141\u8a31\u5207\u63db\u65b0\u7248\u6216\u820a\u7248 Gboard \u8a2d\u5b9a\u9801\u9762\nAllow switching between the new and legacy Gboard settings pages.",
+      "Swipeable Custom Top Row": "\u6ed1\u52d5\u9375\u76e4\u7b2c\u4e00\u6392\uff0c\u5728\u539f\u751f\u5217\u8207\u53ef\u81ea\u8a02\u6587\u5b57/JavaScript \u5217\u4e4b\u9593\u5207\u63db\nSwipe the keyboard top row to switch between the stock row and a customizable text/JavaScript row.",
       "Web Clipboard": "\u65b0\u589e\u624b\u6a5f\u81ea\u67b6\u7684 Web Clipboard\uff0c\u652f\u63f4\u700f\u89bd\u5668\u540c\u6b65\u3001\u914d\u5c0d\u78bc\u8207\u5feb\u901f\u8a2d\u5b9a\u958b\u95dc\nAdd the phone-hosted Web Clipboard with browser sync, pairing, and a Quick Settings Tile.",
       "Zhuyin Quick Traditional/Simplified Toggle": "\u6ce8\u97f3 \u3125 \u4e0a\u6ed1\u5feb\u901f\u5207\u63db\u7e41\u7c21\nSwipe up on Zhuyin \u3125 to quickly toggle Traditional and Simplified Chinese.",
       "Zhuyin Slide Input": "\u6ce8\u97f3\u9375\u76e4\u652f\u6301\u4e0a\u4e0b\u6ed1\u8f38\u5165\nEnable slide-up and slide-down input on the Zhuyin keyboard."
@@ -1213,7 +1214,8 @@
       "Swipe controls": "Adds options to enable and configure volume and brightness swipe controls.",
       "Theme": "Adds options for theming and applies a custom background theme (dark background theme defaults to pure black).",
       "Video ads": "Adds an option to remove ads in the video player.",
-      "Video quality": "Adds options to set default video qualities and always use the advanced video quality menu."
+      "Video quality": "Adds options to set default video qualities and always use the advanced video quality menu.",
+      "Voice over translation": "Adds additional voice over languages using text-to-speech synchronized to the video playback."
     },
     "com.reddit.frontpage": {
       "Custom branding name for Reddit": "Changes the Reddit app name to the name specified in patch options.",
