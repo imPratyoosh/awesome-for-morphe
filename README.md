@@ -5,13 +5,13 @@
 > [!NOTE]
 > 🌐 A curated list of all Morphe resources and projects.  
 > 🔍 Explore [all supported apps and patches](https://nvbangg.github.io/awesome-for-morphe), automatically updated.  
-> 🔔 Get [notifications](https://github.com/nvbangg/awesome-for-morphe/releases) whenever there are new updates. [![Telegram Channel](https://img.shields.io/badge/Telegram_Channel-blue?style=social&logo=telegram)](https://t.me/awesome_for_morphe)
+> 🔔 Get [daily notifications](https://github.com/nvbangg/awesome-for-morphe/releases) when there are new updates. [![Telegram Channel](https://img.shields.io/badge/Telegram_Channel-blue?style=social&logo=telegram)](https://t.me/awesome_for_morphe)
 
 ### 🔗 Jump to:
 
 - [✅ Official](#official)
 - [📚 Resources](#resources)
-- [📱 Apps & 🧩 Patches](#apps-patches)
+- [🔍 Patch Indexes](#patch-indexes)
 - [🛠️ Other Projects](#projects)
 
 <div align="center"> 
@@ -58,7 +58,7 @@
 - [How can I make links open in a patched app?](https://github.com/MorpheApp/morphe-documentation/blob/main/docs/morphe-resources/questions.md#33-how-can-i-make-links-open-in-a-patched-app)
 - [How to install and use Shizuku](https://github.com/thedjchi/Shizuku/wiki)
 
-## <a id="apps-patches"></a> 📱 Apps & 🧩 Patches
+## <a id="patch-indexes"></a> 🔍 Patch Indexes
 
 🔍 Browse and explore all supported Morphe apps and patches from the following sources:
 
@@ -97,6 +97,4 @@
 ### 🙏 Credits
 
 - This project is inspired by [Awesome ReVanced](https://github.com/Jman-Github/Awesome-ReVanced) and [Patch Explorer](https://gitlab.com/Paresh-Maheshwari/patch-explorer).
-- Website data is sourced from [ReVanced Patch Bundles](https://github.com/Jman-Github/ReVanced-Patch-Bundles) by Jman.
-
 </details>
