@@ -29,6 +29,12 @@ def normalize(text):
     return text if text.endswith("\n") else text + "\n"
 
 
+def get_repo(bundle_json):
+    download_url = bundle_json.get("download_url", "")
+    parts = download_url.split("/")
+    return "/".join(parts[0:5]) if len(parts) >= 5 else ""
+
+
 def is_morphe(bundle_json):
     url = bundle_json.get("download_url", "")
     return (
@@ -47,7 +53,8 @@ def fetch_bundle(args):
         bundle_json = json.loads(text)
         if not is_morphe(bundle_json):
             return None
-        return (base, channel, text)
+        repo = get_repo(bundle_json)
+        return (base, channel, text, repo)
     except Exception as exc:
         print(f"Skip {base}-{channel} ({exc})")
         return None
@@ -92,7 +99,7 @@ def main():
 
     morphe_entries = [r for r in bundle_results if r is not None]
 
-    list_pairs = [(base, channel) for base, channel, _ in morphe_entries]
+    list_pairs = [(base, channel) for base, channel, _, _ in morphe_entries]
     with ThreadPoolExecutor(max_workers=CONCURRENCY) as pool:
         list_results = list(pool.map(fetch_list, list_pairs))
 
@@ -101,11 +108,17 @@ def main():
     }
 
     # Save files to disk
+    stable_bundles = {}
+    dev_bundles = {}
     saved = 0
-    for base, channel, bundle_text in morphe_entries:
+    for base, channel, bundle_text, repo in morphe_entries:
         list_text = list_map.get((base, channel))
         if not list_text:
             continue
+            
+        target_dict = stable_bundles if channel == "stable" else dev_bundles
+        target_dict[base] = {"repo": repo}
+        
         bundle_dir = f"{base}-patch-bundles"
         out = OUT_DIR / bundle_dir
         out.mkdir(parents=True, exist_ok=True)
@@ -116,6 +129,15 @@ def main():
             normalize(list_text), encoding="utf8"
         )
         saved += 1
+
+    if stable_bundles:
+        (OUT_DIR / "bundles-stable.json").write_text(
+            json.dumps(stable_bundles, indent=2) + "\n", encoding="utf8"
+        )
+    if dev_bundles:
+        (OUT_DIR / "bundles-dev.json").write_text(
+            json.dumps(dev_bundles, indent=2) + "\n", encoding="utf8"
+        )
 
     print(f"Downloaded {saved} Morphe bundles.")
 

@@ -18,13 +18,70 @@ CHANGELOG_PRE_PATH = ROOT / "changelog-pre-release.md"
 def read_json(path, default=None):
     try:
         return json.loads(path.read_text(encoding="utf8"))
-    except FileNotFoundError:
+    except (FileNotFoundError, json.JSONDecodeError):
         return default
 
 
 def write_json(path, data):
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(data, indent=2) + "\n", encoding="utf8")
+
+
+def collect_apps(list_json):
+    patches_dict = {}
+    for patch in list_json.get("patches") or []:
+        patch_name = patch.get("name")
+        patch_desc = patch.get("description", "")
+        if not patch_name:
+            continue
+
+        compatible = patch.get("compatiblePackages")
+        pkgs = set()
+
+        if isinstance(compatible, dict):
+            # Old format: dict of package names
+            pkgs.update(compatible.keys())
+        elif isinstance(compatible, list):
+            # New format: list of objects
+            for e in compatible:
+                if isinstance(e, dict) and (pkg := e.get("packageName")):
+                    pkgs.add(pkg)
+
+        for pkg in pkgs:
+            patches_dict.setdefault(pkg, {})[patch_name] = patch_desc
+
+    sorted_patches = {}
+    for pkg in sorted(patches_dict.keys()):
+        pkg_patches = patches_dict[pkg]
+        sorted_patches[pkg] = {k: pkg_patches[k] for k in sorted(pkg_patches.keys())}
+
+    return sorted_patches
+
+
+def build_current_bundles():
+    stable_dict = {}
+    dev_dict = {}
+    
+    # Scan for directories like <base>-patch-bundles
+    for bundle_dir in sorted(BUNDLES_DIR.iterdir()):
+        if not bundle_dir.is_dir() or not bundle_dir.name.endswith("-patch-bundles"):
+            continue
+
+        base = bundle_dir.name.replace("-patch-bundles", "")
+
+        for channel in ("stable", "dev"):
+            list_path = bundle_dir / f"{base}-{channel}-patches-list.json"
+            list_json = read_json(list_path)
+
+            if not list_json:
+                continue
+
+            patches = collect_apps(list_json)
+
+            target_dict = stable_dict if channel == "stable" else dev_dict
+            target_dict[base] = patches
+            
+    return stable_dict, dev_dict
 
 
 # Inspired by code from Paresh Maheshwari
@@ -52,7 +109,7 @@ def build_notes(label, old_bundles, new_bundles, app_names, skip_words):
     is_dev = label == "pre-release"
 
     for key in sorted(new_bundles.keys()):
-        patches_dict = new_bundles.get(key, {}).get("patches", {})
+        patches_dict = new_bundles.get(key, {})
         new_pkgs = {pkg for pkg in patches_dict.keys() if " " not in pkg and "." in pkg}
 
         if key not in old_bundles:
@@ -64,7 +121,7 @@ def build_notes(label, old_bundles, new_bundles, app_names, skip_words):
             ]
             new_bundles_notes.append("\n".join(bundle_lines))
         else:
-            old_patches_dict = old_bundles.get(key, {}).get("patches", {})
+            old_patches_dict = old_bundles.get(key, {})
             old_pkgs = {
                 pkg for pkg in old_patches_dict.keys() if " " not in pkg and "." in pkg
             }
@@ -119,15 +176,8 @@ def build_notes(label, old_bundles, new_bundles, app_names, skip_words):
 
 
 def main():
-    missing = [
-        f
-        for f in ("bundles-stable.json", "bundles-dev.json")
-        if not (BUNDLES_DIR / f).exists()
-    ]
-    if missing:
-        raise SystemExit(
-            f"{', '.join(missing)} not found — run update-bundles.py first"
-        )
+    if not any(BUNDLES_DIR.glob("*-patch-bundles")):
+        raise SystemExit("No patch bundles found — run download-patch-bundles.py first")
 
     old_stable = read_json(STABLE_OUT, {}) or {}
     old_dev = read_json(DEV_OUT, {}) or {}
@@ -135,8 +185,7 @@ def main():
     skip_words_list = read_json(SKIP_WORDS_PATH, []) or []
     skip_words = set(skip_words_list)
 
-    new_stable = read_json(BUNDLES_DIR / "bundles-stable.json", {}) or {}
-    new_dev = read_json(BUNDLES_DIR / "bundles-dev.json", {}) or {}
+    new_stable, new_dev = build_current_bundles()
 
     write_json(STABLE_OUT, new_stable)
     write_json(DEV_OUT, new_dev)
@@ -155,8 +204,8 @@ def main():
     # Pre-release changelog: new_dev vs (new_stable + old_dev)
     pre_baseline = {}
     for key in set(new_stable) | set(old_dev):
-        stable_patches = new_stable.get(key, {}).get("patches", {})
-        prev_patches = old_dev.get(key, {}).get("patches", {})
+        stable_patches = new_stable.get(key, {})
+        prev_patches = old_dev.get(key, {})
 
         merged_patches = {}
         for pkg in sorted(set(stable_patches) | set(prev_patches)):
@@ -173,7 +222,7 @@ def main():
                 merged[k] = s_val.get(k) or p_val.get(k) or ""
             merged_patches[pkg] = {k: merged[k] for k in sorted(merged.keys())}
 
-        pre_baseline[key] = {"patches": merged_patches}
+        pre_baseline[key] = merged_patches
 
     pre_notes = build_notes("pre-release", pre_baseline, new_dev, app_names, skip_words)
     if pre_notes:
