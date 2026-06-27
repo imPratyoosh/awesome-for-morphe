@@ -62,6 +62,38 @@
       "Spoof signature verification": "Spoofs the signature verification when the app starts up. It is recommended to use the unmodified app to work properly."
     }
   },
+  "ajstrick81-androidtv": {
+    "com.amazon.amazonvideo.livingroom": {
+      "Disable auto-updates": "Prevents Google Play Store from automatically replacing the patched APK with the official unpatched version.",
+      "Override certificate pinning": "Allows HTTPS traffic inspection tools like AdGuard Premium to intercept app connections. Enables consistent pre-roll suppression when used alongside AdGuard Premium.",
+      "Prime Video extension": "Integrates the Prime Video ATV extension for ad group skipping.",
+      "Skip ads": "Multi-layer ad suppression targeting the SSAI schedule, impression reporting, and the Volley network chokepoint."
+    },
+    "com.bamnetworks.mobile.android.gameday.atbat": {
+      "MLB At Bat Android TV": "Removes VOD ads and shows a commercial-break overlay over live gambling ads while preserving live game playback."
+    },
+    "com.cbs.ott": {
+      "Paramount+ Android TV": "Removes VOD ads and pause ads while preserving live TV."
+    },
+    "com.disney.disneyplus": {
+      "Disney+ Android TV": "Removes mid-roll / pre-roll ads and pause ads."
+    },
+    "com.fox.foxone": {
+      "Skip ads": "Suppresses all ad delivery systems in Fox One Android TV: Google IMA/DAI for VOD, Yospace SSAI for live content."
+    },
+    "com.peacocktv.peacockandroid": {
+      "Skip ads": "Disables ad delivery via Sky SDK surgical targets (FreeWheel DI module skip, MediaTailor SSAI layers, ad-break-started no-op), AdBlockInterceptor wiring on both the app NetworkingKt OkHttp client and the Sky SDK addon network client, and a WebView shouldInterceptRequest wrapper. Validated v7.5.102 and v7.6.100."
+    },
+    "com.tubitv": {
+      "Skip ads": "Suppresses all ad delivery systems in Tubi Android TV."
+    },
+    "com.univision.prendetv": {
+      "Skip ads": "Suppresses ViX ad delivery by disabling the FreeWheel ad provider at the config level and preventing the Innovid SSAI overlay from mounting."
+    },
+    "com.wbd.hbomax": {
+      "HBO Max - Disable Ads": "Suppresses nonlinear overlay ads (Bolt), SSAI linear ad timeline registration (GMSS/AdSparx), and live stream preroll ad timeline entry generation for all content types."
+    }
+  },
   "almewty": {
     "com.application.pokecardex": {
       "Disable scan counter": "Disables the scan counter increment, preventing the scan count from increasing",
@@ -174,10 +206,6 @@
     "com.navercorp.game.android.community": {
       "Auto claim TongPow": "Automatically claims CHZZK TongPow rewards when they become available while watching streams.",
       "Disable P2P": "Disables CHZZK peer-assisted grid streaming and forces CDN playback."
-    },
-    "com.unicornsoft.android.unicornpro": {
-      "Disable Sentry": "Disables Sentry reporting",
-      "Unlock Pro features": "Makes Unicorn Pro report an active Pro license while preserving the original native object graph."
     },
     "kr.co.nowcom.mobile.afreeca": {
       "Disable P2P": "Disables SOOP peer-assisted grid streaming."
@@ -693,7 +721,7 @@
       "Enable Premium": "Enables app features locked behind the subscription paywall."
     },
     "com.alltrails.alltrails": {
-      "Enable Peak membership": "Enables app features locked behind the subscription paywall."
+      "Enable Peak membership": "Enables some app features locked behind the subscription paywall. Not all premium functionality is available."
     },
     "com.amazon.avod.thirdpartyclient": {
       "Enable speed control": "Enables experimental speed control to the video player.",
@@ -720,6 +748,9 @@
     },
     "com.github.android": {
       "AMOLED dark theme": "Changes the default dark theme to use true blacks for AMOLED screens."
+    },
+    "com.goodreads": {
+      "Disable ads": "Disables all ads contained within the UI."
     },
     "com.google.android.apps.magazines": {
       "Enable custom tabs": "Open articles using your default browser.",
@@ -2109,6 +2140,11 @@
       "Spoof VPN status": "Spoofs VPN state through common Android network APIs.",
       "Spoof emulator status": "Spoofs emulator state through common Build, QEMU file, command, and system property checks.",
       "Spoof install source": "Spoofs package installer checks to report Google Play as the install source."
+    }
+  },
+  "ynotzort": {
+    "com.targo_prod.bad": {
+      "Disable TargoBank root check": "Neutralises the splash 'rooted device' block by forcing the security verdict getters (o.aNj.con/Aux/AuX) to return false, so the app proceeds to the login screen. Validated on V12.68.1 (versionCode 2019102761). Note: re-signing breaks Play Integrity app-recognition; keep the app in the Magisk denylist."
     }
   },
   "zpatches": {
