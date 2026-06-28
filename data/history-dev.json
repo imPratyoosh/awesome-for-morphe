@@ -671,27 +671,30 @@
   "hk-morphe": {
     "com.laurencedawson.reddit_sync": {
       "Fix \"Other Discussions\"": "Fixes the \"Other Discussions\" feature.",
+      "Fix \"Restore Comment\"": "Fixes the \"Restore Comment\" feature (requires Sync Ultra) by fetching from an alternative API. Also adds a more accessible button for this feature.",
       "Fix imgur links": "Fixes imgur.com/a/ links to properly display in the image viewer.",
       "Fix r/random": "Restores random subreddit functionality by fetching from an alternative API.",
       "Predictive back gesture (Reddit Sync)": "Enables the predictive back gesture with fixes for Reddit Sync.",
       "Spoof client": "Restores functionality of the app by using custom client ID (default included).",
-      "Unlock Sync Ultra": "Unlocks Sync Ultra and fixes the \"Restore Comment\" premium feature by fetching from an alternative API."
+      "Unlock Sync Ultra": "Unlocks Sync Ultra Lifetime."
     },
     "com.laurencedawson.reddit_sync.dev": {
       "Fix \"Other Discussions\"": "Fixes the \"Other Discussions\" feature.",
+      "Fix \"Restore Comment\"": "Fixes the \"Restore Comment\" feature (requires Sync Ultra) by fetching from an alternative API. Also adds a more accessible button for this feature.",
       "Fix imgur links": "Fixes imgur.com/a/ links to properly display in the image viewer.",
       "Fix r/random": "Restores random subreddit functionality by fetching from an alternative API.",
       "Predictive back gesture (Reddit Sync)": "Enables the predictive back gesture with fixes for Reddit Sync.",
       "Spoof client": "Restores functionality of the app by using custom client ID (default included).",
-      "Unlock Sync Ultra": "Unlocks Sync Ultra and fixes the \"Restore Comment\" premium feature by fetching from an alternative API."
+      "Unlock Sync Ultra": "Unlocks Sync Ultra Lifetime."
     },
     "com.laurencedawson.reddit_sync.pro": {
       "Fix \"Other Discussions\"": "Fixes the \"Other Discussions\" feature.",
+      "Fix \"Restore Comment\"": "Fixes the \"Restore Comment\" feature (requires Sync Ultra) by fetching from an alternative API. Also adds a more accessible button for this feature.",
       "Fix imgur links": "Fixes imgur.com/a/ links to properly display in the image viewer.",
       "Fix r/random": "Restores random subreddit functionality by fetching from an alternative API.",
       "Predictive back gesture (Reddit Sync)": "Enables the predictive back gesture with fixes for Reddit Sync.",
       "Spoof client": "Restores functionality of the app by using custom client ID (default included).",
-      "Unlock Sync Ultra": "Unlocks Sync Ultra and fixes the \"Restore Comment\" premium feature by fetching from an alternative API."
+      "Unlock Sync Ultra": "Unlocks Sync Ultra Lifetime."
     },
     "universal": {
       "Predictive back gesture": "Enables the predictive back gesture introduced in Android 13."
@@ -1254,7 +1257,7 @@
       "Disable screenshot popup": "Adds an option to disable the popup that appears when taking a screenshot.",
       "Hide Ask button": "Adds an option to hide Ask button in the search bar.",
       "Hide Reddit search": "Permanently hides the Reddit search in the contextual menu. This patch does not work with root mounting",
-      "Hide Trending shelves": "Adds an option to hide Trending shelves from search suggestions.",
+      "Hide Trending shelves": "Adds an option to hide the Trending shelves from feed and search suggestions.",
       "Hide ads": "Adds options to hide ads.",
       "Hide communities shelf": "Adds an option to hide the related or suggested communities shelf in subreddits.",
       "Hide navigation buttons": "Adds options to hide buttons in the navigation bar.",
@@ -1810,11 +1813,23 @@
     "ai.topicfinder.podcastdiscovery": {
       "Unlock Premium": "Unlocks all Premium features in Snipd: AI Podcast Player by spoofing the RevenueCat CustomerInfo."
     },
+    "air.com.musclemotion.strength.mobile": {
+      "Unlock Premium": "Unlocks all premium content in Strength Training by Muscle Motion. "
+    },
+    "app.ninjavpn.android": {
+      "Unlock Premium": "Unlocks Ninja VPN premium."
+    },
+    "ar.tvplayer.tv": {
+      "Unlock Premium": "Unlocks TiviMate Premium."
+    },
     "ch.protonvpn.android": {
       "Unlock Premium": "Unlocks local Proton VPN premium  features."
     },
     "com.Splitwise.SplitwiseMobile": {
       "Unlock Pro": "Unlocks Splitwise Pro features, removes ad banners, and suppresses all upgrade upsell prompts."
+    },
+    "com.a0soft.gphone.acc.free": {
+      "Unlock Pro": "Unlocks 1Tap Cleaner PRO: history export, app-group filters, unlimited cache targets, ad removal."
     },
     "com.accuweather.android": {
       "Unlock Premium+": "Unlocks AccuWeather's Premium+ subscription tier without a Play Store purchase. Enables the full 15-day and hourly forecast detail, MinuteCast extended precision, air quality and health indexes, real-feel temperature, severe weather notifications, and widget customisation."
@@ -1843,6 +1858,15 @@
     "com.cloudflare.onedotonedotonedotone": {
       "Disable Analytics / Telemetry": "Disables App Analytics / Telemetry.",
       "Spoof WARP+ Unlimited UI": "Unlocks WARP+ UI locally."
+    },
+    "com.community.oneroom": {
+      "Bypass member rights check": "Forces MemberCheckResult.isPassed() to always return Boolean.TRUE, bypassing the server-side membership gate and preventing the 'Get Premium / 7-day trial' dialog.",
+      "Clear VIP resolution tip": "Forces MemberResolutionBean.getVipResolutionTip() to always return Boolean.FALSE, suppressing any 'VIP only' badge shown on resolution options.",
+      "Spoof member active status": "Forces MemberInfo.isActive() to always return true, making the app believe the membership subscription is active.",
+      "Spoof member days left": "Forces MemberInfo.getDaysLeft() to always return 3650 (10 years), preventing the '0 days left' display on the premium screen.",
+      "Spoof member provider flags": "Forces MemberProvider.c() (kv_is_pay_enable_member) and MemberProvider.e() (kv_is_skip_ad) to always return true.",
+      "Suppress newbie bonus dialog": "Makes MemberProvider.w(F)V return immediately, suppressing the 'Claim 7-day trial / newbies bonus' ClaimMemberDialog popup.",
+      "Unlock member resolution": "Forces MemberResolutionBean.isUnlock() to always return Boolean.TRUE, making all locally-cached episodes appear as unlocked to the playback layer."
     },
     "com.cpuid.cpu_z": {
       "Unlock Premium": "Unlocks Premium features in app."
@@ -1907,6 +1931,9 @@
     "com.tafayor.killall": {
       "Unlock Pro": "Unlocks all pro features in KillApps."
     },
+    "com.tomtom.gplay.navapp": {
+      "Unlock Premium": "Unlocks car and truck premium features."
+    },
     "com.truebill": {
       "Unlock Premium": "Unlocks Rocket Money Premium Features."
     },
@@ -1927,8 +1954,14 @@
       "Speed Limit Sign": "Sets the speed limit sign style shown on the map.",
       "Uncensored Radar / Camera Display": "Shows exact fixed and mobile speed camera locations, including those not yet in the official Waze radar zone. Enables enforcement alerts via preferences keys:\nCredits: Waze CGE Mod."
     },
+    "com.weather.Weather": {
+      "Unlock Premium": "Unlocks The Weather Channel's Premium and Premium Pro subscription tiers. Enables the ad-free experience, extended 15-day hourly forecast, real-feel temperature, air quality index, minute-by-minute precipitation, severe weather notifications, and radar overlays gated behind the subscription paywall."
+    },
     "com.windscribe.vpn": {
       "Unlock Premium": "Unlocks Windscribe premium account."
+    },
+    "com.windyty.android": {
+      "Unlock Premium": "Unlocks Windy Pro features."
     },
     "com.yatrirailways.yatri": {
       "Unlock VIP": "Unlocks Yatri VIP by forcing active plan status and spoofing active plan DB query."

@@ -70,7 +70,6 @@
   "ajstrick81-androidtv": {
     "com.amazon.amazonvideo.livingroom": {
       "Disable auto-updates": "Prevents Google Play Store from automatically replacing the patched APK with the official unpatched version.",
-      "GMB send diagnostic (debug)": "Diagnostic-only: logs outbound GMB messages (Java\u2192native) to logcat to test whether the send direction carries ad-related traffic.",
       "Override certificate pinning": "Adds a network_security_config trusting user CAs (no pin sets) so AdGuard Premium can inspect the app's platform-stack HTTPS. Optional adjunct: Prime Video's ad plane is largely native libcurl, so DNS blocking is the primary tool.",
       "Prime Video extension": "Integrates the Prime Video ATV extension for ad group skipping.",
       "Skip ads": "Multi-layer ad suppression targeting the SSAI schedule, impression reporting, and the Volley network chokepoint."
@@ -573,27 +572,30 @@
   "hk-morphe": {
     "com.laurencedawson.reddit_sync": {
       "Fix \"Other Discussions\"": "Fixes the \"Other Discussions\" feature.",
+      "Fix \"Restore Comment\"": "Fixes the \"Restore Comment\" feature (requires Sync Ultra) by fetching from an alternative API. Also adds a more accessible button for this feature.",
       "Fix imgur links": "Fixes imgur.com/a/ links to properly display in the image viewer.",
       "Fix r/random": "Restores random subreddit functionality by fetching from an alternative API.",
       "Predictive back gesture (Reddit Sync)": "Enables the predictive back gesture with fixes for Reddit Sync.",
       "Spoof client": "Restores functionality of the app by using custom client ID (default included).",
-      "Unlock Sync Ultra": "Unlocks Sync Ultra and fixes the \"Restore Comment\" premium feature by fetching from an alternative API."
+      "Unlock Sync Ultra": "Unlocks Sync Ultra Lifetime."
     },
     "com.laurencedawson.reddit_sync.dev": {
       "Fix \"Other Discussions\"": "Fixes the \"Other Discussions\" feature.",
+      "Fix \"Restore Comment\"": "Fixes the \"Restore Comment\" feature (requires Sync Ultra) by fetching from an alternative API. Also adds a more accessible button for this feature.",
       "Fix imgur links": "Fixes imgur.com/a/ links to properly display in the image viewer.",
       "Fix r/random": "Restores random subreddit functionality by fetching from an alternative API.",
       "Predictive back gesture (Reddit Sync)": "Enables the predictive back gesture with fixes for Reddit Sync.",
       "Spoof client": "Restores functionality of the app by using custom client ID (default included).",
-      "Unlock Sync Ultra": "Unlocks Sync Ultra and fixes the \"Restore Comment\" premium feature by fetching from an alternative API."
+      "Unlock Sync Ultra": "Unlocks Sync Ultra Lifetime."
     },
     "com.laurencedawson.reddit_sync.pro": {
       "Fix \"Other Discussions\"": "Fixes the \"Other Discussions\" feature.",
+      "Fix \"Restore Comment\"": "Fixes the \"Restore Comment\" feature (requires Sync Ultra) by fetching from an alternative API. Also adds a more accessible button for this feature.",
       "Fix imgur links": "Fixes imgur.com/a/ links to properly display in the image viewer.",
       "Fix r/random": "Restores random subreddit functionality by fetching from an alternative API.",
       "Predictive back gesture (Reddit Sync)": "Enables the predictive back gesture with fixes for Reddit Sync.",
       "Spoof client": "Restores functionality of the app by using custom client ID (default included).",
-      "Unlock Sync Ultra": "Unlocks Sync Ultra and fixes the \"Restore Comment\" premium feature by fetching from an alternative API."
+      "Unlock Sync Ultra": "Unlocks Sync Ultra Lifetime."
     },
     "universal": {
       "Predictive back gesture": "Enables the predictive back gesture introduced in Android 13."
@@ -623,7 +625,7 @@
       "Enable Premium": "Enables app features locked behind the subscription paywall."
     },
     "com.alltrails.alltrails": {
-      "Enable Peak membership": "Enables app features locked behind the subscription paywall."
+      "Enable Peak membership": "Enables some app features locked behind the subscription paywall. Not all premium functionality is available."
     },
     "com.amazon.avod.thirdpartyclient": {
       "Enable speed control": "Enables experimental speed control to the video player.",
@@ -650,6 +652,9 @@
     },
     "com.github.android": {
       "AMOLED dark theme": "Changes the default dark theme to use true blacks for AMOLED screens."
+    },
+    "com.goodreads": {
+      "Disable ads": "Disables all ads contained within the UI."
     },
     "com.google.android.apps.magazines": {
       "Enable custom tabs": "Open articles using your default browser.",
@@ -865,6 +870,11 @@
       "Use your own Maps API key [REQUIRED]": "Required for the map to load. Patching breaks Moovit's built-in Google Maps key, so you have to supply your own from a free Google Cloud project. In this patch's option, create a project, enable Maps SDK for Android, turn on billing, make an API key, and paste it in (leaving it unrestricted is easiest). Remove ads and Unlock Moovit+ both pull this in, so the map keeps working with either."
     },
     "com.tumblr": {
+      "Disable Tumblr TV": "Removes the Tumblr TV tab from the bottom navigation bar.",
+      "Disable ad-free banner": "Hides the banner with the frog that prompts you to buy Tumblr Ad-Free.",
+      "Disable blog notification reminder": "Stops the reminder asking you to enable notifications for blogs you visit.",
+      "Disable gift message popup": "Stops the popup that suggests buying TumblrMart items for other people.",
+      "Disable in-app update": "Turns off the in-app update check and the update prompt.",
       "Enable premium UI": "Turns on the cosmetic Tumblr Premium look: the premium badge and the premium settings entry. This only changes how the app looks on your device. It does not buy or unlock anything on Tumblr's side, so ad-free, the badge on your blog, and anything the server checks still need a real subscription. Use \"Remove ads\" for an actually ad-free feed.",
       "Remove ads": "Removes the ads in Tumblr: the dashboard ads from the ad networks and the Blaze posts (the paid-promoted posts other people pay to inject into the feed). It leaves your own following feed and reblogs untouched. Premium content like ad-free badges and TumblrMart items are sold by Tumblr's servers and still need a purchase."
     },
@@ -1649,7 +1659,7 @@
       "Download media": "Adds ability to download posts, reels, stories and highlights",
       "Download voice message": "Enables ability to download voice messages",
       "External downloader": "Adds support to share post links directly to external downloader",
-      "Follow back indicator": "Adds a label on the profile page, indicating whether a user is follows you back.",
+      "Friendship status indicator": "Adds a follows you back status label on the profile page andshows a detailed friendship status breakdown on click",
       "Hide group creation button on sharesheet": null,
       "Hide navigation buttons": "Hides navigation bar buttons, such as the Reels and Create button.",
       "Hide notes tray": "Hides notes tray in DM section",
