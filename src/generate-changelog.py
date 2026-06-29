@@ -126,6 +126,7 @@ def make_url(bundle, app=None, is_dev=False, patches=None):
     else:
         query.append(f"show={bundle}")
         
+    query.append("new")
     if is_dev:
         query.append("channel=dev")
         
@@ -170,7 +171,7 @@ def build_notes(label, old_bundles, new_bundles, app_names, skip_words):
                 trie_dict = {key: {pkg: [] for pkg in sorted(added_pkgs)}}
                 trie_str = stringify_trie(trie_dict)
                 q = urllib.parse.quote(trie_str, safe=':,"()')
-                url = f"https://nvbangg.github.io/awesome-for-morphe/?show={q}"
+                url = f"https://nvbangg.github.io/awesome-for-morphe/?show={q}&new"
                 if is_dev:
                     url += "&channel=dev"
 
@@ -211,7 +212,7 @@ def build_notes(label, old_bundles, new_bundles, app_names, skip_words):
                 trie_dict = {key: bundle_changes}
                 trie_str = stringify_trie(trie_dict)
                 q = urllib.parse.quote(trie_str, safe=':,"()')
-                url = f"https://nvbangg.github.io/awesome-for-morphe/?show={q}"
+                url = f"https://nvbangg.github.io/awesome-for-morphe/?show={q}&new"
                 if is_dev:
                     url += "&channel=dev"
 
@@ -222,7 +223,7 @@ def build_notes(label, old_bundles, new_bundles, app_names, skip_words):
     if all_changes:
         trie_str = stringify_trie(all_changes)
         q = urllib.parse.quote(trie_str, safe=':,"()')
-        full_url = f"https://nvbangg.github.io/awesome-for-morphe/?show={q}"
+        full_url = f"https://nvbangg.github.io/awesome-for-morphe/?show={q}&new"
         if is_dev:
             full_url += "&channel=dev"
         sections.append(f"✨ [_View full changelog details_]({full_url})")

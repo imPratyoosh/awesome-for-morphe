@@ -39,6 +39,8 @@ function tokenize(str) {
       if (current.trim()) {
         tokens.push({ type: 'LITERAL', value: current.trim() });
         current = "";
+      } else if (char === ':') {
+        tokens.push({ type: 'LITERAL', value: "" });
       }
       tokens.push({ type: char });
     } else {
@@ -73,7 +75,7 @@ function parseShowTrie(str) {
     } else {
       const val = tokens[pos].value;
       pos++;
-      const newPrefix = prefix ? prefix + ":" + val : val;
+      const newPrefix = prefix !== null && prefix !== undefined ? prefix + ":" + val : val;
       
       if (pos < tokens.length && tokens[pos].type === ':') {
         pos++;
@@ -85,7 +87,7 @@ function parseShowTrie(str) {
   }
 
   while (pos < tokens.length) {
-    parseNode("");
+    parseNode(null);
     if (pos < tokens.length && tokens[pos].type === ',') {
       pos++;
     }
@@ -190,29 +192,59 @@ createApp({
     }
     showOptions.value = showArr;
 
+    const isChangelogView = ref(params.has("new"));
+    const changelogHighlights = isChangelogView.value ? showArr : [];
+
     let initBundle = "", initApp = "";
-    if (showArr.length === 1) {
-      const parts = showArr[0].split(":");
-      if (parts.length === 1) {
-        initBundle = parts[0];
-      } else if (parts.length === 2) {
-        initBundle = parts[0];
-        initApp = parts[1];
+    if (showArr.length > 0) {
+      const parsed = showArr.map(item => {
+        const parts = item.split(":");
+        return {
+          bundle: parts[0] || "",
+          app: parts[1] || ""
+        };
+      });
+      const firstBundle = parsed[0].bundle;
+      if (parsed.every(p => p.bundle === firstBundle)) {
+        initBundle = firstBundle;
+      }
+      const firstApp = parsed[0].app;
+      if (parsed.every(p => p.app === firstApp)) {
+        initApp = firstApp;
       }
     }
     bundle.value = initBundle;
     app.value = initApp;
 
     watch([bundle, app], () => {
+      const targetPrefix = `${bundle.value || ""}${app.value ? ":" + app.value : ""}`;
+      
+      const matches = showOptions.value.length > 0 && showOptions.value.every(item => {
+        const parts = item.split(":");
+        if (app.value) {
+          return parts[0] === bundle.value && parts[1] === app.value;
+        }
+        return parts[0] === bundle.value && parts.length === 1;
+      });
+
+      if (matches) {
+        return;
+      }
+
       if (bundle.value || app.value) {
-        showOptions.value = [`${bundle.value || ""}${app.value ? ":" + app.value : ""}`];
+        showOptions.value = [targetPrefix];
       } else {
         showOptions.value = [];
       }
     });
 
     // Sync state to URL on change
-    watch([query, patchQuery, showOptions, channel], () => {
+    watch([query, patchQuery, showOptions, channel], (newVals, oldVals) => {
+      // oldVals contains undefineds on the immediate initial run
+      if (oldVals && oldVals.some(v => v !== undefined)) {
+        isChangelogView.value = false;
+      }
+
       const urlParts = [];
       if (query.value) urlParts.push(`q=${encodeURIComponent(query.value)}`);
       if (patchQuery.value) urlParts.push(`qp=${encodeURIComponent(patchQuery.value)}`);
@@ -227,6 +259,7 @@ createApp({
         urlParts.push(`show=${encodedShow}`);
       }
       if (channel.value !== DEFAULT_CHANNEL) urlParts.push(`channel=${channel.value}`);
+      if (isChangelogView.value) urlParts.push("new");
 
       const q = urlParts.join("&");
       history.replaceState(null, "", `${location.pathname}${q ? `?${q}` : ""}`);
@@ -520,6 +553,8 @@ createApp({
       patchQuery.value = "";
       bundle.value = "";
       app.value = "";
+      showOptions.value = [];
+      isChangelogView.value = false;
       expandedOptions.clear();
       expandedVersions.clear();
     };
@@ -553,6 +588,8 @@ createApp({
       morpheUrl,
       getPlatformMeta,
       resetFilters,
+      isChangelogView,
+      changelogHighlights,
     };
   },
 }).mount("#app");
