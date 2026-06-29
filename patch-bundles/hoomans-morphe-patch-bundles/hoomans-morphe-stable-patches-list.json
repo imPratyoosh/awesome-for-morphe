@@ -1,5 +1,5 @@
 {
-    "version": "v1.33.0",
+    "version": "v1.34.1",
     "patches": [
         {
             "compatiblePackages": [
@@ -727,6 +727,33 @@
             "compatiblePackages": [
                 {
                     "apkFileType": null,
+                    "appIconColor": "#FF6A00",
+                    "description": null,
+                    "name": "Poweramp",
+                    "packageName": "com.maxmpz.audioplayer",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": null,
+                            "version": "build-1025-bundle-play"
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [
+                "RawResourcePatch"
+            ],
+            "description": "Unlocks Poweramp's full version state and Feature Package #1.",
+            "name": "Unlock Premium",
+            "options": []
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": null,
                     "appIconColor": "#F08029",
                     "description": null,
                     "name": "Projectivy Launcher",
@@ -840,6 +867,12 @@
                             "isExperimental": false,
                             "minSdk": null,
                             "version": "2.4.8.1"
+                        },
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": null,
+                            "version": "2.5.0.2-beta1"
                         }
                     ]
                 }
