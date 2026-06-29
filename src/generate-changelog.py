@@ -166,14 +166,24 @@ def build_notes(label, old_bundles, new_bundles, app_names, skip_words):
                     all_changes[key] = {}
                 for pkg in added_pkgs:
                     all_changes[key][pkg] = []
-                app_lines = [f"- {key}"] + [
-                    f"    + [{format_app_name(pkg, app_names, skip_words)}]({make_url(key, pkg, is_dev)})"
+                
+                trie_dict = {key: {pkg: [] for pkg in sorted(added_pkgs)}}
+                trie_str = stringify_trie(trie_dict)
+                q = urllib.parse.quote(trie_str, safe=':,"()')
+                url = f"https://nvbangg.github.io/awesome-for-morphe/?show={q}"
+                if is_dev:
+                    url += "&channel=dev"
+
+                link = f"[{key}]({url})"
+                app_lines = [f"- {link}"] + [
+                    f"    + {format_app_name(pkg, app_names, skip_words)}"
                     for pkg in sorted(added_pkgs)
                 ]
                 new_apps_groups.append("\n".join(app_lines))
 
             # 3. New patches in an existing app
             bundle_patches = []
+            bundle_changes = {}
             for pkg in sorted(old_pkgs & new_pkgs):
                 old_pkg_patches = old_patches_dict.get(pkg, [])
                 new_pkg_patches = patches_dict.get(pkg, [])
@@ -188,16 +198,25 @@ def build_notes(label, old_bundles, new_bundles, app_names, skip_words):
                     all_changes[key][pkg] = []
                 all_changes[key][pkg].extend(added_patches)
 
+                bundle_changes[pkg] = sorted(list(added_patches))
+
                 name = format_app_name(pkg, app_names, skip_words)
-                app_link = f"[{name}]({make_url(key, pkg, is_dev, patches=added_patches)})"
-                patch_lines = [f"    - {app_link}"] + [
+                patch_lines = [f"    - {name}"] + [
                     f"        + `{p}`"
                     for p in sorted(added_patches)
                 ]
                 bundle_patches.append("\n".join(patch_lines))
             
             if bundle_patches:
-                new_patches_groups.append(f"- {key}\n" + "\n".join(bundle_patches))
+                trie_dict = {key: bundle_changes}
+                trie_str = stringify_trie(trie_dict)
+                q = urllib.parse.quote(trie_str, safe=':,"()')
+                url = f"https://nvbangg.github.io/awesome-for-morphe/?show={q}"
+                if is_dev:
+                    url += "&channel=dev"
+
+                link = f"[{key}]({url})"
+                new_patches_groups.append(f"- {link}\n" + "\n".join(bundle_patches))
 
     sections = []
     if all_changes:
@@ -206,7 +225,7 @@ def build_notes(label, old_bundles, new_bundles, app_names, skip_words):
         full_url = f"https://nvbangg.github.io/awesome-for-morphe/?show={q}"
         if is_dev:
             full_url += "&channel=dev"
-        sections.append(f"[**🚀 View all changes interactively**]({full_url})")
+        sections.append(f"✨ [_View full changelog details_]({full_url})")
 
     if new_bundles_notes:
         sections.append("## 🧩 New bundles\n" + "\n".join(new_bundles_notes))

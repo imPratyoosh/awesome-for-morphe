@@ -9,7 +9,7 @@ from pathlib import Path
 
 def main():
     if len(sys.argv) < 3:
-        print("Usage: python src/telegram_notify.py <title> <filepath>")
+        print("Usage: python src/telegram-notify.py <title> <filepath>")
         sys.exit(1)
 
     title = sys.argv[1]
