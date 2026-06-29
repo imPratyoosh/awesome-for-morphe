@@ -151,9 +151,10 @@ function buildShowTrie(flatList) {
 createApp({
   setup() {
     const query = ref("");
-    const patchQuery = ref("");
     const bundle = ref("");
     const app = ref("");
+    const appSearch = ref("");
+    const bundleSearch = ref("");
     const showOptions = ref([]);
     const channel = ref(DEFAULT_CHANNEL);
 
@@ -163,7 +164,6 @@ createApp({
 
     const params = new URLSearchParams(location.search);
     query.value = params.get("q") || "";
-    patchQuery.value = params.get("qp") || "";
     channel.value = normalizeChannel(params.get("channel") || DEFAULT_CHANNEL);
 
     function parseShowParam() {
@@ -239,7 +239,7 @@ createApp({
     });
 
     // Sync state to URL on change
-    watch([query, patchQuery, showOptions, channel], (newVals, oldVals) => {
+    watch([query, showOptions, channel], (newVals, oldVals) => {
       // oldVals contains undefineds on the immediate initial run
       if (oldVals && oldVals.some(v => v !== undefined)) {
         isChangelogView.value = false;
@@ -247,7 +247,6 @@ createApp({
 
       const urlParts = [];
       if (query.value) urlParts.push(`q=${encodeURIComponent(query.value)}`);
-      if (patchQuery.value) urlParts.push(`qp=${encodeURIComponent(patchQuery.value)}`);
       
       if (showOptions.value.length > 0) {
         const showStr = buildShowTrie(showOptions.value);
@@ -284,7 +283,6 @@ createApp({
       if (!activeData.value) return [];
       return filterRows(activeData.value, {
         query: query.value,
-        patchQuery: patchQuery.value,
         showOptions: showOptions.value,
       });
     });
@@ -294,7 +292,6 @@ createApp({
 
       const rowsForSource = filterRows(activeData.value, {
         query: query.value,
-        patchQuery: patchQuery.value,
         showOptions: app.value ? [`:${app.value}`] : [],
       });
       let bundleOptions = getFilterOptions(rowsForSource).bundleOptions;
@@ -312,12 +309,21 @@ createApp({
 
       const rowsForApp = filterRows(activeData.value, {
         query: query.value,
-        patchQuery: patchQuery.value,
         showOptions: bundle.value ? [bundle.value] : [],
       });
       const appOptions = getFilterOptions(rowsForApp).appOptions;
 
       return { bundleOptions, appOptions };
+    });
+
+    const filteredAppOptions = computed(() => {
+      const s = appSearch.value.toLowerCase();
+      return filterOptions.value.appOptions.filter(o => o.label.toLowerCase().includes(s) || o.value.toLowerCase().includes(s));
+    });
+
+    const filteredBundleOptions = computed(() => {
+      const s = bundleSearch.value.toLowerCase();
+      return filterOptions.value.bundleOptions.filter(o => o.label.toLowerCase().includes(s) || o.value.toLowerCase().includes(s));
     });
 
     const stats = computed(() => summarizeRows(filteredRows.value));
@@ -490,7 +496,8 @@ createApp({
       app.value = pkg;
       bundle.value = "";
       query.value = "";
-      patchQuery.value = "";
+      appSearch.value = "";
+      bundleSearch.value = "";
     };
 
     const formatDate = (val) => {
@@ -553,9 +560,10 @@ createApp({
 
     const resetFilters = () => {
       query.value = "";
-      patchQuery.value = "";
       bundle.value = "";
       app.value = "";
+      appSearch.value = "";
+      bundleSearch.value = "";
       showOptions.value = [];
       isChangelogView.value = false;
       expandedOptions.clear();
@@ -564,9 +572,12 @@ createApp({
 
     return {
       query,
-      patchQuery,
       bundle,
       app,
+      appSearch,
+      bundleSearch,
+      filteredAppOptions,
+      filteredBundleOptions,
       channel,
       isLoading,
       errorMsg,

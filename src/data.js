@@ -173,8 +173,7 @@ export async function loadChannelData(channelInput) {
 }
 
 export function filterRows(data, filters) {
-  const appWords = (filters.query || "").split(/\s+/).map(simplify).filter(Boolean);
-  const patchWords = (filters.patchQuery || "").split(/\s+/).map(simplify).filter(Boolean);
+  const patchWords = (filters.query || "").split(/\s+/).map(simplify).filter(Boolean);
 
   let parsedShow = null;
   if (filters.showOptions && filters.showOptions.length > 0) {
@@ -212,10 +211,6 @@ export function filterRows(data, filters) {
       if (!matched) return false;
     }
 
-    if (appWords.length > 0) {
-      const searchTarget = simplify(row.searchAppsText);
-      if (!appWords.every((word) => searchTarget.includes(word))) return false;
-    }
     if (patchWords.length > 0) {
       const searchTarget = simplify(row.searchPatchesText);
       if (!patchWords.every((word) => searchTarget.includes(word))) return false;
