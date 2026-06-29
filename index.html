@@ -173,42 +173,91 @@
 <body class="bg-black min-h-screen">
   <div id="app" v-cloak>
     <section class="mt-2 md:mt-12 max-w-4xl mx-auto px-3 flex flex-col gap-2 md:gap-4" aria-label="Main Content">
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-1.5 md:gap-3 text-[11px] md:text-sm">
-        <a href="https://github.com/nvbangg/awesome-for-morphe" target="_blank" rel="noreferrer"
-          class="flex items-center gap-1.5 md:gap-2 px-2.5 py-1 md:px-3 md:py-1.5 bg-dark border border-gray rounded-full text-light hover:text-white hover:bg-gray hover:border-lightGray transition-all shadow-sm">
-          <i class="fa-brands fa-github text-sm md:text-base"></i>
-          <span class="font-medium">github.com/nvbangg/awesome-for-morphe</span>
-        </a>
-        <a href="https://nvbangg.github.io/awesome-for-morphe/" target="_blank" rel="noreferrer"
-          class="flex items-center gap-1.5 md:gap-2 px-2.5 py-1 md:px-3 md:py-1.5 bg-dark border border-gray rounded-full text-light hover:text-white hover:bg-gray hover:border-lightGray transition-all shadow-sm">
-          <i class="fa-solid fa-globe text-sm md:text-base"></i>
-          <span class="font-medium">nvbangg.github.io/awesome-for-morphe</span>
-        </a>
-      </div>
-      <div class="bg-dark border-2 border-blue/20 rounded-2xl overflow-hidden shadow-lg relative z-10">
-        <div class="relative flex items-center justify-center border-b-2 border-blue/10 h-12 px-10 sm:px-4">
+      <div class="bg-dark border-2 border-blue/20 rounded-2xl overflow-hidden shadow-lg relative z-10 mt-2 md:mt-4">
+        <div class="relative flex flex-col sm:flex-row items-center justify-center border-b-2 border-blue/10 py-3 sm:py-0 sm:h-12 gap-2 sm:gap-0 px-4">
           <h1
-            class="text-xl md:text-2xl font-extrabold whitespace-nowrap flex items-center text-transparent bg-clip-text bg-gradient-to-r from-blue to-green">
+            class="text-2xl md:text-3xl font-extrabold whitespace-nowrap flex items-center text-transparent bg-clip-text bg-gradient-to-r from-blue to-green">
             Awesome for Morphe</h1>
-          <a href="https://github.com/nvbangg/awesome-for-morphe/releases" target="_blank" rel="noreferrer"
-            class="absolute right-3 flex items-center justify-center gap-1.5 w-8 h-8 sm:w-auto sm:h-auto sm:px-3 sm:py-1 bg-yellow/10 border border-yellow/20 rounded-full text-xs font-bold text-yellow hover:bg-yellow/20 hover:border-yellow/40 transition-all shadow-sm shadow-yellow/5"
-            title="Changelog">
-            <i class="fa-solid fa-clock-rotate-left"></i>
-            <span class="hidden sm:inline">Changelog</span>
-          </a>
+            
+          <div class="flex items-center gap-2">
+            <a href="https://github.com/nvbangg/awesome-for-morphe" target="_blank" rel="noreferrer"
+              class="sm:absolute sm:left-3 flex items-center justify-center gap-1 px-2.5 py-0.5 bg-white/10 border border-white/20 rounded-full text-xs font-bold text-white hover:bg-white/20 hover:border-white/40 transition-all shadow-sm"
+              title="GitHub">
+              <i class="fa-brands fa-github text-xs"></i>
+              <span>GitHub</span>
+            </a>
+            
+            <a href="https://github.com/nvbangg/awesome-for-morphe/releases" target="_blank" rel="noreferrer"
+              class="sm:absolute sm:right-3 flex items-center justify-center gap-1 px-2.5 py-0.5 bg-yellow/10 border border-yellow/20 rounded-full text-xs font-bold text-yellow hover:bg-yellow/20 hover:border-yellow/40 transition-all shadow-sm shadow-yellow/5"
+              title="Changelog">
+              <i class="fa-solid fa-clock-rotate-left text-xs"></i>
+              <span>Changelog</span>
+            </a>
+          </div>
         </div>
 
         <div class="flex flex-col gap-3 p-2 md:p-3">
-          <div class="flex flex-col sm:flex-row gap-2.5 items-stretch sm:items-center">
-            <div class="flex flex-row gap-2.5 items-center flex-1 min-w-0">
-              <button @click="resetFilters"
-                class="h-10 w-10 flex items-center justify-center bg-black border border-gray rounded-md hover:bg-white/5 transition-colors text-white shrink-0"
-                title="Reset Filters">
-                <i class="fa-solid fa-arrow-rotate-left text-sm"></i>
+          <!-- Row 1: Filters -->
+          <div class="grid grid-cols-2 md:flex md:flex-row items-center gap-2.5">
+            <!-- Bundle filter dropdown -->
+            <div class="relative w-full md:w-[25%] dd-root" id="bundle-dd">
+              <button type="button" onclick="toggleDd('bundle-dd')"
+                class="w-full h-10 pl-3 pr-2 bg-black border border-lightGray rounded-md text-sm text-white flex items-center gap-1.5 hover:border-white/50 transition-all cursor-pointer"
+                aria-label="Patch Bundles filter">
+                <span class="flex-1 truncate text-left">{{ bundle || '📦 All Bundles' }}</span>
+                <i class="fa-solid fa-chevron-down dd-chevron text-light text-xs flex-shrink-0 transition-transform duration-200"></i>
               </button>
+              <div class="dd-panel max-h-[400px] overflow-y-auto apps-scroll bg-dark border border-lightGray rounded-md shadow-xl py-1 divide-y divide-white/10">
+                <div class="sticky top-0 bg-dark px-2 pb-2 pt-1 border-b border-lightGray/30 z-10">
+                  <div class="relative">
+                    <span class="absolute left-2 top-0 h-8 flex items-center text-light pointer-events-none">
+                      <i class="fa-solid fa-magnifying-glass text-[10px]"></i>
+                    </span>
+                    <input type="search" v-model="bundleSearch" placeholder="Search bundles..." class="w-full h-8 pl-6 pr-2 bg-black border border-lightGray rounded-md text-xs text-white focus:border-light focus:ring-1 focus:ring-light/20 outline-none transition-all" autocomplete="off" @click.stop>
+                  </div>
+                </div>
+                <div :class="!bundle ? 'text-white bg-white/10 font-medium' : 'text-white hover:bg-white/5'"
+                  :data-selected="!bundle ? 'true' : null"
+                  @click="bundle = ''; bundleSearch = ''; $event.target.closest('.dd-root').classList.remove('open')"
+                  class="px-3 py-2 text-sm cursor-pointer transition-colors">📦 All Bundles</div>
+                <div v-for="opt in filteredBundleOptions" :key="opt.value"
+                  :class="bundle === opt.value ? 'text-white bg-white/10 font-medium' : 'text-white hover:bg-white/5'"
+                  :data-selected="bundle === opt.value ? 'true' : null"
+                  @click="bundle = opt.value; bundleSearch = ''; $event.target.closest('.dd-root').classList.remove('open')"
+                  class="px-3 py-2 text-sm cursor-pointer transition-colors">{{ opt.label }}</div>
+              </div>
             </div>
 
-            <form @submit.prevent="$event.target.querySelector('input').blur()" class="relative flex-1 min-w-0">
+            <!-- App filter dropdown -->
+            <div class="relative w-full md:w-[25%] dd-root" id="app-dd">
+              <button type="button" onclick="toggleDd('app-dd')"
+                class="w-full h-10 pl-3 pr-2 bg-black border border-lightGray rounded-md text-sm text-white flex items-center gap-1.5 hover:border-white/50 transition-all cursor-pointer"
+                aria-label="Apps filter">
+                <span class="flex-1 truncate text-left">{{ app ? (filterOptions.appOptions.find(o => o.value === app)?.label || app) : '📱 All Apps' }}</span>
+                <i class="fa-solid fa-chevron-down dd-chevron text-light text-xs flex-shrink-0 transition-transform duration-200"></i>
+              </button>
+              <div class="dd-panel max-h-[400px] overflow-y-auto apps-scroll bg-dark border border-lightGray rounded-md shadow-xl py-1 divide-y divide-white/10">
+                <div class="sticky top-0 bg-dark px-2 pb-2 pt-1 border-b border-lightGray/30 z-10">
+                  <div class="relative">
+                    <span class="absolute left-2 top-0 h-8 flex items-center text-light pointer-events-none">
+                      <i class="fa-solid fa-magnifying-glass text-[10px]"></i>
+                    </span>
+                    <input type="search" v-model="appSearch" placeholder="Search apps..." class="w-full h-8 pl-6 pr-2 bg-black border border-lightGray rounded-md text-xs text-white focus:border-light focus:ring-1 focus:ring-light/20 outline-none transition-all" autocomplete="off" @click.stop>
+                  </div>
+                </div>
+                <div :class="!app ? 'text-white bg-white/10 font-medium' : 'text-white hover:bg-white/5'"
+                  :data-selected="!app ? 'true' : null"
+                  @click="app = ''; appSearch = ''; $event.target.closest('.dd-root').classList.remove('open')"
+                  class="px-3 py-2 text-sm cursor-pointer transition-colors">📱 All Apps</div>
+                <div v-for="opt in filteredAppOptions" :key="opt.value"
+                  :class="app === opt.value ? 'text-white bg-white/10 font-medium' : 'text-white hover:bg-white/5'"
+                  :data-selected="app === opt.value ? 'true' : null"
+                  @click="app = opt.value; appSearch = ''; $event.target.closest('.dd-root').classList.remove('open')"
+                  class="px-3 py-2 text-sm cursor-pointer transition-colors">{{ opt.label }}</div>
+              </div>
+            </div>
+
+            <form @submit.prevent="$event.target.querySelector('input').blur()" class="relative w-full md:w-[50%] min-w-0 col-span-2 mt-0">
               <span class="absolute left-3 top-0 h-10 flex items-center text-light pointer-events-none">
                 <i class="fa-solid fa-magnifying-glass text-xs"></i>
               </span>
@@ -223,67 +272,30 @@
             </form>
           </div>
 
-          <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 mt-1">
-            <div class="flex flex-row gap-2 w-full md:w-auto">
-              <!-- App filter dropdown -->
-              <div class="relative w-1/2 md:w-[180px] dd-root" id="app-dd">
-                <button type="button" onclick="toggleDd('app-dd')"
-                  class="w-full h-10 pl-3 pr-2 bg-black border border-lightGray rounded-md text-sm text-white flex items-center gap-1.5 hover:border-white/50 transition-all cursor-pointer"
-                  aria-label="Apps filter">
-                  <span class="flex-1 truncate text-left">{{ app ? (filterOptions.appOptions.find(o => o.value === app)?.label || app) : '📱 All Apps' }}</span>
-                  <i class="fa-solid fa-chevron-down dd-chevron text-light text-xs flex-shrink-0 transition-transform duration-200"></i>
-                </button>
-                <div class="dd-panel max-h-[400px] overflow-y-auto apps-scroll bg-dark border border-lightGray rounded-md shadow-xl py-1 divide-y divide-white/10">
-                  <div class="sticky top-0 bg-dark px-2 pb-2 pt-1 border-b border-lightGray/30 z-10">
-                    <div class="relative">
-                      <span class="absolute left-2 top-0 h-8 flex items-center text-light pointer-events-none">
-                        <i class="fa-solid fa-magnifying-glass text-[10px]"></i>
-                      </span>
-                      <input type="search" v-model="appSearch" placeholder="Search apps..." class="w-full h-8 pl-6 pr-2 bg-black border border-lightGray rounded-md text-xs text-white focus:border-light focus:ring-1 focus:ring-light/20 outline-none transition-all" autocomplete="off" @click.stop>
-                    </div>
-                  </div>
-                  <div :class="!app ? 'text-white bg-white/10 font-medium' : 'text-white hover:bg-white/5'"
-                    :data-selected="!app ? 'true' : null"
-                    @click="app = ''; appSearch = ''; $event.target.closest('.dd-root').classList.remove('open')"
-                    class="px-3 py-2 text-sm cursor-pointer transition-colors">📱 All Apps</div>
-                  <div v-for="opt in filteredAppOptions" :key="opt.value"
-                    :class="app === opt.value ? 'text-white bg-white/10 font-medium' : 'text-white hover:bg-white/5'"
-                    :data-selected="app === opt.value ? 'true' : null"
-                    @click="app = opt.value; appSearch = ''; $event.target.closest('.dd-root').classList.remove('open')"
-                    class="px-3 py-2 text-sm cursor-pointer transition-colors">{{ opt.label }}</div>
-                </div>
-              </div>
-              <!-- Bundle filter dropdown -->
-              <div class="relative w-1/2 md:w-[180px] dd-root" id="bundle-dd">
-                <button type="button" onclick="toggleDd('bundle-dd')"
-                  class="w-full h-10 pl-3 pr-2 bg-black border border-lightGray rounded-md text-sm text-white flex items-center gap-1.5 hover:border-white/50 transition-all cursor-pointer"
-                  aria-label="Patch Bundles filter">
-                  <span class="flex-1 truncate text-left">{{ bundle || '📦 All Bundles' }}</span>
-                  <i class="fa-solid fa-chevron-down dd-chevron text-light text-xs flex-shrink-0 transition-transform duration-200"></i>
-                </button>
-                <div class="dd-panel max-h-[400px] overflow-y-auto apps-scroll bg-dark border border-lightGray rounded-md shadow-xl py-1 divide-y divide-white/10">
-                  <div class="sticky top-0 bg-dark px-2 pb-2 pt-1 border-b border-lightGray/30 z-10">
-                    <div class="relative">
-                      <span class="absolute left-2 top-0 h-8 flex items-center text-light pointer-events-none">
-                        <i class="fa-solid fa-magnifying-glass text-[10px]"></i>
-                      </span>
-                      <input type="search" v-model="bundleSearch" placeholder="Search bundles..." class="w-full h-8 pl-6 pr-2 bg-black border border-lightGray rounded-md text-xs text-white focus:border-light focus:ring-1 focus:ring-light/20 outline-none transition-all" autocomplete="off" @click.stop>
-                    </div>
-                  </div>
-                  <div :class="!bundle ? 'text-white bg-white/10 font-medium' : 'text-white hover:bg-white/5'"
-                    :data-selected="!bundle ? 'true' : null"
-                    @click="bundle = ''; bundleSearch = ''; $event.target.closest('.dd-root').classList.remove('open')"
-                    class="px-3 py-2 text-sm cursor-pointer transition-colors">📦 All Bundles</div>
-                  <div v-for="opt in filteredBundleOptions" :key="opt.value"
-                    :class="bundle === opt.value ? 'text-white bg-white/10 font-medium' : 'text-white hover:bg-white/5'"
-                    :data-selected="bundle === opt.value ? 'true' : null"
-                    @click="bundle = opt.value; bundleSearch = ''; $event.target.closest('.dd-root').classList.remove('open')"
-                    class="px-3 py-2 text-sm cursor-pointer transition-colors">{{ opt.label }}</div>
-                </div>
+          <!-- Row 2: Actions & Stats -->
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-y-3 gap-x-2 mt-1">
+            <!-- Left Group -->
+            <div class="flex flex-row items-center justify-center md:justify-start gap-2 w-full md:w-auto">
+              <button @click="resetFilters"
+                class="w-[115px] h-8 flex items-center justify-center gap-1 bg-green/10 border border-green/20 rounded-md text-xs font-bold text-green hover:bg-green/20 hover:border-green/40 transition-all shadow-sm shadow-green/5 shrink-0"
+                title="Reset Filters">
+                <i class="fa-solid fa-arrow-rotate-left"></i>
+                <span>Reset Filters</span>
+              </button>
+              
+              <!-- Sort Dropdown -->
+              <div class="relative w-[115px]">
+                <select v-model="sortOrder" class="w-full h-8 pl-3 pr-8 appearance-none bg-black border border-gray rounded-md text-xs text-white focus:border-light focus:ring-1 focus:ring-light/20 outline-none transition-all cursor-pointer">
+                  <option value="default">Default Order</option>
+                  <option value="apps_desc">Most Apps</option>
+                  <option value="latest">Latest</option>
+                </select>
+                <i class="fa-solid fa-chevron-down absolute right-2.5 top-2.5 text-light text-[10px] pointer-events-none"></i>
               </div>
             </div>
 
-            <div class="flex items-center justify-center gap-2">
+            <!-- Center Group -->
+            <div class="flex items-center justify-center gap-2 w-full md:w-auto">
               <button @click="channel = 'stable'"
                 class="h-8 px-5 rounded-full text-sm font-medium transition-all border"
                 :class="channel === 'stable' ? 'text-blue bg-blue/10 border-blue/20' : 'text-white bg-white/5 border-white/5 hover:bg-white/10'">Stable</button>
@@ -291,14 +303,11 @@
                 :class="channel === 'dev' ? 'text-yellow bg-yellow/10 border-yellow/20' : 'text-white bg-white/5 border-white/5 hover:bg-white/10'">Dev</button>
             </div>
 
-            <div class="flex flex-wrap gap-2 text-xs text-light shrink-0 justify-center md:justify-end"
-              aria-live="polite">
-              <span class="px-1.5 py-0.5 bg-white/5 rounded-full border border-white/5">{{ stats?.apps || 0 }}
-                apps</span>
-              <span class="px-1.5 py-0.5 bg-white/5 rounded-full border border-white/5">{{ stats?.bundles || 0 }}
-                bundles</span>
-              <span class="px-1.5 py-0.5 bg-white/5 rounded-full border border-white/5">{{ stats?.patches || 0 }}
-                patches</span>
+            <!-- Right Group -->
+            <div class="flex flex-wrap items-center justify-center md:justify-end gap-2 w-full md:w-auto text-xs text-light shrink-0" aria-live="polite">
+              <span class="px-1.5 py-0.5 bg-white/5 rounded-full border border-white/5">{{ stats?.bundles || 0 }} bundles</span>
+              <span class="px-1.5 py-0.5 bg-white/5 rounded-full border border-white/5">{{ stats?.apps || 0 }} apps</span>
+              <span class="px-1.5 py-0.5 bg-white/5 rounded-full border border-white/5">{{ stats?.patches || 0 }} patches</span>
             </div>
           </div>
         </div>
@@ -343,15 +352,6 @@
                       class="px-2 py-0.5 text-xs text-yellow bg-yellow/10 border border-yellow/20 rounded-full font-bold ml-1.5 shadow-sm flex items-center">
                       ✨ New
                     </span>
-                    <template v-if="group.bundle.version">
-                      <a v-if="releaseUrl(group.bundle)" :href="releaseUrl(group.bundle)" target="_blank"
-                        rel="noreferrer" @click.stop
-                        class="px-1.5 py-0.5 text-xs text-white bg-white/5 border border-white/10 rounded-full font-medium hover:bg-blue/10 hover:text-blue hover:border-blue/20 transition-colors">{{
-                        group.bundle.version }}</a>
-                      <span v-else
-                        class="px-1.5 py-0.5 text-xs text-white bg-white/5 border border-white/10 rounded-full font-medium hover:bg-blue/10 hover:text-blue hover:border-blue/20 transition-colors">{{
-                        group.bundle.version }}</span>
-                    </template>
                   </div>
                   <div class="flex items-center justify-center w-full md:w-auto md:justify-start gap-2">
                     <a v-if="group.bundle.repo" :href="group.bundle.repo" target="_blank" rel="noreferrer" @click.stop
@@ -369,14 +369,19 @@
                   </div>
                 </span>
                 <span
-                  class="flex flex-wrap gap-2 text-xs text-light shrink-0 justify-center md:justify-end w-full md:w-auto">
+                  class="flex flex-row items-center gap-2 text-xs text-light shrink-0 justify-center md:justify-end w-full md:w-auto">
+                  <template v-if="group.bundle.version">
+                    <a v-if="releaseUrl(group.bundle)" :href="releaseUrl(group.bundle)" target="_blank"
+                      rel="noreferrer" @click.stop
+                      class="flex items-center gap-1 px-1.5 py-0.5 text-xs text-white bg-white/5 border border-white/10 rounded-full font-medium hover:bg-blue/10 hover:text-blue hover:border-blue/20 transition-colors"><i class="fa-solid fa-clock-rotate-left text-[10px] mt-[1px]"></i><span class="leading-none">{{
+                      group.bundle.version }}</span></a>
+                    <span v-else
+                      class="flex items-center gap-1 px-1.5 py-0.5 text-xs text-white bg-white/5 border border-white/10 rounded-full font-medium hover:bg-blue/10 hover:text-blue hover:border-blue/20 transition-colors"><i class="fa-solid fa-clock-rotate-left text-[10px] mt-[1px]"></i><span class="leading-none">{{
+                      group.bundle.version }}</span></span>
+                  </template>
                   <span v-if="group.bundle.createdAt"
                     class="px-1.5 py-0.5 bg-white/5 rounded-full border border-white/5">{{
                     formatDate(group.bundle.createdAt) }}</span>
-                  <span class="px-1.5 py-0.5 bg-white/5 rounded-full border border-white/5">{{ countBy(group.rows, r =>
-                    r.packageName) }} apps</span>
-                  <span class="px-1.5 py-0.5 bg-white/5 rounded-full border border-white/5">{{ countBy(group.rows, r =>
-                    r.patchId) }} patches</span>
                 </span>
               </div>
 

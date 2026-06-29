@@ -157,6 +157,7 @@ createApp({
     const bundleSearch = ref("");
     const showOptions = ref([]);
     const channel = ref(DEFAULT_CHANNEL);
+    const sortOrder = ref("default");
 
     const activeData = ref(null);
     const isLoading = ref(true);
@@ -336,16 +337,6 @@ createApp({
         map.get(row.bundleKey).push(row);
       }
       return Array.from(map.entries())
-        .sort(([a], [b]) => {
-          const indexA = PRIORITY_ORDER.indexOf(a);
-          const indexB = PRIORITY_ORDER.indexOf(b);
-          if (indexA !== -1 && indexB !== -1) {
-            return indexA - indexB;
-          }
-          if (indexA !== -1) return -1;
-          if (indexB !== -1) return 1;
-          return a.localeCompare(b);
-        })
         .map(([key, rows]) => {
           const patchMap = new Map();
           for (const row of rows) {
@@ -391,8 +382,33 @@ createApp({
             patches,
             appsList,
           };
+        })
+        .sort((a, b) => {
+          const aHigh = isChangelogView.value && changelogHighlights.includes(a.key) ? 1 : 0;
+          const bHigh = isChangelogView.value && changelogHighlights.includes(b.key) ? 1 : 0;
+          if (aHigh !== bHigh) return bHigh - aHigh;
+
+          if (sortOrder.value === 'apps_desc') {
+            const countA = countBy(a.rows, r => r.packageName);
+            const countB = countBy(b.rows, r => r.packageName);
+            if (countA !== countB) return countB - countA;
+          } else if (sortOrder.value === 'latest') {
+            const dateA = a.bundle.createdAt ? new Date(a.bundle.createdAt).getTime() : 0;
+            const dateB = b.bundle.createdAt ? new Date(b.bundle.createdAt).getTime() : 0;
+            if (dateA !== dateB) return dateB - dateA;
+          }
+
+          const indexA = PRIORITY_ORDER.indexOf(a.key);
+          const indexB = PRIORITY_ORDER.indexOf(b.key);
+          if (indexA !== -1 && indexB !== -1) {
+            return indexA - indexB;
+          }
+          if (indexA !== -1) return -1;
+          if (indexB !== -1) return 1;
+          return a.key.localeCompare(b.key);
         });
     });
+
 
     watch(bundlesGroups, (newGroups) => {
       if (newGroups && newGroups.length === 1) {
@@ -566,6 +582,7 @@ createApp({
       bundleSearch.value = "";
       showOptions.value = [];
       isChangelogView.value = false;
+      sortOrder.value = "default";
       expandedOptions.clear();
       expandedVersions.clear();
     };
@@ -582,6 +599,7 @@ createApp({
       isLoading,
       errorMsg,
       stats,
+      sortOrder,
       filterOptions,
       bundlesGroups,
       expandedVersions,
