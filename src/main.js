@@ -488,6 +488,9 @@ createApp({
 
     const filterByApp = (pkg) => {
       app.value = pkg;
+      bundle.value = "";
+      query.value = "";
+      patchQuery.value = "";
     };
 
     const formatDate = (val) => {
