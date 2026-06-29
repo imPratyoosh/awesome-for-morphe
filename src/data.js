@@ -176,15 +176,42 @@ export function filterRows(data, filters) {
   const appWords = (filters.query || "").split(/\s+/).map(simplify).filter(Boolean);
   const patchWords = (filters.patchQuery || "").split(/\s+/).map(simplify).filter(Boolean);
 
+  let parsedShow = null;
+  if (filters.showOptions && filters.showOptions.length > 0) {
+    parsedShow = filters.showOptions.map(item => {
+      const parts = item.split(":");
+      return {
+        level: parts.length === 1 ? "bundle" : parts.length === 2 ? "app" : "patch",
+        bundle: parts[0],
+        app: parts.length >= 2 ? parts[1] : "",
+        patch: parts.length > 2 ? parts.slice(2).join(":") : ""
+      };
+    });
+  }
+
   return data.rows.filter((row) => {
-    if (filters.bundle && row.bundleKey !== filters.bundle) return false;
-    if (filters.app) {
-      if (filters.app === "universal") {
-        if (row.packageName) return false;
-      } else if (row.packageName !== filters.app) {
-        return false;
-      }
+    if (parsedShow) {
+      const matched = parsedShow.some(filter => {
+        const matchBundle = !filter.bundle || row.bundleKey === filter.bundle;
+        
+        let matchApp = true;
+        if (filter.app) {
+          if (filter.app === "universal") {
+            matchApp = !row.packageName;
+          } else {
+            matchApp = row.packageName === filter.app;
+          }
+        }
+        
+        const matchPatch = !filter.patch || row.patchName === filter.patch;
+
+        if (filter.level === "bundle") return matchBundle;
+        if (filter.level === "app") return matchBundle && matchApp;
+        return matchBundle && matchApp && matchPatch;
+      });
+      if (!matched) return false;
     }
+
     if (appWords.length > 0) {
       const searchTarget = simplify(row.searchAppsText);
       if (!appWords.every((word) => searchTarget.includes(word))) return false;

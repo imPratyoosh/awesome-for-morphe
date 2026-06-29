@@ -22,12 +22,137 @@ const PRIORITY_ORDER = [
   "patcheddit",
 ];
 
+function tokenize(str) {
+  const tokens = [];
+  let current = "";
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i];
+    if (char === '"') {
+      let quoted = "";
+      i++;
+      while (i < str.length && str[i] !== '"') {
+        quoted += str[i];
+        i++;
+      }
+      tokens.push({ type: 'STRING', value: quoted });
+    } else if (['(', ')', ':', ','].includes(char)) {
+      if (current.trim()) {
+        tokens.push({ type: 'LITERAL', value: current.trim() });
+        current = "";
+      }
+      tokens.push({ type: char });
+    } else {
+      current += char;
+    }
+  }
+  if (current.trim()) {
+    tokens.push({ type: 'LITERAL', value: current.trim() });
+  }
+  return tokens;
+}
+
+function parseShowTrie(str) {
+  const tokens = tokenize(str);
+  let pos = 0;
+  const results = [];
+
+  function parseNode(prefix) {
+    if (pos >= tokens.length) return;
+    
+    if (tokens[pos].type === '(') {
+      pos++;
+      while (pos < tokens.length && tokens[pos].type !== ')') {
+        parseNode(prefix);
+        if (pos < tokens.length && tokens[pos].type === ',') {
+          pos++;
+        }
+      }
+      if (pos < tokens.length && tokens[pos].type === ')') {
+        pos++;
+      }
+    } else {
+      const val = tokens[pos].value;
+      pos++;
+      const newPrefix = prefix ? prefix + ":" + val : val;
+      
+      if (pos < tokens.length && tokens[pos].type === ':') {
+        pos++;
+        parseNode(newPrefix);
+      } else {
+        results.push(newPrefix);
+      }
+    }
+  }
+
+  while (pos < tokens.length) {
+    parseNode("");
+    if (pos < tokens.length && tokens[pos].type === ',') {
+      pos++;
+    }
+  }
+
+  return results;
+}
+
+function formatPatchStr(p) {
+  if (p.includes(':') || p.includes(',') || p.includes('(') || p.includes(')')) {
+    return `"${p}"`;
+  }
+  return p;
+}
+
+function buildShowTrie(flatList) {
+  const root = {};
+  for (const item of flatList) {
+    const parts = item.split(":");
+    let bundle = parts[0];
+    let app = parts.length > 1 ? parts[1] : null;
+    let patch = parts.length > 2 ? parts.slice(2).join(":") : null;
+
+    if (!root[bundle]) root[bundle] = { _apps: {} };
+    if (app !== null) {
+      if (!root[bundle]._apps[app]) root[bundle]._apps[app] = { _patches: [] };
+      if (patch !== null) {
+        root[bundle]._apps[app]._patches.push(patch);
+      }
+    }
+  }
+
+  const bundleStrs = [];
+  for (const [bundle, bNode] of Object.entries(root)) {
+    const apps = Object.entries(bNode._apps);
+    if (apps.length === 0) {
+      bundleStrs.push(bundle);
+    } else {
+      const appStrs = [];
+      for (const [app, aNode] of apps) {
+        const patches = aNode._patches;
+        if (patches.length === 0) {
+          appStrs.push(app);
+        } else if (patches.length === 1) {
+          appStrs.push(`${app}:${formatPatchStr(patches[0])}`);
+        } else {
+          const pStrs = patches.map(formatPatchStr);
+          appStrs.push(`${app}:(${pStrs.join(',')})`);
+        }
+      }
+      if (appStrs.length === 1) {
+        bundleStrs.push(`${bundle}:${appStrs[0]}`);
+      } else {
+        bundleStrs.push(`${bundle}:(${appStrs.join(',')})`);
+      }
+    }
+  }
+  return bundleStrs.join(',');
+}
+
 createApp({
   setup() {
     const query = ref("");
     const patchQuery = ref("");
     const bundle = ref("");
     const app = ref("");
+    const showOptions = ref([]);
     const channel = ref(DEFAULT_CHANNEL);
 
     const activeData = ref(null);
@@ -37,22 +162,75 @@ createApp({
     const params = new URLSearchParams(location.search);
     query.value = params.get("q") || "";
     patchQuery.value = params.get("qp") || "";
-    bundle.value = params.get("bundle") || "";
-    app.value = params.get("app") || "";
     channel.value = normalizeChannel(params.get("channel") || DEFAULT_CHANNEL);
 
-    // Sync state to URL on change
-    watch([query, patchQuery, bundle, app, channel], () => {
-      const params = new URLSearchParams();
-      if (query.value) params.set("q", query.value);
-      if (patchQuery.value) params.set("qp", patchQuery.value);
-      if (bundle.value) params.set("bundle", bundle.value);
-      if (app.value) params.set("app", app.value);
-      if (channel.value !== DEFAULT_CHANNEL) params.set("channel", channel.value);
+    function parseShowParam() {
+      const search = location.search.substring(1);
+      if (!search) return [];
+      
+      const pairs = search.split("&");
+      let rawParam = "";
+      for (const pair of pairs) {
+        const [key, value] = pair.split("=");
+        if (key === "show" && value) {
+          rawParam = value;
+        }
+      }
+      if (!rawParam) return [];
+      return parseShowTrie(decodeURIComponent(rawParam));
+    }
 
-      const q = params.toString();
-      history.replaceState(null, "", `${location.pathname}${q ? `?${q}` : ""}`);
+    let bParam = params.get("bundle");
+    let aParam = params.get("app");
+    let showArr = [];
+    if (bParam || aParam) {
+      showArr = [`${bParam || ""}${aParam ? ":" + aParam : ""}`];
+    } else {
+      showArr = parseShowParam();
+    }
+    showOptions.value = showArr;
+
+    let initBundle = "", initApp = "";
+    if (showArr.length === 1) {
+      const parts = showArr[0].split(":");
+      if (parts.length === 1) {
+        initBundle = parts[0];
+      } else if (parts.length === 2) {
+        initBundle = parts[0];
+        initApp = parts[1];
+      }
+    }
+    bundle.value = initBundle;
+    app.value = initApp;
+
+    watch([bundle, app], () => {
+      if (bundle.value || app.value) {
+        showOptions.value = [`${bundle.value || ""}${app.value ? ":" + app.value : ""}`];
+      } else {
+        showOptions.value = [];
+      }
     });
+
+    // Sync state to URL on change
+    watch([query, patchQuery, showOptions, channel], () => {
+      const urlParts = [];
+      if (query.value) urlParts.push(`q=${encodeURIComponent(query.value)}`);
+      if (patchQuery.value) urlParts.push(`qp=${encodeURIComponent(patchQuery.value)}`);
+      
+      if (showOptions.value.length > 0) {
+        const showStr = buildShowTrie(showOptions.value);
+        const encodedShow = encodeURIComponent(showStr)
+          .replace(/%3A/g, ':')
+          .replace(/%2C/g, ',')
+          .replace(/%28/g, '(')
+          .replace(/%29/g, ')');
+        urlParts.push(`show=${encodedShow}`);
+      }
+      if (channel.value !== DEFAULT_CHANNEL) urlParts.push(`channel=${channel.value}`);
+
+      const q = urlParts.join("&");
+      history.replaceState(null, "", `${location.pathname}${q ? `?${q}` : ""}`);
+    }, { immediate: true });
 
     const loadData = async () => {
       isLoading.value = true;
@@ -74,8 +252,7 @@ createApp({
       return filterRows(activeData.value, {
         query: query.value,
         patchQuery: patchQuery.value,
-        bundle: bundle.value,
-        app: app.value,
+        showOptions: showOptions.value,
       });
     });
 
@@ -85,8 +262,7 @@ createApp({
       const rowsForSource = filterRows(activeData.value, {
         query: query.value,
         patchQuery: patchQuery.value,
-        bundle: "",
-        app: app.value,
+        showOptions: app.value ? [`:${app.value}`] : [],
       });
       let bundleOptions = getFilterOptions(rowsForSource).bundleOptions;
 
@@ -104,8 +280,7 @@ createApp({
       const rowsForApp = filterRows(activeData.value, {
         query: query.value,
         patchQuery: patchQuery.value,
-        bundle: bundle.value,
-        app: "",
+        showOptions: bundle.value ? [bundle.value] : [],
       });
       const appOptions = getFilterOptions(rowsForApp).appOptions;
 

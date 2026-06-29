@@ -1,6 +1,7 @@
 # Copyright (c) 2026 nvbangg (github.com/nvbangg)
 
 import json
+import urllib.parse
 from pathlib import Path
 
 ROOT = Path.cwd()
@@ -46,10 +47,10 @@ def collect_apps(list_json):
                     pkgs.add(pkg)
 
         for pkg in pkgs or {"universal"}:
-            patches_dict.setdefault(pkg, {})[patch_name] = patch.get("description", "")
+            patches_dict.setdefault(pkg, set()).add(patch_name)
 
     return {
-        pkg: {k: patches_dict[pkg][k] for k in sorted(patches_dict[pkg])}
+        pkg: sorted(list(patches_dict[pkg]))
         for pkg in sorted(patches_dict)
     }
 
@@ -82,12 +83,54 @@ def format_app_name(pkg, app_names, skip_words):
     return app_names.get(pkg) or derive_name(pkg, skip_words)
 
 
-def make_url(bundle, app=None, is_dev=False):
-    url = f"https://nvbangg.github.io/awesome-for-morphe/?bundle={bundle}"
-    if app:
-        url += f"&app={app}"
+def format_patch(p):
+    if any(c in p for c in [':', ',', '(', ')']):
+        return f'"{p}"'
+    return p
+
+
+def stringify_trie(bundles_dict):
+    bundle_strs = []
+    for bundle, apps in bundles_dict.items():
+        if not apps:
+            bundle_strs.append(bundle)
+        else:
+            app_strs = []
+            for app, patches in apps.items():
+                if not patches:
+                    app_strs.append(app)
+                elif len(patches) == 1:
+                    app_strs.append(f"{app}:{format_patch(patches[0])}")
+                else:
+                    p_strs = [format_patch(p) for p in patches]
+                    app_strs.append(f"{app}:({','.join(p_strs)})")
+            
+            if len(app_strs) == 1:
+                bundle_strs.append(f"{bundle}:{app_strs[0]}")
+            else:
+                bundle_strs.append(f"{bundle}:({','.join(app_strs)})")
+    return ",".join(bundle_strs)
+
+
+def make_url(bundle, app=None, is_dev=False, patches=None):
+    url = f"https://nvbangg.github.io/awesome-for-morphe/"
+    query = []
+    
+    if patches:
+        trie_dict = {bundle: {app: list(patches)}}
+        trie_str = stringify_trie(trie_dict)
+        q = urllib.parse.quote(trie_str, safe=':,"()')
+        query.append(f"show={q}")
+    elif app:
+        query.append(f"show={bundle}:{app}")
+    else:
+        query.append(f"show={bundle}")
+        
     if is_dev:
-        url += "&channel=dev"
+        query.append("channel=dev")
+        
+    if query:
+        url += "?" + "&".join(query)
     return url
 
 
@@ -98,6 +141,7 @@ def is_valid_pkg(pkg):
 def build_notes(label, old_bundles, new_bundles, app_names, skip_words):
     new_bundles_notes, new_apps_groups, new_patches_groups = [], [], []
     is_dev = label == "pre-release"
+    all_changes = {}
 
     for key in sorted(new_bundles):
         patches_dict = new_bundles[key]
@@ -105,9 +149,10 @@ def build_notes(label, old_bundles, new_bundles, app_names, skip_words):
 
         if key not in old_bundles:
             # 1. New bundle
+            all_changes[key] = {}
             link = f"[{key}]({make_url(key, is_dev=is_dev)})"
-            bundle_lines = [f"- {link}"] + [
-                f"  - {format_app_name(pkg, app_names, skip_words)}"
+            bundle_lines = [f"+ {link}"] + [
+                f"    - {format_app_name(pkg, app_names, skip_words)}"
                 for pkg in sorted(new_pkgs)
             ]
             new_bundles_notes.append("\n".join(bundle_lines))
@@ -117,36 +162,52 @@ def build_notes(label, old_bundles, new_bundles, app_names, skip_words):
 
             # 2. New apps in an existing bundle
             if added_pkgs := new_pkgs - old_pkgs:
+                if key not in all_changes:
+                    all_changes[key] = {}
+                for pkg in added_pkgs:
+                    all_changes[key][pkg] = []
                 app_lines = [f"- {key}"] + [
-                    f"  - [{format_app_name(pkg, app_names, skip_words)}]({make_url(key, pkg, is_dev)})"
+                    f"    + [{format_app_name(pkg, app_names, skip_words)}]({make_url(key, pkg, is_dev)})"
                     for pkg in sorted(added_pkgs)
                 ]
                 new_apps_groups.append("\n".join(app_lines))
 
             # 3. New patches in an existing app
+            bundle_patches = []
             for pkg in sorted(old_pkgs & new_pkgs):
-                old_pkg_patches = old_patches_dict.get(pkg, {})
-                new_pkg_patches = patches_dict.get(pkg, {})
-
-                if isinstance(old_pkg_patches, list):
-                    old_pkg_patches = {p: "" for p in old_pkg_patches}
-                if isinstance(new_pkg_patches, list):
-                    new_pkg_patches = {p: "" for p in new_pkg_patches}
+                old_pkg_patches = old_patches_dict.get(pkg, [])
+                new_pkg_patches = patches_dict.get(pkg, [])
 
                 added_patches = set(new_pkg_patches) - set(old_pkg_patches)
                 if not added_patches:
                     continue
 
+                if key not in all_changes:
+                    all_changes[key] = {}
+                if pkg not in all_changes[key]:
+                    all_changes[key][pkg] = []
+                all_changes[key][pkg].extend(added_patches)
+
                 name = format_app_name(pkg, app_names, skip_words)
-                patch_lines = [f"- [{name}]({make_url(key, pkg, is_dev)}) ({key})"] + [
-                    f"    + `{p}`: {new_pkg_patches[p]}"
-                    if new_pkg_patches.get(p)
-                    else f"    + `{p}`"
+                app_link = f"[{name}]({make_url(key, pkg, is_dev, patches=added_patches)})"
+                patch_lines = [f"    - {app_link}"] + [
+                    f"        + `{p}`"
                     for p in sorted(added_patches)
                 ]
-                new_patches_groups.append("\n".join(patch_lines))
+                bundle_patches.append("\n".join(patch_lines))
+            
+            if bundle_patches:
+                new_patches_groups.append(f"- {key}\n" + "\n".join(bundle_patches))
 
     sections = []
+    if all_changes:
+        trie_str = stringify_trie(all_changes)
+        q = urllib.parse.quote(trie_str, safe=':,"()')
+        full_url = f"https://nvbangg.github.io/awesome-for-morphe/?show={q}"
+        if is_dev:
+            full_url += "&channel=dev"
+        sections.append(f"[**🚀 View all changes interactively**]({full_url})")
+
     if new_bundles_notes:
         sections.append("## 🧩 New bundles\n" + "\n".join(new_bundles_notes))
     if new_apps_groups:
@@ -194,18 +255,11 @@ def main():
         merged_patches = {}
 
         for pkg in sorted(set(stable_patches) | set(prev_patches)):
-            s_val = stable_patches.get(pkg, {})
-            p_val = prev_patches.get(pkg, {})
+            s_val = stable_patches.get(pkg, [])
+            p_val = prev_patches.get(pkg, [])
 
-            if isinstance(s_val, list):
-                s_val = {p: "" for p in s_val}
-            if isinstance(p_val, list):
-                p_val = {p: "" for p in p_val}
-
-            merged = {
-                k: s_val.get(k) or p_val.get(k) or "" for k in set(s_val) | set(p_val)
-            }
-            merged_patches[pkg] = {k: merged[k] for k in sorted(merged)}
+            merged = sorted(list(set(s_val) | set(p_val)))
+            merged_patches[pkg] = merged
 
         pre_baseline[key] = merged_patches
 
