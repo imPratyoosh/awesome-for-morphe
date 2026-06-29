@@ -1,4 +1,7 @@
 {
+  "ImmortalZeus": {
+    "repo": "https://github.com/ImmortalZeus/ImmortalZeus-Morphe-Patches"
+  },
   "abhis1n": {
     "repo": "https://github.com/abhis1n/Morphe-Patches"
   },
@@ -67,9 +70,6 @@
   },
   "ihealth-morphe": {
     "repo": "https://github.com/bdgerszewski/morphe-patches-ihealth"
-  },
-  "ImmortalZeus": {
-    "repo": "https://github.com/ImmortalZeus/ImmortalZeus-Morphe-Patches"
   },
   "imxeren": {
     "repo": "https://github.com/IMXEren/mix-patches"
