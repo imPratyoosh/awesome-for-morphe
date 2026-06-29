@@ -8,7 +8,7 @@ from pathlib import Path
 from urllib.request import urlopen
 
 RAW = "https://raw.githubusercontent.com/Jman-Github/ReVanced-Patch-Bundles/bundles/patch-bundles"
-OUT_DIR = Path("patch-bundles")
+OUT_DIR = Path("data/patch-bundles")
 CHANNELS = ("stable", "dev")
 CONCURRENCY = 8
 
@@ -27,9 +27,7 @@ def normalize(text):
     return text if text.endswith("\n") else text + "\n"
 
 
-def get_repo(bundle_json):
-    parts = bundle_json.get("download_url", "").split("/")
-    return "/".join(parts[:5]) if len(parts) >= 5 else ""
+
 
 
 def is_morphe(bundle_json):
@@ -49,7 +47,7 @@ def fetch_bundle(args):
         bundle_json = json.loads(text)
         if not is_morphe(bundle_json):
             return None
-        return (base, channel, text, get_repo(bundle_json))
+        return (base, channel, text)
     except Exception as exc:
         print(f"Skip {base}-{channel} ({exc})")
         return None
@@ -80,17 +78,11 @@ def main():
     for path in OUT_DIR.iterdir():
         if path.is_dir() and path.name.endswith("-patch-bundles"):
             shutil.rmtree(path, ignore_errors=True)
-        elif path.name in (
-            "bundles-stable.json",
-            "bundles-dev.json",
-            "bundle-sources.json",
-        ):
-            path.unlink(missing_ok=True)
 
     with ThreadPoolExecutor(max_workers=CONCURRENCY) as pool:
         morphe_entries = [r for r in pool.map(fetch_bundle, all_pairs) if r is not None]
 
-    list_pairs = [(base, ch) for base, ch, _, _ in morphe_entries]
+    list_pairs = [(base, ch) for base, ch, _ in morphe_entries]
     with ThreadPoolExecutor(max_workers=CONCURRENCY) as pool:
         list_map = {
             (base, ch): text
@@ -98,9 +90,8 @@ def main():
         }
 
     # Save files to disk
-    stable_bundles, dev_bundles = {}, {}
     saved = 0
-    for base, channel, bundle_text, repo in morphe_entries:
+    for base, channel, bundle_text in morphe_entries:
         list_text = list_map.get((base, channel))
         if not list_text:
             continue
@@ -113,19 +104,7 @@ def main():
         (out / f"{base}-{channel}-patches-list.json").write_text(
             normalize(list_text), encoding="utf8"
         )
-
-        target = stable_bundles if channel == "stable" else dev_bundles
-        target[base] = {"repo": repo}
         saved += 1
-
-    if stable_bundles:
-        (OUT_DIR / "bundles-stable.json").write_text(
-            json.dumps(stable_bundles, indent=2) + "\n", encoding="utf8"
-        )
-    if dev_bundles:
-        (OUT_DIR / "bundles-dev.json").write_text(
-            json.dumps(dev_bundles, indent=2) + "\n", encoding="utf8"
-        )
 
     print(f"Downloaded {saved} Morphe bundles.")
 

@@ -1,10 +1,4 @@
 {
-  "AlexNaga": {
-    "repo": "https://github.com/AlexNaga/android-patches"
-  },
-  "ImmortalZeus": {
-    "repo": "https://github.com/ImmortalZeus/ImmortalZeus-Morphe-Patches"
-  },
   "abhis1n": {
     "repo": "https://github.com/abhis1n/Morphe-Patches"
   },
@@ -13,6 +7,9 @@
   },
   "ajstrick81-androidtv": {
     "repo": "https://github.com/ajstrick81/morphe-androidtv-patches"
+  },
+  "AlexNaga": {
+    "repo": "https://github.com/AlexNaga/android-patches"
   },
   "ameen-morphe": {
     "repo": "https://github.com/ameenalasady/ameen-morphe"
@@ -79,6 +76,9 @@
   },
   "ihealth-morphe": {
     "repo": "https://github.com/bdgerszewski/morphe-patches-ihealth"
+  },
+  "ImmortalZeus": {
+    "repo": "https://github.com/ImmortalZeus/ImmortalZeus-Morphe-Patches"
   },
   "imxeren": {
     "repo": "https://github.com/IMXEren/mix-patches"

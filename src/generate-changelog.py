@@ -6,11 +6,11 @@ from pathlib import Path
 
 ROOT = Path.cwd()
 DATA_DIR = ROOT / "data"
-BUNDLES_DIR = ROOT / "patch-bundles"
+BUNDLES_DIR = DATA_DIR / "patch-bundles"
 STABLE_OUT = DATA_DIR / "history-stable.json"
 DEV_OUT = DATA_DIR / "history-dev.json"
 APP_NAMES_PATH = DATA_DIR / "app-names.json"
-SKIP_WORDS_PATH = DATA_DIR / "skip-words.json"
+SKIP_WORDS_PATH = ROOT / "src" / "skip-words.json"
 CHANGELOG_PATH = ROOT / "changelog.md"
 CHANGELOG_PRE_PATH = ROOT / "changelog-pre-release.md"
 

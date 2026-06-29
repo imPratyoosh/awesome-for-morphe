@@ -78,10 +78,10 @@ function packages(patch) {
 
 async function loadSource(key, channel, names, sources, skipSet) {
   const listPromise = json(
-    new URL(`../patch-bundles/${key}-patch-bundles/${key}-${channel}-patches-list.json`, import.meta.url),
+    new URL(`../data/patch-bundles/${key}-patch-bundles/${key}-${channel}-patches-list.json`, import.meta.url),
   );
   const bundleMetaPromise = json(
-    new URL(`../patch-bundles/${key}-patch-bundles/${key}-${channel}-patches-bundle.json`, import.meta.url),
+    new URL(`../data/patch-bundles/${key}-patch-bundles/${key}-${channel}-patches-bundle.json`, import.meta.url),
   ).catch(() => ({}));
 
   const [list, meta] = await Promise.all([listPromise, bundleMetaPromise]);
@@ -141,8 +141,8 @@ export async function loadChannelData(channelInput) {
 
   const promise = Promise.all([
     json(new URL("../data/app-names.json", import.meta.url)).catch(() => ({})),
-    json(new URL(`../patch-bundles/bundles-${channel}.json`, import.meta.url)).catch(() => ({})),
-    json(new URL("../data/skip-words.json", import.meta.url)).catch(() => []),
+    json(new URL(`../data/bundles-${channel}.json`, import.meta.url)).catch(() => ({})),
+    json(new URL("./skip-words.json", import.meta.url)).catch(() => []),
   ]).then(async ([names, sources, skipWordsArray]) => {
     const skipSet = new Set(skipWordsArray);
     const bundleKeys = Object.keys(sources);

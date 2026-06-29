@@ -6,7 +6,8 @@ from pathlib import Path
 
 ROOT = Path.cwd()
 DATA_DIR = ROOT / "data"
-BUNDLES_DIR = ROOT / "patch-bundles"
+BUNDLES_DIR = DATA_DIR / "patch-bundles"
+APP_NAMES_PATH = DATA_DIR / "app-names.json"
 
 
 def read_json(path, default=None):
@@ -14,6 +15,16 @@ def read_json(path, default=None):
         return json.loads(path.read_text(encoding="utf8"))
     except (FileNotFoundError, json.JSONDecodeError):
         return default
+
+
+def write_json(path, data):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf8")
+
+
+def get_repo(bundle_json):
+    parts = bundle_json.get("download_url", "").split("/")
+    return "/".join(parts[:5]) if len(parts) >= 5 else ""
 
 
 def collect_discovered_names(list_json):
@@ -39,28 +50,44 @@ def collect_discovered_names(list_json):
 
 
 def main():
-    if not BUNDLES_DIR.exists() or not any(BUNDLES_DIR.glob("*-patch-bundles")):
-        print("No patch bundles found.")
+    if not BUNDLES_DIR.exists():
+        print("No patch bundles directory found.")
         return
 
-    DATA_DIR.mkdir(parents=True, exist_ok=True)
-    names_path = DATA_DIR / "app-names.json"
-    app_names = read_json(names_path, {}) or {}
+    app_names = read_json(APP_NAMES_PATH, {}) or {}
+    stable_bundles = {}
+    dev_bundles = {}
 
-    seen_pkgs, all_pkgs = set(), set()
-    added = processed = 0
+    seen_pkgs = set()
+    all_pkgs = set()
+    added_names = 0
+    scanned_lists = 0
 
+    # Scan directories
     for bundle_dir in sorted(BUNDLES_DIR.iterdir()):
         if not bundle_dir.is_dir() or not bundle_dir.name.endswith("-patch-bundles"):
             continue
         base = bundle_dir.name.replace("-patch-bundles", "")
 
         for channel in ("stable", "dev"):
-            list_json = read_json(bundle_dir / f"{base}-{channel}-patches-list.json")
-            if not list_json:
-                continue
-            processed += 1
+            bundle_path = bundle_dir / f"{base}-{channel}-patches-bundle.json"
+            list_path = bundle_dir / f"{base}-{channel}-patches-list.json"
 
+            if not bundle_path.exists() or not list_path.exists():
+                continue
+
+            bundle_json = read_json(bundle_path)
+            list_json = read_json(list_path)
+            if not bundle_json or not list_json:
+                continue
+
+            # 1. Add to bundles lists
+            repo = get_repo(bundle_json)
+            target_bundles = stable_bundles if channel == "stable" else dev_bundles
+            target_bundles[base] = {"repo": repo}
+
+            # 2. Collect app names
+            scanned_lists += 1
             pkgs, discovered = collect_discovered_names(list_json)
             all_pkgs.update(pkgs)
 
@@ -69,15 +96,20 @@ def main():
                     seen_pkgs.add(pkg)
                     if app_names.get(pkg) != name:
                         app_names[pkg] = name
-                        added += 1
+                        added_names += 1
 
-    if added:
-        names_path.write_text(
-            json.dumps(app_names, indent=2, ensure_ascii=False) + "\n", encoding="utf8"
-        )
-        print(f"Auto-added/updated {added} app name(s) to app-names.json.")
+    # Write bundles
+    write_json(DATA_DIR / "bundles-stable.json", stable_bundles)
+    write_json(DATA_DIR / "bundles-dev.json", dev_bundles)
+    print(f"Generated bundles-stable.json with {len(stable_bundles)} bundles.")
+    print(f"Generated bundles-dev.json with {len(dev_bundles)} bundles.")
 
-    print(f"Scanned {processed} list files.")
+    # Write app names
+    if added_names:
+        write_json(APP_NAMES_PATH, app_names)
+        print(f"Auto-added/updated {added_names} app name(s) to app-names.json.")
+
+    print(f"Scanned {scanned_lists} list files.")
 
     missing = sorted(
         pkg

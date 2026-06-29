@@ -1,7 +1,4 @@
 {
-  "ImmortalZeus": {
-    "repo": "https://github.com/ImmortalZeus/ImmortalZeus-Morphe-Patches"
-  },
   "abhis1n": {
     "repo": "https://github.com/abhis1n/Morphe-Patches"
   },
@@ -23,11 +20,11 @@
   "amplerevanced": {
     "repo": "https://github.com/AmpleReVanced/revanced-patches"
   },
-  "anddea": {
-    "repo": "https://github.com/anddea/revanced-patches"
-  },
   "anddea-morphed": {
     "repo": "https://github.com/wchill/anddea-rvx-morphed"
+  },
+  "anddea": {
+    "repo": "https://github.com/anddea/revanced-patches"
   },
   "andronedev": {
     "repo": "https://github.com/andronedev/morphe-patches"
@@ -70,6 +67,9 @@
   },
   "ihealth-morphe": {
     "repo": "https://github.com/bdgerszewski/morphe-patches-ihealth"
+  },
+  "ImmortalZeus": {
+    "repo": "https://github.com/ImmortalZeus/ImmortalZeus-Morphe-Patches"
   },
   "imxeren": {
     "repo": "https://github.com/IMXEren/mix-patches"
