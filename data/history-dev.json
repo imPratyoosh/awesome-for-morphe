@@ -1003,6 +1003,7 @@
       "Settings Homepage Override",
       "Swipeable Custom Top Row",
       "Web Clipboard",
+      "Zhuyin Bottom Row Key Sizes",
       "Zhuyin Quick Traditional/Simplified Toggle",
       "Zhuyin Slide Input"
     ]
@@ -1827,13 +1828,25 @@
     "ai.topicfinder.podcastdiscovery": [
       "Unlock Premium"
     ],
+    "air.com.musclemotion.anatomy": [
+      "Unlock Premium"
+    ],
+    "air.com.musclemotion.kyphosis": [
+      "Unlock Premium"
+    ],
+    "air.com.musclemotion.posture": [
+      "Unlock Premium"
+    ],
     "air.com.musclemotion.strength.mobile": [
       "Unlock Premium"
     ],
-    "app.ninjavpn.android": [
+    "air.com.musclemotion.workout": [
       "Unlock Premium"
     ],
-    "ar.tvplayer.tv": [
+    "air.com.musclemotion.yoga": [
+      "Unlock Premium"
+    ],
+    "app.ninjavpn.android": [
       "Unlock Premium"
     ],
     "ch.protonvpn.android": [

@@ -780,11 +780,17 @@
     ]
   },
   "hoomans-morphe": {
+    "ak.alizandro.smartaudiobookplayer": [
+      "Unlock Full"
+    ],
     "altergames.carlauncher": [
       "Unlock Full Version"
     ],
     "app.remux.video.converter": [
       "Unlock Pro"
+    ],
+    "app.symfonik.music.player": [
+      "Unlock Premium"
     ],
     "com.adobe.reader": [
       "Unlock Pro"
@@ -1263,6 +1269,21 @@
       "Custom DPI",
       "Custom version name",
       "Hide version notice"
+    ]
+  },
+  "morphe-screenshot": {
+    "universal": [
+      "Remove screenshot restriction"
+    ]
+  },
+  "npci-bhim": {
+    "in.org.npci.upiapp": [
+      "Bypass License Activity",
+      "Bypass License Check",
+      "Bypass License Paywall",
+      "Bypass Signature Verification",
+      "Disable Blacklisting",
+      "Force Safe Root Status"
     ]
   },
   "paresh-maheshwari": {
@@ -1798,6 +1819,21 @@
       "Unlock Premium"
     ]
   },
+  "prathxm": {
+    "com.chess": [
+      "Ad-Free & Local Analysis",
+      "Clone Chess.com"
+    ]
+  },
+  "prathxm-ytmusic": {
+    "com.google.android.apps.youtube.music": [
+      "Discord Rich Presence",
+      "Scrobbling"
+    ],
+    "universal": [
+      "Change package name"
+    ]
+  },
   "proguard": {
     "com.java.inspector": [
       "Assemble LSPosed module"
@@ -1996,10 +2032,34 @@
     "ai.topicfinder.podcastdiscovery": [
       "Unlock Premium"
     ],
+    "air.com.musclemotion.anatomy": [
+      "Unlock Premium"
+    ],
+    "air.com.musclemotion.kyphosis": [
+      "Unlock Premium"
+    ],
+    "air.com.musclemotion.posture": [
+      "Unlock Premium"
+    ],
+    "air.com.musclemotion.strength.mobile": [
+      "Unlock Premium"
+    ],
+    "air.com.musclemotion.workout": [
+      "Unlock Premium"
+    ],
+    "air.com.musclemotion.yoga": [
+      "Unlock Premium"
+    ],
+    "app.ninjavpn.android": [
+      "Unlock Premium"
+    ],
     "ch.protonvpn.android": [
       "Unlock Premium"
     ],
     "com.Splitwise.SplitwiseMobile": [
+      "Unlock Pro"
+    ],
+    "com.a0soft.gphone.acc.free": [
       "Unlock Pro"
     ],
     "com.accuweather.android": [
@@ -2029,6 +2089,15 @@
     "com.cloudflare.onedotonedotonedotone": [
       "Disable Analytics / Telemetry",
       "Spoof WARP+ Unlimited UI"
+    ],
+    "com.community.oneroom": [
+      "Bypass member rights check",
+      "Clear VIP resolution tip",
+      "Spoof member active status",
+      "Spoof member days left",
+      "Spoof member provider flags",
+      "Suppress newbie bonus dialog",
+      "Unlock member resolution"
     ],
     "com.cpuid.cpu_z": [
       "Unlock Premium"
@@ -2093,6 +2162,9 @@
     "com.tafayor.killall": [
       "Unlock Pro"
     ],
+    "com.tomtom.gplay.navapp": [
+      "Unlock Premium"
+    ],
     "com.truebill": [
       "Unlock Premium"
     ],
@@ -2113,7 +2185,13 @@
       "Speed Limit Sign",
       "Uncensored Radar / Camera Display"
     ],
+    "com.weather.Weather": [
+      "Unlock Premium"
+    ],
     "com.windscribe.vpn": [
+      "Unlock Premium"
+    ],
+    "com.windyty.android": [
       "Unlock Premium"
     ],
     "com.yatrirailways.yatri": [
@@ -2288,6 +2366,20 @@
       "Remove pairip protection",
       "Restore extracted methods",
       "Strip debug info"
+    ]
+  },
+  "telegram-morphe": {
+    "org.telegram.messenger.web": [
+      "Anti-delete messages",
+      "Anti-disappearing media",
+      "Bypass channel restrictions",
+      "Bypass content restrictions",
+      "Bypass integrity",
+      "Disable auto update",
+      "Download speed boost",
+      "Hide typing indicator",
+      "Remove ads",
+      "Telegram Premium"
     ]
   },
   "ts-patches": {
