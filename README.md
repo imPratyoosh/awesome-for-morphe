@@ -55,7 +55,6 @@
 - [How to patch X with Piko patches](https://www.reddit.com/r/MorpheApp/comments/1r4xt24/x_twitter_can_now_be_patched_with_piko_patches/)
 - [Likes count not showing](https://www.reddit.com/r/MorpheApp/comments/1u4kjms/likes_count_not_showing/)
 - [Regarding the Morphe DMCA](https://www.reddit.com/r/MorpheApp/comments/1s3w1er/regarding_the_morphe_dmca/)
-- [How can I make links open in a patched app?](https://github.com/MorpheApp/morphe-documentation/blob/main/docs/morphe-resources/questions.md#33-how-can-i-make-links-open-in-a-patched-app)
 - [How to install and use Shizuku](https://github.com/thedjchi/Shizuku/wiki)
 
 ## <a id="patch-indexes"></a> 🔍 Patch Indexes
