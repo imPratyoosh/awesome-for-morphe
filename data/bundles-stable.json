@@ -119,6 +119,12 @@
   "morphe-portal": {
     "repo": "https://github.com/andronedev/morphe-portal-patch"
   },
+  "morphe-screenshot": {
+    "repo": "https://github.com/Pa-kon/morphe-screenshot-patches"
+  },
+  "npci-bhim": {
+    "repo": "https://github.com/kun-codes/npci-bhim-morphe-patches"
+  },
   "paresh-maheshwari": {
     "repo": "https://gitlab.com/Paresh-Maheshwari/paresh-patches"
   },
@@ -136,6 +142,12 @@
   },
   "polka-bear": {
     "repo": "https://github.com/polka-bear/morphe-patches"
+  },
+  "prathxm": {
+    "repo": "https://github.com/PrathxmOp/Prathxm-Patches"
+  },
+  "prathxm-ytmusic": {
+    "repo": "https://github.com/PrathxmOp/ytmusic-patches"
   },
   "proguard": {
     "repo": "https://gitlab.com/inotia00/proguard-patches"
@@ -163,6 +175,9 @@
   },
   "sjshb57-pairip": {
     "repo": "https://github.com/sjshb57/Pairip-Patches"
+  },
+  "telegram-morphe": {
+    "repo": "https://github.com/MoonShadowKeeper/Telegram-patchesMorphe"
   },
   "ts-patches": {
     "repo": "https://github.com/osirisad/ts-patches"
