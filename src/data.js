@@ -1,7 +1,7 @@
 // Copyright (c) 2026 nvbangg (github.com/nvbangg)
 
-const CHANNELS = new Set(["stable", "dev"]);
-const DEFAULT_CHANNEL = "stable";
+const CHANNELS = new Set(["stable", "latest", "dev"]);
+const DEFAULT_CHANNEL = "latest";
 const jsonCache = new Map();
 const dataCache = new Map();
 const simplify = (s) =>
@@ -90,6 +90,7 @@ async function loadSource(key, channel, names, sources, skipSet) {
   const bundle = {
     key,
     repo: sourceInfo.repo || "",
+    avatarUrl: sourceInfo.avatarUrl || "",
     version: list.version || meta.version || "",
     tag: meta.version || "",
     createdAt: meta.created_at || "",
@@ -238,7 +239,7 @@ export function getFilterOptions(rows) {
     .sort((a, b) => a.label.localeCompare(b.label) || a.value.localeCompare(b.value));
 
   if (hasUniversal) {
-    appOptions.unshift({ value: "universal", label: "📱 Any app" });
+    appOptions.unshift({ value: "universal", label: "Any app" });
   }
 
   return {

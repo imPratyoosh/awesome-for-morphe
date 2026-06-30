@@ -49,10 +49,7 @@ def collect_apps(list_json):
         for pkg in pkgs or {"universal"}:
             patches_dict.setdefault(pkg, set()).add(patch_name)
 
-    return {
-        pkg: sorted(list(patches_dict[pkg]))
-        for pkg in sorted(patches_dict)
-    }
+    return {pkg: sorted(list(patches_dict[pkg])) for pkg in sorted(patches_dict)}
 
 
 def build_current_bundles():
@@ -84,7 +81,7 @@ def format_app_name(pkg, app_names, skip_words):
 
 
 def format_patch(p):
-    if any(c in p for c in [':', ',', '(', ')']):
+    if any(c in p for c in [":", ",", "(", ")"]):
         return f'"{p}"'
     return p
 
@@ -104,7 +101,7 @@ def stringify_trie(bundles_dict):
                 else:
                     p_strs = [format_patch(p) for p in patches]
                     app_strs.append(f"{app}:({','.join(p_strs)})")
-            
+
             if len(app_strs) == 1:
                 bundle_strs.append(f"{bundle}:{app_strs[0]}")
             else:
@@ -115,7 +112,7 @@ def stringify_trie(bundles_dict):
 def make_url(bundle, app=None, is_dev=False, patches=None):
     url = f"https://nvbangg.github.io/awesome-for-morphe/"
     query = []
-    
+
     if patches:
         trie_dict = {bundle: {app: list(patches)}}
         trie_str = stringify_trie(trie_dict)
@@ -125,11 +122,11 @@ def make_url(bundle, app=None, is_dev=False, patches=None):
         query.append(f"show={bundle}:{app}")
     else:
         query.append(f"show={bundle}")
-        
+
     query.append("new")
     if is_dev:
         query.append("channel=dev")
-        
+
     if query:
         url += "?" + "&".join(query)
     return url
@@ -167,7 +164,7 @@ def build_notes(label, old_bundles, new_bundles, app_names, skip_words):
                     all_changes[key] = {}
                 for pkg in added_pkgs:
                     all_changes[key][pkg] = []
-                
+
                 trie_dict = {key: {pkg: [] for pkg in sorted(added_pkgs)}}
                 trie_str = stringify_trie(trie_dict)
                 q = urllib.parse.quote(trie_str, safe=':,"()')
@@ -203,11 +200,10 @@ def build_notes(label, old_bundles, new_bundles, app_names, skip_words):
 
                 name = format_app_name(pkg, app_names, skip_words)
                 patch_lines = [f"    - {name}"] + [
-                    f"        + `{p}`"
-                    for p in sorted(added_patches)
+                    f"        + `{p}`" for p in sorted(added_patches)
                 ]
                 bundle_patches.append("\n".join(patch_lines))
-            
+
             if bundle_patches:
                 trie_dict = {key: bundle_changes}
                 trie_str = stringify_trie(trie_dict)

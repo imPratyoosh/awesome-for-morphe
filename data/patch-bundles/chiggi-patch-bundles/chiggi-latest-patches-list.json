@@ -1,0 +1,872 @@
+{
+    "version": "v1.14.3",
+    "patches": [
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": "APKS",
+                    "appIconColor": "#36D4C3",
+                    "description": null,
+                    "name": "Nutrilio",
+                    "packageName": "net.nutrilio",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": 26,
+                            "version": "1.20.2"
+                        }
+                    ]
+                }
+            ],
+            "default": false,
+            "dependencies": [
+                "ResourcePatch"
+            ],
+            "description": "Adds a live search box below each meal-time header in the day/meal form. Typing filters that meal's food chips as you type; filtering only hides chips, so items you have already added stay added. The hardest patch to keep working — it hooks the obfuscated form adapter and will likely need re-fingerprinting after Nutrilio updates.",
+            "name": "Add food search bar",
+            "options": []
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": "APKM",
+                    "appIconColor": "#7460A4",
+                    "description": null,
+                    "name": "SonyLIV",
+                    "packageName": "com.sonyliv",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": 22,
+                            "version": "6.23.1"
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [],
+            "description": "Automatically skips the intro, recap and song segments as soon as the 'Skip' button would appear, without waiting for a tap.",
+            "name": "Auto skip intro and recap",
+            "options": []
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": "APKM",
+                    "appIconColor": "#7460A4",
+                    "description": null,
+                    "name": "SonyLIV",
+                    "packageName": "com.sonyliv",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": 22,
+                            "version": "6.23.1"
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [],
+            "description": "Plays the next episode immediately when the \"Up Next\" card appears, skipping the auto-play countdown.",
+            "name": "Auto-skip Up Next",
+            "options": []
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": "APK",
+                    "appIconColor": "#0C0D14",
+                    "description": null,
+                    "name": "CrazyGames",
+                    "packageName": "com.crazygames.crazygamesapp",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": 24,
+                            "version": "1.6.7"
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [],
+            "description": "Stops Google Play's Automatic Integrity Protection (PairIP) license check that, on a re-signed/sideloaded build, redirects the app to the Play Store (\"get it on Google Play\"). Neuters both entry points of com.pairip.licensecheck.LicenseClient (checkLicense / initializeLicenseCheck) so the check never runs. Required for the patched app to open at all.",
+            "name": "Bypass Play license check",
+            "options": []
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": "APK",
+                    "appIconColor": "#2D6CDF",
+                    "description": null,
+                    "name": "Arrow Puzzle",
+                    "packageName": "com.easybrain.arrow.puzzle.game",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": 26,
+                            "version": "1.7.0"
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [],
+            "description": "Changes the app name shown under the launcher icon. Set the desired name in the patch options.",
+            "name": "Change app name",
+            "options": [
+                {
+                    "default": "Arrow Puzzle Morphe",
+                    "description": "The name shown under the app icon.",
+                    "key": "appName",
+                    "required": true,
+                    "title": "App name",
+                    "type": "kotlin.String",
+                    "values": null
+                }
+            ]
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": "APK",
+                    "appIconColor": "#0C0D14",
+                    "description": null,
+                    "name": "CrazyGames",
+                    "packageName": "com.crazygames.crazygamesapp",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": 24,
+                            "version": "1.6.7"
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [],
+            "description": "Changes the app name shown under the launcher icon. Set the desired name in the patch options.",
+            "name": "Change app name",
+            "options": [
+                {
+                    "default": "CrazyGames Morphe",
+                    "description": "The name shown under the app icon.",
+                    "key": "appName",
+                    "required": true,
+                    "title": "App name",
+                    "type": "kotlin.String",
+                    "values": null
+                }
+            ]
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": "APKS",
+                    "appIconColor": "#36D4C3",
+                    "description": null,
+                    "name": "Nutrilio",
+                    "packageName": "net.nutrilio",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": 26,
+                            "version": "1.20.2"
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [],
+            "description": "Changes the app name shown under the launcher icon. Set the desired name in the patch options.",
+            "name": "Change app name",
+            "options": [
+                {
+                    "default": "Nutrilio Morphe",
+                    "description": "The name shown under the app icon.",
+                    "key": "appName",
+                    "required": true,
+                    "title": "App name",
+                    "type": "kotlin.String",
+                    "values": null
+                }
+            ]
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": "APKM",
+                    "appIconColor": "#7460A4",
+                    "description": null,
+                    "name": "SonyLIV",
+                    "packageName": "com.sonyliv",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": 22,
+                            "version": "6.23.1"
+                        }
+                    ]
+                }
+            ],
+            "default": false,
+            "dependencies": [],
+            "description": "Changes the app name shown under the launcher icon. Set the desired name in the patch options.",
+            "name": "Change app name",
+            "options": [
+                {
+                    "default": "Sony LIV",
+                    "description": "The name shown under the app icon.",
+                    "key": "appName",
+                    "required": true,
+                    "title": "App name",
+                    "type": "kotlin.String",
+                    "values": null
+                }
+            ]
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": "APKS",
+                    "appIconColor": "#000000",
+                    "description": null,
+                    "name": "Threads",
+                    "packageName": "com.instagram.barcelona",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": 28,
+                            "version": "434.0.0.41.74"
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [],
+            "description": "Changes the app name shown under the launcher icon. Set the desired name in the patch options.",
+            "name": "Change app name",
+            "options": [
+                {
+                    "default": "Threads Morphe",
+                    "description": "The name shown under the app icon.",
+                    "key": "appName",
+                    "required": true,
+                    "title": "App name",
+                    "type": "kotlin.String",
+                    "values": null
+                }
+            ]
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": "APK",
+                    "appIconColor": "#2D6CDF",
+                    "description": null,
+                    "name": "Arrow Puzzle",
+                    "packageName": "com.easybrain.arrow.puzzle.game",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": 26,
+                            "version": "1.7.0"
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [],
+            "description": "Changes the app package name so the patched app installs alongside the original. Set the desired package name in the patch options. WARNING: this game ships native integrity/signing libraries; a renamed + re-signed package may trip a native tamper check. Disable this patch if the app crashes or closes on launch.",
+            "name": "Change package name",
+            "options": [
+                {
+                    "default": "com.easybrain.arrow.puzzle.game.morphe",
+                    "description": "The new application package name (e.g. com.easybrain.arrow.puzzle.game.morphe).",
+                    "key": "packageName",
+                    "required": true,
+                    "title": "Package name",
+                    "type": "kotlin.String",
+                    "values": null
+                }
+            ]
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": "APKS",
+                    "appIconColor": "#36D4C3",
+                    "description": null,
+                    "name": "Nutrilio",
+                    "packageName": "net.nutrilio",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": 26,
+                            "version": "1.20.2"
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [],
+            "description": "Changes the app package name so the patched app installs alongside the original. Set the desired package name in the patch options. Changing the package name can cause unexpected issues with some app features.",
+            "name": "Change package name",
+            "options": [
+                {
+                    "default": "net.nutrilio.morphe",
+                    "description": "The new application package name (e.g. net.nutrilio.morphe).",
+                    "key": "packageName",
+                    "required": true,
+                    "title": "Package name",
+                    "type": "kotlin.String",
+                    "values": null
+                }
+            ]
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": "APKM",
+                    "appIconColor": "#7460A4",
+                    "description": null,
+                    "name": "SonyLIV",
+                    "packageName": "com.sonyliv",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": 22,
+                            "version": "6.23.1"
+                        }
+                    ]
+                }
+            ],
+            "default": false,
+            "dependencies": [],
+            "description": "Changes the app package name so the patched app installs alongside the original. Set the desired package name in the patch options. Changing the package name can cause unexpected issues with some app features.",
+            "name": "Change package name",
+            "options": [
+                {
+                    "default": "com.sonyliv.chiggi",
+                    "description": "The new application package name (e.g. com.sonyliv.chiggi).",
+                    "key": "packageName",
+                    "required": true,
+                    "title": "Package name",
+                    "type": "kotlin.String",
+                    "values": null
+                }
+            ]
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": "APKS",
+                    "appIconColor": "#000000",
+                    "description": null,
+                    "name": "Threads",
+                    "packageName": "com.instagram.barcelona",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": 28,
+                            "version": "434.0.0.41.74"
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [],
+            "description": "Changes the app package name so the patched app installs alongside the original Threads. Set the desired package name in the patch options. WARNING: Meta apps hardcode many component/provider references — renaming the package can break Facebook login (SSO), content providers, or push. Disable this patch if you hit such issues.",
+            "name": "Change package name",
+            "options": [
+                {
+                    "default": "com.instagram.barcelona.morphe",
+                    "description": "The new application package name (e.g. com.instagram.barcelona.morphe).",
+                    "key": "packageName",
+                    "required": true,
+                    "title": "Package name",
+                    "type": "kotlin.String",
+                    "values": null
+                }
+            ]
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": "APK",
+                    "appIconColor": "#2D6CDF",
+                    "description": null,
+                    "name": "Arrow Puzzle",
+                    "packageName": "com.easybrain.arrow.puzzle.game",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": 26,
+                            "version": "1.7.0"
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [],
+            "description": "Stops Easybrain analytics event upload (Unity AnalyticsPlugin send + the central AnalyticsController collector). SDK init is left intact so ad removal stays stable. Does not disable deep GMS/Firebase auto-collection; pair with Remove AD_ID for advertising-id.",
+            "name": "Disable analytics",
+            "options": []
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": "APK",
+                    "appIconColor": "#0C0D14",
+                    "description": null,
+                    "name": "CrazyGames",
+                    "packageName": "com.crazygames.crazygamesapp",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": 24,
+                            "version": "1.6.7"
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [],
+            "description": "Stops native Sentry crash/telemetry upload by neutering the Capacitor Sentry plugin's native init (io.sentry.capacitor.SentryCapacitor.initNativeSdk), so it resolves without starting the native Sentry SDK. Firebase auth, ConfigCat and push are unaffected.",
+            "name": "Disable analytics",
+            "options": []
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": "APKS",
+                    "appIconColor": "#36D4C3",
+                    "description": null,
+                    "name": "Nutrilio",
+                    "packageName": "net.nutrilio",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": 26,
+                            "version": "1.20.2"
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [],
+            "description": "Disables Firebase/Google Analytics, Crashlytics and Performance data collection via manifest flags and removes the advertising-id (AD_ID) permissions. Push notifications are unaffected.",
+            "name": "Disable analytics",
+            "options": []
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": "APKM",
+                    "appIconColor": "#7460A4",
+                    "description": null,
+                    "name": "SonyLIV",
+                    "packageName": "com.sonyliv",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": 22,
+                            "version": "6.23.1"
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [],
+            "description": "Disables AppsFlyer attribution and event tracking. Other SDKs (CleverTap, Firebase Analytics/Crashlytics) are not affected by this patch.",
+            "name": "Disable AppsFlyer tracking",
+            "options": []
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": "APKM",
+                    "appIconColor": "#7460A4",
+                    "description": null,
+                    "name": "SonyLIV",
+                    "packageName": "com.sonyliv",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": 22,
+                            "version": "6.23.1"
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [],
+            "description": "Disables Firebase Analytics, Crashlytics and Performance data collection via manifest flags. Push notifications are unaffected.",
+            "name": "Disable Firebase tracking",
+            "options": []
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": "APKM",
+                    "appIconColor": "#7460A4",
+                    "description": null,
+                    "name": "SonyLIV",
+                    "packageName": "com.sonyliv",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": 22,
+                            "version": "6.23.1"
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [],
+            "description": "Removes the forced ('immediate') and optional ('flexi') 'update available' popup shown on the home screen.",
+            "name": "Disable forced update",
+            "options": []
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": "APKS",
+                    "appIconColor": "#36D4C3",
+                    "description": null,
+                    "name": "Nutrilio",
+                    "packageName": "net.nutrilio",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": 26,
+                            "version": "1.20.2"
+                        }
+                    ]
+                }
+            ],
+            "default": false,
+            "dependencies": [],
+            "description": "Adds the search box view below each meal-time header in the day/meal form. Enabled automatically by \"Add food search bar\".",
+            "name": "Food search bar layout",
+            "options": []
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": "APKS",
+                    "appIconColor": "#000000",
+                    "description": null,
+                    "name": "Threads",
+                    "packageName": "com.instagram.barcelona",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": 28,
+                            "version": "434.0.0.41.74"
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [],
+            "description": "Hides sponsored posts and injected \"suggested\" netego units from the Threads feed. Marks every media as organic (Media.DED) and blocks the feed ad-injection scheduler (BarcelonaSpoolFeedCacheHandler). Client-side only.",
+            "name": "Hide ads",
+            "options": []
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": "APKM",
+                    "appIconColor": "#7460A4",
+                    "description": null,
+                    "name": "SonyLIV",
+                    "packageName": "com.sonyliv",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": 22,
+                            "version": "6.23.1"
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [],
+            "description": "Hides the CleverTap-driven subscribe/premium promo banners and promo trays on the home screen. Content rows and CleverTap pop-ups/overlays are not affected.",
+            "name": "Hide promo banners",
+            "options": []
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": "APKS",
+                    "appIconColor": "#36D4C3",
+                    "description": null,
+                    "name": "Nutrilio",
+                    "packageName": "net.nutrilio",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": 26,
+                            "version": "1.20.2"
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [],
+            "description": "Adds a native \"Local backup & restore\" row to the Backup screen (above Restore Backup) that opens Nutrilio's built-in (but normally hidden) local file backup/restore. There you can export a complete backup — all entries, images and settings — to a portable .nutrilio file (a ZIP) via the share sheet, and restore one from a file you pick. No Google account, no premium needed. (Google Drive auto-backup is separate and still requires sign-in, which does not work on a re-signed app.)",
+            "name": "Local backup & restore",
+            "options": []
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": "APK",
+                    "appIconColor": "#2D6CDF",
+                    "description": null,
+                    "name": "Arrow Puzzle",
+                    "packageName": "com.easybrain.arrow.puzzle.game",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": 26,
+                            "version": "1.7.0"
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [],
+            "description": "Removes the advertising-id and Ad Services (Privacy Sandbox) permissions so the device advertising id, Topics and Attribution signals cannot be read for ad tracking.",
+            "name": "Remove AD_ID permission",
+            "options": []
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": "APK",
+                    "appIconColor": "#0C0D14",
+                    "description": null,
+                    "name": "CrazyGames",
+                    "packageName": "com.crazygames.crazygamesapp",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": 24,
+                            "version": "1.6.7"
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [],
+            "description": "Removes the advertising-id and Ad Services (Privacy Sandbox) permissions so the device advertising id, Topics, Attribution and Custom Audience signals cannot be read for ad tracking.",
+            "name": "Remove AD_ID permission",
+            "options": []
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": "APKS",
+                    "appIconColor": "#000000",
+                    "description": null,
+                    "name": "Threads",
+                    "packageName": "com.instagram.barcelona",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": 28,
+                            "version": "434.0.0.41.74"
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [],
+            "description": "Removes the advertising-id (AD_ID) permissions so the device advertising id cannot be read for ad tracking. Does not disable Meta's core analytics.",
+            "name": "Remove AD_ID permission",
+            "options": []
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": "APK",
+                    "appIconColor": "#2D6CDF",
+                    "description": null,
+                    "name": "Arrow Puzzle",
+                    "packageName": "com.easybrain.arrow.puzzle.game",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": 26,
+                            "version": "1.7.0"
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [],
+            "description": "Removes ALL ads (banner, interstitial and rewarded) by neutering the Unity<->Android ad facade (com.easybrain.ads.unity.AdsPlugin): availability/show booleans return false, banner shows are no-ops and banner height is 0. The game treats every ad type as never ready. Note: rewarded ads are also removed, so watch-to-earn rewards no longer work.",
+            "name": "Remove ads",
+            "options": []
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": "APK",
+                    "appIconColor": "#0C0D14",
+                    "description": null,
+                    "name": "CrazyGames",
+                    "packageName": "com.crazygames.crazygamesapp",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": 24,
+                            "version": "1.6.7"
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [],
+            "description": "Removes native ads (AdMob and its Pangle/Audience Network mediation) by neutering the Capacitor AdMob plugin (com.getcapacitor.community.admob.AdMob): no video is shown for interstitial or rewarded ads — instead the show methods fire the ad's lifecycle events so the game's loading overlay dismisses and rewarded ads still credit their reward; banners never display. Note: in-page web video ads served remotely inside the WebView (from crazygames.com) are not part of the app bytecode and cannot be removed here.",
+            "name": "Remove ads",
+            "options": []
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": "APKM",
+                    "appIconColor": "#7460A4",
+                    "description": null,
+                    "name": "SonyLIV",
+                    "packageName": "com.sonyliv",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": 22,
+                            "version": "6.23.1"
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [],
+            "description": "Forces PlayerUtil.isAdEnable() to false so the player neither requests nor plays ads. Removes client-side (Google IMA) ads. Server-side stitched ads on some live content (MediaTailor/SSAI) may still appear.",
+            "name": "Remove video ads",
+            "options": []
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": "APKM",
+                    "appIconColor": "#7460A4",
+                    "description": null,
+                    "name": "SonyLIV",
+                    "packageName": "com.sonyliv",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": 22,
+                            "version": "6.23.1"
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [],
+            "description": "Stops the dedicated \"not available in your region\" and \"VPN detected\" block screens by downgrading the geo/EPD block to a generic error. Geoblocking is enforced server-side by IP, so this does not grant access without a valid in-region IP (e.g. a working India connection).",
+            "name": "Suppress geo / VPN block",
+            "options": []
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": "APKS",
+                    "appIconColor": "#36D4C3",
+                    "description": null,
+                    "name": "Nutrilio",
+                    "packageName": "net.nutrilio",
+                    "signatures": null,
+                    "targets": [
+                        {
+                            "description": null,
+                            "isExperimental": false,
+                            "minSdk": 26,
+                            "version": "1.20.2"
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [],
+            "description": "Unlocks Nutrilio PLUS+ by forcing the premium gate (PremiumModule.t2()) to return true. Every premium feature (custom colors, all charts, app lock, all tracking options) and the paywall treat the user as a subscriber. Client-side only; does not grant a real Google Play subscription.",
+            "name": "Unlock Plus",
+            "options": []
+        }
+    ]
+}

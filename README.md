@@ -2,13 +2,13 @@
 
 This branch hosts the data and source code for the 🔍 [Awesome for Morphe Website](https://nvbangg.github.io/awesome-for-morphe)
 
-## patch-bundles
+## /data
 
 The `/patch-bundles` directory can be used as a Morphe patch database, sourced from [ReVanced Patch Bundles](https://github.com/Jman-Github/ReVanced-Patch-Bundles) by Jman:
 
-- [`bundles-stable.json`](patch-bundles/bundles-stable.json) / [`bundles-dev.json`](patch-bundles/bundles-dev.json) — index of all bundles
-- `<bundle>-patch-bundles/*-patches-bundle.json` — bundle metadata
-- `<bundle>-patch-bundles/*-patches-list.json` — patches list
+- [`bundles-stable.json`](data/bundles-stable.json) / [`bundles-latest.json`](data/bundles-latest.json) / [`bundles-dev.json`](data/bundles-dev.json) — index of all bundles
+- `/patch-bundles/<bundle>-patch-bundles/*-patches-bundle.json` — bundle metadata
+- `/patch-bundles/<bundle>-patch-bundles/*-patches-list.json` — patches list
 
 ## Automation
 

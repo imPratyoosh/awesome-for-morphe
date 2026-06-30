@@ -89,24 +89,7 @@
       border-radius: 3px;
     }
 
-    .apps-scroll {
-      scrollbar-width: thin;
-      scrollbar-color: #3F3F46 rgba(255, 255, 255, 0.05);
-    }
 
-    .apps-scroll::-webkit-scrollbar {
-      height: 6px;
-    }
-
-    .apps-scroll::-webkit-scrollbar-track {
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 3px;
-    }
-
-    .apps-scroll::-webkit-scrollbar-thumb {
-      background: #3F3F46;
-      border-radius: 3px;
-    }
 
     @keyframes slideInLeft {
       from {
@@ -174,21 +157,22 @@
   <div id="app" v-cloak>
     <section class="mt-2 md:mt-12 max-w-4xl mx-auto px-3 flex flex-col gap-2 md:gap-4" aria-label="Main Content">
       <div class="bg-dark border-2 border-blue/20 rounded-2xl overflow-hidden shadow-lg relative z-10 mt-2 md:mt-4">
-        <div class="relative flex flex-col sm:flex-row items-center justify-center border-b-2 border-blue/10 py-3 sm:py-0 sm:h-12 gap-2 sm:gap-0 px-4">
+        <div
+          class="relative flex flex-col sm:flex-row items-center justify-center border-b-2 border-blue/10 py-3 sm:py-0 sm:h-12 gap-2 sm:gap-0 px-4">
           <h1
             class="text-2xl md:text-3xl font-extrabold whitespace-nowrap flex items-center text-transparent bg-clip-text bg-gradient-to-r from-blue to-green">
             Awesome for Morphe</h1>
-            
+
           <div class="flex items-center gap-2">
             <a href="https://github.com/nvbangg/awesome-for-morphe" target="_blank" rel="noreferrer"
-              class="sm:absolute sm:left-3 flex items-center justify-center gap-1 px-2.5 py-0.5 bg-white/10 border border-white/20 rounded-full text-xs font-bold text-white hover:bg-white/20 hover:border-white/40 transition-all shadow-sm"
+              class="sm:absolute sm:left-3 flex items-center justify-center gap-1 px-2.5 py-0.5 sm:px-3 sm:py-1 bg-white/10 border border-white/20 rounded-full text-xs font-bold text-white hover:text-blue hover:bg-blue/10 hover:border-blue/30 active:scale-95 transition-all transform duration-150 shadow-sm"
               title="GitHub">
               <i class="fa-brands fa-github text-xs"></i>
               <span>GitHub</span>
             </a>
-            
+
             <a href="https://github.com/nvbangg/awesome-for-morphe/releases" target="_blank" rel="noreferrer"
-              class="sm:absolute sm:right-3 flex items-center justify-center gap-1 px-2.5 py-0.5 bg-yellow/10 border border-yellow/20 rounded-full text-xs font-bold text-yellow hover:bg-yellow/20 hover:border-yellow/40 transition-all shadow-sm shadow-yellow/5"
+              class="sm:absolute sm:right-3 flex items-center justify-center gap-1 px-2.5 py-0.5 sm:px-3 sm:py-1 bg-yellow/10 border border-yellow/20 rounded-full text-xs font-bold text-yellow hover:bg-yellow/20 hover:border-yellow/40 transition-all shadow-sm shadow-yellow/5"
               title="Changelog">
               <i class="fa-solid fa-clock-rotate-left text-xs"></i>
               <span>Changelog</span>
@@ -202,24 +186,29 @@
             <!-- Bundle filter dropdown -->
             <div class="relative w-full md:w-[25%] dd-root" id="bundle-dd">
               <button type="button" onclick="toggleDd('bundle-dd')"
-                class="w-full h-10 pl-3 pr-2 bg-black border border-lightGray rounded-md text-sm text-white flex items-center gap-1.5 hover:border-white/50 transition-all cursor-pointer"
+                class="w-full h-10 px-2.5 sm:px-3 bg-black border border-lightGray rounded-md text-sm text-white flex items-center gap-2 sm:gap-3 hover:border-white/50 transition-all cursor-pointer"
                 aria-label="Patch Bundles filter">
-                <span class="flex-1 truncate text-left">{{ bundle || '📦 All Bundles' }}</span>
-                <i class="fa-solid fa-chevron-down dd-chevron text-light text-xs flex-shrink-0 transition-transform duration-200"></i>
+                <i class="fa-solid fa-cubes text-light text-base shrink-0 -ml-1 sm:ml-0"></i>
+                <span class="flex-1 truncate text-left">{{ bundle || 'All Bundles' }}</span>
+                <i
+                  class="fa-solid fa-chevron-down dd-chevron text-light text-xs flex-shrink-0 transition-transform duration-200 -mr-0.5 sm:mr-0"></i>
               </button>
-              <div class="dd-panel max-h-[400px] overflow-y-auto apps-scroll bg-dark border border-lightGray rounded-md shadow-xl py-1 divide-y divide-white/10">
+              <div
+                class="dd-panel max-h-[400px] overflow-y-auto apps-scroll bg-dark border border-lightGray rounded-md shadow-xl py-1 divide-y divide-white/10">
                 <div class="sticky top-0 bg-dark px-2 pb-2 pt-1 border-b border-lightGray/30 z-10">
                   <div class="relative">
                     <span class="absolute left-2 top-0 h-8 flex items-center text-light pointer-events-none">
                       <i class="fa-solid fa-magnifying-glass text-[10px]"></i>
                     </span>
-                    <input type="search" v-model="bundleSearch" placeholder="Search bundles..." class="w-full h-8 pl-6 pr-2 bg-black border border-lightGray rounded-md text-xs text-white focus:border-light focus:ring-1 focus:ring-light/20 outline-none transition-all" autocomplete="off" @click.stop>
+                    <input type="search" v-model="bundleSearch" placeholder="Search bundles..."
+                      class="w-full h-8 pl-6 pr-2 bg-black border border-lightGray rounded-md text-xs text-white focus:border-light focus:ring-1 focus:ring-light/20 outline-none transition-all"
+                      autocomplete="off" @click.stop>
                   </div>
                 </div>
                 <div :class="!bundle ? 'text-white bg-white/10 font-medium' : 'text-white hover:bg-white/5'"
                   :data-selected="!bundle ? 'true' : null"
                   @click="bundle = ''; bundleSearch = ''; $event.target.closest('.dd-root').classList.remove('open')"
-                  class="px-3 py-2 text-sm cursor-pointer transition-colors">📦 All Bundles</div>
+                  class="px-3 py-2 text-sm cursor-pointer transition-colors">All Bundles</div>
                 <div v-for="opt in filteredBundleOptions" :key="opt.value"
                   :class="bundle === opt.value ? 'text-white bg-white/10 font-medium' : 'text-white hover:bg-white/5'"
                   :data-selected="bundle === opt.value ? 'true' : null"
@@ -231,24 +220,30 @@
             <!-- App filter dropdown -->
             <div class="relative w-full md:w-[25%] dd-root" id="app-dd">
               <button type="button" onclick="toggleDd('app-dd')"
-                class="w-full h-10 pl-3 pr-2 bg-black border border-lightGray rounded-md text-sm text-white flex items-center gap-1.5 hover:border-white/50 transition-all cursor-pointer"
+                class="w-full h-10 px-2.5 sm:px-3 bg-black border border-lightGray rounded-md text-sm text-white flex items-center gap-2 sm:gap-3 hover:border-white/50 transition-all cursor-pointer"
                 aria-label="Apps filter">
-                <span class="flex-1 truncate text-left">{{ app ? (filterOptions.appOptions.find(o => o.value === app)?.label || app) : '📱 All Apps' }}</span>
-                <i class="fa-solid fa-chevron-down dd-chevron text-light text-xs flex-shrink-0 transition-transform duration-200"></i>
+                <i class="fa-brands fa-android text-light text-base shrink-0 -ml-1 sm:ml-0"></i>
+                <span class="flex-1 truncate text-left">{{ app ? (filterOptions.appOptions.find(o => o.value ===
+                  app)?.label || app) : 'All Apps' }}</span>
+                <i
+                  class="fa-solid fa-chevron-down dd-chevron text-light text-xs flex-shrink-0 transition-transform duration-200 -mr-0.5 sm:mr-0"></i>
               </button>
-              <div class="dd-panel max-h-[400px] overflow-y-auto apps-scroll bg-dark border border-lightGray rounded-md shadow-xl py-1 divide-y divide-white/10">
+              <div
+                class="dd-panel max-h-[400px] overflow-y-auto apps-scroll bg-dark border border-lightGray rounded-md shadow-xl py-1 divide-y divide-white/10">
                 <div class="sticky top-0 bg-dark px-2 pb-2 pt-1 border-b border-lightGray/30 z-10">
                   <div class="relative">
                     <span class="absolute left-2 top-0 h-8 flex items-center text-light pointer-events-none">
                       <i class="fa-solid fa-magnifying-glass text-[10px]"></i>
                     </span>
-                    <input type="search" v-model="appSearch" placeholder="Search apps..." class="w-full h-8 pl-6 pr-2 bg-black border border-lightGray rounded-md text-xs text-white focus:border-light focus:ring-1 focus:ring-light/20 outline-none transition-all" autocomplete="off" @click.stop>
+                    <input type="search" v-model="appSearch" placeholder="Search apps..."
+                      class="w-full h-8 pl-6 pr-2 bg-black border border-lightGray rounded-md text-xs text-white focus:border-light focus:ring-1 focus:ring-light/20 outline-none transition-all"
+                      autocomplete="off" @click.stop>
                   </div>
                 </div>
                 <div :class="!app ? 'text-white bg-white/10 font-medium' : 'text-white hover:bg-white/5'"
                   :data-selected="!app ? 'true' : null"
                   @click="app = ''; appSearch = ''; $event.target.closest('.dd-root').classList.remove('open')"
-                  class="px-3 py-2 text-sm cursor-pointer transition-colors">📱 All Apps</div>
+                  class="px-3 py-2 text-sm cursor-pointer transition-colors">All Apps</div>
                 <div v-for="opt in filteredAppOptions" :key="opt.value"
                   :class="app === opt.value ? 'text-white bg-white/10 font-medium' : 'text-white hover:bg-white/5'"
                   :data-selected="app === opt.value ? 'true' : null"
@@ -257,12 +252,12 @@
               </div>
             </div>
 
-            <form @submit.prevent="$event.target.querySelector('input').blur()" class="relative w-full md:w-[50%] min-w-0 col-span-2 mt-0">
+            <form @submit.prevent="$event.target.querySelector('input').blur()"
+              class="relative w-full md:w-[50%] min-w-0 col-span-2 mt-0">
               <span class="absolute left-3 top-0 h-10 flex items-center text-light pointer-events-none">
                 <i class="fa-solid fa-magnifying-glass text-xs"></i>
               </span>
-              <input type="search" v-model="query" autocomplete="off" enterkeyhint="search"
-                placeholder="Search patches"
+              <input type="search" v-model="query" autocomplete="off" enterkeyhint="search" placeholder="Search patches"
                 class="w-full h-10 pl-8 pr-9 bg-black border border-gray rounded-md focus:border-light focus:ring-2 focus:ring-light/20 outline-none transition-all text-sm text-white">
               <button v-if="query" type="button" @click="query = ''"
                 class="absolute right-0 top-0 h-10 w-9 flex items-center justify-center text-light hover:text-white transition-colors"
@@ -277,37 +272,51 @@
             <!-- Left Group -->
             <div class="flex flex-row items-center justify-center md:justify-start gap-2 w-full md:w-auto">
               <button @click="resetFilters"
-                class="w-[115px] h-8 flex items-center justify-center gap-1 bg-green/10 border border-green/20 rounded-md text-xs font-bold text-green hover:bg-green/20 hover:border-green/40 transition-all shadow-sm shadow-green/5 shrink-0"
+                class="w-[115px] h-8 flex items-center justify-center gap-1 bg-green/10 border border-green/30 rounded-full text-xs font-bold text-green hover:bg-green/20 hover:border-green/50 hover:scale-[1.02] active:scale-95 active:bg-green/30 active:border-green/60 transition-all transform duration-150 shadow-sm shadow-green/5 shrink-0"
                 title="Reset Filters">
                 <i class="fa-solid fa-arrow-rotate-left"></i>
                 <span>Reset Filters</span>
               </button>
-              
+
               <!-- Sort Dropdown -->
-              <div class="relative w-[115px]">
-                <select v-model="sortOrder" class="w-full h-8 pl-3 pr-8 appearance-none bg-black border border-gray rounded-md text-xs text-white focus:border-light focus:ring-1 focus:ring-light/20 outline-none transition-all cursor-pointer">
+              <!-- Sort Dropdown -->
+              <div class="relative w-[145px]">
+                <select v-model="sortOrder"
+                  class="w-full h-9 pl-8 pr-8 appearance-none bg-black border border-gray rounded-md text-xs text-white focus:border-light focus:ring-1 focus:ring-light/20 outline-none transition-all cursor-pointer">
                   <option value="default">Default Order</option>
                   <option value="apps_desc">Most Apps</option>
                   <option value="latest">Latest</option>
                 </select>
-                <i class="fa-solid fa-chevron-down absolute right-2.5 top-2.5 text-light text-[10px] pointer-events-none"></i>
+                <i
+                  class="fa-solid fa-sort-amount-down absolute left-2.5 top-[11px] text-light text-xs pointer-events-none"></i>
+                <i
+                  class="fa-solid fa-chevron-down absolute right-2.5 top-[13px] text-light text-[10px] pointer-events-none"></i>
               </div>
             </div>
 
             <!-- Center Group -->
             <div class="flex items-center justify-center gap-2 w-full md:w-auto">
+              <button @click="channel = 'latest'"
+                class="h-7 sm:h-8 px-3.5 sm:px-5 rounded-full text-xs sm:text-sm font-medium transition-all border"
+                :class="channel === 'latest' ? 'text-blue bg-blue/10 border-blue/20' : 'text-white bg-white/5 border-white/5 hover:bg-white/10'">Latest</button>
               <button @click="channel = 'stable'"
-                class="h-8 px-5 rounded-full text-sm font-medium transition-all border"
-                :class="channel === 'stable' ? 'text-blue bg-blue/10 border-blue/20' : 'text-white bg-white/5 border-white/5 hover:bg-white/10'">Stable</button>
-              <button @click="channel = 'dev'" class="h-8 px-5 rounded-full text-sm font-medium transition-all border"
+                class="h-7 sm:h-8 px-3.5 sm:px-5 rounded-full text-xs sm:text-sm font-medium transition-all border"
+                :class="channel === 'stable' ? 'text-green bg-green/10 border-green/20' : 'text-white bg-white/5 border-white/5 hover:bg-white/10'">Stable</button>
+              <button @click="channel = 'dev'"
+                class="h-7 sm:h-8 px-3.5 sm:px-5 rounded-full text-xs sm:text-sm font-medium transition-all border"
                 :class="channel === 'dev' ? 'text-yellow bg-yellow/10 border-yellow/20' : 'text-white bg-white/5 border-white/5 hover:bg-white/10'">Dev</button>
             </div>
 
             <!-- Right Group -->
-            <div class="flex flex-wrap items-center justify-center md:justify-end gap-2 w-full md:w-auto text-xs text-light shrink-0" aria-live="polite">
-              <span class="px-1.5 py-0.5 bg-white/5 rounded-full border border-white/5">{{ stats?.bundles || 0 }} bundles</span>
-              <span class="px-1.5 py-0.5 bg-white/5 rounded-full border border-white/5">{{ stats?.apps || 0 }} apps</span>
-              <span class="px-1.5 py-0.5 bg-white/5 rounded-full border border-white/5">{{ stats?.patches || 0 }} patches</span>
+            <div
+              class="flex flex-wrap items-center justify-center md:justify-end gap-2 w-full md:w-auto text-xs text-light shrink-0"
+              aria-live="polite">
+              <span class="px-1.5 py-0.5 bg-white/5 rounded-full border border-white/5">{{ stats?.bundles || 0 }}
+                bundles</span>
+              <span class="px-1.5 py-0.5 bg-white/5 rounded-full border border-white/5">{{ stats?.apps || 0 }}
+                apps</span>
+              <span class="px-1.5 py-0.5 bg-white/5 rounded-full border border-white/5">{{ stats?.patches || 0 }}
+                patches</span>
             </div>
           </div>
         </div>
@@ -345,8 +354,10 @@
                 <span
                   class="flex flex-wrap items-center justify-center md:justify-start gap-2 text-light shrink-0 w-full md:w-auto">
                   <div class="flex items-center justify-center md:justify-start gap-2 w-full md:w-auto">
+                    <img v-if="group.bundle.avatarUrl" :src="group.bundle.avatarUrl" alt="Avatar"
+                      class="w-[26px] h-[26px] sm:w-7 sm:h-7 rounded-full bg-lightGray/20 object-cover pointer-events-none select-none shrink-0">
                     <strong
-                      class="font-bold text-xl flex items-center text-transparent bg-clip-text bg-gradient-to-r from-blue to-green">{{
+                      class="font-bold text-2xl flex items-center text-transparent bg-clip-text bg-gradient-to-r from-blue to-green">{{
                       group.key }}</strong>
                     <span v-if="isChangelogView && changelogHighlights.includes(group.key)"
                       class="px-2 py-0.5 text-xs text-yellow bg-yellow/10 border border-yellow/20 rounded-full font-bold ml-1.5 shadow-sm flex items-center">
@@ -359,25 +370,26 @@
                       :class="getPlatformMeta(group.bundle.repo).color"
                       :aria-label="getPlatformMeta(group.bundle.repo).label"
                       :title="getPlatformMeta(group.bundle.repo).label">
-                      <i :class="getPlatformMeta(group.bundle.repo).icon"
-                        class="text-2xl leading-none"></i>
+                      <i :class="getPlatformMeta(group.bundle.repo).icon" class="text-2xl leading-none"></i>
                     </a>
-                    <a v-if="group.bundle.repo && morpheUrl(group.bundle.repo)" :href="morpheUrl(group.bundle.repo)" target="_blank" rel="noreferrer"
-                      @click.stop
-                      class="px-1.5 py-0.5 text-sm text-green bg-green/10 border border-green/20 rounded-full font-medium hover:bg-green/20 hover:text-green transition-colors">Add
-                      to Morphe</a>
+                    <a v-if="group.bundle.repo && morpheUrl(group.bundle.repo)" :href="morpheUrl(group.bundle.repo)"
+                      target="_blank" rel="noreferrer" @click.stop
+                      class="px-1.5 py-0.5 text-sm text-green bg-green/10 border border-green/20 rounded-full font-medium hover:bg-green/20 hover:text-green transition-colors"><i
+                        class="fa-solid fa-plus text-xs mr-1 relative -top-[0.5px]"></i>Add to Morphe</a>
                   </div>
                 </span>
                 <span
                   class="flex flex-row items-center gap-2 text-xs text-light shrink-0 justify-center md:justify-end w-full md:w-auto">
                   <template v-if="group.bundle.version">
-                    <a v-if="releaseUrl(group.bundle)" :href="releaseUrl(group.bundle)" target="_blank"
-                      rel="noreferrer" @click.stop
-                      class="flex items-center gap-1 px-1.5 py-0.5 text-xs text-white bg-white/5 border border-white/10 rounded-full font-medium hover:bg-blue/10 hover:text-blue hover:border-blue/20 transition-colors"><i class="fa-solid fa-clock-rotate-left text-[10px] mt-[1px]"></i><span class="leading-none">{{
-                      group.bundle.version }}</span></a>
+                    <a v-if="releaseUrl(group.bundle)" :href="releaseUrl(group.bundle)" target="_blank" rel="noreferrer"
+                      @click.stop
+                      class="px-1.5 py-0.5 text-xs text-white bg-white/5 border border-white/10 rounded-full font-medium hover:bg-blue/10 hover:text-blue hover:border-blue/20 transition-colors"><i
+                        class="fa-solid fa-clock-rotate-left text-[10px] mr-1 relative -top-[0.5px]"></i>{{
+                      group.bundle.version }}</a>
                     <span v-else
-                      class="flex items-center gap-1 px-1.5 py-0.5 text-xs text-white bg-white/5 border border-white/10 rounded-full font-medium hover:bg-blue/10 hover:text-blue hover:border-blue/20 transition-colors"><i class="fa-solid fa-clock-rotate-left text-[10px] mt-[1px]"></i><span class="leading-none">{{
-                      group.bundle.version }}</span></span>
+                      class="px-1.5 py-0.5 text-xs text-white bg-white/5 border border-white/10 rounded-full font-medium hover:bg-blue/10 hover:text-blue hover:border-blue/20 transition-colors"><i
+                        class="fa-solid fa-clock-rotate-left text-[10px] mr-1 relative -top-[0.5px]"></i>{{
+                      group.bundle.version }}</span>
                   </template>
                   <span v-if="group.bundle.createdAt"
                     class="px-1.5 py-0.5 bg-white/5 rounded-full border border-white/5">{{
@@ -387,36 +399,50 @@
 
               <div class="border-t-2 border-lightGray bg-dark shadow-inner flex flex-col">
                 <template v-for="appsList in [group.appsList]">
-                  <div class="flex overflow-x-auto gap-1.5 py-1 px-3 border-b border-lightGray"
-                    style="scrollbar-width: thin;">
+                  <div class="flex overflow-x-auto gap-1.5 py-1.5 px-3 border-b border-lightGray">
                     <button v-for="(app, index) in appsList" :key="app.id" :id="'tab_' + group.key + '_' + app.id"
                       @click.stop="selectApp(group.key, app, appsList)"
-                      class="px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all border-2 outline-none shadow-sm flex items-center gap-1.5"
+                      class="px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all border-2 outline-none shadow-sm flex items-center gap-1"
                       :class="expandedOptions.has('app_' + group.key + '_' + app.id) ? 'bg-blue/10 text-blue border-blue/30 shadow-blue/5' : 'bg-dark text-light border-white/10 hover:border-white/20 hover:text-white hover:bg-white/5'">
-                      {{ (!app.appName || app.appName === 'Unspecified') ? 'Any app' : app.appName }}
-                      <span v-if="isChangelogView && (changelogHighlights.includes(group.key + ':' + app.packageName) || changelogHighlights.includes(group.key + ':' + app.appName))"
-                        class="px-1.5 py-0.5 text-[10px] leading-none text-yellow bg-yellow/10 border border-yellow/20 rounded-full font-bold">✨ New</span>
+                      <span>{{ (!app.appName || app.appName === 'Unspecified') ? 'Any app' : app.appName }}</span>
+                      <span
+                        v-if="isChangelogView && (changelogHighlights.includes(group.key + ':' + app.packageName) || changelogHighlights.includes(group.key + ':' + app.appName))"
+                        class="px-1.5 py-0.5 text-[10px] leading-none text-yellow bg-yellow/10 border border-yellow/20 rounded-full font-bold">✨
+                        New</span>
                     </button>
                   </div>
 
                   <template v-for="(app, index) in appsList" :key="'content-'+app.id">
                     <div v-if="expandedOptions.has('app_' + group.key + '_' + app.id)" @touchstart="handleTouchStart"
                       @touchend="handleTouchEnd($event, group.key, app, appsList)"
-                      class="p-3 pt-2 flex flex-col gap-3 shadow-inner"
+                      class="p-3 pt-4 flex flex-col gap-3 shadow-inner"
                       :class="activeSwipeGroup === group.key && swipeDirection ? 'swipe-transition-' + swipeDirection : ''">
                       <div class="flex flex-wrap items-center gap-2.5 min-w-0">
                         <template v-if="app.packageName && app.appName && app.appName !== 'Unspecified'">
                           <button @click.stop="filterByApp(app.packageName)"
-                            class="px-2.5 py-1 bg-blue hover:bg-blue/80 text-white rounded-md text-xs font-semibold shrink-0 transition-colors shadow-sm">Filter
-                            by this app</button>
+                            class="inline-flex items-center gap-1 px-2.5 py-1 bg-blue hover:bg-blue/80 text-white rounded-full text-xs font-semibold shrink-0 transition-colors shadow-sm">
+                            <i class="fa-solid fa-filter text-[10px] mt-[0.5px] shrink-0"></i>
+                            <span>Filter by this app</span>
+                          </button>
                           <a :href="playUrl(app.packageName)"
-                            class="inline-block px-1.5 py-0.5 border border-blue/30 hover:border-blue/50 rounded-full text-xs font-medium text-blue underline hover:text-blue/80 transition-colors break-all shadow-sm"
-                            target="_blank" @click.stop>{{ app.packageName }}</a>
+                            class="inline-flex items-center gap-1 px-2.5 py-1 bg-blue/10 border border-blue/20 rounded-full text-xs font-semibold text-blue hover:bg-blue/20 hover:border-blue/30 hover:text-blue transition-all shadow-sm break-all"
+                            target="_blank" @click.stop title="Open on Play Store">
+                            <i class="fa-brands fa-google-play text-xs mt-[0.5px] shrink-0"></i>
+                            <span>{{ app.packageName }}</span>
+                          </a>
+                          <button @click.stop="copyText(app.packageName, 'pkg_' + group.key + '_' + app.id)"
+                            class="p-1 text-light hover:text-white hover:bg-white/5 border border-white/10 rounded-md transition-all shadow-sm flex items-center justify-center h-7 w-7 shrink-0 cursor-pointer"
+                            title="Copy package name">
+                            <i class="fa-solid text-xs"
+                              :class="copiedStates['pkg_' + group.key + '_' + app.id] ? 'fa-check text-green' : 'fa-regular fa-copy'"></i>
+                          </button>
                         </template>
                         <template v-else>
                           <button @click.stop="filterByApp('universal')"
-                            class="px-2.5 py-1 bg-blue hover:bg-blue/80 text-white rounded-md text-xs font-semibold shrink-0 transition-colors shadow-sm">Filter
-                            by this app</button>
+                            class="inline-flex items-center gap-1 px-2.5 py-1 bg-blue hover:bg-blue/80 text-white rounded-full text-xs font-semibold shrink-0 transition-colors shadow-sm">
+                            <i class="fa-solid fa-filter text-[10px] mt-[0.5px] shrink-0"></i>
+                            <span>Filter by this app</span>
+                          </button>
                         </template>
                       </div>
 
@@ -430,8 +456,10 @@
                             <div class="flex items-center gap-2 flex-wrap min-w-0">
                               <strong class="font-bold text-white text-sm flex items-center gap-2">
                                 {{ patch.patchName }}
-                                <span v-if="isChangelogView && changelogHighlights.includes(group.key + ':' + (app.packageName || 'universal') + ':' + patch.patchName)"
-                                  class="px-1.5 py-0.5 text-[10px] leading-none text-yellow bg-yellow/10 border border-yellow/20 rounded-full font-bold">✨ New</span>
+                                <span
+                                  v-if="isChangelogView && changelogHighlights.includes(group.key + ':' + (app.packageName || 'universal') + ':' + patch.patchName)"
+                                  class="px-1.5 py-0.5 text-[10px] leading-none text-yellow bg-yellow/10 border border-yellow/20 rounded-full font-bold">✨
+                                  New</span>
                               </strong>
                               <span v-if="!patch.enabled"
                                 class="px-1.5 py-0.5 text-[10px] text-yellow bg-yellow/10 rounded-full font-bold">off</span>

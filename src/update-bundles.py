@@ -2,6 +2,7 @@
 
 import json
 import os
+import urllib.request
 from pathlib import Path
 
 ROOT = Path.cwd()
@@ -25,6 +26,44 @@ def write_json(path, data):
 def get_repo(bundle_json):
     parts = bundle_json.get("download_url", "").split("/")
     return "/".join(parts[:5]) if len(parts) >= 5 else ""
+
+
+def get_gitlab_avatar(username):
+    try:
+        req = urllib.request.Request(f'https://gitlab.com/api/v4/users?username={username}', headers={'User-Agent': 'Mozilla/5.0'})
+        response = urllib.request.urlopen(req)
+        data = json.loads(response.read().decode('utf-8'))
+        if data and len(data) > 0:
+            avatar = data[0].get('avatar_url', '')
+            if avatar:
+                return avatar.replace("s=80", "s=128")
+    except Exception as e:
+        print(f"Failed to fetch gitlab avatar for {username}: {e}")
+    return ""
+
+
+def get_avatar(base_key, repo_url, cache):
+    if base_key in cache:
+        return cache[base_key]
+    if not repo_url:
+        return ""
+    
+    avatar_url = ""
+    if "github.com/" in repo_url:
+        parts = repo_url.split("github.com/")
+        if len(parts) > 1:
+            username = parts[1].split("/")[0]
+            if username:
+                avatar_url = f"https://github.com/{username}.png?size=128"
+    elif "gitlab.com/" in repo_url:
+        parts = repo_url.split("gitlab.com/")
+        if len(parts) > 1:
+            username = parts[1].split("/")[0]
+            if username:
+                avatar_url = get_gitlab_avatar(username)
+                
+    cache[base_key] = avatar_url
+    return avatar_url
 
 
 def collect_discovered_names(list_json):
@@ -57,6 +96,8 @@ def main():
     app_names = read_json(APP_NAMES_PATH, {}) or {}
     stable_bundles = {}
     dev_bundles = {}
+    latest_bundles = {}
+    avatar_cache = {}
 
     seen_pkgs = set()
     all_pkgs = set()
@@ -69,7 +110,7 @@ def main():
             continue
         base = bundle_dir.name.replace("-patch-bundles", "")
 
-        for channel in ("stable", "dev"):
+        for channel in ("stable", "dev", "latest"):
             bundle_path = bundle_dir / f"{base}-{channel}-patches-bundle.json"
             list_path = bundle_dir / f"{base}-{channel}-patches-list.json"
 
@@ -83,8 +124,14 @@ def main():
 
             # 1. Add to bundles lists
             repo = get_repo(bundle_json)
-            target_bundles = stable_bundles if channel == "stable" else dev_bundles
-            target_bundles[base] = {"repo": repo}
+            avatar_url = get_avatar(base, repo, avatar_cache)
+            if channel == "stable":
+                target_bundles = stable_bundles
+            elif channel == "dev":
+                target_bundles = dev_bundles
+            else:
+                target_bundles = latest_bundles
+            target_bundles[base] = {"repo": repo, "avatarUrl": avatar_url}
 
             # 2. Collect app names
             scanned_lists += 1
@@ -101,8 +148,10 @@ def main():
     # Write bundles
     write_json(DATA_DIR / "bundles-stable.json", stable_bundles)
     write_json(DATA_DIR / "bundles-dev.json", dev_bundles)
+    write_json(DATA_DIR / "bundles-latest.json", latest_bundles)
     print(f"Generated bundles-stable.json with {len(stable_bundles)} bundles.")
     print(f"Generated bundles-dev.json with {len(dev_bundles)} bundles.")
+    print(f"Generated bundles-latest.json with {len(latest_bundles)} bundles.")
 
     # Write app names
     if added_names:

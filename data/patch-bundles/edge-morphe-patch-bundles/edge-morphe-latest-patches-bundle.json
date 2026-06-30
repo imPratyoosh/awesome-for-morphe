@@ -1,0 +1,7 @@
+{
+  "created_at": "2026-06-11T08:29:13",
+  "description": "# [1.32.0](https://github.com/quantavil/edge-morphe-patches/compare/v1.31.0...v1.32.0) (2026-06-11)\r\n\r\n  v1.32.0\r\n\r\n  ## \ud83d\ude80 What's New\r\n\r\n  ### \ud83d\udce6 Edge Base APK Upgrade\r\n\r\n  \u2022 Upgraded the base support APK from  148.0.3967.97  to  149.0.4022.53  ( com.microsoft.emmx ).\r\n  \u2022 Added target  149  to  EdgeCompatibility  configurations, ensuring full compatibility for all patches.\r\n\r\n  ### \ud83d\udee1\ufe0f Telemetry Patch Optimization\r\n\r\n  \u2022 Refactored [TelemetryEliminationPatch.kt](file:///home/quantavil/Documents/Project/edge-morphe-patches/patches/src/main/kotlin/app/morphe/patches/all/misc/telemetry/TelemetryEliminationPatch.kt) to use the cleaner, modern  matchAllMethodIndicesForEach  API.\r\n  \u2022 Replaced the manual 20-line fingerprint instruction iteration block with a streamlined 3-line pattern.\r\n  \u2022 Cleaned up unused imports ( Fingerprint ,  ReferenceInstruction ,  StringReference ).\r\n\r\n\r\n",
+  "download_url": "https://github.com/quantavil/edge-morphe-patches/releases/download/v1.32.0/patches-1.32.0.mpp",
+  "signature_download_url": "N/A",
+  "version": "v1.32.0"
+}

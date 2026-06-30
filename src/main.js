@@ -11,14 +11,14 @@ import {
 } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
 import { filterRows, getFilterOptions, loadChannelData, normalizeChannel, summarizeRows } from "./data.js";
 
-const DEFAULT_CHANNEL = "stable";
+const DEFAULT_CHANNEL = "latest";
 const PRIORITY_ORDER = [
   "morphe",
   "hoo-dles",
-  "rushiranpise",
-  "rookieenough",
-  "hoomans-morphe",
   "paresh-maheshwari",
+  "rookieenough",
+  "rushiranpise",
+  "hoomans-morphe",
   "patcheddit",
 ];
 
@@ -166,6 +166,7 @@ createApp({
     const params = new URLSearchParams(location.search);
     query.value = params.get("q") || "";
     channel.value = normalizeChannel(params.get("channel") || DEFAULT_CHANNEL);
+    sortOrder.value = params.get("sort") || "default";
 
     function parseShowParam() {
       const search = location.search.substring(1);
@@ -240,7 +241,7 @@ createApp({
     });
 
     // Sync state to URL on change
-    watch([query, showOptions, channel], (newVals, oldVals) => {
+    watch([query, showOptions, channel, sortOrder], (newVals, oldVals) => {
       // oldVals contains undefineds on the immediate initial run
       if (oldVals && oldVals.some(v => v !== undefined)) {
         isChangelogView.value = false;
@@ -259,6 +260,7 @@ createApp({
         urlParts.push(`show=${encodedShow}`);
       }
       if (channel.value !== DEFAULT_CHANNEL) urlParts.push(`channel=${channel.value}`);
+      if (sortOrder.value !== "default") urlParts.push(`sort=${sortOrder.value}`);
       if (isChangelogView.value) urlParts.push("new");
 
       const q = urlParts.join("&");
@@ -295,7 +297,11 @@ createApp({
         query: query.value,
         showOptions: app.value ? [`:${app.value}`] : [],
       });
-      let bundleOptions = getFilterOptions(rowsForSource).bundleOptions;
+      let bundleOptions = getFilterOptions(rowsForSource).bundleOptions.map(b => {
+        const bundleObj = activeData.value.bundleMap[b.value];
+        const repo = bundleObj ? bundleObj.repo.toLowerCase() : "";
+        return { ...b, repo };
+      });
 
       bundleOptions = [...bundleOptions].sort((a, b) => {
         const indexA = PRIORITY_ORDER.indexOf(a.value);
@@ -318,13 +324,24 @@ createApp({
     });
 
     const filteredAppOptions = computed(() => {
-      const s = appSearch.value.toLowerCase();
-      return filterOptions.value.appOptions.filter(o => o.label.toLowerCase().includes(s) || o.value.toLowerCase().includes(s));
+      const queryWords = appSearch.value.toLowerCase().split(/\s+/).filter(Boolean);
+      if (queryWords.length === 0) return filterOptions.value.appOptions;
+      return filterOptions.value.appOptions.filter(o => {
+        const label = o.label.toLowerCase();
+        const value = o.value.toLowerCase();
+        return queryWords.every(word => label.includes(word) || value.includes(word));
+      });
     });
 
     const filteredBundleOptions = computed(() => {
-      const s = bundleSearch.value.toLowerCase();
-      return filterOptions.value.bundleOptions.filter(o => o.label.toLowerCase().includes(s) || o.value.toLowerCase().includes(s));
+      const queryWords = bundleSearch.value.toLowerCase().split(/\s+/).filter(Boolean);
+      if (queryWords.length === 0) return filterOptions.value.bundleOptions;
+      return filterOptions.value.bundleOptions.filter(o => {
+        const label = o.label.toLowerCase();
+        const value = o.value.toLowerCase();
+        const repo = o.repo ? o.repo.toLowerCase() : "";
+        return queryWords.every(word => label.includes(word) || value.includes(word) || repo.includes(word));
+      });
     });
 
     const stats = computed(() => summarizeRows(filteredRows.value));
@@ -455,7 +472,7 @@ createApp({
         nextTick(() => {
           const btn = document.getElementById("tab_" + groupKey + "_" + clickedApp.id);
           if (btn) {
-            btn.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "nearest" });
+            btn.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
           }
         });
       }
@@ -574,6 +591,18 @@ createApp({
       return `https://morphe.software/add-source?${platform}=${encodeURI(info.path)}`;
     };
 
+    const copiedStates = reactive({});
+    const copyText = (text, key) => {
+      navigator.clipboard.writeText(text).then(() => {
+        copiedStates[key] = true;
+        setTimeout(() => {
+          copiedStates[key] = false;
+        }, 1500);
+      }).catch((err) => {
+        console.error("Failed to copy text: ", err);
+      });
+    };
+
     const resetFilters = () => {
       query.value = "";
       bundle.value = "";
@@ -582,7 +611,6 @@ createApp({
       bundleSearch.value = "";
       showOptions.value = [];
       isChangelogView.value = false;
-      sortOrder.value = "default";
       expandedOptions.clear();
       expandedVersions.clear();
     };
@@ -622,6 +650,8 @@ createApp({
       resetFilters,
       isChangelogView,
       changelogHighlights,
+      copyText,
+      copiedStates,
     };
   },
 }).mount("#app");

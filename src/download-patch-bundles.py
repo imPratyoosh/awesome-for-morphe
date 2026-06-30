@@ -9,7 +9,7 @@ from urllib.request import urlopen
 
 RAW = "https://raw.githubusercontent.com/Jman-Github/ReVanced-Patch-Bundles/bundles/patch-bundles"
 OUT_DIR = Path("data/patch-bundles")
-CHANNELS = ("stable", "dev")
+CHANNELS = ("stable", "dev", "latest")
 CONCURRENCY = 8
 
 
@@ -25,9 +25,6 @@ def download(url, retries=3):
 
 def normalize(text):
     return text if text.endswith("\n") else text + "\n"
-
-
-
 
 
 def is_morphe(bundle_json):
