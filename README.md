@@ -56,6 +56,7 @@
 - [Likes count not showing](https://www.reddit.com/r/MorpheApp/comments/1u4kjms/likes_count_not_showing/)
 - [Regarding the Morphe DMCA](https://www.reddit.com/r/MorpheApp/comments/1s3w1er/regarding_the_morphe_dmca/)
 - [How to install and use Shizuku](https://github.com/thedjchi/Shizuku/wiki)
+- [Beginner-friendly Morphe CLI guide](https://gist.github.com/akshay-abraham/01d63dc1911a8879943d781efd04ddfe)
 
 ## <a id="patch-indexes"></a> 🔍 Patch Indexes
 
@@ -63,10 +64,13 @@
 
 - [Official Website](https://morphe-patches.software/)
 - [Awesome for Morphe Website](https://nvbangg.github.io/awesome-for-morphe/) [![Repo](https://img.shields.io/badge/Repo-black?style=social&logo=github)](https://github.com/nvbangg/awesome-for-morphe)
-- [Patch Explorer](https://patch-explorer.web.app/) [![Repo](https://img.shields.io/badge/Repo-black?style=social&logo=gitlab)](https://gitlab.com/Paresh-Maheshwari/patch-explorer)
+- <details><summary><a href="https://patch-explorer.web.app/">Patch Explorer</a> <a href="https://gitlab.com/Paresh-Maheshwari/patch-explorer"><img src="https://img.shields.io/badge/Repo-black?style=social&logo=gitlab" alt="Repo"></a></summary>
+
+  Alternative: [Patch Explorer](https://paresh-maheshwari.github.io/patch-explorer/) [![Repo](https://img.shields.io/badge/Repo-black?style=social&logo=github)](https://github.com/Paresh-Maheshwari/patch-explorer)
+  </details>
 - [Revanced External Bundles](https://revanced-external-bundles.brosssh.com/) [![Repo](https://img.shields.io/badge/Repo-black?style=social&logo=github)](https://github.com/brosssh/revanced-external-bundles)
 - [Community Patch Space Explorer](https://dmh84.github.io/morphe-space-explorer/) [![Repo](https://img.shields.io/badge/Repo-black?style=social&logo=github)](https://github.com/dmh84/morphe-space-explorer)
-- [Morphe Patch Tracker](https://drnx64.github.io/morphe-track-patches/) [![Repo](https://img.shields.io/badge/Repo-black?style=social&logo=github)](https://github.com/drnx64/morphe-track-patches)
+- [Morphe Patch Tracker](https://morphe-patches-drnx64.vercel.app/) [![Repo](https://img.shields.io/badge/Repo-black?style=social&logo=github)](https://github.com/drnx64/morphe-track-patches)
 - [Patch Index sticky post](https://www.reddit.com/r/MorpheApp/comments/1ta0bek/how_to_patch_more_apps_with_morphe/)
 - [ReVanced Patch Bundles](https://github.com/Jman-Github/ReVanced-Patch-Bundles)
 
@@ -78,6 +82,7 @@
 - [Xisrr1/Revancify-Xisr](https://github.com/Xisrr1/Revancify-Xisr)
 - [Graywizard888/Enhancify](https://github.com/Graywizard888/Enhancify)
 - [hoo-dles/jadx-morphe](https://github.com/hoo-dles/jadx-morphe)
+- [rushiforai/morphe-archive](https://github.com/rushiforai/morphe-archive)
 
 ## ⬇️ Pre-patched sources
 
@@ -95,5 +100,5 @@
 
 ### 🙏 Credits
 
-- This project is inspired by [Awesome ReVanced](https://github.com/Jman-Github/Awesome-ReVanced) and [Patch Explorer](https://gitlab.com/Paresh-Maheshwari/patch-explorer).
+- This project is inspired by [Awesome ReVanced](https://github.com/Jman-Github/Awesome-ReVanced) and [Patch Explorer](https://github.com/Paresh-Maheshwari/patch-explorer).
 </details>
