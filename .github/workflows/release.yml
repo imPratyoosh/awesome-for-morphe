@@ -14,7 +14,7 @@ permissions:
 jobs:
   release:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v6
         with:
@@ -22,6 +22,14 @@ jobs:
 
       - name: Generate changelog
         run: python src/generate-changelog.py
+
+      - name: Periodically update metadata (Every Monday)
+        run: |
+          DAY_OF_WEEK=$(date +%u)
+          if [ "$DAY_OF_WEEK" -eq 1 ] || [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            pip install google-play-scraper
+            python src/update-metadata.py
+          fi
 
       - name: Check git changes
         id: changes

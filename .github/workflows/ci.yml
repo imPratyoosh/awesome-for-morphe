@@ -34,7 +34,9 @@ jobs:
 
       - name: Update bundles
         if: steps.changes.outputs.changed == 'true'
-        run: python src/update-bundles.py
+        run: |
+          pip install google-play-scraper
+          python src/update-bundles.py
 
       - name: Commit and push changes
         if: steps.changes.outputs.changed == 'true'
