@@ -5,6 +5,7 @@ import json
 import urllib.request
 import time
 from pathlib import Path
+import concurrent.futures
 
 try:
     from google_play_scraper import app as gplay_app
@@ -96,6 +97,7 @@ def main():
     # 1. Update App Icons
     app_metadata = read_json(APP_METADATA_PATH, {})
     app_updated = False
+    app_tasks = []
 
     for pkg, meta in app_metadata.items():
         if not isinstance(meta, dict):
@@ -115,12 +117,21 @@ def main():
             needs_update = False
 
         if needs_update:
-            print(f"Fetching icon for app: {pkg}")
-            icon = get_app_icon(pkg)
-            if icon:
-                app_metadata[pkg]["icon"] = icon
-                app_updated = True
-            time.sleep(0.3)
+            app_tasks.append(pkg)
+
+    if app_tasks:
+        print(f"Fetching icons for {len(app_tasks)} apps...")
+        with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+            future_to_pkg = {executor.submit(get_app_icon, pkg): pkg for pkg in app_tasks}
+            for future in concurrent.futures.as_completed(future_to_pkg):
+                pkg = future_to_pkg[future]
+                try:
+                    icon = future.result()
+                    if icon:
+                        app_metadata[pkg]["icon"] = icon
+                        app_updated = True
+                except Exception as exc:
+                    print(f"Failed to fetch icon for {pkg}: {exc}")
 
     if app_updated:
         write_json(APP_METADATA_PATH, app_metadata)
@@ -133,6 +144,8 @@ def main():
             continue
         
         bundle_updated = False
+        bundle_tasks = []
+
         for bundle_key, info in bundles.items():
             needs_update = False
             if force_all:
@@ -145,10 +158,25 @@ def main():
             if needs_update:
                 repo_url = info.get("repo", "")
                 old_avatar = info.get("avatarUrl", "")
-                new_avatar = update_bundle_avatar(bundle_key, repo_url, old_avatar, force=needs_update)
-                if new_avatar and new_avatar != old_avatar:
-                    bundles[bundle_key]["avatarUrl"] = new_avatar
-                    bundle_updated = True
+                bundle_tasks.append((bundle_key, repo_url, old_avatar))
+
+        if bundle_tasks:
+            print(f"Fetching avatars for {len(bundle_tasks)} bundles in {bundle_path.name}...")
+            with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+                future_to_bundle = {
+                    executor.submit(update_bundle_avatar, b_key, r_url, o_avatar, True): b_key 
+                    for b_key, r_url, o_avatar in bundle_tasks
+                }
+                for future in concurrent.futures.as_completed(future_to_bundle):
+                    b_key = future_to_bundle[future]
+                    try:
+                        new_avatar = future.result()
+                        old_avatar = bundles[b_key].get("avatarUrl", "")
+                        if new_avatar and new_avatar != old_avatar:
+                            bundles[b_key]["avatarUrl"] = new_avatar
+                            bundle_updated = True
+                    except Exception as exc:
+                        print(f"Failed to fetch avatar for {b_key}: {exc}")
         
         if bundle_updated:
             write_json(bundle_path, bundles)
