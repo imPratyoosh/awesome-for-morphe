@@ -1,4 +1,8 @@
 {
+  "ImmortalZeus": {
+    "repo": "https://github.com/ImmortalZeus/ImmortalZeus-Morphe-Patches",
+    "avatarUrl": "https://github.com/ImmortalZeus.png?size=128"
+  },
   "abhis1n": {
     "repo": "https://github.com/abhis1n/Morphe-Patches",
     "avatarUrl": "https://github.com/abhis1n.png?size=128"
@@ -90,10 +94,6 @@
   "ihealth-morphe": {
     "repo": "https://github.com/bdgerszewski/morphe-patches-ihealth",
     "avatarUrl": "https://github.com/bdgerszewski.png?size=128"
-  },
-  "ImmortalZeus": {
-    "repo": "https://github.com/ImmortalZeus/ImmortalZeus-Morphe-Patches",
-    "avatarUrl": "https://github.com/ImmortalZeus.png?size=128"
   },
   "imxeren": {
     "repo": "https://github.com/IMXEren/mix-patches",
