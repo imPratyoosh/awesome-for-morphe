@@ -833,6 +833,9 @@
       "Unlock aircraft data",
       "Use your own Maps API key [REQUIRED]"
     ],
+    "com.hevy": [
+      "Unlock Pro"
+    ],
     "com.hv.replaio": [
       "Unlock Premium"
     ],
@@ -959,6 +962,7 @@
       "Settings Homepage Override",
       "Swipeable Custom Top Row",
       "Web Clipboard",
+      "Zhuyin Bottom Row Key Sizes",
       "Zhuyin Quick Traditional/Simplified Toggle",
       "Zhuyin Slide Input"
     ]
@@ -1134,6 +1138,12 @@
       "Hide story ads"
     ]
   },
+  "morphe-google": {
+    "com.google.android.googlequicksearchbox": [
+      "Install as standalone app",
+      "Remove Discover feed ads"
+    ]
+  },
   "morphe": {
     "com.google.android.apps.youtube.music": [
       "Bypass certificate checks",
@@ -1274,6 +1284,13 @@
   "morphe-screenshot": {
     "universal": [
       "Remove screenshot restriction"
+    ]
+  },
+  "nai64": {
+    "universal": [
+      "Ads Free Rewards",
+      "No Ads",
+      "Spoof Play Store Install Source"
     ]
   },
   "npci-bhim": {
