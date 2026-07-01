@@ -182,13 +182,17 @@
 
         <div class="flex flex-col gap-3 p-2 md:p-3">
           <!-- Row 1: Filters -->
-          <div class="grid grid-cols-2 md:flex md:flex-row items-center gap-2.5">
+          <div class="flex flex-col md:flex-row items-center gap-2.5">
             <!-- Bundle filter dropdown -->
             <div class="relative w-full md:w-[25%] dd-root" id="bundle-dd">
               <button type="button" onclick="toggleDd('bundle-dd')"
-                class="w-full h-10 px-2.5 sm:px-3 bg-black border border-lightGray rounded-md text-sm text-white flex items-center gap-2 sm:gap-3 hover:border-white/50 transition-all cursor-pointer"
+                class="w-full h-[34px] px-2.5 sm:px-3 bg-black border border-lightGray rounded-md text-sm text-white flex items-center gap-2 sm:gap-3 hover:border-white/50 transition-all cursor-pointer"
                 aria-label="Patch Bundles filter">
-                <i class="fa-solid fa-cubes text-light text-base shrink-0 -ml-1 sm:ml-0"></i>
+                <template v-if="bundle">
+                  <img v-if="filterOptions.bundleOptions.find(o => o.value === bundle)?.icon" :src="filterOptions.bundleOptions.find(o => o.value === bundle)?.icon" class="w-4 h-4 rounded-full object-cover shrink-0" alt="" loading="lazy">
+                  <i v-else class="fa-solid fa-cubes text-light text-base shrink-0 -ml-1 sm:ml-0"></i>
+                </template>
+                <i v-else class="fa-solid fa-cubes text-light text-base shrink-0 -ml-1 sm:ml-0"></i>
                 <span class="flex-1 truncate text-left">{{ bundle || 'All Bundles' }}</span>
                 <i
                   class="fa-solid fa-chevron-down dd-chevron text-light text-xs flex-shrink-0 transition-transform duration-200 -mr-0.5 sm:mr-0"></i>
@@ -208,21 +212,37 @@
                 <div :class="!bundle ? 'text-white bg-white/10 font-medium' : 'text-white hover:bg-white/5'"
                   :data-selected="!bundle ? 'true' : null"
                   @click="bundle = ''; bundleSearch = ''; $event.target.closest('.dd-root').classList.remove('open')"
-                  class="px-3 py-2 text-sm cursor-pointer transition-colors">All Bundles</div>
+                  class="px-3 py-2 text-sm cursor-pointer transition-colors flex items-center gap-2">
+                  <i class="fa-solid fa-cubes text-light text-base shrink-0 text-center" style="width:16px;"></i>
+                  <span class="leading-tight">All Bundles</span>
+                </div>
                 <div v-for="opt in filteredBundleOptions" :key="opt.value"
                   :class="bundle === opt.value ? 'text-white bg-white/10 font-medium' : 'text-white hover:bg-white/5'"
                   :data-selected="bundle === opt.value ? 'true' : null"
                   @click="bundle = opt.value; bundleSearch = ''; $event.target.closest('.dd-root').classList.remove('open')"
-                  class="px-3 py-2 text-sm cursor-pointer transition-colors">{{ opt.label }}</div>
+                  class="px-3 py-2 text-sm cursor-pointer transition-colors flex items-center gap-2">
+                  <img v-if="opt.icon" :src="opt.icon" class="w-4 h-4 rounded-full object-cover shrink-0" alt="" loading="lazy">
+                  <i v-else class="fa-solid fa-cubes text-light text-base shrink-0 text-center" style="width:16px;"></i>
+                  <span class="leading-tight">{{ opt.label }}</span>
+                </div>
               </div>
             </div>
 
             <!-- App filter dropdown -->
-            <div class="relative w-full md:w-[25%] dd-root" id="app-dd">
+            <div class="relative w-full md:w-[30%] dd-root" id="app-dd">
               <button type="button" onclick="toggleDd('app-dd')"
-                class="w-full h-10 px-2.5 sm:px-3 bg-black border border-lightGray rounded-md text-sm text-white flex items-center gap-2 sm:gap-3 hover:border-white/50 transition-all cursor-pointer"
+                class="w-full h-[34px] px-2.5 sm:px-3 bg-black border border-lightGray rounded-md text-sm text-white flex items-center gap-2 sm:gap-3 hover:border-white/50 transition-all cursor-pointer"
                 aria-label="Apps filter">
-                <i class="fa-brands fa-android text-light text-base shrink-0 -ml-1 sm:ml-0"></i>
+                <template v-if="app">
+                  <template v-if="app === 'universal'">
+                    <i class="fa-brands fa-android text-green text-base shrink-0 -ml-1 sm:ml-0"></i>
+                  </template>
+                  <template v-else>
+                    <img v-if="filterOptions.appOptions.find(o => o.value === app)?.icon" :src="filterOptions.appOptions.find(o => o.value === app)?.icon" class="w-4 h-4 rounded-sm object-contain shrink-0" alt="" loading="lazy">
+                    <i v-else class="fa-brands fa-android text-green text-base shrink-0 -ml-1 sm:ml-0"></i>
+                  </template>
+                </template>
+                <i v-else class="fa-solid fa-mobile-screen-button text-light text-base shrink-0 -ml-1 sm:ml-0"></i>
                 <span class="flex-1 truncate text-left">{{ app ? (filterOptions.appOptions.find(o => o.value ===
                   app)?.label || app) : 'All Apps' }}</span>
                 <i
@@ -243,24 +263,34 @@
                 <div :class="!app ? 'text-white bg-white/10 font-medium' : 'text-white hover:bg-white/5'"
                   :data-selected="!app ? 'true' : null"
                   @click="app = ''; appSearch = ''; $event.target.closest('.dd-root').classList.remove('open')"
-                  class="px-3 py-2 text-sm cursor-pointer transition-colors">All Apps</div>
+                  class="px-3 py-2 text-sm cursor-pointer transition-colors flex items-center gap-2">
+                  <i class="fa-solid fa-mobile-screen-button text-light text-base shrink-0 text-center" style="width:16px;"></i>
+                  <span class="truncate">All Apps</span>
+                </div>
                 <div v-for="opt in filteredAppOptions" :key="opt.value"
                   :class="app === opt.value ? 'text-white bg-white/10 font-medium' : 'text-white hover:bg-white/5'"
                   :data-selected="app === opt.value ? 'true' : null"
                   @click="app = opt.value; appSearch = ''; $event.target.closest('.dd-root').classList.remove('open')"
-                  class="px-3 py-2 text-sm cursor-pointer transition-colors">{{ opt.label }}</div>
+                  class="px-3 py-2 text-sm cursor-pointer transition-colors flex items-center gap-2">
+                  <i v-if="opt.value === 'universal'" class="fa-brands fa-android text-green text-base shrink-0 text-center" style="width:16px;"></i>
+                  <template v-else>
+                    <img v-if="opt.icon" :src="opt.icon" class="w-4 h-4 rounded-sm object-contain shrink-0" alt="" loading="lazy">
+                    <i v-else class="fa-brands fa-android text-green text-base shrink-0 text-center" style="width:16px;"></i>
+                  </template>
+                  <span class="leading-tight">{{ opt.label }}</span>
+                </div>
               </div>
             </div>
 
             <form @submit.prevent="$event.target.querySelector('input').blur()"
-              class="relative w-full md:w-[50%] min-w-0 col-span-2 mt-0">
-              <span class="absolute left-3 top-0 h-10 flex items-center text-light pointer-events-none">
+              class="relative w-full md:w-[45%] min-w-0 mt-0">
+              <span class="absolute left-3 top-0 h-[34px] flex items-center text-light pointer-events-none">
                 <i class="fa-solid fa-magnifying-glass text-xs"></i>
               </span>
               <input type="search" v-model="query" autocomplete="off" enterkeyhint="search" placeholder="Search patches"
-                class="w-full h-10 pl-8 pr-9 bg-black border border-gray rounded-md focus:border-light focus:ring-2 focus:ring-light/20 outline-none transition-all text-sm text-white">
+                class="w-full h-[34px] pl-8 pr-9 bg-black border border-lightGray hover:border-white/50 rounded-md focus:border-light focus:ring-2 focus:ring-light/20 outline-none transition-all text-sm text-white">
               <button v-if="query" type="button" @click="query = ''"
-                class="absolute right-0 top-0 h-10 w-9 flex items-center justify-center text-light hover:text-white transition-colors"
+                class="absolute right-0 top-0 h-[34px] w-9 flex items-center justify-center text-light hover:text-white transition-colors"
                 title="Clear search">
                 <i class="fa-solid fa-circle-xmark"></i>
               </button>
@@ -282,7 +312,7 @@
               <!-- Sort Dropdown -->
               <div class="relative w-[145px]">
                 <select v-model="sortOrder"
-                  class="w-full h-9 pl-8 pr-8 appearance-none bg-black border border-gray rounded-md text-xs text-white focus:border-light focus:ring-1 focus:ring-light/20 outline-none transition-all cursor-pointer">
+                  class="w-full h-9 pl-8 pr-8 appearance-none bg-black border border-lightGray hover:border-white/50 rounded-md text-xs text-white focus:border-light focus:ring-1 focus:ring-light/20 outline-none transition-all cursor-pointer">
                   <option value="default">Default Order</option>
                   <option value="apps_desc">Most Apps</option>
                   <option value="latest">Latest</option>
@@ -402,9 +432,11 @@
                   <div class="flex overflow-x-auto gap-1.5 py-1.5 px-3 border-b border-lightGray">
                     <button v-for="(app, index) in appsList" :key="app.id" :id="'tab_' + group.key + '_' + app.id"
                       @click.stop="selectApp(group.key, app, appsList)"
-                      class="px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all border-2 outline-none shadow-sm flex items-center gap-1"
+                      class="px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all border-2 outline-none shadow-sm flex items-center gap-1.5 shrink-0"
                       :class="expandedOptions.has('app_' + group.key + '_' + app.id) ? 'bg-blue/10 text-blue border-blue/30 shadow-blue/5' : 'bg-dark text-light border-white/10 hover:border-white/20 hover:text-white hover:bg-white/5'">
-                      <span>{{ (!app.appName || app.appName === 'Unspecified') ? 'Any app' : app.appName }}</span>
+                      <img v-if="app.appIcon" :src="app.appIcon" class="w-4 h-4 rounded-sm object-contain shrink-0" :alt="app.appName" loading="lazy">
+                      <i v-else class="fa-brands fa-android text-green shrink-0 text-sm"></i>
+                      <span class="truncate">{{ (!app.appName || app.appName === 'Unspecified') ? 'Any app' : app.appName }}</span>
                       <span
                         v-if="isChangelogView && (changelogHighlights.includes(group.key + ':' + app.packageName) || changelogHighlights.includes(group.key + ':' + app.appName))"
                         class="px-1.5 py-0.5 text-[10px] leading-none text-yellow bg-yellow/10 border border-yellow/20 rounded-full font-bold">✨

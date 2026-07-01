@@ -9,7 +9,7 @@ DATA_DIR = ROOT / "data"
 BUNDLES_DIR = DATA_DIR / "patch-bundles"
 STABLE_OUT = DATA_DIR / "history-stable.json"
 DEV_OUT = DATA_DIR / "history-dev.json"
-APP_NAMES_PATH = DATA_DIR / "app-names.json"
+APP_METADATA_PATH = DATA_DIR / "app-metadata.json"
 SKIP_WORDS_PATH = ROOT / "src" / "skip-words.json"
 CHANGELOG_PATH = ROOT / "changelog.md"
 CHANGELOG_PRE_PATH = ROOT / "changelog-pre-release.md"
@@ -76,8 +76,13 @@ def derive_name(pkg, skip_words):
     return name.replace("-", " ").replace("_", " ").title()
 
 
-def format_app_name(pkg, app_names, skip_words):
-    return app_names.get(pkg) or derive_name(pkg, skip_words)
+def format_app_name(pkg, app_metadata, skip_words):
+    meta = app_metadata.get(pkg)
+    if isinstance(meta, dict) and meta.get("name"):
+        return meta["name"]
+    if isinstance(meta, str):
+        return meta
+    return derive_name(pkg, skip_words)
 
 
 def format_patch(p):
@@ -136,7 +141,7 @@ def is_valid_pkg(pkg):
     return ("." in pkg and " " not in pkg) or pkg == "universal"
 
 
-def build_notes(label, old_bundles, new_bundles, app_names, skip_words):
+def build_notes(label, old_bundles, new_bundles, app_metadata, skip_words):
     new_bundles_notes, new_apps_groups, new_patches_groups = [], [], []
     is_dev = label == "pre-release"
     all_changes = {}
@@ -150,7 +155,7 @@ def build_notes(label, old_bundles, new_bundles, app_names, skip_words):
             all_changes[key] = {}
             link = f"[{key}]({make_url(key, is_dev=is_dev)})"
             bundle_lines = [f"+ {link}"] + [
-                f"    - {format_app_name(pkg, app_names, skip_words)}"
+                f"    - {format_app_name(pkg, app_metadata, skip_words)}"
                 for pkg in sorted(new_pkgs)
             ]
             new_bundles_notes.append("\n".join(bundle_lines))
@@ -174,7 +179,7 @@ def build_notes(label, old_bundles, new_bundles, app_names, skip_words):
 
                 link = f"[{key}]({url})"
                 app_lines = [f"- {link}"] + [
-                    f"    + {format_app_name(pkg, app_names, skip_words)}"
+                    f"    + {format_app_name(pkg, app_metadata, skip_words)}"
                     for pkg in sorted(added_pkgs)
                 ]
                 new_apps_groups.append("\n".join(app_lines))
@@ -198,8 +203,8 @@ def build_notes(label, old_bundles, new_bundles, app_names, skip_words):
 
                 bundle_changes[pkg] = sorted(list(added_patches))
 
-                name = format_app_name(pkg, app_names, skip_words)
-                patch_lines = [f"    - {name}"] + [
+                app_name = format_app_name(pkg, app_metadata, skip_words)
+                patch_lines = [f"    - {app_name}"] + [
                     f"        + `{p}`" for p in sorted(added_patches)
                 ]
                 bundle_patches.append("\n".join(patch_lines))
@@ -246,8 +251,8 @@ def main():
 
     old_stable = read_json(STABLE_OUT, {}) or {}
     old_dev = read_json(DEV_OUT, {}) or {}
-    app_names = read_json(APP_NAMES_PATH, {}) or {}
-    skip_words = set(read_json(SKIP_WORDS_PATH, []) or [])
+    app_metadata = read_json(APP_METADATA_PATH, {})
+    skip_words = read_json(SKIP_WORDS_PATH, []) or []
 
     new_stable, new_dev = build_current_bundles()
     write_json(STABLE_OUT, new_stable)
@@ -258,7 +263,9 @@ def main():
         return
 
     # Stable changelog: new vs old
-    stable_notes = build_notes("stable", old_stable, new_stable, app_names, skip_words)
+    stable_notes = build_notes(
+        "stable", old_stable, new_stable, app_metadata, skip_words
+    )
     if stable_notes:
         CHANGELOG_PATH.write_text(stable_notes + "\n", encoding="utf8")
         print("Stable changelog created.")
@@ -279,7 +286,7 @@ def main():
 
         pre_baseline[key] = merged_patches
 
-    pre_notes = build_notes("pre-release", pre_baseline, new_dev, app_names, skip_words)
+    pre_notes = build_notes("pre-release", pre_baseline, new_dev, app_metadata, skip_words)
     if pre_notes:
         CHANGELOG_PRE_PATH.write_text(pre_notes + "\n", encoding="utf8")
         print("Pre-release changelog created.")

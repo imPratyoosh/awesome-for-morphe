@@ -29,9 +29,11 @@ export function normalizeChannel(channel) {
   return CHANNELS.has(channel) ? channel : DEFAULT_CHANNEL;
 }
 
-function appName(packageName, names, skipSet) {
+function appName(packageName, metadata, skipSet) {
   if (!packageName) return "Unspecified";
-  if (names[packageName]) return names[packageName];
+  const meta = metadata[packageName];
+  if (meta && meta.name) return meta.name;
+  if (typeof meta === "string") return meta;
 
   const skip = skipSet || new Set();
   const parts = packageName.split(".").filter((part) => part.length > 1 && !skip.has(part));
@@ -113,6 +115,7 @@ async function loadSource(key, channel, names, sources, skipSet) {
         description: patch.description || "",
         packageName,
         appName: name,
+        appIcon: (names[packageName] && names[packageName].icon) ? names[packageName].icon : "",
         versions: target.versions,
         enabled: patch.use ?? patch.default ?? true,
         options: Array.isArray(patch.options) ? patch.options : [],
@@ -141,7 +144,7 @@ export async function loadChannelData(channelInput) {
   if (dataCache.has(channel)) return dataCache.get(channel);
 
   const promise = Promise.all([
-    json(new URL("../data/app-names.json", import.meta.url)).catch(() => ({})),
+    json(new URL("../data/app-metadata.json", import.meta.url)).catch(() => ({})),
     json(new URL(`../data/bundles-${channel}.json`, import.meta.url)).catch(() => ({})),
     json(new URL("./skip-words.json", import.meta.url)).catch(() => []),
   ]).then(async ([names, sources, skipWordsArray]) => {
@@ -228,14 +231,16 @@ export function getFilterOptions(rows) {
   for (const row of rows) {
     bundleSet.add(row.bundleKey);
     if (row.packageName) {
-      if (!appMap.has(row.packageName)) appMap.set(row.packageName, row.appName);
+      if (!appMap.has(row.packageName)) {
+        appMap.set(row.packageName, { label: row.appName, icon: row.appIcon });
+      }
     } else {
       hasUniversal = true;
     }
   }
 
   const appOptions = [...appMap]
-    .map(([value, label]) => ({ value, label }))
+    .map(([value, { label, icon }]) => ({ value, label, icon }))
     .sort((a, b) => a.label.localeCompare(b.label) || a.value.localeCompare(b.value));
 
   if (hasUniversal) {

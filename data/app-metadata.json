@@ -1,0 +1,1304 @@
+{
+  "universal": {
+    "name": "Universal Patches"
+  },
+  "com.google.android.youtube": {
+    "name": "YouTube",
+    "icon": "https://play-lh.googleusercontent.com/QNmuZQc9I6Zbe3mWnSr0hycnENqGFCI5p3yE29Hkxtf22T0IWS6zTrpxULLyyjWpB7ONAXDsDQXnXcVWokl3eg"
+  },
+  "com.google.android.apps.youtube.music": {
+    "name": "YouTube Music",
+    "icon": "https://play-lh.googleusercontent.com/MyptZXmcCyF59phIWPsNCfHq6zSO_ojEdw_4rMYYWPOGdikSjqeOXcoszBZ053VYpINe5K7ZR9KV1nkFWgxdOw"
+  },
+  "com.google.android.apps.photos": {
+    "name": "Google Photos",
+    "icon": "https://play-lh.googleusercontent.com/kErBTF4VcGwhtKbCr80Bs2R1lNZiYkHbKcf1i3ZF6dg_5LqDAlCI4wU-nzwvo7PAbxeBXM_tv1hc11gr4aIIW-Q"
+  },
+  "com.google.android.apps.recorder": {
+    "name": "Google Recorder",
+    "icon": "https://play-lh.googleusercontent.com/BkxZ0_Cp84M-MiCpgZqCCxC-5S99L31eFHt7eg_O8H2DByLGKX9h6M4fWps_2nOFsJtigb6yrw0duisQPTYnXQ"
+  },
+  "com.google.android.apps.magazines": {
+    "name": "Google News",
+    "icon": "https://play-lh.googleusercontent.com/m2k0X_fhgmj2MjDn_9rStPF9ngsXMO-DsC1ZhG3bcYl7hvJ9rwAOo7cKs9j5wnl-RNuDh-sfCUtF2sYzjcgzIg"
+  },
+  "com.google.android.inputmethod.latin": {
+    "name": "Gboard",
+    "icon": "https://play-lh.googleusercontent.com/J4vZ82VsZjnsRsI6ckQFXlO36_52QJerqG5-HfLgHffS34I4EfoAFfNdbf6s4wBAsUEf8DOJVEDEHh5tzWbrnA"
+  },
+  "com.reddit.frontpage": {
+    "name": "Reddit",
+    "icon": "https://play-lh.googleusercontent.com/8FVS0kvM60JwqZWRNzBIlwrZZxJa8vpli8IWaaTo8QXRe1PHmCNJ8UpWoXkGPV3jKEaTY2OVAeYoisOnGJXY"
+  },
+  "com.twitter.android": {
+    "name": "X",
+    "icon": "https://play-lh.googleusercontent.com/IsLsCD4eLC2CYvlkgTI6Z5TROj0BJIBgUF7BZ5eliTzyyTjqG_mbofeG4kw2s7oG_JZMSi5ErLz_qsDi169C8w"
+  },
+  "com.instagram.android": {
+    "name": "Instagram",
+    "icon": "https://play-lh.googleusercontent.com/yHi59jmO_lVamcyJ1i3rM1_E8bAiAspShnGjjURq05ipQQSUksO3QVEsXTegRSqul038-4YNA7O644XAcx251Q"
+  },
+  "com.instagram.barcelona": {
+    "name": "Threads",
+    "icon": "https://play-lh.googleusercontent.com/6PzXaP0KaRU4DifAfsXKbWNVA3JPrP9uklvEh5EDhzPRdPfHV4tzszhAavQa4bq0YGdbnphBucz9vEUXiu1Ebg"
+  },
+  "com.facebook.katana": {
+    "name": "Facebook",
+    "icon": "https://play-lh.googleusercontent.com/12KEJDhgk6oyE1VgmfCuFzFrQripZ_endElbvEhU1rZawQgV3RI-v3II8fDslI1sdC_WKBkmtxS3jxuIihk33Q"
+  },
+  "com.facebook.orca": {
+    "name": "Messenger",
+    "icon": "https://play-lh.googleusercontent.com/cuRpiGqvAMkcbAOibD-AKCBagAunUkspQUWC_jVZF2Hob_ODdmkefnZeqkofW1idFQHhgZgnLIjsqT-2v7JKBw"
+  },
+  "com.spotify.music": {
+    "name": "Spotify",
+    "icon": "https://play-lh.googleusercontent.com/IzQgYCcnCFCD08GR-3bdtcT8xzOvrNkC84avGT5CwTX2VIqmTmKKJcP_Cd4JoBOdmCMlTndlOzV6hrthg2fOWA"
+  },
+  "com.soundcloud.android": {
+    "name": "SoundCloud",
+    "icon": "https://play-lh.googleusercontent.com/rfmCNUApzYntPTdAVmor5vpaOGxIUJWNlpED2pwKcDuCTUaf_2vJlOALNzX1PiejSgZIuAT8k0F5xIBU58JG3g"
+  },
+  "com.amazon.avod.thirdpartyclient": {
+    "name": "Prime Video",
+    "icon": "https://play-lh.googleusercontent.com/NnoDzfxkvlsAvU8jzoPeK8aaxbcU2sEH_btwgMQ2xI88_qtrNGQuf1vlFkxSiQODyKVFZ3-s71sU1MHyV-vc9Q"
+  },
+  "com.amazon.mShop.android.shopping": {
+    "name": "Amazon Shopping",
+    "icon": "https://play-lh.googleusercontent.com/UIYZ9hTFNg-zZUg_uzLS9YdyDpvoo1VHNFb6VlzHy5JqNMq9Uq-p2S1VPwzXCipHTFacfGKhJkyAuKL19VVlcWA"
+  },
+  "com.amazon.mp3": {
+    "name": "Amazon Music",
+    "icon": "https://play-lh.googleusercontent.com/9v2z1-7g8pWbxek8IW3Q9gGsAqD-YkTvy_rmyd4Cfb-OkpVR2T6jt-Ev2eKDcvx72njhCQ_4fEd9qg8-T9AaDA"
+  },
+  "com.disney.disneyplus": {
+    "name": "Disney+",
+    "icon": "https://play-lh.googleusercontent.com/AEX_3Bk5_SEZfR4fUcJsWiyqW_RRVcLED9AM2HMUVHAPVTZhZHfP2q3M35mRe4LtCXlb712DtkKwkZa_nJ-0"
+  },
+  "com.peacocktv.peacockandroid": {
+    "name": "Peacock TV",
+    "icon": "https://play-lh.googleusercontent.com/FdlQY6tEE0p3FsJT9EbxB0BzKdXB1U84nNzAUl_YCC9HxRO1J82i8-XWuN_BD1zReblXht3-cvUreuogHrPk-A"
+  },
+  "tv.twitch.android.app": {
+    "name": "Twitch",
+    "icon": "https://play-lh.googleusercontent.com/JHCM4AIyomRp6Lo2-5ugoznlGdsZmNnejVN8DLvtWFHShcz8YRgUE170f1CyOfrleYbtFL2g8tQ3VqlQNAgqoA"
+  },
+  "com.ss.android.ugc.trill": {
+    "name": "TikTok",
+    "icon": "https://play-lh.googleusercontent.com/U07AzIaLq2iMqMCMtnM5iiSrzy7__SmOkD5qeH1vWy745-0rCv6LbSRuyjlDN-4s8EDW1UkHJPrrpd5jYNNkgA"
+  },
+  "com.zhiliaoapp.musically": {
+    "name": "TikTok",
+    "icon": "https://play-lh.googleusercontent.com/2o7iuqPe-0msP3DvNhzoOgNo4eZ6GkL_RtGVeKyBn5UBQAW5cw-GW5V3wDOHB1yTQuqWzrFLFOv2u4_5ea1uhg"
+  },
+  "com.pandora.android": {
+    "name": "Pandora",
+    "icon": "https://play-lh.googleusercontent.com/XgDrpaSgIZyml9rjxwY2ZIkVQvhqrSh7FCkD2FDYUJgUWZt33gbVaeqMZLl8UhJGkmObLwivCMPAPY-jlpcp_PQ"
+  },
+  "com.bandcamp.android": {
+    "name": "Bandcamp",
+    "icon": "https://play-lh.googleusercontent.com/GuwW4t4kL9xNB1n154mlaBRQyAeotQvo0Pcx6iVGQqe38JkGQ6JbUM11TjNC7lVxwpJaz9-CVSrEPGFtE8h2ng"
+  },
+  "com.bambuna.podcastaddict": {
+    "name": "Podcast Addict",
+    "icon": "https://play-lh.googleusercontent.com/l-QEyMvM3s6v_YHEau0IcmjWMDbK-FT1kLcCWqPXZSTbFBcMnsSRQu8geMGsnY_BwlDBVyObs2S6Ds9gh5bv5A"
+  },
+  "com.duolingo": {
+    "name": "Duolingo",
+    "icon": "https://play-lh.googleusercontent.com/Q-wEiKezZQEspFNNrWfKjcEgAqdWy_b98_tXTAZaXGgm9y1HZ1zi-JSZXA7Tmur9MjcM0xoIA0BdXEN0Bt54"
+  },
+  "com.busuu.android.enc": {
+    "name": "Busuu",
+    "icon": "https://play-lh.googleusercontent.com/bodOsAH2LLt33V_Y43_f5HcH7oPf77s8LV2cWjXTHz3DMOeKlnWZStVgW9LjFODWPD0a9lI_zalvkmr1gG5W"
+  },
+  "com.hellochinese": {
+    "name": "HelloChinese",
+    "icon": "https://play-lh.googleusercontent.com/MJdDpys1xjryToj2RQNKXdaRf4ouJz6XCogxZPrREifIhVGxZn2ZH2c6eQkR5CVTyeeuwsuRmHZx0uUgXOpB"
+  },
+  "com.getmimo": {
+    "name": "Mimo",
+    "icon": "https://play-lh.googleusercontent.com/L6b68qSB3yeqDkTd9cmBvImYgPmn4bHujX75G-3mdXgeXi6ZAzaUPkKD-bvj3_HNOVpaRRymixZQ0-22xLra"
+  },
+  "com.strava": {
+    "name": "Strava",
+    "icon": "https://play-lh.googleusercontent.com/J4LN2qH2PQkZ3sFQonz-HWYkd7M38BtEO4Grzh1Xn7L2J6NUILHPkhYvPjdhMZQzrdm4BarUj547wfthyMz_vWM"
+  },
+  "com.myfitnesspal.android": {
+    "name": "MyFitnessPal",
+    "icon": "https://play-lh.googleusercontent.com/iGPZDsKZoF58BABAEIebIQk_X1sdYHviEJAwUyoYyJO4L-bN8XA6yWiXuBJcVJwIEc4wHSvxWjbFU23Y7cn1sMo"
+  },
+  "com.sbs.diet": {
+    "name": "MacroFactor",
+    "icon": "https://play-lh.googleusercontent.com/4gfovnH1uoLSJr-ga0iswuqW-jR7Go1iQdJTVWblLLrb3DeAGj1VqtF8n-lFi2e6hWEIBVshkGqTqjjIl99AptM"
+  },
+  "com.adobe.photoshopmix": {
+    "name": "Photoshop Mix",
+    "icon": "https://www.apkmirror.com/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fdownloadr2.apkmirror.com%2Fwp-content%2Fuploads%2F2017%2F03%2F58d3774dd2f29.png&w=192&h=192&q=100"
+  },
+  "com.microblink.photomath": {
+    "name": "Photomath",
+    "icon": "https://play-lh.googleusercontent.com/SdtwWRFWpe98RgGwOM1dsBEoNYUd9H6KZKFs8WpWFb6YZvDM3xY3kiUK0BcV-ZzPjjLp_HuFagj1lbm2fsnmcMY"
+  },
+  "com.microsoft.office.officelens": {
+    "name": "Microsoft Lens",
+    "icon": "https://www.apkmirror.com/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fdownloadr2.apkmirror.com%2Fwp-content%2Fuploads%2F2021%2F03%2F69%2F6059d51c1db14.png&w=192&h=192&q=100"
+  },
+  "cn.wps.moffice_eng": {
+    "name": "WPS Office",
+    "icon": "https://play-lh.googleusercontent.com/IrviqpGmCduI8CYHUyUVPa2V4a8e1FOxO8tYCUUvaYSHGhih4BdPyjtInBf8SZokbpT6-NImQP6-BM2rQu_UgA"
+  },
+  "com.xodo.pdf.reader": {
+    "name": "Xodo",
+    "icon": "https://play-lh.googleusercontent.com/AmBoaxTjw_jERw2p8YUqv52zctH_P5K9Hxb1OXBEIrKFXV_KDi4HYEQ1303G2e_cQwnIDsHR225tySjFYJCxDg"
+  },
+  "com.rarlab.rar": {
+    "name": "RAR",
+    "icon": "https://play-lh.googleusercontent.com/wWn5oCBNr1mP0CFWGK9esgaY62mNbHsm6T4gDCxFTz2ymSXVNpGEbigW_0oiE-TEMHAwu7BLofIQvPlBAlAdow"
+  },
+  "jp.ne.ibis.ibispaintx.app": {
+    "name": "IbisPaint X",
+    "icon": "https://play-lh.googleusercontent.com/OCUAuT3z9O_YGN6LX3fBIS4S2sv1ArhtMO1PRYqoyDRqEJnILt_rIvfsjYakxRnuc9mAtDwbBYUb4r2h2ubvzrc"
+  },
+  "com.tumblr": {
+    "name": "Tumblr",
+    "icon": "https://play-lh.googleusercontent.com/BWSIac9IjPlQwOwxZ3aLzaX_rmP5Dfvkwn1HtSztT16WBOHdJZ6D0JSIz_lo_GatSlql3GlSFZcHuzWqAP5n8g"
+  },
+  "com.viber.voip": {
+    "name": "Viber",
+    "icon": "https://play-lh.googleusercontent.com/iGHZEkEJBBcOyMEETvYrwCXk-eYQ_TaEgBHPKVptKSon4QQHqhD3Zs-tdeINPZucc1sokQ5FJ4ig-YOGh1Lm"
+  },
+  "com.kakao.talk": {
+    "name": "Kakao Talk",
+    "icon": "https://play-lh.googleusercontent.com/VaxoIL0V83FKXsQ5fOR0XJ3CQ7Q_eOt_WXuKFtnuK3nWUH_SOll1_LRK5AlXE7b8sUg4iHNKBVof1zV1haQRyw"
+  },
+  "org.telegram.messenger.web": {
+    "name": "Telegram",
+    "icon": "https://play-lh.googleusercontent.com/PyZ3akMGXPV0tKKirKNwfO--PSQW3FHR6rD_H9mAaukZ8LiHyYFuBLeU8UZ2ok6r5SP79-3prkfybWKh98AZAD0"
+  },
+  "com.ticktick.task": {
+    "name": "TickTick",
+    "icon": "https://play-lh.googleusercontent.com/cStkq8fqyxyFJc2mK1_MT8aNhsaU_Fy5cD5jd6-bsshZf-pC_WAdyR-iw7NIe99W5A2wNEXBGuzOtDorNcSSJIk"
+  },
+  "com.llamalab.automate": {
+    "name": "Automate",
+    "icon": "https://play-lh.googleusercontent.com/5zKwrzhGPJzJzHibo1JUdFvDNWyy6zpfMjObSwvEN46khSGnH3e8GoCLy5KrC-H8ib6cWxC8z0nms-LmKxqTCA"
+  },
+  "com.teslacoilsw.launcher": {
+    "name": "Nova Launcher",
+    "icon": "https://play-lh.googleusercontent.com/EihoqDPSzditTLnmP-N0GjXmbvNdnZyW7YZKxRocA_kVIsaXhM9lBlfPrJmhBcSQmiydPXgise1ZTAlOOH7ZsQ"
+  },
+  "com.nothing.smartcenter": {
+    "name": "Nothing X",
+    "icon": "https://play-lh.googleusercontent.com/AkF6hnTA2q6eNW2c6OsmxYM5YBz-BWIU_d-5Mw3GBa3XGkwnGBEOsJ96R3BbomDMk2qugt-SdCzLzoO6cqNo"
+  },
+  "com.imdb.mobile": {
+    "name": "IMDb",
+    "icon": "https://play-lh.googleusercontent.com/jvuf103Qv_fqVVlHeXWws8zdPPEIhyZBB2d0xnVVSLOvcsCzf8qDN8r1jMpHUFfZqugcpFywwFvH3lWuZzNbMw"
+  },
+  "com.letterboxd.letterboxd": {
+    "name": "Letterboxd",
+    "icon": "https://play-lh.googleusercontent.com/2MmhfegR5NlTay7FQjgEfBR83-sBuGdyMVlNvpSKVmW3EjbI762_va69gxmoI0P5BfIGDWtlpXU7qYg_zxE2Kl0"
+  },
+  "com.cricbuzz.android": {
+    "name": "Cricbuzz",
+    "icon": "https://play-lh.googleusercontent.com/P2QhznKNpZ33LzVapSVEKM8pKIV87pyzLdnfCD9L-JOqFKyj1vk5VWvzJ034ykMhwypCRc6sVuqLmBjFo8Tnbg"
+  },
+  "com.sofascore.results": {
+    "name": "Sofascore",
+    "icon": "https://play-lh.googleusercontent.com/V5evYzdmAVEFl9Gy9fh4-XTIb_mPnMPzNdV8rhDyZ31yftOncktYxWnI5xbX4QlAnoCd1fcBvGTzGJU_MxtY"
+  },
+  "com.mobilefootie.wc2010": {
+    "name": "FotMob",
+    "icon": "https://play-lh.googleusercontent.com/uA97ujyyS5PtfLsJviTN7tW1vcSQgRoN_wM0IMEO3tzn_JUAJGGMv66YxSzPF5uiP2Ysjh_F9YZzknOwKrSS"
+  },
+  "tv.trakt.trakt": {
+    "name": "Trakt",
+    "icon": "https://play-lh.googleusercontent.com/eUBvwF8qxYbAB-teSb1o3PSvKDUbjQzJO5xuqAiXzncQo55_Gp9aByEaJ79a1lDS6zecy-SvzOLSK-UIRmcTYQ"
+  },
+  "com.ebay.kleinanzeigen": {
+    "name": "eBay Kleinanzeigen",
+    "icon": "https://play-lh.googleusercontent.com/PuqeuAmOMsDoB9gRCVr-EQHthinCbtaKPzMbxabfmCY9RI9r1fmWncCb4k6umBszzPaszT_o2RopSpIhy9BAiQ"
+  },
+  "com.Splitwise.SplitwiseMobile": {
+    "name": "Splitwise",
+    "icon": "https://play-lh.googleusercontent.com/0H4UbwiIienhLb6jn_zs7wZ06Oqw2DtqZmoUw6puac1F5ZalD_Jja14N7gGk1seq78403uGUvdmtiVxqckMw"
+  },
+  "com.windyty.android": {
+    "name": "Windy",
+    "icon": "https://play-lh.googleusercontent.com/u-KmXMFiH9SLeIpYeNBKzHrwRX3Fi53H4ij3240cuOqxnrMMTpb8n0bVEC25VzqTKU90m43l4UaBg8ahP9RcUg"
+  },
+  "cz.ackee.ventusky": {
+    "name": "Ventusky",
+    "icon": "https://play-lh.googleusercontent.com/5wbJvwNT1AlSydWxzjP4kMJag8KhJEBavf9YCFIMDW2pJ6leTb482zcbFUrYTMXbs4hqYh44CIUxWNPvJu-LoQ"
+  },
+  "com.ysy.app.firewall": {
+    "name": "NetWall",
+    "icon": "https://play-lh.googleusercontent.com/meuEcOG127ZyfgS0BnakAhiYH7SkOecSRohju0LpXvzhRK2--pixgGZgJnszt8n1MSTZ0Iq4s2Y1OtoCmk8P"
+  },
+  "ch.protonmail.android": {
+    "name": "Proton Mail",
+    "icon": "https://play-lh.googleusercontent.com/TrxNlz9xizn4GBiVB2gWyws0majvL7tuCS1OsoaZxK1Sbi-uWFd51vo7eO9ghIDR6jQkIRF47mHoudd73KHazmI"
+  },
+  "ch.protonvpn.android": {
+    "name": "Proton VPN",
+    "icon": "https://play-lh.googleusercontent.com/yLQ8EKyC_HIHiR6UND0eVjiBsW7WH3jHPzieT7YFqg9_VBRBreUDC8QD-iIUtRhEpMrIxDPVPegm4KSyfduyiw"
+  },
+  "pl.solidexplorer2": {
+    "name": "Solid Explorer",
+    "icon": "https://play-lh.googleusercontent.com/8TYqGVCV5BgN623s6nBzxatxLlmRotCINOvZHr4BrVvvdIV9RGWR97tAtwdpDtdm9d7hWgLh1d0A0PbqfLwLEkc"
+  },
+  "com.myprog.hexedit": {
+    "name": "HEX Editor",
+    "icon": "https://play-lh.googleusercontent.com/oT6eaOs3OCltogTK5CsjFBOoAxoL2wLGAz5_giQ9lnvyRsUVC-MYF52uRNvpXT6_e3_nRC7hYYAxC14kLPixAw"
+  },
+  "com.snorelab.app": {
+    "name": "SnoreLab",
+    "icon": "https://play-lh.googleusercontent.com/sP9A7lxcRSzMtOKiM-O0HIDTfhVh_CGa5bQVqr3lj2_U9vr5af2rtf1HGK2hdQaQI75R1qhFQf27pNkFY3yPTA"
+  },
+  "com.wallpaperscraft.wallpaper": {
+    "name": "Wallcraft",
+    "icon": "https://play-lh.googleusercontent.com/ODzoUL00p-GnKUwWAh7ca7-ISRxWrTeYGq6KUu3jqIuI0CO2sotGqjsVPjCYU6xHOZMsOqGZWDdr7TcD-kRC"
+  },
+  "com.zombodroid.MemeGenerator": {
+    "name": "Meme Generator",
+    "icon": "https://play-lh.googleusercontent.com/DK7aQ7tXOAbG5lz7t7Q7rwkq8UpJ1SUiQUT5brACDf0qT__dcWqiJs-a56ELtwOu7wXIsdI6ZEgPJ4-8r7qG"
+  },
+  "de.komoot.android": {
+    "name": "Komoot",
+    "icon": "https://play-lh.googleusercontent.com/IyQKMI6etTvtjEv6pSzQ4TnTlfKWbwT39vQMO4vpBlzQJfGKdA9zZ38sOXtt0yuZbwJBdKoP_RNPZnQiTuaceg"
+  },
+  "com.thetransitapp.droid": {
+    "name": "Transit",
+    "icon": "https://play-lh.googleusercontent.com/HuUOOJckLHEGg9mZcdJ5CJf3iwpRlspt-GrJpY5mynV0WDURXCoibkNUVYFZGksiWo85SrlvwH_Njtas4X_Gnw"
+  },
+  "cz.seznam.mapy": {
+    "name": "Mapy.com",
+    "icon": "https://play-lh.googleusercontent.com/HDxpj_c6Nhf7wDAErKy6JknknJQLthDi4HKx1PRQno2RD28iuBv0b2eRcm1ZEdy_2r4FindeqVsdCU_5m1Bcbwc"
+  },
+  "com.alltrails.alltrails": {
+    "name": "AllTrails",
+    "icon": "https://play-lh.googleusercontent.com/VGEJRpXhcohBLp64CcZkufSHI97tfN1LQBJsvcNojlHZZTy6bQRFxr6xogqlEv-f5RwkLIcvVLiBAEfkZqrXqA"
+  },
+  "de.gmx.mobile.android.mail": {
+    "name": "GMX Mail",
+    "icon": "https://play-lh.googleusercontent.com/jR7Ejwe-8I0PsGUDSUEBa5HeVy1Xy_UPAl6Ly7Jn7UjGnBAJFJQQoyeuTS8Wgd2dWzAMlAoZ4jVmAVTpXAXf_dY"
+  },
+  "com.jio.jioplay.tv": {
+    "name": "JioTV",
+    "icon": "https://play-lh.googleusercontent.com/1SqetBwi40ZWlPSZVKGpUIn_4x4NKp-yDqMav_bHedE2_lgyEXPtJCasrPgEdl0qQGMi2GRELMcHvsdAAXZ7tqU"
+  },
+  "jp.pxv.android": {
+    "name": "pixiv",
+    "icon": "https://play-lh.googleusercontent.com/UADIlh0kSQkh59fl-s3RgLFILa_EY5RqA4sMOtKD-fX0z0fDVUR7_a7ysylufmhH-K-XfhSVVdpspD8K0jtu"
+  },
+  "com.dcinside.app.android": {
+    "name": "dcinside",
+    "icon": "https://play-lh.googleusercontent.com/3wsShIT-BhtperkPcnd0wcEz4M0ajLQn2jokq7oPnrimnazOcDJt3wC9fxt68P-jeiabWPsPkWMnkPgWNqJpoA"
+  },
+  "ru.iiec.pydroid3": {
+    "name": "PyDroid3",
+    "icon": "https://play-lh.googleusercontent.com/FC9X7N7hEjg8VgF3lNj4KJm4VpGktP4Ei3F9vd2EfInnHURB8XnyLX6gBM2nc8iadPZjGNAqEjeL3eMifZQNSA"
+  },
+  "org.zwanoo.android.speedtest": {
+    "name": "Speedtest",
+    "icon": "https://play-lh.googleusercontent.com/ZH4EUfCHaf8hoFSpeLx_guqWN-DkGdJWbP5Ydim9dbvqO4L95TC3V7WD20-KsEpGaZuCrWz62ClSYdmCanL9"
+  },
+  "com.merriamwebster": {
+    "name": "Merriam-Webster",
+    "icon": "https://play-lh.googleusercontent.com/nF597-W-wB7IsAXJYMI6gPykeA_jOWhbbNCInjsIO0GkPwSyUQGcAVIo0iCb9ZknaVx59Wc0nUshoyVZ_QXOIQ"
+  },
+  "com.laurencedawson.reddit_sync": {
+    "name": "Sync for Reddit",
+    "icon": "https://www.apkmirror.com/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fdownloadr2.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F04%2F59%2F625f0e1639548.png&w=192&h=192&q=100"
+  },
+  "com.laurencedawson.reddit_sync.dev": {
+    "name": "Sync for Reddit Dev",
+    "icon": "https://www.apkmirror.com/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fdownloadr2.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F04%2F59%2F625f0e1639548.png&w=192&h=192&q=100"
+  },
+  "com.laurencedawson.reddit_sync.pro": {
+    "name": "Sync for Reddit Pro",
+    "icon": "https://www.apkmirror.com/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fdownloadr2.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F04%2F59%2F625f0e1639548.png&w=192&h=192&q=100"
+  },
+  "ml.docilealligator.infinityforreddit.patreon": {
+    "name": "Infinity (Patreon)",
+    "icon": "https://play-lh.googleusercontent.com/QaoqWz6FflDZQOgV6e1iLuJIjhdpE7j0IL-iJQY7FNqnR3P5qoBDgiZRVCaPTJL5vhklL2dDzWFduszqkZj_"
+  },
+  "ml.docilealligator.infinityforreddit.plus": {
+    "name": "Infinity (Plus)",
+    "icon": "https://play-lh.googleusercontent.com/QaoqWz6FflDZQOgV6e1iLuJIjhdpE7j0IL-iJQY7FNqnR3P5qoBDgiZRVCaPTJL5vhklL2dDzWFduszqkZj_"
+  },
+  "com.andrewshu.android.reddit": {
+    "name": "Reddit is Fun",
+    "icon": "https://www.apkmirror.com/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fdownloadr2.apkmirror.com%2Fwp-content%2Fuploads%2F2020%2F04%2F5e9e348600c65.png&w=192&h=192&q=100"
+  },
+  "com.andrewshu.android.redditdonation": {
+    "name": "Reddit is Fun (Gold)",
+    "icon": "https://www.apkmirror.com/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fdownloadr2.apkmirror.com%2Fwp-content%2Fuploads%2F2020%2F04%2F5e9e348600c65.png&w=192&h=192&q=100"
+  },
+  "me.edgan.redditslide": {
+    "name": "Slide for Reddit (Fork)",
+    "icon": "https://play-lh.googleusercontent.com/1bkFx2UADl2qImFVpPf0eev_31MBNZc7kK81dsGlSeP151iQrhiFlUcE782VYK4SdbfKpKRE-Hl6EIj-Qlvn"
+  },
+  "com.rubenmayayo.reddit": {
+    "name": "Boost for Reddit",
+    "icon": "https://www.apkmirror.com/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fdownloadr2.apkmirror.com%2Fwp-content%2Fuploads%2F2018%2F06%2F5b33f2b05b6d2.png&w=192&h=192&q=100"
+  },
+  "com.onelouder.baconreader": {
+    "name": "BaconReader",
+    "icon": "https://www.apkmirror.com/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fdownloadr2.apkmirror.com%2Fwp-content%2Fuploads%2F2021%2F10%2F12%2F6172d6b8b5506.png&w=192&h=192&q=100"
+  },
+  "com.onelouder.baconreader.premium": {
+    "name": "BaconReader (Premium)",
+    "icon": "https://www.apkmirror.com/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fdownloadr2.apkmirror.com%2Fwp-content%2Fuploads%2F2021%2F10%2F12%2F6172d6b8b5506.png&w=192&h=192&q=100"
+  },
+  "free.reddit.news": {
+    "name": "Relay for Reddit",
+    "icon": "https://play-lh.googleusercontent.com/Sjpaa6xIyJJ9zA4QYOERjsd6ePt-_azhjGVXMMXmHyNhsWunH6CY_gS3GuluGsXk0hVJ1j7YIiLQmFJhr3-qGg"
+  },
+  "reddit.news": {
+    "name": "Relay for Reddit (Pro)",
+    "icon": "https://play-lh.googleusercontent.com/Sjpaa6xIyJJ9zA4QYOERjsd6ePt-_azhjGVXMMXmHyNhsWunH6CY_gS3GuluGsXk0hVJ1j7YIiLQmFJhr3-qGg"
+  },
+  "o.o.joey": {
+    "name": "Joey for Reddit"
+  },
+  "o.o.joey.dev": {
+    "name": "Joey for Reddit (Dev)"
+  },
+  "o.o.joey.pro": {
+    "name": "Joey for Reddit (Pro)"
+  },
+  "io.syncapps.lemmy_sync": {
+    "name": "Sync for Lemmy",
+    "icon": "https://play-lh.googleusercontent.com/RvXrIr4ULufU9xLr8SLtdtCZsidhtcAN6mPgA3eG2zb4YGPhMXMqUuW5rVVs8uWur20Yv8TlrphihhuDvO2QcQ"
+  },
+  "ginlemon.flowerfree": {
+    "name": "Smart Launcher",
+    "icon": "https://play-lh.googleusercontent.com/AM7MidChVOk5Uj7Vf7xM0ZaOYnGBea4PZBH5O5wlllmksRKCdMgRzPnPSgg-K7bQ0DXv2Bb7F9-kfyCVyG3JNtQ"
+  },
+  "ginlemon.iconpackstudio": {
+    "name": "Icon Pack Studio",
+    "icon": "https://play-lh.googleusercontent.com/IEq-F1yhZfgBlvHfBAp0zbINuGBPkU_mhb2tfvBUEp9tmQ9IlS6NeNKpej7ZjDtZcTgSr0k09D7s1m65kqqo"
+  },
+  "com.ttxapps.autosync": {
+    "name": "Autosync",
+    "icon": "https://play-lh.googleusercontent.com/76yYygy2ye5lmyLfl5zKhP18gVXsIMtKB2R9CZa7r5KXgEuKHiD0oe1yk-uorTKitef_aA4ATadCm0SR_xoj7A"
+  },
+  "org.totschnig.myexpenses": {
+    "name": "MyExpenses",
+    "icon": "https://play-lh.googleusercontent.com/zcX7Tz7SSVIglhU4DPALi_nbKj2TSULaGBihVgZdBeSkbdAYVmKmf8jxjVgnuOFdQS8mbe8Xb1Rm_xMET21ENg"
+  },
+  "com.avocards": {
+    "name": "Avocards",
+    "icon": "https://play-lh.googleusercontent.com/b-wUuXGV3mPW6wrtlqL2TPPcMvUZn7HbnSf8ky7Uc-ZGBwFQRMIpSTAtAxqUP8vriPoG_HIsJciLRA5oiFsX"
+  },
+  "com.application.pokecardex": {
+    "name": "Pokecardex",
+    "icon": "https://play-lh.googleusercontent.com/pwV51GYybNvqX55ICFpuFQgqoDrmGzmlLRkJ8tDR3zeuko77UuLUfv5jml2kMS1xaGnXgWO7h0WDOAWbfNiM0YI"
+  },
+  "net.binarymode.android.irplus": {
+    "name": "irplus",
+    "icon": "https://play-lh.googleusercontent.com/lzmZWQV41lnj2Achj9RacELpaVEgNA5kk6JnVFEqPz-wK3DE1rm_JVqHHUeYXhN5E6CAcrLKqmIdRaBeDqM-TUw"
+  },
+  "com.lyfta": {
+    "name": "Lyfta",
+    "icon": "https://play-lh.googleusercontent.com/AX-6eXLHm5zP_VdCnZR5l0JCKpfkA2SgUHHtiLKl-o4zzh5Z21mDbHrjeUYEasrSjDYGWBJDhcKK8e1WjKEM"
+  },
+  "app.ttmikstories.android": {
+    "name": "TTMIK Stories",
+    "icon": "https://play-lh.googleusercontent.com/dAKqS5d1pmmttkZBqlwofwDCzaeOkUY8Ae4scFxmXrNn4TTXeowpI8Yu8X59UZBOs8EFKAzfghJtEYrhq1ES"
+  },
+  "kr.eggbun.eggconvo": {
+    "name": "Eggbun",
+    "icon": "https://play-lh.googleusercontent.com/jEhof2oqOAMtSKVWGGLyiywNWe7pPqCkWZV_mX1Uo9ZBmsiadHX8vn2VuC-Ht9F9aDIW615es740Huk2i7tbANY"
+  },
+  "net.teuida.teuida": {
+    "name": "Teuida",
+    "icon": "https://play-lh.googleusercontent.com/2BnY8aZYmPiBPj9vZMljUm-Sgc_TW_BV2c7lNxxr1MRSkfjqamqKfVsI2JpYiM4F2wmqrRJE5LzO_dxSiOhF"
+  },
+  "org.languageapp.lingory": {
+    "name": "Lingory",
+    "icon": "https://play-lh.googleusercontent.com/ykjhdcK-_e-9NTSC398_THnIDa4LzKb2tjPAj8aEOQ4EVwaaFM6_7MqmM5N_DoYaEGWCp5iUnaKmZltQXVyn"
+  },
+  "nom.vrd": {
+    "name": "NOMone Desktop",
+    "icon": "https://play-lh.googleusercontent.com/3y0UG2xKQSxK-Nduy0BE4xlZORVtblwP7GzFH_sff2JZIbxFyd9fVvaiAJsERgwM8JWarVRQUoETOAAnMed93g"
+  },
+  "fr.chargeprice.app": {
+    "name": "Chargeprice",
+    "icon": "https://play-lh.googleusercontent.com/2ofyHFDtgKkSvDonTT3HIqMI3DuTbMYKU1oxwojwkrb3AzayF6QFLfg6KUf4hgLAB_0dGLCmTGz3CytfKXsbww"
+  },
+  "fr.tramb.park4night": {
+    "name": "park4night",
+    "icon": "https://play-lh.googleusercontent.com/BwBPqdRT0ibqDIF_38u-LZD55vx8IXJ19T8uJcoIzrGgsr1kJUKOJpfWX3dKKK6E4Q3QaTT2xG7TlCOvdOWC"
+  },
+  "nl.sanomamedia.android.nu": {
+    "name": "NU.nl",
+    "icon": "https://play-lh.googleusercontent.com/YJ4RYJF6adBgVrJSa2uOwDAET_R97wERgDW8JHDHaDwVJ3q7DZxwSDq7B_s0D9JXoU6T-UQcA75wQ4PgVCzjOc4"
+  },
+  "com.nis.app": {
+    "name": "Inshorts",
+    "icon": "https://play-lh.googleusercontent.com/rEvzp3rzXLcV14TaKdHWcMYlbwQEggA0EuQ9PcsPdc97vGs-60vu86gInbL_GWvbxqwO7jx5GZvTKsdJKFp3"
+  },
+  "kr.co.yjteam.dailypay": {
+    "name": "Daily Pocket",
+    "icon": "https://play-lh.googleusercontent.com/j9td5GPhbNX9sJ2-XSzsLs0Zmq5Q71IW9yOblBtG7skncZsJiZI5lNCeHo_9xI5OLFQCrPsMMwAhhSL0o6AaeU8"
+  },
+  "com.qbis.guessthecountry": {
+    "name": "World Map Quiz",
+    "icon": "https://play-lh.googleusercontent.com/B6F6bSdd0F4RFHgnvjDPAi2Sv3RSnFFmtagBWJ6ZrlMqoL6klPffaDj7phK6eFXuFvuQKy4KBBxWruadP75IUQ"
+  },
+  "com.drinkplusplus.angulus": {
+    "name": "Angulus",
+    "icon": "https://play-lh.googleusercontent.com/gvwf6SzxzTgTba1-l4nqbR0S-gBD-77OmKyXFkU-n2VqCwPk5L_21XxWcZpemSCAozyrN9OzAjevk21ud7KiRg"
+  },
+  "ru.oneme.app": {
+    "name": "MAX",
+    "icon": "https://play-lh.googleusercontent.com/_wSjKixe1Eaa6flCdcsRdAuONdw2zvGv-cdzX-rnjq1ggfjqbCgNAnmvXyHOoDgY4tjLQIFVRXBPaz8hSFd-cg"
+  },
+  "cn.ommiao.iconpacker": {
+    "name": "Icon Packer",
+    "icon": "https://play-lh.googleusercontent.com/TuQLI-feVEhXj9pUf36cZ10Kwi_9w0UBv3Y1WBYbEyBf0ci3W0jB1swnzfittajO8KKEnCRK-qL7765B76j-"
+  },
+  "org.cygnusx1.continuum": {
+    "name": "Continuum"
+  },
+  "me.mycake": {
+    "name": "Cake",
+    "icon": "https://play-lh.googleusercontent.com/AMalhKJA23u0m1Lr-Z7apiuDcSvrDvfrwRuw3CW2qcagbkzcTABm0X6SmSAanNjtgJvtzrrg7IL2D52Kfia5Ng"
+  },
+  "app.symfonik.music.player": {
+    "name": "Symfonium",
+    "icon": "https://play-lh.googleusercontent.com/Rc1boOlAWnUlwZNG8LCm9IFn3ZRnDTdRhFe8wegH-OHzH1An9E97D5XmRGurbwN2HNg14Zubg9H460Ywgug0"
+  },
+  "com.adguard.android": {
+    "name": "AdGuard",
+    "icon": "https://www.apkmirror.com/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fdownloadr2.apkmirror.com%2Fwp-content%2Fuploads%2F2024%2F06%2F92%2F66744272d01aa_com.adguard.android.png&w=192&h=192&q=100"
+  },
+  "com.arlosoft.macrodroid": {
+    "name": "MacroDroid",
+    "icon": "https://play-lh.googleusercontent.com/Jtx8e9Ievb-DmpQa-68I9e1f6JJ1D63RmjvV9Z5IH2V1FHnekVMtC9hOcityelZXzbEEPd0V4mU7vq6WRLCy"
+  },
+  "com.aspiro.tidal": {
+    "name": "TIDAL",
+    "icon": "https://play-lh.googleusercontent.com/_ktGwooWwh0h_MCi0T2YmFQB-pj6o5AGFDvdI302bdnNWtcQniOHy3pf4WRVs6rzjMtdl01J7-Qfw88xtYrWn6w"
+  },
+  "com.burton999.notecal": {
+    "name": "CalcNote",
+    "icon": "https://play-lh.googleusercontent.com/yySXVdcVp40jwY5Xn0pJaAZb8ySpQv4qpeD63NTfbCrNzWVAxy3tfbHpXztweIJfYi6o-gN4sJIzpyTuBghUw7c"
+  },
+  "com.cv.docscanner": {
+    "name": "Document Scanner",
+    "icon": "https://play-lh.googleusercontent.com/lx5ov3AQ5cRwu1zJiSObtdcP8ZHIUVbwtOL7HrIOlkMF-aSyccwuM-T_SoU0HWnJxV-T0GCnNzpwtCJUFBaI"
+  },
+  "com.eyecon.global": {
+    "name": "Eyecon Caller ID & Spam Block",
+    "icon": "https://play-lh.googleusercontent.com/Ygb2Qn4l6WTUOK8nrRt_i4X6TmlFDJgrZmQKgTYw15yfIriBtKGw0qsIr9Rz8cBxJQ_y4hQJtHc7i21R8mpKk7g"
+  },
+  "com.flyersoft.moonreader": {
+    "name": "Moon+ Reader",
+    "icon": "https://play-lh.googleusercontent.com/bhF9KcXvINTlxLCqvHRXWmQyGgRQ-7e7KZq9U4VkSaVFHPPNS7FGX34qwl32yokVjOxQpmopCg8Y60zygJPG"
+  },
+  "com.frontrow.vlog": {
+    "name": "VN",
+    "icon": "https://play-lh.googleusercontent.com/AdmVEf1YsnbcTx7OFNNbJkqLbLewomf6xR4wWnazycJJC4llEXjmBOixxcgGt3TFa_IZszY9gw-4UOGYKlaKMw"
+  },
+  "com.google.android.apps.bard": {
+    "name": "Google Gemini",
+    "icon": "https://play-lh.googleusercontent.com/C64IqPWyFoCZzXVxXVl0Y6mliiNlG_sZJsqul-SBvk9ZL0wJHlU0Eho2wvsBHhho0FT5XQtH55RVGerIwXF_MA"
+  },
+  "com.google.android.googlequicksearchbox": {
+    "name": "Google",
+    "icon": "https://play-lh.googleusercontent.com/xqk8hd6dMyffxE6iQa59cUt75EA-0YDvjnJlxH4z8W63-e5KwaWXbrNob6Q-OoH5SSDa78Y0I0YA3BB0zDVnB8w"
+  },
+  "com.ipoji.app": {
+    "name": "IPO Ji",
+    "icon": "https://play-lh.googleusercontent.com/1ZHgFWchTQYQI5x_bTUdaikjylxxR_FQSAbB5U47AZcyjkdpHbwzbcjZIJ067PZI9RGrpHYRqNHJirHJ_IA2GA"
+  },
+  "com.markOne.ss_app": {
+    "name": "Mark",
+    "icon": "https://play-lh.googleusercontent.com/ZQ_qwzq8TIjRrEUZJeOPwd2kyBZPTxRmt_rWZOoBRhBl2Dq0-rmMIr1Tg_nOfO2npMSt9tthHUH_0S3812W2iA"
+  },
+  "com.overlook.android.fing": {
+    "name": "Fing",
+    "icon": "https://play-lh.googleusercontent.com/FUZLNTxV8z94d-FEIELfhV0ABBdTFN4OgBqSEr_MBZlU3zN9J1bCqdG7h3OkFszmSW13GSuWAYgaZ1oSQwdRZw"
+  },
+  "com.pinterest": {
+    "name": "Pinterest",
+    "icon": "https://play-lh.googleusercontent.com/VExMwhu9Fe5kz72YnPWP6mHrNA5WfgZ-PJMnBnQmXFpLncTAOaaHtK4b8w7b2xxGxtqycDatYslVyNSLucl9QA"
+  },
+  "com.quickcursor": {
+    "name": "Quick Cursor",
+    "icon": "https://play-lh.googleusercontent.com/RQudeKalTuNhXyw3kDxSLD1smlEbPwv7Jm-A4ynLUleDWgve0i_bU_u4_vOLUW65PnevTMnNW14KN6LKcd2fUw"
+  },
+  "com.sbs.train": {
+    "name": "MacroFactor Workouts",
+    "icon": "https://play-lh.googleusercontent.com/F3t0pahlU3r8-6Hf9iWw07KXH_ye4-nEZYNht7RZlMBdWJGUwPdkxrPWii_jqMg6WWc0v0TdYBofI7IG8xj0u5k"
+  },
+  "com.solid.teleprompter": {
+    "name": "Prompter Pal",
+    "icon": "https://play-lh.googleusercontent.com/t8IB5mC9wkH9KpgaQsFdnrMXQx0HFf_2S_ZxTZXvuXa-g6fskfivwGbMrTFvrqFofKtwjoNKXjRkBfYkO5XcRQ"
+  },
+  "com.truecaller": {
+    "name": "Truecaller",
+    "icon": "https://play-lh.googleusercontent.com/kVMxXC3fV4cyG56MZunYS2-HYaHh3eM3YTWoDbYaN5-G9xIU2k235hHVQmRrm79tzBSzt0cZ6GsBbzGzGbbMwg"
+  },
+  "com.vladlee.easyblacklist": {
+    "name": "Calls Blacklist",
+    "icon": "https://play-lh.googleusercontent.com/Pops_1xXKN54saVZiVn0mo0FE0DrzlF03hbjeH_PJrcsqqxV4XjHB7zjd8RxscGH_T0s3ZDtD80ipmily-FPtY8"
+  },
+  "in.cricketexchange.app.cricketexchange": {
+    "name": "CREX - Just Cricket",
+    "icon": "https://play-lh.googleusercontent.com/fy5dd3cSuVxOOGTLXJubzk3PAhAk8QZQw0oKZIrq_VNeghanKGApJjLDHa9_9ihuxtMPl119-frV1o_ErJVZSA4"
+  },
+  "in.startv.hotstar": {
+    "name": "JioHotstar",
+    "icon": "https://play-lh.googleusercontent.com/02xiO0ptbXjD8NR3sbS2StP1P9aytDN56dDR15zqM_i66Vwq5W_hD-98CoFxvRVoUS4uV_xMSv-iQh3nQFeDeQ"
+  },
+  "org.withouthat.acalendar": {
+    "name": "aCalendar",
+    "icon": "https://play-lh.googleusercontent.com/f7nj5nkQpWdOA-JP5bWDM8N6JjoUcNyGH9EMJvlFAyWThL00MPTGXeVIpVkiuwDNUbF2JqYBIlpfr3DlcXViQQ"
+  },
+  "ru.yandex.yandexnavi": {
+    "name": "Yandex Navigator",
+    "icon": "https://play-lh.googleusercontent.com/032nEKkXdO-DXnOZbqN4eOLfOaFJoB-su8zcWttsEwc6e_eD6q-FjXpgv_jB0iP891UH691s41geCJ4ESFK7"
+  },
+  "videoeditor.videorecorder.screenrecorder": {
+    "name": "XRecorder",
+    "icon": "https://play-lh.googleusercontent.com/bfewUxobdHumF6r7pj6teHAPnLWXWpRapcgipF4-WjU8ziVwQpm5nyOhM9FNq2-G2axH74JiDU9z3Fc_5FeS"
+  },
+  "com.roidapp.photogrid": {
+    "name": "PhotoGrid",
+    "icon": "https://www.apkmirror.com/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fdownloadr2.apkmirror.com%2Fwp-content%2Fuploads%2F2023%2F02%2F82%2F63ec417e900da.png&w=192&h=192&q=100"
+  },
+  "com.intsig.camscanner": {
+    "name": "CamScanner",
+    "icon": "https://play-lh.googleusercontent.com/XSoqEDquJuenUosbMN_EA2n2U5lsomPEUdCKj4j9bUdPfdWMCtRqXlyPgQ6zxQxWaDFIXrqbqyFjwXQ5FMYubw"
+  },
+  "com.example.app": {
+    "name": "XYZ app"
+  },
+  "com.unicornsoft.android.unicornpro": {
+    "name": "Unicorn Pro"
+  },
+  "io.foodvisor.foodvisor": {
+    "name": "Foodvisor",
+    "icon": "https://play-lh.googleusercontent.com/EF7kwLiABmSdczLWS6dI6v1rvBnSYpS_I6wyuPSvve4sPYZFiKVF_R-dF_a8vm4oFGPhOspFlEn_C1UEhobBiA"
+  },
+  "com.eksiteknoloji.eksisozluk": {
+    "name": "Ekşi Sözlük",
+    "icon": "https://play-lh.googleusercontent.com/7jUyHiS3MqcXRr-Ejlhbmf3VseFu8VPMABa5pFAgJ4RJKt82gXZB577wlnshniE1dIvJU4lCEgzS7r7O7obr0Q"
+  },
+  "com.mirinae.mirinae": {
+    "name": "Mirinae",
+    "icon": "https://play-lh.googleusercontent.com/5bIaEX9fGHToL9l-G1ehHPeoomNL9McMpSatYv1iZdvvkCmP6lgLT1luLH5iMf-RDWlBpAN_SHxjFngFCrG78w"
+  },
+  "com.avito.android": {
+    "name": "Avito",
+    "icon": "https://www.apkmirror.com/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fdownloadr2.apkmirror.com%2Fwp-content%2Fuploads%2F2023%2F02%2F47%2F63eb44bec5203.png&w=192&h=192&q=100"
+  },
+  "ru.ozon.app.android": {
+    "name": "Ozon",
+    "icon": "https://play-lh.googleusercontent.com/iZhyKvRs1otTwl4NyHzX_6GT3AUO6vBuvBQaf56VtZsDteoQ-ceNr5fwzYQjHxBISZtobnB1zVu1avuU41ParQ"
+  },
+  "com.wildberries.ru": {
+    "name": "Wildberries",
+    "icon": "https://play-lh.googleusercontent.com/_3OFXp7p3aaOt6lJdqOPNS8frRjGW7SrlgUELTcxMZNbvQtBN0ez_lrXtMk-X9Yk_kfdesM7fOcRpMl3Ebhgpg"
+  },
+  "com.idamob.tinkoff.android": {
+    "name": "TBank",
+    "icon": "https://www.apkmirror.com/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fdownloadr2.apkmirror.com%2Fwp-content%2Fuploads%2F2025%2F08%2F03%2F6898fc5111a2b_com.idamob.tinkoff.android.png&w=192&h=192&q=100"
+  },
+  "bitpit.launcher": {
+    "name": "Niagara Launcher",
+    "icon": "https://play-lh.googleusercontent.com/hVqi9FxxDkYgEnRJUwKiRbOglrEK-PtGybQRkl2gwbq1KYtCmG6E00cU0Evyd3HbEdeaz9X9JtqOjwdxNeWS"
+  },
+  "org.cryptomator": {
+    "name": "Cryptomator",
+    "icon": "https://play-lh.googleusercontent.com/FTJ0_kqfPQgaiME4yuGW7geqDw5_IcZoUJyS5XoVCV54iSxZjQkS_8M3z8HHxKxY2JP0jG-33-6BeBo2YkhvSQ"
+  },
+  "com.github.android": {
+    "name": "GitHub",
+    "icon": "https://play-lh.googleusercontent.com/nxpwi4UD84GNJuJ42S9U0f3lGDsHu8VkIDPCccFmJL6kyNVb1O3pTY1rl1YZICLBk6EcWIaX6n9prCbdUoQEOw"
+  },
+  "cz.mafra.jizdnirady": {
+    "name": "IDOS",
+    "icon": "https://play-lh.googleusercontent.com/o7vo7iZJg82nRkas3Snx6mDS95d3bX__PJfTfAKdjcofF-lYBL72_NAfMik1x7RBx-pKHqD5uL_e5UX9iTe9Gg"
+  },
+  "com.flexcil.flexcilnote": {
+    "name": "Flexcil",
+    "icon": "https://play-lh.googleusercontent.com/Jfrzp1yaMjP2EDdMn5TtPAfpbjkGOnXRMFUvK9gc-28ZI3BM3X1yXbRDcjkCsigoGBg2PnZk94dNgtT5TPLV"
+  },
+  "jp.co.yahoo.android.apps.transit": {
+    "name": "Yahoo Transit",
+    "icon": "https://play-lh.googleusercontent.com/3JbyehD0Ayvelsp-LaKSa80niDPaX1FnqGCs2ppumYQhpY_eNKI4N9dD4uhpKU7CD-b7a62qi6vn9fEVeGfPy2g"
+  },
+  "com.urbandroid.sleep": {
+    "name": "Sleep as Android",
+    "icon": "https://play-lh.googleusercontent.com/LsHymWZZyoDfB1R5AEetD2E2PDspZGeVCkwE8jxCcP5XyTxBRkJsVx_OG2w2oIuK58Btnpz5eIczbCWDjvZkCw"
+  },
+  "com.michaldrabik.showly2": {
+    "name": "Showly",
+    "icon": "https://play-lh.googleusercontent.com/MVI1pUoJSh7hnO-8BSb67Ojq9wh8r9V0Imqm-AC5gdT-ohOaPnQ4JexvUy6a-gFZadTV27usj2bwQJlnntnJJQ"
+  },
+  "sensustech.universal.tv.remote.control": {
+    "name": "Universal TV Remote Control",
+    "icon": "https://play-lh.googleusercontent.com/yowpBHteTsFjVgAZN1IExwfucGxJzZ28sXYf4hs_Y4FnemiL9-qrUSr5VrzdXQNcoNTGCJ7-bEufvb--V5gpqw"
+  },
+  "com.cloudflare.onedotonedotonedotone": {
+    "name": "1.1.1.1 + WARP",
+    "icon": "https://play-lh.googleusercontent.com/PDwXxcvulfxi2bH4UjcMGJ7i0CQ7_QNypYohkhhg02zE7FdNTNRyF21-ikrLM5kyvcmNxtr77Va-7sS3NLbpNg"
+  },
+  "com.saldous.casetracker": {
+    "name": "Case Tracker - Immigration",
+    "icon": "https://play-lh.googleusercontent.com/MBF03v1RSEaq48wgwU8PWtrXPud7l9Gak0U5EywEdEWP2OD-mASssBpJQi0UUf4HaZDVpfFLrxXesyzD2IbWnw"
+  },
+  "com.catalinagroup.callrecorder": {
+    "name": "Call Recorder - Automatic",
+    "icon": "https://play-lh.googleusercontent.com/dJwOASgiOu0tCod_WeCDjX9d_oJI9SuZpmtFlSP6ATA63hXM8pUxnTp1HCI9YK1jD5v2lQw3JSKEWatwDzPMQg"
+  },
+  "sp0n.citizen": {
+    "name": "Citizen - Safety Alert",
+    "icon": "https://play-lh.googleusercontent.com/WI55Qb1VObnbMnWXtYHSibC2n4dSD3ZRQc1bIjn61nBG-RWP1sBWD2WGhW_BdZwGp68u6OThbaEh8uWrkO3t_A"
+  },
+  "com.amazon.amazonvideo.livingroom": {
+    "name": "Prime Video",
+    "icon": "https://play-lh.googleusercontent.com/qyXqjzPggunbifX0ODhCehdy4ei0F90u0N3f4pPk8NhgCZD75dH8bdQYPROGRVlTVOs8B8JAT58X6ImMZv5ugHg"
+  },
+  "com.cbs.ott": {
+    "name": "Paramount+",
+    "icon": "https://play-lh.googleusercontent.com/O5QHZxy2pkxwHrjU3Omd_1jdIYk_pZQexy2VVEDBDhaXgNhvZV7wjhfN_0kLUrQfCKFsaGbQbVm8usyrc-yBGhI"
+  },
+  "com.fox.foxone": {
+    "name": "FOX One",
+    "icon": "https://play-lh.googleusercontent.com/ebCaN5awfvgyVRQ2mgjbp1gcoPaMttdHOe-cM1KXEw2jZe2HHbomLpcKjNswM8yKc4qXGtCLNyZnmraY0AZhhCQ"
+  },
+  "com.foxsports.android": {
+    "name": "FOX Sports",
+    "icon": "https://play-lh.googleusercontent.com/C_ysTxhdwPTr-tI_kw8grmXWkU_HJ0nB5UREiSXcpy3-JrhTg1An8YIAy2eFYJe8b8OCvYUXpYRS06ERnejs"
+  },
+  "com.tubitv": {
+    "name": "Tubi",
+    "icon": "https://play-lh.googleusercontent.com/JcI8o5IHBMbNZ3tNE88Xnw8nwZYMZghNRTJ8JaiU_jXA4J2ShN1kybxOColfQW5UeRyykv3AFL6TcrmHGTRL9g"
+  },
+  "com.wbd.hbomax": {
+    "name": "HBO Max",
+    "icon": "https://play-lh.googleusercontent.com/0Xve4so8vFKdWH1nadrPraSJ2XoKlc2Fd4BToADo0f8gXTbljiwzuEA-OZXV86i5ubZ9uw8giaVVP3d1g_jm"
+  },
+  "se.matlistan.free": {
+    "name": "Matlistan",
+    "icon": "https://play-lh.googleusercontent.com/IZ3pdz7dQ26wWrJ_urafJCSEw6EuMhqCveGf1QGBljiM2f1cshnSRXWdOu53XcNC7Mk6UeNH7VLYzgF4ppEy"
+  },
+  "com.newsbreak.crimeradar": {
+    "name": "Crime Radar",
+    "icon": "https://play-lh.googleusercontent.com/3b7_a7m50wFj68Afd6q0bhq2HPTWQlgeViv9B9tEbhChS3h4nVTo-HotZF4OmShKwT2_zhNAr3alwYRWBjiC_g"
+  },
+  "com.univision.prendetv": {
+    "name": "ViX",
+    "icon": "https://play-lh.googleusercontent.com/633te87O6OwdbHCgPfkE1atdsYLHNDwL6jdgx5-pFPQ29gbfLxBXXaJ7Ejvl5ec4BlOC62l3MedNwJ7asrvdug"
+  },
+  "droom.sleepIfUCan": {
+    "name": "Alarmy",
+    "icon": "https://play-lh.googleusercontent.com/3b2xdcIvbLFtNiOP1vCbQuszwP2qWyGsa_pGC63VNQlSC4ddP3sApprJ0r4ajU5bypFYjIWaHe_pjNzvE5cKvQ"
+  },
+  "com.microsoft.emmx": {
+    "name": "Microsoft Edge",
+    "icon": "https://play-lh.googleusercontent.com/4Z1Nt1I9HUDevt5VJ7BmgpqSTUpsC0Ei1K-IiXSmkH5Dzorz_isDzq4qdpb75RA1SfOV7v6csav-atWBur1wJQM"
+  },
+  "cn.adonet.proxyevery": {
+    "name": "Android Proxy Server",
+    "icon": "https://play-lh.googleusercontent.com/F5HPClySDDA7YlVHUwdTZ-nwWaFDODbwwAFtyYi0xCYJ3yaNZQAhQ8-3CAOuxJ27sVycDj1O2IRsPWPrV9_mpU8"
+  },
+  "com.flavionet.android.camera.lite": {
+    "name": "Camera FV-5 Lite",
+    "icon": "https://play-lh.googleusercontent.com/AGUnYOVRkxRNlANs7Nxlj29aHSiKjuX7AwVVqBmWKKv6gVbSayul-iHVrr4Wn7cdMzZ5e_NfvFH-LvlzrK1-HA"
+  },
+  "org.telegram.plus": {
+    "name": "Plus Messenger",
+    "icon": "https://play-lh.googleusercontent.com/tvinmqPRqEdX_C3x319DHieZ6XDUL5PyLZa-8TDJe9gb4d05G9I5zaakv7MOWmXTMQi-Lq5W0yDfUeiHPk9d"
+  },
+  "com.lumina.wallpapers": {
+    "name": "Lumina Walls",
+    "icon": "https://play-lh.googleusercontent.com/m7dUlxGIGmHKz4CSVZ-0eisVLL_GkbER7_WUsE1qTW0HSgqzQk6dgCHByaqoFVc2gHFL6UMVivdD_ZfAASBxpA"
+  },
+  "com.celestron.skybox": {
+    "name": "StarSense Explorer",
+    "icon": "https://play-lh.googleusercontent.com/VmTDox_tzKkzwHDj_LbC4RNdzWOGH7i9ZYBSwDJCIQwqYqNMD7zbauX2BWv83XS_xPHo_ebio2LnmredJB53LQ"
+  },
+  "app.vinztech.trackit": {
+    "name": "TrackIt",
+    "icon": "https://play-lh.googleusercontent.com/VbSSOHZde4js3CjP9oEQrJLedqUachYUURfb_fmHBNdVdsdSoPQRy8H7pQhNg-5TMpHt0mCI6APWWh-EsdynZ7Y"
+  },
+  "com.bytesong.missionalarm": {
+    "name": "Alarmo",
+    "icon": "https://play-lh.googleusercontent.com/I5tM2cUkBSMH74XAmBYPlBVnoaY08B7wgwY4DhqKKYUQ_zYtU_nWNMVn5pe337MVGsEQNluDYugOaPsVQZJIyQ"
+  },
+  "eu.darken.sdmse": {
+    "name": "SD Maid SE",
+    "icon": "https://play-lh.googleusercontent.com/3prZ4AWUkRpB76xwwWQV_cvDrlu87YAmlEv2j_5QEB_ZC3-9lZiIXdwKW7-40in7Fs7l9iHUGVHcQZWmgdWqXA"
+  },
+  "com.java.inspector": {
+    "name": "Java Inspector"
+  },
+  "com.flavionet.android.cinema.lite": {
+    "name": "Cinema FV-5 Lite",
+    "icon": "https://play-lh.googleusercontent.com/4vSiKUJPY8jYdAF1fyLrvQ5KFES0YSsLs-KHC5yzeH4dc4DU34WupnTm0J6zkY9mUjLijujrSEmyOg6KorCmbQ"
+  },
+  "com.navercorp.game.android.community": {
+    "name": "Chzzk",
+    "icon": "https://play-lh.googleusercontent.com/X9wOAI11HK3M4WyhYq4k4fmNcT4Fi8Gd1WRwU3s4IR4YGl1k7hKic9teHN2cnsURsUNm26MC9NHnyS-nMKRr"
+  },
+  "com.proto.circuitsimulator": {
+    "name": "PROTO - circuit simulator",
+    "icon": "https://play-lh.googleusercontent.com/g_1cfwsprSY0STKXDrcVq47Vgh8148aphTNf_fC45sQ5HrrjI5X9qH_tq5N4axXd1VwEaMUU9eJRxE090BcxpqA"
+  },
+  "verbosus.pialytic": {
+    "name": "Pialytic",
+    "icon": "https://play-lh.googleusercontent.com/w24A3A8HtaBv-DBFCA_uDOpLvcCMRphB0Q59mPKN1UJAN1zqERv1U-qXOBPqJYjLUcCDiTRZ6DUGU8pgzckDEc8"
+  },
+  "com.oasisfeng.greenify": {
+    "name": "Greenify",
+    "icon": "https://play-lh.googleusercontent.com/4Uqi_lGZdgUL4GGxELdNdBaDMs2OjhC9emw5LWtEb1XN3NWlybG9IYD5yXSLuhwtt66cuMz4L4zWYgXzgxR1sA"
+  },
+  "ai.topicfinder.podcastdiscovery": {
+    "name": "Snipd: AI Podcast Player",
+    "icon": "https://play-lh.googleusercontent.com/6tmzsW5-wGY3HYZjs4FC6d5TCX5_phdTyZvBLw2Kdag33iaQ3OyOE6p4KINyDMzoH3XAtpMUVM8pzq_nNvYsgQ"
+  },
+  "com.vitotechnology.sky.tonight.map.star.walk": {
+    "name": "Sky Tonight",
+    "icon": "https://play-lh.googleusercontent.com/EVp-0jvKf6PUU788sieuq-Q8KYKPvRta-5-dSDpkXKcRrEucNrSx8MW21DKIf-EhhxDDp7QbPeK7xKrNBuF7dw"
+  },
+  "com.noctuasoftware.stellarium_free": {
+    "name": "Stellarium",
+    "icon": "https://play-lh.googleusercontent.com/UiUfUaonnw8gKqR91CamVZeJu7AuPG5TgBgX51niEwuSua5mu4Bmlgs8w0cwmIzYctJCjRtdW7KlmzdN8p8lKw"
+  },
+  "com.sonyliv": {
+    "name": "SonyLIV",
+    "icon": "https://play-lh.googleusercontent.com/_nY78v_nwwODXHZqwAlpnfpjCK1CgkBgjmwMudmmr_3wujgSyOd8rbzWGrGivSgSJS5qvrFA16LFxtRYZsvTvQ"
+  },
+  "com.wanderlog.android": {
+    "name": "Wanderlog",
+    "icon": "https://play-lh.googleusercontent.com/9OTbI7bVQ6Bb6p0n1p3HmLfi-iuTvznPtX7NEd-TXWPVUax7KHSOVs9CEZUOQpwY94oGySjTq-iBv01zKoBRHg"
+  },
+  "com.byairapp.android": {
+    "name": "byAir",
+    "icon": "https://play-lh.googleusercontent.com/EeNJqDNsz4J7PzatWn3DoTUJJJvOxeWOxqMqb6uyA6mpbEUsWkzE-BtJ0vuTYIU1_qsqdFQoumo_T6R1IuwDpQ"
+  },
+  "epixler.de.hypnobox_android": {
+    "name": "HypnoBox",
+    "icon": "https://play-lh.googleusercontent.com/2mC3PYKQAaLdu_0u8u__eL5kxjBdOXf476B3CtMTg0mhBwrOlD8ODP2DmiyCMXXfhF4Yx7JjjRZ6cauxkJmh5A"
+  },
+  "xyz.rtrvr.pillo": {
+    "name": "Pillo",
+    "icon": "https://play-lh.googleusercontent.com/5zIWi1LMtVRPpffktQtKhPoJNRzorFE8ycINm3fl2i0-_8JQZI30qZN7vkla3b6HrOMLO-bo9OpzZohZSnay"
+  },
+  "com.jndapp.depth.live.wallpaper": {
+    "name": "Depth Wallpapers & Live Clock",
+    "icon": "https://play-lh.googleusercontent.com/h9g140jbgc6tR6o2VgL2lF0OYTr8cq2n9x_GihS_Toxe3PioggBfXHzIwM2OeNeEyWHfZFpqoMov5Whdm_qMeg"
+  },
+  "com.mobond.mindicator": {
+    "name": "m-Indicator",
+    "icon": "https://play-lh.googleusercontent.com/6NH-2g_kwAlEExsNbcAA0w5bjfxoHMaALX4DrMpIhQe64-ZfaxLW085Cax9J-e_mvk9TNeNKZXDzeo8BNF-eExY"
+  },
+  "it.mirko.beta": {
+    "name": "Beta Maniac",
+    "icon": "https://play-lh.googleusercontent.com/cvamBkdg3UQgYgQwlLbursoGoTRWi6DzmY7rph_dwWC9XCxUveVgU4NOx_lMj2dE0d8klY_tC1Y_9YdIOVYD"
+  },
+  "com.iudesk.android.photo.editor": {
+    "name": "Photo Editor",
+    "icon": "https://play-lh.googleusercontent.com/2n2H30gUwyIKaYp0c2Nr9btyFVJBxREps11WCl6U5xlWaHPvbA3IZD4GwfFlFXgt8jsoS2BtCu1MBkS70_gLuQ"
+  },
+  "com.tafayor.hibernator": {
+    "name": "Hibernator",
+    "icon": "https://play-lh.googleusercontent.com/evZf3MH6957tqcIGaGqOyytkXRnrOagMDz00UHR0S13_6P46MihR5TPeZxpr-lautYOLAvvXAx45sIbA5towQA"
+  },
+  "com.tafayor.killall": {
+    "name": "KillApps",
+    "icon": "https://play-lh.googleusercontent.com/n0wUxgYo8BoUhxcc_l3U_jCwCbPRQhIJKFzxdZ4katlhsswB0rLXKV4oiLj0235W_kYPLJKwIlk5-xMN-9Rt"
+  },
+  "com.javiersantos.mlmanager": {
+    "name": "ML Manager",
+    "icon": "https://play-lh.googleusercontent.com/tDjmADWkv1VGF5On3dNc4nMQZ0qU7izJKqmS_sJQ648tXazBvaLR7HO-VD7DJNKqMEOzJA-PUAEgdrNxuH6_UA"
+  },
+  "com.twtapp": {
+    "name": "Stargazing Hub",
+    "icon": "https://play-lh.googleusercontent.com/Y9rUCGFcH3Qtu0cY2Wppp5ZuSK1GNmsTVhD8jG6JUGYdYeUteBIcbll0C2z90V6X7nDOD4eGgrecyox2q8mu"
+  },
+  "com.yatrirailways.yatri": {
+    "name": "Yatri",
+    "icon": "https://play-lh.googleusercontent.com/T45yBR6PwB4nu0ncKZ_L-LfLv5CwkpJkYiiI0mUlcyqjDk3nL5xk_ibg1SmPXcptRa3sD57x_mePxTdwQmd8z4Q"
+  },
+  "com.atmfee": {
+    "name": "ATM Fee Saver",
+    "icon": "https://play-lh.googleusercontent.com/-L2UZ2La61Xzq91GIDjlgQYLrnDBh0JFM7M9DtYDZeY8NctQ35sMyGbqm_sFDiO6gOB9ei4Q53l8H3tUEPEFRco"
+  },
+  "ru.vk.store": {
+    "name": "RuStore",
+    "icon": "https://www.apkmirror.com/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fdownloadr2.apkmirror.com%2Fwp-content%2Fuploads%2F2025%2F03%2F53%2F67c787cb4f546_ru.vk.store.png&w=192&h=192&q=100"
+  },
+  "com.medisafe.android.client": {
+    "name": "Medisafe",
+    "icon": "https://play-lh.googleusercontent.com/epxe9TPkOYoDDMcBd6yw1AO0CI62rZ1ny-eJZXmFEsMsnoEcfGXKTcE38rzmDbSRW99zWLRB3XtorZSAq9Hj6Q"
+  },
+  "com.imaginstudio.imagetools.pixellab": {
+    "name": "PixelLab",
+    "icon": "https://play-lh.googleusercontent.com/sau_UnfHaOkp1-1SLDxGvM5v-dxjVGMeU7_dWLNGlGnsoIz7vJOdMneEeUaQ1ebehoZNfqK1hH-yTYR7-VX9_bE"
+  },
+  "com.proxyman.proxymanandroid": {
+    "name": "Proxyman",
+    "icon": "https://play-lh.googleusercontent.com/DfGml5bkf56G_Q3sOmQwGXOoixLShTs_-s1oDyTWawjAbFt3ej5WPFrAT2NnWMy9XkblegmgCcKwmZcNnskRnQ"
+  },
+  "shareit.premium": {
+    "name": "SHAREit Premium",
+    "icon": "https://play-lh.googleusercontent.com/MBk1ZzBqd0nWQFWi_hZBOKjnvJaKTtEERT2adLYSvfuY0NCRI2xzkVEiYGk_wfqm1bRt6AukfSE1FhsB3uJrPi4"
+  },
+  "cz.mroczis.netmonster": {
+    "name": "NetMonster",
+    "icon": "https://play-lh.googleusercontent.com/bY_d4uzxtY2_a-r3caEhTlQPzRZy7lCs428H-BIo4KGxyjWm3ZVRCtJTicy07nh3m30n5O6QPrgmYT8okHfT5Q"
+  },
+  "kr.co.nowcom.mobile.afreeca": {
+    "name": "SOOP",
+    "icon": "https://play-lh.googleusercontent.com/kkYJ-GrCRS0WWNWjshvFCyqnYPdC7PY6UZ5NK5ju7OFnp0lmU7JlOLIfPvQnr4Y_LWhnab-Fqz9PkCrEwpPjLQ"
+  },
+  "com.rp.hypertrophy": {
+    "name": "RP Hypertrophy",
+    "icon": "https://play-lh.googleusercontent.com/62vJSsCoVmBr-6aywdtDuHG_-55SiX_h9mH5rbSrv7Q0f2rIaq6YzKKzpFoj0Vn08lWPSE3IDd0DzB-lU7KYEQ"
+  },
+  "com.fatsecret.android": {
+    "name": "FatSecret",
+    "icon": "https://play-lh.googleusercontent.com/dVbMRKkDJvcMVNr9SjMjoEW9fFF1PAQakQ4eASAWORWcH1AsTwHMefo0xOFFmiGfvFk40hpPCG7ezbO0uH03"
+  },
+  "com.yazio.android": {
+    "name": "Yazio",
+    "icon": "https://play-lh.googleusercontent.com/QqbWLtHPocHrgg03WyNqfmxVMBEEnvdavkz5xkdjwrr1MEpkez6f76_hsqxiTbg18M20oqN_k_DVlbG7C7s7kw"
+  },
+  "com.realme.link": {
+    "name": "Realme Link",
+    "icon": "https://play-lh.googleusercontent.com/k0fcQBT5A_Y64KvusaVDyNswvuMOG-NKtFJBhhhatkWxEkL0y3mWxvtWqIr-iEo0ONUvWFZOYLthork2MooWvA"
+  },
+  "com.ninegag.android.app": {
+    "name": "9GAG",
+    "icon": "https://play-lh.googleusercontent.com/O3exMzvq4XfEBBr96KeMynd3E30tk4xPGcnYrQGrHtBZAVUgOIEHMqTA7hU_VHniqTO1wIZu5d7wPb4xxDA5F5U"
+  },
+  "com.vpn.free.hotspot.secure.vpnify": {
+    "name": "vpnify",
+    "icon": "https://play-lh.googleusercontent.com/ad5NXZUssUmB4MehCRji5XLSkDO4GzWsMPNRCPETOVPP4AM7D0dj90dOcFvEapdqEWHzErrVHV35mf9FSe-uZQ"
+  },
+  "com.vitotechnology.StarWalk2Free": {
+    "name": "Star Walk 2",
+    "icon": "https://play-lh.googleusercontent.com/zZ5e1E8yT8YGhWv4tLxMGgIWM5VGab8HATT5IKOw8dfyKUBy6LUJyZcehzyWJQsj3YpxrCLkS4Q7-mdlcMwO290"
+  },
+  "com.atomengineapps.teachmeanatomy": {
+    "name": "Teach Me Anatomy",
+    "icon": "https://play-lh.googleusercontent.com/PdgRttYBAXFXllgWBkIbLkdLAjJtYsHpAC5GTFgmAJnxXl6gJWv0WZMV7QmI0Gs5TB9qSRMAIAszky51nGw1vKc"
+  },
+  "com.blockerhero": {
+    "name": "BlockerHero",
+    "icon": "https://play-lh.googleusercontent.com/Yyv_3i0BxSyJrH390mRiBJPkz3lwTkY1dAJDLh6ncgm1ztgWodQ55jfsJSsF5syEGdeBr9fZz2bwDcY8_gg6AQ"
+  },
+  "com.cronometer.android.gold": {
+    "name": "Cronometer",
+    "icon": "https://play-lh.googleusercontent.com/8bWVHZIajvfmDnnwm0K64_aGoUZ86sZVFftpssiPUtOOBYlM-YnCYFZuMyFUv5VqDInp5a8hqJ2Q0f88OtKAnA"
+  },
+  "com.sillens.shapeupclub": {
+    "name": "Lifesum",
+    "icon": "https://play-lh.googleusercontent.com/gMeT8cxzZOnlrCKwYIOPHT90C9kb9pPbE0mHlk2gixDIadJ_B9QmslnPkQ3Sc0y9KuS8KMxPDxFgsL_GLnXbsg"
+  },
+  "com.brightstripe.parcels": {
+    "name": "Parcels",
+    "icon": "https://play-lh.googleusercontent.com/0CDcWcVJbaIhudQ95OeUySIuRZuPfvHY8z-xuCXjwW6WQMitwUr4Iy3jjGWqZMXqIT2k0sWmeiLmFOhqXno1"
+  },
+  "com.quvideo.wisemeal": {
+    "name": "WiseMeal",
+    "icon": "https://play-lh.googleusercontent.com/gwiNR8qnVep3kX80iHMt3f2i4IuFumVxzxM6YOKq9mVBKpt3eHEpG0aoOPp1_Aq8pjWSo48KeRzjWsI3u-VK8Q"
+  },
+  "com.kcstream.cing": {
+    "name": "Nekopoi"
+  },
+  "com.jeyluta.timestampcamerafreeent": {
+    "name": "Timestamp Camera Enterprise Free",
+    "icon": "https://play-lh.googleusercontent.com/jUAGa0QkXyw67DwyyQjX_cuiXVUIQ_QV7uPRdkRrMNI0gKxBH2JAdNiEEwfpqRZk86ZgCZzhOdPqbqKQBZgU"
+  },
+  "com.jeyluta.timestampcamerafree": {
+    "name": "Timestamp Camera Free",
+    "icon": "https://play-lh.googleusercontent.com/d4arYGxzjh2FaE1HbvI8jNFPZpIMeSHVWkXOMLDcsKkOTEZq-_gc0oFD5c8-FNMd-QFSTw-lT8AvGGS3PrsgpA"
+  },
+  "com.kevinforeman.nzb360": {
+    "name": "nzb360",
+    "icon": "https://play-lh.googleusercontent.com/CZpq1UrZc2UUONba1GM8OWEGeYeJ1_NrBcjhGpENnhSEIzbLb-f6lW76fuso685c3pdK8KuV2nfb8AVxISJlPv8"
+  },
+  "com.mtv.sai": {
+    "name": "SAI",
+    "icon": "https://play-lh.googleusercontent.com/NZEdYeZWgBVa10wkMBpdJrWQyL6lXuUWZDWx-ZSfWa4YJnatabcXAl7B55m1q83MrBq5OcqqFJCthyJ7muX9Hw"
+  },
+  "com.dubox.drive": {
+    "name": "TeraBox",
+    "icon": "https://play-lh.googleusercontent.com/b9KKZIvnQ_X3eIqHXeR4e0Ftd3lrDgAIkJ8N1fAvgl6zpTLuX8m74aVlRnoeLQCcAnLMbSMRJGLvsmghheZe"
+  },
+  "com.ufovpn.connect.velnet": {
+    "name": "UFO VPN",
+    "icon": "https://play-lh.googleusercontent.com/fU4VD3_e2lUW3SaQFK_s17TuDCUJ9u7dvIpcreZ86mSqPzrXDEYBXUlXUoouj0qZEmdmDqalDcz1DtEsnGeRxQ"
+  },
+  "net.nutrilio": {
+    "name": "Nutrilio",
+    "icon": "https://play-lh.googleusercontent.com/KrGUFVNpzq8nghzbFI9uM11WAVEHTkZKVyypMlr8G17ravMH6WV_MbI_IAG6zvgF2te5gWQKMobPraUY3WBFpw"
+  },
+  "com.quizlet.quizletandroid": {
+    "name": "Quizlet",
+    "icon": "https://play-lh.googleusercontent.com/ppK0J4O_f4d2GBDaNEUQky_LoHfv6TKTBUVjNvD6vVSOhRF6V9uKm4W2VJZ-z6nMEfCUW5QICZF3A8GhBVOPFKQ"
+  },
+  "com.alphaprogression.alphaprogression": {
+    "name": "Alpha Progression",
+    "icon": "https://play-lh.googleusercontent.com/Qx-OcOxvjDeyw3bE7EwegVc_EEieX3LsmusYnMq9JU9l86nWhRtnJMWkE1Wr78PVHSR4y66J2nyad1ooaNLB0g"
+  },
+  "com.soepic.photogallery.release": {
+    "name": "Liquid Gallery",
+    "icon": "https://play-lh.googleusercontent.com/V9TqJHU7bH4tbT3W4o9oE0SfAaAVSzJ7L5rglfhyKm8TWQIaYDF28Q4-XnuRiY0TKhjBWhNn5nbAgRxuXupJLQ"
+  },
+  "photo.editor.photoeditor.photoeditorpro": {
+    "name": "Photo Editor Polish",
+    "icon": "https://play-lh.googleusercontent.com/q-z-Sbn2WLCUb4MSmmdhVr9KRfJ4qTlgoQEUGEKsnfVEEMNPxsabpr-yngqQ15o5b6gLhaBOhGZNv6oBWDMl"
+  },
+  "com.ihealthlabs.MyVitalsPro": {
+    "name": "iHealth MyVitals",
+    "icon": "https://play-lh.googleusercontent.com/5fO1_n5BItkpyiHXLp5ok6w_3hq2zVUuyq1sci9mc12z3vTckKm-PsksMG2rtwbB1kiuRa57ybUdyPFBaT3y"
+  },
+  "com.canva.editor": {
+    "name": "Canva",
+    "icon": "https://play-lh.googleusercontent.com/52fzAlhKzDyZV8ttyQ_DHB-jOeLZAZEdKlgXnWL__YNMZuvsoRCshJX5mr_ArFZjK7rte4hqEJ4ucjtuKJK5"
+  },
+  "com.inscode.autoclicker": {
+    "name": "Clickmate",
+    "icon": "https://play-lh.googleusercontent.com/qPBtAmkh80PDy1ExUH4aafQVJ0zl9rNr5Lj2SJm3RJDJkjyd6tDEozuw-s1nGlXMZci83H27x7SCYey3vxVRDmc"
+  },
+  "eu.faircode.netguard": {
+    "name": "NetGuard",
+    "icon": "https://play-lh.googleusercontent.com/lFAIySzTog17p9O5Y9cqS4nt9F7n913WO5eVlgUQDxEIpURQzSU0Mgaqb5jiDe2UVZrjpEOwOl9mbLuksZpI"
+  },
+  "net.dinglisch.android.taskerm": {
+    "name": "Tasker",
+    "icon": "https://play-lh.googleusercontent.com/wjXpkVLT-LAzfcYOfhH0hF8ghU79nDHtqVLxBNmWOQJ2ghb4pgp_IBNfGdCTw-aQgh3WwA3Gp1k8Y4waZkGobmA"
+  },
+  "com.backdrops.wallpapers": {
+    "name": "Backdrops",
+    "icon": "https://play-lh.googleusercontent.com/nJ-352BP-U_6SqWbx2VDt-MJ6wvc8FB4g7xKdi1oFc-_r-yV8_ehZ7NL1Mc2e9vOfd5eq6oCipq5E59QD9EeaDE"
+  },
+  "com.bandlab.bandlab": {
+    "name": "BandLab",
+    "icon": "https://play-lh.googleusercontent.com/x_PQHLeE9ptFfTZ4nmhuKDQ34nghCrRcmoYISeAV_O-Oi5yuhoXzkrRjtBgn7yfLyTo2bOtiu6HzqoEhphmliQ"
+  },
+  "com.appfactory.essence": {
+    "name": "Essence",
+    "icon": "https://play-lh.googleusercontent.com/4u6esDstTbJIet24X_6zkSn0I3e3OQcu6Ev5eEv6hh--DZ7C9Sc5aqPT-encPc1pTr2SBhljInJpzTfmNEdq"
+  },
+  "com.bamnetworks.mobile.android.gameday.atbat": {
+    "name": "MLB",
+    "icon": "https://play-lh.googleusercontent.com/RYGN6NpWoVnfgzFkganzw91uBa5VLTr0JRrkXrD8wjbRZtaMNgTobwKUqZ72sjzZhIUWfkrzumokFrMcK18F"
+  },
+  "com.jcdecaux.vls.lyon": {
+    "name": "Vélo'v officiel",
+    "icon": "https://play-lh.googleusercontent.com/XC_XcRVkg55F_UTglnTJ8lLJkz3GueyDGpmw5-ygNKTcFRDK_xIRPs-5I8_nWf00PnnTgJ88xGCojWE0vBABEA"
+  },
+  "ee.dustland.android.minesweeper": {
+    "name": "Minesweeper",
+    "icon": "https://play-lh.googleusercontent.com/xhjS0u8N-eSoz_-0TA5JRQr5calSxSs0FcCspwoG9KQUMBxCMjsm_OWjEUaKVBJd84ldwaCcyJQpcBSOFyC5CA"
+  },
+  "io.funswitch.blocker": {
+    "name": "BlockerX",
+    "icon": "https://play-lh.googleusercontent.com/fhYWvaAnqcIfUCpV7So0ztdHdzYzd-TZchm-835Mg9Dj6JnezPcJOg4xeX0jSwrcPbi1skDk_czPrNT9XiIZxw"
+  },
+  "altergames.carlauncher": {
+    "name": "AGAMA Car Launcher",
+    "icon": "https://play-lh.googleusercontent.com/GjXwl-IZQGNRt8ip8WqYxVRKtwxgDrbrHEozttQuKh55gh6uWkgxC0gULBq3ATJi6Bmb-v_9_SI2SeHAlLjB"
+  },
+  "com.collectrinc.collectr": {
+    "name": "Collectr",
+    "icon": "https://play-lh.googleusercontent.com/2Vpkd-pzgzbBlVMAa_jhrdRX9XnvW-Uq9b3849Wh8nzwywrxnP0YwiNbxON8B3XSTEpH8x6K2IL-jBxp3kdkJQ"
+  },
+  "com.tracked.mobile": {
+    "name": "Tracked",
+    "icon": "https://play-lh.googleusercontent.com/S2pPlZ85aErqBozI0IZWGFyLGcMT0JhyPJM67KAHaNELFXfY7lJR93owoI2LFJ0FOk4qrMpvW4CHhqqDaX8G"
+  },
+  "com.persapps.multitimer": {
+    "name": "MultiTimer - Multiple Timers",
+    "icon": "https://play-lh.googleusercontent.com/jFOqBkYA2O6qoWDDlWPQ4xtsGezj_YOY6hj_cRH7OkAjsfW3s830QSci3x9SSAps3x1n80pC3vFpedmgZ4HJ2w"
+  },
+  "com.medibang.android.paint.tablet": {
+    "name": "MediBang Paint",
+    "icon": "https://play-lh.googleusercontent.com/ZZ1aedj42CKr8xbo52oIUx3xehrlKYAYqSayj1NBn0PB1Emkt-zfrKwT9488XVnXCuOWdhczGCksvRMLi8qefg"
+  },
+  "com.hopefactory2021.fakegpslocation": {
+    "name": "Fake GPS Location",
+    "icon": "https://play-lh.googleusercontent.com/V0SrtW-4tsGiy79sQQk7Jks0IPUPTOoId6MIEUyRP7gcaPq_GcNZVAEJWS0nopIaiLx3YTGfGWYPJh4L7gmwLw"
+  },
+  "com.ceyhan.sets": {
+    "name": "Hidden Settings",
+    "icon": "https://play-lh.googleusercontent.com/rSCb214Jr9ByTboIp1LoMuG-ooAcsUMPQ0YUZClUuCH9aTMk7aDW7NcfcGHvOZx06KtwpbORcx_S5ZNfegXEJoE"
+  },
+  "com.easybrain.arrow.puzzle.game": {
+    "name": "Arrow Puzzle",
+    "icon": "https://play-lh.googleusercontent.com/9SPwV1m2m248lpDQd9xtd-s70BwEyZJhXd1LDAK3KzIsEPaSlO9mikhsFrzo7ObagZWiJgk57I5-b12AWkF9_Q"
+  },
+  "com.tranzmate": {
+    "name": "Moovit",
+    "icon": "https://play-lh.googleusercontent.com/pKE_kPsExlHJ3q68oDr4sMdhRoskymtTGak4QaS_TXVrdOXq5uANlza3UGnG94vzslF45crK3NcbWFMC7obNMw"
+  },
+  "com.overdevs.at4k": {
+    "name": "AT4K Launcher",
+    "icon": "https://play-lh.googleusercontent.com/vypg_RTGsrWBg8Lo6dzgLdJ3KPPMCb23JNY0zuIiDuQFlfx0y3j2NKDBEeGnrF0atBQSmF7tGGXyLfTj0EB-6Q"
+  },
+  "dk.tacit.android.foldersync.lite": {
+    "name": "FolderSync",
+    "icon": "https://play-lh.googleusercontent.com/DQCpJKhVlQoUDylbfBrax_JoXv-Mp5xF0EC3rynCAmzLahjd1e0tOEgM_NYcL7ja1E1y_kgM4tiECCDv321tYAg"
+  },
+  "com.adobe.reader": {
+    "name": "Adobe Acrobat",
+    "icon": "https://play-lh.googleusercontent.com/VIohTA3wyJgKJ-SZzoJeYuykxyVFCbSmXFAjefIGQybY57FX44VCHyVa3CTOZROzWLbMc-VFwL4CEDj47LeRpM0"
+  },
+  "com.teamsnap.teamsnap": {
+    "name": "TeamSnap",
+    "icon": "https://play-lh.googleusercontent.com/e4dHkRsmQD_sXSCTrFn2XxH735F8bRgtsVBix631H1fuFzATZVSBUclORTjqut2iZjBoTYLI9ahS8nr6mS8kHBU"
+  },
+  "de.dwins.financeguru": {
+    "name": "Financeguru",
+    "icon": "https://play-lh.googleusercontent.com/0iiUM1wypsSRtfL4-RSoJkP2RcizAZ7Wdg3QiszNhiCqzVtrQaL2XlYOkAfIm8Wz4o_2qgTGY3rccYZPcUnV4w"
+  },
+  "com.flightradar24free": {
+    "name": "Flightradar24",
+    "icon": "https://play-lh.googleusercontent.com/8KtIuiRHYtY0XJigXIl-iN6X6-ht85ELWXFiynenpCW40b6zNUnLFGKwIN0iITV_1L3sN3G53PaiNiWsn5RSIv8"
+  },
+  "com.naver.linewebtoon": {
+    "name": "WEBTOON",
+    "icon": "https://play-lh.googleusercontent.com/he2lEwx_2GRMBKxpN78dcnwbtTntaOOvUlnBpPJ0G5xXBetmzkdXgYuu_6xqwMTrjlYMb74NW1bb5RUwvp2pmQ"
+  },
+  "com.camerasideas.instashot": {
+    "name": "InShot",
+    "icon": "https://play-lh.googleusercontent.com/SwG0XbEyZC-fh5codVCcC1c-Vw6G-Ap7BDLPO5LYgeGPaYYBzPFcGgfIllbo-uS63gB2hPbFCFEb-YB4bW5OEg"
+  },
+  "com.ornament.monitor": {
+    "name": "Ornament",
+    "icon": "https://play-lh.googleusercontent.com/uQwAH4dJJ7QRpyiFpwk60auWjqOtSSbYd8uay_fuV_9UVWWrzZ_lHytql8P2d8wkyPFoPerLIl_u2fF1kcAEYg"
+  },
+  "com.medibang.android.medibangpro": {
+    "name": "Paletta",
+    "icon": "https://play-lh.googleusercontent.com/Diyt_eyqkMZApFwSMNSqt7VJz4kR2fYdopfQy1cMqFM09b_65Juk02Mcs1yRpFZyh9eL8NYy__-tO6Kdfqo"
+  },
+  "com.azefsw.audioconnect": {
+    "name": "AudioRelay",
+    "icon": "https://play-lh.googleusercontent.com/3H6hrklDey6YbcoHJCiqN1vUD0MqyGtca6nqBoD2I_gZ-104Vs4pDLNrEQ2TodG5Y5i2MMdSr0TgFLstxv3w"
+  },
+  "com.finalwire.aida64": {
+    "name": "AIDA64",
+    "icon": "https://play-lh.googleusercontent.com/KNLC9bz3iU2eQsPZmFRUTR7tjjvYQOXggWwkmFjk774XcKBX4f-qLjzViH6aoEaZuLUtj5Tk-3JghquUo-lJSw"
+  },
+  "com.psiphon3.subscription": {
+    "name": "Psiphon Pro",
+    "icon": "https://play-lh.googleusercontent.com/yOedEdrW5mbwFSzANsZyZxm6zI2DnQ_52-KGJxUWv1kJnxeyAY4avqQC0xpMHGP4ukY5pXhE00-H40ktbWkkCVc"
+  },
+  "com.cpuid.cpu_z": {
+    "name": "CPU-Z",
+    "icon": "https://play-lh.googleusercontent.com/ZrHa04Sd63PqJNHlvpCz8K94AKdmqDmCacf6iQ0rBZs4s7JmcevoetuduWsRo3S3SC0DIDh273mwU_P0gSc2cQ"
+  },
+  "org.hola.play": {
+    "name": "Hola VPN Proxy Plus",
+    "icon": "https://play-lh.googleusercontent.com/0XpdhvjM2TUxAD4pDvp-Bd9OHRNfkfnO5iRDLEKyyjj9cnmvjYb8kH5vhVASlXSRgjHKDTgncioNqhb3Hunxew"
+  },
+  "com.app.social_gamebox": {
+    "name": "Social Gamebox",
+    "icon": "https://play-lh.googleusercontent.com/1AZ8QbaW9H7oCNzNGgc73Pe9RLh-wLgL2dH--dO57Iaf_W2fr1gd7eQKv18dFreEPS_4EdxnWeBVbdGTGUjZ_Q"
+  },
+  "eu.darken.myperm": {
+    "name": "Permission Pilot",
+    "icon": "https://play-lh.googleusercontent.com/Avvq84tDNB49hhXn06aDd9TcqTH8b4VUw7VntAqcNoDgS8PFoDJS5dN0uiJ24pyEUtBxj5Pa14FqhEUdFMgi"
+  },
+  "kha.prog.mikrotik": {
+    "name": "NetShare - Hotspot & Wifi Direct",
+    "icon": "https://play-lh.googleusercontent.com/KWKtpXZfYosRpwxSXDT9fLtro3iN9FQOBZpz7AObcDx-KxBCscq4efe0FTvUbjPzI3oGe9PfhHqVYE3Uwl-fxA"
+  },
+  "com.shexa.permissionmanager": {
+    "name": "App Permission Manager",
+    "icon": "https://play-lh.googleusercontent.com/RzmOwc2oqu3vvXd8Lawc40E-f6OxrvwdmMUeei3Qj_fVAknevHOxWiCJ16Qw900hF-38mLPjq4Uez0Vxny1E"
+  },
+  "com.anetcapture.mock": {
+    "name": "HTTP Sniffer",
+    "icon": "https://play-lh.googleusercontent.com/24EBd10FuOQlxUVCGuvzA2SgBVZYrNMSgE-a8MzeU_r9uYB4RLShs0OSSjxKZGroeoPy3FKNI4fGoXO3DdNPJg"
+  },
+  "com.realbyteapps.moneymanagerfree": {
+    "name": "Money Manager",
+    "icon": "https://play-lh.googleusercontent.com/YCRpZP_XCku3nb1fmkcAVAK-p8eaRkQNFzNSbVARSPGcaDotMOdMW_lyBTagYFGVm_VjnK9c7-PXHtw-4z_T"
+  },
+  "com.rumble.battles": {
+    "name": "Rumble",
+    "icon": "https://play-lh.googleusercontent.com/NO9DhF3HZxnIQIclBMAEOjJImZegCXBu7ALiC4FWIj-QZc3EvIWUrcUJs-_9Abqb2urcnbOZdPyNI_WVBdCNyQ"
+  },
+  "com.paget96.batteryguru": {
+    "name": "Battery Guru",
+    "icon": "https://play-lh.googleusercontent.com/dGzjJqkvyNS6Iz4ze1YSaqTtzXu6PH8eiSVf56ALnykqigf9S_Sb36BvOA0xX_KVeUT8NJZDR20cIziK9nby"
+  },
+  "com.dubani.dub": {
+    "name": "Venabox Hub",
+    "icon": "https://play-lh.googleusercontent.com/KzYokHC_OdEP2bODUXSJVyAdBXrBcGeBP7X_tVH1O85gimaL2mVZSMukQr6ar3X61_GuhqvcGHOs9nRJ-EXu9Q"
+  },
+  "com.finch.finch": {
+    "name": "Finch",
+    "icon": "https://play-lh.googleusercontent.com/fsYShU5YDNZxBQgZF-UjT-cq7Mxtqmz71_Q8isHj3DzpOX9Me4KZLD780Oe2DxTRVPzA76xlDNigl9SXjEsPfw"
+  },
+  "com.hv.replaio": {
+    "name": "Replaio",
+    "icon": "https://play-lh.googleusercontent.com/5u5Pyu4UsUTHAR9dlkWdf7tZgLdh-XE01oB2sCfOVAYmedWIzisV4HmUhKwMy1tCi3s6MOhFhZQmP9vi_qAHbQ"
+  },
+  "com.budget.tracker_app": {
+    "name": "Cashew",
+    "icon": "https://play-lh.googleusercontent.com/VQ1Nyf_vXLkr2anxhD0tHvtzpM93beJa5lZcSuDy52WTHEdidajo59pB-1RGHy9S8fBz6ylTUzGFD6V7hoK3elY"
+  },
+  "app.remux.video.converter": {
+    "name": "Video Converter",
+    "icon": "https://play-lh.googleusercontent.com/6OkYr5tzG_I_mmkX4GzcOkBxEOgn_xz3ogVG0RJj9bTCZZMwGumB-D2RSjlubG78QZJgQ0-i4oMyvnxtkt0CoA"
+  },
+  "com.waze": {
+    "name": "Waze - GPS, Maps & Traffic",
+    "icon": "https://play-lh.googleusercontent.com/d4dltd4baeDGnfJD1H-ut68ERsIynfywij9zHRL7ioB-PJW3ENw-bFgg08KGPo8zQfSyRW36e58xhlqQ0pE1gg"
+  },
+  "com.truebill": {
+    "name": "Rocket Money",
+    "icon": "https://play-lh.googleusercontent.com/1Vo_ixB4gB-cXR5MMr24xonI_6XVuvHzpDrmPJyZQaXBZUfv90OlxZmpAzthrm_hM64_ZCXbiQ0vgyKYhEYXxh8"
+  },
+  "com.sec.android.app.shealth": {
+    "name": "Samsung Health",
+    "icon": "https://play-lh.googleusercontent.com/OS7TGfRDIg8sbKxzYpsAr6fcg8vWPBV6Wx85alc0EQivKZY4I6VQuFRNaFSyi07ZydngVcxFkmVUUkr32khBVg"
+  },
+  "Pepper.com": {
+    "name": "hotukdeals",
+    "icon": "https://www.apkmirror.com/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fdownloadr2.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F12%2F76%2F63a0affa92289.png&w=192&h=192&q=100"
+  },
+  "com.crazygames.crazygamesapp": {
+    "name": "CrazyGames",
+    "icon": "https://play-lh.googleusercontent.com/zGvYCipVc-uIpRVf6P5maUThHJyuNE35Y-tQCQz6tYigWuxlZThhQh0Te8G0SlLi1j8PAgHds8EkL2KXkKPG"
+  },
+  "com.spocky.projengmenu": {
+    "name": "Projectivy Launcher",
+    "icon": "https://play-lh.googleusercontent.com/Qo3kWBOmNFWGcGxiBHs-tR2_0uVcrGGUzKXb_e_JwpbwwzsYHAs-qvNhE-QDr2c8B4_8w0bq8yl5uo88pTdb"
+  },
+  "io.stashteam.games.tracker.stashapp": {
+    "name": "Stash",
+    "icon": "https://play-lh.googleusercontent.com/_tk5SamI5kPyLodXp0hLMSMBK3AFeoImF0ZtIzdsS-xYVRHWnTnOw9wCk9sedN3QXi9jL898L3bU62d61P2_gg"
+  },
+  "com.cfdrink": {
+    "name": "Mixel",
+    "icon": "https://play-lh.googleusercontent.com/jpL_EY5hpAmsIacF62UcQx_m03SZxm9PehmvBAhX2qz-KXApgfVP1XuuHDVTwYcqtRQd2B6d0AkWVT3OSRrtM2A"
+  },
+  "com.regasoftware.udisc": {
+    "name": "UDisc",
+    "icon": "https://play-lh.googleusercontent.com/HPZC8ZdPPSDpYzkb2JoFsLVFL94sX7FFSRKuT0Rxg-d5lsGFIe4jfPLrLsOIFRB7gnqMEDUr6E-o0O8_ZR-KIw"
+  },
+  "com.chimbori.hermitcrab": {
+    "name": "Hermit",
+    "icon": "https://play-lh.googleusercontent.com/SkxvvpzgHvzG3ODTIf3EZA5kbAvFX6ahey_-wQppGxG4X6jxXBHY2LeBQShRLi7RktS02Tl6HlqON22dH62TZQ"
+  },
+  "com.thehungrywasp.iamsober": {
+    "name": "I Am Sober",
+    "icon": "https://play-lh.googleusercontent.com/i3LYMtM1MIhV8Fo2aWDY1ctEkI6D3j3lNeMp8pKr8c-l_-Iy0e8z4ZKWcP0SEuJ0bjoQg2gOs7zYLf5XKawM"
+  },
+  "com.windscribe.vpn": {
+    "name": "Windscribe VPN",
+    "icon": "https://play-lh.googleusercontent.com/k2TAILEsjpI_9_0lpmRRYiaty4JXOc3RpluhKccooYQ_s5llbvcywrQPxAWi_U_-eRHK9yaH1J5zXKfPqgrMxg"
+  },
+  "com.accuweather.android": {
+    "name": "AccuWeather: Weather Radar",
+    "icon": "https://play-lh.googleusercontent.com/wdQXBFb3I1NgNpRzJo9tMHJuV9P069NR5GJ2J7w8eX_SVarWLRarca-6MiemrDbnSqDQflFzvzjSG2smlwe39TQ"
+  },
+  "com.goodreads": {
+    "name": "Goodreads",
+    "icon": "https://play-lh.googleusercontent.com/lPjI_6cWcHfAR_wBRggfgH9sS_WLyuq37558Q3a_38gvnLEgQNjT6w4UQ2_U0wqZeS2H2-__cslXy1zL6K09egU"
+  },
+  "com.targo_prod.bad": {
+    "name": "TARGOBANK",
+    "icon": "https://play-lh.googleusercontent.com/GSUQQyIV4kE_eODmBaJDuhfCqzA2rKuxFXmV6jjec8--M98EP4n3JdcwJDqyfkymqagQV-zqmrdPRSVnlUeU"
+  },
+  "com.community.oneroom": {
+    "name": "MovieBox TV"
+  },
+  "app.ninjavpn.android": {
+    "name": "Ninja VPN",
+    "icon": "https://play-lh.googleusercontent.com/Z10nyQkvnKpejvNvZ7LS3xXzZNRqq-nXAMiorVg8Ciyp87u2A8vIfgKbukMOZ-shf2i1OZUGkVJDmlhIDg8chg"
+  },
+  "air.com.musclemotion.strength.mobile": {
+    "name": "Strength Training: Gym Workout",
+    "icon": "https://play-lh.googleusercontent.com/k3r3bMRWlDUuKAx2MWdrvOQGDa6gsziPvOeHJ6bj3GrsLVrdYMArGTL9mtyDfqYl7EqghuMf0ZhIqtYPxwRE0Q"
+  },
+  "com.weather.Weather": {
+    "name": "The Weather Channel",
+    "icon": "https://play-lh.googleusercontent.com/qlnc-xsYVOz_MnB0Xq7x39Wh2XoDJ_IaXNOatWbLQkIUWfp-_KpMQ5nm35TFviE9UIaEjfC0MN1C28iX7SUWQQ"
+  },
+  "ar.tvplayer.tv": {
+    "name": "TiviMate IPTV Player",
+    "icon": "https://play-lh.googleusercontent.com/lXaMnFHizRDP9eHCRJCMwy9qYS2U9FDvwsNOUO9qappEEfhNzSuC6r2YTC8a-RYQqlCBc_hKiYOH2UXgtuiP"
+  },
+  "com.tomtom.gplay.navapp": {
+    "name": "TomTom GO Navigation",
+    "icon": "https://play-lh.googleusercontent.com/wh18vBe9n0ZsqDOjBFOvCeTTlB-fD7EOhQrloLTmJtULPpis14X-gUN_zTxhL_a3Oi4XPcWnBF1kcZqMjcHrZj0"
+  },
+  "com.a0soft.gphone.acc.free": {
+    "name": "1Tap Cleaner",
+    "icon": "https://play-lh.googleusercontent.com/RTKE8PfBmgWxT1Q7pdvw1kkyHWegQ6c_sBFTfOByK9Ncl9oVn_WA7pqBzYqjRSLY23AmTIHnaVAMZLVLyrFabQ"
+  },
+  "com.degenk.boorusama": {
+    "name": "Boorusama (Play Store)",
+    "icon": "https://play-lh.googleusercontent.com/lcHBg44Dsg7F9lNWrSkF7tyk4qu71Z_J0o_4bdyW5YQjygBDaKh3ckT0kOzS63HljGKOZCUu5pOyTQzBtk0C4A"
+  },
+  "com.surmin.photofancie.lite": {
+    "name": "Collage Maker - PhotoFancie",
+    "icon": "https://play-lh.googleusercontent.com/Vf9qR9r19DKLRlQKiC46kHiiWwZRMPdiVzqrI9zyfN5h5cxgMw2-03MOEdoJ3eALPTH3Rz5qdZEZZSjJqecvhQI"
+  },
+  "com.scheler.superproxy": {
+    "name": "Super Proxy",
+    "icon": "https://play-lh.googleusercontent.com/xMpEz29P9jI4aTrWYMNjcEhv92-kPJuWDOS4Gzw82dqm0tspnBy6y-S_6I7iRRH62www_jHwH8Jw8Pr_RFr-PrI"
+  },
+  "com.jacks_flights": {
+    "name": "Jack's Flight Club",
+    "icon": "https://play-lh.googleusercontent.com/03H5G85hfzxqR2Hxp2hfkwx1PXlSV8Un2EACvqmDQr6ggK6qpTMnYs8TnPFtCpz98yC-eKeNeso64GEgb5Sqs7U"
+  },
+  "com.seedlang.mobile.android.all": {
+    "name": "Seedlang",
+    "icon": "https://play-lh.googleusercontent.com/YzxuJ8ObAGolR9IjOgtjya6wl88J-gw-IWKIlFMzaotSYtXtG16Uzi_ysaSkvX77lSpiI4eO1Rcb9-JTOtyOUg"
+  },
+  "com.maxmpz.audioplayer": {
+    "name": "Poweramp",
+    "icon": "https://play-lh.googleusercontent.com/-21ASw97RWIu-CnDVbEEtTrfVIDqpfhY4eofgk5aT98q4E8jnrMVxNqI0J7JYgRTkHjoOoWM58ScUzu30cxevQ"
+  },
+  "ak.alizandro.smartaudiobookplayer": {
+    "name": "Smart AudioBook Player",
+    "icon": "https://play-lh.googleusercontent.com/XUG_zlohI-GsehLvej2Vu5wQkXwi1g1yUp1ho5oJFi6pc_To7SAgzgCZuHaMz8Qo5auGDDrGwx1ULHxM5wvU"
+  },
+  "air.com.musclemotion.anatomy": {
+    "name": "3D Anatomy & Physiology",
+    "icon": "https://play-lh.googleusercontent.com/-ev7tnOoxWu8-aFzA0ZRh57XZbW-d6hate8PMkXi0EZoy10rjlezFT_se9T-w7snms6_lNVuMgX8CdxpxY4UqQ"
+  },
+  "air.com.musclemotion.kyphosis": {
+    "name": "Kyphosis Exercises - Hunchback",
+    "icon": "https://play-lh.googleusercontent.com/76HXdzuUyxg9saq1W1-M3MMAMR-kaIeWQeL-gIF2VucJ0SFZ289v9EE4vxSLv1QenKke6CYF0U_Ln1u3955MDQ"
+  },
+  "air.com.musclemotion.posture": {
+    "name": "Posture Correction Exercises",
+    "icon": "https://play-lh.googleusercontent.com/_Oeb8p1aWXzzBJH584lyBUY_Xpc7tCWTOMHMp5iQMshazjaS1-LrJMSqiBYYx0Bj2X7QoEx92q_9XnAoCie6SA"
+  },
+  "air.com.musclemotion.workout": {
+    "name": "Workout & Gym Training Plan",
+    "icon": "https://play-lh.googleusercontent.com/5uZfA57ZGZXnd6l0UPiKl7MUjwEAUjO2Z0-hM9WHllazU2ia7bkDZwDOEyl8cUryLEEuO1u3SsxXldek4GR9NA"
+  },
+  "air.com.musclemotion.yoga": {
+    "name": "Yoga - Poses & Classes",
+    "icon": "https://play-lh.googleusercontent.com/D_O_dhkUoHd2P-6uE4m89liVBoMV3K4sCJS_SACwjU8a_z0bruSDVgShqHoxVmwE_Cnu1hQn-fzegovxdOV2ew"
+  },
+  "in.org.npci.upiapp": {
+    "name": "BHIM UPI",
+    "icon": "https://play-lh.googleusercontent.com/rPJLwugORRZudZYpG6HrP2ejHgdinQzqkKgdPvsoCM5jc_7d507xaYCVUWELWOTu2OEEdwtZNJ7ySq5Mpj2S7DQ"
+  },
+  "com.chess": {
+    "name": "Chess.com",
+    "icon": "https://play-lh.googleusercontent.com/JO7Z75U1oypXpNTAklroO5emKWePni0sK9zn1E_nRgqmbAHoMxz1oQHDfSTpcycdht92dTBejkpEDXttGeCWN74"
+  },
+  "com.hevy": {
+    "name": "Hevy",
+    "icon": "https://play-lh.googleusercontent.com/bLlRnwjt0tKva6ob0ZrtxkUs-z4MhQ4cPIOnXeh_knD8QVAXSLFiMGyKo2kLF7PV2uSK1Wly1L4q-6Sv1k13"
+  }
+}

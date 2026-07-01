@@ -3,12 +3,18 @@
 import json
 import os
 import urllib.request
+import importlib.util
 from pathlib import Path
 
 ROOT = Path.cwd()
 DATA_DIR = ROOT / "data"
 BUNDLES_DIR = DATA_DIR / "patch-bundles"
-APP_NAMES_PATH = DATA_DIR / "app-names.json"
+APP_METADATA_PATH = DATA_DIR / "app-metadata.json"
+
+# Dynamically import update-metadata.py for optimal performance
+spec = importlib.util.spec_from_file_location("update_metadata", str(ROOT / "src" / "update-metadata.py"))
+update_metadata = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(update_metadata)
 
 
 def read_json(path, default=None):
@@ -28,40 +34,13 @@ def get_repo(bundle_json):
     return "/".join(parts[:5]) if len(parts) >= 5 else ""
 
 
-def get_gitlab_avatar(username):
-    try:
-        req = urllib.request.Request(f'https://gitlab.com/api/v4/users?username={username}', headers={'User-Agent': 'Mozilla/5.0'})
-        response = urllib.request.urlopen(req)
-        data = json.loads(response.read().decode('utf-8'))
-        if data and len(data) > 0:
-            avatar = data[0].get('avatar_url', '')
-            if avatar:
-                return avatar.replace("s=80", "s=128")
-    except Exception as e:
-        print(f"Failed to fetch gitlab avatar for {username}: {e}")
-    return ""
-
-
 def get_avatar(base_key, repo_url, cache):
-    if base_key in cache:
+    if base_key in cache and cache[base_key]:
         return cache[base_key]
     if not repo_url:
         return ""
     
-    avatar_url = ""
-    if "github.com/" in repo_url:
-        parts = repo_url.split("github.com/")
-        if len(parts) > 1:
-            username = parts[1].split("/")[0]
-            if username:
-                avatar_url = f"https://github.com/{username}.png?size=128"
-    elif "gitlab.com/" in repo_url:
-        parts = repo_url.split("gitlab.com/")
-        if len(parts) > 1:
-            username = parts[1].split("/")[0]
-            if username:
-                avatar_url = get_gitlab_avatar(username)
-                
+    avatar_url = update_metadata.update_bundle_avatar(base_key, repo_url, "", force=True)
     cache[base_key] = avatar_url
     return avatar_url
 
@@ -93,11 +72,13 @@ def main():
         print("No patch bundles directory found.")
         return
 
-    app_names = read_json(APP_NAMES_PATH, {}) or {}
+    app_metadata = read_json(APP_METADATA_PATH, {}) or {}
     stable_bundles = {}
     dev_bundles = {}
     latest_bundles = {}
-    avatar_cache = {}
+    
+    existing_latest = read_json(DATA_DIR / "bundles-latest.json", {}) or {}
+    avatar_cache = {k: v.get("avatarUrl", "") for k, v in existing_latest.items() if v.get("avatarUrl")}
 
     seen_pkgs = set()
     all_pkgs = set()
@@ -141,8 +122,20 @@ def main():
             for pkg, name in discovered.items():
                 if pkg not in seen_pkgs:
                     seen_pkgs.add(pkg)
-                    if app_names.get(pkg) != name:
-                        app_names[pkg] = name
+                    meta = app_metadata.get(pkg)
+                    if not meta or (isinstance(meta, str) and meta != name) or (isinstance(meta, dict) and meta.get("name") != name):
+                        old_icon = meta.get("icon", "") if isinstance(meta, dict) else ""
+                        if not isinstance(meta, dict):
+                            app_metadata[pkg] = {"name": name, "icon": old_icon}
+                        else:
+                            app_metadata[pkg]["name"] = name
+                            
+                        # Fetch icon immediately if missing
+                        if not app_metadata[pkg]["icon"]:
+                            print(f"Fetching icon for new app: {pkg}")
+                            new_icon = update_metadata.get_app_icon(pkg)
+                            if new_icon:
+                                app_metadata[pkg]["icon"] = new_icon
                         added_names += 1
 
     # Write bundles
@@ -153,17 +146,17 @@ def main():
     print(f"Generated bundles-dev.json with {len(dev_bundles)} bundles.")
     print(f"Generated bundles-latest.json with {len(latest_bundles)} bundles.")
 
-    # Write app names
+    # Write app metadata
     if added_names:
-        write_json(APP_NAMES_PATH, app_names)
-        print(f"Auto-added/updated {added_names} app name(s) to app-names.json.")
+        write_json(APP_METADATA_PATH, app_metadata)
+        print(f"Auto-added/updated {added_names} app name(s) to app-metadata.json.")
 
     print(f"Scanned {scanned_lists} list files.")
 
     missing = sorted(
         pkg
         for pkg in all_pkgs
-        if pkg not in app_names and " " not in pkg and "." in pkg
+        if pkg not in app_metadata and " " not in pkg and "." in pkg
     )
     if missing:
         print("\n[WARNING] Missing app names for packages:")

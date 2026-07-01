@@ -300,7 +300,8 @@ createApp({
       let bundleOptions = getFilterOptions(rowsForSource).bundleOptions.map(b => {
         const bundleObj = activeData.value.bundleMap[b.value];
         const repo = bundleObj ? bundleObj.repo.toLowerCase() : "";
-        return { ...b, repo };
+        const icon = bundleObj ? bundleObj.avatarUrl : "";
+        return { ...b, repo, icon };
       });
 
       bundleOptions = [...bundleOptions].sort((a, b) => {
@@ -371,6 +372,7 @@ createApp({
               patchMap.get(row.patchId).apps.push({
                 id: row.id,
                 appName: row.appName,
+                appIcon: row.appIcon,
                 packageName: row.packageName,
                 versions: row.versions,
               });
