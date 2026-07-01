@@ -9,10 +9,11 @@ The `/patch-bundles` directory can be used as a Morphe patch database, sourced f
 - [`bundles-stable.json`](data/bundles-stable.json) / [`bundles-latest.json`](data/bundles-latest.json) / [`bundles-dev.json`](data/bundles-dev.json) — index of all bundles
 - `/patch-bundles/<bundle>-patch-bundles/*-patches-bundle.json` — bundle metadata
 - `/patch-bundles/<bundle>-patch-bundles/*-patches-list.json` — patches list
+- [`app-metadata.json`](data/app-metadata.json) — app names and icons
 
 ## Automation
 
 | Workflow | Schedule | What it does |
 |---|---|---|
-| [**Sync Patch Bundles**](https://github.com/nvbangg/awesome-for-morphe/blob/main/.github/workflows/ci.yml) | Every 4 hours | Sync `/patch-bundles` and update `app-names.json` if changed |
+| [**Sync Patch Bundles**](https://github.com/nvbangg/awesome-for-morphe/blob/main/.github/workflows/ci.yml) | Every 4 hours | Sync `/patch-bundles` and update `bundles-<channel>.json` & `app-metadata.json` if changed |
 | [**Generate Release**](https://github.com/nvbangg/awesome-for-morphe/blob/main/.github/workflows/release.yml) | Daily at 8:00 UTC | Release changelog + Telegram notification |
