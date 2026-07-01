@@ -151,6 +151,10 @@
     "repo": "https://github.com/meridianfresco/morphe-meta-patches",
     "avatarUrl": "https://github.com/meridianfresco.png?size=128"
   },
+  "morphe-google": {
+    "repo": "https://github.com/Ripthulhu/morphe-google-patches",
+    "avatarUrl": "https://github.com/Ripthulhu.png?size=128"
+  },
   "morphe": {
     "repo": "https://github.com/MorpheApp/morphe-patches",
     "avatarUrl": "https://github.com/MorpheApp.png?size=128"
@@ -162,6 +166,10 @@
   "morphe-screenshot": {
     "repo": "https://github.com/Pa-kon/morphe-screenshot-patches",
     "avatarUrl": "https://github.com/Pa-kon.png?size=128"
+  },
+  "nai64": {
+    "repo": "https://github.com/Nai64/Nai64Patches",
+    "avatarUrl": "https://github.com/Nai64.png?size=128"
   },
   "npci-bhim": {
     "repo": "https://github.com/kun-codes/npci-bhim-morphe-patches",
