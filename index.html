@@ -26,6 +26,7 @@
             blue: '#3B82F6',
             green: '#10B981',
             yellow: '#EAB308',
+            orange: '#FC6D26',
             light: '#A1A1AA',
             white: '#FAFAFA',
           }
@@ -33,70 +34,86 @@
       }
     }
   </script>
-  <style>
-    [v-cloak] {
-      display: none !important;
+  <style type="text/tailwindcss">
+    @layer base {
+      [v-cloak] {
+        display: none !important;
+      }
+
+      ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background-color: theme('colors.black');
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background-color: theme('colors.gray');
+        border-radius: 5px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background-color: theme('colors.lightGray');
+      }
+
+      input[type="search"]::-webkit-search-decoration,
+      input[type="search"]::-webkit-search-cancel-button,
+      input[type="search"]::-webkit-search-results-button,
+      input[type="search"]::-webkit-search-results-decoration {
+        display: none;
+      }
     }
 
-    body.modal-open {
-      overflow: hidden;
+    @layer utilities {
+      .patches-scroll {
+        scrollbar-width: thin;
+        scrollbar-color: theme('colors.lightGray') rgb(250 250 250 / 0.05);
+      }
+
+      .patches-scroll::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      .patches-scroll::-webkit-scrollbar-track {
+        background-color: rgb(250 250 250 / 0.05);
+        border-radius: 3px;
+      }
+
+      .patches-scroll::-webkit-scrollbar-thumb {
+        background-color: theme('colors.lightGray');
+        border-radius: 3px;
+      }
+
+      .swipe-transition-left {
+        animation: slideInLeft 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+
+      .swipe-transition-right {
+        animation: slideInRight 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+
+      .dd-panel {
+        display: none;
+        position: fixed;
+        z-index: 9998;
+      }
+
+      .dd-root.open .dd-panel {
+        display: block;
+      }
+
+      .dd-root.open .dd-chevron {
+        transform: rotate(180deg);
+      }
     }
-
-    ::-webkit-scrollbar {
-      width: 10px;
-      height: 10px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: #0C0C0D;
-      /* black */
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: #27272A;
-      /* gray */
-      border-radius: 5px;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-      background: #3F3F46;
-      /* lightGray */
-    }
-
-    input[type="search"]::-webkit-search-decoration,
-    input[type="search"]::-webkit-search-cancel-button,
-    input[type="search"]::-webkit-search-results-button,
-    input[type="search"]::-webkit-search-results-decoration {
-      display: none;
-    }
-
-    .patches-scroll {
-      scrollbar-width: thin;
-      scrollbar-color: #3F3F46 rgba(255, 255, 255, 0.05);
-    }
-
-    .patches-scroll::-webkit-scrollbar {
-      width: 6px;
-    }
-
-    .patches-scroll::-webkit-scrollbar-track {
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 3px;
-    }
-
-    .patches-scroll::-webkit-scrollbar-thumb {
-      background: #3F3F46;
-      border-radius: 3px;
-    }
-
-
 
     @keyframes slideInLeft {
       from {
         opacity: 0.5;
         transform: translateX(16px);
       }
-
       to {
         opacity: 1;
         transform: translateX(0);
@@ -108,33 +125,10 @@
         opacity: 0.5;
         transform: translateX(-16px);
       }
-
       to {
         opacity: 1;
         transform: translateX(0);
       }
-    }
-
-    .swipe-transition-left {
-      animation: slideInLeft 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    }
-
-    .swipe-transition-right {
-      animation: slideInRight 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    }
-
-    .dd-panel {
-      display: none;
-      position: fixed;
-      z-index: 9998;
-    }
-
-    .dd-root.open .dd-panel {
-      display: block;
-    }
-
-    .dd-root.open .dd-chevron {
-      transform: rotate(180deg);
     }
   </style>
 
@@ -213,7 +207,7 @@
                   :data-selected="!bundle ? 'true' : null"
                   @click="bundle = ''; bundleSearch = ''; $event.target.closest('.dd-root').classList.remove('open')"
                   class="px-3 py-2 text-sm cursor-pointer transition-colors flex items-center gap-2">
-                  <i class="fa-solid fa-cubes text-light text-base shrink-0 text-center" style="width:16px;"></i>
+                  <i class="fa-solid fa-cubes text-light text-base w-4 shrink-0 text-center"></i>
                   <span class="leading-tight">All Bundles</span>
                 </div>
                 <div v-for="opt in filteredBundleOptions" :key="opt.value"
@@ -222,7 +216,7 @@
                   @click="bundle = opt.value; bundleSearch = ''; $event.target.closest('.dd-root').classList.remove('open')"
                   class="px-3 py-2 text-sm cursor-pointer transition-colors flex items-center gap-2">
                   <img v-if="opt.icon" :src="opt.icon" class="w-4 h-4 rounded-full object-cover shrink-0" alt="" loading="lazy">
-                  <i v-else class="fa-solid fa-cubes text-light text-base shrink-0 text-center" style="width:16px;"></i>
+                  <i v-else class="fa-solid fa-cubes text-light text-base w-4 shrink-0 text-center"></i>
                   <span class="leading-tight">{{ opt.label }}</span>
                 </div>
               </div>
@@ -264,7 +258,7 @@
                   :data-selected="!app ? 'true' : null"
                   @click="app = ''; appSearch = ''; $event.target.closest('.dd-root').classList.remove('open')"
                   class="px-3 py-2 text-sm cursor-pointer transition-colors flex items-center gap-2">
-                  <i class="fa-solid fa-mobile-screen-button text-light text-base shrink-0 text-center" style="width:16px;"></i>
+                  <i class="fa-solid fa-mobile-screen-button text-light text-base w-4 shrink-0 text-center"></i>
                   <span class="truncate">All Apps</span>
                 </div>
                 <div v-for="opt in filteredAppOptions" :key="opt.value"
@@ -272,10 +266,10 @@
                   :data-selected="app === opt.value ? 'true' : null"
                   @click="app = opt.value; appSearch = ''; $event.target.closest('.dd-root').classList.remove('open')"
                   class="px-3 py-2 text-sm cursor-pointer transition-colors flex items-center gap-2">
-                  <i v-if="opt.value === 'universal'" class="fa-brands fa-android text-green text-base shrink-0 text-center" style="width:16px;"></i>
+                  <i v-if="opt.value === 'universal'" class="fa-brands fa-android text-green text-base w-4 shrink-0 text-center"></i>
                   <template v-else>
                     <img v-if="opt.icon" :src="opt.icon" class="w-4 h-4 rounded-sm object-contain shrink-0" alt="" loading="lazy">
-                    <i v-else class="fa-brands fa-android text-green text-base shrink-0 text-center" style="width:16px;"></i>
+                    <i v-else class="fa-brands fa-android text-green text-base w-4 shrink-0 text-center"></i>
                   </template>
                   <span class="leading-tight">{{ opt.label }}</span>
                 </div>
@@ -308,7 +302,6 @@
                 <span>Reset Filters</span>
               </button>
 
-              <!-- Sort Dropdown -->
               <!-- Sort Dropdown -->
               <div class="relative w-[145px]">
                 <select v-model="sortOrder"
@@ -395,13 +388,15 @@
                     </span>
                   </div>
                   <div class="flex items-center justify-center w-full md:w-auto md:justify-start gap-2">
-                    <a v-if="group.bundle.repo" :href="group.bundle.repo" target="_blank" rel="noreferrer" @click.stop
-                      class="transition-colors flex items-center justify-center w-8 h-8"
-                      :class="getPlatformMeta(group.bundle.repo).color"
-                      :aria-label="getPlatformMeta(group.bundle.repo).label"
-                      :title="getPlatformMeta(group.bundle.repo).label">
-                      <i :class="getPlatformMeta(group.bundle.repo).icon" class="text-2xl leading-none"></i>
-                    </a>
+                    <template v-if="group.bundle.repo">
+                      <a :href="group.bundle.repo" target="_blank" rel="noreferrer" @click.stop
+                        class="transition-colors flex items-center justify-center w-8 h-8"
+                        :class="{'text-white hover:text-blue': getPlatform(group.bundle.repo) === 'github', 'text-orange hover:text-orange/80': getPlatform(group.bundle.repo) === 'gitlab', 'text-light hover:text-white': !getPlatform(group.bundle.repo)}"
+                        :title="getPlatform(group.bundle.repo) === 'github' ? 'GitHub' : getPlatform(group.bundle.repo) === 'gitlab' ? 'GitLab' : 'Repository'">
+                        <i class="text-2xl leading-none"
+                          :class="getPlatform(group.bundle.repo) === 'github' ? 'fa-brands fa-github' : getPlatform(group.bundle.repo) === 'gitlab' ? 'fa-brands fa-gitlab' : 'fa-solid fa-globe'"></i>
+                      </a>
+                    </template>
                     <a v-if="group.bundle.repo && morpheUrl(group.bundle.repo)" :href="morpheUrl(group.bundle.repo)"
                       target="_blank" rel="noreferrer" @click.stop
                       class="px-1.5 py-0.5 text-sm text-green bg-green/10 border border-green/20 rounded-full font-medium hover:bg-green/20 hover:text-green transition-colors"><i
@@ -580,8 +575,7 @@
     btn.addEventListener('click', function () {
       window.scrollTo(0, 0);
     });
-  </script>
-  <script>
+
     function toggleDd(id) {
       var c = document.getElementById(id);
       var wasOpen = c.classList.contains('open');
@@ -599,6 +593,7 @@
         });
       }
     }
+
     document.addEventListener('click', function (e) {
       if (!e.target.closest('.dd-root')) {
         document.querySelectorAll('.dd-root').forEach(function (x) { x.classList.remove('open'); });

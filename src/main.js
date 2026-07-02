@@ -22,6 +22,15 @@ const PRIORITY_ORDER = [
   "patcheddit",
 ];
 
+function priorityCompare(aKey, bKey) {
+  const indexA = PRIORITY_ORDER.indexOf(aKey);
+  const indexB = PRIORITY_ORDER.indexOf(bKey);
+  if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+  if (indexA !== -1) return -1;
+  if (indexB !== -1) return 1;
+  return aKey.localeCompare(bKey);
+}
+
 function tokenize(str) {
   const tokens = [];
   let current = "";
@@ -304,16 +313,7 @@ createApp({
         return { ...b, repo, icon };
       });
 
-      bundleOptions = [...bundleOptions].sort((a, b) => {
-        const indexA = PRIORITY_ORDER.indexOf(a.value);
-        const indexB = PRIORITY_ORDER.indexOf(b.value);
-        if (indexA !== -1 && indexB !== -1) {
-          return indexA - indexB;
-        }
-        if (indexA !== -1) return -1;
-        if (indexB !== -1) return 1;
-        return a.value.localeCompare(b.value);
-      });
+      bundleOptions = [...bundleOptions].sort((a, b) => priorityCompare(a.value, b.value));
 
       const rowsForApp = filterRows(activeData.value, {
         query: query.value,
@@ -417,14 +417,7 @@ createApp({
             if (dateA !== dateB) return dateB - dateA;
           }
 
-          const indexA = PRIORITY_ORDER.indexOf(a.key);
-          const indexB = PRIORITY_ORDER.indexOf(b.key);
-          if (indexA !== -1 && indexB !== -1) {
-            return indexA - indexB;
-          }
-          if (indexA !== -1) return -1;
-          if (indexB !== -1) return 1;
-          return a.key.localeCompare(b.key);
+          return priorityCompare(a.key, b.key);
         });
     });
 
@@ -543,38 +536,11 @@ createApp({
     };
     const countBy = (items, keyFn) => new Set(items.map(keyFn).filter(Boolean)).size;
     const playUrl = (pkg) => `https://play.google.com/store/apps/details?id=${encodeURIComponent(pkg)}`;
-    const getRepoInfo = (repoUrl) => {
-      if (!repoUrl) return { path: "" };
-      const path = repoUrl.split("/").slice(3, 5).join("/");
-      return { path };
-    };
     const getPlatform = (repoUrl) => {
       if (!repoUrl) return "";
       if (repoUrl.includes("github.com")) return "github";
       if (repoUrl.includes("gitlab.com")) return "gitlab";
       return "";
-    };
-    const getPlatformMeta = (repoUrl) => {
-      const platform = getPlatform(repoUrl);
-      const metas = {
-        gitlab: {
-          icon: "fa-brands fa-gitlab",
-          color: "text-[#FC6D26] hover:text-[#e24329]",
-          label: "GitLab",
-        },
-        github: {
-          icon: "fa-brands fa-github",
-          color: "text-white hover:text-blue",
-          label: "GitHub",
-        },
-      };
-      return (
-        metas[platform] || {
-          icon: "fa-solid fa-globe",
-          color: "text-gray-400 hover:text-white",
-          label: "Repository",
-        }
-      );
     };
     const releaseUrl = (s) => {
       if (!s.repo || !s.tag) return "";
@@ -589,8 +555,8 @@ createApp({
     const morpheUrl = (repoUrl) => {
       const platform = getPlatform(repoUrl);
       if (!platform) return null;
-      const info = getRepoInfo(repoUrl);
-      return `https://morphe.software/add-source?${platform}=${encodeURI(info.path)}`;
+      const path = repoUrl.split("/").slice(3, 5).join("/");
+      return `https://morphe.software/add-source?${platform}=${encodeURI(path)}`;
     };
 
     const copiedStates = reactive({});
@@ -648,7 +614,7 @@ createApp({
       playUrl,
       releaseUrl,
       morpheUrl,
-      getPlatformMeta,
+      getPlatform,
       resetFilters,
       isChangelogView,
       changelogHighlights,

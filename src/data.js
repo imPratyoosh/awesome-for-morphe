@@ -256,9 +256,13 @@ export function getFilterOptions(rows) {
 }
 
 export function summarizeRows(rows) {
-  return {
-    bundles: new Set(rows.map((row) => row.bundleKey)).size,
-    patches: new Set(rows.map((row) => row.patchId)).size,
-    apps: new Set(rows.filter((row) => row.packageName).map((row) => row.packageName)).size,
-  };
+  const bundles = new Set();
+  const patches = new Set();
+  const apps = new Set();
+  for (const row of rows) {
+    bundles.add(row.bundleKey);
+    patches.add(row.patchId);
+    if (row.packageName) apps.add(row.packageName);
+  }
+  return { bundles: bundles.size, patches: patches.size, apps: apps.size };
 }
