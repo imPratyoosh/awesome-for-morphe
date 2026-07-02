@@ -1300,5 +1300,13 @@
   "com.hevy": {
     "name": "Hevy",
     "icon": "https://play-lh.googleusercontent.com/bLlRnwjt0tKva6ob0ZrtxkUs-z4MhQ4cPIOnXeh_knD8QVAXSLFiMGyKo2kLF7PV2uSK1Wly1L4q-6Sv1k13"
+  },
+  "com.dv.adm": {
+    "name": "Advanced Download Manager",
+    "icon": "https://play-lh.googleusercontent.com/E_HmG2bArUd4Ke1sVW7uUmFicY0UENJcVBAVqnHp_SLfF7qCuv_n_klf-Jl37KlWbE39J8Svc6lx4vUENt4ayBw"
+  },
+  "com.todoist": {
+    "name": "Todoist",
+    "icon": "https://play-lh.googleusercontent.com/03uYCmB2qWmmr-rIL8X_gj20wdIxLPW3bmqf1ZSNlwf_ZjuQYGnNnOB-8ig2CBzwqyf5meCgOgUEzxvC1QY6rg"
   }
 }
