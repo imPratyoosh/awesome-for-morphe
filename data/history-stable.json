@@ -69,6 +69,7 @@
   },
   "ajstrick81-androidtv": {
     "com.amazon.amazonvideo.livingroom": [
+      "Clone Prime Video",
       "Disable auto-updates",
       "Override certificate pinning",
       "Prime Video extension",
@@ -825,6 +826,9 @@
     "com.cronometer.android.gold": [
       "Unlock Gold"
     ],
+    "com.dv.adm": [
+      "Remove ads"
+    ],
     "com.finch.finch": [
       "Unlock Plus"
     ],
@@ -868,6 +872,9 @@
     ],
     "com.thehungrywasp.iamsober": [
       "Unlock Sober Plus"
+    ],
+    "com.todoist": [
+      "Unlock Pro"
     ],
     "com.tracked.mobile": [
       "Unlock Pro"
@@ -1839,7 +1846,8 @@
   "prathxm": {
     "com.chess": [
       "Ad-Free & Local Analysis",
-      "Clone Chess.com"
+      "Clone Chess.com",
+      "Lichess Puzzles"
     ]
   },
   "prathxm-ytmusic": {

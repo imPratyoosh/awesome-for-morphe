@@ -672,6 +672,7 @@
     "com.laurencedawson.reddit_sync": [
       "Fix \"Other Discussions\"",
       "Fix \"Restore Comment\"",
+      "Fix Image Post Selftext",
       "Fix imgur links",
       "Fix r/random",
       "Predictive back gesture (Reddit Sync)",
@@ -681,6 +682,7 @@
     "com.laurencedawson.reddit_sync.dev": [
       "Fix \"Other Discussions\"",
       "Fix \"Restore Comment\"",
+      "Fix Image Post Selftext",
       "Fix imgur links",
       "Fix r/random",
       "Predictive back gesture (Reddit Sync)",
@@ -690,6 +692,7 @@
     "com.laurencedawson.reddit_sync.pro": [
       "Fix \"Other Discussions\"",
       "Fix \"Restore Comment\"",
+      "Fix Image Post Selftext",
       "Fix imgur links",
       "Fix r/random",
       "Predictive back gesture (Reddit Sync)",
