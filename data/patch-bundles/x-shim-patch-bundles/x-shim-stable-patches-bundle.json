@@ -1,7 +1,0 @@
-{
-  "created_at": "2026-07-01T05:56:09",
-  "description": "## [1.6.5](https://gitlab.com/inotia00/x-shim/compare/v1.6.4...v1.6.5) (2026-07-01)\n\n\n### Bug Fixes\n\n* Exception thrown in 12.4.1-release.0 ([e3097e5](https://gitlab.com/inotia00/x-shim/commit/e3097e57c3497454a5b4915c718a418038705ecf))\n",
-  "download_url": "https://gitlab.com/inotia00/x-shim/-/releases/v1.6.5/downloads/patches-1.6.5.mpp",
-  "signature_download_url": "N/A",
-  "version": "v1.6.5"
-}

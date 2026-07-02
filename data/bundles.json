@@ -1,0 +1,2002 @@
+{
+  "AlexNaga": {
+    "source": "github",
+    "repo": "AlexNaga/android-patches",
+    "repoUrl": "https://github.com/AlexNaga/android-patches",
+    "deepLink": "https://morphe.software/add-source?github=AlexNaga/android-patches",
+    "avatarUrl": "https://github.com/AlexNaga.png?size=128",
+    "stars": 7,
+    "firstSeen": "2026-05-28T00:49:33",
+    "stable": {
+      "file": "patches/AlexNaga-stable.json",
+      "version": "v1.30.0",
+      "createdAt": "2026-05-05T11:51:41"
+    },
+    "latest": "stable",
+    "patchCount": 2,
+    "appCount": 1,
+    "targetApps": [
+      "se.matlistan.free"
+    ]
+  },
+  "ImmortalZeus": {
+    "source": "github",
+    "repo": "ImmortalZeus/ImmortalZeus-Morphe-Patches",
+    "repoUrl": "https://github.com/ImmortalZeus/ImmortalZeus-Morphe-Patches",
+    "deepLink": "https://morphe.software/add-source?github=ImmortalZeus/ImmortalZeus-Morphe-Patches",
+    "avatarUrl": "https://github.com/ImmortalZeus.png?size=128",
+    "stars": 2,
+    "firstSeen": "2026-05-15T03:20:18",
+    "stable": {
+      "file": "patches/ImmortalZeus-stable.json",
+      "version": "v1.0.0",
+      "createdAt": "2026-05-15T03:33:31"
+    },
+    "dev": {
+      "file": "patches/ImmortalZeus-dev.json",
+      "version": "v1.0.0-dev.1",
+      "createdAt": "2026-05-15T03:20:18"
+    },
+    "latest": "stable",
+    "patchCount": 2,
+    "appCount": 1,
+    "targetApps": [
+      "com.example.app",
+      "universal"
+    ]
+  },
+  "abhis1n": {
+    "source": "github",
+    "repo": "abhis1n/Morphe-Patches",
+    "repoUrl": "https://github.com/abhis1n/Morphe-Patches",
+    "deepLink": "https://morphe.software/add-source?github=abhis1n/Morphe-Patches",
+    "avatarUrl": "https://github.com/abhis1n.png?size=128",
+    "stars": 13,
+    "firstSeen": "2026-04-30T02:13:07",
+    "stable": {
+      "file": "patches/abhis1n-stable.json",
+      "version": "v1.0.1",
+      "createdAt": "2026-06-17T06:24:45"
+    },
+    "dev": {
+      "file": "patches/abhis1n-dev.json",
+      "version": "v1.0.1-dev.1",
+      "createdAt": "2026-06-17T06:17:24"
+    },
+    "latest": "stable",
+    "patchCount": 1,
+    "appCount": 1,
+    "targetApps": [
+      "com.Splitwise.SplitwiseMobile"
+    ]
+  },
+  "adobo": {
+    "source": "github",
+    "repo": "jkennethcarino/adobo",
+    "repoUrl": "https://github.com/jkennethcarino/adobo",
+    "deepLink": "https://morphe.software/add-source?github=jkennethcarino/adobo",
+    "avatarUrl": "https://github.com/jkennethcarino.png?size=128",
+    "stars": 171,
+    "firstSeen": "2026-02-20T17:59:24",
+    "stable": {
+      "file": "patches/adobo-stable.json",
+      "version": "v1.2.0",
+      "createdAt": "2026-06-14T11:51:20"
+    },
+    "dev": {
+      "file": "patches/adobo-dev.json",
+      "version": "v1.3.0-dev.1",
+      "createdAt": "2026-06-20T16:24:40"
+    },
+    "latest": "dev",
+    "patchCount": 38,
+    "appCount": 4,
+    "targetApps": [
+      "com.google.android.inputmethod.latin",
+      "com.imdb.mobile",
+      "com.ninegag.android.app",
+      "com.reddit.frontpage",
+      "universal"
+    ]
+  },
+  "ajstrick81-androidtv": {
+    "source": "github",
+    "repo": "ajstrick81/morphe-androidtv-patches",
+    "repoUrl": "https://github.com/ajstrick81/morphe-androidtv-patches",
+    "deepLink": "https://morphe.software/add-source?github=ajstrick81/morphe-androidtv-patches",
+    "avatarUrl": "https://github.com/ajstrick81.png?size=128",
+    "stars": 62,
+    "firstSeen": "2026-05-25T15:05:44",
+    "stable": {
+      "file": "patches/ajstrick81-androidtv-stable.json",
+      "version": "v1.8.0",
+      "createdAt": "2026-07-02T02:15:37"
+    },
+    "dev": {
+      "file": "patches/ajstrick81-androidtv-dev.json",
+      "version": "v1.5.7-dev.3",
+      "createdAt": "2026-06-26T16:45:34"
+    },
+    "latest": "stable",
+    "patchCount": 14,
+    "appCount": 9,
+    "targetApps": [
+      "com.amazon.amazonvideo.livingroom",
+      "com.bamnetworks.mobile.android.gameday.atbat",
+      "com.cbs.ott",
+      "com.disney.disneyplus",
+      "com.fox.foxone",
+      "com.peacocktv.peacockandroid",
+      "com.tubitv",
+      "com.univision.prendetv",
+      "com.wbd.hbomax"
+    ]
+  },
+  "almewty": {
+    "source": "github",
+    "repo": "Almewty/my-morphe-patches",
+    "repoUrl": "https://github.com/Almewty/my-morphe-patches",
+    "deepLink": "https://morphe.software/add-source?github=Almewty/my-morphe-patches",
+    "avatarUrl": "https://github.com/Almewty.png?size=128",
+    "stars": 12,
+    "firstSeen": "2026-01-29T04:31:55",
+    "dev": {
+      "file": "patches/almewty-dev.json",
+      "version": "v1.0.0-dev.1",
+      "createdAt": "2026-01-30T07:54:21"
+    },
+    "latest": "dev",
+    "patchCount": 3,
+    "appCount": 2,
+    "targetApps": [
+      "com.application.pokecardex",
+      "com.example.app"
+    ]
+  },
+  "ameen-morphe": {
+    "source": "github",
+    "repo": "ameenalasady/ameen-morphe",
+    "repoUrl": "https://github.com/ameenalasady/ameen-morphe",
+    "deepLink": "https://morphe.software/add-source?github=ameenalasady/ameen-morphe",
+    "avatarUrl": "https://github.com/ameenalasady.png?size=128",
+    "stars": 15,
+    "firstSeen": "2026-05-07T05:03:56",
+    "stable": {
+      "file": "patches/ameen-morphe-stable.json",
+      "version": "v1.1.0",
+      "createdAt": "2026-05-07T22:57:11"
+    },
+    "dev": {
+      "file": "patches/ameen-morphe-dev.json",
+      "version": "v1.1.0-dev.1",
+      "createdAt": "2026-05-07T22:54:46"
+    },
+    "latest": "stable",
+    "patchCount": 2,
+    "appCount": 2,
+    "targetApps": [
+      "com.roidapp.photogrid",
+      "io.foodvisor.foodvisor"
+    ]
+  },
+  "ameenalasady": {
+    "source": "github",
+    "repo": "ameenalasady/photogrid-morphe",
+    "repoUrl": "https://github.com/ameenalasady/photogrid-morphe",
+    "deepLink": "https://morphe.software/add-source?github=ameenalasady/photogrid-morphe",
+    "avatarUrl": "https://github.com/ameenalasady.png?size=128",
+    "stars": 5,
+    "firstSeen": "2026-05-04T02:02:43",
+    "stable": {
+      "file": "patches/ameenalasady-stable.json",
+      "version": "v1.0.1",
+      "createdAt": "2026-05-04T02:09:19"
+    },
+    "dev": {
+      "file": "patches/ameenalasady-dev.json",
+      "version": "v1.0.1-dev.1",
+      "createdAt": "2026-05-04T02:02:43"
+    },
+    "latest": "stable",
+    "patchCount": 1,
+    "appCount": 1,
+    "targetApps": [
+      "com.roidapp.photogrid"
+    ]
+  },
+  "amplerevanced": {
+    "source": "github",
+    "repo": "AmpleReVanced/revanced-patches",
+    "repoUrl": "https://github.com/AmpleReVanced/revanced-patches",
+    "deepLink": "https://morphe.software/add-source?github=AmpleReVanced/revanced-patches",
+    "avatarUrl": "https://github.com/AmpleReVanced.png?size=128",
+    "stars": 122,
+    "firstSeen": "2026-03-29T10:56:47",
+    "stable": {
+      "file": "patches/amplerevanced-stable.json",
+      "version": "v1.1.0",
+      "createdAt": "2026-06-13T06:21:09"
+    },
+    "dev": {
+      "file": "patches/amplerevanced-dev.json",
+      "version": "v1.2.0-dev.8",
+      "createdAt": "2026-06-27T15:43:34"
+    },
+    "latest": "dev",
+    "patchCount": 85,
+    "appCount": 5,
+    "targetApps": [
+      "com.dcinside.app.android",
+      "com.flexcil.flexcilnote",
+      "com.kakao.talk",
+      "com.navercorp.game.android.community",
+      "kr.co.nowcom.mobile.afreeca",
+      "universal"
+    ]
+  },
+  "anddea": {
+    "source": "github",
+    "repo": "anddea/revanced-patches",
+    "repoUrl": "https://github.com/anddea/revanced-patches",
+    "deepLink": "https://morphe.software/add-source?github=anddea/revanced-patches",
+    "avatarUrl": "https://github.com/anddea.png?size=128",
+    "stars": 1766,
+    "firstSeen": "2026-06-16T15:37:39",
+    "stable": {
+      "file": "patches/anddea-stable.json",
+      "version": "v4.1.0",
+      "createdAt": "2026-06-16T15:37:39"
+    },
+    "dev": {
+      "file": "patches/anddea-dev.json",
+      "version": "v4.2.0-dev.1",
+      "createdAt": "2026-06-26T17:44:16"
+    },
+    "latest": "dev",
+    "patchCount": 114,
+    "appCount": 2,
+    "targetApps": [
+      "com.google.android.apps.youtube.music",
+      "com.google.android.youtube",
+      "universal"
+    ]
+  },
+  "anddea-morphed": {
+    "source": "github",
+    "repo": "wchill/anddea-rvx-morphed",
+    "repoUrl": "https://github.com/wchill/anddea-rvx-morphed",
+    "deepLink": "https://morphe.software/add-source?github=wchill/anddea-rvx-morphed",
+    "avatarUrl": "https://github.com/wchill.png?size=128",
+    "stars": 49,
+    "firstSeen": "2026-02-11T15:55:58",
+    "dev": {
+      "file": "patches/anddea-morphed-dev.json",
+      "version": "v3.17.0-dev.2",
+      "createdAt": "2026-02-11T15:55:58"
+    },
+    "latest": "dev",
+    "patchCount": 133,
+    "appCount": 5,
+    "targetApps": [
+      "com.google.android.apps.youtube.music",
+      "com.google.android.youtube",
+      "com.reddit.frontpage",
+      "com.spotify.music",
+      "com.ysy.app.firewall",
+      "universal"
+    ]
+  },
+  "andronedev": {
+    "source": "github",
+    "repo": "andronedev/morphe-patches",
+    "repoUrl": "https://github.com/andronedev/morphe-patches",
+    "deepLink": "https://morphe.software/add-source?github=andronedev/morphe-patches",
+    "avatarUrl": "https://github.com/andronedev.png?size=128",
+    "stars": 81,
+    "firstSeen": "2026-01-05T16:06:30",
+    "stable": {
+      "file": "patches/andronedev-stable.json",
+      "version": "v2.3.0",
+      "createdAt": "2026-04-01T21:23:06"
+    },
+    "dev": {
+      "file": "patches/andronedev-dev.json",
+      "version": "v2.3.0-dev.1",
+      "createdAt": "2026-04-01T21:09:44"
+    },
+    "latest": "stable",
+    "patchCount": 2,
+    "appCount": 1,
+    "targetApps": [
+      "com.thetransitapp.droid"
+    ]
+  },
+  "ariecos": {
+    "source": "github",
+    "repo": "ariecos/gemini-patches",
+    "repoUrl": "https://github.com/ariecos/gemini-patches",
+    "deepLink": "https://morphe.software/add-source?github=ariecos/gemini-patches",
+    "avatarUrl": "https://github.com/ariecos.png?size=128",
+    "stars": 11,
+    "firstSeen": "2026-04-28T00:47:20",
+    "stable": {
+      "file": "patches/ariecos-stable.json",
+      "version": "v1.1.15",
+      "createdAt": "2026-04-28T00:47:20"
+    },
+    "dev": {
+      "file": "patches/ariecos-dev.json",
+      "version": "v1.1.16",
+      "createdAt": "2026-05-16T23:26:44"
+    },
+    "latest": "dev",
+    "patchCount": 2,
+    "appCount": 2,
+    "targetApps": [
+      "com.google.android.apps.bard",
+      "com.google.android.googlequicksearchbox"
+    ]
+  },
+  "bholeykabhakt": {
+    "source": "github",
+    "repo": "BholeyKaBhakt/android-patches-xtra",
+    "repoUrl": "https://github.com/BholeyKaBhakt/android-patches-xtra",
+    "deepLink": "https://morphe.software/add-source?github=BholeyKaBhakt/android-patches-xtra",
+    "avatarUrl": "https://github.com/BholeyKaBhakt.png?size=128",
+    "stars": 46,
+    "firstSeen": "2026-05-12T07:00:00",
+    "stable": {
+      "file": "patches/bholeykabhakt-stable.json",
+      "version": "v2.12.0",
+      "createdAt": "2026-06-22T17:44:41"
+    },
+    "dev": {
+      "file": "patches/bholeykabhakt-dev.json",
+      "version": "v2.12.0-dev.1",
+      "createdAt": "2026-06-19T07:44:04"
+    },
+    "latest": "stable",
+    "patchCount": 24,
+    "appCount": 14,
+    "targetApps": [
+      "com.atmfee",
+      "com.backdrops.wallpapers",
+      "com.llamalab.automate",
+      "com.nis.app",
+      "com.noctuasoftware.stellarium_free",
+      "com.proto.circuitsimulator",
+      "com.ttxapps.autosync",
+      "com.ufovpn.connect.velnet",
+      "com.vitotechnology.StarWalk2Free",
+      "com.vitotechnology.sky.tonight.map.star.walk",
+      "com.vpn.free.hotspot.secure.vpnify",
+      "io.funswitch.blocker",
+      "org.zwanoo.android.speedtest",
+      "pl.solidexplorer2",
+      "universal"
+    ]
+  },
+  "binarymend": {
+    "source": "github",
+    "repo": "binarymend/morphe-patches",
+    "repoUrl": "https://github.com/binarymend/morphe-patches",
+    "deepLink": "https://morphe.software/add-source?github=binarymend/morphe-patches",
+    "avatarUrl": "https://github.com/binarymend.png?size=128",
+    "stars": 121,
+    "firstSeen": "2026-04-12T21:22:08",
+    "stable": {
+      "file": "patches/binarymend-stable.json",
+      "version": "v1.3.1",
+      "createdAt": "2026-04-27T12:49:57"
+    },
+    "dev": {
+      "file": "patches/binarymend-dev.json",
+      "version": "v1.3.1-dev.1",
+      "createdAt": "2026-04-26T08:22:08"
+    },
+    "latest": "stable",
+    "patchCount": 11,
+    "appCount": 7,
+    "targetApps": [
+      "app.symfonik.music.player",
+      "com.burton999.notecal",
+      "com.flyersoft.moonreader",
+      "com.pinterest",
+      "com.quickcursor",
+      "com.truecaller",
+      "org.withouthat.acalendar"
+    ]
+  },
+  "braydog2010": {
+    "source": "github",
+    "repo": "BrayDog2010/morphe-patches",
+    "repoUrl": "https://github.com/BrayDog2010/morphe-patches",
+    "deepLink": "https://morphe.software/add-source?github=BrayDog2010/morphe-patches",
+    "avatarUrl": "https://github.com/BrayDog2010.png?size=128",
+    "stars": 1,
+    "firstSeen": "2026-06-22T21:11:54",
+    "stable": {
+      "file": "patches/braydog2010-stable.json",
+      "version": "v1.0.0",
+      "createdAt": "2026-06-22T21:11:54"
+    },
+    "dev": {
+      "file": "patches/braydog2010-dev.json",
+      "version": "v1.1.0-dev.4",
+      "createdAt": "2026-06-22T23:17:46"
+    },
+    "latest": "dev",
+    "patchCount": 2,
+    "appCount": 1,
+    "targetApps": [
+      "com.dubani.dub"
+    ]
+  },
+  "brosssh": {
+    "source": "github",
+    "repo": "brosssh/morphe-patches",
+    "repoUrl": "https://github.com/brosssh/morphe-patches",
+    "deepLink": "https://morphe.software/add-source?github=brosssh/morphe-patches",
+    "avatarUrl": "https://github.com/brosssh.png?size=128",
+    "stars": 271,
+    "firstSeen": "2026-03-10T19:56:44",
+    "stable": {
+      "file": "patches/brosssh-stable.json",
+      "version": "v2.8.0",
+      "createdAt": "2026-06-25T20:00:02"
+    },
+    "dev": {
+      "file": "patches/brosssh-dev.json",
+      "version": "v2.8.1-dev.4",
+      "createdAt": "2026-06-26T09:54:55"
+    },
+    "latest": "dev",
+    "patchCount": 22,
+    "appCount": 5,
+    "targetApps": [
+      "com.instagram.android",
+      "cz.seznam.mapy",
+      "de.komoot.android",
+      "fr.chargeprice.app",
+      "fr.tramb.park4night"
+    ]
+  },
+  "browzomje": {
+    "source": "github",
+    "repo": "browzomje/browzomje-patches",
+    "repoUrl": "https://github.com/browzomje/browzomje-patches",
+    "deepLink": "https://morphe.software/add-source?github=browzomje/browzomje-patches",
+    "avatarUrl": "https://github.com/browzomje.png?size=128",
+    "stars": 13,
+    "firstSeen": "2026-06-23T16:20:25",
+    "stable": {
+      "file": "patches/browzomje-stable.json",
+      "version": "v1.3.2",
+      "createdAt": "2026-07-01T16:43:57"
+    },
+    "dev": {
+      "file": "patches/browzomje-dev.json",
+      "version": "v1.2.2-dev.1",
+      "createdAt": "2026-06-25T21:43:58"
+    },
+    "latest": "stable",
+    "patchCount": 5,
+    "appCount": 1,
+    "targetApps": [
+      "com.pinterest"
+    ]
+  },
+  "chiggi": {
+    "source": "github",
+    "repo": "durgesh0505/chiggi_morphe_patches",
+    "repoUrl": "https://github.com/durgesh0505/chiggi_morphe_patches",
+    "deepLink": "https://morphe.software/add-source?github=durgesh0505/chiggi_morphe_patches",
+    "avatarUrl": "https://github.com/durgesh0505.png?size=128",
+    "stars": 7,
+    "firstSeen": "2026-06-11T13:50:03",
+    "stable": {
+      "file": "patches/chiggi-stable.json",
+      "version": "v1.14.3",
+      "createdAt": "2026-06-24T01:02:13"
+    },
+    "latest": "stable",
+    "patchCount": 31,
+    "appCount": 5,
+    "targetApps": [
+      "com.crazygames.crazygamesapp",
+      "com.easybrain.arrow.puzzle.game",
+      "com.instagram.barcelona",
+      "com.sonyliv",
+      "net.nutrilio"
+    ]
+  },
+  "docbt": {
+    "source": "github",
+    "repo": "docbt/patched-up",
+    "repoUrl": "https://github.com/docbt/patched-up",
+    "deepLink": "https://morphe.software/add-source?github=docbt/patched-up",
+    "avatarUrl": "https://github.com/docbt.png?size=128",
+    "stars": 38,
+    "firstSeen": "2026-03-21T15:09:32",
+    "stable": {
+      "file": "patches/docbt-stable.json",
+      "version": "v1.9.0",
+      "createdAt": "2026-06-20T03:31:38"
+    },
+    "dev": {
+      "file": "patches/docbt-dev.json",
+      "version": "v1.3.1-dev.2",
+      "createdAt": "2026-03-21T15:09:32"
+    },
+    "latest": "stable",
+    "patchCount": 6,
+    "appCount": 2,
+    "targetApps": [
+      "com.ebay.kleinanzeigen",
+      "com.google.android.apps.magazines",
+      "universal"
+    ]
+  },
+  "edge-morphe": {
+    "source": "github",
+    "repo": "quantavil/edge-morphe-patches",
+    "repoUrl": "https://github.com/quantavil/edge-morphe-patches",
+    "deepLink": "https://morphe.software/add-source?github=quantavil/edge-morphe-patches",
+    "avatarUrl": "https://github.com/quantavil.png?size=128",
+    "stars": 20,
+    "firstSeen": "2026-06-06T16:36:16",
+    "stable": {
+      "file": "patches/edge-morphe-stable.json",
+      "version": "v1.32.0",
+      "createdAt": "2026-06-11T08:29:13"
+    },
+    "latest": "stable",
+    "patchCount": 3,
+    "appCount": 1,
+    "targetApps": [
+      "com.microsoft.emmx"
+    ]
+  },
+  "ee-morphe": {
+    "source": "gitlab",
+    "repo": "early.egg3707/ee-morphe-patches",
+    "repoUrl": "https://gitlab.com/early.egg3707/ee-morphe-patches",
+    "deepLink": "https://morphe.software/add-source?gitlab=early.egg3707/ee-morphe-patches",
+    "avatarUrl": "https://secure.gravatar.com/avatar/d9da00cc6aa8cd8456262a7e9fff1dca8d39dbf321f0c74adbc3c5fb819ff288?s=128&d=identicon",
+    "stars": 4,
+    "firstSeen": "2026-06-20T17:36:44",
+    "stable": {
+      "file": "patches/ee-morphe-stable.json",
+      "version": "v1.2.2",
+      "createdAt": "2026-06-28T17:36:44"
+    },
+    "dev": {
+      "file": "patches/ee-morphe-dev.json",
+      "version": "v1.3.0-dev.11",
+      "createdAt": "2026-06-29T17:01:01"
+    },
+    "latest": "dev",
+    "patchCount": 11,
+    "appCount": 4,
+    "targetApps": [
+      "com.byairapp.android",
+      "com.jacks_flights",
+      "com.seedlang.mobile.android.all",
+      "epixler.de.hypnobox_android",
+      "universal"
+    ]
+  },
+  "eksi": {
+    "source": "github",
+    "repo": "HvQ/eksi-morphe",
+    "repoUrl": "https://github.com/HvQ/eksi-morphe",
+    "deepLink": "https://morphe.software/add-source?github=HvQ/eksi-morphe",
+    "avatarUrl": "https://github.com/HvQ.png?size=128",
+    "stars": 7,
+    "firstSeen": "2026-05-04T18:26:28",
+    "stable": {
+      "file": "patches/eksi-stable.json",
+      "version": "v0.1.1",
+      "createdAt": "2026-05-06T07:04:53"
+    },
+    "latest": "stable",
+    "patchCount": 1,
+    "appCount": 1,
+    "targetApps": [
+      "com.eksiteknoloji.eksisozluk"
+    ]
+  },
+  "eyalm2000": {
+    "source": "github",
+    "repo": "eyalm2000/tidal-debug-menu",
+    "repoUrl": "https://github.com/eyalm2000/tidal-debug-menu",
+    "deepLink": "https://morphe.software/add-source?github=eyalm2000/tidal-debug-menu",
+    "avatarUrl": "https://github.com/eyalm2000.png?size=128",
+    "stars": 23,
+    "firstSeen": "2026-03-26T08:55:30",
+    "stable": {
+      "file": "patches/eyalm2000-stable.json",
+      "version": "v1.2.0",
+      "createdAt": "2026-03-26T08:55:30"
+    },
+    "latest": "stable",
+    "patchCount": 2,
+    "appCount": 1,
+    "targetApps": [
+      "com.aspiro.tidal"
+    ]
+  },
+  "hk-morphe": {
+    "source": "github",
+    "repo": "humzakh/HK-Morphe-Patches",
+    "repoUrl": "https://github.com/humzakh/HK-Morphe-Patches",
+    "deepLink": "https://morphe.software/add-source?github=humzakh/HK-Morphe-Patches",
+    "avatarUrl": "https://github.com/humzakh.png?size=128",
+    "stars": 17,
+    "firstSeen": "2026-06-21T03:33:17",
+    "stable": {
+      "file": "patches/hk-morphe-stable.json",
+      "version": "v1.4.3",
+      "createdAt": "2026-06-29T03:33:17"
+    },
+    "dev": {
+      "file": "patches/hk-morphe-dev.json",
+      "version": "v1.5.0-dev.1",
+      "createdAt": "2026-07-02T04:51:19"
+    },
+    "latest": "dev",
+    "patchCount": 9,
+    "appCount": 3,
+    "targetApps": [
+      "com.laurencedawson.reddit_sync",
+      "com.laurencedawson.reddit_sync.dev",
+      "com.laurencedawson.reddit_sync.pro",
+      "universal"
+    ]
+  },
+  "hoo-dles": {
+    "source": "github",
+    "repo": "hoo-dles/morphe-patches",
+    "repoUrl": "https://github.com/hoo-dles/morphe-patches",
+    "deepLink": "https://morphe.software/add-source?github=hoo-dles/morphe-patches",
+    "avatarUrl": "https://github.com/hoo-dles.png?size=128",
+    "stars": 772,
+    "firstSeen": "2026-01-21T03:33:21",
+    "stable": {
+      "file": "patches/hoo-dles-stable.json",
+      "version": "v1.38.1",
+      "createdAt": "2026-06-28T22:46:25"
+    },
+    "dev": {
+      "file": "patches/hoo-dles-dev.json",
+      "version": "v1.38.1-dev.1",
+      "createdAt": "2026-06-28T22:16:35"
+    },
+    "latest": "stable",
+    "patchCount": 75,
+    "appCount": 51,
+    "targetApps": [
+      "app.ttmikstories.android",
+      "bitpit.launcher",
+      "ch.protonvpn.android",
+      "cn.ommiao.iconpacker",
+      "cn.wps.moffice_eng",
+      "com.adguard.android",
+      "com.alltrails.alltrails",
+      "com.amazon.avod.thirdpartyclient",
+      "com.avocards",
+      "com.bambuna.podcastaddict",
+      "com.busuu.android.enc",
+      "com.duolingo",
+      "com.getmimo",
+      "com.github.android",
+      "com.goodreads",
+      "com.google.android.apps.magazines",
+      "com.hellochinese",
+      "com.intsig.camscanner",
+      "com.lyfta",
+      "com.merriamwebster",
+      "com.michaldrabik.showly2",
+      "com.mirinae.mirinae",
+      "com.mobilefootie.wc2010",
+      "com.myfitnesspal.android",
+      "com.pandora.android",
+      "com.qbis.guessthecountry",
+      "com.rp.hypertrophy",
+      "com.sbs.diet",
+      "com.sbs.train",
+      "com.snorelab.app",
+      "com.sofascore.results",
+      "com.soundcloud.android",
+      "com.teslacoilsw.launcher",
+      "com.urbandroid.sleep",
+      "com.wallpaperscraft.wallpaper",
+      "com.windyty.android",
+      "com.xodo.pdf.reader",
+      "com.zombodroid.MemeGenerator",
+      "cz.ackee.ventusky",
+      "ginlemon.flowerfree",
+      "jp.ne.ibis.ibispaintx.app",
+      "kr.co.yjteam.dailypay",
+      "kr.eggbun.eggconvo",
+      "me.mycake",
+      "net.teuida.teuida",
+      "nom.vrd",
+      "org.languageapp.lingory",
+      "org.totschnig.myexpenses",
+      "pl.solidexplorer2",
+      "ru.iiec.pydroid3",
+      "universal",
+      "videoeditor.videorecorder.screenrecorder"
+    ]
+  },
+  "hoomans-morphe": {
+    "source": "github",
+    "repo": "arandomhooman/hoomans-morphe-patches",
+    "repoUrl": "https://github.com/arandomhooman/hoomans-morphe-patches",
+    "deepLink": "https://morphe.software/add-source?github=arandomhooman/hoomans-morphe-patches",
+    "avatarUrl": "https://github.com/arandomhooman.png?size=128",
+    "stars": 60,
+    "firstSeen": "2026-06-15T20:58:55",
+    "stable": {
+      "file": "patches/hoomans-morphe-stable.json",
+      "version": "v1.40.0",
+      "createdAt": "2026-07-02T18:37:11"
+    },
+    "dev": {
+      "file": "patches/hoomans-morphe-dev.json",
+      "version": "v1.19.0",
+      "createdAt": "2026-06-20T19:44:41"
+    },
+    "latest": "stable",
+    "patchCount": 51,
+    "appCount": 38,
+    "targetApps": [
+      "ak.alizandro.smartaudiobookplayer",
+      "altergames.carlauncher",
+      "app.remux.video.converter",
+      "app.symfonik.music.player",
+      "com.adobe.reader",
+      "com.alphaprogression.alphaprogression",
+      "com.appfactory.essence",
+      "com.atomengineapps.teachmeanatomy",
+      "com.bandlab.bandlab",
+      "com.blockerhero",
+      "com.budget.tracker_app",
+      "com.camerasideas.instashot",
+      "com.cfdrink",
+      "com.collectrinc.collectr",
+      "com.cronometer.android.gold",
+      "com.dv.adm",
+      "com.finch.finch",
+      "com.flightradar24free",
+      "com.hevy",
+      "com.hv.replaio",
+      "com.maxmpz.audioplayer",
+      "com.naver.linewebtoon",
+      "com.overdevs.at4k",
+      "com.paget96.batteryguru",
+      "com.quizlet.quizletandroid",
+      "com.realbyteapps.moneymanagerfree",
+      "com.rumble.battles",
+      "com.soepic.photogallery.release",
+      "com.spocky.projengmenu",
+      "com.thehungrywasp.iamsober",
+      "com.todoist",
+      "com.tracked.mobile",
+      "com.tranzmate",
+      "com.tumblr",
+      "com.wanderlog.android",
+      "dk.tacit.android.foldersync.lite",
+      "io.stashteam.games.tracker.stashapp",
+      "tv.twitch.android.app"
+    ]
+  },
+  "icysymmetra-tiktok": {
+    "source": "github",
+    "repo": "icysymmetra/tiktok-patches-for-morphe",
+    "repoUrl": "https://github.com/icysymmetra/tiktok-patches-for-morphe",
+    "deepLink": "https://morphe.software/add-source?github=icysymmetra/tiktok-patches-for-morphe",
+    "avatarUrl": "https://github.com/icysymmetra.png?size=128",
+    "stars": 104,
+    "firstSeen": "2026-05-30T22:48:06",
+    "stable": {
+      "file": "patches/icysymmetra-tiktok-stable.json",
+      "version": "v0.3.1",
+      "createdAt": "2026-06-17T16:13:14"
+    },
+    "dev": {
+      "file": "patches/icysymmetra-tiktok-dev.json",
+      "version": "v0.2.0-dev.2",
+      "createdAt": "2026-06-15T14:43:54"
+    },
+    "latest": "stable",
+    "patchCount": 15,
+    "appCount": 1,
+    "targetApps": [
+      "com.zhiliaoapp.musically"
+    ]
+  },
+  "ihealth-morphe": {
+    "source": "github",
+    "repo": "bdgerszewski/morphe-patches-ihealth",
+    "repoUrl": "https://github.com/bdgerszewski/morphe-patches-ihealth",
+    "deepLink": "https://morphe.software/add-source?github=bdgerszewski/morphe-patches-ihealth",
+    "avatarUrl": "https://github.com/bdgerszewski.png?size=128",
+    "stars": 3,
+    "firstSeen": "2026-06-21T21:50:44",
+    "stable": {
+      "file": "patches/ihealth-morphe-stable.json",
+      "version": "v1.1.0",
+      "createdAt": "2026-06-19T03:53:00"
+    },
+    "dev": {
+      "file": "patches/ihealth-morphe-dev.json",
+      "version": "v1.1.0-dev.1",
+      "createdAt": "2026-06-19T03:50:13"
+    },
+    "latest": "stable",
+    "patchCount": 6,
+    "appCount": 2,
+    "targetApps": [
+      "com.ihealthlabs.MyVitalsPro",
+      "com.persapps.multitimer"
+    ]
+  },
+  "imxeren": {
+    "source": "github",
+    "repo": "IMXEren/mix-patches",
+    "repoUrl": "https://github.com/IMXEren/mix-patches",
+    "deepLink": "https://morphe.software/add-source?github=IMXEren/mix-patches",
+    "avatarUrl": "https://github.com/IMXEren.png?size=128",
+    "stars": 18,
+    "firstSeen": "2026-05-21T22:30:00",
+    "stable": {
+      "file": "patches/imxeren-stable.json",
+      "version": "v1.4.0",
+      "createdAt": "2026-06-26T23:30:02"
+    },
+    "dev": {
+      "file": "patches/imxeren-dev.json",
+      "version": "v1.4.0-dev.1",
+      "createdAt": "2026-06-26T23:16:51"
+    },
+    "latest": "stable",
+    "patchCount": 2,
+    "appCount": 2,
+    "targetApps": [
+      "com.laurencedawson.reddit_sync",
+      "tv.trakt.trakt"
+    ]
+  },
+  "jasonwu1994": {
+    "source": "github",
+    "repo": "jasonwu1994/Gboard-patches",
+    "repoUrl": "https://github.com/jasonwu1994/Gboard-patches",
+    "deepLink": "https://morphe.software/add-source?github=jasonwu1994/Gboard-patches",
+    "avatarUrl": "https://github.com/jasonwu1994.png?size=128",
+    "stars": 109,
+    "firstSeen": "2026-04-07T13:23:23",
+    "stable": {
+      "file": "patches/jasonwu1994-stable.json",
+      "version": "v1.14.0",
+      "createdAt": "2026-06-30T22:42:36"
+    },
+    "dev": {
+      "file": "patches/jasonwu1994-dev.json",
+      "version": "v1.14.0-dev.1",
+      "createdAt": "2026-06-30T07:55:50"
+    },
+    "latest": "stable",
+    "patchCount": 22,
+    "appCount": 1,
+    "targetApps": [
+      "com.google.android.inputmethod.latin"
+    ]
+  },
+  "joristdh": {
+    "source": "github",
+    "repo": "Joristdh/Platypatch",
+    "repoUrl": "https://github.com/Joristdh/Platypatch",
+    "deepLink": "https://morphe.software/add-source?github=Joristdh/Platypatch",
+    "avatarUrl": "https://github.com/Joristdh.png?size=128",
+    "stars": 8,
+    "firstSeen": "2026-04-14T15:21:40",
+    "stable": {
+      "file": "patches/joristdh-stable.json",
+      "version": "v1.1.3",
+      "createdAt": "2026-04-16T07:52:27"
+    },
+    "dev": {
+      "file": "patches/joristdh-dev.json",
+      "version": "v1.2.0-dev.2",
+      "createdAt": "2026-06-24T18:29:20"
+    },
+    "latest": "dev",
+    "patchCount": 2,
+    "appCount": 3,
+    "targetApps": [
+      "com.laurencedawson.reddit_sync",
+      "com.laurencedawson.reddit_sync.dev",
+      "com.laurencedawson.reddit_sync.pro",
+      "universal"
+    ]
+  },
+  "kareemlukitomo": {
+    "source": "github",
+    "repo": "kareemlukitomo/morphe-patches",
+    "repoUrl": "https://github.com/kareemlukitomo/morphe-patches",
+    "deepLink": "https://morphe.software/add-source?github=kareemlukitomo/morphe-patches",
+    "avatarUrl": "https://github.com/kareemlukitomo.png?size=128",
+    "stars": 5,
+    "firstSeen": "2026-04-30T00:02:56",
+    "stable": {
+      "file": "patches/kareemlukitomo-stable.json",
+      "version": "v26.4.30-8eabfa",
+      "createdAt": "2026-04-30T00:02:56"
+    },
+    "latest": "stable",
+    "patchCount": 8,
+    "appCount": 5,
+    "targetApps": [
+      "com.instagram.android",
+      "com.instagram.barcelona",
+      "com.reddit.frontpage",
+      "com.twitter.android",
+      "com.zhiliaoapp.musically"
+    ]
+  },
+  "kolaron": {
+    "source": "github",
+    "repo": "kolaron/morphe-patches",
+    "repoUrl": "https://github.com/kolaron/morphe-patches",
+    "deepLink": "https://morphe.software/add-source?github=kolaron/morphe-patches",
+    "avatarUrl": "https://github.com/kolaron.png?size=128",
+    "stars": 7,
+    "firstSeen": "2026-05-16T07:00:00",
+    "stable": {
+      "file": "patches/kolaron-stable.json",
+      "version": "v1.0.0",
+      "createdAt": "2026-05-15T05:17:38"
+    },
+    "dev": {
+      "file": "patches/kolaron-dev.json",
+      "version": "v1.1.0-dev.1",
+      "createdAt": "2026-05-15T06:39:27"
+    },
+    "latest": "dev",
+    "patchCount": 1,
+    "appCount": 1,
+    "targetApps": [
+      "cz.mafra.jizdnirady"
+    ]
+  },
+  "kondratjev": {
+    "source": "github",
+    "repo": "kondratjev/morphe-patches",
+    "repoUrl": "https://github.com/kondratjev/morphe-patches",
+    "deepLink": "https://morphe.software/add-source?github=kondratjev/morphe-patches",
+    "avatarUrl": "https://github.com/kondratjev.png?size=128",
+    "stars": 13,
+    "firstSeen": "2026-06-11T14:43:14",
+    "stable": {
+      "file": "patches/kondratjev-stable.json",
+      "version": "v1.14.0",
+      "createdAt": "2026-06-23T17:36:41"
+    },
+    "dev": {
+      "file": "patches/kondratjev-dev.json",
+      "version": "v1.15.0-dev.1",
+      "createdAt": "2026-06-27T14:28:15"
+    },
+    "latest": "dev",
+    "patchCount": 23,
+    "appCount": 11,
+    "targetApps": [
+      "com.brightstripe.parcels",
+      "com.fatsecret.android",
+      "com.lyfta",
+      "com.medisafe.android.client",
+      "com.ornament.monitor",
+      "com.quvideo.wisemeal",
+      "com.sillens.shapeupclub",
+      "com.soundcloud.android",
+      "com.yazio.android",
+      "ru.vk.store",
+      "universal",
+      "xyz.rtrvr.pillo"
+    ]
+  },
+  "lain": {
+    "source": "github",
+    "repo": "kiraio-moe/Lain-Patches",
+    "repoUrl": "https://github.com/kiraio-moe/Lain-Patches",
+    "deepLink": "https://morphe.software/add-source?github=kiraio-moe/Lain-Patches",
+    "avatarUrl": "https://github.com/kiraio-moe.png?size=128",
+    "stars": 8,
+    "firstSeen": "2026-06-05T15:48:45",
+    "stable": {
+      "file": "patches/lain-stable.json",
+      "version": "v1.2.0",
+      "createdAt": "2026-06-28T19:23:17"
+    },
+    "dev": {
+      "file": "patches/lain-dev.json",
+      "version": "v1.2.0-dev.3",
+      "createdAt": "2026-06-28T07:25:51"
+    },
+    "latest": "stable",
+    "patchCount": 29,
+    "appCount": 17,
+    "targetApps": [
+      "cn.adonet.proxyevery",
+      "com.azefsw.audioconnect",
+      "com.ceyhan.sets",
+      "com.chimbori.hermitcrab",
+      "com.degenk.boorusama",
+      "com.flavionet.android.camera.lite",
+      "com.flavionet.android.cinema.lite",
+      "com.hopefactory2021.fakegpslocation",
+      "com.imaginstudio.imagetools.pixellab",
+      "com.jeyluta.timestampcamerafree",
+      "com.jeyluta.timestampcamerafreeent",
+      "com.kcstream.cing",
+      "com.medibang.android.medibangpro",
+      "com.medibang.android.paint.tablet",
+      "com.regasoftware.udisc",
+      "com.scheler.superproxy",
+      "com.surmin.photofancie.lite",
+      "universal"
+    ]
+  },
+  "lakaka": {
+    "source": "github",
+    "repo": "LaKakaReal/LaKakaShitPatches",
+    "repoUrl": "https://github.com/LaKakaReal/LaKakaShitPatches",
+    "deepLink": "https://morphe.software/add-source?github=LaKakaReal/LaKakaShitPatches",
+    "avatarUrl": "https://github.com/LaKakaReal.png?size=128",
+    "stars": 8,
+    "firstSeen": "2026-06-11T14:22:48",
+    "stable": {
+      "file": "patches/lakaka-stable.json",
+      "version": "v1.2.0",
+      "createdAt": "2026-06-22T23:30:27"
+    },
+    "dev": {
+      "file": "patches/lakaka-dev.json",
+      "version": "v1.2.0-dev.1",
+      "createdAt": "2026-06-22T22:12:35"
+    },
+    "latest": "stable",
+    "patchCount": 1,
+    "appCount": 1,
+    "targetApps": [
+      "com.jndapp.depth.live.wallpaper"
+    ]
+  },
+  "loskutov": {
+    "source": "github",
+    "repo": "loskutov/youtube-domain-fronting-patch",
+    "repoUrl": "https://github.com/loskutov/youtube-domain-fronting-patch",
+    "deepLink": "https://morphe.software/add-source?github=loskutov/youtube-domain-fronting-patch",
+    "avatarUrl": "https://github.com/loskutov.png?size=128",
+    "stars": 8,
+    "firstSeen": "2026-04-28T23:06:10",
+    "stable": {
+      "file": "patches/loskutov-stable.json",
+      "version": "v1.0.2",
+      "createdAt": "2026-04-30T21:44:02"
+    },
+    "dev": {
+      "file": "patches/loskutov-dev.json",
+      "version": "v1.0.1-dev.1",
+      "createdAt": "2026-04-28T23:06:10"
+    },
+    "latest": "stable",
+    "patchCount": 2,
+    "appCount": 2,
+    "targetApps": [
+      "com.google.android.apps.youtube.music",
+      "com.google.android.youtube"
+    ]
+  },
+  "lynx6319": {
+    "source": "github",
+    "repo": "Lynx6319/patch-youtube-scroll-block",
+    "repoUrl": "https://github.com/Lynx6319/patch-youtube-scroll-block",
+    "deepLink": "https://morphe.software/add-source?github=Lynx6319/patch-youtube-scroll-block",
+    "avatarUrl": "https://github.com/Lynx6319.png?size=128",
+    "stars": 4,
+    "firstSeen": "2026-05-05T14:52:24",
+    "stable": {
+      "file": "patches/lynx6319-stable.json",
+      "version": "v1.0.8",
+      "createdAt": "2026-05-05T14:52:24"
+    },
+    "latest": "stable",
+    "patchCount": 1,
+    "appCount": 1,
+    "targetApps": [
+      "com.google.android.youtube"
+    ]
+  },
+  "meridianfresco": {
+    "source": "github",
+    "repo": "meridianfresco/morphe-meta-patches",
+    "repoUrl": "https://github.com/meridianfresco/morphe-meta-patches",
+    "deepLink": "https://morphe.software/add-source?github=meridianfresco/morphe-meta-patches",
+    "avatarUrl": "https://github.com/meridianfresco.png?size=128",
+    "stars": 40,
+    "firstSeen": "2026-04-12T04:45:39",
+    "stable": {
+      "file": "patches/meridianfresco-stable.json",
+      "version": "v1.0.0",
+      "createdAt": "2026-04-11T21:51:39"
+    },
+    "latest": "stable",
+    "patchCount": 2,
+    "appCount": 1,
+    "targetApps": [
+      "com.facebook.katana"
+    ]
+  },
+  "morphe": {
+    "source": "github",
+    "repo": "MorpheApp/morphe-patches",
+    "repoUrl": "https://github.com/MorpheApp/morphe-patches",
+    "deepLink": "https://morphe.software/add-source?github=MorpheApp/morphe-patches",
+    "avatarUrl": "https://github.com/MorpheApp.png?size=128",
+    "stars": 2725,
+    "firstSeen": "2026-06-23T13:04:19",
+    "stable": {
+      "file": "patches/morphe-stable.json",
+      "version": "v1.32.0",
+      "createdAt": "2026-06-23T13:04:19"
+    },
+    "dev": {
+      "file": "patches/morphe-dev.json",
+      "version": "v1.33.0-dev.10",
+      "createdAt": "2026-07-02T08:05:29"
+    },
+    "latest": "dev",
+    "patchCount": 121,
+    "appCount": 3,
+    "targetApps": [
+      "com.google.android.apps.youtube.music",
+      "com.google.android.youtube",
+      "com.reddit.frontpage",
+      "universal"
+    ]
+  },
+  "morphe-google": {
+    "source": "github",
+    "repo": "Ripthulhu/morphe-google-patches",
+    "repoUrl": "https://github.com/Ripthulhu/morphe-google-patches",
+    "deepLink": "https://morphe.software/add-source?github=Ripthulhu/morphe-google-patches",
+    "avatarUrl": "https://github.com/Ripthulhu.png?size=128",
+    "stars": 3,
+    "firstSeen": "2026-06-30T13:38:59",
+    "stable": {
+      "file": "patches/morphe-google-stable.json",
+      "version": "v1.1.4",
+      "createdAt": "2026-06-30T13:38:59"
+    },
+    "latest": "stable",
+    "patchCount": 2,
+    "appCount": 1,
+    "targetApps": [
+      "com.google.android.googlequicksearchbox"
+    ]
+  },
+  "morphe-portal": {
+    "source": "github",
+    "repo": "andronedev/morphe-portal-patch",
+    "repoUrl": "https://github.com/andronedev/morphe-portal-patch",
+    "deepLink": "https://morphe.software/add-source?github=andronedev/morphe-portal-patch",
+    "avatarUrl": "https://github.com/andronedev.png?size=128",
+    "stars": 1,
+    "firstSeen": "2026-06-19T20:53:34",
+    "stable": {
+      "file": "patches/morphe-portal-stable.json",
+      "version": "v0.1.0",
+      "createdAt": "2026-06-19T20:53:34"
+    },
+    "dev": {
+      "file": "patches/morphe-portal-dev.json",
+      "version": "v0.1.0",
+      "createdAt": "2026-06-19T20:53:34"
+    },
+    "latest": "stable",
+    "patchCount": 3,
+    "appCount": 2,
+    "targetApps": [
+      "com.google.android.apps.youtube.music",
+      "com.google.android.youtube"
+    ]
+  },
+  "morphe-screenshot": {
+    "source": "github",
+    "repo": "Pa-kon/morphe-screenshot-patches",
+    "repoUrl": "https://github.com/Pa-kon/morphe-screenshot-patches",
+    "deepLink": "https://morphe.software/add-source?github=Pa-kon/morphe-screenshot-patches",
+    "avatarUrl": "https://github.com/Pa-kon.png?size=128",
+    "stars": 3,
+    "firstSeen": "2026-06-28T11:39:03",
+    "stable": {
+      "file": "patches/morphe-screenshot-stable.json",
+      "version": "v1.0.8",
+      "createdAt": "2026-06-28T11:39:03"
+    },
+    "latest": "stable",
+    "patchCount": 1,
+    "appCount": 0,
+    "targetApps": [
+      "universal"
+    ]
+  },
+  "nai64": {
+    "source": "github",
+    "repo": "Nai64/Nai64Patches",
+    "repoUrl": "https://github.com/Nai64/Nai64Patches",
+    "deepLink": "https://morphe.software/add-source?github=Nai64/Nai64Patches",
+    "avatarUrl": "https://github.com/Nai64.png?size=128",
+    "stars": 82,
+    "firstSeen": "2026-07-03T02:41:59",
+    "stable": {
+      "file": "patches/nai64-stable.json",
+      "version": "1.6.0",
+      "createdAt": "2026-07-02T19:52:54"
+    },
+    "latest": "stable",
+    "patchCount": 3,
+    "appCount": 0,
+    "targetApps": [
+      "universal"
+    ]
+  },
+  "npci-bhim": {
+    "source": "github",
+    "repo": "kun-codes/npci-bhim-morphe-patches",
+    "repoUrl": "https://github.com/kun-codes/npci-bhim-morphe-patches",
+    "deepLink": "https://morphe.software/add-source?github=kun-codes/npci-bhim-morphe-patches",
+    "avatarUrl": "https://github.com/kun-codes.png?size=128",
+    "stars": 6,
+    "firstSeen": "2026-06-28T09:33:42",
+    "stable": {
+      "file": "patches/npci-bhim-stable.json",
+      "version": "v1.3.0",
+      "createdAt": "2026-06-28T09:33:42"
+    },
+    "latest": "stable",
+    "patchCount": 6,
+    "appCount": 1,
+    "targetApps": [
+      "in.org.npci.upiapp"
+    ]
+  },
+  "paresh-maheshwari": {
+    "source": "gitlab",
+    "repo": "Paresh-Maheshwari/paresh-patches",
+    "repoUrl": "https://gitlab.com/Paresh-Maheshwari/paresh-patches",
+    "deepLink": "https://morphe.software/add-source?gitlab=Paresh-Maheshwari/paresh-patches",
+    "avatarUrl": "https://gitlab.com/uploads/-/system/user/avatar/10208861/avatar.png",
+    "stars": 50,
+    "firstSeen": "2026-05-11T07:00:00",
+    "stable": {
+      "file": "patches/paresh-maheshwari-stable.json",
+      "version": "v1.18.0",
+      "createdAt": "2026-06-03T15:49:54"
+    },
+    "dev": {
+      "file": "patches/paresh-maheshwari-dev.json",
+      "version": "v1.18.1-dev.1",
+      "createdAt": "2026-06-03T16:02:43"
+    },
+    "latest": "dev",
+    "patchCount": 55,
+    "appCount": 20,
+    "targetApps": [
+      "app.vinztech.trackit",
+      "ch.protonvpn.android",
+      "com.arlosoft.macrodroid",
+      "com.bytesong.missionalarm",
+      "com.celestron.skybox",
+      "com.cricbuzz.android",
+      "com.cv.docscanner",
+      "com.eyecon.global",
+      "com.frontrow.vlog",
+      "com.lumina.wallpapers",
+      "com.markOne.ss_app",
+      "com.overlook.android.fing",
+      "com.solid.teleprompter",
+      "com.ticktick.task",
+      "com.truecaller",
+      "eu.darken.sdmse",
+      "in.cricketexchange.app.cricketexchange",
+      "in.startv.hotstar",
+      "org.telegram.messenger.web",
+      "org.telegram.plus"
+    ]
+  },
+  "patcheddit": {
+    "source": "github",
+    "repo": "wchill/patcheddit",
+    "repoUrl": "https://github.com/wchill/patcheddit",
+    "deepLink": "https://morphe.software/add-source?github=wchill/patcheddit",
+    "avatarUrl": "https://github.com/wchill.png?size=128",
+    "stars": 686,
+    "firstSeen": "2026-01-03T08:12:00",
+    "stable": {
+      "file": "patches/patcheddit-stable.json",
+      "version": "v1.4.0",
+      "createdAt": "2026-04-07T19:10:56"
+    },
+    "dev": {
+      "file": "patches/patcheddit-dev.json",
+      "version": "v1.4.1-dev.1",
+      "createdAt": "2026-04-09T06:59:40"
+    },
+    "latest": "dev",
+    "patchCount": 39,
+    "appCount": 18,
+    "targetApps": [
+      "com.andrewshu.android.reddit",
+      "com.andrewshu.android.redditdonation",
+      "com.laurencedawson.reddit_sync",
+      "com.laurencedawson.reddit_sync.dev",
+      "com.laurencedawson.reddit_sync.pro",
+      "com.onelouder.baconreader",
+      "com.onelouder.baconreader.premium",
+      "com.rubenmayayo.reddit",
+      "free.reddit.news",
+      "io.syncapps.lemmy_sync",
+      "me.edgan.redditslide",
+      "ml.docilealligator.infinityforreddit.patreon",
+      "ml.docilealligator.infinityforreddit.plus",
+      "o.o.joey",
+      "o.o.joey.dev",
+      "o.o.joey.pro",
+      "org.cygnusx1.continuum",
+      "reddit.news",
+      "universal"
+    ]
+  },
+  "pepper-morphe": {
+    "source": "github",
+    "repo": "PawiX25/pepper-morphe-patches",
+    "repoUrl": "https://github.com/PawiX25/pepper-morphe-patches",
+    "deepLink": "https://morphe.software/add-source?github=PawiX25/pepper-morphe-patches",
+    "avatarUrl": "https://github.com/PawiX25.png?size=128",
+    "stars": 7,
+    "firstSeen": "2026-05-14T00:53:02",
+    "stable": {
+      "file": "patches/pepper-morphe-stable.json",
+      "version": "v1.0.1",
+      "createdAt": "2026-05-14T00:53:02"
+    },
+    "latest": "stable",
+    "patchCount": 17,
+    "appCount": 10,
+    "targetApps": [
+      "Chollometros",
+      "Dealabs",
+      "HotUKDeals",
+      "Mydealz",
+      "Pepper NL",
+      "Pepper PL",
+      "Pepper SE",
+      "Pepper.com",
+      "PreisjĂ¤ger",
+      "PromoDescuentos"
+    ]
+  },
+  "piko": {
+    "source": "github",
+    "repo": "crimera/piko",
+    "repoUrl": "https://github.com/crimera/piko",
+    "deepLink": "https://morphe.software/add-source?github=crimera/piko",
+    "avatarUrl": "https://github.com/crimera.png?size=128",
+    "stars": 4179,
+    "firstSeen": "2026-03-10T21:59:56",
+    "stable": {
+      "file": "patches/piko-stable.json",
+      "version": "v3.7.0",
+      "createdAt": "2026-06-27T16:03:22"
+    },
+    "dev": {
+      "file": "patches/piko-dev.json",
+      "version": "v3.8.0-dev.2",
+      "createdAt": "2026-06-28T13:21:07"
+    },
+    "latest": "dev",
+    "patchCount": 124,
+    "appCount": 2,
+    "targetApps": [
+      "com.instagram.android",
+      "com.twitter.android"
+    ]
+  },
+  "pixelpusher247": {
+    "source": "github",
+    "repo": "PixelPusher247/morphe-patches",
+    "repoUrl": "https://github.com/PixelPusher247/morphe-patches",
+    "deepLink": "https://morphe.software/add-source?github=PixelPusher247/morphe-patches",
+    "avatarUrl": "https://github.com/PixelPusher247.png?size=128",
+    "stars": 21,
+    "firstSeen": "2026-03-23T15:28:16",
+    "stable": {
+      "file": "patches/pixelpusher247-stable.json",
+      "version": "v1.3.0",
+      "createdAt": "2026-03-31T09:28:51"
+    },
+    "latest": "stable",
+    "patchCount": 1,
+    "appCount": 1,
+    "targetApps": [
+      "tv.trakt.trakt"
+    ]
+  },
+  "polka-bear": {
+    "source": "github",
+    "repo": "polka-bear/morphe-patches",
+    "repoUrl": "https://github.com/polka-bear/morphe-patches",
+    "deepLink": "https://morphe.software/add-source?github=polka-bear/morphe-patches",
+    "avatarUrl": "https://github.com/polka-bear.png?size=128",
+    "stars": 16,
+    "firstSeen": "2026-04-13T14:32:14",
+    "stable": {
+      "file": "patches/polka-bear-stable.json",
+      "version": "v1.4.0",
+      "createdAt": "2026-04-14T08:35:28"
+    },
+    "dev": {
+      "file": "patches/polka-bear-dev.json",
+      "version": "v1.4.1-dev.1",
+      "createdAt": "2026-04-14T10:04:57"
+    },
+    "latest": "dev",
+    "patchCount": 4,
+    "appCount": 2,
+    "targetApps": [
+      "com.ipoji.app",
+      "com.vladlee.easyblacklist"
+    ]
+  },
+  "prathxm": {
+    "source": "github",
+    "repo": "PrathxmOp/Prathxm-Patches",
+    "repoUrl": "https://github.com/PrathxmOp/Prathxm-Patches",
+    "deepLink": "https://morphe.software/add-source?github=PrathxmOp/Prathxm-Patches",
+    "avatarUrl": "https://github.com/PrathxmOp.png?size=128",
+    "stars": 30,
+    "firstSeen": "2026-06-30T14:24:47",
+    "stable": {
+      "file": "patches/prathxm-stable.json",
+      "version": "v1.6.0",
+      "createdAt": "2026-07-01T16:04:30"
+    },
+    "latest": "stable",
+    "patchCount": 3,
+    "appCount": 1,
+    "targetApps": [
+      "com.chess"
+    ]
+  },
+  "prathxm-ytmusic": {
+    "source": "github",
+    "repo": "PrathxmOp/ytmusic-patches",
+    "repoUrl": "https://github.com/PrathxmOp/ytmusic-patches",
+    "deepLink": "https://morphe.software/add-source?github=PrathxmOp/ytmusic-patches",
+    "avatarUrl": "https://github.com/PrathxmOp.png?size=128",
+    "stars": 1,
+    "firstSeen": "2026-06-28T15:27:28",
+    "stable": {
+      "file": "patches/prathxm-ytmusic-stable.json",
+      "version": "v1.38.0",
+      "createdAt": "2026-06-28T15:27:28"
+    },
+    "latest": "stable",
+    "patchCount": 3,
+    "appCount": 1,
+    "targetApps": [
+      "com.google.android.apps.youtube.music",
+      "universal"
+    ]
+  },
+  "proguard": {
+    "source": "gitlab",
+    "repo": "inotia00/proguard-patches",
+    "repoUrl": "https://gitlab.com/inotia00/proguard-patches",
+    "deepLink": "https://morphe.software/add-source?gitlab=inotia00/proguard-patches",
+    "avatarUrl": "https://secure.gravatar.com/avatar/8569f3472548f272a1313275aa2ad623ea5756631f222e4f045abc3b7ae3949d?s=128&d=identicon",
+    "stars": 3,
+    "firstSeen": "2026-06-05T01:03:40",
+    "stable": {
+      "file": "patches/proguard-stable.json",
+      "version": "v1.0.3",
+      "createdAt": "2026-06-05T01:03:40"
+    },
+    "latest": "stable",
+    "patchCount": 2,
+    "appCount": 1,
+    "targetApps": [
+      "com.java.inspector",
+      "universal"
+    ]
+  },
+  "rabilrbl": {
+    "source": "github",
+    "repo": "rabilrbl/fluffy-patches",
+    "repoUrl": "https://github.com/rabilrbl/fluffy-patches",
+    "deepLink": "https://morphe.software/add-source?github=rabilrbl/fluffy-patches",
+    "avatarUrl": "https://github.com/rabilrbl.png?size=128",
+    "stars": 21,
+    "firstSeen": "2026-03-31T00:06:52",
+    "stable": {
+      "file": "patches/rabilrbl-stable.json",
+      "version": "v1.5.0",
+      "createdAt": "2026-04-03T16:17:45"
+    },
+    "dev": {
+      "file": "patches/rabilrbl-dev.json",
+      "version": "v1.0.0-dev.19",
+      "createdAt": "2026-06-04T10:28:44"
+    },
+    "latest": "dev",
+    "patchCount": 2,
+    "appCount": 1,
+    "targetApps": [
+      "droom.sleepIfUCan"
+    ]
+  },
+  "realcyberwash": {
+    "source": "github",
+    "repo": "RealCyberwash/max-patches",
+    "repoUrl": "https://github.com/RealCyberwash/max-patches",
+    "deepLink": "https://morphe.software/add-source?github=RealCyberwash/max-patches",
+    "avatarUrl": "https://github.com/RealCyberwash.png?size=128",
+    "stars": 24,
+    "firstSeen": "2026-03-29T22:40:41",
+    "stable": {
+      "file": "patches/realcyberwash-stable.json",
+      "version": "v1.1.1",
+      "createdAt": "2026-04-06T18:30:55"
+    },
+    "latest": "stable",
+    "patchCount": 1,
+    "appCount": 1,
+    "targetApps": [
+      "ru.oneme.app"
+    ]
+  },
+  "realme-link": {
+    "source": "github",
+    "repo": "lyyako/realme-link-patches",
+    "repoUrl": "https://github.com/lyyako/realme-link-patches",
+    "deepLink": "https://morphe.software/add-source?github=lyyako/realme-link-patches",
+    "avatarUrl": "https://github.com/lyyako.png?size=128",
+    "stars": 0,
+    "firstSeen": "2026-06-12T18:29:37",
+    "stable": {
+      "file": "patches/realme-link-stable.json",
+      "version": "v1.0.0",
+      "createdAt": "2026-06-12T19:32:24"
+    },
+    "dev": {
+      "file": "patches/realme-link-dev.json",
+      "version": "v1.0.0",
+      "createdAt": "2026-06-12T18:29:37"
+    },
+    "latest": "stable",
+    "patchCount": 1,
+    "appCount": 1,
+    "targetApps": [
+      "com.realme.link"
+    ]
+  },
+  "rookieenough": {
+    "source": "github",
+    "repo": "RookieEnough/De-Vanced",
+    "repoUrl": "https://github.com/RookieEnough/De-Vanced",
+    "deepLink": "https://morphe.software/add-source?github=RookieEnough/De-Vanced",
+    "avatarUrl": "https://github.com/RookieEnough.png?size=128",
+    "stars": 952,
+    "firstSeen": "2026-03-02T00:10:09",
+    "stable": {
+      "file": "patches/rookieenough-stable.json",
+      "version": "v1.0.4",
+      "createdAt": "2026-05-13T13:27:20"
+    },
+    "dev": {
+      "file": "patches/rookieenough-dev.json",
+      "version": "v1.0.3-dev.1",
+      "createdAt": "2026-04-02T03:58:26"
+    },
+    "latest": "stable",
+    "patchCount": 84,
+    "appCount": 34,
+    "targetApps": [
+      "ch.protonmail.android",
+      "com.adobe.photoshopmix",
+      "com.amazon.mShop.android.shopping",
+      "com.amazon.mp3",
+      "com.bandcamp.android",
+      "com.cricbuzz.android",
+      "com.disney.disneyplus",
+      "com.drinkplusplus.angulus",
+      "com.facebook.katana",
+      "com.facebook.orca",
+      "com.google.android.apps.magazines",
+      "com.google.android.apps.photos",
+      "com.google.android.apps.recorder",
+      "com.instagram.barcelona",
+      "com.letterboxd.letterboxd",
+      "com.microblink.photomath",
+      "com.microsoft.office.officelens",
+      "com.myprog.hexedit",
+      "com.nis.app",
+      "com.nothing.smartcenter",
+      "com.peacocktv.peacockandroid",
+      "com.rarlab.rar",
+      "com.soundcloud.android",
+      "com.ss.android.ugc.trill",
+      "com.strava",
+      "com.tumblr",
+      "com.viber.voip",
+      "com.zhiliaoapp.musically",
+      "de.gmx.mobile.android.mail",
+      "ginlemon.iconpackstudio",
+      "jp.pxv.android",
+      "net.binarymode.android.irplus",
+      "nl.sanomamedia.android.nu",
+      "tv.twitch.android.app",
+      "universal"
+    ]
+  },
+  "rushiranpise": {
+    "source": "github",
+    "repo": "rushiranpise/morphe-patches",
+    "repoUrl": "https://github.com/rushiranpise/morphe-patches",
+    "deepLink": "https://morphe.software/add-source?github=rushiranpise/morphe-patches",
+    "avatarUrl": "https://github.com/rushiranpise.png?size=128",
+    "stars": 60,
+    "firstSeen": "2026-06-02T17:21:27",
+    "stable": {
+      "file": "patches/rushiranpise-stable.json",
+      "version": "v1.8.1",
+      "createdAt": "2026-06-29T19:28:43"
+    },
+    "dev": {
+      "file": "patches/rushiranpise-dev.json",
+      "version": "v1.8.2-dev.1",
+      "createdAt": "2026-07-02T20:00:08"
+    },
+    "latest": "dev",
+    "patchCount": 85,
+    "appCount": 59,
+    "targetApps": [
+      "ai.topicfinder.podcastdiscovery",
+      "air.com.musclemotion.anatomy",
+      "air.com.musclemotion.kyphosis",
+      "air.com.musclemotion.posture",
+      "air.com.musclemotion.strength.mobile",
+      "air.com.musclemotion.workout",
+      "air.com.musclemotion.yoga",
+      "app.ninjavpn.android",
+      "ch.protonvpn.android",
+      "com.Splitwise.SplitwiseMobile",
+      "com.a0soft.gphone.acc.free",
+      "com.accuweather.android",
+      "com.adguard.android",
+      "com.anetcapture.mock",
+      "com.app.social_gamebox",
+      "com.blockerhero",
+      "com.budget.tracker_app",
+      "com.canva.editor",
+      "com.catalinagroup.callrecorder",
+      "com.cloudflare.onedotonedotonedotone",
+      "com.community.oneroom",
+      "com.cpuid.cpu_z",
+      "com.dubox.drive",
+      "com.finalwire.aida64",
+      "com.flightradar24free",
+      "com.inscode.autoclicker",
+      "com.iudesk.android.photo.editor",
+      "com.javiersantos.mlmanager",
+      "com.kevinforeman.nzb360",
+      "com.mobond.mindicator",
+      "com.mtv.sai",
+      "com.newsbreak.crimeradar",
+      "com.oasisfeng.greenify",
+      "com.proxyman.proxymanandroid",
+      "com.psiphon3.subscription",
+      "com.rarlab.rar",
+      "com.saldous.casetracker",
+      "com.shexa.permissionmanager",
+      "com.tafayor.hibernator",
+      "com.tafayor.killall",
+      "com.tomtom.gplay.navapp",
+      "com.truebill",
+      "com.twtapp",
+      "com.waze",
+      "com.weather.Weather",
+      "com.windscribe.vpn",
+      "com.windyty.android",
+      "com.yatrirailways.yatri",
+      "cz.mroczis.netmonster",
+      "eu.darken.myperm",
+      "eu.faircode.netguard",
+      "it.mirko.beta",
+      "kha.prog.mikrotik",
+      "org.hola.play",
+      "org.zwanoo.android.speedtest",
+      "sensustech.universal.tv.remote.control",
+      "shareit.premium",
+      "sp0n.citizen",
+      "verbosus.pialytic"
+    ]
+  },
+  "rvx-morphed": {
+    "source": "github",
+    "repo": "wchill/rvx-morphed",
+    "repoUrl": "https://github.com/wchill/rvx-morphed",
+    "deepLink": "https://morphe.software/add-source?github=wchill/rvx-morphed",
+    "avatarUrl": "https://github.com/wchill.png?size=128",
+    "stars": 240,
+    "firstSeen": "2026-03-05T13:52:42",
+    "stable": {
+      "file": "patches/rvx-morphed-stable.json",
+      "version": "v5.16.4",
+      "createdAt": "2026-03-05T14:38:07"
+    },
+    "dev": {
+      "file": "patches/rvx-morphed-dev.json",
+      "version": "v5.16.4-dev.1",
+      "createdAt": "2026-03-05T13:52:42"
+    },
+    "latest": "stable",
+    "patchCount": 113,
+    "appCount": 2,
+    "targetApps": [
+      "com.google.android.apps.youtube.music",
+      "com.google.android.youtube",
+      "universal"
+    ]
+  },
+  "samsung-morphe": {
+    "source": "github",
+    "repo": "bigyank/morphe-patches-samsung",
+    "repoUrl": "https://github.com/bigyank/morphe-patches-samsung",
+    "deepLink": "https://morphe.software/add-source?github=bigyank/morphe-patches-samsung",
+    "avatarUrl": "https://github.com/bigyank.png?size=128",
+    "stars": 4,
+    "firstSeen": "2026-06-24T00:38:59",
+    "stable": {
+      "file": "patches/samsung-morphe-stable.json",
+      "version": "v1.2.1",
+      "createdAt": "2026-06-30T13:25:55"
+    },
+    "dev": {
+      "file": "patches/samsung-morphe-dev.json",
+      "version": "v1.0.15",
+      "createdAt": "2026-06-22T18:10:19"
+    },
+    "latest": "stable",
+    "patchCount": 2,
+    "appCount": 1,
+    "targetApps": [
+      "com.sec.android.app.shealth"
+    ]
+  },
+  "sjshb57-pairip": {
+    "source": "github",
+    "repo": "sjshb57/Pairip-Patches",
+    "repoUrl": "https://github.com/sjshb57/Pairip-Patches",
+    "deepLink": "https://morphe.software/add-source?github=sjshb57/Pairip-Patches",
+    "avatarUrl": "https://github.com/sjshb57.png?size=128",
+    "stars": 27,
+    "firstSeen": "2026-06-18T09:18:21",
+    "stable": {
+      "file": "patches/sjshb57-pairip-stable.json",
+      "version": "v1.10.1",
+      "createdAt": "2026-06-26T09:18:21"
+    },
+    "latest": "stable",
+    "patchCount": 4,
+    "appCount": 0,
+    "targetApps": [
+      "universal"
+    ]
+  },
+  "telegram-morphe": {
+    "source": "github",
+    "repo": "MoonShadowKeeper/Telegram-patchesMorphe",
+    "repoUrl": "https://github.com/MoonShadowKeeper/Telegram-patchesMorphe",
+    "deepLink": "https://morphe.software/add-source?github=MoonShadowKeeper/Telegram-patchesMorphe",
+    "avatarUrl": "https://github.com/MoonShadowKeeper.png?size=128",
+    "stars": 4,
+    "firstSeen": "2026-06-28T14:29:36",
+    "stable": {
+      "file": "patches/telegram-morphe-stable.json",
+      "version": "v1.20.0",
+      "createdAt": "2026-06-28T14:29:36"
+    },
+    "latest": "stable",
+    "patchCount": 10,
+    "appCount": 1,
+    "targetApps": [
+      "org.telegram.messenger.web"
+    ]
+  },
+  "ts-patches": {
+    "source": "github",
+    "repo": "osirisad/ts-patches",
+    "repoUrl": "https://github.com/osirisad/ts-patches",
+    "deepLink": "https://morphe.software/add-source?github=osirisad/ts-patches",
+    "avatarUrl": "https://github.com/osirisad.png?size=128",
+    "stars": 0,
+    "firstSeen": "2026-06-20T03:02:19",
+    "stable": {
+      "file": "patches/ts-patches-stable.json",
+      "version": "v1.0.0",
+      "createdAt": "2026-06-21T02:17:19"
+    },
+    "dev": {
+      "file": "patches/ts-patches-dev.json",
+      "version": "v1.0.4",
+      "createdAt": "2026-06-20T03:02:19"
+    },
+    "latest": "stable",
+    "patchCount": 1,
+    "appCount": 1,
+    "targetApps": [
+      "com.teamsnap.teamsnap"
+    ]
+  },
+  "ts2": {
+    "source": "github",
+    "repo": "osirisad/teamsnap-patches",
+    "repoUrl": "https://github.com/osirisad/teamsnap-patches",
+    "deepLink": "https://morphe.software/add-source?github=osirisad/teamsnap-patches",
+    "avatarUrl": "https://github.com/osirisad.png?size=128",
+    "stars": 1,
+    "firstSeen": "2026-06-24T12:35:14",
+    "stable": {
+      "file": "patches/ts2-stable.json",
+      "version": "v1.0.1",
+      "createdAt": "2026-06-22T02:56:46"
+    },
+    "dev": {
+      "file": "patches/ts2-dev.json",
+      "version": "v1.0.1",
+      "createdAt": "2026-06-22T02:56:46"
+    },
+    "latest": "stable",
+    "patchCount": 1,
+    "appCount": 1,
+    "targetApps": [
+      "com.teamsnap.teamsnap"
+    ]
+  },
+  "vladon": {
+    "source": "github",
+    "repo": "vladon/morphe-patches-navi",
+    "repoUrl": "https://github.com/vladon/morphe-patches-navi",
+    "deepLink": "https://morphe.software/add-source?github=vladon/morphe-patches-navi",
+    "avatarUrl": "https://github.com/vladon.png?size=128",
+    "stars": 3,
+    "firstSeen": "2026-04-20T14:53:42",
+    "stable": {
+      "file": "patches/vladon-stable.json",
+      "version": "v1.0.6",
+      "createdAt": "2026-04-20T14:53:42"
+    },
+    "latest": "stable",
+    "patchCount": 3,
+    "appCount": 1,
+    "targetApps": [
+      "ru.yandex.yandexnavi"
+    ]
+  },
+  "x-shim": {
+    "source": "gitlab",
+    "repo": "inotia00/x-shim",
+    "repoUrl": "https://gitlab.com/inotia00/x-shim",
+    "deepLink": "https://morphe.software/add-source?gitlab=inotia00/x-shim",
+    "avatarUrl": "https://secure.gravatar.com/avatar/8569f3472548f272a1313275aa2ad623ea5756631f222e4f045abc3b7ae3949d?s=128&d=identicon",
+    "stars": 28,
+    "firstSeen": "2026-06-16T14:53:15",
+    "stable": {
+      "file": "patches/x-shim-stable.json",
+      "version": "v1.6.5",
+      "createdAt": "2026-07-01T05:56:09"
+    },
+    "latest": "stable",
+    "patchCount": 3,
+    "appCount": 1,
+    "targetApps": [
+      "com.twitter.android"
+    ]
+  },
+  "xob0t": {
+    "source": "github",
+    "repo": "xob0t/morphe-patches",
+    "repoUrl": "https://github.com/xob0t/morphe-patches",
+    "deepLink": "https://morphe.software/add-source?github=xob0t/morphe-patches",
+    "avatarUrl": "https://github.com/xob0t.png?size=128",
+    "stars": 19,
+    "firstSeen": "2026-05-08T17:36:45",
+    "stable": {
+      "file": "patches/xob0t-stable.json",
+      "version": "v1.6.0",
+      "createdAt": "2026-06-23T06:18:13"
+    },
+    "dev": {
+      "file": "patches/xob0t-dev.json",
+      "version": "v1.6.0-dev.1",
+      "createdAt": "2026-06-23T06:17:33"
+    },
+    "latest": "stable",
+    "patchCount": 24,
+    "appCount": 4,
+    "targetApps": [
+      "com.avito.android",
+      "com.idamob.tinkoff.android",
+      "com.wildberries.ru",
+      "ru.ozon.app.android",
+      "universal"
+    ]
+  },
+  "ynotzort": {
+    "source": "github",
+    "repo": "ynotzort/morphe-patches",
+    "repoUrl": "https://github.com/ynotzort/morphe-patches",
+    "deepLink": "https://morphe.software/add-source?github=ynotzort/morphe-patches",
+    "avatarUrl": "https://github.com/ynotzort.png?size=128",
+    "stars": 1,
+    "firstSeen": "2026-06-25T14:45:29",
+    "stable": {
+      "file": "patches/ynotzort-stable.json",
+      "version": "v1.0.0",
+      "createdAt": "2026-06-25T14:45:29"
+    },
+    "dev": {
+      "file": "patches/ynotzort-dev.json",
+      "version": "v1.0.0-dev.1",
+      "createdAt": "2026-06-25T14:51:54"
+    },
+    "latest": "dev",
+    "patchCount": 1,
+    "appCount": 1,
+    "targetApps": [
+      "com.targo_prod.bad"
+    ]
+  },
+  "zpatches": {
+    "source": "github",
+    "repo": "cesbar/zpatches",
+    "repoUrl": "https://github.com/cesbar/zpatches",
+    "deepLink": "https://morphe.software/add-source?github=cesbar/zpatches",
+    "avatarUrl": "https://github.com/cesbar.png?size=128",
+    "stars": 5,
+    "firstSeen": "2026-06-17T15:54:42",
+    "stable": {
+      "file": "patches/zpatches-stable.json",
+      "version": "v1.5.1",
+      "createdAt": "2026-06-15T17:16:26"
+    },
+    "dev": {
+      "file": "patches/zpatches-dev.json",
+      "version": "v1.5.1",
+      "createdAt": "2026-06-15T17:16:26"
+    },
+    "latest": "stable",
+    "patchCount": 6,
+    "appCount": 2,
+    "targetApps": [
+      "com.jcdecaux.vls.lyon",
+      "ee.dustland.android.minesweeper",
+      "universal"
+    ]
+  }
+}

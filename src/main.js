@@ -11,25 +11,7 @@ import {
 } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
 import { filterRows, getFilterOptions, loadChannelData, normalizeChannel, summarizeRows } from "./data.js";
 
-const DEFAULT_CHANNEL = "latest";
-const PRIORITY_ORDER = [
-  "morphe",
-  "hoo-dles",
-  "paresh-maheshwari",
-  "rookieenough",
-  "rushiranpise",
-  "hoomans-morphe",
-  "patcheddit",
-];
-
-function priorityCompare(aKey, bKey) {
-  const indexA = PRIORITY_ORDER.indexOf(aKey);
-  const indexB = PRIORITY_ORDER.indexOf(bKey);
-  if (indexA !== -1 && indexB !== -1) return indexA - indexB;
-  if (indexA !== -1) return -1;
-  if (indexB !== -1) return 1;
-  return aKey.localeCompare(bKey);
-}
+const DEFAULT_CHANNEL = "stable";
 
 function tokenize(str) {
   const tokens = [];
@@ -167,7 +149,7 @@ createApp({
     const bundleSearch = ref("");
     const showOptions = ref([]);
     const channel = ref(DEFAULT_CHANNEL);
-    const sortOrder = ref("default");
+    const sortOrder = ref("stars");
 
     const activeData = ref(null);
     const isLoading = ref(true);
@@ -177,7 +159,7 @@ createApp({
     const params = new URLSearchParams(location.search);
     query.value = params.get("q") || "";
     channel.value = normalizeChannel(params.get("channel") || DEFAULT_CHANNEL);
-    sortOrder.value = params.get("sort") || "default";
+    sortOrder.value = params.get("sort") || "stars";
 
     function parseShowParam() {
       const search = location.search.substring(1);
@@ -195,11 +177,11 @@ createApp({
       return parseShowTrie(decodeURIComponent(rawParam));
     }
 
-    let bParam = params.get("bundle");
-    let aParam = params.get("app");
+    let bundleParam = params.get("bundle");
+    let appParam = params.get("app");
     let showArr = [];
-    if (bParam || aParam) {
-      showArr = [`${bParam || ""}${aParam ? ":" + aParam : ""}`];
+    if (bundleParam || appParam) {
+      showArr = [`${bundleParam || ""}${appParam ? ":" + appParam : ""}`];
     } else {
       showArr = parseShowParam();
     }
@@ -207,6 +189,11 @@ createApp({
 
     const isChangelogView = ref(params.has("new"));
     const changelogHighlights = isChangelogView.value ? showArr : [];
+
+    const hasHighlight = (prefix) => {
+      if (!isChangelogView.value) return false;
+      return changelogHighlights.some(h => h === prefix || h.startsWith(prefix + ':'));
+    };
 
     let initBundle = "", initApp = "";
     if (showArr.length > 0) {
@@ -271,11 +258,11 @@ createApp({
         urlParts.push(`show=${encodedShow}`);
       }
       if (channel.value !== DEFAULT_CHANNEL) urlParts.push(`channel=${channel.value}`);
-      if (sortOrder.value !== "default") urlParts.push(`sort=${sortOrder.value}`);
+      if (sortOrder.value !== "stars") urlParts.push(`sort=${sortOrder.value}`);
       if (isChangelogView.value) urlParts.push("new");
 
-      const q = urlParts.join("&");
-      history.replaceState(null, "", `${location.pathname}${q ? `?${q}` : ""}`);
+      const queryString = urlParts.join("&");
+      history.replaceState(null, "", `${location.pathname}${queryString ? `?${queryString}` : ""}`);
     }, { immediate: true });
 
     const loadData = async () => {
@@ -309,14 +296,33 @@ createApp({
         query: query.value,
         showOptions: app.value ? [`:${app.value}`] : [],
       });
-      let bundleOptions = getFilterOptions(rowsForSource).bundleOptions.map(b => {
-        const bundleObj = activeData.value.bundleMap[b.value];
+      let bundleOptions = getFilterOptions(rowsForSource).bundleOptions.map(bundleOption => {
+        const bundleObj = activeData.value.bundleMap[bundleOption.value];
         const repo = bundleObj ? bundleObj.repo.toLowerCase() : "";
         const icon = bundleObj ? bundleObj.avatarUrl : "";
-        return { ...b, repo, icon };
+        return { ...bundleOption, repo, icon };
       });
 
-      bundleOptions = [...bundleOptions].sort((a, b) => priorityCompare(a.value, b.value));
+      bundleOptions = [...bundleOptions].sort((a, b) => {
+        const bundleA = activeData.value.bundleMap[a.value];
+        const bundleB = activeData.value.bundleMap[b.value];
+        if (sortOrder.value === 'apps_desc') {
+          const rowsA = activeData.value.rows.filter(r => r.bundleKey === a.value);
+          const rowsB = activeData.value.rows.filter(r => r.bundleKey === b.value);
+          const countA = new Set(rowsA.map(r => r.packageName).filter(Boolean)).size;
+          const countB = new Set(rowsB.map(r => r.packageName).filter(Boolean)).size;
+          if (countA !== countB) return countB - countA;
+        } else if (sortOrder.value === 'latest') {
+          const dateA = bundleA?.createdAt ? new Date(bundleA.createdAt).getTime() : 0;
+          const dateB = bundleB?.createdAt ? new Date(bundleB.createdAt).getTime() : 0;
+          if (dateA !== dateB) return dateB - dateA;
+        } else if (sortOrder.value === 'stars') {
+          const starsA = bundleA?.stars || 0;
+          const starsB = bundleB?.stars || 0;
+          if (starsA !== starsB) return starsB - starsA;
+        }
+        return a.value.localeCompare(b.value);
+      });
 
       const rowsForApp = filterRows(activeData.value, {
         query: query.value,
@@ -403,9 +409,9 @@ createApp({
           };
         })
         .sort((a, b) => {
-          const aHigh = isChangelogView.value && changelogHighlights.includes(a.key) ? 1 : 0;
-          const bHigh = isChangelogView.value && changelogHighlights.includes(b.key) ? 1 : 0;
-          if (aHigh !== bHigh) return bHigh - aHigh;
+          const isHighlightedA = hasHighlight(a.key) ? 1 : 0;
+          const isHighlightedB = hasHighlight(b.key) ? 1 : 0;
+          if (isHighlightedA !== isHighlightedB) return isHighlightedB - isHighlightedA;
 
           if (sortOrder.value === 'apps_desc') {
             const countA = countBy(a.rows, r => r.packageName);
@@ -415,9 +421,15 @@ createApp({
             const dateA = a.bundle.createdAt ? new Date(a.bundle.createdAt).getTime() : 0;
             const dateB = b.bundle.createdAt ? new Date(b.bundle.createdAt).getTime() : 0;
             if (dateA !== dateB) return dateB - dateA;
+          } else if (sortOrder.value === 'stars') {
+            const starsA = a.bundle.stars || 0;
+            const starsB = b.bundle.stars || 0;
+            if (starsA !== starsB) return starsB - starsA;
+          } else if (sortOrder.value === 'alpha') {
+            return a.key.localeCompare(b.key);
           }
 
-          return priorityCompare(a.key, b.key);
+          return a.key.localeCompare(b.key);
         });
     });
 
@@ -586,6 +598,14 @@ createApp({
       expandedVersions.clear();
     };
 
+    const isNewBundle = (group) => {
+      if (!group || !group.bundle || !group.bundle.firstSeen) return false;
+      const firstSeenTime = new Date(group.bundle.firstSeen).getTime();
+      const currentTime = new Date().getTime();
+      const diffDays = (currentTime - firstSeenTime) / (1000 * 3600 * 24);
+      return diffDays <= 7;
+    };
+
     
     return {
       query,
@@ -622,8 +642,10 @@ createApp({
       resetFilters,
       isChangelogView,
       changelogHighlights,
+      hasHighlight,
       copyText,
       copiedStates,
+      isNewBundle,
     };
   },
 }).mount("#app");

@@ -1,7 +1,7 @@
 // Copyright (c) 2026 nvbangg (github.com/nvbangg)
 
-const CHANNELS = new Set(["stable", "latest", "dev"]);
-const DEFAULT_CHANNEL = "latest";
+const CHANNELS = new Set(["stable", "latest"]);
+const DEFAULT_CHANNEL = "stable";
 const jsonCache = new Map();
 const dataCache = new Map();
 const simplify = (text) =>
@@ -78,24 +78,24 @@ function packages(patch) {
   return packageRows.length ? packageRows : [{ packageName: "", versions: [] }];
 }
 
-async function loadSource(key, channel, names, sources, skipSet) {
-  const listPromise = json(
-    new URL(`../data/patch-bundles/${key}-patch-bundles/${key}-${channel}-patches-list.json`, import.meta.url),
-  );
-  const bundleMetaPromise = json(
-    new URL(`../data/patch-bundles/${key}-patch-bundles/${key}-${channel}-patches-bundle.json`, import.meta.url),
-  ).catch(() => ({}));
-
-  const [list, meta] = await Promise.all([listPromise, bundleMetaPromise]);
-  const sourceInfo = sources[key] || {};
+async function loadSource(key, channelObj, names, sourceInfo, skipSet) {
+  const list = await json(new URL(`../data/${channelObj.file}`, import.meta.url)).catch(() => ({}));
 
   const bundle = {
     key,
+    source: sourceInfo.source || "github",
     repo: sourceInfo.repo || "",
+    repoUrl: sourceInfo.repoUrl || "",
+    deepLink: sourceInfo.deepLink || "",
     avatarUrl: sourceInfo.avatarUrl || "",
-    version: list.version || meta.version || "",
-    tag: meta.version || "",
-    createdAt: meta.created_at || "",
+    stars: sourceInfo.stars || 0,
+    firstSeen: sourceInfo.firstSeen || "",
+    patchCount: sourceInfo.patchCount || 0,
+    appCount: sourceInfo.appCount || 0,
+    targetApps: sourceInfo.targetApps || [],
+    version: channelObj.version || "",
+    tag: channelObj.version || "",
+    createdAt: channelObj.createdAt || "",
   };
 
   const rows = (list.patches || []).flatMap((patch, patchIndex) => {
@@ -115,7 +115,7 @@ async function loadSource(key, channel, names, sources, skipSet) {
         description: patch.description || "",
         packageName,
         appName: name,
-        appIcon: (names[packageName] && names[packageName].icon) ? names[packageName].icon : "",
+        appIcon: (names[packageName] && names[packageName].iconUrl) ? names[packageName].iconUrl : "",
         versions: target.versions,
         enabled: patch.use ?? patch.default ?? true,
         options: Array.isArray(patch.options) ? patch.options : [],
@@ -144,8 +144,8 @@ export async function loadChannelData(channelInput) {
   if (dataCache.has(channel)) return dataCache.get(channel);
 
   const promise = Promise.all([
-    json(new URL("../data/app-metadata.json", import.meta.url)).catch(() => ({})),
-    json(new URL(`../data/bundles-${channel}.json`, import.meta.url)).catch(() => ({})),
+    json(new URL("../data/apps.json", import.meta.url)).catch(() => ({})),
+    json(new URL(`../data/bundles.json`, import.meta.url)).catch(() => ({})),
     json(new URL("./skip-words.json", import.meta.url)).catch(() => []),
   ]).then(async ([names, sources, skipWordsArray]) => {
     const skipSet = new Set(skipWordsArray);
@@ -154,12 +154,19 @@ export async function loadChannelData(channelInput) {
     const loaded = await Promise.all(
       bundleKeys
         .sort((a, b) => a.localeCompare(b))
-        .map((key) =>
-          loadSource(key, channel, names, sources, skipSet).catch((err) => {
+        .map((key) => {
+          const sourceObj = sources[key];
+          let channelObj = sourceObj[channel];
+          if (typeof channelObj === "string") {
+            channelObj = sourceObj[channelObj];
+          }
+          if (!channelObj) return Promise.resolve(null);
+          
+          return loadSource(key, channelObj, names, sourceObj, skipSet).catch((err) => {
             console.error(`Failed to load source ${key} for channel ${channel}:`, err);
             return null;
-          }),
-        ),
+          });
+        }),
     );
     const validLoaded = loaded.filter(Boolean);
     const bundleList = validLoaded.map((item) => item.bundle);

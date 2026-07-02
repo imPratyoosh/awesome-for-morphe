@@ -1,18 +1,4 @@
 {
-  "AlexNaga": {
-    "se.matlistan.free": [
-      "Dark mode",
-      "Enable Premium"
-    ]
-  },
-  "ImmortalZeus": {
-    "com.example.app": [
-      "Example Patch"
-    ],
-    "universal": [
-      "Block hosts in string resources"
-    ]
-  },
   "abhis1n": {
     "com.Splitwise.SplitwiseMobile": [
       "Enable Features"
@@ -99,6 +85,12 @@
     ],
     "com.wbd.hbomax": [
       "HBO Max - Disable Ads"
+    ]
+  },
+  "AlexNaga": {
+    "se.matlistan.free": [
+      "Dark mode",
+      "Enable Premium"
     ]
   },
   "ameen-morphe": {
@@ -940,6 +932,14 @@
       "Enable PRO"
     ]
   },
+  "ImmortalZeus": {
+    "com.example.app": [
+      "Example Patch"
+    ],
+    "universal": [
+      "Block hosts in string resources"
+    ]
+  },
   "imxeren": {
     "com.laurencedawson.reddit_sync": [
       "Fix Other discussions"
@@ -1151,6 +1151,23 @@
       "Remove Discover feed ads"
     ]
   },
+  "morphe-portal": {
+    "com.google.android.apps.youtube.music": [
+      "Custom DPI",
+      "Custom version name",
+      "Hide version notice"
+    ],
+    "com.google.android.youtube": [
+      "Custom DPI",
+      "Custom version name",
+      "Hide version notice"
+    ]
+  },
+  "morphe-screenshot": {
+    "universal": [
+      "Remove screenshot restriction"
+    ]
+  },
   "morphe": {
     "com.google.android.apps.youtube.music": [
       "Bypass certificate checks",
@@ -1274,23 +1291,6 @@
       "Change package name",
       "Disable Play Store updates",
       "Override certificate pinning"
-    ]
-  },
-  "morphe-portal": {
-    "com.google.android.apps.youtube.music": [
-      "Custom DPI",
-      "Custom version name",
-      "Hide version notice"
-    ],
-    "com.google.android.youtube": [
-      "Custom DPI",
-      "Custom version name",
-      "Hide version notice"
-    ]
-  },
-  "morphe-screenshot": {
-    "universal": [
-      "Remove screenshot restriction"
     ]
   },
   "nai64": {

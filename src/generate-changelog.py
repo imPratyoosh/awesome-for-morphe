@@ -1,15 +1,16 @@
 # Copyright (c) 2026 nvbangg (github.com/nvbangg)
 
 import json
+import re
 import urllib.parse
 from pathlib import Path
 
 ROOT = Path.cwd()
 DATA_DIR = ROOT / "data"
-BUNDLES_DIR = DATA_DIR / "patch-bundles"
-STABLE_OUT = DATA_DIR / "history-stable.json"
-DEV_OUT = DATA_DIR / "history-dev.json"
-APP_METADATA_PATH = DATA_DIR / "app-metadata.json"
+PATCHES_DIR = DATA_DIR / "patches"
+HISTORY_STABLE_PATH = DATA_DIR / "history-stable.json"
+HISTORY_DEV_PATH = DATA_DIR / "history-dev.json"
+APPS_JSON_PATH = DATA_DIR / "apps.json"
 SKIP_WORDS_PATH = ROOT / "src" / "skip-words.json"
 CHANGELOG_PATH = ROOT / "changelog.md"
 CHANGELOG_PRE_PATH = ROOT / "changelog-pre-release.md"
@@ -54,17 +55,16 @@ def collect_apps(list_json):
 
 def build_current_bundles():
     stable_dict, dev_dict = {}, {}
-    for bundle_dir in sorted(BUNDLES_DIR.iterdir()):
-        if not bundle_dir.is_dir() or not bundle_dir.name.endswith("-patch-bundles"):
+    for patch_file in sorted(PATCHES_DIR.glob("*.json")):
+        match = re.match(r"(.*)-(stable|dev)\.json$", patch_file.name)
+        if not match:
             continue
-        base = bundle_dir.name.replace("-patch-bundles", "")
-
-        for channel in ("stable", "dev"):
-            list_json = read_json(bundle_dir / f"{base}-{channel}-patches-list.json")
-            if not list_json:
-                continue
-            target = stable_dict if channel == "stable" else dev_dict
-            target[base] = collect_apps(list_json)
+        base, channel = match.groups()
+        list_json = read_json(patch_file)
+        if not list_json:
+            continue
+        target = stable_dict if channel == "stable" else dev_dict
+        target[base] = collect_apps(list_json)
 
     return stable_dict, dev_dict
 
@@ -130,7 +130,7 @@ def make_url(bundle, app=None, is_dev=False, patches=None):
 
     query.append("new")
     if is_dev:
-        query.append("channel=dev")
+        query.append("channel=latest")
 
     if query:
         url += "?" + "&".join(query)
@@ -175,7 +175,7 @@ def build_notes(label, old_bundles, new_bundles, app_metadata, skip_words):
                 q = urllib.parse.quote(trie_str, safe=':,"()')
                 url = f"https://nvbangg.github.io/awesome-for-morphe/?show={q}&new"
                 if is_dev:
-                    url += "&channel=dev"
+                    url += "&channel=latest"
 
                 link = f"[{key}]({url})"
                 app_lines = [f"- {link}"] + [
@@ -215,7 +215,7 @@ def build_notes(label, old_bundles, new_bundles, app_metadata, skip_words):
                 q = urllib.parse.quote(trie_str, safe=':,"()')
                 url = f"https://nvbangg.github.io/awesome-for-morphe/?show={q}&new"
                 if is_dev:
-                    url += "&channel=dev"
+                    url += "&channel=latest"
 
                 link = f"[{key}]({url})"
                 new_patches_groups.append(f"- {link}\n" + "\n".join(bundle_patches))
@@ -226,7 +226,7 @@ def build_notes(label, old_bundles, new_bundles, app_metadata, skip_words):
         q = urllib.parse.quote(trie_str, safe=':,"()')
         full_url = f"https://nvbangg.github.io/awesome-for-morphe/?show={q}&new"
         if is_dev:
-            full_url += "&channel=dev"
+            full_url += "&channel=latest"
         sections.append(f"✨ [_View full changelog details_]({full_url})")
 
     if new_bundles_notes:
@@ -246,17 +246,17 @@ def build_notes(label, old_bundles, new_bundles, app_metadata, skip_words):
 
 
 def main():
-    if not any(BUNDLES_DIR.glob("*-patch-bundles")):
-        raise SystemExit("No patch bundles found — run download-patch-bundles.py first")
+    if not any(PATCHES_DIR.glob("*.json")):
+        raise SystemExit("No patches found — run download.py first")
 
-    old_stable = read_json(STABLE_OUT, {}) or {}
-    old_dev = read_json(DEV_OUT, {}) or {}
-    app_metadata = read_json(APP_METADATA_PATH, {})
+    old_stable = read_json(HISTORY_STABLE_PATH, {}) or {}
+    old_dev = read_json(HISTORY_DEV_PATH, {}) or {}
+    app_metadata = read_json(APPS_JSON_PATH, {})
     skip_words = read_json(SKIP_WORDS_PATH, []) or []
 
     new_stable, new_dev = build_current_bundles()
-    write_json(STABLE_OUT, new_stable)
-    write_json(DEV_OUT, new_dev)
+    write_json(HISTORY_STABLE_PATH, new_stable)
+    write_json(HISTORY_DEV_PATH, new_dev)
 
     if not old_stable:
         print("Initialized bundles.")
