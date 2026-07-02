@@ -4,8 +4,8 @@ const CHANNELS = new Set(["stable", "latest", "dev"]);
 const DEFAULT_CHANNEL = "latest";
 const jsonCache = new Map();
 const dataCache = new Map();
-const simplify = (s) =>
-  (s || "")
+const simplify = (text) =>
+  (text || "")
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase()
@@ -41,41 +41,41 @@ function appName(packageName, metadata, skipSet) {
   return last.replace(/[-_]/g, " ").replace(/\b[a-z]/g, (char) => char.toUpperCase());
 }
 
-function versions(value) {
+function extractVersions(value) {
   if (!Array.isArray(value)) return [];
-  const vList = value.flatMap((item) => {
+  const versionList = value.flatMap((item) => {
     if (typeof item === "string") return [{ version: item, isExperimental: false }];
     if (item?.version) return [{ version: String(item.version), isExperimental: !!item.isExperimental }];
     return [];
   });
 
-  if (!vList.length) return [];
-  vList.sort((a, b) => b.version.localeCompare(a.version, undefined, { numeric: true, sensitivity: "base" }));
+  if (!versionList.length) return [];
+  versionList.sort((versionA, versionB) => versionB.version.localeCompare(versionA.version, undefined, { numeric: true, sensitivity: "base" }));
 
-  if (vList.length === 1) return vList;
+  if (versionList.length === 1) return versionList;
 
-  const main = vList.find((v) => !v.isExperimental) || vList[0];
-  return [...vList.filter((v) => v !== main), main];
+  const mainVersion = versionList.find((versionObj) => !versionObj.isExperimental) || versionList[0];
+  return [...versionList.filter((versionObj) => versionObj !== mainVersion), mainVersion];
 }
 
 function packages(patch) {
-  const value = patch.compatiblePackages;
-  if (!value || (typeof value === "object" && Object.keys(value).length === 0)) {
+  const compatiblePackages = patch.compatiblePackages;
+  if (!compatiblePackages || (typeof compatiblePackages === "object" && Object.keys(compatiblePackages).length === 0)) {
     return [{ packageName: "", versions: [] }];
   }
 
-  if (!Array.isArray(value)) {
-    return Object.entries(value).map(([packageName, list]) => ({ packageName, versions: versions(list) }));
+  if (!Array.isArray(compatiblePackages)) {
+    return Object.entries(compatiblePackages).map(([packageName, packageVersions]) => ({ packageName, versions: extractVersions(packageVersions) }));
   }
 
-  const rows = value.flatMap((item) => {
-    if (typeof item === "string") return [{ packageName: item, versions: [] }];
-    if (item?.packageName)
-      return [{ packageName: item.packageName, versions: versions(item.versions || item.targets || []) }];
+  const packageRows = compatiblePackages.flatMap((packageItem) => {
+    if (typeof packageItem === "string") return [{ packageName: packageItem, versions: [] }];
+    if (packageItem?.packageName)
+      return [{ packageName: packageItem.packageName, versions: extractVersions(packageItem.versions || packageItem.targets || []) }];
     return [];
   });
 
-  return rows.length ? rows : [{ packageName: "", versions: [] }];
+  return packageRows.length ? packageRows : [{ packageName: "", versions: [] }];
 }
 
 async function loadSource(key, channel, names, sources, skipSet) {
@@ -177,12 +177,12 @@ export async function loadChannelData(channelInput) {
 }
 
 export function filterRows(data, filters) {
-  const patchWords = (filters.query || "").split(/\s+/).map(simplify).filter(Boolean);
+  const searchQueryWords = (filters.query || "").split(/\s+/).map(simplify).filter(Boolean);
 
-  let parsedShow = null;
+  let parsedShowOptions = null;
   if (filters.showOptions && filters.showOptions.length > 0) {
-    parsedShow = filters.showOptions.map(item => {
-      const parts = item.split(":");
+    parsedShowOptions = filters.showOptions.map(showOptionStr => {
+      const parts = showOptionStr.split(":");
       return {
         level: parts.length === 1 ? "bundle" : parts.length === 2 ? "app" : "patch",
         bundle: parts[0],
@@ -193,31 +193,31 @@ export function filterRows(data, filters) {
   }
 
   return data.rows.filter((row) => {
-    if (parsedShow) {
-      const matched = parsedShow.some(filter => {
-        const matchBundle = !filter.bundle || row.bundleKey === filter.bundle;
+    if (parsedShowOptions) {
+      const matched = parsedShowOptions.some(showFilter => {
+        const matchBundle = !showFilter.bundle || row.bundleKey === showFilter.bundle;
         
         let matchApp = true;
-        if (filter.app) {
-          if (filter.app === "universal") {
+        if (showFilter.app) {
+          if (showFilter.app === "universal") {
             matchApp = !row.packageName;
           } else {
-            matchApp = row.packageName === filter.app;
+            matchApp = row.packageName === showFilter.app;
           }
         }
         
-        const matchPatch = !filter.patch || row.patchName === filter.patch;
+        const matchPatch = !showFilter.patch || row.patchName === showFilter.patch;
 
-        if (filter.level === "bundle") return matchBundle;
-        if (filter.level === "app") return matchBundle && matchApp;
+        if (showFilter.level === "bundle") return matchBundle;
+        if (showFilter.level === "app") return matchBundle && matchApp;
         return matchBundle && matchApp && matchPatch;
       });
       if (!matched) return false;
     }
 
-    if (patchWords.length > 0) {
+    if (searchQueryWords.length > 0) {
       const searchTarget = simplify(row.searchPatchesText);
-      if (!patchWords.every((word) => searchTarget.includes(word))) return false;
+      if (!searchQueryWords.every((searchWord) => searchTarget.includes(searchWord))) return false;
     }
     return true;
   });

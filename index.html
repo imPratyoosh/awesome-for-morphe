@@ -179,7 +179,7 @@
           <div class="flex flex-col md:flex-row items-center gap-2.5">
             <!-- Bundle filter dropdown -->
             <div class="relative w-full md:w-[25%] dd-root" id="bundle-dd">
-              <button type="button" onclick="toggleDd('bundle-dd')"
+              <button type="button" onclick="toggleDropdown('bundle-dd')"
                 class="w-full h-[34px] px-2.5 sm:px-3 bg-black border border-lightGray rounded-md text-sm text-white flex items-center gap-2 sm:gap-3 hover:border-white/50 transition-all cursor-pointer"
                 aria-label="Patch Bundles filter">
                 <template v-if="bundle">
@@ -224,7 +224,7 @@
 
             <!-- App filter dropdown -->
             <div class="relative w-full md:w-[30%] dd-root" id="app-dd">
-              <button type="button" onclick="toggleDd('app-dd')"
+              <button type="button" onclick="toggleDropdown('app-dd')"
                 class="w-full h-[34px] px-2.5 sm:px-3 bg-black border border-lightGray rounded-md text-sm text-white flex items-center gap-2 sm:gap-3 hover:border-white/50 transition-all cursor-pointer"
                 aria-label="Apps filter">
                 <template v-if="app">
@@ -567,37 +567,49 @@
     <i class="fa-solid fa-arrow-up"></i>
   </button>
   <script>
-    var btn = document.getElementById('back-to-top');
-    window.addEventListener('scroll', function () {
-      btn.style.display = window.scrollY > 300 ? 'flex' : 'none';
-      document.querySelectorAll('.dd-root').forEach(function (x) { x.classList.remove('open'); });
-    });
-    btn.addEventListener('click', function () {
-      window.scrollTo(0, 0);
-    });
+    function closeAllDropdowns() {
+      document.querySelectorAll('.dd-root').forEach(function (dropdownElement) {
+        dropdownElement.classList.remove('open');
+      });
+    }
 
-    function toggleDd(id) {
-      var c = document.getElementById(id);
-      var wasOpen = c.classList.contains('open');
-      document.querySelectorAll('.dd-root').forEach(function (x) { x.classList.remove('open'); });
+    function toggleDropdown(dropdownId) {
+      const rootElement = document.getElementById(dropdownId);
+      const wasOpen = rootElement.classList.contains('open');
+      closeAllDropdowns();
+      
       if (!wasOpen) {
-        c.classList.add('open');
-        var panel = c.querySelector('.dd-panel');
-        var rect = c.querySelector('button').getBoundingClientRect();
-        panel.style.top = (rect.bottom + 4) + 'px';
-        panel.style.left = rect.left + 'px';
-        panel.style.width = rect.width + 'px';
+        rootElement.classList.add('open');
+        const panel = rootElement.querySelector('.dd-panel');
+        const buttonRect = rootElement.querySelector('button').getBoundingClientRect();
+        
+        panel.style.top = (buttonRect.bottom + 4) + 'px';
+        panel.style.left = buttonRect.left + 'px';
+        panel.style.width = buttonRect.width + 'px';
+        
         requestAnimationFrame(function () {
-          var sel = panel.querySelector('[data-selected]');
-          if (sel) sel.scrollIntoView({ block: 'nearest' });
+          const selectedItem = panel.querySelector('[data-selected]');
+          if (selectedItem) {
+            selectedItem.scrollIntoView({ block: 'nearest' });
+          }
         });
       }
     }
 
-    document.addEventListener('click', function (e) {
-      if (!e.target.closest('.dd-root')) {
-        document.querySelectorAll('.dd-root').forEach(function (x) { x.classList.remove('open'); });
+    document.addEventListener('click', function (event) {
+      if (!event.target.closest('.dd-root')) {
+        closeAllDropdowns();
       }
+    });
+
+    const backToTopButton = document.getElementById('back-to-top');
+    window.addEventListener('scroll', function () {
+      backToTopButton.style.display = window.scrollY > 300 ? 'flex' : 'none';
+      closeAllDropdowns();
+    });
+
+    backToTopButton.addEventListener('click', function () {
+      window.scrollTo(0, 0);
     });
   </script>
 </body>

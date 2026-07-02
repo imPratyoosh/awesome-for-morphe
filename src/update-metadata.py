@@ -47,16 +47,16 @@ def get_gitlab_avatar(username):
         print(f"Failed to fetch gitlab avatar for {username}: {e}")
     return ""
 
-def get_app_icon(pkg):
+def get_app_icon(package_name):
     if not gplay_app:
         print("Warning: google-play-scraper is not installed. Run: pip install google-play-scraper")
         return ""
     try:
-        result = gplay_app(pkg)
+        result = gplay_app(package_name)
         if result and "icon" in result:
             return result["icon"]
-    except Exception as e:
-        print(f"Failed to fetch app icon for {pkg}: {e}")
+    except Exception as exception:
+        print(f"Failed to fetch app icon for {package_name}: {exception}")
     return ""
 
 def update_bundle_avatar(bundle_key, repo_url, avatar_url, force):
@@ -99,39 +99,39 @@ def main():
     app_updated = False
     app_tasks = []
 
-    for pkg, meta in app_metadata.items():
-        if not isinstance(meta, dict):
+    for package_name, app_meta in app_metadata.items():
+        if not isinstance(app_meta, dict):
             # In case someone manually put a string
-            app_metadata[pkg] = {"name": meta, "icon": ""}
-            meta = app_metadata[pkg]
+            app_metadata[package_name] = {"name": app_meta, "icon": ""}
+            app_meta = app_metadata[package_name]
 
         needs_update = False
         if force_all:
             needs_update = True
-        elif update_all_new and not meta.get("icon"):
+        elif update_all_new and not app_meta.get("icon"):
             needs_update = True
-        elif args.pkg and args.pkg == pkg:
+        elif args.pkg and args.pkg == package_name:
             needs_update = True
 
-        if pkg == "universal" or " " in pkg or "." not in pkg:
+        if package_name == "universal" or " " in package_name or "." not in package_name:
             needs_update = False
 
         if needs_update:
-            app_tasks.append(pkg)
+            app_tasks.append(package_name)
 
     if app_tasks:
         print(f"Fetching icons for {len(app_tasks)} apps...")
         with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
-            future_to_pkg = {executor.submit(get_app_icon, pkg): pkg for pkg in app_tasks}
+            future_to_pkg = {executor.submit(get_app_icon, package_name): package_name for package_name in app_tasks}
             for future in concurrent.futures.as_completed(future_to_pkg):
-                pkg = future_to_pkg[future]
+                package_name = future_to_pkg[future]
                 try:
                     icon = future.result()
                     if icon:
-                        app_metadata[pkg]["icon"] = icon
+                        app_metadata[package_name]["icon"] = icon
                         app_updated = True
-                except Exception as exc:
-                    print(f"Failed to fetch icon for {pkg}: {exc}")
+                except Exception as exception:
+                    print(f"Failed to fetch icon for {package_name}: {exception}")
 
     if app_updated:
         write_json(APP_METADATA_PATH, app_metadata)

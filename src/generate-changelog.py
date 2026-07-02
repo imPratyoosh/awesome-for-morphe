@@ -35,21 +35,21 @@ def collect_apps(list_json):
             continue
 
         compatible = patch.get("compatiblePackages")
-        pkgs = set()
+        package_names = set()
 
         if isinstance(compatible, dict):
             # Old format: dict of package names
-            pkgs.update(compatible.keys())
+            package_names.update(compatible.keys())
         elif isinstance(compatible, list):
             # New format: list of objects
-            for e in compatible:
-                if isinstance(e, dict) and (pkg := e.get("packageName")):
-                    pkgs.add(pkg)
+            for item in compatible:
+                if isinstance(item, dict) and (package_name := item.get("packageName")):
+                    package_names.add(package_name)
 
-        for pkg in pkgs or {"universal"}:
-            patches_dict.setdefault(pkg, set()).add(patch_name)
+        for package_name in package_names or {"universal"}:
+            patches_dict.setdefault(package_name, set()).add(patch_name)
 
-    return {pkg: sorted(list(patches_dict[pkg])) for pkg in sorted(patches_dict)}
+    return {package_name: sorted(list(patches_dict[package_name])) for package_name in sorted(patches_dict)}
 
 
 def build_current_bundles():
@@ -70,25 +70,25 @@ def build_current_bundles():
 
 
 # Inspired by code from Paresh Maheshwari
-def derive_name(pkg, skip_words):
-    parts = [p for p in pkg.split(".") if p not in skip_words and len(p) > 1]
-    name = parts[-1] if parts else pkg.split(".")[-1]
+def derive_name(package_name, skip_words):
+    parts = [part for part in package_name.split(".") if part not in skip_words and len(part) > 1]
+    name = parts[-1] if parts else package_name.split(".")[-1]
     return name.replace("-", " ").replace("_", " ").title()
 
 
-def format_app_name(pkg, app_metadata, skip_words):
-    meta = app_metadata.get(pkg)
+def format_app_name(package_name, app_metadata, skip_words):
+    meta = app_metadata.get(package_name)
     if isinstance(meta, dict) and meta.get("name"):
         return meta["name"]
     if isinstance(meta, str):
         return meta
-    return derive_name(pkg, skip_words)
+    return derive_name(package_name, skip_words)
 
 
-def format_patch(p):
-    if any(c in p for c in [":", ",", "(", ")"]):
-        return f'"{p}"'
-    return p
+def format_patch(patch_name):
+    if any(char in patch_name for char in [":", ",", "(", ")"]):
+        return f'"{patch_name}"'
+    return patch_name
 
 
 def stringify_trie(bundles_dict):
@@ -104,8 +104,8 @@ def stringify_trie(bundles_dict):
                 elif len(patches) == 1:
                     app_strs.append(f"{app}:{format_patch(patches[0])}")
                 else:
-                    p_strs = [format_patch(p) for p in patches]
-                    app_strs.append(f"{app}:({','.join(p_strs)})")
+                    patch_strs = [format_patch(patch_name) for patch_name in patches]
+                    app_strs.append(f"{app}:({','.join(patch_strs)})")
 
             if len(app_strs) == 1:
                 bundle_strs.append(f"{bundle}:{app_strs[0]}")

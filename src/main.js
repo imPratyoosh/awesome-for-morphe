@@ -159,6 +159,7 @@ function buildShowTrie(flatList) {
 
 createApp({
   setup() {
+    
     const query = ref("");
     const bundle = ref("");
     const app = ref("");
@@ -172,6 +173,7 @@ createApp({
     const isLoading = ref(true);
     const errorMsg = ref("");
 
+    
     const params = new URLSearchParams(location.search);
     query.value = params.get("q") || "";
     channel.value = normalizeChannel(params.get("channel") || DEFAULT_CHANNEL);
@@ -249,7 +251,7 @@ createApp({
       }
     });
 
-    // Sync state to URL on change
+    
     watch([query, showOptions, channel, sortOrder], (newVals, oldVals) => {
       // oldVals contains undefineds on the immediate initial run
       if (oldVals && oldVals.some(v => v !== undefined)) {
@@ -291,6 +293,7 @@ createApp({
     onMounted(loadData);
     watch(channel, loadData);
 
+    
     const filteredRows = computed(() => {
       if (!activeData.value) return [];
       return filterRows(activeData.value, {
@@ -324,30 +327,27 @@ createApp({
       return { bundleOptions, appOptions };
     });
 
-    const filteredAppOptions = computed(() => {
-      const queryWords = appSearch.value.toLowerCase().split(/\s+/).filter(Boolean);
-      if (queryWords.length === 0) return filterOptions.value.appOptions;
-      return filterOptions.value.appOptions.filter(o => {
-        const label = o.label.toLowerCase();
-        const value = o.value.toLowerCase();
-        return queryWords.every(word => label.includes(word) || value.includes(word));
+    function filterDropdownOptions(options, searchValue, extraFields) {
+      const queryWords = searchValue.toLowerCase().split(/\s+/).filter(Boolean);
+      if (queryWords.length === 0) return options;
+      return options.filter(o => {
+        const searchable = [o.label, o.value, ...extraFields.map(f => o[f] || "")]
+          .join(" ").toLowerCase();
+        return queryWords.every(word => searchable.includes(word));
       });
-    });
+    }
 
-    const filteredBundleOptions = computed(() => {
-      const queryWords = bundleSearch.value.toLowerCase().split(/\s+/).filter(Boolean);
-      if (queryWords.length === 0) return filterOptions.value.bundleOptions;
-      return filterOptions.value.bundleOptions.filter(o => {
-        const label = o.label.toLowerCase();
-        const value = o.value.toLowerCase();
-        const repo = o.repo ? o.repo.toLowerCase() : "";
-        return queryWords.every(word => label.includes(word) || value.includes(word) || repo.includes(word));
-      });
-    });
+    const filteredAppOptions = computed(() =>
+      filterDropdownOptions(filterOptions.value.appOptions, appSearch.value, [])
+    );
+
+    const filteredBundleOptions = computed(() =>
+      filterDropdownOptions(filterOptions.value.bundleOptions, bundleSearch.value, ["repo"])
+    );
 
     const stats = computed(() => summarizeRows(filteredRows.value));
 
-    // Grouping for View
+    
     const bundlesGroups = computed(() => {
       const map = new Map();
       for (const row of filteredRows.value) {
@@ -421,6 +421,16 @@ createApp({
         });
     });
 
+    
+    const expandedVersions = reactive(new Set());
+    const toggleVersions = (id) => {
+      expandedVersions.has(id) ? expandedVersions.delete(id) : expandedVersions.add(id);
+    };
+
+    const expandedOptions = reactive(new Set());
+    const toggleOptions = (id) => {
+      expandedOptions.has(id) ? expandedOptions.delete(id) : expandedOptions.add(id);
+    };
 
     watch(bundlesGroups, (newGroups) => {
       if (newGroups && newGroups.length === 1) {
@@ -438,16 +448,7 @@ createApp({
       }
     });
 
-    const expandedVersions = reactive(new Set());
-    const toggleVersions = (id) => {
-      expandedVersions.has(id) ? expandedVersions.delete(id) : expandedVersions.add(id);
-    };
-
-    const expandedOptions = reactive(new Set());
-    const toggleOptions = (id) => {
-      expandedOptions.has(id) ? expandedOptions.delete(id) : expandedOptions.add(id);
-    };
-
+    
     const activeSwipeGroup = ref("");
     const swipeDirection = ref("");
 
@@ -528,6 +529,7 @@ createApp({
       bundleSearch.value = "";
     };
 
+    
     const formatDate = (val) => {
       const d = val ? new Date(val) : null;
       return d && !isNaN(d.getTime())
@@ -559,6 +561,7 @@ createApp({
       return `https://morphe.software/add-source?${platform}=${encodeURI(path)}`;
     };
 
+    
     const copiedStates = reactive({});
     const copyText = (text, key) => {
       navigator.clipboard.writeText(text).then(() => {
@@ -583,6 +586,7 @@ createApp({
       expandedVersions.clear();
     };
 
+    
     return {
       query,
       bundle,
