@@ -176,10 +176,19 @@
 
         <div class="flex flex-col gap-3 p-2 md:p-3">
           <!-- Row 1: Filters -->
-          <div class="flex flex-col md:flex-row items-center gap-2.5">
-            <!-- Bundle filter dropdown -->
-            <div class="relative w-full md:w-[25%] dd-root" id="bundle-dd">
-              <button type="button" onclick="toggleDropdown('bundle-dd')"
+          <div class="flex flex-col md:flex-row gap-2.5">
+            <!-- Reset & Bundle Container -->
+            <div class="flex items-center gap-2 w-full md:w-[38%]">
+              <button @click="resetFilters"
+                class="h-[34px] px-3 flex items-center justify-center gap-1.5 bg-green/10 border border-green/30 rounded-full text-xs font-bold text-green hover:bg-green/20 hover:border-green/50 hover:scale-[1.02] active:scale-95 active:bg-green/30 active:border-green/60 transition-all transform duration-150 shadow-sm shadow-green/5 shrink-0"
+                title="Reset Filters">
+                <i class="fa-solid fa-arrow-rotate-left"></i>
+                <span>Reset Filters</span>
+              </button>
+
+              <!-- Bundle filter dropdown -->
+              <div class="relative flex-1 dd-root" id="bundle-dd">
+                <button type="button" onclick="toggleDropdown('bundle-dd')"
                 class="w-full h-[34px] px-2.5 sm:px-3 bg-black border border-lightGray rounded-md text-sm text-white flex items-center gap-2 sm:gap-3 hover:border-white/50 transition-all cursor-pointer"
                 aria-label="Patch Bundles filter">
                 <template v-if="bundle">
@@ -221,9 +230,10 @@
                 </div>
               </div>
             </div>
+            </div>
 
             <!-- App filter dropdown -->
-            <div class="relative w-full md:w-[30%] dd-root" id="app-dd">
+            <div class="relative w-full md:w-[27%] dd-root" id="app-dd">
               <button type="button" onclick="toggleDropdown('app-dd')"
                 class="w-full h-[34px] px-2.5 sm:px-3 bg-black border border-lightGray rounded-md text-sm text-white flex items-center gap-2 sm:gap-3 hover:border-white/50 transition-all cursor-pointer"
                 aria-label="Apps filter">
@@ -276,57 +286,65 @@
               </div>
             </div>
 
-            <form @submit.prevent="$event.target.querySelector('input').blur()"
-              class="relative w-full md:w-[45%] min-w-0 mt-0">
-              <span class="absolute left-3 top-0 h-[34px] flex items-center text-light pointer-events-none">
-                <i class="fa-solid fa-magnifying-glass text-xs"></i>
-              </span>
-              <input type="search" v-model="query" autocomplete="off" enterkeyhint="search" placeholder="Search patches"
-                class="w-full h-[34px] pl-8 pr-9 bg-black border border-lightGray hover:border-white/50 rounded-md focus:border-light focus:ring-2 focus:ring-light/20 outline-none transition-all text-sm text-white">
-              <button v-if="query" type="button" @click="query = ''"
-                class="absolute right-0 top-0 h-[34px] w-9 flex items-center justify-center text-light hover:text-white transition-colors"
-                title="Clear search">
-                <i class="fa-solid fa-circle-xmark"></i>
-              </button>
-            </form>
+            <!-- Search & Mobile Sort Container -->
+            <div class="flex items-center gap-2 w-full md:w-[35%]">
+              <form @submit.prevent="$event.target.querySelector('input').blur()"
+                class="relative flex-1 min-w-0 mt-0">
+                <span class="absolute left-3 top-0 h-[34px] flex items-center text-light pointer-events-none">
+                  <i class="fa-solid fa-magnifying-glass text-xs"></i>
+                </span>
+                <input type="search" v-model="query" autocomplete="off" enterkeyhint="search" placeholder="Search patches"
+                  class="w-full h-[34px] pl-8 pr-9 bg-black border border-lightGray hover:border-white/50 rounded-md focus:border-light focus:ring-2 focus:ring-light/20 outline-none transition-all text-sm text-white">
+                <button v-if="query" type="button" @click="query = ''"
+                  class="absolute right-0 top-0 h-[34px] w-9 flex items-center justify-center text-light hover:text-white transition-colors"
+                  title="Clear search">
+                  <i class="fa-solid fa-circle-xmark"></i>
+                </button>
+              </form>
+
+              <!-- Sort Dropdown (Mobile Only) -->
+              <div class="relative w-[130px] md:hidden shrink-0">
+                <select v-model="sortOrder"
+                  class="w-full h-[34px] pl-7 pr-7 appearance-none bg-black border border-lightGray hover:border-white/50 rounded-md text-xs text-white focus:border-light focus:ring-1 focus:ring-light/20 outline-none transition-all cursor-pointer">
+                  <option value="default">Default Order</option>
+                  <option value="apps_desc">Most Apps</option>
+                  <option value="latest">Latest</option>
+                </select>
+                <i class="fa-solid fa-sort-amount-down absolute left-2.5 top-[11px] text-light text-xs pointer-events-none"></i>
+                <i class="fa-solid fa-chevron-down absolute right-2.5 top-[12px] text-light text-[10px] pointer-events-none"></i>
+              </div>
+            </div>
           </div>
 
           <!-- Row 2: Actions & Stats -->
           <div class="flex flex-col md:flex-row md:items-center justify-between gap-y-3 gap-x-2 mt-1">
             <!-- Left Group -->
-            <div class="flex flex-row items-center justify-center md:justify-start gap-2 w-full md:w-auto">
-              <button @click="resetFilters"
-                class="w-[115px] h-8 flex items-center justify-center gap-1 bg-green/10 border border-green/30 rounded-full text-xs font-bold text-green hover:bg-green/20 hover:border-green/50 hover:scale-[1.02] active:scale-95 active:bg-green/30 active:border-green/60 transition-all transform duration-150 shadow-sm shadow-green/5 shrink-0"
-                title="Reset Filters">
-                <i class="fa-solid fa-arrow-rotate-left"></i>
-                <span>Reset Filters</span>
-              </button>
-
-              <!-- Sort Dropdown -->
-              <div class="relative w-[145px]">
+            <div class="hidden md:flex flex-row items-center justify-center md:justify-start gap-2 w-full md:w-auto">
+              <!-- Sort Dropdown (Desktop Only) -->
+              <div class="relative w-[130px]">
                 <select v-model="sortOrder"
-                  class="w-full h-9 pl-8 pr-8 appearance-none bg-black border border-lightGray hover:border-white/50 rounded-md text-xs text-white focus:border-light focus:ring-1 focus:ring-light/20 outline-none transition-all cursor-pointer">
+                  class="w-full h-[30px] pl-7 pr-7 appearance-none bg-black border border-lightGray hover:border-white/50 rounded-md text-xs text-white focus:border-light focus:ring-1 focus:ring-light/20 outline-none transition-all cursor-pointer">
                   <option value="default">Default Order</option>
                   <option value="apps_desc">Most Apps</option>
                   <option value="latest">Latest</option>
                 </select>
                 <i
-                  class="fa-solid fa-sort-amount-down absolute left-2.5 top-[11px] text-light text-xs pointer-events-none"></i>
+                  class="fa-solid fa-sort-amount-down absolute left-2.5 top-[9px] text-light text-xs pointer-events-none"></i>
                 <i
-                  class="fa-solid fa-chevron-down absolute right-2.5 top-[13px] text-light text-[10px] pointer-events-none"></i>
+                  class="fa-solid fa-chevron-down absolute right-2.5 top-[10px] text-light text-[10px] pointer-events-none"></i>
               </div>
             </div>
 
             <!-- Center Group -->
-            <div class="flex items-center justify-center gap-2 w-full md:w-auto">
+            <div class="flex items-center justify-center gap-1.5 sm:gap-2 w-full md:w-auto">
               <button @click="channel = 'latest'"
-                class="h-7 sm:h-8 px-3.5 sm:px-5 rounded-full text-xs sm:text-sm font-medium transition-all border"
+                class="h-7 sm:h-[30px] px-3.5 sm:px-4 rounded-full text-xs font-medium transition-all border"
                 :class="channel === 'latest' ? 'text-blue bg-blue/10 border-blue/20' : 'text-white bg-white/5 border-white/5 hover:bg-white/10'">Latest</button>
               <button @click="channel = 'stable'"
-                class="h-7 sm:h-8 px-3.5 sm:px-5 rounded-full text-xs sm:text-sm font-medium transition-all border"
+                class="h-7 sm:h-[30px] px-3.5 sm:px-4 rounded-full text-xs font-medium transition-all border"
                 :class="channel === 'stable' ? 'text-green bg-green/10 border-green/20' : 'text-white bg-white/5 border-white/5 hover:bg-white/10'">Stable</button>
               <button @click="channel = 'dev'"
-                class="h-7 sm:h-8 px-3.5 sm:px-5 rounded-full text-xs sm:text-sm font-medium transition-all border"
+                class="h-7 sm:h-[30px] px-3.5 sm:px-4 rounded-full text-xs font-medium transition-all border"
                 :class="channel === 'dev' ? 'text-yellow bg-yellow/10 border-yellow/20' : 'text-white bg-white/5 border-white/5 hover:bg-white/10'">Dev</button>
             </div>
 
