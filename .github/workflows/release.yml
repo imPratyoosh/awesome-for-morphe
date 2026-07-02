@@ -23,12 +23,14 @@ jobs:
       - name: Generate changelog
         run: python src/generate-changelog.py
 
-      - name: Periodically update metadata (Every Monday)
+      - name: Update metadata (Stars/Avatars/Icons)
         run: |
-          DAY_OF_WEEK=$(date +%u)
-          if [ "$DAY_OF_WEEK" -eq 1 ] || [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
-            pip install google-play-scraper
-            python src/update-metadata.py
+          pip install google-play-scraper
+          DAY_OF_MONTH=$(date +%d)
+          if [ "$DAY_OF_MONTH" -eq 1 ] || [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            python src/update.py --all
+          else
+            python src/update.py --stars
           fi
 
       - name: Check git changes
