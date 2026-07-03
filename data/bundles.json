@@ -1176,15 +1176,15 @@
     "firstSeen": "2026-06-23T13:04:19",
     "stable": {
       "file": "patches/morphe-stable.json",
-      "version": "v1.32.0",
-      "createdAt": "2026-06-23T13:04:19"
+      "version": "v1.33.0",
+      "createdAt": "2026-07-03T06:10:52"
     },
     "dev": {
       "file": "patches/morphe-dev.json",
       "version": "v1.33.0-dev.10",
       "createdAt": "2026-07-02T08:05:29"
     },
-    "latest": "dev",
+    "latest": "stable",
     "patchCount": 121,
     "appCount": 3,
     "targetApps": [
@@ -1501,8 +1501,13 @@
       "version": "v1.6.0",
       "createdAt": "2026-07-01T16:04:30"
     },
-    "latest": "stable",
-    "patchCount": 3,
+    "dev": {
+      "file": "patches/prathxm-dev.json",
+      "version": "v1.6.0-dev.1",
+      "createdAt": "2026-07-03T06:11:35"
+    },
+    "latest": "dev",
+    "patchCount": 4,
     "appCount": 1,
     "targetApps": [
       "com.chess"
@@ -1694,8 +1699,8 @@
     },
     "dev": {
       "file": "patches/rushiranpise-dev.json",
-      "version": "v1.8.2-dev.1",
-      "createdAt": "2026-07-02T20:00:08"
+      "version": "v1.8.2-dev.2",
+      "createdAt": "2026-07-03T07:11:37"
     },
     "latest": "dev",
     "patchCount": 85,
