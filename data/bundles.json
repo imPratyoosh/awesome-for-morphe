@@ -337,6 +337,32 @@
       "com.google.android.googlequicksearchbox"
     ]
   },
+  "arunpdl": {
+    "source": "github",
+    "repo": "arunpdl/morphe-patches",
+    "repoUrl": "https://github.com/arunpdl/morphe-patches",
+    "deepLink": "https://morphe.software/add-source?github=arunpdl/morphe-patches",
+    "avatarUrl": "https://github.com/arunpdl.png?size=128",
+    "stars": 1,
+    "firstSeen": "2026-07-03T06:36:05",
+    "stable": {
+      "file": "patches/arunpdl-stable.json",
+      "version": "v1.0.2",
+      "createdAt": "2026-06-29T06:27:12"
+    },
+    "dev": {
+      "file": "patches/arunpdl-dev.json",
+      "version": "v1.0.2-dev.1",
+      "createdAt": "2026-06-29T06:22:00"
+    },
+    "latest": "stable",
+    "patchCount": 5,
+    "appCount": 2,
+    "targetApps": [
+      "com.harwin.prismatica",
+      "com.jellywatch.app"
+    ]
+  },
   "bholeykabhakt": {
     "source": "github",
     "repo": "BholeyKaBhakt/android-patches-xtra",
@@ -1908,8 +1934,8 @@
     "firstSeen": "2026-06-16T14:53:15",
     "stable": {
       "file": "patches/x-shim-stable.json",
-      "version": "v1.6.5",
-      "createdAt": "2026-07-01T05:56:09"
+      "version": "v1.7.0",
+      "createdAt": "2026-07-03T00:31:26"
     },
     "latest": "stable",
     "patchCount": 3,

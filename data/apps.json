@@ -1312,5 +1312,13 @@
   "com.todoist": {
     "name": "Todoist",
     "iconUrl": "https://play-lh.googleusercontent.com/03uYCmB2qWmmr-rIL8X_gj20wdIxLPW3bmqf1ZSNlwf_ZjuQYGnNnOB-8ig2CBzwqyf5meCgOgUEzxvC1QY6rg"
+  },
+  "com.jellywatch.app": {
+    "name": "JellyWatch",
+    "iconUrl": "https://play-lh.googleusercontent.com/7-Y4y44gnorJcG37GUeDzSDgh5HkqmgE07Il3D_tHficwAQw32a4A3CgBrdfUKgaRAZ9lsZTgwg2vWH6KEmQHw"
+  },
+  "com.harwin.prismatica": {
+    "name": "Prismatica Pro",
+    "iconUrl": "https://play-lh.googleusercontent.com/-JobtL9RKnBwUNh4uuJqPE1cGFUXhca5G9GMa_gyssFbbTWPvqGtRCutqYA8jj2jXyTJpf1_IZZ6A7gm0wOQ"
   }
 }
