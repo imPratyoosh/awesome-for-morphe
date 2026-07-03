@@ -554,22 +554,32 @@ createApp({
       if (!repoUrl) return "";
       if (repoUrl.includes("github.com")) return "github";
       if (repoUrl.includes("gitlab.com")) return "gitlab";
+      if (!repoUrl.startsWith("http")) return "github";
       return "";
+    };
+    const getFullRepoUrl = (repoStr, repoUrl) => {
+      if (repoUrl) return repoUrl;
+      if (!repoStr) return "";
+      if (repoStr.startsWith("http")) return repoStr;
+      return `https://github.com/${repoStr}`;
     };
     const releaseUrl = (s) => {
       if (!s.repo || !s.tag) return "";
-      const platform = getPlatform(s.repo);
+      const url = getFullRepoUrl(s.repo, s.repoUrl);
+      const platform = getPlatform(url);
       if (platform === "gitlab") {
-        return `${s.repo}/-/releases/${encodeURIComponent(s.tag)}`;
-      } else if (platform === "github") {
-        return `${s.repo}/releases/tag/${encodeURIComponent(s.tag)}`;
+        return `${url}/-/releases/${encodeURIComponent(s.tag)}`;
       }
-      return `${s.repo}/releases`;
+      return `${url}/releases/tag/${encodeURIComponent(s.tag)}`;
     };
-    const morpheUrl = (repoUrl) => {
-      const platform = getPlatform(repoUrl);
+    const morpheUrl = (repoStr) => {
+      if (!repoStr) return null;
+      const platform = getPlatform(repoStr);
       if (!platform) return null;
-      const path = repoUrl.split("/").slice(3, 5).join("/");
+      let path = repoStr;
+      if (repoStr.startsWith("http")) {
+        path = repoStr.split("/").slice(3, 5).join("/");
+      }
       return `https://morphe.software/add-source?${platform}=${encodeURI(path)}`;
     };
 
