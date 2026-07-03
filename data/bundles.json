@@ -250,11 +250,11 @@
     },
     "dev": {
       "file": "patches/anddea-dev.json",
-      "version": "v4.2.0-dev.1",
-      "createdAt": "2026-06-26T17:44:16"
+      "version": "v4.2.0-dev.2",
+      "createdAt": "2026-07-03T18:34:13"
     },
     "latest": "dev",
-    "patchCount": 114,
+    "patchCount": 115,
     "appCount": 2,
     "targetApps": [
       "com.google.android.apps.youtube.music",
@@ -599,16 +599,15 @@
     },
     "dev": {
       "file": "patches/ee-morphe-dev.json",
-      "version": "v1.3.0-dev.11",
-      "createdAt": "2026-06-29T17:01:01"
+      "version": "v1.3.0-dev.12",
+      "createdAt": "2026-07-03T18:17:10"
     },
     "latest": "dev",
-    "patchCount": 11,
-    "appCount": 4,
+    "patchCount": 9,
+    "appCount": 3,
     "targetApps": [
       "com.byairapp.android",
-      "com.jacks_flights",
-      "com.seedlang.mobile.android.all",
+      "com.hello.german",
       "epixler.de.hypnobox_android",
       "universal"
     ]
@@ -1008,15 +1007,15 @@
     "firstSeen": "2026-06-11T14:43:14",
     "stable": {
       "file": "patches/kondratjev-stable.json",
-      "version": "v1.14.0",
-      "createdAt": "2026-06-23T17:36:41"
+      "version": "v1.15.0",
+      "createdAt": "2026-07-03T19:22:35"
     },
     "dev": {
       "file": "patches/kondratjev-dev.json",
-      "version": "v1.15.0-dev.1",
-      "createdAt": "2026-06-27T14:28:15"
+      "version": "v1.15.0-dev.2",
+      "createdAt": "2026-07-03T19:16:26"
     },
-    "latest": "dev",
+    "latest": "stable",
     "patchCount": 23,
     "appCount": 11,
     "targetApps": [

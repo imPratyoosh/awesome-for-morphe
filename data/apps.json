@@ -1364,5 +1364,9 @@
   "police.scanner.radio.broadcastify.citizen": {
     "name": "Police Scanner",
     "iconUrl": "https://play-lh.googleusercontent.com/8LGthSvsHldZPispQ5fsFJ9kNbXnVuvF-_TCGHBXGvEB_oKNQ91COnnX255kH0vgnfwJVf_qSaXe2aOdK49xpgM"
+  },
+  "com.hello.german": {
+    "name": "Readle",
+    "iconUrl": "https://play-lh.googleusercontent.com/4hENS0Mh1y361ZP9UPQt4DIvzlK-VSuv1RMeV3s9nSQPqPMd0kAiNm37d8HUYkEriexCYCxwnhviR8xwcexVOQ"
   }
 }
