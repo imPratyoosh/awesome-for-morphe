@@ -1,4 +1,12 @@
 {
+  "ImmortalZeus": {
+    "com.example.app": [
+      "Example Patch"
+    ],
+    "universal": [
+      "Block hosts in string resources"
+    ]
+  },
   "abhis1n": {
     "com.Splitwise.SplitwiseMobile": [
       "Enable Features"
@@ -492,6 +500,17 @@
       "Route intents to patched apps"
     ]
   },
+  "arunpdl": {
+    "com.harwin.prismatica": [
+      "Remove License Activity",
+      "Remove License Check",
+      "Remove Watermark"
+    ],
+    "com.jellywatch.app": [
+      "Remove License Activity",
+      "Unlock Premium"
+    ]
+  },
   "bholeykabhakt": {
     "com.atmfee": [
       "Hide Location Permission Popup",
@@ -967,14 +986,6 @@
     "com.persapps.multitimer": [
       "Bypass DRM",
       "Enable PRO"
-    ]
-  },
-  "ImmortalZeus": {
-    "com.example.app": [
-      "Example Patch"
-    ],
-    "universal": [
-      "Block hosts in string resources"
     ]
   },
   "imxeren": {
@@ -1649,6 +1660,14 @@
     "com.vladlee.easyblacklist": [
       "Remove Ads",
       "Unlock Premium"
+    ]
+  },
+  "prathxm": {
+    "com.chess": [
+      "Ad-Free & Local Analysis",
+      "Clone Chess.com",
+      "Lichess Puzzles",
+      "Unlock All Bots"
     ]
   },
   "rabilrbl": {

@@ -1,4 +1,18 @@
 {
+  "AlexNaga": {
+    "se.matlistan.free": [
+      "Dark mode",
+      "Enable Premium"
+    ]
+  },
+  "ImmortalZeus": {
+    "com.example.app": [
+      "Example Patch"
+    ],
+    "universal": [
+      "Block hosts in string resources"
+    ]
+  },
   "abhis1n": {
     "com.Splitwise.SplitwiseMobile": [
       "Enable Features"
@@ -85,12 +99,6 @@
     ],
     "com.wbd.hbomax": [
       "HBO Max - Disable Ads"
-    ]
-  },
-  "AlexNaga": {
-    "se.matlistan.free": [
-      "Dark mode",
-      "Enable Premium"
     ]
   },
   "ameen-morphe": {
@@ -334,6 +342,17 @@
     "com.google.android.googlequicksearchbox": [
       "GmsCore MicroG support",
       "Route intents to patched apps"
+    ]
+  },
+  "arunpdl": {
+    "com.harwin.prismatica": [
+      "Remove License Activity",
+      "Remove License Check",
+      "Remove Watermark"
+    ],
+    "com.jellywatch.app": [
+      "Remove License Activity",
+      "Unlock Premium"
     ]
   },
   "bholeykabhakt": {
@@ -932,14 +951,6 @@
       "Enable PRO"
     ]
   },
-  "ImmortalZeus": {
-    "com.example.app": [
-      "Example Patch"
-    ],
-    "universal": [
-      "Block hosts in string resources"
-    ]
-  },
   "imxeren": {
     "com.laurencedawson.reddit_sync": [
       "Fix Other discussions"
@@ -1190,14 +1201,18 @@
       "Hide music video ads",
       "Miniplayer previous and next buttons",
       "Navigation bar",
+      "Network proxy",
       "Permanent repeat",
       "Remove background playback restrictions",
       "Sanitize sharing links",
+      "Scrobbling",
+      "SponsorBlock",
       "Spoof video streams",
       "Theme",
       "Track crossfade"
     ],
     "com.google.android.youtube": [
+      "Add to queue",
       "Alternative thumbnails",
       "Ambient mode",
       "Bypass image region restrictions",
@@ -1244,6 +1259,7 @@
       "Media notification controls",
       "Miniplayer",
       "Navigation bar",
+      "Network proxy",
       "Open Shorts in regular player",
       "Open channel of live avatar",
       "Open links externally",
@@ -1267,7 +1283,8 @@
       "Swipe controls",
       "Theme",
       "Video ads",
-      "Video quality"
+      "Video quality",
+      "Voice over translation"
     ],
     "com.reddit.frontpage": [
       "Custom branding name for Reddit",
@@ -1275,10 +1292,10 @@
       "Disable screenshot popup",
       "Hide Ask button",
       "Hide Reddit search",
-      "Hide Trending Today shelf",
+      "Hide Trending shelves",
       "Hide ads",
+      "Hide communities shelf",
       "Hide navigation buttons",
-      "Hide recommended communities shelf",
       "Hide sidebar components",
       "Open links directly",
       "Open links externally",

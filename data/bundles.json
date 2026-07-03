@@ -76,7 +76,7 @@
     "repoUrl": "https://github.com/jkennethcarino/adobo",
     "deepLink": "https://morphe.software/add-source?github=jkennethcarino/adobo",
     "avatarUrl": "https://github.com/jkennethcarino.png?size=128",
-    "stars": 171,
+    "stars": 174,
     "firstSeen": "2026-02-20T17:59:24",
     "stable": {
       "file": "patches/adobo-stable.json",
@@ -105,7 +105,7 @@
     "repoUrl": "https://github.com/ajstrick81/morphe-androidtv-patches",
     "deepLink": "https://morphe.software/add-source?github=ajstrick81/morphe-androidtv-patches",
     "avatarUrl": "https://github.com/ajstrick81.png?size=128",
-    "stars": 62,
+    "stars": 64,
     "firstSeen": "2026-05-25T15:05:44",
     "stable": {
       "file": "patches/ajstrick81-androidtv-stable.json",
@@ -686,7 +686,7 @@
     "repoUrl": "https://github.com/hoo-dles/morphe-patches",
     "deepLink": "https://morphe.software/add-source?github=hoo-dles/morphe-patches",
     "avatarUrl": "https://github.com/hoo-dles.png?size=128",
-    "stars": 772,
+    "stars": 774,
     "firstSeen": "2026-01-21T03:33:21",
     "stable": {
       "file": "patches/hoo-dles-stable.json",
@@ -762,7 +762,7 @@
     "repoUrl": "https://github.com/arandomhooman/hoomans-morphe-patches",
     "deepLink": "https://morphe.software/add-source?github=arandomhooman/hoomans-morphe-patches",
     "avatarUrl": "https://github.com/arandomhooman.png?size=128",
-    "stars": 60,
+    "stars": 62,
     "firstSeen": "2026-06-15T20:58:55",
     "stable": {
       "file": "patches/hoomans-morphe-stable.json",
@@ -1039,7 +1039,7 @@
     "repoUrl": "https://github.com/kiraio-moe/Lain-Patches",
     "deepLink": "https://morphe.software/add-source?github=kiraio-moe/Lain-Patches",
     "avatarUrl": "https://github.com/kiraio-moe.png?size=128",
-    "stars": 8,
+    "stars": 9,
     "firstSeen": "2026-06-05T15:48:45",
     "stable": {
       "file": "patches/lain-stable.json",
@@ -1081,7 +1081,7 @@
     "repoUrl": "https://github.com/LaKakaReal/LaKakaShitPatches",
     "deepLink": "https://morphe.software/add-source?github=LaKakaReal/LaKakaShitPatches",
     "avatarUrl": "https://github.com/LaKakaReal.png?size=128",
-    "stars": 8,
+    "stars": 9,
     "firstSeen": "2026-06-11T14:22:48",
     "stable": {
       "file": "patches/lakaka-stable.json",
@@ -1172,7 +1172,7 @@
     "repoUrl": "https://github.com/MorpheApp/morphe-patches",
     "deepLink": "https://morphe.software/add-source?github=MorpheApp/morphe-patches",
     "avatarUrl": "https://github.com/MorpheApp.png?size=128",
-    "stars": 2725,
+    "stars": 2729,
     "firstSeen": "2026-06-23T13:04:19",
     "stable": {
       "file": "patches/morphe-stable.json",
@@ -1266,7 +1266,7 @@
     "repoUrl": "https://github.com/Nai64/Nai64Patches",
     "deepLink": "https://morphe.software/add-source?github=Nai64/Nai64Patches",
     "avatarUrl": "https://github.com/Nai64.png?size=128",
-    "stars": 82,
+    "stars": 108,
     "firstSeen": "2026-07-03T02:41:59",
     "stable": {
       "file": "patches/nai64-stable.json",
@@ -1350,7 +1350,7 @@
     "repoUrl": "https://github.com/wchill/patcheddit",
     "deepLink": "https://morphe.software/add-source?github=wchill/patcheddit",
     "avatarUrl": "https://github.com/wchill.png?size=128",
-    "stars": 686,
+    "stars": 687,
     "firstSeen": "2026-01-03T08:12:00",
     "stable": {
       "file": "patches/patcheddit-stable.json",
@@ -1422,7 +1422,7 @@
     "repoUrl": "https://github.com/crimera/piko",
     "deepLink": "https://morphe.software/add-source?github=crimera/piko",
     "avatarUrl": "https://github.com/crimera.png?size=128",
-    "stars": 4179,
+    "stars": 4186,
     "firstSeen": "2026-03-10T21:59:56",
     "stable": {
       "file": "patches/piko-stable.json",
@@ -1494,7 +1494,7 @@
     "repoUrl": "https://github.com/PrathxmOp/Prathxm-Patches",
     "deepLink": "https://morphe.software/add-source?github=PrathxmOp/Prathxm-Patches",
     "avatarUrl": "https://github.com/PrathxmOp.png?size=128",
-    "stars": 30,
+    "stars": 31,
     "firstSeen": "2026-06-30T14:24:47",
     "stable": {
       "file": "patches/prathxm-stable.json",
