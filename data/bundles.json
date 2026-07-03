@@ -109,8 +109,8 @@
     "firstSeen": "2026-05-25T15:05:44",
     "stable": {
       "file": "patches/ajstrick81-androidtv-stable.json",
-      "version": "v1.8.0",
-      "createdAt": "2026-07-02T02:15:37"
+      "version": "v1.9.0",
+      "createdAt": "2026-07-03T14:00:00"
     },
     "dev": {
       "file": "patches/ajstrick81-androidtv-dev.json",
@@ -118,8 +118,8 @@
       "createdAt": "2026-06-26T16:45:34"
     },
     "latest": "stable",
-    "patchCount": 14,
-    "appCount": 9,
+    "patchCount": 16,
+    "appCount": 10,
     "targetApps": [
       "com.amazon.amazonvideo.livingroom",
       "com.bamnetworks.mobile.android.gameday.atbat",
@@ -129,7 +129,8 @@
       "com.peacocktv.peacockandroid",
       "com.tubitv",
       "com.univision.prendetv",
-      "com.wbd.hbomax"
+      "com.wbd.hbomax",
+      "tv.pluto.android"
     ]
   },
   "almewty": {
@@ -1270,8 +1271,8 @@
     "firstSeen": "2026-07-03T02:41:59",
     "stable": {
       "file": "patches/nai64-stable.json",
-      "version": "1.8.1",
-      "createdAt": "2026-07-03T10:41:34"
+      "version": "1.9.0",
+      "createdAt": "2026-07-03T12:23:05"
     },
     "latest": "stable",
     "patchCount": 3,
