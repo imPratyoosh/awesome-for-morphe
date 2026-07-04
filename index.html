@@ -306,10 +306,10 @@
 
               <!-- Channels -->
               <div class="flex items-center justify-center gap-1.5 sm:gap-2">
-                <button @click="channel = 'stable'" class="badge badge-md"
-                  :class="channel === 'stable' ? 'text-green' : 'text-light'"><span>Stable</span></button>
-                <button @click="channel = 'latest'" class="badge badge-md"
-                  :class="channel === 'latest' ? 'text-yellow' : 'text-light'"><span>Latest</span></button>
+                <button @click="channel = 'stable'" class="badge badge-md transition-colors"
+                  :class="channel === 'stable' ? 'text-green' : 'text-light hover:text-white'"><i class="fa-solid fa-shield-halved"></i><span>Stable</span></button>
+                <button @click="channel = 'latest'" class="badge badge-md transition-colors"
+                  :class="channel === 'latest' ? 'text-yellow' : 'text-light hover:text-white'"><i class="fa-solid fa-bolt"></i><span>Latest</span></button>
               </div>
             </div>
 
@@ -317,9 +317,9 @@
             <div
               class="flex flex-wrap items-center justify-center md:justify-end gap-2 w-full md:w-auto text-xs text-light shrink-0"
               aria-live="polite">
-              <span class="badge"><span>{{ stats?.bundles || 0 }} bundles</span></span>
-              <span class="badge"><span>{{ stats?.apps || 0 }} apps</span></span>
-              <span class="badge"><span>{{ stats?.patches || 0 }} patches</span></span>
+              <span class="badge"><i class="fa-solid fa-cubes"></i><span>{{ stats?.bundles || 0 }} bundles</span></span>
+              <span class="badge"><i class="fa-solid fa-mobile-screen"></i><span>{{ stats?.apps || 0 }} apps</span></span>
+              <span class="badge"><i class="fa-solid fa-puzzle-piece"></i><span>{{ stats?.patches || 0 }} patches</span></span>
             </div>
           </div>
         </div>
@@ -349,13 +349,37 @@
               </button>
             </div>
           </div>
-          <div v-else class="grid gap-4">
-            <div v-for="group in bundlesGroups" :key="group.key"
+          <div v-else class="flex flex-col gap-2">
+            <!-- Results Toolbar -->
+            <div class="flex items-center justify-between px-1">
+              <div class="flex items-center gap-1">
+                <button @click="collapseAll" class="badge cursor-pointer text-light hover:text-white transition-colors" title="Collapse all bundles">
+                  <i class="fa-solid fa-compress icon-center"></i>
+                  <span>Collapse all</span>
+                </button>
+                <button @click="expandAll" class="badge cursor-pointer text-light hover:text-white transition-colors" title="Expand all bundles">
+                  <i class="fa-solid fa-expand icon-center"></i>
+                  <span>Expand all</span>
+                </button>
+              </div>
+
+              <button @click="toggleColumns" class="badge hidden md:inline-flex cursor-pointer text-light hover:text-white transition-colors ml-auto"
+                :title="isTwoColumns ? 'Switch to list view' : 'Switch to grid view'">
+                <i class="fa-solid icon-center" :class="isTwoColumns ? 'fa-list' : 'fa-grip'"></i>
+                <span v-if="!isTwoColumns">Grid view</span><span v-else>List view</span>
+              </button>
+            </div>
+
+            <!-- Grid Container -->
+            <div class="grid gap-4 items-start" :class="isTwoColumns ? 'md:grid-cols-2' : 'grid-cols-1'">
+              <div v-for="group in bundlesGroups" :key="group.key"
               class="bg-dark border-2 border-lightGray rounded-2xl overflow-hidden group/bundle shadow-sm flex flex-col">
               <div @click="toggleBundle(group)"
-                class="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 py-2 px-4 cursor-pointer">
+                class="flex justify-between gap-3 py-2 px-4 cursor-pointer"
+                :class="!isTwoColumns ? 'flex-col md:flex-row items-start md:items-center' : 'flex-col items-start'">
                 <div
-                  class="flex items-center justify-center sm:justify-start gap-3 min-w-0 flex-1 w-full md:w-auto text-left">
+                  class="flex items-center gap-3 min-w-0 flex-1 w-full text-left"
+                  :class="!isTwoColumns ? 'justify-center sm:justify-start md:w-auto' : 'justify-center'">
                   <img v-if="group.bundle.avatarUrl" :src="group.bundle.avatarUrl" alt="Avatar"
                     class="w-12 h-12 rounded-full bg-lightGray/20 object-cover pointer-events-none select-none shrink-0 sm:mt-0.5">
                   <div v-else
@@ -364,7 +388,8 @@
                   </div>
                   <div class="flex flex-col min-w-0 justify-center items-start gap-1 sm:gap-1.5 max-w-full">
                     <!-- Title Row -->
-                    <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2 min-w-0 w-full">
+                    <div class="flex flex-wrap items-center gap-2 min-w-0 w-full"
+                      :class="!isTwoColumns ? 'justify-center sm:justify-start' : 'justify-center'">
                       <strong
                         class="font-bold text-lg sm:text-xl text-transparent bg-clip-text bg-gradient-to-r from-blue to-green break-words leading-tight">{{
                         group.key }}</strong>
@@ -390,18 +415,19 @@
                   </div>
                 </div>
                 <span
-                  class="flex flex-row items-center gap-2 text-xs text-light shrink-0 justify-center md:justify-end w-full md:w-auto">
+                  class="flex flex-row items-center gap-2 text-xs text-light shrink-0 w-full"
+                  :class="!isTwoColumns ? 'justify-center md:justify-end md:w-auto' : 'justify-center'">
                   <template v-if="group.bundle.version">
                     <a v-if="releaseUrl(group.bundle)" :href="releaseUrl(group.bundle)" target="_blank" rel="noreferrer"
-                      @click.stop class="badge text-white"><i class="fa-solid fa-clock-rotate-left"></i><span>{{
+                      @click.stop class="badge"><i class="fa-solid fa-clock-rotate-left"></i><span>{{
                         group.bundle.version }}</span></a>
-                    <span v-else class="badge text-white"><i class="fa-solid fa-clock-rotate-left"></i><span>{{
+                    <span v-else class="badge text-blue"><i class="fa-solid fa-clock-rotate-left"></i><span>{{
                         group.bundle.version }}</span></span>
                   </template>
                   <span v-if="group.bundle.stars !== undefined" class="badge">
                     <i class="fa-solid fa-star text-yellow"></i><span>{{ group.bundle.stars }}</span>
                   </span>
-                  <span v-if="group.bundle.createdAt" class="badge"><span>{{ formatDate(group.bundle.createdAt)
+                  <span v-if="group.bundle.createdAt" class="badge"><i class="fa-solid fa-calendar-days"></i><span>{{ formatDate(group.bundle.createdAt)
                       }}</span></span>
                 </span>
               </div>
@@ -472,7 +498,7 @@
                                   v-if="hasHighlight(group.key + ':' + (app.packageName || 'universal') + ':' + patch.patchName)"
                                   class="badge text-yellow"><span>✨ New</span></span>
                               </strong>
-                              <span v-if="!patch.enabled" class="badge text-yellow"><span>off</span></span>
+                              <span v-if="!patch.enabled" class="badge text-yellow cursor-help" title="off by default"><span>off</span></span>
                               <button v-if="patch.options.length" @click.stop="toggleOptions(patch.id)"
                                 class="text-light hover:text-white px-1 shrink-0"
                                 :title="expandedOptions.has(patch.id) ? 'Hide options' : 'Show options'">
@@ -531,6 +557,7 @@
                 </template>
               </div>
             </div>
+            </div>
           </div>
         </div>
       </div>
@@ -540,7 +567,7 @@
 
   <!-- Back to Top -->
   <button id="back-to-top" aria-label="Back to Top"
-    class="fixed bottom-6 right-6 z-[9999] h-11 w-11 hidden items-center justify-center rounded-full bg-blue text-white shadow-lg shadow-blue/40 hover:bg-blue/80 transition-colors border border-blue/30">
+    class="fixed bottom-6 right-6 z-[9999] h-11 w-11 hidden items-center justify-center rounded-full bg-green text-white shadow-lg shadow-green/40 hover:bg-green/80 transition-colors border border-green/30">
     <i class="fa-solid fa-arrow-up"></i>
   </button>
   <script>

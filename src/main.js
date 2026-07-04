@@ -512,6 +512,19 @@ createApp({
     const overflowingAppLists = reactive(new Set());
     const appListRefs = new Map();
 
+    const expandAll = () => {
+      bundlesGroups.value.forEach((group) => {
+        if (group.appsList && group.appsList.length > 0) {
+          const firstApp = group.appsList[0];
+          expandedOptions.add("app_" + group.key + "_" + firstApp.id);
+        }
+      });
+    };
+
+    const collapseAll = () => {
+      expandedOptions.clear();
+    };
+
     const checkOverflow = (el, key) => {
       if (!el) return;
       if (expandedAppLists.has(key)) {
@@ -554,6 +567,7 @@ createApp({
 
     watch(bundlesGroups, (newGroups) => {
       if (newGroups && newGroups.length === 1) {
+        isTwoColumns.value = false;
         const singleGroup = newGroups[0];
         if (singleGroup.appsList && singleGroup.appsList.length > 0) {
           const firstApp = singleGroup.appsList[0];
@@ -727,6 +741,11 @@ createApp({
       return diffDays <= 7;
     };
 
+    const isTwoColumns = ref(true);
+    const toggleColumns = () => {
+      isTwoColumns.value = !isTwoColumns.value;
+    };
+
     return {
       query,
       bundle,
@@ -763,6 +782,10 @@ createApp({
       releaseUrl,
       morpheUrl,
       getPlatform,
+      isTwoColumns,
+      toggleColumns,
+      expandAll,
+      collapseAll,
       resetFilters,
       isChangelogView,
       changelogHighlights,
