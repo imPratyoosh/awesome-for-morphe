@@ -99,6 +99,10 @@
     ],
     "com.wbd.hbomax": [
       "HBO Max - Disable Ads"
+    ],
+    "tv.pluto.android": [
+      "Override certificate pinning",
+      "Skip ads"
     ]
   },
   "ameen-morphe": {
@@ -878,6 +882,9 @@
     "com.soepic.photogallery.release": [
       "Unlock Pro"
     ],
+    "com.sofascore.results": [
+      "Remove Ads"
+    ],
     "com.spocky.projengmenu": [
       "Unlock Premium"
     ],
@@ -1021,6 +1028,7 @@
     ],
     "com.fatsecret.android": [
       "Disable community tab",
+      "Disable force update dialog",
       "Unlock Premium"
     ],
     "com.lyfta": [
@@ -2083,9 +2091,6 @@
     "air.com.musclemotion.posture": [
       "Unlock Premium"
     ],
-    "air.com.musclemotion.strength.mobile": [
-      "Unlock Premium"
-    ],
     "air.com.musclemotion.workout": [
       "Unlock Premium"
     ],
@@ -2093,6 +2098,11 @@
       "Unlock Premium"
     ],
     "app.ninjavpn.android": [
+      "Unlock Premium"
+    ],
+    "apps.automan.blurwallpaper": [
+      "Bypass PairIP License Check",
+      "Disable License Check",
       "Unlock Premium"
     ],
     "ch.protonvpn.android": [
@@ -2128,6 +2138,13 @@
     "com.catalinagroup.callrecorder": [
       "Unlock Premium"
     ],
+    "com.changayaf.inmigreat": [
+      "Bypass PairIP License Check",
+      "Unlock Pro"
+    ],
+    "com.citymapper.app.release": [
+      "Unlock Club"
+    ],
     "com.cloudflare.onedotonedotonedotone": [
       "Disable Analytics / Telemetry",
       "Spoof WARP+ Unlimited UI"
@@ -2162,8 +2179,17 @@
     "com.javiersantos.mlmanager": [
       "Unlock Pro"
     ],
+    "com.joincarbon.nutrition": [
+      "Unlock Premium"
+    ],
     "com.kevinforeman.nzb360": [
       "Unlock All Access"
+    ],
+    "com.lawfully.lawfully_ai_tracker": [
+      "Unlock Premium"
+    ],
+    "com.localaiapp.scoops": [
+      "Unlock Drama Episodes"
     ],
     "com.mobond.mindicator": [
       "Remove Ads"
@@ -2182,6 +2208,9 @@
     "com.oasisfeng.greenify": [
       "Unlock Donation Features"
     ],
+    "com.particlenews.newsbreak": [
+      "Unlock Premium"
+    ],
     "com.proxyman.proxymanandroid": [
       "Unlock Lifetime"
     ],
@@ -2191,12 +2220,21 @@
     "com.rarlab.rar": [
       "Unlock Pro"
     ],
+    "com.regasoftware.udisc": [
+      "Unlock Pro"
+    ],
     "com.saldous.casetracker": [
-      "Remove Ads",
-      "Unlock Premium"
+      "Unlock Pro"
     ],
     "com.shexa.permissionmanager": [
       "Unlock Pro"
+    ],
+    "com.skinsort": [
+      "Disable Paywall Config",
+      "Unlock Premium"
+    ],
+    "com.snow_forecast.snowforecast": [
+      "Unlock Premium"
     ],
     "com.tafayor.hibernator": [
       "Unlock Pro"
@@ -2204,8 +2242,17 @@
     "com.tafayor.killall": [
       "Unlock Pro"
     ],
+    "com.tecso.MigraConnect": [
+      "Unlock Enterprise"
+    ],
+    "com.thetransitapp.droid": [
+      "Unlock Royale"
+    ],
     "com.tomtom.gplay.navapp": [
       "Unlock Premium"
+    ],
+    "com.tranzmate": [
+      "Unlock Moovit+"
     ],
     "com.truebill": [
       "Unlock Premium"
@@ -2260,6 +2307,9 @@
     "org.zwanoo.android.speedtest": [
       "Unlock Ad-Free"
     ],
+    "police.scanner.radio.broadcastify.citizen": [
+      "Unlock Pro"
+    ],
     "sensustech.universal.tv.remote.control": [
       "Disable Ads",
       "Suppress Paywall",
@@ -2270,6 +2320,14 @@
     ],
     "sp0n.citizen": [
       "Unlock Pro"
+    ],
+    "universal": [
+      "Fix Firebase after re-signing",
+      "GmsCore support (MicroG)",
+      "Provide Original app certificate",
+      "Spoof Widevine / DRM level",
+      "Spoof app signature",
+      "Spoof install source"
     ],
     "verbosus.pialytic": [
       "Unlock All Features"
@@ -2446,6 +2504,17 @@
       "Abstract shim layer",
       "Abstract shim layer for method",
       "Abstract shim layer for native library"
+    ]
+  },
+  "xhehab": {
+    "com.influencers.fst7": [
+      "Unlock FST-7 Subscription"
+    ],
+    "com.trainwiseapp.app": [
+      "Unlock Premium"
+    ],
+    "uni.cbum": [
+      "Unlock STNDRD Premium"
     ]
   },
   "xob0t": {
