@@ -1007,16 +1007,16 @@
     "firstSeen": "2026-06-11T14:43:14",
     "stable": {
       "file": "patches/kondratjev-stable.json",
-      "version": "v1.15.0",
-      "createdAt": "2026-07-03T19:22:35"
+      "version": "v1.16.0",
+      "createdAt": "2026-07-03T19:53:54"
     },
     "dev": {
       "file": "patches/kondratjev-dev.json",
-      "version": "v1.15.0-dev.2",
-      "createdAt": "2026-07-03T19:16:26"
+      "version": "v1.16.0-dev.1",
+      "createdAt": "2026-07-03T19:50:36"
     },
     "latest": "stable",
-    "patchCount": 23,
+    "patchCount": 24,
     "appCount": 11,
     "targetApps": [
       "com.brightstripe.parcels",
