@@ -766,17 +766,17 @@
     "firstSeen": "2026-06-15T20:58:55",
     "stable": {
       "file": "patches/hoomans-morphe-stable.json",
-      "version": "v1.40.0",
-      "createdAt": "2026-07-02T18:37:11"
+      "version": "v1.41.1",
+      "createdAt": "2026-07-04T02:40:55"
     },
     "dev": {
       "file": "patches/hoomans-morphe-dev.json",
-      "version": "v1.19.0",
-      "createdAt": "2026-06-20T19:44:41"
+      "version": "v1.42.0-dev.2",
+      "createdAt": "2026-07-04T02:39:36"
     },
     "latest": "stable",
-    "patchCount": 51,
-    "appCount": 38,
+    "patchCount": 52,
+    "appCount": 39,
     "targetApps": [
       "ak.alizandro.smartaudiobookplayer",
       "altergames.carlauncher",
@@ -806,6 +806,7 @@
       "com.realbyteapps.moneymanagerfree",
       "com.rumble.battles",
       "com.soepic.photogallery.release",
+      "com.sofascore.results",
       "com.spocky.projengmenu",
       "com.thehungrywasp.iamsober",
       "com.todoist",
@@ -1694,13 +1695,13 @@
     "firstSeen": "2026-06-02T17:21:27",
     "stable": {
       "file": "patches/rushiranpise-stable.json",
-      "version": "v1.9.0",
-      "createdAt": "2026-07-03T11:14:55"
+      "version": "v1.9.1",
+      "createdAt": "2026-07-03T23:15:45"
     },
     "dev": {
       "file": "patches/rushiranpise-dev.json",
-      "version": "v1.9.0-dev.1",
-      "createdAt": "2026-07-03T11:11:59"
+      "version": "v1.9.1-dev.1",
+      "createdAt": "2026-07-03T23:11:13"
     },
     "latest": "stable",
     "patchCount": 107,
@@ -1961,6 +1962,28 @@
     "appCount": 1,
     "targetApps": [
       "com.twitter.android"
+    ]
+  },
+  "xhehab": {
+    "source": "github",
+    "repo": "Xhehab/Xhehab-Patches",
+    "repoUrl": "https://github.com/Xhehab/Xhehab-Patches",
+    "deepLink": "https://morphe.software/add-source?github=Xhehab/Xhehab-Patches",
+    "avatarUrl": "https://github.com/Xhehab.png?size=128",
+    "stars": 1,
+    "firstSeen": "2026-07-04T06:23:58",
+    "stable": {
+      "file": "patches/xhehab-stable.json",
+      "version": "v2.0.0",
+      "createdAt": "2026-07-03T20:28:09"
+    },
+    "latest": "stable",
+    "patchCount": 3,
+    "appCount": 3,
+    "targetApps": [
+      "com.influencers.fst7",
+      "com.trainwiseapp.app",
+      "uni.cbum"
     ]
   },
   "xob0t": {

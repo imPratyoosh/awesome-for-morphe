@@ -1368,5 +1368,21 @@
   "com.hello.german": {
     "name": "Readle",
     "iconUrl": "https://play-lh.googleusercontent.com/4hENS0Mh1y361ZP9UPQt4DIvzlK-VSuv1RMeV3s9nSQPqPMd0kAiNm37d8HUYkEriexCYCxwnhviR8xwcexVOQ"
+  },
+  "net.uniquegem.directchat": {
+    "name": "DirectChat",
+    "iconUrl": "https://play-lh.googleusercontent.com/tp9CcqxOW6GTC6xcA6Xrz3j9mRQdgo-8RBOF9XvS_ShhylBifl-cj0CnWg9mLQ4Viu7z3dp0LjCVUUaETEFv"
+  },
+  "com.influencers.fst7": {
+    "name": "FST-7",
+    "iconUrl": "https://play-lh.googleusercontent.com/HMR0-W9culvZNvDB1DP9wGpDGtRml0Ij5WTo0XtjpGa6lV9H9yDwCnJ-U0K9koFx0uezEoTDbHb0_2KNsWTnxQ"
+  },
+  "com.trainwiseapp.app": {
+    "name": "TrainWise - Workout & Fitness Coach",
+    "iconUrl": "https://play-lh.googleusercontent.com/xSsl05S_F4UyfJcu7sZRD-MtjFYVftUXCEsACV1UBRciTM0SqTyft9wEGvPeLvz6ZFj4kfMsjlMs7nui3NqnHCw"
+  },
+  "uni.cbum": {
+    "name": "STNDRD - Workout & Fitness Plans",
+    "iconUrl": "https://play-lh.googleusercontent.com/4vXEbUyL5rFpaHlvhkU9r14NN-GZWIbyEEEoOUR-YYT2bFYiFqMPZ-JAGK_xinJRutsSgJWbD2R8jiP_FSoq"
   }
 }
