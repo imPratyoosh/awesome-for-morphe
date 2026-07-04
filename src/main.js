@@ -340,11 +340,11 @@ createApp({
       bundleOptions = [...bundleOptions].sort((a, b) => {
         const bundleA = activeData.value.bundleMap[a.value];
         const bundleB = activeData.value.bundleMap[b.value];
-        if (sortOrder.value === "apps_desc") {
+        if (sortOrder.value === "apps") {
           const countA = bundleA.appCount || 0;
           const countB = bundleB.appCount || 0;
           if (countA !== countB) return countB - countA;
-        } else if (sortOrder.value === "patches_desc") {
+        } else if (sortOrder.value === "patches") {
           const countA = bundleA.patchCount || 0;
           const countB = bundleB.patchCount || 0;
           if (countA !== countB) return countB - countA;
@@ -487,13 +487,13 @@ createApp({
           return true;
         })
         .sort((a, b) => {
-          if (sortOrder.value === "apps_desc") {
+          if (sortOrder.value === "apps") {
             const countA = a.bundle.appCount || 0;
             const countB = b.bundle.appCount || 0;
             if (countA !== countB) return countB - countA;
-          } else if (sortOrder.value === "patches_desc") {
-            const countA = a.patches.length;
-            const countB = b.patches.length;
+          } else if (sortOrder.value === "patches") {
+            const countA = a.bundle.patchCount || 0;
+            const countB = b.bundle.patchCount || 0;
             if (countA !== countB) return countB - countA;
           } else if (sortOrder.value === "latest") {
             const dateA = a.bundle.createdAt ? new Date(a.bundle.createdAt).getTime() : 0;
@@ -680,38 +680,6 @@ createApp({
     };
     const countBy = (items, keyFn) => new Set(items.map(keyFn).filter(Boolean)).size;
     const playUrl = (pkg) => `https://play.google.com/store/apps/details?id=${encodeURIComponent(pkg)}`;
-    const getPlatform = (repoUrl) => {
-      if (!repoUrl) return "";
-      if (repoUrl.includes("github.com")) return "github";
-      if (repoUrl.includes("gitlab.com")) return "gitlab";
-      if (!repoUrl.startsWith("http")) return "github";
-      return "";
-    };
-    const getFullRepoUrl = (repoStr, repoUrl) => {
-      if (repoUrl) return repoUrl;
-      if (!repoStr) return "";
-      if (repoStr.startsWith("http")) return repoStr;
-      return `https://github.com/${repoStr}`;
-    };
-    const releaseUrl = (s) => {
-      if (!s.repo || !s.tag) return "";
-      const url = getFullRepoUrl(s.repo, s.repoUrl);
-      const platform = getPlatform(url);
-      if (platform === "gitlab") {
-        return `${url}/-/releases/${encodeURIComponent(s.tag)}`;
-      }
-      return `${url}/releases/tag/${encodeURIComponent(s.tag)}`;
-    };
-    const morpheUrl = (repoStr) => {
-      if (!repoStr) return null;
-      const platform = getPlatform(repoStr);
-      if (!platform) return null;
-      let path = repoStr;
-      if (repoStr.startsWith("http")) {
-        path = repoStr.split("/").slice(3, 5).join("/");
-      }
-      return `https://morphe.software/add-source?${platform}=${encodeURI(path)}`;
-    };
 
     const copiedStates = reactive({});
     const copyText = (text, key) => {
@@ -749,6 +717,23 @@ createApp({
       const currentTime = new Date().getTime();
       const diffDays = (currentTime - firstSeenTime) / (1000 * 3600 * 24);
       return diffDays <= 7;
+    };
+
+    const getAppName = (pkg) => {
+      if (!pkg || pkg === "universal") return "All Apps";
+      if (!activeData.value) return pkg;
+      return appName(pkg, activeData.value.namesMap, activeData.value.skipSet);
+    };
+    
+    const getAppIcon = (pkg) => {
+      if (!pkg || pkg === "universal") return "";
+      if (!activeData.value) return "";
+      return activeData.value.namesMap[pkg]?.iconUrl || "";
+    };
+
+    const getBundleIcon = (key) => {
+      if (!key || !activeData.value) return "";
+      return activeData.value.bundleMap[key]?.avatarUrl || "";
     };
 
     const isTwoColumns = ref(true);
@@ -789,9 +774,6 @@ createApp({
       formatDate,
       countBy,
       playUrl,
-      releaseUrl,
-      morpheUrl,
-      getPlatform,
       isTwoColumns,
       toggleColumns,
       expandAll,
@@ -803,6 +785,9 @@ createApp({
       copyText,
       copiedStates,
       isNewBundle,
+      getAppName,
+      getAppIcon,
+      getBundleIcon,
     };
   },
 }).mount("#app");

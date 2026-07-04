@@ -10,6 +10,7 @@
     "stable": {
       "file": "patches/AlexNaga-stable.json",
       "version": "v1.30.0",
+      "releaseUrl": "https://github.com/AlexNaga/android-patches/releases/tag/v1.30.0",
       "createdAt": "2026-05-05T11:51:41",
       "targetApps": [
         "se.matlistan.free"
@@ -30,6 +31,7 @@
     "stable": {
       "file": "patches/ImmortalZeus-stable.json",
       "version": "v1.0.0",
+      "releaseUrl": "https://github.com/ImmortalZeus/ImmortalZeus-Morphe-Patches/releases/tag/v1.0.0",
       "createdAt": "2026-05-15T03:33:31",
       "targetApps": [
         "com.example.app",
@@ -41,6 +43,7 @@
     "dev": {
       "file": "patches/ImmortalZeus-dev.json",
       "version": "v1.0.0-dev.1",
+      "releaseUrl": "https://github.com/ImmortalZeus/ImmortalZeus-Morphe-Patches/releases/tag/v1.0.0-dev.1",
       "createdAt": "2026-05-15T03:20:18",
       "targetApps": [
         "com.example.app",
@@ -62,6 +65,7 @@
     "stable": {
       "file": "patches/abhis1n-stable.json",
       "version": "v1.0.1",
+      "releaseUrl": "https://github.com/abhis1n/Morphe-Patches/releases/tag/v1.0.1",
       "createdAt": "2026-06-17T06:24:45",
       "targetApps": [
         "com.Splitwise.SplitwiseMobile"
@@ -72,6 +76,7 @@
     "dev": {
       "file": "patches/abhis1n-dev.json",
       "version": "v1.0.1-dev.1",
+      "releaseUrl": "https://github.com/abhis1n/Morphe-Patches/releases/tag/v1.0.1-dev.1",
       "createdAt": "2026-06-17T06:17:24",
       "targetApps": [
         "com.Splitwise.SplitwiseMobile"
@@ -92,6 +97,7 @@
     "stable": {
       "file": "patches/adobo-stable.json",
       "version": "v1.2.0",
+      "releaseUrl": "https://github.com/jkennethcarino/adobo/releases/tag/v1.2.0",
       "createdAt": "2026-06-14T11:51:20",
       "targetApps": [
         "com.google.android.inputmethod.latin",
@@ -106,6 +112,7 @@
     "dev": {
       "file": "patches/adobo-dev.json",
       "version": "v1.3.0-dev.1",
+      "releaseUrl": "https://github.com/jkennethcarino/adobo/releases/tag/v1.3.0-dev.1",
       "createdAt": "2026-06-20T16:24:40",
       "targetApps": [
         "com.google.android.inputmethod.latin",
@@ -130,6 +137,7 @@
     "stable": {
       "file": "patches/ajstrick81-androidtv-stable.json",
       "version": "v1.9.0",
+      "releaseUrl": "https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.9.0",
       "createdAt": "2026-07-03T14:00:00",
       "targetApps": [
         "com.amazon.amazonvideo.livingroom",
@@ -149,6 +157,7 @@
     "dev": {
       "file": "patches/ajstrick81-androidtv-dev.json",
       "version": "v1.5.7-dev.3",
+      "releaseUrl": "https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.5.7-dev.3",
       "createdAt": "2026-06-26T16:45:34",
       "targetApps": [
         "com.amazon.amazonvideo.livingroom",
@@ -177,6 +186,7 @@
     "dev": {
       "file": "patches/almewty-dev.json",
       "version": "v1.0.0-dev.1",
+      "releaseUrl": "https://github.com/Almewty/my-morphe-patches/releases/tag/v1.0.0-dev.1",
       "createdAt": "2026-01-30T07:54:21",
       "targetApps": [
         "com.application.pokecardex",
@@ -198,6 +208,7 @@
     "stable": {
       "file": "patches/ameen-morphe-stable.json",
       "version": "v1.1.0",
+      "releaseUrl": "https://github.com/ameenalasady/ameen-morphe/releases/tag/v1.1.0",
       "createdAt": "2026-05-07T22:57:11",
       "targetApps": [
         "com.roidapp.photogrid",
@@ -209,6 +220,7 @@
     "dev": {
       "file": "patches/ameen-morphe-dev.json",
       "version": "v1.1.0-dev.1",
+      "releaseUrl": "https://github.com/ameenalasady/ameen-morphe/releases/tag/v1.1.0-dev.1",
       "createdAt": "2026-05-07T22:54:46",
       "targetApps": [
         "com.roidapp.photogrid",
@@ -230,6 +242,7 @@
     "stable": {
       "file": "patches/ameenalasady-stable.json",
       "version": "v1.0.1",
+      "releaseUrl": "https://github.com/ameenalasady/photogrid-morphe/releases/tag/v1.0.1",
       "createdAt": "2026-05-04T02:09:19",
       "targetApps": [
         "com.roidapp.photogrid"
@@ -240,6 +253,7 @@
     "dev": {
       "file": "patches/ameenalasady-dev.json",
       "version": "v1.0.1-dev.1",
+      "releaseUrl": "https://github.com/ameenalasady/photogrid-morphe/releases/tag/v1.0.1-dev.1",
       "createdAt": "2026-05-04T02:02:43",
       "targetApps": [
         "com.roidapp.photogrid"
@@ -260,6 +274,7 @@
     "stable": {
       "file": "patches/amplerevanced-stable.json",
       "version": "v1.1.0",
+      "releaseUrl": "https://github.com/AmpleReVanced/revanced-patches/releases/tag/v1.1.0",
       "createdAt": "2026-06-13T06:21:09",
       "targetApps": [
         "com.dcinside.app.android",
@@ -274,6 +289,7 @@
     "dev": {
       "file": "patches/amplerevanced-dev.json",
       "version": "v1.2.0-dev.8",
+      "releaseUrl": "https://github.com/AmpleReVanced/revanced-patches/releases/tag/v1.2.0-dev.8",
       "createdAt": "2026-06-27T15:43:34",
       "targetApps": [
         "com.dcinside.app.android",
@@ -299,6 +315,7 @@
     "stable": {
       "file": "patches/anddea-stable.json",
       "version": "v4.1.0",
+      "releaseUrl": "https://github.com/anddea/revanced-patches/releases/tag/v4.1.0",
       "createdAt": "2026-06-16T15:37:39",
       "targetApps": [
         "com.google.android.apps.youtube.music",
@@ -311,6 +328,7 @@
     "dev": {
       "file": "patches/anddea-dev.json",
       "version": "v4.2.0-dev.2",
+      "releaseUrl": "https://github.com/anddea/revanced-patches/releases/tag/v4.2.0-dev.2",
       "createdAt": "2026-07-03T18:34:13",
       "targetApps": [
         "com.google.android.apps.youtube.music",
@@ -333,6 +351,7 @@
     "dev": {
       "file": "patches/anddea-morphed-dev.json",
       "version": "v3.17.0-dev.2",
+      "releaseUrl": "https://github.com/wchill/anddea-rvx-morphed/releases/tag/v3.17.0-dev.2",
       "createdAt": "2026-02-11T15:55:58",
       "targetApps": [
         "com.google.android.apps.youtube.music",
@@ -358,6 +377,7 @@
     "stable": {
       "file": "patches/andronedev-stable.json",
       "version": "v2.3.0",
+      "releaseUrl": "https://github.com/andronedev/morphe-patches/releases/tag/v2.3.0",
       "createdAt": "2026-04-01T21:23:06",
       "targetApps": [
         "com.thetransitapp.droid"
@@ -368,6 +388,7 @@
     "dev": {
       "file": "patches/andronedev-dev.json",
       "version": "v2.3.0-dev.1",
+      "releaseUrl": "https://github.com/andronedev/morphe-patches/releases/tag/v2.3.0-dev.1",
       "createdAt": "2026-04-01T21:09:44",
       "targetApps": [
         "com.thetransitapp.droid"
@@ -388,6 +409,7 @@
     "stable": {
       "file": "patches/ariecos-stable.json",
       "version": "v1.1.15",
+      "releaseUrl": "https://github.com/ariecos/gemini-patches/releases/tag/v1.1.15",
       "createdAt": "2026-04-28T00:47:20",
       "targetApps": [
         "com.google.android.apps.bard",
@@ -399,6 +421,7 @@
     "dev": {
       "file": "patches/ariecos-dev.json",
       "version": "v1.1.16",
+      "releaseUrl": "https://github.com/ariecos/gemini-patches/releases/tag/v1.1.16",
       "createdAt": "2026-05-16T23:26:44",
       "targetApps": [
         "com.google.android.apps.bard",
@@ -420,6 +443,7 @@
     "stable": {
       "file": "patches/arunpdl-stable.json",
       "version": "v1.0.2",
+      "releaseUrl": "https://github.com/arunpdl/morphe-patches/releases/tag/v1.0.2",
       "createdAt": "2026-06-29T06:27:12",
       "targetApps": [
         "com.harwin.prismatica",
@@ -431,6 +455,7 @@
     "dev": {
       "file": "patches/arunpdl-dev.json",
       "version": "v1.0.2-dev.1",
+      "releaseUrl": "https://github.com/arunpdl/morphe-patches/releases/tag/v1.0.2-dev.1",
       "createdAt": "2026-06-29T06:22:00",
       "targetApps": [
         "com.harwin.prismatica",
@@ -452,6 +477,7 @@
     "stable": {
       "file": "patches/bholeykabhakt-stable.json",
       "version": "v2.12.0",
+      "releaseUrl": "https://github.com/BholeyKaBhakt/android-patches-xtra/releases/tag/v2.12.0",
       "createdAt": "2026-06-22T17:44:41",
       "targetApps": [
         "com.atmfee",
@@ -476,6 +502,7 @@
     "dev": {
       "file": "patches/bholeykabhakt-dev.json",
       "version": "v2.12.0-dev.1",
+      "releaseUrl": "https://github.com/BholeyKaBhakt/android-patches-xtra/releases/tag/v2.12.0-dev.1",
       "createdAt": "2026-06-19T07:44:04",
       "targetApps": [
         "com.atmfee",
@@ -510,6 +537,7 @@
     "stable": {
       "file": "patches/binarymend-stable.json",
       "version": "v1.3.1",
+      "releaseUrl": "https://github.com/binarymend/morphe-patches/releases/tag/v1.3.1",
       "createdAt": "2026-04-27T12:49:57",
       "targetApps": [
         "app.symfonik.music.player",
@@ -526,6 +554,7 @@
     "dev": {
       "file": "patches/binarymend-dev.json",
       "version": "v1.3.1-dev.1",
+      "releaseUrl": "https://github.com/binarymend/morphe-patches/releases/tag/v1.3.1-dev.1",
       "createdAt": "2026-04-26T08:22:08",
       "targetApps": [
         "app.symfonik.music.player",
@@ -552,6 +581,7 @@
     "stable": {
       "file": "patches/braydog2010-stable.json",
       "version": "v1.0.0",
+      "releaseUrl": "https://github.com/BrayDog2010/morphe-patches/releases/tag/v1.0.0",
       "createdAt": "2026-06-22T21:11:54",
       "targetApps": [
         "com.dubani.dub"
@@ -562,6 +592,7 @@
     "dev": {
       "file": "patches/braydog2010-dev.json",
       "version": "v1.1.0-dev.4",
+      "releaseUrl": "https://github.com/BrayDog2010/morphe-patches/releases/tag/v1.1.0-dev.4",
       "createdAt": "2026-06-22T23:17:46",
       "targetApps": [
         "com.dubani.dub"
@@ -582,6 +613,7 @@
     "stable": {
       "file": "patches/brosssh-stable.json",
       "version": "v2.8.0",
+      "releaseUrl": "https://github.com/brosssh/morphe-patches/releases/tag/v2.8.0",
       "createdAt": "2026-06-25T20:00:02",
       "targetApps": [
         "com.instagram.android",
@@ -596,6 +628,7 @@
     "dev": {
       "file": "patches/brosssh-dev.json",
       "version": "v2.8.1-dev.4",
+      "releaseUrl": "https://github.com/brosssh/morphe-patches/releases/tag/v2.8.1-dev.4",
       "createdAt": "2026-06-26T09:54:55",
       "targetApps": [
         "com.instagram.android",
@@ -620,6 +653,7 @@
     "stable": {
       "file": "patches/browzomje-stable.json",
       "version": "v1.3.2",
+      "releaseUrl": "https://github.com/browzomje/browzomje-patches/releases/tag/v1.3.2",
       "createdAt": "2026-07-01T16:43:57",
       "targetApps": [
         "com.pinterest"
@@ -630,6 +664,7 @@
     "dev": {
       "file": "patches/browzomje-dev.json",
       "version": "v1.2.2-dev.1",
+      "releaseUrl": "https://github.com/browzomje/browzomje-patches/releases/tag/v1.2.2-dev.1",
       "createdAt": "2026-06-25T21:43:58",
       "targetApps": [
         "com.pinterest"
@@ -650,6 +685,7 @@
     "stable": {
       "file": "patches/chiggi-stable.json",
       "version": "v1.14.3",
+      "releaseUrl": "https://github.com/durgesh0505/chiggi_morphe_patches/releases/tag/v1.14.3",
       "createdAt": "2026-06-24T01:02:13",
       "targetApps": [
         "com.crazygames.crazygamesapp",
@@ -674,6 +710,7 @@
     "stable": {
       "file": "patches/docbt-stable.json",
       "version": "v1.9.0",
+      "releaseUrl": "https://github.com/docbt/patched-up/releases/tag/v1.9.0",
       "createdAt": "2026-06-20T03:31:38",
       "targetApps": [
         "com.ebay.kleinanzeigen",
@@ -686,6 +723,7 @@
     "dev": {
       "file": "patches/docbt-dev.json",
       "version": "v1.3.1-dev.2",
+      "releaseUrl": "https://github.com/docbt/patched-up/releases/tag/v1.3.1-dev.2",
       "createdAt": "2026-03-21T15:09:32",
       "targetApps": [
         "com.ebay.kleinanzeigen",
@@ -708,6 +746,7 @@
     "stable": {
       "file": "patches/edge-morphe-stable.json",
       "version": "v1.32.0",
+      "releaseUrl": "https://github.com/quantavil/edge-morphe-patches/releases/tag/v1.32.0",
       "createdAt": "2026-06-11T08:29:13",
       "targetApps": [
         "com.microsoft.emmx"
@@ -728,6 +767,7 @@
     "stable": {
       "file": "patches/ee-morphe-stable.json",
       "version": "v1.2.2",
+      "releaseUrl": "https://gitlab.com/early.egg3707/ee-morphe-patches/-/releases/v1.2.2",
       "createdAt": "2026-06-28T17:36:44",
       "targetApps": [
         "com.byairapp.android",
@@ -740,6 +780,7 @@
     "dev": {
       "file": "patches/ee-morphe-dev.json",
       "version": "v1.3.0-dev.13",
+      "releaseUrl": "https://gitlab.com/early.egg3707/ee-morphe-patches/-/releases/v1.3.0-dev.13",
       "createdAt": "2026-07-04T14:52:21",
       "targetApps": [
         "com.byairapp.android",
@@ -763,6 +804,7 @@
     "stable": {
       "file": "patches/eksi-stable.json",
       "version": "v0.1.1",
+      "releaseUrl": "https://github.com/HvQ/eksi-morphe/releases/tag/v0.1.1",
       "createdAt": "2026-05-06T07:04:53",
       "targetApps": [
         "com.eksiteknoloji.eksisozluk"
@@ -783,6 +825,7 @@
     "stable": {
       "file": "patches/eyalm2000-stable.json",
       "version": "v1.2.0",
+      "releaseUrl": "https://github.com/eyalm2000/tidal-debug-menu/releases/tag/v1.2.0",
       "createdAt": "2026-03-26T08:55:30",
       "targetApps": [
         "com.aspiro.tidal"
@@ -803,6 +846,7 @@
     "stable": {
       "file": "patches/hk-morphe-stable.json",
       "version": "v1.4.3",
+      "releaseUrl": "https://github.com/humzakh/HK-Morphe-Patches/releases/tag/v1.4.3",
       "createdAt": "2026-06-29T03:33:17",
       "targetApps": [
         "com.laurencedawson.reddit_sync",
@@ -816,6 +860,7 @@
     "dev": {
       "file": "patches/hk-morphe-dev.json",
       "version": "v1.5.0-dev.1",
+      "releaseUrl": "https://github.com/humzakh/HK-Morphe-Patches/releases/tag/v1.5.0-dev.1",
       "createdAt": "2026-07-02T04:51:19",
       "targetApps": [
         "com.laurencedawson.reddit_sync",
@@ -839,6 +884,7 @@
     "stable": {
       "file": "patches/hoo-dles-stable.json",
       "version": "v1.38.1",
+      "releaseUrl": "https://github.com/hoo-dles/morphe-patches/releases/tag/v1.38.1",
       "createdAt": "2026-06-28T22:46:25",
       "targetApps": [
         "app.ttmikstories.android",
@@ -900,6 +946,7 @@
     "dev": {
       "file": "patches/hoo-dles-dev.json",
       "version": "v1.38.1-dev.1",
+      "releaseUrl": "https://github.com/hoo-dles/morphe-patches/releases/tag/v1.38.1-dev.1",
       "createdAt": "2026-06-28T22:16:35",
       "targetApps": [
         "app.ttmikstories.android",
@@ -971,6 +1018,7 @@
     "stable": {
       "file": "patches/hoomans-morphe-stable.json",
       "version": "v1.41.1",
+      "releaseUrl": "https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.41.1",
       "createdAt": "2026-07-04T02:40:55",
       "targetApps": [
         "ak.alizandro.smartaudiobookplayer",
@@ -1019,6 +1067,7 @@
     "dev": {
       "file": "patches/hoomans-morphe-dev.json",
       "version": "v1.42.0-dev.2",
+      "releaseUrl": "https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.42.0-dev.2",
       "createdAt": "2026-07-04T02:39:36",
       "targetApps": [
         "ak.alizandro.smartaudiobookplayer",
@@ -1078,6 +1127,7 @@
     "stable": {
       "file": "patches/icysymmetra-tiktok-stable.json",
       "version": "v0.3.1",
+      "releaseUrl": "https://github.com/icysymmetra/tiktok-patches-for-morphe/releases/tag/v0.3.1",
       "createdAt": "2026-06-17T16:13:14",
       "targetApps": [
         "com.zhiliaoapp.musically"
@@ -1088,6 +1138,7 @@
     "dev": {
       "file": "patches/icysymmetra-tiktok-dev.json",
       "version": "v0.2.0-dev.2",
+      "releaseUrl": "https://github.com/icysymmetra/tiktok-patches-for-morphe/releases/tag/v0.2.0-dev.2",
       "createdAt": "2026-06-15T14:43:54",
       "targetApps": [
         "com.zhiliaoapp.musically"
@@ -1108,6 +1159,7 @@
     "stable": {
       "file": "patches/ihealth-morphe-stable.json",
       "version": "v1.1.0",
+      "releaseUrl": "https://github.com/bdgerszewski/morphe-patches-ihealth/releases/tag/v1.1.0",
       "createdAt": "2026-06-19T03:53:00",
       "targetApps": [
         "com.ihealthlabs.MyVitalsPro",
@@ -1119,6 +1171,7 @@
     "dev": {
       "file": "patches/ihealth-morphe-dev.json",
       "version": "v1.1.0-dev.1",
+      "releaseUrl": "https://github.com/bdgerszewski/morphe-patches-ihealth/releases/tag/v1.1.0-dev.1",
       "createdAt": "2026-06-19T03:50:13",
       "targetApps": [
         "com.ihealthlabs.MyVitalsPro",
@@ -1140,6 +1193,7 @@
     "stable": {
       "file": "patches/imxeren-stable.json",
       "version": "v1.4.0",
+      "releaseUrl": "https://github.com/IMXEren/mix-patches/releases/tag/v1.4.0",
       "createdAt": "2026-06-26T23:30:02",
       "targetApps": [
         "com.laurencedawson.reddit_sync",
@@ -1151,6 +1205,7 @@
     "dev": {
       "file": "patches/imxeren-dev.json",
       "version": "v1.4.0-dev.1",
+      "releaseUrl": "https://github.com/IMXEren/mix-patches/releases/tag/v1.4.0-dev.1",
       "createdAt": "2026-06-26T23:16:51",
       "targetApps": [
         "com.laurencedawson.reddit_sync",
@@ -1172,6 +1227,7 @@
     "stable": {
       "file": "patches/jasonwu1994-stable.json",
       "version": "v1.14.0",
+      "releaseUrl": "https://github.com/jasonwu1994/Gboard-patches/releases/tag/v1.14.0",
       "createdAt": "2026-06-30T22:42:36",
       "targetApps": [
         "com.google.android.inputmethod.latin"
@@ -1182,6 +1238,7 @@
     "dev": {
       "file": "patches/jasonwu1994-dev.json",
       "version": "v1.14.0-dev.1",
+      "releaseUrl": "https://github.com/jasonwu1994/Gboard-patches/releases/tag/v1.14.0-dev.1",
       "createdAt": "2026-06-30T07:55:50",
       "targetApps": [
         "com.google.android.inputmethod.latin"
@@ -1202,6 +1259,7 @@
     "stable": {
       "file": "patches/joristdh-stable.json",
       "version": "v1.1.3",
+      "releaseUrl": "https://github.com/Joristdh/Platypatch/releases/tag/v1.1.3",
       "createdAt": "2026-04-16T07:52:27",
       "targetApps": [
         "universal"
@@ -1212,6 +1270,7 @@
     "dev": {
       "file": "patches/joristdh-dev.json",
       "version": "v1.2.0-dev.2",
+      "releaseUrl": "https://github.com/Joristdh/Platypatch/releases/tag/v1.2.0-dev.2",
       "createdAt": "2026-06-24T18:29:20",
       "targetApps": [
         "com.laurencedawson.reddit_sync",
@@ -1235,6 +1294,7 @@
     "stable": {
       "file": "patches/kareemlukitomo-stable.json",
       "version": "v26.4.30-8eabfa",
+      "releaseUrl": "https://github.com/kareemlukitomo/morphe-patches/releases/tag/v26.4.30-8eabfa",
       "createdAt": "2026-04-30T00:02:56",
       "targetApps": [
         "com.instagram.android",
@@ -1259,6 +1319,7 @@
     "stable": {
       "file": "patches/kolaron-stable.json",
       "version": "v1.0.0",
+      "releaseUrl": "https://github.com/kolaron/morphe-patches/releases/tag/v1.0.0",
       "createdAt": "2026-05-15T05:17:38",
       "targetApps": [
         "cz.mafra.jizdnirady"
@@ -1269,6 +1330,7 @@
     "dev": {
       "file": "patches/kolaron-dev.json",
       "version": "v1.1.0-dev.1",
+      "releaseUrl": "https://github.com/kolaron/morphe-patches/releases/tag/v1.1.0-dev.1",
       "createdAt": "2026-05-15T06:39:27",
       "targetApps": [
         "cz.mafra.jizdnirady"
@@ -1289,6 +1351,7 @@
     "stable": {
       "file": "patches/kondratjev-stable.json",
       "version": "v1.16.0",
+      "releaseUrl": "https://github.com/kondratjev/morphe-patches/releases/tag/v1.16.0",
       "createdAt": "2026-07-03T19:53:54",
       "targetApps": [
         "com.brightstripe.parcels",
@@ -1310,6 +1373,7 @@
     "dev": {
       "file": "patches/kondratjev-dev.json",
       "version": "v1.16.0-dev.1",
+      "releaseUrl": "https://github.com/kondratjev/morphe-patches/releases/tag/v1.16.0-dev.1",
       "createdAt": "2026-07-03T19:50:36",
       "targetApps": [
         "com.brightstripe.parcels",
@@ -1341,6 +1405,7 @@
     "stable": {
       "file": "patches/lain-stable.json",
       "version": "v1.2.0",
+      "releaseUrl": "https://github.com/kiraio-moe/Lain-Patches/releases/tag/v1.2.0",
       "createdAt": "2026-06-28T19:23:17",
       "targetApps": [
         "cn.adonet.proxyevery",
@@ -1368,6 +1433,7 @@
     "dev": {
       "file": "patches/lain-dev.json",
       "version": "v1.3.0-dev.1",
+      "releaseUrl": "https://github.com/kiraio-moe/Lain-Patches/releases/tag/v1.3.0-dev.1",
       "createdAt": "2026-07-04T04:57:06",
       "targetApps": [
         "cn.adonet.proxyevery",
@@ -1407,6 +1473,7 @@
     "stable": {
       "file": "patches/lakaka-stable.json",
       "version": "v1.2.0",
+      "releaseUrl": "https://github.com/LaKakaReal/LaKakaShitPatches/releases/tag/v1.2.0",
       "createdAt": "2026-06-22T23:30:27",
       "targetApps": [
         "com.jndapp.depth.live.wallpaper"
@@ -1417,6 +1484,7 @@
     "dev": {
       "file": "patches/lakaka-dev.json",
       "version": "v1.2.0-dev.1",
+      "releaseUrl": "https://github.com/LaKakaReal/LaKakaShitPatches/releases/tag/v1.2.0-dev.1",
       "createdAt": "2026-06-22T22:12:35",
       "targetApps": [
         "com.jndapp.depth.live.wallpaper"
@@ -1437,6 +1505,7 @@
     "stable": {
       "file": "patches/loskutov-stable.json",
       "version": "v1.0.2",
+      "releaseUrl": "https://github.com/loskutov/youtube-domain-fronting-patch/releases/tag/v1.0.2",
       "createdAt": "2026-04-30T21:44:02",
       "targetApps": [
         "com.google.android.apps.youtube.music",
@@ -1448,6 +1517,7 @@
     "dev": {
       "file": "patches/loskutov-dev.json",
       "version": "v1.0.1-dev.1",
+      "releaseUrl": "https://github.com/loskutov/youtube-domain-fronting-patch/releases/tag/v1.0.1-dev.1",
       "createdAt": "2026-04-28T23:06:10",
       "targetApps": [
         "com.google.android.apps.youtube.music",
@@ -1469,6 +1539,7 @@
     "stable": {
       "file": "patches/lynx6319-stable.json",
       "version": "v1.0.8",
+      "releaseUrl": "https://github.com/Lynx6319/patch-youtube-scroll-block/releases/tag/v1.0.8",
       "createdAt": "2026-05-05T14:52:24",
       "targetApps": [
         "com.google.android.youtube"
@@ -1489,6 +1560,7 @@
     "stable": {
       "file": "patches/meridianfresco-stable.json",
       "version": "v1.0.0",
+      "releaseUrl": "https://github.com/meridianfresco/morphe-meta-patches/releases/tag/v1.0.0",
       "createdAt": "2026-04-11T21:51:39",
       "targetApps": [
         "com.facebook.katana"
@@ -1509,6 +1581,7 @@
     "stable": {
       "file": "patches/morphe-stable.json",
       "version": "v1.33.0",
+      "releaseUrl": "https://github.com/MorpheApp/morphe-patches/releases/tag/v1.33.0",
       "createdAt": "2026-07-03T06:10:52",
       "targetApps": [
         "com.google.android.apps.youtube.music",
@@ -1522,6 +1595,7 @@
     "dev": {
       "file": "patches/morphe-dev.json",
       "version": "v1.33.0-dev.10",
+      "releaseUrl": "https://github.com/MorpheApp/morphe-patches/releases/tag/v1.33.0-dev.10",
       "createdAt": "2026-07-02T08:05:29",
       "targetApps": [
         "com.google.android.apps.youtube.music",
@@ -1545,6 +1619,7 @@
     "stable": {
       "file": "patches/morphe-google-stable.json",
       "version": "v1.1.4",
+      "releaseUrl": "https://github.com/Ripthulhu/morphe-google-patches/releases/tag/v1.1.4",
       "createdAt": "2026-06-30T13:38:59",
       "targetApps": [
         "com.google.android.googlequicksearchbox"
@@ -1565,6 +1640,7 @@
     "stable": {
       "file": "patches/morphe-portal-stable.json",
       "version": "v0.1.0",
+      "releaseUrl": "https://github.com/andronedev/morphe-portal-patch/releases/tag/v0.1.0",
       "createdAt": "2026-06-19T20:53:34",
       "targetApps": [
         "com.google.android.apps.youtube.music",
@@ -1576,6 +1652,7 @@
     "dev": {
       "file": "patches/morphe-portal-dev.json",
       "version": "v0.1.0",
+      "releaseUrl": "https://github.com/andronedev/morphe-portal-patch/releases/tag/v0.1.0",
       "createdAt": "2026-06-19T20:53:34",
       "targetApps": [
         "com.google.android.apps.youtube.music",
@@ -1597,6 +1674,7 @@
     "stable": {
       "file": "patches/morphe-screenshot-stable.json",
       "version": "v1.0.8",
+      "releaseUrl": "https://github.com/Pa-kon/morphe-screenshot-patches/releases/tag/v1.0.8",
       "createdAt": "2026-06-28T11:39:03",
       "targetApps": [
         "universal"
@@ -1617,6 +1695,7 @@
     "stable": {
       "file": "patches/nai64-stable.json",
       "version": "1.10.2",
+      "releaseUrl": "https://github.com/Nai64/Nai64Patches/releases/tag/1.10.2",
       "createdAt": "2026-07-04T12:58:20",
       "targetApps": [
         "universal"
@@ -1637,6 +1716,7 @@
     "stable": {
       "file": "patches/npci-bhim-stable.json",
       "version": "v1.3.0",
+      "releaseUrl": "https://github.com/kun-codes/npci-bhim-morphe-patches/releases/tag/v1.3.0",
       "createdAt": "2026-06-28T09:33:42",
       "targetApps": [
         "in.org.npci.upiapp"
@@ -1657,6 +1737,7 @@
     "stable": {
       "file": "patches/paresh-maheshwari-stable.json",
       "version": "v1.18.0",
+      "releaseUrl": "https://gitlab.com/Paresh-Maheshwari/paresh-patches/-/releases/v1.18.0",
       "createdAt": "2026-06-03T15:49:54",
       "targetApps": [
         "app.vinztech.trackit",
@@ -1686,6 +1767,7 @@
     "dev": {
       "file": "patches/paresh-maheshwari-dev.json",
       "version": "v1.18.1-dev.1",
+      "releaseUrl": "https://gitlab.com/Paresh-Maheshwari/paresh-patches/-/releases/v1.18.1-dev.1",
       "createdAt": "2026-06-03T16:02:43",
       "targetApps": [
         "app.vinztech.trackit",
@@ -1725,6 +1807,7 @@
     "stable": {
       "file": "patches/patcheddit-stable.json",
       "version": "v1.4.0",
+      "releaseUrl": "https://github.com/wchill/patcheddit/releases/tag/v1.4.0",
       "createdAt": "2026-04-07T19:10:56",
       "targetApps": [
         "com.andrewshu.android.reddit",
@@ -1753,6 +1836,7 @@
     "dev": {
       "file": "patches/patcheddit-dev.json",
       "version": "v1.4.1-dev.1",
+      "releaseUrl": "https://github.com/wchill/patcheddit/releases/tag/v1.4.1-dev.1",
       "createdAt": "2026-04-09T06:59:40",
       "targetApps": [
         "com.andrewshu.android.reddit",
@@ -1791,6 +1875,7 @@
     "stable": {
       "file": "patches/pepper-morphe-stable.json",
       "version": "v1.0.1",
+      "releaseUrl": "https://github.com/PawiX25/pepper-morphe-patches/releases/tag/v1.0.1",
       "createdAt": "2026-05-14T00:53:02",
       "targetApps": [
         "Chollometros",
@@ -1820,6 +1905,7 @@
     "stable": {
       "file": "patches/piko-stable.json",
       "version": "v3.7.0",
+      "releaseUrl": "https://github.com/crimera/piko/releases/tag/v3.7.0",
       "createdAt": "2026-06-27T16:03:22",
       "targetApps": [
         "com.instagram.android",
@@ -1831,6 +1917,7 @@
     "dev": {
       "file": "patches/piko-dev.json",
       "version": "v3.8.0-dev.2",
+      "releaseUrl": "https://github.com/crimera/piko/releases/tag/v3.8.0-dev.2",
       "createdAt": "2026-06-28T13:21:07",
       "targetApps": [
         "com.instagram.android",
@@ -1852,6 +1939,7 @@
     "stable": {
       "file": "patches/pixelpusher247-stable.json",
       "version": "v1.3.0",
+      "releaseUrl": "https://github.com/PixelPusher247/morphe-patches/releases/tag/v1.3.0",
       "createdAt": "2026-03-31T09:28:51",
       "targetApps": [
         "tv.trakt.trakt"
@@ -1872,6 +1960,7 @@
     "stable": {
       "file": "patches/polka-bear-stable.json",
       "version": "v1.4.0",
+      "releaseUrl": "https://github.com/polka-bear/morphe-patches/releases/tag/v1.4.0",
       "createdAt": "2026-04-14T08:35:28",
       "targetApps": [
         "com.ipoji.app",
@@ -1883,6 +1972,7 @@
     "dev": {
       "file": "patches/polka-bear-dev.json",
       "version": "v1.4.1-dev.1",
+      "releaseUrl": "https://github.com/polka-bear/morphe-patches/releases/tag/v1.4.1-dev.1",
       "createdAt": "2026-04-14T10:04:57",
       "targetApps": [
         "com.ipoji.app",
@@ -1904,6 +1994,7 @@
     "stable": {
       "file": "patches/prathxm-stable.json",
       "version": "v1.9.0",
+      "releaseUrl": "https://github.com/PrathxmOp/Prathxm-Patches/releases/tag/v1.9.0",
       "createdAt": "2026-07-04T11:49:43",
       "targetApps": [
         "com.chess"
@@ -1914,6 +2005,7 @@
     "dev": {
       "file": "patches/prathxm-dev.json",
       "version": "v1.6.0-dev.1",
+      "releaseUrl": "https://github.com/PrathxmOp/Prathxm-Patches/releases/tag/v1.6.0-dev.1",
       "createdAt": "2026-07-03T06:11:35",
       "targetApps": [
         "com.chess"
@@ -1934,6 +2026,7 @@
     "stable": {
       "file": "patches/prathxm-ytmusic-stable.json",
       "version": "v1.38.0",
+      "releaseUrl": "https://github.com/PrathxmOp/ytmusic-patches/releases/tag/v1.38.0",
       "createdAt": "2026-06-28T15:27:28",
       "targetApps": [
         "com.google.android.apps.youtube.music",
@@ -1955,6 +2048,7 @@
     "stable": {
       "file": "patches/proguard-stable.json",
       "version": "v1.0.3",
+      "releaseUrl": "https://gitlab.com/inotia00/proguard-patches/-/releases/v1.0.3",
       "createdAt": "2026-06-05T01:03:40",
       "targetApps": [
         "com.java.inspector",
@@ -1976,6 +2070,7 @@
     "stable": {
       "file": "patches/rabilrbl-stable.json",
       "version": "v1.5.0",
+      "releaseUrl": "https://github.com/rabilrbl/fluffy-patches/releases/tag/v1.5.0",
       "createdAt": "2026-04-03T16:17:45",
       "targetApps": [
         "universal"
@@ -1986,6 +2081,7 @@
     "dev": {
       "file": "patches/rabilrbl-dev.json",
       "version": "v1.0.0-dev.19",
+      "releaseUrl": "https://github.com/rabilrbl/fluffy-patches/releases/tag/v1.0.0-dev.19",
       "createdAt": "2026-06-04T10:28:44",
       "targetApps": [
         "droom.sleepIfUCan"
@@ -2006,6 +2102,7 @@
     "stable": {
       "file": "patches/realcyberwash-stable.json",
       "version": "v1.1.1",
+      "releaseUrl": "https://github.com/RealCyberwash/max-patches/releases/tag/v1.1.1",
       "createdAt": "2026-04-06T18:30:55",
       "targetApps": [
         "ru.oneme.app"
@@ -2026,6 +2123,7 @@
     "stable": {
       "file": "patches/realme-link-stable.json",
       "version": "v1.0.0",
+      "releaseUrl": "https://github.com/lyyako/realme-link-patches/releases/tag/v1.0.0",
       "createdAt": "2026-06-12T19:32:24",
       "targetApps": [
         "com.realme.link"
@@ -2036,6 +2134,7 @@
     "dev": {
       "file": "patches/realme-link-dev.json",
       "version": "v1.0.0",
+      "releaseUrl": "https://github.com/lyyako/realme-link-patches/releases/tag/v1.0.0",
       "createdAt": "2026-06-12T18:29:37",
       "targetApps": [
         "com.realme.link"
@@ -2056,6 +2155,7 @@
     "stable": {
       "file": "patches/rookieenough-stable.json",
       "version": "v1.0.4",
+      "releaseUrl": "https://github.com/RookieEnough/De-Vanced/releases/tag/v1.0.4",
       "createdAt": "2026-05-13T13:27:20",
       "targetApps": [
         "ch.protonmail.android",
@@ -2100,6 +2200,7 @@
     "dev": {
       "file": "patches/rookieenough-dev.json",
       "version": "v1.0.3-dev.1",
+      "releaseUrl": "https://github.com/RookieEnough/De-Vanced/releases/tag/v1.0.3-dev.1",
       "createdAt": "2026-04-02T03:58:26",
       "targetApps": [
         "ch.protonmail.android",
@@ -2154,6 +2255,7 @@
     "stable": {
       "file": "patches/rushiranpise-stable.json",
       "version": "v1.9.1",
+      "releaseUrl": "https://github.com/rushiranpise/morphe-patches/releases/tag/v1.9.1",
       "createdAt": "2026-07-03T23:15:45",
       "targetApps": [
         "ai.topicfinder.podcastdiscovery",
@@ -2236,6 +2338,7 @@
     "dev": {
       "file": "patches/rushiranpise-dev.json",
       "version": "v1.9.1-dev.1",
+      "releaseUrl": "https://github.com/rushiranpise/morphe-patches/releases/tag/v1.9.1-dev.1",
       "createdAt": "2026-07-03T23:11:13",
       "targetApps": [
         "ai.topicfinder.podcastdiscovery",
@@ -2328,6 +2431,7 @@
     "stable": {
       "file": "patches/rvx-morphed-stable.json",
       "version": "v5.16.4",
+      "releaseUrl": "https://github.com/wchill/rvx-morphed/releases/tag/v5.16.4",
       "createdAt": "2026-03-05T14:38:07",
       "targetApps": [
         "com.google.android.apps.youtube.music",
@@ -2340,6 +2444,7 @@
     "dev": {
       "file": "patches/rvx-morphed-dev.json",
       "version": "v5.16.4-dev.1",
+      "releaseUrl": "https://github.com/wchill/rvx-morphed/releases/tag/v5.16.4-dev.1",
       "createdAt": "2026-03-05T13:52:42",
       "targetApps": [
         "com.google.android.apps.youtube.music",
@@ -2362,6 +2467,7 @@
     "stable": {
       "file": "patches/samsung-morphe-stable.json",
       "version": "v1.2.1",
+      "releaseUrl": "https://github.com/bigyank/morphe-patches-samsung/releases/tag/v1.2.1",
       "createdAt": "2026-06-30T13:25:55",
       "targetApps": [
         "com.sec.android.app.shealth"
@@ -2372,6 +2478,7 @@
     "dev": {
       "file": "patches/samsung-morphe-dev.json",
       "version": "v1.0.15",
+      "releaseUrl": "https://github.com/bigyank/morphe-patches-samsung/releases/tag/v1.0.15",
       "createdAt": "2026-06-22T18:10:19",
       "targetApps": [
         "com.sec.android.app.shealth"
@@ -2392,6 +2499,7 @@
     "stable": {
       "file": "patches/sjshb57-pairip-stable.json",
       "version": "v1.10.1",
+      "releaseUrl": "https://github.com/sjshb57/Pairip-Patches/releases/tag/v1.10.1",
       "createdAt": "2026-06-26T09:18:21",
       "targetApps": [
         "universal"
@@ -2412,6 +2520,7 @@
     "stable": {
       "file": "patches/telegram-morphe-stable.json",
       "version": "v1.20.0",
+      "releaseUrl": "https://github.com/MoonShadowKeeper/Telegram-patchesMorphe/releases/tag/v1.20.0",
       "createdAt": "2026-06-28T14:29:36",
       "targetApps": [
         "org.telegram.messenger.web"
@@ -2432,6 +2541,7 @@
     "stable": {
       "file": "patches/ts-patches-stable.json",
       "version": "v1.0.0",
+      "releaseUrl": "https://github.com/osirisad/ts-patches/releases/tag/v1.0.0",
       "createdAt": "2026-06-21T02:17:19",
       "targetApps": [
         "com.teamsnap.teamsnap"
@@ -2442,6 +2552,7 @@
     "dev": {
       "file": "patches/ts-patches-dev.json",
       "version": "v1.0.4",
+      "releaseUrl": "https://github.com/osirisad/ts-patches/releases/tag/v1.0.4",
       "createdAt": "2026-06-20T03:02:19",
       "targetApps": [
         "com.teamsnap.teamsnap"
@@ -2462,6 +2573,7 @@
     "stable": {
       "file": "patches/ts2-stable.json",
       "version": "v1.0.1",
+      "releaseUrl": "https://github.com/osirisad/teamsnap-patches/releases/tag/v1.0.1",
       "createdAt": "2026-06-22T02:56:46",
       "targetApps": [
         "com.teamsnap.teamsnap"
@@ -2472,6 +2584,7 @@
     "dev": {
       "file": "patches/ts2-dev.json",
       "version": "v1.0.1",
+      "releaseUrl": "https://github.com/osirisad/teamsnap-patches/releases/tag/v1.0.1",
       "createdAt": "2026-06-22T02:56:46",
       "targetApps": [
         "com.teamsnap.teamsnap"
@@ -2492,6 +2605,7 @@
     "stable": {
       "file": "patches/vladon-stable.json",
       "version": "v1.0.6",
+      "releaseUrl": "https://github.com/vladon/morphe-patches-navi/releases/tag/v1.0.6",
       "createdAt": "2026-04-20T14:53:42",
       "targetApps": [
         "ru.yandex.yandexnavi"
@@ -2512,6 +2626,7 @@
     "stable": {
       "file": "patches/x-shim-stable.json",
       "version": "v1.7.0",
+      "releaseUrl": "https://gitlab.com/inotia00/x-shim/-/releases/v1.7.0",
       "createdAt": "2026-07-03T00:31:26",
       "targetApps": [
         "com.twitter.android"
@@ -2532,6 +2647,7 @@
     "stable": {
       "file": "patches/xhehab-stable.json",
       "version": "v2.0.0",
+      "releaseUrl": "https://github.com/Xhehab/Xhehab-Patches/releases/tag/v2.0.0",
       "createdAt": "2026-07-03T20:28:09",
       "targetApps": [
         "com.influencers.fst7",
@@ -2554,6 +2670,7 @@
     "stable": {
       "file": "patches/xob0t-stable.json",
       "version": "v1.6.0",
+      "releaseUrl": "https://github.com/xob0t/morphe-patches/releases/tag/v1.6.0",
       "createdAt": "2026-06-23T06:18:13",
       "targetApps": [
         "com.avito.android",
@@ -2568,6 +2685,7 @@
     "dev": {
       "file": "patches/xob0t-dev.json",
       "version": "v1.6.0-dev.1",
+      "releaseUrl": "https://github.com/xob0t/morphe-patches/releases/tag/v1.6.0-dev.1",
       "createdAt": "2026-06-23T06:17:33",
       "targetApps": [
         "com.avito.android",
@@ -2592,6 +2710,7 @@
     "stable": {
       "file": "patches/ynotzort-stable.json",
       "version": "v1.0.0",
+      "releaseUrl": "https://github.com/ynotzort/morphe-patches/releases/tag/v1.0.0",
       "createdAt": "2026-06-25T14:45:29",
       "targetApps": [
         "com.targo_prod.bad"
@@ -2602,6 +2721,7 @@
     "dev": {
       "file": "patches/ynotzort-dev.json",
       "version": "v1.0.0-dev.1",
+      "releaseUrl": "https://github.com/ynotzort/morphe-patches/releases/tag/v1.0.0-dev.1",
       "createdAt": "2026-06-25T14:51:54",
       "targetApps": [
         "com.targo_prod.bad"
@@ -2622,6 +2742,7 @@
     "stable": {
       "file": "patches/zpatches-stable.json",
       "version": "v1.5.1",
+      "releaseUrl": "https://github.com/cesbar/zpatches/releases/tag/v1.5.1",
       "createdAt": "2026-06-15T17:16:26",
       "targetApps": [
         "com.jcdecaux.vls.lyon",
@@ -2634,6 +2755,7 @@
     "dev": {
       "file": "patches/zpatches-dev.json",
       "version": "v1.5.1",
+      "releaseUrl": "https://github.com/cesbar/zpatches/releases/tag/v1.5.1",
       "createdAt": "2026-06-15T17:16:26",
       "targetApps": [
         "com.jcdecaux.vls.lyon",

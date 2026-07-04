@@ -334,9 +334,19 @@ def main():
                 target_apps = sorted(list(packages))
                 app_count = len([package_name for package_name in target_apps if package_name != "universal"])
                 
+                release_url = ""
+                if repo_url and version:
+                    import urllib.parse
+                    safe_version = urllib.parse.quote(version, safe='')
+                    if source == "gitlab":
+                        release_url = f"{repo_url}/-/releases/{safe_version}"
+                    else:
+                        release_url = f"{repo_url}/releases/tag/{safe_version}"
+
                 source_entry[channel] = {
                     "file": out_file,
                     "version": version,
+                    "releaseUrl": release_url,
                     "createdAt": created_at,
                     "targetApps": target_apps,
                     "appCount": app_count,

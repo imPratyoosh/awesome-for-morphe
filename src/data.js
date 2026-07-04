@@ -107,6 +107,7 @@ async function loadSource(key, channelObj, names, sourceInfo, skipSet) {
     targetApps: sourceInfo.targetApps || [],
     version: channelObj.version || "",
     tag: channelObj.version || "",
+    releaseUrl: channelObj.releaseUrl || "",
     createdAt: channelObj.createdAt || "",
   };
 

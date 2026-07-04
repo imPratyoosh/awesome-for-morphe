@@ -163,8 +163,8 @@
                   class="w-full h-[34px] px-2.5 sm:px-3 bg-black border border-lightGray rounded-md text-sm text-white flex items-center gap-2 sm:gap-3 hover:border-white/50 transition-all cursor-pointer"
                   aria-label="Patch Bundles filter">
                   <template v-if="bundle">
-                    <img v-if="filterOptions.bundleOptions.find(o => o.value === bundle)?.icon"
-                      :src="filterOptions.bundleOptions.find(o => o.value === bundle)?.icon"
+                    <img v-if="getBundleIcon(bundle)"
+                      :src="getBundleIcon(bundle)"
                       class="w-4 h-4 rounded-full object-cover shrink-0" alt="" loading="lazy">
                     <i v-else class="fa-solid fa-cubes text-light text-base shrink-0 -ml-1 sm:ml-0 icon-center"></i>
                   </template>
@@ -216,16 +216,15 @@
                     <i class="fa-brands fa-android text-green text-base shrink-0 -ml-1 sm:ml-0 icon-center"></i>
                   </template>
                   <template v-else>
-                    <img v-if="filterOptions.appOptions.find(o => o.value === app)?.icon"
-                      :src="filterOptions.appOptions.find(o => o.value === app)?.icon"
+                    <img v-if="getAppIcon(app)"
+                      :src="getAppIcon(app)"
                       class="w-4 h-4 rounded-sm object-contain shrink-0" alt="" loading="lazy">
                     <i v-else class="fa-brands fa-android text-green text-base shrink-0 -ml-1 sm:ml-0 icon-center"></i>
                   </template>
                 </template>
                 <i v-else
                   class="fa-solid fa-mobile-screen-button text-light text-base shrink-0 -ml-1 sm:ml-0 icon-center"></i>
-                <span class="flex-1 truncate text-left">{{ app ? (filterOptions.appOptions.find(o => o.value ===
-                  app)?.label || app) : 'All Apps' }}</span>
+                <span class="flex-1 truncate text-left">{{ getAppName(app) }}</span>
                 <i
                   class="fa-solid fa-chevron-down dd-chevron text-light text-xs flex-shrink-0 transition-transform duration-200 -mr-0.5 sm:mr-0"></i>
               </button>
@@ -297,8 +296,8 @@
                   class="w-full h-7 pl-7 pr-7 appearance-none bg-black border border-lightGray hover:border-white/50 rounded-md text-sm text-white focus:border-light focus:ring-1 focus:ring-light/20 outline-none transition-all cursor-pointer">
                   <option value="stars">Most Stars</option>
                   <option value="latest">Latest</option>
-                  <option value="apps_desc">Most Apps</option>
-                  <option value="patches_desc">Most Patches</option>
+                  <option value="apps">Most Apps</option>
+                  <option value="patches">Most Patches</option>
                   <option value="alpha">Alphabetical</option>
                 </select>
                 <i
@@ -398,8 +397,8 @@
                         group.key }}</strong>
                       <span v-if="hasHighlight(group.key) || isNewBundle(group)"
                         class="badge text-yellow shrink-0"><span>✨ New</span></span>
-                      <a v-if="group.bundle.deepLink || (group.bundle.repo && morpheUrl(group.bundle.repo))"
-                        :href="group.bundle.deepLink || morpheUrl(group.bundle.repo)" target="_blank" rel="noreferrer"
+                      <a v-if="group.bundle.deepLink"
+                        :href="group.bundle.deepLink" target="_blank" rel="noreferrer"
                         @click.stop
                         class="inline-flex items-center gap-1 px-[6px] py-[2px] rounded-full text-xs font-bold leading-[1.4] whitespace-nowrap border border-transparent text-[#fafafa] bg-gradient-to-r from-blue to-green cursor-pointer transition-all duration-150 hover:opacity-85 active:scale-95 shrink-0 select-none">
                         <i class="fa-solid fa-plus icon-center"></i>
@@ -409,10 +408,10 @@
                     </div>
                     <!-- Repo Row -->
                     <a v-if="group.bundle.repo"
-                      :href="group.bundle.repoUrl || ('https://github.com/' + group.bundle.repo)" target="_blank"
+                      :href="group.bundle.repoUrl" target="_blank"
                       rel="noreferrer" @click.stop class="badge badge-sm max-w-full">
                       <i
-                        :class="getPlatform(group.bundle.repoUrl || group.bundle.repo) === 'github' ? 'fa-brands fa-github text-white' : getPlatform(group.bundle.repoUrl || group.bundle.repo) === 'gitlab' ? 'fa-brands fa-gitlab text-orange' : 'fa-solid fa-globe text-light'"></i>
+                        :class="group.bundle.source === 'github' ? 'fa-brands fa-github text-white' : group.bundle.source === 'gitlab' ? 'fa-brands fa-gitlab text-orange' : 'fa-solid fa-globe text-light'"></i>
                       <span class="truncate">{{ group.bundle.repo }}</span>
                     </a>
                   </div>
@@ -421,7 +420,7 @@
                   class="flex flex-row items-center gap-2 text-xs text-light shrink-0 w-full"
                   :class="!isTwoColumns ? 'justify-center md:justify-end md:w-auto' : 'justify-center'">
                   <template v-if="group.bundle.version">
-                    <a v-if="releaseUrl(group.bundle)" :href="releaseUrl(group.bundle)" target="_blank" rel="noreferrer"
+                    <a v-if="group.bundle.releaseUrl" :href="group.bundle.releaseUrl" target="_blank" rel="noreferrer"
                       @click.stop class="badge"><i class="fa-solid fa-clock-rotate-left"></i><span>{{
                         group.bundle.version }}</span></a>
                     <span v-else class="badge text-blue"><i class="fa-solid fa-clock-rotate-left"></i><span>{{
