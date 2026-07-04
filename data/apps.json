@@ -1392,5 +1392,9 @@
   "com.adsk.sketchbook": {
     "name": "Sketchbook",
     "iconUrl": "https://play-lh.googleusercontent.com/SAwYo44DrmijrKgVa8VhGB4zFshE7Luw0stwCos86Id3jVd2q1dSs4rjbi25IvUQCpzvLk1pdrld7ZcapdX9RA"
+  },
+  "tv.pluto.android": {
+    "name": "PlutoTV",
+    "iconUrl": "https://play-lh.googleusercontent.com/O6MtMEvYNmr-I_cntqWT2Lq8L5Y5bG01V5udGLT8-8LcpNzeeOCDjgaX-mQEushfwrLjT74nVJMlmSgeIxtP"
   }
 }

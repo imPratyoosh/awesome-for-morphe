@@ -25,15 +25,17 @@ async function json(url) {
   return jsonCache.get(key);
 }
 
-export function normalizeChannel(channel) {
-  return CHANNELS.has(channel) ? channel : DEFAULT_CHANNEL;
+export function normalizeChannel(channelName) {
+  return CHANNELS.has(channelName) ? channelName : DEFAULT_CHANNEL;
 }
 
-function appName(packageName, metadata, skipSet) {
-  if (!packageName) return "Unspecified";
-  const meta = metadata[packageName];
+export function appName(packageName, metadata, skipSet) {
+  const key = packageName || "universal";
+  const meta = metadata[key];
   if (meta && meta.name) return meta.name;
   if (typeof meta === "string") return meta;
+
+  if (!packageName) return key;
 
   const skip = skipSet || new Set();
   const parts = packageName.split(".").filter((part) => part.length > 1 && !skip.has(part));
@@ -50,7 +52,9 @@ function extractVersions(value) {
   });
 
   if (!versionList.length) return [];
-  versionList.sort((versionA, versionB) => versionB.version.localeCompare(versionA.version, undefined, { numeric: true, sensitivity: "base" }));
+  versionList.sort((versionA, versionB) =>
+    versionB.version.localeCompare(versionA.version, undefined, { numeric: true, sensitivity: "base" }),
+  );
 
   if (versionList.length === 1) return versionList;
 
@@ -61,21 +65,29 @@ function extractVersions(value) {
 function packages(patch) {
   const compatiblePackages = patch.compatiblePackages;
   if (!compatiblePackages || (typeof compatiblePackages === "object" && Object.keys(compatiblePackages).length === 0)) {
-    return [{ packageName: "", versions: [] }];
+    return [{ packageName: "universal", versions: [] }];
   }
 
   if (!Array.isArray(compatiblePackages)) {
-    return Object.entries(compatiblePackages).map(([packageName, packageVersions]) => ({ packageName, versions: extractVersions(packageVersions) }));
+    return Object.entries(compatiblePackages).map(([packageName, packageVersions]) => ({
+      packageName,
+      versions: extractVersions(packageVersions),
+    }));
   }
 
   const packageRows = compatiblePackages.flatMap((packageItem) => {
     if (typeof packageItem === "string") return [{ packageName: packageItem, versions: [] }];
     if (packageItem?.packageName)
-      return [{ packageName: packageItem.packageName, versions: extractVersions(packageItem.versions || packageItem.targets || []) }];
+      return [
+        {
+          packageName: packageItem.packageName,
+          versions: extractVersions(packageItem.versions || packageItem.targets || []),
+        },
+      ];
     return [];
   });
 
-  return packageRows.length ? packageRows : [{ packageName: "", versions: [] }];
+  return packageRows.length ? packageRows : [{ packageName: "universal", versions: [] }];
 }
 
 async function loadSource(key, channelObj, names, sourceInfo, skipSet) {
@@ -115,7 +127,7 @@ async function loadSource(key, channelObj, names, sourceInfo, skipSet) {
         description: patch.description || "",
         packageName,
         appName: name,
-        appIcon: (names[packageName] && names[packageName].iconUrl) ? names[packageName].iconUrl : "",
+        appIcon: names[packageName] && names[packageName].iconUrl ? names[packageName].iconUrl : "",
         versions: target.versions,
         enabled: patch.use ?? patch.default ?? true,
         options: Array.isArray(patch.options) ? patch.options : [],
@@ -139,48 +151,118 @@ async function loadSource(key, channelObj, names, sourceInfo, skipSet) {
   return { bundle, rows };
 }
 
-export async function loadChannelData(channelInput) {
-  const channel = normalizeChannel(channelInput);
-  if (dataCache.has(channel)) return dataCache.get(channel);
+export async function loadChannelData(channelName, priorityKeys = [], onPatchLoaded) {
+  const channel = normalizeChannel(channelName);
 
-  const promise = Promise.all([
+  if (dataCache.has(channel)) {
+    const cachedData = await dataCache.get(channel);
+    if (onPatchLoaded) {
+      onPatchLoaded(null);
+    }
+    return cachedData;
+  }
+
+  let resolveCache;
+  const cachePromise = new Promise(resolve => { resolveCache = resolve; });
+  dataCache.set(channel, cachePromise);
+
+  const [names, sources, skipWordsArray] = await Promise.all([
     json(new URL("../data/apps.json", import.meta.url)).catch(() => ({})),
     json(new URL(`../data/bundles.json`, import.meta.url)).catch(() => ({})),
     json(new URL("./skip-words.json", import.meta.url)).catch(() => []),
-  ]).then(async ([names, sources, skipWordsArray]) => {
-    const skipSet = new Set(skipWordsArray);
-    const bundleKeys = Object.keys(sources);
+  ]);
 
-    const loaded = await Promise.all(
-      bundleKeys
-        .sort((a, b) => a.localeCompare(b))
-        .map((key) => {
-          const sourceObj = sources[key];
-          let channelObj = sourceObj[channel];
-          if (typeof channelObj === "string") {
-            channelObj = sourceObj[channelObj];
-          }
-          if (!channelObj) return Promise.resolve(null);
-          
-          return loadSource(key, channelObj, names, sourceObj, skipSet).catch((err) => {
-            console.error(`Failed to load source ${key} for channel ${channel}:`, err);
-            return null;
-          });
-        }),
-    );
-    const validLoaded = loaded.filter(Boolean);
-    const bundleList = validLoaded.map((item) => item.bundle);
+  const skipSet = new Set(skipWordsArray);
+  const bundleKeys = Object.keys(sources).sort((a, b) => a.localeCompare(b));
 
-    return {
-      channel,
-      bundles: bundleList,
-      rows: validLoaded.flatMap((item) => item.rows),
-      bundleMap: Object.fromEntries(bundleList.map((bundle) => [bundle.key, bundle])),
+  const bundleList = [];
+  const priorityTasks = [];
+  const backgroundTasks = [];
+
+  for (const key of bundleKeys) {
+    const sourceObj = sources[key];
+    let channelObj = sourceObj[channel];
+    if (typeof channelObj === "string") {
+      channelObj = sourceObj[channelObj];
+    }
+    if (!channelObj) continue;
+
+    const bundle = {
+      key,
+      source: sourceObj.source || "github",
+      repo: sourceObj.repo || "",
+      repoUrl: sourceObj.repoUrl || "",
+      deepLink: sourceObj.deepLink || "",
+      avatarUrl: sourceObj.avatarUrl || "",
+      stars: sourceObj.stars || 0,
+      firstSeen: sourceObj.firstSeen || "",
+      targetApps: channelObj.targetApps || [],
+      version: channelObj.version || "",
+      tag: channelObj.version || "",
+      createdAt: channelObj.createdAt || "",
     };
-  });
+    bundleList.push(bundle);
 
-  dataCache.set(channel, promise);
-  return promise;
+    const task = async () => {
+      try {
+        const { rows } = await loadSource(key, channelObj, names, sourceObj, skipSet);
+        return rows || [];
+      } catch (err) {
+        console.error(`Failed to load source ${key} for channel ${channel}:`, err);
+        return [];
+      }
+    };
+
+    if (priorityKeys.includes(key)) {
+      priorityTasks.push(task);
+    } else {
+      backgroundTasks.push(task);
+    }
+  }
+
+  const activeData = {
+    channel,
+    bundles: bundleList,
+    rows: [],
+    bundleMap: Object.fromEntries(bundleList.map((bundle) => [bundle.key, bundle])),
+    namesMap: names,
+    skipSet: skipSet,
+  };
+
+  (async () => {
+    if (priorityTasks.length > 0) {
+      try {
+        const priorityResults = await Promise.all(priorityTasks.map((task) => task()));
+        const priorityRows = priorityResults.flat();
+        activeData.rows.push(...priorityRows);
+        if (onPatchLoaded && priorityRows.length > 0) {
+          onPatchLoaded(true);
+        }
+      } catch (e) {
+        console.error("Priority load failed", e);
+      }
+    }
+
+    if (backgroundTasks.length > 0) {
+      try {
+        const backgroundResults = await Promise.all(backgroundTasks.map((task) => task()));
+        const backgroundRows = backgroundResults.flat();
+        activeData.rows.push(...backgroundRows);
+        if (onPatchLoaded && backgroundRows.length > 0) {
+          onPatchLoaded(true);
+        }
+      } catch (e) {
+        console.error("Background load failed", e);
+      }
+    }
+
+    if (onPatchLoaded) {
+      onPatchLoaded(null);
+    }
+    resolveCache(activeData);
+  })();
+
+  return activeData;
 }
 
 export function filterRows(data, filters) {
@@ -188,31 +270,31 @@ export function filterRows(data, filters) {
 
   let parsedShowOptions = null;
   if (filters.showOptions && filters.showOptions.length > 0) {
-    parsedShowOptions = filters.showOptions.map(showOptionStr => {
+    parsedShowOptions = filters.showOptions.map((showOptionStr) => {
       const parts = showOptionStr.split(":");
       return {
         level: parts.length === 1 ? "bundle" : parts.length === 2 ? "app" : "patch",
         bundle: parts[0],
         app: parts.length >= 2 ? parts[1] : "",
-        patch: parts.length > 2 ? parts.slice(2).join(":") : ""
+        patch: parts.length > 2 ? parts.slice(2).join(":") : "",
       };
     });
   }
 
   return data.rows.filter((row) => {
     if (parsedShowOptions) {
-      const matched = parsedShowOptions.some(showFilter => {
+      const matched = parsedShowOptions.some((showFilter) => {
         const matchBundle = !showFilter.bundle || row.bundleKey === showFilter.bundle;
-        
+
         let matchApp = true;
         if (showFilter.app) {
           if (showFilter.app === "universal") {
-            matchApp = !row.packageName;
+            matchApp = !row.packageName || row.packageName === "universal";
           } else {
             matchApp = row.packageName === showFilter.app;
           }
         }
-        
+
         const matchPatch = !showFilter.patch || row.patchName === showFilter.patch;
 
         if (showFilter.level === "bundle") return matchBundle;
@@ -230,14 +312,14 @@ export function filterRows(data, filters) {
   });
 }
 
-export function getFilterOptions(rows) {
+export function getFilterOptions(rows, namesMap = {}) {
   const appMap = new Map();
   const bundleSet = new Set();
   let hasUniversal = false;
 
   for (const row of rows) {
     bundleSet.add(row.bundleKey);
-    if (row.packageName) {
+    if (row.packageName && row.packageName !== "universal") {
       if (!appMap.has(row.packageName)) {
         appMap.set(row.packageName, { label: row.appName, icon: row.appIcon });
       }
@@ -251,7 +333,9 @@ export function getFilterOptions(rows) {
     .sort((a, b) => a.label.localeCompare(b.label) || a.value.localeCompare(b.value));
 
   if (hasUniversal) {
-    appOptions.unshift({ value: "universal", label: "Any app" });
+    const universalName =
+      namesMap["universal"] && namesMap["universal"].name ? namesMap["universal"].name : "universal";
+    appOptions.unshift({ value: "universal", label: universalName });
   }
 
   return {
@@ -269,7 +353,7 @@ export function summarizeRows(rows) {
   for (const row of rows) {
     bundles.add(row.bundleKey);
     patches.add(row.patchId);
-    if (row.packageName) apps.add(row.packageName);
+    if (row.packageName && row.packageName !== "universal") apps.add(row.packageName);
   }
   return { bundles: bundles.size, patches: patches.size, apps: apps.size };
 }

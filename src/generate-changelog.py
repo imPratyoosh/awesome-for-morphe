@@ -50,7 +50,10 @@ def collect_apps(list_json):
         for package_name in package_names or {"universal"}:
             patches_dict.setdefault(package_name, set()).add(patch_name)
 
-    return {package_name: sorted(list(patches_dict[package_name])) for package_name in sorted(patches_dict)}
+    return {
+        package_name: sorted(list(patches_dict[package_name]))
+        for package_name in sorted(patches_dict)
+    }
 
 
 def build_current_bundles():
@@ -71,7 +74,11 @@ def build_current_bundles():
 
 # Inspired by code from Paresh Maheshwari
 def derive_name(package_name, skip_words):
-    parts = [part for part in package_name.split(".") if part not in skip_words and len(part) > 1]
+    parts = [
+        part
+        for part in package_name.split(".")
+        if part not in skip_words and len(part) > 1
+    ]
     name = parts[-1] if parts else package_name.split(".")[-1]
     return name.replace("-", " ").replace("_", " ").title()
 
@@ -286,7 +293,9 @@ def main():
 
         pre_baseline[key] = merged_patches
 
-    pre_notes = build_notes("pre-release", pre_baseline, new_dev, app_metadata, skip_words)
+    pre_notes = build_notes(
+        "pre-release", pre_baseline, new_dev, app_metadata, skip_words
+    )
     if pre_notes:
         CHANGELOG_PRE_PATH.write_text(pre_notes + "\n", encoding="utf8")
         print("Pre-release changelog created.")

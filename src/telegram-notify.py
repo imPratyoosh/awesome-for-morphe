@@ -28,18 +28,18 @@ def main():
     for line in content.splitlines():
         if line.startswith("📢 *Telegram:*") or line.startswith("📢 _Telegram:"):
             continue
-            
+
         line = line.lstrip("# ") if line.startswith("#") else line
-        
+
         idx = line.find("](http")
         if idx != -1 and line.endswith(")"):
-            text_part = line[:idx + 1]
+            text_part = line[: idx + 1]
             url_part = line[idx + 2 : -1]
             url_part = url_part.replace("(", "%28").replace(")", "%29")
             line = f"{text_part}({url_part})"
-            
+
         lines.append(line)
-        
+
     content = "\n".join(lines).strip()
 
     message = f"*{title}*\n\n{content}"

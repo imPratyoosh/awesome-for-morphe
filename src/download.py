@@ -75,11 +75,14 @@ def main():
         base_names = sorted({suffix_pattern.sub("", k) for k in bundles})
         all_pairs = [(base, channel) for base in base_names for channel in CHANNELS]
 
-        if BUNDLES_DIR.exists(): shutil.rmtree(BUNDLES_DIR, ignore_errors=True)
+        if BUNDLES_DIR.exists():
+            shutil.rmtree(BUNDLES_DIR, ignore_errors=True)
         BUNDLES_DIR.mkdir(parents=True, exist_ok=True)
 
         with ThreadPoolExecutor(max_workers=CONCURRENCY) as pool:
-            morphe_entries = [r for r in pool.map(fetch_bundle, all_pairs) if r is not None]
+            morphe_entries = [
+                r for r in pool.map(fetch_bundle, all_pairs) if r is not None
+            ]
 
         saved = 0
         for base, channel, bundle_text in morphe_entries:
@@ -88,26 +91,29 @@ def main():
             )
             saved += 1
         print(f"Downloaded {saved} Morphe bundles.")
-        
+
     else:
         if not BUNDLES_DIR.exists():
             raise SystemExit("BUNDLES_DIR not found. Run with --bundles first.")
-            
+
         list_pairs = []
         for path in BUNDLES_DIR.glob("*.json"):
             match = re.match(r"(.*)-(stable|dev)\.json$", path.name)
             if match:
                 list_pairs.append((match.group(1), match.group(2)))
-        
-        if PATCHES_DIR.exists(): shutil.rmtree(PATCHES_DIR, ignore_errors=True)
+
+        if PATCHES_DIR.exists():
+            shutil.rmtree(PATCHES_DIR, ignore_errors=True)
         PATCHES_DIR.mkdir(parents=True, exist_ok=True)
-        
+
         with ThreadPoolExecutor(max_workers=CONCURRENCY) as pool:
             list_map = {
                 (base, channel): text
-                for base, channel, text in filter(None, pool.map(fetch_list, list_pairs))
+                for base, channel, text in filter(
+                    None, pool.map(fetch_list, list_pairs)
+                )
             }
-            
+
         saved = 0
         for (base, channel), list_text in list_map.items():
             (PATCHES_DIR / f"{base}-{channel}.json").write_text(

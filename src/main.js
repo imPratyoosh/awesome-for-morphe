@@ -9,7 +9,7 @@ import {
   reactive,
   nextTick,
 } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
-import { filterRows, getFilterOptions, loadChannelData, normalizeChannel, summarizeRows } from "./data.js";
+import { filterRows, getFilterOptions, loadChannelData, normalizeChannel, summarizeRows, appName } from "./data.js";
 
 const DEFAULT_CHANNEL = "stable";
 
@@ -25,13 +25,13 @@ function tokenize(str) {
         quoted += str[i];
         i++;
       }
-      tokens.push({ type: 'STRING', value: quoted });
-    } else if (['(', ')', ':', ','].includes(char)) {
+      tokens.push({ type: "STRING", value: quoted });
+    } else if (["(", ")", ":", ","].includes(char)) {
       if (current.trim()) {
-        tokens.push({ type: 'LITERAL', value: current.trim() });
+        tokens.push({ type: "LITERAL", value: current.trim() });
         current = "";
-      } else if (char === ':') {
-        tokens.push({ type: 'LITERAL', value: "" });
+      } else if (char === ":") {
+        tokens.push({ type: "LITERAL", value: "" });
       }
       tokens.push({ type: char });
     } else {
@@ -39,7 +39,7 @@ function tokenize(str) {
     }
   }
   if (current.trim()) {
-    tokens.push({ type: 'LITERAL', value: current.trim() });
+    tokens.push({ type: "LITERAL", value: current.trim() });
   }
   return tokens;
 }
@@ -51,24 +51,24 @@ function parseShowTrie(str) {
 
   function parseNode(prefix) {
     if (pos >= tokens.length) return;
-    
-    if (tokens[pos].type === '(') {
+
+    if (tokens[pos].type === "(") {
       pos++;
-      while (pos < tokens.length && tokens[pos].type !== ')') {
+      while (pos < tokens.length && tokens[pos].type !== ")") {
         parseNode(prefix);
-        if (pos < tokens.length && tokens[pos].type === ',') {
+        if (pos < tokens.length && tokens[pos].type === ",") {
           pos++;
         }
       }
-      if (pos < tokens.length && tokens[pos].type === ')') {
+      if (pos < tokens.length && tokens[pos].type === ")") {
         pos++;
       }
     } else {
       const val = tokens[pos].value;
       pos++;
       const newPrefix = prefix !== null && prefix !== undefined ? prefix + ":" + val : val;
-      
-      if (pos < tokens.length && tokens[pos].type === ':') {
+
+      if (pos < tokens.length && tokens[pos].type === ":") {
         pos++;
         parseNode(newPrefix);
       } else {
@@ -79,7 +79,7 @@ function parseShowTrie(str) {
 
   while (pos < tokens.length) {
     parseNode(null);
-    if (pos < tokens.length && tokens[pos].type === ',') {
+    if (pos < tokens.length && tokens[pos].type === ",") {
       pos++;
     }
   }
@@ -88,7 +88,7 @@ function parseShowTrie(str) {
 }
 
 function formatPatchStr(p) {
-  if (p.includes(':') || p.includes(',') || p.includes('(') || p.includes(')')) {
+  if (p.includes(":") || p.includes(",") || p.includes("(") || p.includes(")")) {
     return `"${p}"`;
   }
   return p;
@@ -111,37 +111,36 @@ function buildShowTrie(flatList) {
     }
   }
 
-  const bundleStrs = [];
-  for (const [bundle, bNode] of Object.entries(root)) {
-    const apps = Object.entries(bNode._apps);
+  const bundleStrings = [];
+  for (const [bundle, bundleNode] of Object.entries(root)) {
+    const apps = Object.entries(bundleNode._apps);
     if (apps.length === 0) {
-      bundleStrs.push(bundle);
+      bundleStrings.push(bundle);
     } else {
-      const appStrs = [];
-      for (const [app, aNode] of apps) {
-        const patches = aNode._patches;
+      const appStrings = [];
+      for (const [app, appNode] of apps) {
+        const patches = appNode._patches;
         if (patches.length === 0) {
-          appStrs.push(app);
+          appStrings.push(app);
         } else if (patches.length === 1) {
-          appStrs.push(`${app}:${formatPatchStr(patches[0])}`);
+          appStrings.push(`${app}:${formatPatchStr(patches[0])}`);
         } else {
-          const pStrs = patches.map(formatPatchStr);
-          appStrs.push(`${app}:(${pStrs.join(',')})`);
+          const patchStrings = patches.map(formatPatchStr);
+          appStrings.push(`${app}:(${patchStrings.join(",")})`);
         }
       }
-      if (appStrs.length === 1) {
-        bundleStrs.push(`${bundle}:${appStrs[0]}`);
+      if (appStrings.length === 1) {
+        bundleStrings.push(`${bundle}:${appStrings[0]}`);
       } else {
-        bundleStrs.push(`${bundle}:(${appStrs.join(',')})`);
+        bundleStrings.push(`${bundle}:(${appStrings.join(",")})`);
       }
     }
   }
-  return bundleStrs.join(',');
+  return bundleStrings.join(",");
 }
 
 createApp({
   setup() {
-    
     const query = ref("");
     const bundle = ref("");
     const app = ref("");
@@ -153,18 +152,29 @@ createApp({
 
     const activeData = ref(null);
     const isLoading = ref(true);
+    const patchesLoaded = ref(false);
     const errorMsg = ref("");
 
-    
     const params = new URLSearchParams(location.search);
-    query.value = params.get("q") || "";
+    const initialQuery = params.get("q") || "";
+    const showParam = params.get("show");
+
+    const priorityKeys = new Set();
+    if (showParam) {
+      showParam.split(",").forEach((p) => {
+        const key = p.split(":")[0];
+        if (key) priorityKeys.add(key);
+      });
+    }
+
+    query.value = initialQuery;
     channel.value = normalizeChannel(params.get("channel") || DEFAULT_CHANNEL);
     sortOrder.value = params.get("sort") || "stars";
 
     function parseShowParam() {
       const search = location.search.substring(1);
       if (!search) return [];
-      
+
       const pairs = search.split("&");
       let rawParam = "";
       for (const pair of pairs) {
@@ -195,37 +205,40 @@ createApp({
       return changelogHighlights.includes(prefix);
     };
 
-    let initBundle = "", initApp = "";
+    let initialBundle = "",
+      initialApp = "";
     if (showArr.length > 0) {
-      const parsed = showArr.map(item => {
+      const parsed = showArr.map((item) => {
         const parts = item.split(":");
         return {
           bundle: parts[0] || "",
-          app: parts[1] || ""
+          app: parts[1] || "",
         };
       });
       const firstBundle = parsed[0].bundle;
-      if (parsed.every(p => p.bundle === firstBundle)) {
-        initBundle = firstBundle;
+      if (parsed.every((p) => p.bundle === firstBundle)) {
+        initialBundle = firstBundle;
       }
       const firstApp = parsed[0].app;
-      if (parsed.every(p => p.app === firstApp)) {
-        initApp = firstApp;
+      if (parsed.every((p) => p.app === firstApp)) {
+        initialApp = firstApp;
       }
     }
-    bundle.value = initBundle;
-    app.value = initApp;
+    bundle.value = initialBundle;
+    app.value = initialApp;
 
     watch([bundle, app], () => {
       const targetPrefix = `${bundle.value || ""}${app.value ? ":" + app.value : ""}`;
-      
-      const matches = showOptions.value.length > 0 && showOptions.value.every(item => {
-        const parts = item.split(":");
-        if (app.value) {
-          return parts[0] === bundle.value && parts[1] === app.value;
-        }
-        return parts[0] === bundle.value && parts.length === 1;
-      });
+
+      const matches =
+        showOptions.value.length > 0 &&
+        showOptions.value.every((item) => {
+          const parts = item.split(":");
+          if (app.value) {
+            return parts[0] === bundle.value && parts[1] === app.value;
+          }
+          return parts[0] === bundle.value && parts.length === 1;
+        });
 
       if (matches) {
         return;
@@ -238,38 +251,54 @@ createApp({
       }
     });
 
-    
-    watch([query, showOptions, channel, sortOrder], (newVals, oldVals) => {
-      // oldVals contains undefineds on the immediate initial run
-      if (oldVals && oldVals.some(v => v !== undefined)) {
-        isChangelogView.value = false;
-      }
+    watch(
+      [query, showOptions, channel, sortOrder],
+      (newVals, oldVals) => {
+        if (oldVals && oldVals.some((v) => v !== undefined)) {
+          isChangelogView.value = false;
+        }
 
-      const urlParts = [];
-      if (query.value) urlParts.push(`q=${encodeURIComponent(query.value)}`);
-      
-      if (showOptions.value.length > 0) {
-        const showStr = buildShowTrie(showOptions.value);
-        const encodedShow = encodeURIComponent(showStr)
-          .replace(/%3A/g, ':')
-          .replace(/%2C/g, ',')
-          .replace(/%28/g, '(')
-          .replace(/%29/g, ')');
-        urlParts.push(`show=${encodedShow}`);
-      }
-      if (channel.value !== DEFAULT_CHANNEL) urlParts.push(`channel=${channel.value}`);
-      if (sortOrder.value !== "stars") urlParts.push(`sort=${sortOrder.value}`);
-      if (isChangelogView.value) urlParts.push("new");
+        const urlParts = [];
+        if (query.value) urlParts.push(`q=${encodeURIComponent(query.value)}`);
 
-      const queryString = urlParts.join("&");
-      history.replaceState(null, "", `${location.pathname}${queryString ? `?${queryString}` : ""}`);
-    }, { immediate: true });
+        if (showOptions.value.length > 0) {
+          const showStr = buildShowTrie(showOptions.value);
+          const encodedShow = encodeURIComponent(showStr)
+            .replace(/%3A/g, ":")
+            .replace(/%2C/g, ",")
+            .replace(/%28/g, "(")
+            .replace(/%29/g, ")");
+          urlParts.push(`show=${encodedShow}`);
+        }
+        if (channel.value !== DEFAULT_CHANNEL) urlParts.push(`channel=${channel.value}`);
+        if (sortOrder.value !== "stars") urlParts.push(`sort=${sortOrder.value}`);
+        if (isChangelogView.value) urlParts.push("new");
+
+        const queryString = urlParts.join("&");
+        history.replaceState(null, "", `${location.pathname}${queryString ? `?${queryString}` : ""}`);
+      },
+      { immediate: true },
+    );
 
     const loadData = async () => {
       isLoading.value = true;
+      patchesLoaded.value = false;
       errorMsg.value = "";
       try {
-        activeData.value = await loadChannelData(channel.value);
+        const currentChannel = channel.value;
+        activeData.value = await loadChannelData(channel.value, Array.from(priorityKeys), (isUpdate) => {
+          if (channel.value !== currentChannel) return;
+          if (isUpdate === null) {
+            patchesLoaded.value = true;
+
+            const otherChannel = channel.value === "stable" ? "latest" : "stable";
+            setTimeout(() => {
+              loadChannelData(otherChannel, [], null).catch(() => {});
+            }, 100);
+          } else if (activeData.value) {
+            activeData.value.rows = [...activeData.value.rows];
+          }
+        });
       } catch (err) {
         errorMsg.value = err.message || err;
       } finally {
@@ -280,7 +309,6 @@ createApp({
     onMounted(loadData);
     watch(channel, loadData);
 
-    
     const filteredRows = computed(() => {
       if (!activeData.value) return [];
       return filterRows(activeData.value, {
@@ -296,27 +324,29 @@ createApp({
         query: query.value,
         showOptions: app.value ? [`:${app.value}`] : [],
       });
-      let bundleOptions = getFilterOptions(rowsForSource).bundleOptions.map(bundleOption => {
-        const bundleObj = activeData.value.bundleMap[bundleOption.value];
-        const repo = bundleObj ? bundleObj.repo.toLowerCase() : "";
-        const icon = bundleObj ? bundleObj.avatarUrl : "";
-        return { ...bundleOption, repo, icon };
-      });
+      let bundleOptions = getFilterOptions(rowsForSource, activeData.value.namesMap).bundleOptions.map(
+        (bundleOption) => {
+          const bundleObj = activeData.value.bundleMap[bundleOption.value];
+          const repo = bundleObj ? bundleObj.repo.toLowerCase() : "";
+          const icon = bundleObj ? bundleObj.avatarUrl : "";
+          return { ...bundleOption, repo, icon };
+        },
+      );
 
       bundleOptions = [...bundleOptions].sort((a, b) => {
         const bundleA = activeData.value.bundleMap[a.value];
         const bundleB = activeData.value.bundleMap[b.value];
-        if (sortOrder.value === 'apps_desc') {
-          const rowsA = activeData.value.rows.filter(r => r.bundleKey === a.value);
-          const rowsB = activeData.value.rows.filter(r => r.bundleKey === b.value);
-          const countA = new Set(rowsA.map(r => r.packageName).filter(Boolean)).size;
-          const countB = new Set(rowsB.map(r => r.packageName).filter(Boolean)).size;
+        if (sortOrder.value === "apps_desc") {
+          const rowsA = activeData.value.rows.filter((r) => r.bundleKey === a.value);
+          const rowsB = activeData.value.rows.filter((r) => r.bundleKey === b.value);
+          const countA = new Set(rowsA.map((r) => r.packageName).filter(Boolean)).size;
+          const countB = new Set(rowsB.map((r) => r.packageName).filter(Boolean)).size;
           if (countA !== countB) return countB - countA;
-        } else if (sortOrder.value === 'latest') {
+        } else if (sortOrder.value === "latest") {
           const dateA = bundleA?.createdAt ? new Date(bundleA.createdAt).getTime() : 0;
           const dateB = bundleB?.createdAt ? new Date(bundleB.createdAt).getTime() : 0;
           if (dateA !== dateB) return dateB - dateA;
-        } else if (sortOrder.value === 'stars') {
+        } else if (sortOrder.value === "stars") {
           const starsA = bundleA?.stars || 0;
           const starsB = bundleB?.stars || 0;
           if (starsA !== starsB) return starsB - starsA;
@@ -328,7 +358,7 @@ createApp({
         query: query.value,
         showOptions: bundle.value ? [bundle.value] : [],
       });
-      const appOptions = getFilterOptions(rowsForApp).appOptions;
+      const appOptions = getFilterOptions(rowsForApp, activeData.value.namesMap).appOptions;
 
       return { bundleOptions, appOptions };
     });
@@ -336,32 +366,31 @@ createApp({
     function filterDropdownOptions(options, searchValue, extraFields) {
       const queryWords = searchValue.toLowerCase().split(/\s+/).filter(Boolean);
       if (queryWords.length === 0) return options;
-      return options.filter(o => {
-        const searchable = [o.label, o.value, ...extraFields.map(f => o[f] || "")]
-          .join(" ").toLowerCase();
-        return queryWords.every(word => searchable.includes(word));
+      return options.filter((o) => {
+        const searchable = [o.label, o.value, ...extraFields.map((f) => o[f] || "")].join(" ").toLowerCase();
+        return queryWords.every((word) => searchable.includes(word));
       });
     }
 
     const filteredAppOptions = computed(() =>
-      filterDropdownOptions(filterOptions.value.appOptions, appSearch.value, [])
+      filterDropdownOptions(filterOptions.value.appOptions, appSearch.value, []),
     );
 
     const filteredBundleOptions = computed(() =>
-      filterDropdownOptions(filterOptions.value.bundleOptions, bundleSearch.value, ["repo"])
+      filterDropdownOptions(filterOptions.value.bundleOptions, bundleSearch.value, ["repo"]),
     );
 
     const stats = computed(() => summarizeRows(filteredRows.value));
 
-    
     const bundlesGroups = computed(() => {
-      const map = new Map();
-      for (const row of filteredRows.value) {
-        if (!map.has(row.bundleKey)) map.set(row.bundleKey, []);
-        map.get(row.bundleKey).push(row);
-      }
-      return Array.from(map.entries())
-        .map(([key, rows]) => {
+      if (!activeData.value) return [];
+
+      const queryWords = (query.value || "").toLowerCase().split(/\s+/).filter(Boolean);
+
+      return activeData.value.bundles
+        .map((bundle) => {
+          const rows = filteredRows.value.filter((r) => r.bundleKey === bundle.key);
+
           const patchMap = new Map();
           for (const row of rows) {
             if (!patchMap.has(row.patchId)) {
@@ -385,51 +414,90 @@ createApp({
             }
           }
           const patches = Array.from(patchMap.values()).sort((a, b) => a.patchName.localeCompare(b.patchName));
+
           const appsMap = new Map();
+
+          if (!patchesLoaded.value && bundle.targetApps) {
+            for (const packageName of bundle.targetApps) {
+              const name = appName(packageName, activeData.value.namesMap, activeData.value.skipSet);
+              appsMap.set(packageName, {
+                id: `${bundle.key}:${packageName}`,
+                appName: name,
+                appIcon: activeData.value.namesMap[packageName]?.iconUrl || "",
+                packageName,
+                versions: [],
+              });
+            }
+          }
+
           for (const p of patches) {
             for (const app of p.apps) {
               const appKey = app.packageName || app.appName || "any";
-              if (!appsMap.has(appKey)) {
-                appsMap.set(appKey, app);
-              }
+              appsMap.set(appKey, app);
             }
           }
+
           const appsList = Array.from(appsMap.values()).sort((a, b) => {
-            const isAnyA = !a.appName || a.appName === "Unspecified" ? 1 : 0;
-            const isAnyB = !b.appName || b.appName === "Unspecified" ? 1 : 0;
+            const isAnyA = !a.packageName || a.packageName === "universal" ? 1 : 0;
+            const isAnyB = !b.packageName || b.packageName === "universal" ? 1 : 0;
             if (isAnyA !== isAnyB) return isAnyA - isAnyB;
             return (a.appName || "").localeCompare(b.appName || "");
           });
+
           return {
-            key,
-            bundle: activeData.value.bundleMap[key],
+            key: bundle.key,
+            bundle: bundle,
             rows,
             patches,
             appsList,
           };
         })
+        .filter((group) => {
+          if (group.rows.length > 0) return true;
+          if (patchesLoaded.value) return false;
+
+          if (showOptions.value.length > 0) {
+            const matched = showOptions.value.some((showOpt) => {
+              const parts = showOpt.split(":");
+              const b = parts[0];
+              const a = parts.length > 1 ? parts[1] : "";
+              if (b && b !== group.key) return false;
+              if (a && a !== "universal" && !group.bundle.targetApps?.includes(a)) return false;
+              return true;
+            });
+            if (!matched) return false;
+          }
+
+          if (queryWords.length > 0) {
+            const appNamesStr = (group.bundle.targetApps || [])
+              .map((pkg) => appName(pkg, activeData.value.namesMap, activeData.value.skipSet))
+              .join(" ");
+            const searchable = [group.key, group.bundle.repo, ...(group.bundle.targetApps || []), appNamesStr]
+              .join(" ")
+              .toLowerCase();
+            if (!queryWords.every((word) => searchable.includes(word))) return false;
+          }
+
+          return true;
+        })
         .sort((a, b) => {
-          if (sortOrder.value === 'apps_desc') {
-            const countA = countBy(a.rows, r => r.packageName);
-            const countB = countBy(b.rows, r => r.packageName);
+          if (sortOrder.value === "apps_desc") {
+            const countA = a.appsList.length;
+            const countB = b.appsList.length;
             if (countA !== countB) return countB - countA;
-          } else if (sortOrder.value === 'latest') {
+          } else if (sortOrder.value === "latest") {
             const dateA = a.bundle.createdAt ? new Date(a.bundle.createdAt).getTime() : 0;
             const dateB = b.bundle.createdAt ? new Date(b.bundle.createdAt).getTime() : 0;
             if (dateA !== dateB) return dateB - dateA;
-          } else if (sortOrder.value === 'stars') {
+          } else if (sortOrder.value === "stars") {
             const starsA = a.bundle.stars || 0;
             const starsB = b.bundle.stars || 0;
             if (starsA !== starsB) return starsB - starsA;
-          } else if (sortOrder.value === 'alpha') {
-            return a.key.localeCompare(b.key);
           }
-
           return a.key.localeCompare(b.key);
         });
     });
 
-    
     const expandedVersions = reactive(new Set());
     const toggleVersions = (id) => {
       expandedVersions.has(id) ? expandedVersions.delete(id) : expandedVersions.add(id);
@@ -456,7 +524,6 @@ createApp({
       }
     });
 
-    
     const activeSwipeGroup = ref("");
     const swipeDirection = ref("");
 
@@ -537,7 +604,6 @@ createApp({
       bundleSearch.value = "";
     };
 
-    
     const formatDate = (val) => {
       const d = val ? new Date(val) : null;
       return d && !isNaN(d.getTime())
@@ -579,17 +645,19 @@ createApp({
       return `https://morphe.software/add-source?${platform}=${encodeURI(path)}`;
     };
 
-    
     const copiedStates = reactive({});
     const copyText = (text, key) => {
-      navigator.clipboard.writeText(text).then(() => {
-        copiedStates[key] = true;
-        setTimeout(() => {
-          copiedStates[key] = false;
-        }, 1500);
-      }).catch((err) => {
-        console.error("Failed to copy text: ", err);
-      });
+      navigator.clipboard
+        .writeText(text)
+        .then(() => {
+          copiedStates[key] = true;
+          setTimeout(() => {
+            copiedStates[key] = false;
+          }, 1500);
+        })
+        .catch((err) => {
+          console.error("Failed to copy text: ", err);
+        });
     };
 
     const resetFilters = () => {
@@ -606,7 +674,7 @@ createApp({
 
     const isNewBundle = (group) => {
       const urlParams = new URLSearchParams(window.location.search);
-      if (urlParams.has('new')) return false;
+      if (urlParams.has("new")) return false;
 
       if (!group || !group.bundle || !group.bundle.firstSeen) return false;
       const firstSeenTime = new Date(group.bundle.firstSeen).getTime();
@@ -615,7 +683,6 @@ createApp({
       return diffDays <= 7;
     };
 
-    
     return {
       query,
       bundle,

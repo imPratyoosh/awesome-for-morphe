@@ -10,14 +10,12 @@
     "stable": {
       "file": "patches/AlexNaga-stable.json",
       "version": "v1.30.0",
-      "createdAt": "2026-05-05T11:51:41"
+      "createdAt": "2026-05-05T11:51:41",
+      "targetApps": [
+        "se.matlistan.free"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 2,
-    "appCount": 1,
-    "targetApps": [
-      "se.matlistan.free"
-    ]
+    "latest": "stable"
   },
   "ImmortalZeus": {
     "source": "github",
@@ -30,20 +28,22 @@
     "stable": {
       "file": "patches/ImmortalZeus-stable.json",
       "version": "v1.0.0",
-      "createdAt": "2026-05-15T03:33:31"
+      "createdAt": "2026-05-15T03:33:31",
+      "targetApps": [
+        "com.example.app",
+        "universal"
+      ]
     },
     "dev": {
       "file": "patches/ImmortalZeus-dev.json",
       "version": "v1.0.0-dev.1",
-      "createdAt": "2026-05-15T03:20:18"
+      "createdAt": "2026-05-15T03:20:18",
+      "targetApps": [
+        "com.example.app",
+        "universal"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 2,
-    "appCount": 1,
-    "targetApps": [
-      "com.example.app",
-      "universal"
-    ]
+    "latest": "stable"
   },
   "abhis1n": {
     "source": "github",
@@ -56,19 +56,20 @@
     "stable": {
       "file": "patches/abhis1n-stable.json",
       "version": "v1.0.1",
-      "createdAt": "2026-06-17T06:24:45"
+      "createdAt": "2026-06-17T06:24:45",
+      "targetApps": [
+        "com.Splitwise.SplitwiseMobile"
+      ]
     },
     "dev": {
       "file": "patches/abhis1n-dev.json",
       "version": "v1.0.1-dev.1",
-      "createdAt": "2026-06-17T06:17:24"
+      "createdAt": "2026-06-17T06:17:24",
+      "targetApps": [
+        "com.Splitwise.SplitwiseMobile"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 1,
-    "appCount": 1,
-    "targetApps": [
-      "com.Splitwise.SplitwiseMobile"
-    ]
+    "latest": "stable"
   },
   "adobo": {
     "source": "github",
@@ -81,23 +82,28 @@
     "stable": {
       "file": "patches/adobo-stable.json",
       "version": "v1.2.0",
-      "createdAt": "2026-06-14T11:51:20"
+      "createdAt": "2026-06-14T11:51:20",
+      "targetApps": [
+        "com.google.android.inputmethod.latin",
+        "com.imdb.mobile",
+        "com.ninegag.android.app",
+        "com.reddit.frontpage",
+        "universal"
+      ]
     },
     "dev": {
       "file": "patches/adobo-dev.json",
       "version": "v1.3.0-dev.1",
-      "createdAt": "2026-06-20T16:24:40"
+      "createdAt": "2026-06-20T16:24:40",
+      "targetApps": [
+        "com.google.android.inputmethod.latin",
+        "com.imdb.mobile",
+        "com.ninegag.android.app",
+        "com.reddit.frontpage",
+        "universal"
+      ]
     },
-    "latest": "dev",
-    "patchCount": 38,
-    "appCount": 4,
-    "targetApps": [
-      "com.google.android.inputmethod.latin",
-      "com.imdb.mobile",
-      "com.ninegag.android.app",
-      "com.reddit.frontpage",
-      "universal"
-    ]
+    "latest": "dev"
   },
   "ajstrick81-androidtv": {
     "source": "github",
@@ -110,28 +116,37 @@
     "stable": {
       "file": "patches/ajstrick81-androidtv-stable.json",
       "version": "v1.9.0",
-      "createdAt": "2026-07-03T14:00:00"
+      "createdAt": "2026-07-03T14:00:00",
+      "targetApps": [
+        "com.amazon.amazonvideo.livingroom",
+        "com.bamnetworks.mobile.android.gameday.atbat",
+        "com.cbs.ott",
+        "com.disney.disneyplus",
+        "com.fox.foxone",
+        "com.peacocktv.peacockandroid",
+        "com.tubitv",
+        "com.univision.prendetv",
+        "com.wbd.hbomax",
+        "tv.pluto.android"
+      ]
     },
     "dev": {
       "file": "patches/ajstrick81-androidtv-dev.json",
       "version": "v1.5.7-dev.3",
-      "createdAt": "2026-06-26T16:45:34"
+      "createdAt": "2026-06-26T16:45:34",
+      "targetApps": [
+        "com.amazon.amazonvideo.livingroom",
+        "com.bamnetworks.mobile.android.gameday.atbat",
+        "com.cbs.ott",
+        "com.disney.disneyplus",
+        "com.fox.foxone",
+        "com.peacocktv.peacockandroid",
+        "com.tubitv",
+        "com.univision.prendetv",
+        "com.wbd.hbomax"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 16,
-    "appCount": 10,
-    "targetApps": [
-      "com.amazon.amazonvideo.livingroom",
-      "com.bamnetworks.mobile.android.gameday.atbat",
-      "com.cbs.ott",
-      "com.disney.disneyplus",
-      "com.fox.foxone",
-      "com.peacocktv.peacockandroid",
-      "com.tubitv",
-      "com.univision.prendetv",
-      "com.wbd.hbomax",
-      "tv.pluto.android"
-    ]
+    "latest": "stable"
   },
   "almewty": {
     "source": "github",
@@ -144,15 +159,13 @@
     "dev": {
       "file": "patches/almewty-dev.json",
       "version": "v1.0.0-dev.1",
-      "createdAt": "2026-01-30T07:54:21"
+      "createdAt": "2026-01-30T07:54:21",
+      "targetApps": [
+        "com.application.pokecardex",
+        "com.example.app"
+      ]
     },
-    "latest": "dev",
-    "patchCount": 3,
-    "appCount": 2,
-    "targetApps": [
-      "com.application.pokecardex",
-      "com.example.app"
-    ]
+    "latest": "dev"
   },
   "ameen-morphe": {
     "source": "github",
@@ -165,20 +178,22 @@
     "stable": {
       "file": "patches/ameen-morphe-stable.json",
       "version": "v1.1.0",
-      "createdAt": "2026-05-07T22:57:11"
+      "createdAt": "2026-05-07T22:57:11",
+      "targetApps": [
+        "com.roidapp.photogrid",
+        "io.foodvisor.foodvisor"
+      ]
     },
     "dev": {
       "file": "patches/ameen-morphe-dev.json",
       "version": "v1.1.0-dev.1",
-      "createdAt": "2026-05-07T22:54:46"
+      "createdAt": "2026-05-07T22:54:46",
+      "targetApps": [
+        "com.roidapp.photogrid",
+        "io.foodvisor.foodvisor"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 2,
-    "appCount": 2,
-    "targetApps": [
-      "com.roidapp.photogrid",
-      "io.foodvisor.foodvisor"
-    ]
+    "latest": "stable"
   },
   "ameenalasady": {
     "source": "github",
@@ -191,19 +206,20 @@
     "stable": {
       "file": "patches/ameenalasady-stable.json",
       "version": "v1.0.1",
-      "createdAt": "2026-05-04T02:09:19"
+      "createdAt": "2026-05-04T02:09:19",
+      "targetApps": [
+        "com.roidapp.photogrid"
+      ]
     },
     "dev": {
       "file": "patches/ameenalasady-dev.json",
       "version": "v1.0.1-dev.1",
-      "createdAt": "2026-05-04T02:02:43"
+      "createdAt": "2026-05-04T02:02:43",
+      "targetApps": [
+        "com.roidapp.photogrid"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 1,
-    "appCount": 1,
-    "targetApps": [
-      "com.roidapp.photogrid"
-    ]
+    "latest": "stable"
   },
   "amplerevanced": {
     "source": "github",
@@ -216,24 +232,29 @@
     "stable": {
       "file": "patches/amplerevanced-stable.json",
       "version": "v1.1.0",
-      "createdAt": "2026-06-13T06:21:09"
+      "createdAt": "2026-06-13T06:21:09",
+      "targetApps": [
+        "com.dcinside.app.android",
+        "com.flexcil.flexcilnote",
+        "com.kakao.talk",
+        "com.navercorp.game.android.community",
+        "universal"
+      ]
     },
     "dev": {
       "file": "patches/amplerevanced-dev.json",
       "version": "v1.2.0-dev.8",
-      "createdAt": "2026-06-27T15:43:34"
+      "createdAt": "2026-06-27T15:43:34",
+      "targetApps": [
+        "com.dcinside.app.android",
+        "com.flexcil.flexcilnote",
+        "com.kakao.talk",
+        "com.navercorp.game.android.community",
+        "kr.co.nowcom.mobile.afreeca",
+        "universal"
+      ]
     },
-    "latest": "dev",
-    "patchCount": 85,
-    "appCount": 5,
-    "targetApps": [
-      "com.dcinside.app.android",
-      "com.flexcil.flexcilnote",
-      "com.kakao.talk",
-      "com.navercorp.game.android.community",
-      "kr.co.nowcom.mobile.afreeca",
-      "universal"
-    ]
+    "latest": "dev"
   },
   "anddea": {
     "source": "github",
@@ -246,21 +267,24 @@
     "stable": {
       "file": "patches/anddea-stable.json",
       "version": "v4.1.0",
-      "createdAt": "2026-06-16T15:37:39"
+      "createdAt": "2026-06-16T15:37:39",
+      "targetApps": [
+        "com.google.android.apps.youtube.music",
+        "com.google.android.youtube",
+        "universal"
+      ]
     },
     "dev": {
       "file": "patches/anddea-dev.json",
       "version": "v4.2.0-dev.2",
-      "createdAt": "2026-07-03T18:34:13"
+      "createdAt": "2026-07-03T18:34:13",
+      "targetApps": [
+        "com.google.android.apps.youtube.music",
+        "com.google.android.youtube",
+        "universal"
+      ]
     },
-    "latest": "dev",
-    "patchCount": 115,
-    "appCount": 2,
-    "targetApps": [
-      "com.google.android.apps.youtube.music",
-      "com.google.android.youtube",
-      "universal"
-    ]
+    "latest": "dev"
   },
   "anddea-morphed": {
     "source": "github",
@@ -273,19 +297,17 @@
     "dev": {
       "file": "patches/anddea-morphed-dev.json",
       "version": "v3.17.0-dev.2",
-      "createdAt": "2026-02-11T15:55:58"
+      "createdAt": "2026-02-11T15:55:58",
+      "targetApps": [
+        "com.google.android.apps.youtube.music",
+        "com.google.android.youtube",
+        "com.reddit.frontpage",
+        "com.spotify.music",
+        "com.ysy.app.firewall",
+        "universal"
+      ]
     },
-    "latest": "dev",
-    "patchCount": 133,
-    "appCount": 5,
-    "targetApps": [
-      "com.google.android.apps.youtube.music",
-      "com.google.android.youtube",
-      "com.reddit.frontpage",
-      "com.spotify.music",
-      "com.ysy.app.firewall",
-      "universal"
-    ]
+    "latest": "dev"
   },
   "andronedev": {
     "source": "github",
@@ -298,19 +320,20 @@
     "stable": {
       "file": "patches/andronedev-stable.json",
       "version": "v2.3.0",
-      "createdAt": "2026-04-01T21:23:06"
+      "createdAt": "2026-04-01T21:23:06",
+      "targetApps": [
+        "com.thetransitapp.droid"
+      ]
     },
     "dev": {
       "file": "patches/andronedev-dev.json",
       "version": "v2.3.0-dev.1",
-      "createdAt": "2026-04-01T21:09:44"
+      "createdAt": "2026-04-01T21:09:44",
+      "targetApps": [
+        "com.thetransitapp.droid"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 2,
-    "appCount": 1,
-    "targetApps": [
-      "com.thetransitapp.droid"
-    ]
+    "latest": "stable"
   },
   "ariecos": {
     "source": "github",
@@ -323,20 +346,22 @@
     "stable": {
       "file": "patches/ariecos-stable.json",
       "version": "v1.1.15",
-      "createdAt": "2026-04-28T00:47:20"
+      "createdAt": "2026-04-28T00:47:20",
+      "targetApps": [
+        "com.google.android.apps.bard",
+        "com.google.android.googlequicksearchbox"
+      ]
     },
     "dev": {
       "file": "patches/ariecos-dev.json",
       "version": "v1.1.16",
-      "createdAt": "2026-05-16T23:26:44"
+      "createdAt": "2026-05-16T23:26:44",
+      "targetApps": [
+        "com.google.android.apps.bard",
+        "com.google.android.googlequicksearchbox"
+      ]
     },
-    "latest": "dev",
-    "patchCount": 2,
-    "appCount": 2,
-    "targetApps": [
-      "com.google.android.apps.bard",
-      "com.google.android.googlequicksearchbox"
-    ]
+    "latest": "dev"
   },
   "arunpdl": {
     "source": "github",
@@ -349,20 +374,22 @@
     "stable": {
       "file": "patches/arunpdl-stable.json",
       "version": "v1.0.2",
-      "createdAt": "2026-06-29T06:27:12"
+      "createdAt": "2026-06-29T06:27:12",
+      "targetApps": [
+        "com.harwin.prismatica",
+        "com.jellywatch.app"
+      ]
     },
     "dev": {
       "file": "patches/arunpdl-dev.json",
       "version": "v1.0.2-dev.1",
-      "createdAt": "2026-06-29T06:22:00"
+      "createdAt": "2026-06-29T06:22:00",
+      "targetApps": [
+        "com.harwin.prismatica",
+        "com.jellywatch.app"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 5,
-    "appCount": 2,
-    "targetApps": [
-      "com.harwin.prismatica",
-      "com.jellywatch.app"
-    ]
+    "latest": "stable"
   },
   "bholeykabhakt": {
     "source": "github",
@@ -375,33 +402,48 @@
     "stable": {
       "file": "patches/bholeykabhakt-stable.json",
       "version": "v2.12.0",
-      "createdAt": "2026-06-22T17:44:41"
+      "createdAt": "2026-06-22T17:44:41",
+      "targetApps": [
+        "com.atmfee",
+        "com.backdrops.wallpapers",
+        "com.llamalab.automate",
+        "com.nis.app",
+        "com.noctuasoftware.stellarium_free",
+        "com.proto.circuitsimulator",
+        "com.ttxapps.autosync",
+        "com.ufovpn.connect.velnet",
+        "com.vitotechnology.StarWalk2Free",
+        "com.vitotechnology.sky.tonight.map.star.walk",
+        "com.vpn.free.hotspot.secure.vpnify",
+        "io.funswitch.blocker",
+        "org.zwanoo.android.speedtest",
+        "pl.solidexplorer2",
+        "universal"
+      ]
     },
     "dev": {
       "file": "patches/bholeykabhakt-dev.json",
       "version": "v2.12.0-dev.1",
-      "createdAt": "2026-06-19T07:44:04"
+      "createdAt": "2026-06-19T07:44:04",
+      "targetApps": [
+        "com.atmfee",
+        "com.backdrops.wallpapers",
+        "com.llamalab.automate",
+        "com.nis.app",
+        "com.noctuasoftware.stellarium_free",
+        "com.proto.circuitsimulator",
+        "com.ttxapps.autosync",
+        "com.ufovpn.connect.velnet",
+        "com.vitotechnology.StarWalk2Free",
+        "com.vitotechnology.sky.tonight.map.star.walk",
+        "com.vpn.free.hotspot.secure.vpnify",
+        "io.funswitch.blocker",
+        "org.zwanoo.android.speedtest",
+        "pl.solidexplorer2",
+        "universal"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 24,
-    "appCount": 14,
-    "targetApps": [
-      "com.atmfee",
-      "com.backdrops.wallpapers",
-      "com.llamalab.automate",
-      "com.nis.app",
-      "com.noctuasoftware.stellarium_free",
-      "com.proto.circuitsimulator",
-      "com.ttxapps.autosync",
-      "com.ufovpn.connect.velnet",
-      "com.vitotechnology.StarWalk2Free",
-      "com.vitotechnology.sky.tonight.map.star.walk",
-      "com.vpn.free.hotspot.secure.vpnify",
-      "io.funswitch.blocker",
-      "org.zwanoo.android.speedtest",
-      "pl.solidexplorer2",
-      "universal"
-    ]
+    "latest": "stable"
   },
   "binarymend": {
     "source": "github",
@@ -414,25 +456,32 @@
     "stable": {
       "file": "patches/binarymend-stable.json",
       "version": "v1.3.1",
-      "createdAt": "2026-04-27T12:49:57"
+      "createdAt": "2026-04-27T12:49:57",
+      "targetApps": [
+        "app.symfonik.music.player",
+        "com.burton999.notecal",
+        "com.flyersoft.moonreader",
+        "com.pinterest",
+        "com.quickcursor",
+        "com.truecaller",
+        "org.withouthat.acalendar"
+      ]
     },
     "dev": {
       "file": "patches/binarymend-dev.json",
       "version": "v1.3.1-dev.1",
-      "createdAt": "2026-04-26T08:22:08"
+      "createdAt": "2026-04-26T08:22:08",
+      "targetApps": [
+        "app.symfonik.music.player",
+        "com.burton999.notecal",
+        "com.flyersoft.moonreader",
+        "com.pinterest",
+        "com.quickcursor",
+        "com.truecaller",
+        "org.withouthat.acalendar"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 11,
-    "appCount": 7,
-    "targetApps": [
-      "app.symfonik.music.player",
-      "com.burton999.notecal",
-      "com.flyersoft.moonreader",
-      "com.pinterest",
-      "com.quickcursor",
-      "com.truecaller",
-      "org.withouthat.acalendar"
-    ]
+    "latest": "stable"
   },
   "braydog2010": {
     "source": "github",
@@ -445,19 +494,20 @@
     "stable": {
       "file": "patches/braydog2010-stable.json",
       "version": "v1.0.0",
-      "createdAt": "2026-06-22T21:11:54"
+      "createdAt": "2026-06-22T21:11:54",
+      "targetApps": [
+        "com.dubani.dub"
+      ]
     },
     "dev": {
       "file": "patches/braydog2010-dev.json",
       "version": "v1.1.0-dev.4",
-      "createdAt": "2026-06-22T23:17:46"
+      "createdAt": "2026-06-22T23:17:46",
+      "targetApps": [
+        "com.dubani.dub"
+      ]
     },
-    "latest": "dev",
-    "patchCount": 2,
-    "appCount": 1,
-    "targetApps": [
-      "com.dubani.dub"
-    ]
+    "latest": "dev"
   },
   "brosssh": {
     "source": "github",
@@ -470,23 +520,28 @@
     "stable": {
       "file": "patches/brosssh-stable.json",
       "version": "v2.8.0",
-      "createdAt": "2026-06-25T20:00:02"
+      "createdAt": "2026-06-25T20:00:02",
+      "targetApps": [
+        "com.instagram.android",
+        "cz.seznam.mapy",
+        "de.komoot.android",
+        "fr.chargeprice.app",
+        "fr.tramb.park4night"
+      ]
     },
     "dev": {
       "file": "patches/brosssh-dev.json",
       "version": "v2.8.1-dev.4",
-      "createdAt": "2026-06-26T09:54:55"
+      "createdAt": "2026-06-26T09:54:55",
+      "targetApps": [
+        "com.instagram.android",
+        "cz.seznam.mapy",
+        "de.komoot.android",
+        "fr.chargeprice.app",
+        "fr.tramb.park4night"
+      ]
     },
-    "latest": "dev",
-    "patchCount": 22,
-    "appCount": 5,
-    "targetApps": [
-      "com.instagram.android",
-      "cz.seznam.mapy",
-      "de.komoot.android",
-      "fr.chargeprice.app",
-      "fr.tramb.park4night"
-    ]
+    "latest": "dev"
   },
   "browzomje": {
     "source": "github",
@@ -499,19 +554,20 @@
     "stable": {
       "file": "patches/browzomje-stable.json",
       "version": "v1.3.2",
-      "createdAt": "2026-07-01T16:43:57"
+      "createdAt": "2026-07-01T16:43:57",
+      "targetApps": [
+        "com.pinterest"
+      ]
     },
     "dev": {
       "file": "patches/browzomje-dev.json",
       "version": "v1.2.2-dev.1",
-      "createdAt": "2026-06-25T21:43:58"
+      "createdAt": "2026-06-25T21:43:58",
+      "targetApps": [
+        "com.pinterest"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 5,
-    "appCount": 1,
-    "targetApps": [
-      "com.pinterest"
-    ]
+    "latest": "stable"
   },
   "chiggi": {
     "source": "github",
@@ -524,18 +580,16 @@
     "stable": {
       "file": "patches/chiggi-stable.json",
       "version": "v1.14.3",
-      "createdAt": "2026-06-24T01:02:13"
+      "createdAt": "2026-06-24T01:02:13",
+      "targetApps": [
+        "com.crazygames.crazygamesapp",
+        "com.easybrain.arrow.puzzle.game",
+        "com.instagram.barcelona",
+        "com.sonyliv",
+        "net.nutrilio"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 31,
-    "appCount": 5,
-    "targetApps": [
-      "com.crazygames.crazygamesapp",
-      "com.easybrain.arrow.puzzle.game",
-      "com.instagram.barcelona",
-      "com.sonyliv",
-      "net.nutrilio"
-    ]
+    "latest": "stable"
   },
   "docbt": {
     "source": "github",
@@ -548,21 +602,24 @@
     "stable": {
       "file": "patches/docbt-stable.json",
       "version": "v1.9.0",
-      "createdAt": "2026-06-20T03:31:38"
+      "createdAt": "2026-06-20T03:31:38",
+      "targetApps": [
+        "com.ebay.kleinanzeigen",
+        "com.google.android.apps.magazines",
+        "universal"
+      ]
     },
     "dev": {
       "file": "patches/docbt-dev.json",
       "version": "v1.3.1-dev.2",
-      "createdAt": "2026-03-21T15:09:32"
+      "createdAt": "2026-03-21T15:09:32",
+      "targetApps": [
+        "com.ebay.kleinanzeigen",
+        "com.google.android.apps.magazines",
+        "universal"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 6,
-    "appCount": 2,
-    "targetApps": [
-      "com.ebay.kleinanzeigen",
-      "com.google.android.apps.magazines",
-      "universal"
-    ]
+    "latest": "stable"
   },
   "edge-morphe": {
     "source": "github",
@@ -575,14 +632,12 @@
     "stable": {
       "file": "patches/edge-morphe-stable.json",
       "version": "v1.32.0",
-      "createdAt": "2026-06-11T08:29:13"
+      "createdAt": "2026-06-11T08:29:13",
+      "targetApps": [
+        "com.microsoft.emmx"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 3,
-    "appCount": 1,
-    "targetApps": [
-      "com.microsoft.emmx"
-    ]
+    "latest": "stable"
   },
   "ee-morphe": {
     "source": "gitlab",
@@ -595,22 +650,25 @@
     "stable": {
       "file": "patches/ee-morphe-stable.json",
       "version": "v1.2.2",
-      "createdAt": "2026-06-28T17:36:44"
+      "createdAt": "2026-06-28T17:36:44",
+      "targetApps": [
+        "com.byairapp.android",
+        "epixler.de.hypnobox_android",
+        "universal"
+      ]
     },
     "dev": {
       "file": "patches/ee-morphe-dev.json",
       "version": "v1.3.0-dev.12",
-      "createdAt": "2026-07-03T18:17:10"
+      "createdAt": "2026-07-03T18:17:10",
+      "targetApps": [
+        "com.byairapp.android",
+        "com.hello.german",
+        "epixler.de.hypnobox_android",
+        "universal"
+      ]
     },
-    "latest": "dev",
-    "patchCount": 9,
-    "appCount": 3,
-    "targetApps": [
-      "com.byairapp.android",
-      "com.hello.german",
-      "epixler.de.hypnobox_android",
-      "universal"
-    ]
+    "latest": "dev"
   },
   "eksi": {
     "source": "github",
@@ -623,14 +681,12 @@
     "stable": {
       "file": "patches/eksi-stable.json",
       "version": "v0.1.1",
-      "createdAt": "2026-05-06T07:04:53"
+      "createdAt": "2026-05-06T07:04:53",
+      "targetApps": [
+        "com.eksiteknoloji.eksisozluk"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 1,
-    "appCount": 1,
-    "targetApps": [
-      "com.eksiteknoloji.eksisozluk"
-    ]
+    "latest": "stable"
   },
   "eyalm2000": {
     "source": "github",
@@ -643,14 +699,12 @@
     "stable": {
       "file": "patches/eyalm2000-stable.json",
       "version": "v1.2.0",
-      "createdAt": "2026-03-26T08:55:30"
+      "createdAt": "2026-03-26T08:55:30",
+      "targetApps": [
+        "com.aspiro.tidal"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 2,
-    "appCount": 1,
-    "targetApps": [
-      "com.aspiro.tidal"
-    ]
+    "latest": "stable"
   },
   "hk-morphe": {
     "source": "github",
@@ -663,22 +717,26 @@
     "stable": {
       "file": "patches/hk-morphe-stable.json",
       "version": "v1.4.3",
-      "createdAt": "2026-06-29T03:33:17"
+      "createdAt": "2026-06-29T03:33:17",
+      "targetApps": [
+        "com.laurencedawson.reddit_sync",
+        "com.laurencedawson.reddit_sync.dev",
+        "com.laurencedawson.reddit_sync.pro",
+        "universal"
+      ]
     },
     "dev": {
       "file": "patches/hk-morphe-dev.json",
       "version": "v1.5.0-dev.1",
-      "createdAt": "2026-07-02T04:51:19"
+      "createdAt": "2026-07-02T04:51:19",
+      "targetApps": [
+        "com.laurencedawson.reddit_sync",
+        "com.laurencedawson.reddit_sync.dev",
+        "com.laurencedawson.reddit_sync.pro",
+        "universal"
+      ]
     },
-    "latest": "dev",
-    "patchCount": 9,
-    "appCount": 3,
-    "targetApps": [
-      "com.laurencedawson.reddit_sync",
-      "com.laurencedawson.reddit_sync.dev",
-      "com.laurencedawson.reddit_sync.pro",
-      "universal"
-    ]
+    "latest": "dev"
   },
   "hoo-dles": {
     "source": "github",
@@ -691,70 +749,122 @@
     "stable": {
       "file": "patches/hoo-dles-stable.json",
       "version": "v1.38.1",
-      "createdAt": "2026-06-28T22:46:25"
+      "createdAt": "2026-06-28T22:46:25",
+      "targetApps": [
+        "app.ttmikstories.android",
+        "bitpit.launcher",
+        "ch.protonvpn.android",
+        "cn.ommiao.iconpacker",
+        "cn.wps.moffice_eng",
+        "com.adguard.android",
+        "com.alltrails.alltrails",
+        "com.amazon.avod.thirdpartyclient",
+        "com.avocards",
+        "com.bambuna.podcastaddict",
+        "com.busuu.android.enc",
+        "com.duolingo",
+        "com.getmimo",
+        "com.github.android",
+        "com.goodreads",
+        "com.google.android.apps.magazines",
+        "com.hellochinese",
+        "com.intsig.camscanner",
+        "com.lyfta",
+        "com.merriamwebster",
+        "com.michaldrabik.showly2",
+        "com.mirinae.mirinae",
+        "com.mobilefootie.wc2010",
+        "com.myfitnesspal.android",
+        "com.pandora.android",
+        "com.qbis.guessthecountry",
+        "com.rp.hypertrophy",
+        "com.sbs.diet",
+        "com.sbs.train",
+        "com.snorelab.app",
+        "com.sofascore.results",
+        "com.soundcloud.android",
+        "com.teslacoilsw.launcher",
+        "com.urbandroid.sleep",
+        "com.wallpaperscraft.wallpaper",
+        "com.windyty.android",
+        "com.xodo.pdf.reader",
+        "com.zombodroid.MemeGenerator",
+        "cz.ackee.ventusky",
+        "ginlemon.flowerfree",
+        "jp.ne.ibis.ibispaintx.app",
+        "kr.co.yjteam.dailypay",
+        "kr.eggbun.eggconvo",
+        "me.mycake",
+        "net.teuida.teuida",
+        "nom.vrd",
+        "org.languageapp.lingory",
+        "org.totschnig.myexpenses",
+        "pl.solidexplorer2",
+        "ru.iiec.pydroid3",
+        "universal",
+        "videoeditor.videorecorder.screenrecorder"
+      ]
     },
     "dev": {
       "file": "patches/hoo-dles-dev.json",
       "version": "v1.38.1-dev.1",
-      "createdAt": "2026-06-28T22:16:35"
+      "createdAt": "2026-06-28T22:16:35",
+      "targetApps": [
+        "app.ttmikstories.android",
+        "bitpit.launcher",
+        "ch.protonvpn.android",
+        "cn.ommiao.iconpacker",
+        "cn.wps.moffice_eng",
+        "com.adguard.android",
+        "com.alltrails.alltrails",
+        "com.amazon.avod.thirdpartyclient",
+        "com.avocards",
+        "com.bambuna.podcastaddict",
+        "com.busuu.android.enc",
+        "com.duolingo",
+        "com.getmimo",
+        "com.github.android",
+        "com.goodreads",
+        "com.google.android.apps.magazines",
+        "com.hellochinese",
+        "com.intsig.camscanner",
+        "com.lyfta",
+        "com.merriamwebster",
+        "com.michaldrabik.showly2",
+        "com.mirinae.mirinae",
+        "com.mobilefootie.wc2010",
+        "com.myfitnesspal.android",
+        "com.pandora.android",
+        "com.qbis.guessthecountry",
+        "com.rp.hypertrophy",
+        "com.sbs.diet",
+        "com.sbs.train",
+        "com.snorelab.app",
+        "com.sofascore.results",
+        "com.soundcloud.android",
+        "com.teslacoilsw.launcher",
+        "com.urbandroid.sleep",
+        "com.wallpaperscraft.wallpaper",
+        "com.windyty.android",
+        "com.xodo.pdf.reader",
+        "com.zombodroid.MemeGenerator",
+        "cz.ackee.ventusky",
+        "ginlemon.flowerfree",
+        "jp.ne.ibis.ibispaintx.app",
+        "kr.co.yjteam.dailypay",
+        "kr.eggbun.eggconvo",
+        "me.mycake",
+        "net.teuida.teuida",
+        "nom.vrd",
+        "org.languageapp.lingory",
+        "org.totschnig.myexpenses",
+        "pl.solidexplorer2",
+        "ru.iiec.pydroid3",
+        "universal",
+        "videoeditor.videorecorder.screenrecorder"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 75,
-    "appCount": 51,
-    "targetApps": [
-      "app.ttmikstories.android",
-      "bitpit.launcher",
-      "ch.protonvpn.android",
-      "cn.ommiao.iconpacker",
-      "cn.wps.moffice_eng",
-      "com.adguard.android",
-      "com.alltrails.alltrails",
-      "com.amazon.avod.thirdpartyclient",
-      "com.avocards",
-      "com.bambuna.podcastaddict",
-      "com.busuu.android.enc",
-      "com.duolingo",
-      "com.getmimo",
-      "com.github.android",
-      "com.goodreads",
-      "com.google.android.apps.magazines",
-      "com.hellochinese",
-      "com.intsig.camscanner",
-      "com.lyfta",
-      "com.merriamwebster",
-      "com.michaldrabik.showly2",
-      "com.mirinae.mirinae",
-      "com.mobilefootie.wc2010",
-      "com.myfitnesspal.android",
-      "com.pandora.android",
-      "com.qbis.guessthecountry",
-      "com.rp.hypertrophy",
-      "com.sbs.diet",
-      "com.sbs.train",
-      "com.snorelab.app",
-      "com.sofascore.results",
-      "com.soundcloud.android",
-      "com.teslacoilsw.launcher",
-      "com.urbandroid.sleep",
-      "com.wallpaperscraft.wallpaper",
-      "com.windyty.android",
-      "com.xodo.pdf.reader",
-      "com.zombodroid.MemeGenerator",
-      "cz.ackee.ventusky",
-      "ginlemon.flowerfree",
-      "jp.ne.ibis.ibispaintx.app",
-      "kr.co.yjteam.dailypay",
-      "kr.eggbun.eggconvo",
-      "me.mycake",
-      "net.teuida.teuida",
-      "nom.vrd",
-      "org.languageapp.lingory",
-      "org.totschnig.myexpenses",
-      "pl.solidexplorer2",
-      "ru.iiec.pydroid3",
-      "universal",
-      "videoeditor.videorecorder.screenrecorder"
-    ]
+    "latest": "stable"
   },
   "hoomans-morphe": {
     "source": "github",
@@ -767,57 +877,97 @@
     "stable": {
       "file": "patches/hoomans-morphe-stable.json",
       "version": "v1.41.1",
-      "createdAt": "2026-07-04T02:40:55"
+      "createdAt": "2026-07-04T02:40:55",
+      "targetApps": [
+        "ak.alizandro.smartaudiobookplayer",
+        "altergames.carlauncher",
+        "app.remux.video.converter",
+        "app.symfonik.music.player",
+        "com.adobe.reader",
+        "com.alphaprogression.alphaprogression",
+        "com.appfactory.essence",
+        "com.atomengineapps.teachmeanatomy",
+        "com.bandlab.bandlab",
+        "com.blockerhero",
+        "com.budget.tracker_app",
+        "com.camerasideas.instashot",
+        "com.cfdrink",
+        "com.collectrinc.collectr",
+        "com.cronometer.android.gold",
+        "com.dv.adm",
+        "com.finch.finch",
+        "com.flightradar24free",
+        "com.hevy",
+        "com.hv.replaio",
+        "com.maxmpz.audioplayer",
+        "com.naver.linewebtoon",
+        "com.overdevs.at4k",
+        "com.paget96.batteryguru",
+        "com.quizlet.quizletandroid",
+        "com.realbyteapps.moneymanagerfree",
+        "com.rumble.battles",
+        "com.soepic.photogallery.release",
+        "com.sofascore.results",
+        "com.spocky.projengmenu",
+        "com.thehungrywasp.iamsober",
+        "com.todoist",
+        "com.tracked.mobile",
+        "com.tranzmate",
+        "com.tumblr",
+        "com.wanderlog.android",
+        "dk.tacit.android.foldersync.lite",
+        "io.stashteam.games.tracker.stashapp",
+        "tv.twitch.android.app"
+      ]
     },
     "dev": {
       "file": "patches/hoomans-morphe-dev.json",
       "version": "v1.42.0-dev.2",
-      "createdAt": "2026-07-04T02:39:36"
+      "createdAt": "2026-07-04T02:39:36",
+      "targetApps": [
+        "ak.alizandro.smartaudiobookplayer",
+        "altergames.carlauncher",
+        "app.remux.video.converter",
+        "app.symfonik.music.player",
+        "com.adobe.reader",
+        "com.alphaprogression.alphaprogression",
+        "com.appfactory.essence",
+        "com.atomengineapps.teachmeanatomy",
+        "com.bandlab.bandlab",
+        "com.blockerhero",
+        "com.budget.tracker_app",
+        "com.camerasideas.instashot",
+        "com.cfdrink",
+        "com.collectrinc.collectr",
+        "com.cronometer.android.gold",
+        "com.dv.adm",
+        "com.finch.finch",
+        "com.flightradar24free",
+        "com.hevy",
+        "com.hv.replaio",
+        "com.maxmpz.audioplayer",
+        "com.naver.linewebtoon",
+        "com.overdevs.at4k",
+        "com.paget96.batteryguru",
+        "com.quizlet.quizletandroid",
+        "com.realbyteapps.moneymanagerfree",
+        "com.rumble.battles",
+        "com.soepic.photogallery.release",
+        "com.sofascore.results",
+        "com.spocky.projengmenu",
+        "com.thehungrywasp.iamsober",
+        "com.todoist",
+        "com.tracked.mobile",
+        "com.tranzmate",
+        "com.tumblr",
+        "com.wanderlog.android",
+        "dk.tacit.android.foldersync.lite",
+        "io.stashteam.games.tracker.stashapp",
+        "net.uniquegem.directchat",
+        "tv.twitch.android.app"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 52,
-    "appCount": 39,
-    "targetApps": [
-      "ak.alizandro.smartaudiobookplayer",
-      "altergames.carlauncher",
-      "app.remux.video.converter",
-      "app.symfonik.music.player",
-      "com.adobe.reader",
-      "com.alphaprogression.alphaprogression",
-      "com.appfactory.essence",
-      "com.atomengineapps.teachmeanatomy",
-      "com.bandlab.bandlab",
-      "com.blockerhero",
-      "com.budget.tracker_app",
-      "com.camerasideas.instashot",
-      "com.cfdrink",
-      "com.collectrinc.collectr",
-      "com.cronometer.android.gold",
-      "com.dv.adm",
-      "com.finch.finch",
-      "com.flightradar24free",
-      "com.hevy",
-      "com.hv.replaio",
-      "com.maxmpz.audioplayer",
-      "com.naver.linewebtoon",
-      "com.overdevs.at4k",
-      "com.paget96.batteryguru",
-      "com.quizlet.quizletandroid",
-      "com.realbyteapps.moneymanagerfree",
-      "com.rumble.battles",
-      "com.soepic.photogallery.release",
-      "com.sofascore.results",
-      "com.spocky.projengmenu",
-      "com.thehungrywasp.iamsober",
-      "com.todoist",
-      "com.tracked.mobile",
-      "com.tranzmate",
-      "com.tumblr",
-      "com.wanderlog.android",
-      "dk.tacit.android.foldersync.lite",
-      "io.stashteam.games.tracker.stashapp",
-      "tv.twitch.android.app"
-    ]
+    "latest": "stable"
   },
   "icysymmetra-tiktok": {
     "source": "github",
@@ -830,19 +980,20 @@
     "stable": {
       "file": "patches/icysymmetra-tiktok-stable.json",
       "version": "v0.3.1",
-      "createdAt": "2026-06-17T16:13:14"
+      "createdAt": "2026-06-17T16:13:14",
+      "targetApps": [
+        "com.zhiliaoapp.musically"
+      ]
     },
     "dev": {
       "file": "patches/icysymmetra-tiktok-dev.json",
       "version": "v0.2.0-dev.2",
-      "createdAt": "2026-06-15T14:43:54"
+      "createdAt": "2026-06-15T14:43:54",
+      "targetApps": [
+        "com.zhiliaoapp.musically"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 15,
-    "appCount": 1,
-    "targetApps": [
-      "com.zhiliaoapp.musically"
-    ]
+    "latest": "stable"
   },
   "ihealth-morphe": {
     "source": "github",
@@ -855,20 +1006,22 @@
     "stable": {
       "file": "patches/ihealth-morphe-stable.json",
       "version": "v1.1.0",
-      "createdAt": "2026-06-19T03:53:00"
+      "createdAt": "2026-06-19T03:53:00",
+      "targetApps": [
+        "com.ihealthlabs.MyVitalsPro",
+        "com.persapps.multitimer"
+      ]
     },
     "dev": {
       "file": "patches/ihealth-morphe-dev.json",
       "version": "v1.1.0-dev.1",
-      "createdAt": "2026-06-19T03:50:13"
+      "createdAt": "2026-06-19T03:50:13",
+      "targetApps": [
+        "com.ihealthlabs.MyVitalsPro",
+        "com.persapps.multitimer"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 6,
-    "appCount": 2,
-    "targetApps": [
-      "com.ihealthlabs.MyVitalsPro",
-      "com.persapps.multitimer"
-    ]
+    "latest": "stable"
   },
   "imxeren": {
     "source": "github",
@@ -881,20 +1034,22 @@
     "stable": {
       "file": "patches/imxeren-stable.json",
       "version": "v1.4.0",
-      "createdAt": "2026-06-26T23:30:02"
+      "createdAt": "2026-06-26T23:30:02",
+      "targetApps": [
+        "com.laurencedawson.reddit_sync",
+        "tv.trakt.trakt"
+      ]
     },
     "dev": {
       "file": "patches/imxeren-dev.json",
       "version": "v1.4.0-dev.1",
-      "createdAt": "2026-06-26T23:16:51"
+      "createdAt": "2026-06-26T23:16:51",
+      "targetApps": [
+        "com.laurencedawson.reddit_sync",
+        "tv.trakt.trakt"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 2,
-    "appCount": 2,
-    "targetApps": [
-      "com.laurencedawson.reddit_sync",
-      "tv.trakt.trakt"
-    ]
+    "latest": "stable"
   },
   "jasonwu1994": {
     "source": "github",
@@ -907,19 +1062,20 @@
     "stable": {
       "file": "patches/jasonwu1994-stable.json",
       "version": "v1.14.0",
-      "createdAt": "2026-06-30T22:42:36"
+      "createdAt": "2026-06-30T22:42:36",
+      "targetApps": [
+        "com.google.android.inputmethod.latin"
+      ]
     },
     "dev": {
       "file": "patches/jasonwu1994-dev.json",
       "version": "v1.14.0-dev.1",
-      "createdAt": "2026-06-30T07:55:50"
+      "createdAt": "2026-06-30T07:55:50",
+      "targetApps": [
+        "com.google.android.inputmethod.latin"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 22,
-    "appCount": 1,
-    "targetApps": [
-      "com.google.android.inputmethod.latin"
-    ]
+    "latest": "stable"
   },
   "joristdh": {
     "source": "github",
@@ -932,22 +1088,23 @@
     "stable": {
       "file": "patches/joristdh-stable.json",
       "version": "v1.1.3",
-      "createdAt": "2026-04-16T07:52:27"
+      "createdAt": "2026-04-16T07:52:27",
+      "targetApps": [
+        "universal"
+      ]
     },
     "dev": {
       "file": "patches/joristdh-dev.json",
       "version": "v1.2.0-dev.2",
-      "createdAt": "2026-06-24T18:29:20"
+      "createdAt": "2026-06-24T18:29:20",
+      "targetApps": [
+        "com.laurencedawson.reddit_sync",
+        "com.laurencedawson.reddit_sync.dev",
+        "com.laurencedawson.reddit_sync.pro",
+        "universal"
+      ]
     },
-    "latest": "dev",
-    "patchCount": 2,
-    "appCount": 3,
-    "targetApps": [
-      "com.laurencedawson.reddit_sync",
-      "com.laurencedawson.reddit_sync.dev",
-      "com.laurencedawson.reddit_sync.pro",
-      "universal"
-    ]
+    "latest": "dev"
   },
   "kareemlukitomo": {
     "source": "github",
@@ -960,18 +1117,16 @@
     "stable": {
       "file": "patches/kareemlukitomo-stable.json",
       "version": "v26.4.30-8eabfa",
-      "createdAt": "2026-04-30T00:02:56"
+      "createdAt": "2026-04-30T00:02:56",
+      "targetApps": [
+        "com.instagram.android",
+        "com.instagram.barcelona",
+        "com.reddit.frontpage",
+        "com.twitter.android",
+        "com.zhiliaoapp.musically"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 8,
-    "appCount": 5,
-    "targetApps": [
-      "com.instagram.android",
-      "com.instagram.barcelona",
-      "com.reddit.frontpage",
-      "com.twitter.android",
-      "com.zhiliaoapp.musically"
-    ]
+    "latest": "stable"
   },
   "kolaron": {
     "source": "github",
@@ -984,19 +1139,20 @@
     "stable": {
       "file": "patches/kolaron-stable.json",
       "version": "v1.0.0",
-      "createdAt": "2026-05-15T05:17:38"
+      "createdAt": "2026-05-15T05:17:38",
+      "targetApps": [
+        "cz.mafra.jizdnirady"
+      ]
     },
     "dev": {
       "file": "patches/kolaron-dev.json",
       "version": "v1.1.0-dev.1",
-      "createdAt": "2026-05-15T06:39:27"
+      "createdAt": "2026-05-15T06:39:27",
+      "targetApps": [
+        "cz.mafra.jizdnirady"
+      ]
     },
-    "latest": "dev",
-    "patchCount": 1,
-    "appCount": 1,
-    "targetApps": [
-      "cz.mafra.jizdnirady"
-    ]
+    "latest": "dev"
   },
   "kondratjev": {
     "source": "github",
@@ -1009,30 +1165,42 @@
     "stable": {
       "file": "patches/kondratjev-stable.json",
       "version": "v1.16.0",
-      "createdAt": "2026-07-03T19:53:54"
+      "createdAt": "2026-07-03T19:53:54",
+      "targetApps": [
+        "com.brightstripe.parcels",
+        "com.fatsecret.android",
+        "com.lyfta",
+        "com.medisafe.android.client",
+        "com.ornament.monitor",
+        "com.quvideo.wisemeal",
+        "com.sillens.shapeupclub",
+        "com.soundcloud.android",
+        "com.yazio.android",
+        "ru.vk.store",
+        "universal",
+        "xyz.rtrvr.pillo"
+      ]
     },
     "dev": {
       "file": "patches/kondratjev-dev.json",
       "version": "v1.16.0-dev.1",
-      "createdAt": "2026-07-03T19:50:36"
+      "createdAt": "2026-07-03T19:50:36",
+      "targetApps": [
+        "com.brightstripe.parcels",
+        "com.fatsecret.android",
+        "com.lyfta",
+        "com.medisafe.android.client",
+        "com.ornament.monitor",
+        "com.quvideo.wisemeal",
+        "com.sillens.shapeupclub",
+        "com.soundcloud.android",
+        "com.yazio.android",
+        "ru.vk.store",
+        "universal",
+        "xyz.rtrvr.pillo"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 24,
-    "appCount": 11,
-    "targetApps": [
-      "com.brightstripe.parcels",
-      "com.fatsecret.android",
-      "com.lyfta",
-      "com.medisafe.android.client",
-      "com.ornament.monitor",
-      "com.quvideo.wisemeal",
-      "com.sillens.shapeupclub",
-      "com.soundcloud.android",
-      "com.yazio.android",
-      "ru.vk.store",
-      "universal",
-      "xyz.rtrvr.pillo"
-    ]
+    "latest": "stable"
   },
   "lain": {
     "source": "github",
@@ -1045,38 +1213,56 @@
     "stable": {
       "file": "patches/lain-stable.json",
       "version": "v1.2.0",
-      "createdAt": "2026-06-28T19:23:17"
+      "createdAt": "2026-06-28T19:23:17",
+      "targetApps": [
+        "cn.adonet.proxyevery",
+        "com.azefsw.audioconnect",
+        "com.ceyhan.sets",
+        "com.chimbori.hermitcrab",
+        "com.degenk.boorusama",
+        "com.flavionet.android.camera.lite",
+        "com.flavionet.android.cinema.lite",
+        "com.hopefactory2021.fakegpslocation",
+        "com.imaginstudio.imagetools.pixellab",
+        "com.jeyluta.timestampcamerafree",
+        "com.jeyluta.timestampcamerafreeent",
+        "com.kcstream.cing",
+        "com.medibang.android.medibangpro",
+        "com.medibang.android.paint.tablet",
+        "com.regasoftware.udisc",
+        "com.scheler.superproxy",
+        "com.surmin.photofancie.lite",
+        "universal"
+      ]
     },
     "dev": {
       "file": "patches/lain-dev.json",
       "version": "v1.3.0-dev.1",
-      "createdAt": "2026-07-04T04:57:06"
+      "createdAt": "2026-07-04T04:57:06",
+      "targetApps": [
+        "cn.adonet.proxyevery",
+        "com.adsk.sketchbook",
+        "com.azefsw.audioconnect",
+        "com.ceyhan.sets",
+        "com.chimbori.hermitcrab",
+        "com.degenk.boorusama",
+        "com.flavionet.android.camera.lite",
+        "com.flavionet.android.cinema.lite",
+        "com.hopefactory2021.fakegpslocation",
+        "com.ilovepdf.www",
+        "com.imaginstudio.imagetools.pixellab",
+        "com.jeyluta.timestampcamerafree",
+        "com.jeyluta.timestampcamerafreeent",
+        "com.kcstream.cing",
+        "com.medibang.android.medibangpro",
+        "com.medibang.android.paint.tablet",
+        "com.regasoftware.udisc",
+        "com.scheler.superproxy",
+        "com.surmin.photofancie.lite",
+        "universal"
+      ]
     },
-    "latest": "dev",
-    "patchCount": 31,
-    "appCount": 19,
-    "targetApps": [
-      "cn.adonet.proxyevery",
-      "com.adsk.sketchbook",
-      "com.azefsw.audioconnect",
-      "com.ceyhan.sets",
-      "com.chimbori.hermitcrab",
-      "com.degenk.boorusama",
-      "com.flavionet.android.camera.lite",
-      "com.flavionet.android.cinema.lite",
-      "com.hopefactory2021.fakegpslocation",
-      "com.ilovepdf.www",
-      "com.imaginstudio.imagetools.pixellab",
-      "com.jeyluta.timestampcamerafree",
-      "com.jeyluta.timestampcamerafreeent",
-      "com.kcstream.cing",
-      "com.medibang.android.medibangpro",
-      "com.medibang.android.paint.tablet",
-      "com.regasoftware.udisc",
-      "com.scheler.superproxy",
-      "com.surmin.photofancie.lite",
-      "universal"
-    ]
+    "latest": "dev"
   },
   "lakaka": {
     "source": "github",
@@ -1089,19 +1275,20 @@
     "stable": {
       "file": "patches/lakaka-stable.json",
       "version": "v1.2.0",
-      "createdAt": "2026-06-22T23:30:27"
+      "createdAt": "2026-06-22T23:30:27",
+      "targetApps": [
+        "com.jndapp.depth.live.wallpaper"
+      ]
     },
     "dev": {
       "file": "patches/lakaka-dev.json",
       "version": "v1.2.0-dev.1",
-      "createdAt": "2026-06-22T22:12:35"
+      "createdAt": "2026-06-22T22:12:35",
+      "targetApps": [
+        "com.jndapp.depth.live.wallpaper"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 1,
-    "appCount": 1,
-    "targetApps": [
-      "com.jndapp.depth.live.wallpaper"
-    ]
+    "latest": "stable"
   },
   "loskutov": {
     "source": "github",
@@ -1114,20 +1301,22 @@
     "stable": {
       "file": "patches/loskutov-stable.json",
       "version": "v1.0.2",
-      "createdAt": "2026-04-30T21:44:02"
+      "createdAt": "2026-04-30T21:44:02",
+      "targetApps": [
+        "com.google.android.apps.youtube.music",
+        "com.google.android.youtube"
+      ]
     },
     "dev": {
       "file": "patches/loskutov-dev.json",
       "version": "v1.0.1-dev.1",
-      "createdAt": "2026-04-28T23:06:10"
+      "createdAt": "2026-04-28T23:06:10",
+      "targetApps": [
+        "com.google.android.apps.youtube.music",
+        "com.google.android.youtube"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 2,
-    "appCount": 2,
-    "targetApps": [
-      "com.google.android.apps.youtube.music",
-      "com.google.android.youtube"
-    ]
+    "latest": "stable"
   },
   "lynx6319": {
     "source": "github",
@@ -1140,14 +1329,12 @@
     "stable": {
       "file": "patches/lynx6319-stable.json",
       "version": "v1.0.8",
-      "createdAt": "2026-05-05T14:52:24"
+      "createdAt": "2026-05-05T14:52:24",
+      "targetApps": [
+        "com.google.android.youtube"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 1,
-    "appCount": 1,
-    "targetApps": [
-      "com.google.android.youtube"
-    ]
+    "latest": "stable"
   },
   "meridianfresco": {
     "source": "github",
@@ -1160,14 +1347,12 @@
     "stable": {
       "file": "patches/meridianfresco-stable.json",
       "version": "v1.0.0",
-      "createdAt": "2026-04-11T21:51:39"
+      "createdAt": "2026-04-11T21:51:39",
+      "targetApps": [
+        "com.facebook.katana"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 2,
-    "appCount": 1,
-    "targetApps": [
-      "com.facebook.katana"
-    ]
+    "latest": "stable"
   },
   "morphe": {
     "source": "github",
@@ -1180,22 +1365,26 @@
     "stable": {
       "file": "patches/morphe-stable.json",
       "version": "v1.33.0",
-      "createdAt": "2026-07-03T06:10:52"
+      "createdAt": "2026-07-03T06:10:52",
+      "targetApps": [
+        "com.google.android.apps.youtube.music",
+        "com.google.android.youtube",
+        "com.reddit.frontpage",
+        "universal"
+      ]
     },
     "dev": {
       "file": "patches/morphe-dev.json",
       "version": "v1.33.0-dev.10",
-      "createdAt": "2026-07-02T08:05:29"
+      "createdAt": "2026-07-02T08:05:29",
+      "targetApps": [
+        "com.google.android.apps.youtube.music",
+        "com.google.android.youtube",
+        "com.reddit.frontpage",
+        "universal"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 121,
-    "appCount": 3,
-    "targetApps": [
-      "com.google.android.apps.youtube.music",
-      "com.google.android.youtube",
-      "com.reddit.frontpage",
-      "universal"
-    ]
+    "latest": "stable"
   },
   "morphe-google": {
     "source": "github",
@@ -1208,14 +1397,12 @@
     "stable": {
       "file": "patches/morphe-google-stable.json",
       "version": "v1.1.4",
-      "createdAt": "2026-06-30T13:38:59"
+      "createdAt": "2026-06-30T13:38:59",
+      "targetApps": [
+        "com.google.android.googlequicksearchbox"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 2,
-    "appCount": 1,
-    "targetApps": [
-      "com.google.android.googlequicksearchbox"
-    ]
+    "latest": "stable"
   },
   "morphe-portal": {
     "source": "github",
@@ -1228,20 +1415,22 @@
     "stable": {
       "file": "patches/morphe-portal-stable.json",
       "version": "v0.1.0",
-      "createdAt": "2026-06-19T20:53:34"
+      "createdAt": "2026-06-19T20:53:34",
+      "targetApps": [
+        "com.google.android.apps.youtube.music",
+        "com.google.android.youtube"
+      ]
     },
     "dev": {
       "file": "patches/morphe-portal-dev.json",
       "version": "v0.1.0",
-      "createdAt": "2026-06-19T20:53:34"
+      "createdAt": "2026-06-19T20:53:34",
+      "targetApps": [
+        "com.google.android.apps.youtube.music",
+        "com.google.android.youtube"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 3,
-    "appCount": 2,
-    "targetApps": [
-      "com.google.android.apps.youtube.music",
-      "com.google.android.youtube"
-    ]
+    "latest": "stable"
   },
   "morphe-screenshot": {
     "source": "github",
@@ -1254,14 +1443,12 @@
     "stable": {
       "file": "patches/morphe-screenshot-stable.json",
       "version": "v1.0.8",
-      "createdAt": "2026-06-28T11:39:03"
+      "createdAt": "2026-06-28T11:39:03",
+      "targetApps": [
+        "universal"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 1,
-    "appCount": 0,
-    "targetApps": [
-      "universal"
-    ]
+    "latest": "stable"
   },
   "nai64": {
     "source": "github",
@@ -1274,14 +1461,12 @@
     "stable": {
       "file": "patches/nai64-stable.json",
       "version": "1.9.0",
-      "createdAt": "2026-07-03T12:23:05"
+      "createdAt": "2026-07-03T12:23:05",
+      "targetApps": [
+        "universal"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 3,
-    "appCount": 0,
-    "targetApps": [
-      "universal"
-    ]
+    "latest": "stable"
   },
   "npci-bhim": {
     "source": "github",
@@ -1294,14 +1479,12 @@
     "stable": {
       "file": "patches/npci-bhim-stable.json",
       "version": "v1.3.0",
-      "createdAt": "2026-06-28T09:33:42"
+      "createdAt": "2026-06-28T09:33:42",
+      "targetApps": [
+        "in.org.npci.upiapp"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 6,
-    "appCount": 1,
-    "targetApps": [
-      "in.org.npci.upiapp"
-    ]
+    "latest": "stable"
   },
   "paresh-maheshwari": {
     "source": "gitlab",
@@ -1314,38 +1497,58 @@
     "stable": {
       "file": "patches/paresh-maheshwari-stable.json",
       "version": "v1.18.0",
-      "createdAt": "2026-06-03T15:49:54"
+      "createdAt": "2026-06-03T15:49:54",
+      "targetApps": [
+        "app.vinztech.trackit",
+        "ch.protonvpn.android",
+        "com.arlosoft.macrodroid",
+        "com.bytesong.missionalarm",
+        "com.celestron.skybox",
+        "com.cricbuzz.android",
+        "com.cv.docscanner",
+        "com.eyecon.global",
+        "com.frontrow.vlog",
+        "com.lumina.wallpapers",
+        "com.markOne.ss_app",
+        "com.overlook.android.fing",
+        "com.solid.teleprompter",
+        "com.ticktick.task",
+        "com.truecaller",
+        "eu.darken.sdmse",
+        "in.cricketexchange.app.cricketexchange",
+        "in.startv.hotstar",
+        "org.telegram.messenger.web",
+        "org.telegram.plus"
+      ]
     },
     "dev": {
       "file": "patches/paresh-maheshwari-dev.json",
       "version": "v1.18.1-dev.1",
-      "createdAt": "2026-06-03T16:02:43"
+      "createdAt": "2026-06-03T16:02:43",
+      "targetApps": [
+        "app.vinztech.trackit",
+        "ch.protonvpn.android",
+        "com.arlosoft.macrodroid",
+        "com.bytesong.missionalarm",
+        "com.celestron.skybox",
+        "com.cricbuzz.android",
+        "com.cv.docscanner",
+        "com.eyecon.global",
+        "com.frontrow.vlog",
+        "com.lumina.wallpapers",
+        "com.markOne.ss_app",
+        "com.overlook.android.fing",
+        "com.solid.teleprompter",
+        "com.ticktick.task",
+        "com.truecaller",
+        "eu.darken.sdmse",
+        "in.cricketexchange.app.cricketexchange",
+        "in.startv.hotstar",
+        "org.telegram.messenger.web",
+        "org.telegram.plus"
+      ]
     },
-    "latest": "dev",
-    "patchCount": 55,
-    "appCount": 20,
-    "targetApps": [
-      "app.vinztech.trackit",
-      "ch.protonvpn.android",
-      "com.arlosoft.macrodroid",
-      "com.bytesong.missionalarm",
-      "com.celestron.skybox",
-      "com.cricbuzz.android",
-      "com.cv.docscanner",
-      "com.eyecon.global",
-      "com.frontrow.vlog",
-      "com.lumina.wallpapers",
-      "com.markOne.ss_app",
-      "com.overlook.android.fing",
-      "com.solid.teleprompter",
-      "com.ticktick.task",
-      "com.truecaller",
-      "eu.darken.sdmse",
-      "in.cricketexchange.app.cricketexchange",
-      "in.startv.hotstar",
-      "org.telegram.messenger.web",
-      "org.telegram.plus"
-    ]
+    "latest": "dev"
   },
   "patcheddit": {
     "source": "github",
@@ -1358,37 +1561,56 @@
     "stable": {
       "file": "patches/patcheddit-stable.json",
       "version": "v1.4.0",
-      "createdAt": "2026-04-07T19:10:56"
+      "createdAt": "2026-04-07T19:10:56",
+      "targetApps": [
+        "com.andrewshu.android.reddit",
+        "com.andrewshu.android.redditdonation",
+        "com.laurencedawson.reddit_sync",
+        "com.laurencedawson.reddit_sync.dev",
+        "com.laurencedawson.reddit_sync.pro",
+        "com.onelouder.baconreader",
+        "com.onelouder.baconreader.premium",
+        "com.rubenmayayo.reddit",
+        "free.reddit.news",
+        "io.syncapps.lemmy_sync",
+        "me.edgan.redditslide",
+        "ml.docilealligator.infinityforreddit.patreon",
+        "ml.docilealligator.infinityforreddit.plus",
+        "o.o.joey",
+        "o.o.joey.dev",
+        "o.o.joey.pro",
+        "org.cygnusx1.continuum",
+        "reddit.news",
+        "universal"
+      ]
     },
     "dev": {
       "file": "patches/patcheddit-dev.json",
       "version": "v1.4.1-dev.1",
-      "createdAt": "2026-04-09T06:59:40"
+      "createdAt": "2026-04-09T06:59:40",
+      "targetApps": [
+        "com.andrewshu.android.reddit",
+        "com.andrewshu.android.redditdonation",
+        "com.laurencedawson.reddit_sync",
+        "com.laurencedawson.reddit_sync.dev",
+        "com.laurencedawson.reddit_sync.pro",
+        "com.onelouder.baconreader",
+        "com.onelouder.baconreader.premium",
+        "com.rubenmayayo.reddit",
+        "free.reddit.news",
+        "io.syncapps.lemmy_sync",
+        "me.edgan.redditslide",
+        "ml.docilealligator.infinityforreddit.patreon",
+        "ml.docilealligator.infinityforreddit.plus",
+        "o.o.joey",
+        "o.o.joey.dev",
+        "o.o.joey.pro",
+        "org.cygnusx1.continuum",
+        "reddit.news",
+        "universal"
+      ]
     },
-    "latest": "dev",
-    "patchCount": 39,
-    "appCount": 18,
-    "targetApps": [
-      "com.andrewshu.android.reddit",
-      "com.andrewshu.android.redditdonation",
-      "com.laurencedawson.reddit_sync",
-      "com.laurencedawson.reddit_sync.dev",
-      "com.laurencedawson.reddit_sync.pro",
-      "com.onelouder.baconreader",
-      "com.onelouder.baconreader.premium",
-      "com.rubenmayayo.reddit",
-      "free.reddit.news",
-      "io.syncapps.lemmy_sync",
-      "me.edgan.redditslide",
-      "ml.docilealligator.infinityforreddit.patreon",
-      "ml.docilealligator.infinityforreddit.plus",
-      "o.o.joey",
-      "o.o.joey.dev",
-      "o.o.joey.pro",
-      "org.cygnusx1.continuum",
-      "reddit.news",
-      "universal"
-    ]
+    "latest": "dev"
   },
   "pepper-morphe": {
     "source": "github",
@@ -1401,23 +1623,21 @@
     "stable": {
       "file": "patches/pepper-morphe-stable.json",
       "version": "v1.0.1",
-      "createdAt": "2026-05-14T00:53:02"
+      "createdAt": "2026-05-14T00:53:02",
+      "targetApps": [
+        "Chollometros",
+        "Dealabs",
+        "HotUKDeals",
+        "Mydealz",
+        "Pepper NL",
+        "Pepper PL",
+        "Pepper SE",
+        "Pepper.com",
+        "PreisjĂ¤ger",
+        "PromoDescuentos"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 17,
-    "appCount": 10,
-    "targetApps": [
-      "Chollometros",
-      "Dealabs",
-      "HotUKDeals",
-      "Mydealz",
-      "Pepper NL",
-      "Pepper PL",
-      "Pepper SE",
-      "Pepper.com",
-      "PreisjĂ¤ger",
-      "PromoDescuentos"
-    ]
+    "latest": "stable"
   },
   "piko": {
     "source": "github",
@@ -1430,20 +1650,22 @@
     "stable": {
       "file": "patches/piko-stable.json",
       "version": "v3.7.0",
-      "createdAt": "2026-06-27T16:03:22"
+      "createdAt": "2026-06-27T16:03:22",
+      "targetApps": [
+        "com.instagram.android",
+        "com.twitter.android"
+      ]
     },
     "dev": {
       "file": "patches/piko-dev.json",
       "version": "v3.8.0-dev.2",
-      "createdAt": "2026-06-28T13:21:07"
+      "createdAt": "2026-06-28T13:21:07",
+      "targetApps": [
+        "com.instagram.android",
+        "com.twitter.android"
+      ]
     },
-    "latest": "dev",
-    "patchCount": 124,
-    "appCount": 2,
-    "targetApps": [
-      "com.instagram.android",
-      "com.twitter.android"
-    ]
+    "latest": "dev"
   },
   "pixelpusher247": {
     "source": "github",
@@ -1456,14 +1678,12 @@
     "stable": {
       "file": "patches/pixelpusher247-stable.json",
       "version": "v1.3.0",
-      "createdAt": "2026-03-31T09:28:51"
+      "createdAt": "2026-03-31T09:28:51",
+      "targetApps": [
+        "tv.trakt.trakt"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 1,
-    "appCount": 1,
-    "targetApps": [
-      "tv.trakt.trakt"
-    ]
+    "latest": "stable"
   },
   "polka-bear": {
     "source": "github",
@@ -1476,20 +1696,22 @@
     "stable": {
       "file": "patches/polka-bear-stable.json",
       "version": "v1.4.0",
-      "createdAt": "2026-04-14T08:35:28"
+      "createdAt": "2026-04-14T08:35:28",
+      "targetApps": [
+        "com.ipoji.app",
+        "com.vladlee.easyblacklist"
+      ]
     },
     "dev": {
       "file": "patches/polka-bear-dev.json",
       "version": "v1.4.1-dev.1",
-      "createdAt": "2026-04-14T10:04:57"
+      "createdAt": "2026-04-14T10:04:57",
+      "targetApps": [
+        "com.ipoji.app",
+        "com.vladlee.easyblacklist"
+      ]
     },
-    "latest": "dev",
-    "patchCount": 4,
-    "appCount": 2,
-    "targetApps": [
-      "com.ipoji.app",
-      "com.vladlee.easyblacklist"
-    ]
+    "latest": "dev"
   },
   "prathxm": {
     "source": "github",
@@ -1502,19 +1724,20 @@
     "stable": {
       "file": "patches/prathxm-stable.json",
       "version": "v1.8.1",
-      "createdAt": "2026-07-04T10:43:34"
+      "createdAt": "2026-07-04T10:43:34",
+      "targetApps": [
+        "com.chess"
+      ]
     },
     "dev": {
       "file": "patches/prathxm-dev.json",
       "version": "v1.6.0-dev.1",
-      "createdAt": "2026-07-03T06:11:35"
+      "createdAt": "2026-07-03T06:11:35",
+      "targetApps": [
+        "com.chess"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 6,
-    "appCount": 1,
-    "targetApps": [
-      "com.chess"
-    ]
+    "latest": "stable"
   },
   "prathxm-ytmusic": {
     "source": "github",
@@ -1527,15 +1750,13 @@
     "stable": {
       "file": "patches/prathxm-ytmusic-stable.json",
       "version": "v1.38.0",
-      "createdAt": "2026-06-28T15:27:28"
+      "createdAt": "2026-06-28T15:27:28",
+      "targetApps": [
+        "com.google.android.apps.youtube.music",
+        "universal"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 3,
-    "appCount": 1,
-    "targetApps": [
-      "com.google.android.apps.youtube.music",
-      "universal"
-    ]
+    "latest": "stable"
   },
   "proguard": {
     "source": "gitlab",
@@ -1548,15 +1769,13 @@
     "stable": {
       "file": "patches/proguard-stable.json",
       "version": "v1.0.3",
-      "createdAt": "2026-06-05T01:03:40"
+      "createdAt": "2026-06-05T01:03:40",
+      "targetApps": [
+        "com.java.inspector",
+        "universal"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 2,
-    "appCount": 1,
-    "targetApps": [
-      "com.java.inspector",
-      "universal"
-    ]
+    "latest": "stable"
   },
   "rabilrbl": {
     "source": "github",
@@ -1569,19 +1788,20 @@
     "stable": {
       "file": "patches/rabilrbl-stable.json",
       "version": "v1.5.0",
-      "createdAt": "2026-04-03T16:17:45"
+      "createdAt": "2026-04-03T16:17:45",
+      "targetApps": [
+        "universal"
+      ]
     },
     "dev": {
       "file": "patches/rabilrbl-dev.json",
       "version": "v1.0.0-dev.19",
-      "createdAt": "2026-06-04T10:28:44"
+      "createdAt": "2026-06-04T10:28:44",
+      "targetApps": [
+        "droom.sleepIfUCan"
+      ]
     },
-    "latest": "dev",
-    "patchCount": 2,
-    "appCount": 1,
-    "targetApps": [
-      "droom.sleepIfUCan"
-    ]
+    "latest": "dev"
   },
   "realcyberwash": {
     "source": "github",
@@ -1594,14 +1814,12 @@
     "stable": {
       "file": "patches/realcyberwash-stable.json",
       "version": "v1.1.1",
-      "createdAt": "2026-04-06T18:30:55"
+      "createdAt": "2026-04-06T18:30:55",
+      "targetApps": [
+        "ru.oneme.app"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 1,
-    "appCount": 1,
-    "targetApps": [
-      "ru.oneme.app"
-    ]
+    "latest": "stable"
   },
   "realme-link": {
     "source": "github",
@@ -1614,19 +1832,20 @@
     "stable": {
       "file": "patches/realme-link-stable.json",
       "version": "v1.0.0",
-      "createdAt": "2026-06-12T19:32:24"
+      "createdAt": "2026-06-12T19:32:24",
+      "targetApps": [
+        "com.realme.link"
+      ]
     },
     "dev": {
       "file": "patches/realme-link-dev.json",
       "version": "v1.0.0",
-      "createdAt": "2026-06-12T18:29:37"
+      "createdAt": "2026-06-12T18:29:37",
+      "targetApps": [
+        "com.realme.link"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 1,
-    "appCount": 1,
-    "targetApps": [
-      "com.realme.link"
-    ]
+    "latest": "stable"
   },
   "rookieenough": {
     "source": "github",
@@ -1639,53 +1858,88 @@
     "stable": {
       "file": "patches/rookieenough-stable.json",
       "version": "v1.0.4",
-      "createdAt": "2026-05-13T13:27:20"
+      "createdAt": "2026-05-13T13:27:20",
+      "targetApps": [
+        "ch.protonmail.android",
+        "com.adobe.photoshopmix",
+        "com.amazon.mShop.android.shopping",
+        "com.amazon.mp3",
+        "com.bandcamp.android",
+        "com.cricbuzz.android",
+        "com.disney.disneyplus",
+        "com.drinkplusplus.angulus",
+        "com.facebook.katana",
+        "com.facebook.orca",
+        "com.google.android.apps.magazines",
+        "com.google.android.apps.photos",
+        "com.google.android.apps.recorder",
+        "com.instagram.barcelona",
+        "com.letterboxd.letterboxd",
+        "com.microblink.photomath",
+        "com.microsoft.office.officelens",
+        "com.myprog.hexedit",
+        "com.nis.app",
+        "com.nothing.smartcenter",
+        "com.peacocktv.peacockandroid",
+        "com.rarlab.rar",
+        "com.soundcloud.android",
+        "com.ss.android.ugc.trill",
+        "com.strava",
+        "com.tumblr",
+        "com.viber.voip",
+        "com.zhiliaoapp.musically",
+        "de.gmx.mobile.android.mail",
+        "ginlemon.iconpackstudio",
+        "jp.pxv.android",
+        "net.binarymode.android.irplus",
+        "nl.sanomamedia.android.nu",
+        "tv.twitch.android.app",
+        "universal"
+      ]
     },
     "dev": {
       "file": "patches/rookieenough-dev.json",
       "version": "v1.0.3-dev.1",
-      "createdAt": "2026-04-02T03:58:26"
+      "createdAt": "2026-04-02T03:58:26",
+      "targetApps": [
+        "ch.protonmail.android",
+        "com.adobe.photoshopmix",
+        "com.amazon.mShop.android.shopping",
+        "com.amazon.mp3",
+        "com.bandcamp.android",
+        "com.cricbuzz.android",
+        "com.disney.disneyplus",
+        "com.drinkplusplus.angulus",
+        "com.facebook.katana",
+        "com.facebook.orca",
+        "com.google.android.apps.magazines",
+        "com.google.android.apps.photos",
+        "com.google.android.apps.recorder",
+        "com.instagram.barcelona",
+        "com.letterboxd.letterboxd",
+        "com.microblink.photomath",
+        "com.microsoft.office.officelens",
+        "com.myprog.hexedit",
+        "com.nis.app",
+        "com.nothing.smartcenter",
+        "com.peacocktv.peacockandroid",
+        "com.rarlab.rar",
+        "com.soundcloud.android",
+        "com.ss.android.ugc.trill",
+        "com.strava",
+        "com.tumblr",
+        "com.viber.voip",
+        "com.zhiliaoapp.musically",
+        "de.gmx.mobile.android.mail",
+        "ginlemon.iconpackstudio",
+        "jp.pxv.android",
+        "net.binarymode.android.irplus",
+        "nl.sanomamedia.android.nu",
+        "tv.twitch.android.app",
+        "universal"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 84,
-    "appCount": 34,
-    "targetApps": [
-      "ch.protonmail.android",
-      "com.adobe.photoshopmix",
-      "com.amazon.mShop.android.shopping",
-      "com.amazon.mp3",
-      "com.bandcamp.android",
-      "com.cricbuzz.android",
-      "com.disney.disneyplus",
-      "com.drinkplusplus.angulus",
-      "com.facebook.katana",
-      "com.facebook.orca",
-      "com.google.android.apps.magazines",
-      "com.google.android.apps.photos",
-      "com.google.android.apps.recorder",
-      "com.instagram.barcelona",
-      "com.letterboxd.letterboxd",
-      "com.microblink.photomath",
-      "com.microsoft.office.officelens",
-      "com.myprog.hexedit",
-      "com.nis.app",
-      "com.nothing.smartcenter",
-      "com.peacocktv.peacockandroid",
-      "com.rarlab.rar",
-      "com.soundcloud.android",
-      "com.ss.android.ugc.trill",
-      "com.strava",
-      "com.tumblr",
-      "com.viber.voip",
-      "com.zhiliaoapp.musically",
-      "de.gmx.mobile.android.mail",
-      "ginlemon.iconpackstudio",
-      "jp.pxv.android",
-      "net.binarymode.android.irplus",
-      "nl.sanomamedia.android.nu",
-      "tv.twitch.android.app",
-      "universal"
-    ]
+    "latest": "stable"
   },
   "rushiranpise": {
     "source": "github",
@@ -1698,91 +1952,164 @@
     "stable": {
       "file": "patches/rushiranpise-stable.json",
       "version": "v1.9.1",
-      "createdAt": "2026-07-03T23:15:45"
+      "createdAt": "2026-07-03T23:15:45",
+      "targetApps": [
+        "ai.topicfinder.podcastdiscovery",
+        "air.com.musclemotion.anatomy",
+        "air.com.musclemotion.kyphosis",
+        "air.com.musclemotion.posture",
+        "air.com.musclemotion.workout",
+        "air.com.musclemotion.yoga",
+        "app.ninjavpn.android",
+        "apps.automan.blurwallpaper",
+        "ch.protonvpn.android",
+        "com.Splitwise.SplitwiseMobile",
+        "com.a0soft.gphone.acc.free",
+        "com.accuweather.android",
+        "com.adguard.android",
+        "com.anetcapture.mock",
+        "com.app.social_gamebox",
+        "com.blockerhero",
+        "com.budget.tracker_app",
+        "com.canva.editor",
+        "com.catalinagroup.callrecorder",
+        "com.changayaf.inmigreat",
+        "com.citymapper.app.release",
+        "com.cloudflare.onedotonedotonedotone",
+        "com.community.oneroom",
+        "com.cpuid.cpu_z",
+        "com.dubox.drive",
+        "com.finalwire.aida64",
+        "com.flightradar24free",
+        "com.inscode.autoclicker",
+        "com.iudesk.android.photo.editor",
+        "com.javiersantos.mlmanager",
+        "com.joincarbon.nutrition",
+        "com.kevinforeman.nzb360",
+        "com.lawfully.lawfully_ai_tracker",
+        "com.localaiapp.scoops",
+        "com.mobond.mindicator",
+        "com.mtv.sai",
+        "com.newsbreak.crimeradar",
+        "com.oasisfeng.greenify",
+        "com.particlenews.newsbreak",
+        "com.proxyman.proxymanandroid",
+        "com.psiphon3.subscription",
+        "com.rarlab.rar",
+        "com.regasoftware.udisc",
+        "com.saldous.casetracker",
+        "com.shexa.permissionmanager",
+        "com.skinsort",
+        "com.snow_forecast.snowforecast",
+        "com.tafayor.hibernator",
+        "com.tafayor.killall",
+        "com.tecso.MigraConnect",
+        "com.thetransitapp.droid",
+        "com.tomtom.gplay.navapp",
+        "com.tranzmate",
+        "com.truebill",
+        "com.twtapp",
+        "com.waze",
+        "com.weather.Weather",
+        "com.windscribe.vpn",
+        "com.windyty.android",
+        "com.yatrirailways.yatri",
+        "cz.mroczis.netmonster",
+        "eu.darken.myperm",
+        "eu.faircode.netguard",
+        "it.mirko.beta",
+        "kha.prog.mikrotik",
+        "org.hola.play",
+        "org.zwanoo.android.speedtest",
+        "police.scanner.radio.broadcastify.citizen",
+        "sensustech.universal.tv.remote.control",
+        "shareit.premium",
+        "sp0n.citizen",
+        "universal",
+        "verbosus.pialytic"
+      ]
     },
     "dev": {
       "file": "patches/rushiranpise-dev.json",
       "version": "v1.9.1-dev.1",
-      "createdAt": "2026-07-03T23:11:13"
+      "createdAt": "2026-07-03T23:11:13",
+      "targetApps": [
+        "ai.topicfinder.podcastdiscovery",
+        "air.com.musclemotion.anatomy",
+        "air.com.musclemotion.kyphosis",
+        "air.com.musclemotion.posture",
+        "air.com.musclemotion.workout",
+        "air.com.musclemotion.yoga",
+        "app.ninjavpn.android",
+        "apps.automan.blurwallpaper",
+        "ch.protonvpn.android",
+        "com.Splitwise.SplitwiseMobile",
+        "com.a0soft.gphone.acc.free",
+        "com.accuweather.android",
+        "com.adguard.android",
+        "com.anetcapture.mock",
+        "com.app.social_gamebox",
+        "com.blockerhero",
+        "com.budget.tracker_app",
+        "com.canva.editor",
+        "com.catalinagroup.callrecorder",
+        "com.changayaf.inmigreat",
+        "com.citymapper.app.release",
+        "com.cloudflare.onedotonedotonedotone",
+        "com.community.oneroom",
+        "com.cpuid.cpu_z",
+        "com.dubox.drive",
+        "com.finalwire.aida64",
+        "com.flightradar24free",
+        "com.inscode.autoclicker",
+        "com.iudesk.android.photo.editor",
+        "com.javiersantos.mlmanager",
+        "com.joincarbon.nutrition",
+        "com.kevinforeman.nzb360",
+        "com.lawfully.lawfully_ai_tracker",
+        "com.localaiapp.scoops",
+        "com.mobond.mindicator",
+        "com.mtv.sai",
+        "com.newsbreak.crimeradar",
+        "com.oasisfeng.greenify",
+        "com.particlenews.newsbreak",
+        "com.proxyman.proxymanandroid",
+        "com.psiphon3.subscription",
+        "com.rarlab.rar",
+        "com.regasoftware.udisc",
+        "com.saldous.casetracker",
+        "com.shexa.permissionmanager",
+        "com.skinsort",
+        "com.snow_forecast.snowforecast",
+        "com.tafayor.hibernator",
+        "com.tafayor.killall",
+        "com.tecso.MigraConnect",
+        "com.thetransitapp.droid",
+        "com.tomtom.gplay.navapp",
+        "com.tranzmate",
+        "com.truebill",
+        "com.twtapp",
+        "com.waze",
+        "com.weather.Weather",
+        "com.windscribe.vpn",
+        "com.windyty.android",
+        "com.yatrirailways.yatri",
+        "cz.mroczis.netmonster",
+        "eu.darken.myperm",
+        "eu.faircode.netguard",
+        "it.mirko.beta",
+        "kha.prog.mikrotik",
+        "org.hola.play",
+        "org.zwanoo.android.speedtest",
+        "police.scanner.radio.broadcastify.citizen",
+        "sensustech.universal.tv.remote.control",
+        "shareit.premium",
+        "sp0n.citizen",
+        "universal",
+        "verbosus.pialytic"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 107,
-    "appCount": 72,
-    "targetApps": [
-      "ai.topicfinder.podcastdiscovery",
-      "air.com.musclemotion.anatomy",
-      "air.com.musclemotion.kyphosis",
-      "air.com.musclemotion.posture",
-      "air.com.musclemotion.workout",
-      "air.com.musclemotion.yoga",
-      "app.ninjavpn.android",
-      "apps.automan.blurwallpaper",
-      "ch.protonvpn.android",
-      "com.Splitwise.SplitwiseMobile",
-      "com.a0soft.gphone.acc.free",
-      "com.accuweather.android",
-      "com.adguard.android",
-      "com.anetcapture.mock",
-      "com.app.social_gamebox",
-      "com.blockerhero",
-      "com.budget.tracker_app",
-      "com.canva.editor",
-      "com.catalinagroup.callrecorder",
-      "com.changayaf.inmigreat",
-      "com.citymapper.app.release",
-      "com.cloudflare.onedotonedotonedotone",
-      "com.community.oneroom",
-      "com.cpuid.cpu_z",
-      "com.dubox.drive",
-      "com.finalwire.aida64",
-      "com.flightradar24free",
-      "com.inscode.autoclicker",
-      "com.iudesk.android.photo.editor",
-      "com.javiersantos.mlmanager",
-      "com.joincarbon.nutrition",
-      "com.kevinforeman.nzb360",
-      "com.lawfully.lawfully_ai_tracker",
-      "com.localaiapp.scoops",
-      "com.mobond.mindicator",
-      "com.mtv.sai",
-      "com.newsbreak.crimeradar",
-      "com.oasisfeng.greenify",
-      "com.particlenews.newsbreak",
-      "com.proxyman.proxymanandroid",
-      "com.psiphon3.subscription",
-      "com.rarlab.rar",
-      "com.regasoftware.udisc",
-      "com.saldous.casetracker",
-      "com.shexa.permissionmanager",
-      "com.skinsort",
-      "com.snow_forecast.snowforecast",
-      "com.tafayor.hibernator",
-      "com.tafayor.killall",
-      "com.tecso.MigraConnect",
-      "com.thetransitapp.droid",
-      "com.tomtom.gplay.navapp",
-      "com.tranzmate",
-      "com.truebill",
-      "com.twtapp",
-      "com.waze",
-      "com.weather.Weather",
-      "com.windscribe.vpn",
-      "com.windyty.android",
-      "com.yatrirailways.yatri",
-      "cz.mroczis.netmonster",
-      "eu.darken.myperm",
-      "eu.faircode.netguard",
-      "it.mirko.beta",
-      "kha.prog.mikrotik",
-      "org.hola.play",
-      "org.zwanoo.android.speedtest",
-      "police.scanner.radio.broadcastify.citizen",
-      "sensustech.universal.tv.remote.control",
-      "shareit.premium",
-      "sp0n.citizen",
-      "universal",
-      "verbosus.pialytic"
-    ]
+    "latest": "stable"
   },
   "rvx-morphed": {
     "source": "github",
@@ -1795,21 +2122,24 @@
     "stable": {
       "file": "patches/rvx-morphed-stable.json",
       "version": "v5.16.4",
-      "createdAt": "2026-03-05T14:38:07"
+      "createdAt": "2026-03-05T14:38:07",
+      "targetApps": [
+        "com.google.android.apps.youtube.music",
+        "com.google.android.youtube",
+        "universal"
+      ]
     },
     "dev": {
       "file": "patches/rvx-morphed-dev.json",
       "version": "v5.16.4-dev.1",
-      "createdAt": "2026-03-05T13:52:42"
+      "createdAt": "2026-03-05T13:52:42",
+      "targetApps": [
+        "com.google.android.apps.youtube.music",
+        "com.google.android.youtube",
+        "universal"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 113,
-    "appCount": 2,
-    "targetApps": [
-      "com.google.android.apps.youtube.music",
-      "com.google.android.youtube",
-      "universal"
-    ]
+    "latest": "stable"
   },
   "samsung-morphe": {
     "source": "github",
@@ -1822,19 +2152,20 @@
     "stable": {
       "file": "patches/samsung-morphe-stable.json",
       "version": "v1.2.1",
-      "createdAt": "2026-06-30T13:25:55"
+      "createdAt": "2026-06-30T13:25:55",
+      "targetApps": [
+        "com.sec.android.app.shealth"
+      ]
     },
     "dev": {
       "file": "patches/samsung-morphe-dev.json",
       "version": "v1.0.15",
-      "createdAt": "2026-06-22T18:10:19"
+      "createdAt": "2026-06-22T18:10:19",
+      "targetApps": [
+        "com.sec.android.app.shealth"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 2,
-    "appCount": 1,
-    "targetApps": [
-      "com.sec.android.app.shealth"
-    ]
+    "latest": "stable"
   },
   "sjshb57-pairip": {
     "source": "github",
@@ -1847,14 +2178,12 @@
     "stable": {
       "file": "patches/sjshb57-pairip-stable.json",
       "version": "v1.10.1",
-      "createdAt": "2026-06-26T09:18:21"
+      "createdAt": "2026-06-26T09:18:21",
+      "targetApps": [
+        "universal"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 4,
-    "appCount": 0,
-    "targetApps": [
-      "universal"
-    ]
+    "latest": "stable"
   },
   "telegram-morphe": {
     "source": "github",
@@ -1867,14 +2196,12 @@
     "stable": {
       "file": "patches/telegram-morphe-stable.json",
       "version": "v1.20.0",
-      "createdAt": "2026-06-28T14:29:36"
+      "createdAt": "2026-06-28T14:29:36",
+      "targetApps": [
+        "org.telegram.messenger.web"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 10,
-    "appCount": 1,
-    "targetApps": [
-      "org.telegram.messenger.web"
-    ]
+    "latest": "stable"
   },
   "ts-patches": {
     "source": "github",
@@ -1887,19 +2214,20 @@
     "stable": {
       "file": "patches/ts-patches-stable.json",
       "version": "v1.0.0",
-      "createdAt": "2026-06-21T02:17:19"
+      "createdAt": "2026-06-21T02:17:19",
+      "targetApps": [
+        "com.teamsnap.teamsnap"
+      ]
     },
     "dev": {
       "file": "patches/ts-patches-dev.json",
       "version": "v1.0.4",
-      "createdAt": "2026-06-20T03:02:19"
+      "createdAt": "2026-06-20T03:02:19",
+      "targetApps": [
+        "com.teamsnap.teamsnap"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 1,
-    "appCount": 1,
-    "targetApps": [
-      "com.teamsnap.teamsnap"
-    ]
+    "latest": "stable"
   },
   "ts2": {
     "source": "github",
@@ -1912,19 +2240,20 @@
     "stable": {
       "file": "patches/ts2-stable.json",
       "version": "v1.0.1",
-      "createdAt": "2026-06-22T02:56:46"
+      "createdAt": "2026-06-22T02:56:46",
+      "targetApps": [
+        "com.teamsnap.teamsnap"
+      ]
     },
     "dev": {
       "file": "patches/ts2-dev.json",
       "version": "v1.0.1",
-      "createdAt": "2026-06-22T02:56:46"
+      "createdAt": "2026-06-22T02:56:46",
+      "targetApps": [
+        "com.teamsnap.teamsnap"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 1,
-    "appCount": 1,
-    "targetApps": [
-      "com.teamsnap.teamsnap"
-    ]
+    "latest": "stable"
   },
   "vladon": {
     "source": "github",
@@ -1937,14 +2266,12 @@
     "stable": {
       "file": "patches/vladon-stable.json",
       "version": "v1.0.6",
-      "createdAt": "2026-04-20T14:53:42"
+      "createdAt": "2026-04-20T14:53:42",
+      "targetApps": [
+        "ru.yandex.yandexnavi"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 3,
-    "appCount": 1,
-    "targetApps": [
-      "ru.yandex.yandexnavi"
-    ]
+    "latest": "stable"
   },
   "x-shim": {
     "source": "gitlab",
@@ -1957,14 +2284,12 @@
     "stable": {
       "file": "patches/x-shim-stable.json",
       "version": "v1.7.0",
-      "createdAt": "2026-07-03T00:31:26"
+      "createdAt": "2026-07-03T00:31:26",
+      "targetApps": [
+        "com.twitter.android"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 3,
-    "appCount": 1,
-    "targetApps": [
-      "com.twitter.android"
-    ]
+    "latest": "stable"
   },
   "xhehab": {
     "source": "github",
@@ -1977,16 +2302,14 @@
     "stable": {
       "file": "patches/xhehab-stable.json",
       "version": "v2.0.0",
-      "createdAt": "2026-07-03T20:28:09"
+      "createdAt": "2026-07-03T20:28:09",
+      "targetApps": [
+        "com.influencers.fst7",
+        "com.trainwiseapp.app",
+        "uni.cbum"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 3,
-    "appCount": 3,
-    "targetApps": [
-      "com.influencers.fst7",
-      "com.trainwiseapp.app",
-      "uni.cbum"
-    ]
+    "latest": "stable"
   },
   "xob0t": {
     "source": "github",
@@ -1999,23 +2322,28 @@
     "stable": {
       "file": "patches/xob0t-stable.json",
       "version": "v1.6.0",
-      "createdAt": "2026-06-23T06:18:13"
+      "createdAt": "2026-06-23T06:18:13",
+      "targetApps": [
+        "com.avito.android",
+        "com.idamob.tinkoff.android",
+        "com.wildberries.ru",
+        "ru.ozon.app.android",
+        "universal"
+      ]
     },
     "dev": {
       "file": "patches/xob0t-dev.json",
       "version": "v1.6.0-dev.1",
-      "createdAt": "2026-06-23T06:17:33"
+      "createdAt": "2026-06-23T06:17:33",
+      "targetApps": [
+        "com.avito.android",
+        "com.idamob.tinkoff.android",
+        "com.wildberries.ru",
+        "ru.ozon.app.android",
+        "universal"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 24,
-    "appCount": 4,
-    "targetApps": [
-      "com.avito.android",
-      "com.idamob.tinkoff.android",
-      "com.wildberries.ru",
-      "ru.ozon.app.android",
-      "universal"
-    ]
+    "latest": "stable"
   },
   "ynotzort": {
     "source": "github",
@@ -2028,19 +2356,20 @@
     "stable": {
       "file": "patches/ynotzort-stable.json",
       "version": "v1.0.0",
-      "createdAt": "2026-06-25T14:45:29"
+      "createdAt": "2026-06-25T14:45:29",
+      "targetApps": [
+        "com.targo_prod.bad"
+      ]
     },
     "dev": {
       "file": "patches/ynotzort-dev.json",
       "version": "v1.0.0-dev.1",
-      "createdAt": "2026-06-25T14:51:54"
+      "createdAt": "2026-06-25T14:51:54",
+      "targetApps": [
+        "com.targo_prod.bad"
+      ]
     },
-    "latest": "dev",
-    "patchCount": 1,
-    "appCount": 1,
-    "targetApps": [
-      "com.targo_prod.bad"
-    ]
+    "latest": "dev"
   },
   "zpatches": {
     "source": "github",
@@ -2053,20 +2382,23 @@
     "stable": {
       "file": "patches/zpatches-stable.json",
       "version": "v1.5.1",
-      "createdAt": "2026-06-15T17:16:26"
+      "createdAt": "2026-06-15T17:16:26",
+      "targetApps": [
+        "com.jcdecaux.vls.lyon",
+        "ee.dustland.android.minesweeper",
+        "universal"
+      ]
     },
     "dev": {
       "file": "patches/zpatches-dev.json",
       "version": "v1.5.1",
-      "createdAt": "2026-06-15T17:16:26"
+      "createdAt": "2026-06-15T17:16:26",
+      "targetApps": [
+        "com.jcdecaux.vls.lyon",
+        "ee.dustland.android.minesweeper",
+        "universal"
+      ]
     },
-    "latest": "stable",
-    "patchCount": 6,
-    "appCount": 2,
-    "targetApps": [
-      "com.jcdecaux.vls.lyon",
-      "ee.dustland.android.minesweeper",
-      "universal"
-    ]
+    "latest": "stable"
   }
 }
