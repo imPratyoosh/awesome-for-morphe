@@ -605,6 +605,9 @@ createApp({
     };
 
     const isNewBundle = (group) => {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.has('new')) return false;
+
       if (!group || !group.bundle || !group.bundle.firstSeen) return false;
       const firstSeenTime = new Date(group.bundle.firstSeen).getTime();
       const currentTime = new Date().getTime();

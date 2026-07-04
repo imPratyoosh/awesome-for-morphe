@@ -4,69 +4,80 @@
   gap: 4px;
   padding: 2px 6px;
   border-radius: 9999px;
-  font-size: 11px;
-  font-weight: 700;
+  font-size: 12px;
+  font-weight: 600;
   line-height: 1.4;
   white-space: nowrap;
   border: 1px solid color-mix(in srgb, currentColor 20%, transparent);
   background: color-mix(in srgb, currentColor 10%, transparent);
+  transition: all 150ms;
+  color: #A1A1AA;
+}
+
+.badge i, .badge-morphe i, .icon-center {
+  height: 1.4em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .badge-sm {
-  padding: 0px 4px;
-  font-size: 10px;
+  padding: 1px 4px;
+  font-size: 12px;
 }
 
-button.badge,
+.badge-md {
+  padding: 4px 8px;
+  font-size: 14px;
+  font-weight: 700;
+  gap: 6px;
+}
+
 a.badge {
   cursor: pointer;
-  transition: background 150ms;
+}
+a.badge:not([class*="text-"]) {
+  color: #3B82F6; 
+}
+a.badge:hover span {
+  color: #3B82F6;
 }
 
-button.badge:hover,
-a.badge:hover {
+button.badge {
+  cursor: pointer;
+}
+button.badge:not([class*="text-"]) {
+  color: #10B981; 
+}
+button.badge:hover {
   background: color-mix(in srgb, currentColor 20%, transparent);
+  border-color: color-mix(in srgb, currentColor 30%, transparent);
+}
+button.badge:active {
+  transform: scale(0.96);
 }
 
-.pill {
+.badge-morphe {
   display: inline-flex;
   align-items: center;
   gap: 4px;
   padding: 2px 6px;
   border-radius: 9999px;
-  font-size: 11px;
-  font-weight: 500;
+  font-size: 12px;
+  font-weight: 700;
   line-height: 1.4;
   white-space: nowrap;
-  border: 1px solid color-mix(in srgb, currentColor 20%, transparent);
-  background: color-mix(in srgb, currentColor 10%, transparent);
-  cursor: pointer;
-  transition: background 150ms, color 150ms, border-color 150ms;
-}
-
-.pill:hover {
-  background: color-mix(in srgb, currentColor 20%, transparent);
-  border-color: color-mix(in srgb, currentColor 30%, transparent);
-}
-
-.pill-sm {
-  padding: 4px 10px;
-  gap: 6px;
-}
-
-.pill-md {
-  padding: 6px 12px;
-  font-weight: 700;
-  gap: 6px;
-}
-
-.pill-morphe {
+  border: 1px solid transparent;
   color: #FAFAFA;
   background: linear-gradient(to right, #3B82F6, #10B981);
-  border-color: transparent;
-  font-weight: 700;
+  cursor: pointer;
+  transition: all 150ms;
 }
-.pill-morphe:hover {
-  background: linear-gradient(to right, #3B82F6, #10B981);
+.badge-morphe:hover {
   opacity: 0.85;
 }
+.badge-morphe:active {
+  transform: scale(0.96);
+}
+
+

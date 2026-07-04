@@ -159,17 +159,25 @@
             Awesome for Morphe</h1>
 
           <div class="flex items-center gap-2">
-            <a href="https://github.com/nvbangg/awesome-for-morphe" target="_blank" rel="noreferrer"
-              class="sm:absolute sm:left-3 pill pill-sm text-white hover:text-blue active:scale-95"
-              title="GitHub">
-              <i class="fa-brands fa-github text-[15px]"></i>
-              <span>GitHub</span>
-            </a>
+            <div class="sm:absolute sm:left-3 flex items-center gap-2">
+              <a href="https://github.com/nvbangg/awesome-for-morphe" target="_blank" rel="noreferrer"
+                class="badge badge-md text-white"
+                title="GitHub">
+                <i class="fa-brands fa-github"></i>
+                <span>GitHub</span>
+              </a>
+              <a href="https://t.me/awesome_for_morphe" target="_blank" rel="noreferrer"
+                class="badge badge-md text-blue"
+                title="Telegram">
+                <i class="fa-brands fa-telegram"></i>
+                <span>Telegram</span>
+              </a>
+            </div>
 
             <a href="https://github.com/nvbangg/awesome-for-morphe/releases" target="_blank" rel="noreferrer"
-              class="sm:absolute sm:right-3 pill pill-sm text-yellow hover:text-blue"
+              class="sm:absolute sm:right-3 badge badge-md text-yellow"
               title="Changelog">
-              <i class="fa-solid fa-clock-rotate-left text-xs"></i>
+              <i class="fa-solid fa-clock-rotate-left"></i>
               <span>Changelog</span>
             </a>
           </div>
@@ -181,7 +189,7 @@
             <!-- Reset & Bundle Container -->
             <div class="flex items-center gap-2 w-full md:w-[38%]">
               <button @click="resetFilters"
-                class="pill pill-md text-green h-[34px] hover:scale-[1.02] active:scale-95 shrink-0"
+                class="badge badge-md shrink-0"
                 title="Reset Filters">
                 <i class="fa-solid fa-arrow-rotate-left"></i>
                 <span>Reset Filters</span>
@@ -194,9 +202,9 @@
                 aria-label="Patch Bundles filter">
                 <template v-if="bundle">
                   <img v-if="filterOptions.bundleOptions.find(o => o.value === bundle)?.icon" :src="filterOptions.bundleOptions.find(o => o.value === bundle)?.icon" class="w-4 h-4 rounded-full object-cover shrink-0" alt="" loading="lazy">
-                  <i v-else class="fa-solid fa-cubes text-light text-base shrink-0 -ml-1 sm:ml-0"></i>
+                  <i v-else class="fa-solid fa-cubes text-light text-base shrink-0 -ml-1 sm:ml-0 icon-center"></i>
                 </template>
-                <i v-else class="fa-solid fa-cubes text-light text-base shrink-0 -ml-1 sm:ml-0"></i>
+                <i v-else class="fa-solid fa-cubes text-light text-base shrink-0 -ml-1 sm:ml-0 icon-center"></i>
                 <span class="flex-1 truncate text-left">{{ bundle || 'All Bundles' }}</span>
                 <i
                   class="fa-solid fa-chevron-down dd-chevron text-light text-xs flex-shrink-0 transition-transform duration-200 -mr-0.5 sm:mr-0"></i>
@@ -206,7 +214,7 @@
                 <div class="sticky top-0 bg-dark px-2 pb-2 pt-1 border-b border-lightGray/30 z-10">
                   <div class="relative">
                     <span class="absolute left-2 top-0 h-8 flex items-center text-light pointer-events-none">
-                      <i class="fa-solid fa-magnifying-glass text-[10px]"></i>
+                      <i class="fa-solid fa-magnifying-glass text-[10px] icon-center"></i>
                     </span>
                     <input type="search" v-model="bundleSearch" placeholder="Search bundles..."
                       class="w-full h-8 pl-6 pr-2 bg-black border border-lightGray rounded-md text-xs text-white focus:border-light focus:ring-1 focus:ring-light/20 outline-none transition-all"
@@ -217,7 +225,7 @@
                   :data-selected="!bundle ? 'true' : null"
                   @click="bundle = ''; bundleSearch = ''; $event.target.closest('.dd-root').classList.remove('open')"
                   class="px-3 py-2 text-sm cursor-pointer transition-colors flex items-center gap-2">
-                  <i class="fa-solid fa-cubes text-light text-base w-4 shrink-0 text-center"></i>
+                  <i class="fa-solid fa-cubes text-light text-base w-4 shrink-0 text-center icon-center"></i>
                   <span class="leading-tight flex-1">All Bundles</span>
                 </div>
                 <div v-for="opt in filteredBundleOptions" :key="opt.value"
@@ -226,7 +234,7 @@
                   @click="bundle = opt.value; bundleSearch = ''; $event.target.closest('.dd-root').classList.remove('open')"
                   class="px-3 py-2 text-sm cursor-pointer transition-colors flex items-center gap-2">
                   <img v-if="opt.icon" :src="opt.icon" class="w-4 h-4 rounded-full object-cover shrink-0" alt="" loading="lazy">
-                  <i v-else class="fa-solid fa-cubes text-light text-base w-4 shrink-0 text-center"></i>
+                  <i v-else class="fa-solid fa-cubes text-light text-base w-4 shrink-0 text-center icon-center"></i>
                   <span class="leading-tight flex-1">{{ opt.label }}</span>
                 </div>
               </div>
@@ -240,14 +248,14 @@
                 aria-label="Apps filter">
                 <template v-if="app">
                   <template v-if="app === 'universal'">
-                    <i class="fa-brands fa-android text-green text-base shrink-0 -ml-1 sm:ml-0"></i>
+                    <i class="fa-brands fa-android text-green text-base shrink-0 -ml-1 sm:ml-0 icon-center"></i>
                   </template>
                   <template v-else>
                     <img v-if="filterOptions.appOptions.find(o => o.value === app)?.icon" :src="filterOptions.appOptions.find(o => o.value === app)?.icon" class="w-4 h-4 rounded-sm object-contain shrink-0" alt="" loading="lazy">
-                    <i v-else class="fa-brands fa-android text-green text-base shrink-0 -ml-1 sm:ml-0"></i>
+                    <i v-else class="fa-brands fa-android text-green text-base shrink-0 -ml-1 sm:ml-0 icon-center"></i>
                   </template>
                 </template>
-                <i v-else class="fa-solid fa-mobile-screen-button text-light text-base shrink-0 -ml-1 sm:ml-0"></i>
+                <i v-else class="fa-solid fa-mobile-screen-button text-light text-base shrink-0 -ml-1 sm:ml-0 icon-center"></i>
                 <span class="flex-1 truncate text-left">{{ app ? (filterOptions.appOptions.find(o => o.value ===
                   app)?.label || app) : 'All Apps' }}</span>
                 <i
@@ -258,7 +266,7 @@
                 <div class="sticky top-0 bg-dark px-2 pb-2 pt-1 border-b border-lightGray/30 z-10">
                   <div class="relative">
                     <span class="absolute left-2 top-0 h-8 flex items-center text-light pointer-events-none">
-                      <i class="fa-solid fa-magnifying-glass text-[10px]"></i>
+                      <i class="fa-solid fa-magnifying-glass text-[10px] icon-center"></i>
                     </span>
                     <input type="search" v-model="appSearch" placeholder="Search apps..."
                       class="w-full h-8 pl-6 pr-2 bg-black border border-lightGray rounded-md text-xs text-white focus:border-light focus:ring-1 focus:ring-light/20 outline-none transition-all"
@@ -269,7 +277,7 @@
                   :data-selected="!app ? 'true' : null"
                   @click="app = ''; appSearch = ''; $event.target.closest('.dd-root').classList.remove('open')"
                   class="px-3 py-2 text-sm cursor-pointer transition-colors flex items-center gap-2">
-                  <i class="fa-solid fa-mobile-screen-button text-light text-base w-4 shrink-0 text-center"></i>
+                  <i class="fa-solid fa-mobile-screen-button text-light text-base w-4 shrink-0 text-center icon-center"></i>
                   <span class="flex-1">All Apps</span>
                 </div>
                 <div v-for="opt in filteredAppOptions" :key="opt.value"
@@ -277,10 +285,10 @@
                   :data-selected="app === opt.value ? 'true' : null"
                   @click="app = opt.value; appSearch = ''; $event.target.closest('.dd-root').classList.remove('open')"
                   class="px-3 py-2 text-sm cursor-pointer transition-colors flex items-center gap-2">
-                  <i v-if="opt.value === 'universal'" class="fa-brands fa-android text-green text-base w-4 shrink-0 text-center"></i>
+                  <i v-if="opt.value === 'universal'" class="fa-brands fa-android text-green text-base w-4 shrink-0 text-center icon-center"></i>
                   <template v-else>
                     <img v-if="opt.icon" :src="opt.icon" class="w-4 h-4 rounded-sm object-contain shrink-0" alt="" loading="lazy">
-                    <i v-else class="fa-brands fa-android text-green text-base w-4 shrink-0 text-center"></i>
+                    <i v-else class="fa-brands fa-android text-green text-base w-4 shrink-0 text-center icon-center"></i>
                   </template>
                   <span class="leading-tight flex-1">{{ opt.label }}</span>
                 </div>
@@ -292,14 +300,14 @@
               <form @submit.prevent="$event.target.querySelector('input').blur()"
                 class="relative flex-1 min-w-0 mt-0">
                 <span class="absolute left-3 top-0 h-[34px] flex items-center text-light pointer-events-none">
-                  <i class="fa-solid fa-magnifying-glass text-xs"></i>
+                  <i class="fa-solid fa-magnifying-glass text-xs icon-center"></i>
                 </span>
                 <input type="search" v-model="query" autocomplete="off" enterkeyhint="search" placeholder="Search patches"
                   class="w-full h-[34px] pl-8 pr-9 bg-black border border-lightGray hover:border-white/50 rounded-md focus:border-light focus:ring-2 focus:ring-light/20 outline-none transition-all text-sm text-white">
                 <button v-if="query" type="button" @click="query = ''"
                   class="absolute right-0 top-0 h-[34px] w-9 flex items-center justify-center text-light hover:text-white transition-colors"
                   title="Clear search">
-                  <i class="fa-solid fa-circle-xmark"></i>
+                  <i class="fa-solid fa-circle-xmark icon-center"></i>
                 </button>
               </form>
 
@@ -311,28 +319,28 @@
             <!-- Left & Center Group: Sort + Channels -->
             <div class="flex flex-row flex-wrap items-center justify-center md:justify-start gap-2 sm:gap-3 w-full md:w-auto">
               <!-- Sort Dropdown -->
-              <div class="relative w-[130px] shrink-0">
+              <div class="relative w-[135px] shrink-0 flex items-center">
                 <select v-model="sortOrder"
-                  class="w-full h-7 sm:h-[30px] pl-7 pr-7 appearance-none bg-black border border-lightGray hover:border-white/50 rounded-md text-xs text-white focus:border-light focus:ring-1 focus:ring-light/20 outline-none transition-all cursor-pointer">
+                  class="w-full h-7 pl-7 pr-7 appearance-none bg-black border border-lightGray hover:border-white/50 rounded-md text-sm text-white focus:border-light focus:ring-1 focus:ring-light/20 outline-none transition-all cursor-pointer">
                   <option value="stars">Most Stars</option>
                   <option value="apps_desc">Most Apps</option>
                   <option value="latest">Latest</option>
                   <option value="alpha">Alphabetical</option>
                 </select>
                 <i
-                  class="fa-solid fa-sort-amount-down absolute left-2.5 top-[8px] sm:top-[9px] text-light text-xs pointer-events-none"></i>
+                  class="fa-solid fa-sort-amount-down absolute left-2.5 top-1/2 -translate-y-1/2 text-light text-xs pointer-events-none icon-center"></i>
                 <i
-                  class="fa-solid fa-chevron-down absolute right-2.5 top-[9px] sm:top-[10px] text-light text-[10px] pointer-events-none"></i>
+                  class="fa-solid fa-chevron-down absolute right-2.5 top-1/2 -translate-y-1/2 text-light text-[10px] pointer-events-none icon-center"></i>
               </div>
 
               <!-- Channels -->
               <div class="flex items-center justify-center gap-1.5 sm:gap-2">
                 <button @click="channel = 'stable'"
-                  class="pill pill-sm h-7 sm:h-[30px]"
-                  :class="channel === 'stable' ? 'text-green bg-green/10 border-green/20' : 'text-white bg-white/5 border-white/5 hover:bg-white/10'">Stable</button>
+                  class="badge badge-md"
+                  :class="channel === 'stable' ? 'text-green' : 'text-light'"><span>Stable</span></button>
                 <button @click="channel = 'latest'"
-                  class="pill pill-sm h-7 sm:h-[30px]"
-                  :class="channel === 'latest' ? 'text-yellow bg-yellow/10 border-yellow/20' : 'text-white bg-white/5 border-white/5 hover:bg-white/10'">Latest</button>
+                  class="badge badge-md"
+                  :class="channel === 'latest' ? 'text-yellow' : 'text-light'"><span>Latest</span></button>
               </div>
             </div>
 
@@ -340,9 +348,9 @@
             <div
               class="flex flex-wrap items-center justify-center md:justify-end gap-2 w-full md:w-auto text-xs text-light shrink-0"
               aria-live="polite">
-              <span class="badge text-light font-normal">{{ stats?.bundles || 0 }} bundles</span>
-              <span class="badge text-light font-normal">{{ stats?.apps || 0 }} apps</span>
-              <span class="badge text-light font-normal">{{ stats?.patches || 0 }} patches</span>
+              <span class="badge font-normal"><span>{{ stats?.bundles || 0 }} bundles</span></span>
+              <span class="badge font-normal"><span>{{ stats?.apps || 0 }} apps</span></span>
+              <span class="badge font-normal"><span>{{ stats?.patches || 0 }} patches</span></span>
             </div>
           </div>
         </div>
@@ -381,28 +389,28 @@
                   <img v-if="group.bundle.avatarUrl" :src="group.bundle.avatarUrl" alt="Avatar"
                     class="w-[42px] h-[42px] sm:w-[46px] sm:h-[46px] rounded-full bg-lightGray/20 object-cover pointer-events-none select-none shrink-0">
                   <div v-else class="w-[42px] h-[42px] sm:w-[46px] sm:h-[46px] rounded-full bg-lightGray/20 flex items-center justify-center shrink-0">
-                    <i class="fa-solid fa-cubes text-light text-lg"></i>
+                    <i class="fa-solid fa-cubes text-light text-lg icon-center"></i>
                   </div>
                   <div class="flex flex-col min-w-0 justify-center items-center sm:items-start gap-1 sm:gap-1.5 max-w-full">
                     <!-- Title Row -->
                     <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2 min-w-0 w-full">
                       <strong class="font-bold text-lg sm:text-xl text-transparent bg-clip-text bg-gradient-to-r from-blue to-green break-words leading-tight">{{ group.key }}</strong>
                       <span v-if="hasHighlight(group.key) || isNewBundle(group)"
-                        class="badge text-yellow shrink-0">✨ New</span>
+                        class="badge text-yellow shrink-0"><span>✨ New</span></span>
                       <a v-if="group.bundle.deepLink || (group.bundle.repo && morpheUrl(group.bundle.repo))"
                         :href="group.bundle.deepLink || morpheUrl(group.bundle.repo)"
                         target="_blank" rel="noreferrer" @click.stop
-                        class="pill pill-morphe shrink-0 select-none">
-                        <i class="fa-solid fa-plus text-[10px] shrink-0"></i>
+                        class="badge-morphe shrink-0 select-none">
+                        <i class="fa-solid fa-plus"></i>
                         <span class="sm:hidden">Add</span>
                         <span class="hidden sm:inline">Add to Morphe</span>
                       </a>
                     </div>
                     <!-- Repo Row -->
                     <a v-if="group.bundle.repo" :href="group.bundle.repoUrl || ('https://github.com/' + group.bundle.repo)" target="_blank" rel="noreferrer" @click.stop
-                      class="flex items-center gap-1.5 text-xs sm:text-[13px] transition-colors w-fit max-w-full">
-                      <i class="shrink-0" :class="getPlatform(group.bundle.repoUrl || group.bundle.repo) === 'github' ? 'fa-brands fa-github text-white' : getPlatform(group.bundle.repoUrl || group.bundle.repo) === 'gitlab' ? 'fa-brands fa-gitlab text-orange' : 'fa-solid fa-globe text-light'"></i>
-                      <span class="text-blue break-words">{{ group.bundle.repo }}</span>
+                      class="badge badge-sm max-w-full">
+                      <i :class="getPlatform(group.bundle.repoUrl || group.bundle.repo) === 'github' ? 'fa-brands fa-github text-white' : getPlatform(group.bundle.repoUrl || group.bundle.repo) === 'gitlab' ? 'fa-brands fa-gitlab text-orange' : 'fa-solid fa-globe text-light'"></i>
+                      <span class="truncate">{{ group.bundle.repo }}</span>
                     </a>
                   </div>
                 </div>
@@ -411,18 +419,14 @@
                   <template v-if="group.bundle.version">
                     <a v-if="releaseUrl(group.bundle)" :href="releaseUrl(group.bundle)" target="_blank" rel="noreferrer"
                       @click.stop
-                      class="pill text-white hover:text-blue"><i
-                        class="fa-solid fa-clock-rotate-left text-[10px] shrink-0"></i>{{
-                      group.bundle.version }}</a>
+                      class="badge text-white"><i class="fa-solid fa-clock-rotate-left"></i><span>{{ group.bundle.version }}</span></a>
                     <span v-else
-                      class="pill text-white"><i
-                        class="fa-solid fa-clock-rotate-left text-[10px] shrink-0"></i>{{
-                      group.bundle.version }}</span>
+                      class="badge text-white"><i class="fa-solid fa-clock-rotate-left"></i><span>{{ group.bundle.version }}</span></span>
                   </template>
-                  <span v-if="group.bundle.stars !== undefined" class="badge text-light font-normal">
-                    <i class="fa-solid fa-star text-[10px] text-yellow"></i>{{ group.bundle.stars }}
+                  <span v-if="group.bundle.stars !== undefined" class="badge font-normal">
+                    <i class="fa-solid fa-star text-yellow"></i><span>{{ group.bundle.stars }}</span>
                   </span>
-                  <span v-if="group.bundle.createdAt" class="badge text-light font-normal">{{ formatDate(group.bundle.createdAt) }}</span>
+                  <span v-if="group.bundle.createdAt" class="badge font-normal"><span>{{ formatDate(group.bundle.createdAt) }}</span></span>
                 </span>
               </div>
 
@@ -431,14 +435,14 @@
                   <div class="flex overflow-x-auto gap-1.5 py-1.5 px-3 border-b border-lightGray">
                     <button v-for="(app, index) in appsList" :key="app.id" :id="'tab_' + group.key + '_' + app.id"
                       @click.stop="selectApp(group.key, app, appsList)"
-                      class="pill pill-md border-2 whitespace-nowrap outline-none shrink-0"
-                      :class="expandedOptions.has('app_' + group.key + '_' + app.id) ? 'bg-blue/10 text-blue border-blue/30 shadow-blue/5' : 'bg-dark text-light border-white/10 hover:border-white/20 hover:text-white hover:bg-white/5'">
+                      class="badge badge-md shrink-0"
+                      :class="expandedOptions.has('app_' + group.key + '_' + app.id) ? 'text-blue' : 'text-light'">
                       <img v-if="app.appIcon" :src="app.appIcon" class="w-4 h-4 rounded-sm object-contain shrink-0" :alt="app.appName" loading="lazy">
-                      <i v-else class="fa-brands fa-android text-green shrink-0 text-sm"></i>
+                      <i v-else class="fa-brands fa-android text-green"></i>
                       <span class="truncate">{{ (!app.appName || app.appName === 'Unspecified') ? 'Any app' : app.appName }}</span>
                       <span
                         v-if="isChangelogView && (changelogHighlights.includes(group.key + ':' + app.packageName) || changelogHighlights.includes(group.key + ':' + app.appName))"
-                        class="badge text-yellow leading-none">✨ New</span>
+                        class="badge text-yellow"><span>✨ New</span></span>
                     </button>
                   </div>
 
@@ -450,27 +454,27 @@
                       <div class="flex flex-wrap items-center gap-2 min-w-0">
                         <template v-if="app.packageName && app.appName && app.appName !== 'Unspecified'">
                           <button @click.stop="filterByApp(app.packageName)"
-                            class="pill text-green shrink-0">
-                            <i class="fa-solid fa-filter text-[10px] shrink-0"></i>
+                            class="badge shrink-0">
+                            <i class="fa-solid fa-filter"></i>
                             <span>Filter by this app</span>
                           </button>
                           <a :href="playUrl(app.packageName)"
-                            class="pill text-blue break-all"
+                            class="badge shrink-0"
                             target="_blank" @click.stop title="Open on Play Store">
-                            <i class="fa-brands fa-google-play text-[10px] shrink-0"></i>
+                            <i class="fa-brands fa-google-play"></i>
                             <span>{{ app.packageName }}</span>
                           </a>
                           <button @click.stop="copyText(app.packageName, 'pkg_' + group.key + '_' + app.id)"
-                            class="text-light hover:text-white hover:bg-white/5 border border-white/10 rounded-md transition-all shadow-sm flex items-center justify-center h-[22px] w-[22px] shrink-0 cursor-pointer"
+                            class="badge text-light shrink-0"
                             title="Copy package name">
-                            <i class="fa-solid text-[10px]"
+                            <i class="fa-solid"
                               :class="copiedStates['pkg_' + group.key + '_' + app.id] ? 'fa-check text-green' : 'fa-regular fa-copy'"></i>
                           </button>
                         </template>
                         <template v-else>
                           <button @click.stop="filterByApp('universal')"
-                            class="pill text-green shrink-0">
-                            <i class="fa-solid fa-filter text-[10px] shrink-0"></i>
+                            class="badge shrink-0">
+                            <i class="fa-solid fa-filter"></i>
                             <span>Filter by this app</span>
                           </button>
                         </template>
@@ -488,9 +492,9 @@
                                 {{ patch.patchName }}
                                 <span
                                   v-if="hasHighlight(group.key + ':' + (app.packageName || 'universal') + ':' + patch.patchName)"
-                                  class="badge text-yellow leading-none">✨ New</span>
+                                  class="badge text-yellow"><span>✨ New</span></span>
                               </strong>
-                              <span v-if="!patch.enabled" class="badge text-yellow">off</span>
+                              <span v-if="!patch.enabled" class="badge text-yellow"><span>off</span></span>
                               <button v-if="patch.options.length" @click.stop="toggleOptions(patch.id)"
                                 class="text-light hover:text-white px-1 shrink-0"
                                 :title="expandedOptions.has(patch.id) ? 'Hide options' : 'Show options'">
@@ -508,12 +512,12 @@
                                       class="badge badge-sm text-green font-mono font-normal"
                                       :title="a.versions[a.versions.length - 1].isExperimental ? 'Experimental version' : ''">
                                       <i v-if="a.versions[a.versions.length - 1].isExperimental"
-                                        class="fa-solid fa-flask text-yellow text-[8px]"></i>
-                                      {{ a.versions[a.versions.length - 1].version }}
+                                        class="fa-solid fa-flask text-yellow"></i>
+                                      <span>{{ a.versions[a.versions.length - 1].version }}</span>
                                     </span>
                                     <button v-if="a.versions.length > 1" @click.stop="toggleVersions(a.id)"
                                       class="badge badge-sm text-blue font-mono">
-                                      +{{ a.versions.length - 1 }}
+                                      <span>+{{ a.versions.length - 1 }}</span>
                                     </button>
                                   </template>
                                   <template v-else>
@@ -522,12 +526,12 @@
                                       :key="v.version"
                                       class="badge badge-sm text-green font-mono font-normal"
                                       :title="v.isExperimental ? 'Experimental version' : ''">
-                                      <i v-if="v.isExperimental" class="fa-solid fa-flask text-yellow text-[8px]"></i>
-                                      {{ v.version }}
+                                      <i v-if="v.isExperimental" class="fa-solid fa-flask text-yellow"></i>
+                                      <span>{{ v.version }}</span>
                                     </span>
                                     <button @click.stop="toggleVersions(a.id)"
                                       class="badge badge-sm text-blue font-mono">
-                                      Less
+                                      <span>Less</span>
                                     </button>
                                   </template>
                                 </template>
@@ -614,3 +618,4 @@
 </body>
 
 </html>
+
