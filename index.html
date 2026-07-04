@@ -348,9 +348,9 @@
             <div
               class="flex flex-wrap items-center justify-center md:justify-end gap-2 w-full md:w-auto text-xs text-light shrink-0"
               aria-live="polite">
-              <span class="badge font-normal"><span>{{ stats?.bundles || 0 }} bundles</span></span>
-              <span class="badge font-normal"><span>{{ stats?.apps || 0 }} apps</span></span>
-              <span class="badge font-normal"><span>{{ stats?.patches || 0 }} patches</span></span>
+              <span class="badge"><span>{{ stats?.bundles || 0 }} bundles</span></span>
+              <span class="badge"><span>{{ stats?.apps || 0 }} apps</span></span>
+              <span class="badge"><span>{{ stats?.patches || 0 }} patches</span></span>
             </div>
           </div>
         </div>
@@ -423,10 +423,10 @@
                     <span v-else
                       class="badge text-white"><i class="fa-solid fa-clock-rotate-left"></i><span>{{ group.bundle.version }}</span></span>
                   </template>
-                  <span v-if="group.bundle.stars !== undefined" class="badge font-normal">
+                  <span v-if="group.bundle.stars !== undefined" class="badge">
                     <i class="fa-solid fa-star text-yellow"></i><span>{{ group.bundle.stars }}</span>
                   </span>
-                  <span v-if="group.bundle.createdAt" class="badge font-normal"><span>{{ formatDate(group.bundle.createdAt) }}</span></span>
+                  <span v-if="group.bundle.createdAt" class="badge"><span>{{ formatDate(group.bundle.createdAt) }}</span></span>
                 </span>
               </div>
 
@@ -441,7 +441,7 @@
                       <i v-else class="fa-brands fa-android text-green"></i>
                       <span class="truncate">{{ (!app.appName || app.appName === 'Unspecified') ? 'Any app' : app.appName }}</span>
                       <span
-                        v-if="isChangelogView && (changelogHighlights.includes(group.key + ':' + app.packageName) || changelogHighlights.includes(group.key + ':' + app.appName))"
+                        v-if="isChangelogView && (changelogHighlights.includes(group.key + ':' + (app.packageName || 'universal')) || changelogHighlights.includes(group.key + ':' + app.appName))"
                         class="badge text-yellow"><span>✨ New</span></span>
                     </button>
                   </div>
@@ -509,14 +509,14 @@
                                 <template v-if="a.versions && a.versions.length">
                                   <template v-if="!expandedVersions.has(a.id)">
                                     <span
-                                      class="badge badge-sm text-green font-mono font-normal"
+                                      class="badge badge-sm text-green"
                                       :title="a.versions[a.versions.length - 1].isExperimental ? 'Experimental version' : ''">
                                       <i v-if="a.versions[a.versions.length - 1].isExperimental"
                                         class="fa-solid fa-flask text-yellow"></i>
                                       <span>{{ a.versions[a.versions.length - 1].version }}</span>
                                     </span>
                                     <button v-if="a.versions.length > 1" @click.stop="toggleVersions(a.id)"
-                                      class="badge badge-sm text-blue font-mono">
+                                      class="badge badge-sm text-blue">
                                       <span>+{{ a.versions.length - 1 }}</span>
                                     </button>
                                   </template>
@@ -524,18 +524,18 @@
                                     <span
                                       v-for="v in [...a.versions].sort((v1, v2) => v1.version.localeCompare(v2.version, undefined, { numeric: true }))"
                                       :key="v.version"
-                                      class="badge badge-sm text-green font-mono font-normal"
+                                      class="badge badge-sm text-green"
                                       :title="v.isExperimental ? 'Experimental version' : ''">
                                       <i v-if="v.isExperimental" class="fa-solid fa-flask text-yellow"></i>
                                       <span>{{ v.version }}</span>
                                     </span>
                                     <button @click.stop="toggleVersions(a.id)"
-                                      class="badge badge-sm text-blue font-mono">
+                                      class="badge badge-sm text-blue">
                                       <span>Less</span>
                                     </button>
                                   </template>
                                 </template>
-                                <span v-else class="badge badge-sm text-green font-mono font-normal">Any version</span>
+                                <span v-else class="badge badge-sm text-green">Any version</span>
                               </template>
                             </div>
                           </div>
@@ -618,4 +618,5 @@
 </body>
 
 </html>
+
 
