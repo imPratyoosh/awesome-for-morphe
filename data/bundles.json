@@ -659,8 +659,8 @@
     },
     "dev": {
       "file": "patches/ee-morphe-dev.json",
-      "version": "v1.3.0-dev.12",
-      "createdAt": "2026-07-03T18:17:10",
+      "version": "v1.3.0-dev.13",
+      "createdAt": "2026-07-04T14:52:21",
       "targetApps": [
         "com.byairapp.android",
         "com.hello.german",
@@ -1460,8 +1460,8 @@
     "firstSeen": "2026-07-03T02:41:59",
     "stable": {
       "file": "patches/nai64-stable.json",
-      "version": "1.9.0",
-      "createdAt": "2026-07-03T12:23:05",
+      "version": "1.10.2",
+      "createdAt": "2026-07-04T12:58:20",
       "targetApps": [
         "universal"
       ]
@@ -1723,8 +1723,8 @@
     "firstSeen": "2026-06-30T14:24:47",
     "stable": {
       "file": "patches/prathxm-stable.json",
-      "version": "v1.8.1",
-      "createdAt": "2026-07-04T10:43:34",
+      "version": "v1.9.0",
+      "createdAt": "2026-07-04T11:49:43",
       "targetApps": [
         "com.chess"
       ]
