@@ -119,8 +119,10 @@
         <div
           class="relative flex flex-col sm:flex-row items-center justify-center border-b-2 border-blue/10 py-3 sm:py-0 sm:h-12 gap-2 sm:gap-0 px-4">
           <h1
-            class="text-2xl md:text-3xl font-extrabold whitespace-nowrap flex items-center text-transparent bg-clip-text bg-gradient-to-r from-blue to-green">
-            Awesome for Morphe</h1>
+            class="text-2xl md:text-3xl font-extrabold whitespace-nowrap flex items-center text-transparent bg-clip-text bg-gradient-to-r from-blue to-green relative">
+            Awesome for Morphe
+            <img src="favicon.svg" alt="Logo" class="w-6 h-6 md:w-8 md:h-8 absolute -right-8 md:-right-10 top-1/2 -translate-y-1/2 object-contain">
+          </h1>
 
           <div class="flex items-center gap-2">
             <div class="sm:absolute sm:left-3 flex items-center gap-2">
@@ -290,12 +292,13 @@
             <div
               class="flex flex-row flex-wrap items-center justify-center md:justify-start gap-2 sm:gap-3 w-full md:w-auto">
               <!-- Sort Dropdown -->
-              <div class="relative w-[135px] shrink-0 flex items-center">
+              <div class="relative w-[140px] shrink-0 flex items-center">
                 <select v-model="sortOrder"
                   class="w-full h-7 pl-7 pr-7 appearance-none bg-black border border-lightGray hover:border-white/50 rounded-md text-sm text-white focus:border-light focus:ring-1 focus:ring-light/20 outline-none transition-all cursor-pointer">
                   <option value="stars">Most Stars</option>
-                  <option value="apps_desc">Most Apps</option>
                   <option value="latest">Latest</option>
+                  <option value="apps_desc">Most Apps</option>
+                  <option value="patches_desc">Most Patches</option>
                   <option value="alpha">Alphabetical</option>
                 </select>
                 <i
@@ -353,11 +356,11 @@
             <!-- Results Toolbar -->
             <div class="flex items-center justify-between px-1">
               <div class="flex items-center gap-1">
-                <button @click="collapseAll" class="badge cursor-pointer text-light hover:text-white transition-colors" title="Collapse all bundles">
+                <button @click="collapseAll" class="badge cursor-pointer text-light hover:text-white transition-colors">
                   <i class="fa-solid fa-compress icon-center"></i>
                   <span>Collapse all</span>
                 </button>
-                <button @click="expandAll" class="badge cursor-pointer text-light hover:text-white transition-colors" title="Expand all bundles">
+                <button @click="expandAll" class="badge cursor-pointer text-light hover:text-white transition-colors">
                   <i class="fa-solid fa-expand icon-center"></i>
                   <span>Expand all</span>
                 </button>
@@ -457,7 +460,7 @@
                   <template v-for="(app, index) in appsList" :key="'content-'+app.id">
                     <div v-if="expandedOptions.has('app_' + group.key + '_' + app.id)" @touchstart="handleTouchStart"
                       @touchend="handleTouchEnd($event, group.key, app, appsList)"
-                      class="p-3 flex flex-col gap-2 shadow-inner"
+                      class="pl-4 pr-1 py-3 sm:p-3 flex flex-col gap-2 shadow-inner"
                       :class="activeSwipeGroup === group.key && swipeDirection ? 'swipe-transition-' + swipeDirection : ''">
                       <div class="flex flex-wrap items-center gap-2 min-w-0">
                         <template v-if="app.packageName && app.packageName !== 'universal'">
@@ -488,7 +491,7 @@
                         <div
                           v-for="patch in group.patches.filter(p => p.apps.some(a => (a.packageName || a.appName || 'any') === (app.packageName || app.appName || 'any')))"
                           :key="patch.id" @click="patch.options.length && toggleOptions(patch.id)"
-                          class="bg-gray py-1.5 px-3 rounded-xl border border-lightGray shadow-sm flex flex-col"
+                          class="bg-gray py-1.5 pl-3.5 pr-1.5 sm:px-3 rounded-xl border border-lightGray shadow-sm flex flex-col"
                           :class="{'cursor-pointer': patch.options.length}">
                           <div class="flex flex-wrap items-start justify-between gap-2 mb-0.5">
                             <div class="flex items-center gap-2 flex-wrap min-w-0">
@@ -567,7 +570,7 @@
 
   <!-- Back to Top -->
   <button id="back-to-top" aria-label="Back to Top"
-    class="fixed bottom-6 right-6 z-[9999] h-11 w-11 hidden items-center justify-center rounded-full bg-green text-white shadow-lg shadow-green/40 hover:bg-green/80 transition-colors border border-green/30">
+    class="fixed bottom-6 right-6 z-[9999] h-11 w-11 hidden items-center justify-center rounded-full bg-gradient-to-r from-blue to-green text-[#fafafa] shadow-lg shadow-green/40 hover:opacity-85 transition-all active:scale-95 border border-transparent">
     <i class="fa-solid fa-arrow-up"></i>
   </button>
   <script>

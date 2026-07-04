@@ -197,6 +197,8 @@ export async function loadChannelData(channelName, priorityKeys = [], onPatchLoa
       stars: sourceObj.stars || 0,
       firstSeen: sourceObj.firstSeen || "",
       targetApps: channelObj.targetApps || [],
+      appCount: channelObj.appCount || 0,
+      patchCount: channelObj.patchCount || 0,
       version: channelObj.version || "",
       tag: channelObj.version || "",
       createdAt: channelObj.createdAt || "",

@@ -332,11 +332,15 @@ def main():
                 all_packages.update(packages)
 
                 target_apps = sorted(list(packages))
+                app_count = len([package_name for package_name in target_apps if package_name != "universal"])
+                
                 source_entry[channel] = {
                     "file": out_file,
                     "version": version,
                     "createdAt": created_at,
                     "targetApps": target_apps,
+                    "appCount": app_count,
+                    "patchCount": patch_count,
                 }
 
                 if channel == latest:

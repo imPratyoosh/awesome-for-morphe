@@ -320,16 +320,20 @@ createApp({
     const filterOptions = computed(() => {
       if (!activeData.value) return { bundleOptions: [], appOptions: [] };
 
+      const showOptSet = new Set(showOptions.value);
+
       const rowsForSource = filterRows(activeData.value, {
         query: query.value,
         showOptions: app.value ? [`:${app.value}`] : [],
       });
+
       let bundleOptions = getFilterOptions(rowsForSource, activeData.value.namesMap).bundleOptions.map(
         (bundleOption) => {
+          const isSelected = showOptSet.has("bundle:" + bundleOption.value);
           const bundleObj = activeData.value.bundleMap[bundleOption.value];
           const repo = bundleObj ? bundleObj.repo.toLowerCase() : "";
           const icon = bundleObj ? bundleObj.avatarUrl : "";
-          return { ...bundleOption, repo, icon };
+          return { ...bundleOption, selected: isSelected, repo, icon };
         },
       );
 
@@ -337,10 +341,12 @@ createApp({
         const bundleA = activeData.value.bundleMap[a.value];
         const bundleB = activeData.value.bundleMap[b.value];
         if (sortOrder.value === "apps_desc") {
-          const rowsA = activeData.value.rows.filter((r) => r.bundleKey === a.value);
-          const rowsB = activeData.value.rows.filter((r) => r.bundleKey === b.value);
-          const countA = new Set(rowsA.map((r) => r.packageName).filter(Boolean)).size;
-          const countB = new Set(rowsB.map((r) => r.packageName).filter(Boolean)).size;
+          const countA = bundleA.appCount || 0;
+          const countB = bundleB.appCount || 0;
+          if (countA !== countB) return countB - countA;
+        } else if (sortOrder.value === "patches_desc") {
+          const countA = bundleA.patchCount || 0;
+          const countB = bundleB.patchCount || 0;
           if (countA !== countB) return countB - countA;
         } else if (sortOrder.value === "latest") {
           const dateA = bundleA?.createdAt ? new Date(bundleA.createdAt).getTime() : 0;
@@ -482,8 +488,12 @@ createApp({
         })
         .sort((a, b) => {
           if (sortOrder.value === "apps_desc") {
-            const countA = a.appsList.length;
-            const countB = b.appsList.length;
+            const countA = a.bundle.appCount || 0;
+            const countB = b.bundle.appCount || 0;
+            if (countA !== countB) return countB - countA;
+          } else if (sortOrder.value === "patches_desc") {
+            const countA = a.patches.length;
+            const countB = b.patches.length;
             if (countA !== countB) return countB - countA;
           } else if (sortOrder.value === "latest") {
             const dateA = a.bundle.createdAt ? new Date(a.bundle.createdAt).getTime() : 0;
