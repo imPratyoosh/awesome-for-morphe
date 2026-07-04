@@ -508,6 +508,50 @@ createApp({
       expandedOptions.has(id) ? expandedOptions.delete(id) : expandedOptions.add(id);
     };
 
+    const expandedAppLists = reactive(new Set());
+    const overflowingAppLists = reactive(new Set());
+    const appListRefs = new Map();
+
+    const checkOverflow = (el, key) => {
+      if (!el) return;
+      if (expandedAppLists.has(key)) {
+        overflowingAppLists.add(key);
+        return;
+      }
+      if (el.scrollWidth > Math.ceil(el.clientWidth)) {
+        overflowingAppLists.add(key);
+      } else {
+        overflowingAppLists.delete(key);
+      }
+    };
+
+    const setupOverflowObserver = (el, key) => {
+      if (el) {
+        appListRefs.set(key, el);
+        if (!el._ro) {
+          const observer = new ResizeObserver(() => checkOverflow(el, key));
+          observer.observe(el);
+          el._ro = observer;
+        }
+        checkOverflow(el, key);
+      } else {
+        const oldEl = appListRefs.get(key);
+        if (oldEl && oldEl._ro) {
+          oldEl._ro.disconnect();
+          oldEl._ro = null;
+        }
+        appListRefs.delete(key);
+      }
+    };
+
+    const toggleAppList = (id) => {
+      expandedAppLists.has(id) ? expandedAppLists.delete(id) : expandedAppLists.add(id);
+      setTimeout(() => {
+        const el = appListRefs.get(id);
+        if (el) checkOverflow(el, id);
+      }, 50);
+    };
+
     watch(bundlesGroups, (newGroups) => {
       if (newGroups && newGroups.length === 1) {
         const singleGroup = newGroups[0];
@@ -701,6 +745,10 @@ createApp({
       expandedVersions,
       toggleVersions,
       expandedOptions,
+      expandedAppLists,
+      overflowingAppLists,
+      setupOverflowObserver,
+      toggleAppList,
       toggleOptions,
       selectApp,
       toggleBundle,
