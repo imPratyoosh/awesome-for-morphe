@@ -192,7 +192,7 @@ createApp({
 
     const hasHighlight = (prefix) => {
       if (!isChangelogView.value) return false;
-      return changelogHighlights.some(h => h === prefix || h.startsWith(prefix + ':'));
+      return changelogHighlights.includes(prefix);
     };
 
     let initBundle = "", initApp = "";
@@ -409,10 +409,6 @@ createApp({
           };
         })
         .sort((a, b) => {
-          const isHighlightedA = hasHighlight(a.key) ? 1 : 0;
-          const isHighlightedB = hasHighlight(b.key) ? 1 : 0;
-          if (isHighlightedA !== isHighlightedB) return isHighlightedB - isHighlightedA;
-
           if (sortOrder.value === 'apps_desc') {
             const countA = countBy(a.rows, r => r.packageName);
             const countB = countBy(b.rows, r => r.packageName);
