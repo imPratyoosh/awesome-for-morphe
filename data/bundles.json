@@ -1049,14 +1049,15 @@
     },
     "dev": {
       "file": "patches/lain-dev.json",
-      "version": "v1.2.0-dev.3",
-      "createdAt": "2026-06-28T07:25:51"
+      "version": "v1.3.0-dev.1",
+      "createdAt": "2026-07-04T04:57:06"
     },
-    "latest": "stable",
-    "patchCount": 29,
-    "appCount": 17,
+    "latest": "dev",
+    "patchCount": 31,
+    "appCount": 19,
     "targetApps": [
       "cn.adonet.proxyevery",
+      "com.adsk.sketchbook",
       "com.azefsw.audioconnect",
       "com.ceyhan.sets",
       "com.chimbori.hermitcrab",
@@ -1064,6 +1065,7 @@
       "com.flavionet.android.camera.lite",
       "com.flavionet.android.cinema.lite",
       "com.hopefactory2021.fakegpslocation",
+      "com.ilovepdf.www",
       "com.imaginstudio.imagetools.pixellab",
       "com.jeyluta.timestampcamerafree",
       "com.jeyluta.timestampcamerafreeent",

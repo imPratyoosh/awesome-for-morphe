@@ -1384,5 +1384,13 @@
   "uni.cbum": {
     "name": "STNDRD - Workout & Fitness Plans",
     "iconUrl": "https://play-lh.googleusercontent.com/4vXEbUyL5rFpaHlvhkU9r14NN-GZWIbyEEEoOUR-YYT2bFYiFqMPZ-JAGK_xinJRutsSgJWbD2R8jiP_FSoq"
+  },
+  "com.ilovepdf.www": {
+    "name": "iLovePDF",
+    "iconUrl": "https://play-lh.googleusercontent.com/8a9Sx0e2W6I_Pif5oxt-yLzDVBJIJ6J4jtE-5z7WPSDR-exwPjClzmxg5VQ5x30jkj31WtoAKuJ9IfwWzNWsog"
+  },
+  "com.adsk.sketchbook": {
+    "name": "Sketchbook",
+    "iconUrl": "https://play-lh.googleusercontent.com/SAwYo44DrmijrKgVa8VhGB4zFshE7Luw0stwCos86Id3jVd2q1dSs4rjbi25IvUQCpzvLk1pdrld7ZcapdX9RA"
   }
 }
