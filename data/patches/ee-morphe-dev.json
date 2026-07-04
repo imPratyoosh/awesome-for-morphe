@@ -1,5 +1,5 @@
 {
-    "version": "v1.3.0-dev.13",
+    "version": "v1.3.0-dev.17",
     "patches": [
         {
             "compatiblePackages": null,
@@ -106,37 +106,6 @@
             "options": []
         },
         {
-            "compatiblePackages": [
-                {
-                    "apkFileType": null,
-                    "appIconColor": "#6668BC",
-                    "description": null,
-                    "name": "Readle",
-                    "packageName": "com.hello.german",
-                    "signatures": null,
-                    "targets": [
-                        {
-                            "description": null,
-                            "isExperimental": false,
-                            "minSdk": null,
-                            "version": "4.7.3"
-                        },
-                        {
-                            "description": null,
-                            "isExperimental": false,
-                            "minSdk": null,
-                            "version": ">=4.7.3"
-                        }
-                    ]
-                }
-            ],
-            "default": true,
-            "dependencies": [],
-            "description": "Prevents LicenseActivity from showing the paywall by neutering startPaywallActivity.",
-            "name": "Disable Readle Paywall",
-            "options": []
-        },
-        {
             "compatiblePackages": null,
             "default": false,
             "dependencies": [],
@@ -233,30 +202,22 @@
                     "apkFileType": null,
                     "appIconColor": "#6668BC",
                     "description": null,
-                    "name": "Readle",
-                    "packageName": "com.hello.german",
+                    "name": "LingQ",
+                    "packageName": "com.linguist",
                     "signatures": null,
                     "targets": [
                         {
                             "description": null,
                             "isExperimental": false,
                             "minSdk": null,
-                            "version": "4.7.3"
-                        },
-                        {
-                            "description": null,
-                            "isExperimental": false,
-                            "minSdk": null,
-                            "version": ">=4.7.3"
+                            "version": "6.1.24"
                         }
                     ]
                 }
             ],
             "default": true,
-            "dependencies": [
-                "BytecodePatch"
-            ],
-            "description": "Forces Readle premium/pro entitlement checks to always pass.",
+            "dependencies": [],
+            "description": "Forces LingQ Premium entitlement checks to always pass by overriding model fields.",
             "name": "Enable Pro",
             "options": []
         },

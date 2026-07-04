@@ -1226,7 +1226,7 @@
     "iconUrl": "https://play-lh.googleusercontent.com/Z10nyQkvnKpejvNvZ7LS3xXzZNRqq-nXAMiorVg8Ciyp87u2A8vIfgKbukMOZ-shf2i1OZUGkVJDmlhIDg8chg"
   },
   "air.com.musclemotion.strength.mobile": {
-    "name": "Strength Training: Gym Workout",
+    "name": "Strength Training",
     "iconUrl": "https://play-lh.googleusercontent.com/k3r3bMRWlDUuKAx2MWdrvOQGDa6gsziPvOeHJ6bj3GrsLVrdYMArGTL9mtyDfqYl7EqghuMf0ZhIqtYPxwRE0Q"
   },
   "com.weather.Weather": {
@@ -1396,5 +1396,37 @@
   "tv.pluto.android": {
     "name": "PlutoTV",
     "iconUrl": "https://play-lh.googleusercontent.com/O6MtMEvYNmr-I_cntqWT2Lq8L5Y5bG01V5udGLT8-8LcpNzeeOCDjgaX-mQEushfwrLjT74nVJMlmSgeIxtP"
+  },
+  "com.linguist": {
+    "name": "LingQ",
+    "iconUrl": "https://play-lh.googleusercontent.com/t7zt5FnhQsdfZEO46xeEB621tS68pyddvm4QX1qqB8adOo4_vMQMlCP_0p7r93xVS4puSD9dJbsXelrubYiR"
+  },
+  "com.generalcomp.truecloud": {
+    "name": "TrueCloud",
+    "iconUrl": "https://play-lh.googleusercontent.com/HMNPjnirCROB85XXIZqHtJADfdOzxYRIPXmHNsWbj919SF4Z0egS3i8RZlMJo7jGjUEslJkWmQ3qPmXem72C"
+  },
+  "eu.duong.imagedatefixer": {
+    "name": "Image & Video Date Fixer",
+    "iconUrl": "https://play-lh.googleusercontent.com/5yrcFUp58N6fI5bNm4oD6Z44fU1ZpyjCfSn49BrSU-tTQ6yW2bb7Mromn9OFk3RwWjeb-y3m4OiWsWArIRuV"
+  },
+  "app.simple.inure.play": {
+    "name": "Inure App Manager",
+    "iconUrl": "https://play-lh.googleusercontent.com/QzH7SfWCbpmz5ze8hX85stc09ZfK1JGjkRgUw_DhAbRzQF1BxUo5Ma-lZJFDFpzopdnfy6FzTGt6RDp842zrbaY"
+  },
+  "com.mindful.code.studio.toxly.scanner": {
+    "name": "Toxly",
+    "iconUrl": "https://play-lh.googleusercontent.com/nTO1o2vh3LsFQnbIT3SjsPvtpTloFIuQNohUMBeiyBUIE8mkuviPKO2ocSUAujQIWMo33wTHJT-F3wJH-7vpgs8"
+  },
+  "com.weawow": {
+    "name": "Weawow: Weather & Widget",
+    "iconUrl": "https://play-lh.googleusercontent.com/mo_d82SnAfbPtjpR3nVHs-wBPZ2ByUyR_30SUxSoxDpD1DMjU7mPpnV5QD4O7dMMvKp5AgefBpb1yDtf2y7J"
+  },
+  "com.nationaledtech.spinbrowser": {
+    "name": "SPIN",
+    "iconUrl": "https://play-lh.googleusercontent.com/smFSNxskrk_HPKDvKciVTJ_F0BGdjUHNkVyAjOrWqCCGq9QDj_TX_Dea7mXzQvjloX2NpN60vQHXDTLB6jxThA"
+  },
+  "eu.duong.picturemanager": {
+    "name": "Rename & Organize",
+    "iconUrl": "https://play-lh.googleusercontent.com/nsIwmjQGkl0Hi7xeJlO2xGSWZzew4pY-9x83rVoaCtUIPqpIhOIzgsRCAgFWGNfO1_vRHt6QmNBtb8V_PfrE"
   }
 }

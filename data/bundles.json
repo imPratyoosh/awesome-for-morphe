@@ -136,9 +136,9 @@
     "firstSeen": "2026-05-25T15:05:44",
     "stable": {
       "file": "patches/ajstrick81-androidtv-stable.json",
-      "version": "v1.9.0",
-      "releaseUrl": "https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.9.0",
-      "createdAt": "2026-07-03T14:00:00",
+      "version": "v1.10.0",
+      "releaseUrl": "https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.10.0",
+      "createdAt": "2026-07-04T18:45:00",
       "targetApps": [
         "com.amazon.amazonvideo.livingroom",
         "com.bamnetworks.mobile.android.gameday.atbat",
@@ -152,7 +152,7 @@
         "tv.pluto.android"
       ],
       "appCount": 10,
-      "patchCount": 16
+      "patchCount": 20
     },
     "dev": {
       "file": "patches/ajstrick81-androidtv-dev.json",
@@ -779,17 +779,17 @@
     },
     "dev": {
       "file": "patches/ee-morphe-dev.json",
-      "version": "v1.3.0-dev.13",
-      "releaseUrl": "https://gitlab.com/early.egg3707/ee-morphe-patches/-/releases/v1.3.0-dev.13",
-      "createdAt": "2026-07-04T14:52:21",
+      "version": "v1.3.0-dev.17",
+      "releaseUrl": "https://gitlab.com/early.egg3707/ee-morphe-patches/-/releases/v1.3.0-dev.17",
+      "createdAt": "2026-07-04T19:14:49",
       "targetApps": [
         "com.byairapp.android",
-        "com.hello.german",
+        "com.linguist",
         "epixler.de.hypnobox_android",
         "universal"
       ],
       "appCount": 3,
-      "patchCount": 10
+      "patchCount": 9
     },
     "latest": "dev"
   },
@@ -1726,6 +1726,38 @@
     },
     "latest": "stable"
   },
+  "okish-morphe": {
+    "source": "github",
+    "repo": "byehi98/okish-morphe-patches",
+    "repoUrl": "https://github.com/byehi98/okish-morphe-patches",
+    "deepLink": "https://morphe.software/add-source?github=byehi98/okish-morphe-patches",
+    "avatarUrl": "https://github.com/byehi98.png?size=128",
+    "stars": 1,
+    "firstSeen": "2026-07-04T20:11:48",
+    "stable": {
+      "file": "patches/okish-morphe-stable.json",
+      "version": "v1.0.0",
+      "releaseUrl": "https://github.com/byehi98/okish-morphe-patches/releases/tag/v1.0.0",
+      "createdAt": "2026-07-04T04:17:25",
+      "targetApps": [
+        "com.generalcomp.truecloud"
+      ],
+      "appCount": 1,
+      "patchCount": 1
+    },
+    "dev": {
+      "file": "patches/okish-morphe-dev.json",
+      "version": "v1.0.0-dev.1",
+      "releaseUrl": "https://github.com/byehi98/okish-morphe-patches/releases/tag/v1.0.0-dev.1",
+      "createdAt": "2026-07-04T04:09:00",
+      "targetApps": [
+        "com.generalcomp.truecloud"
+      ],
+      "appCount": 1,
+      "patchCount": 1
+    },
+    "latest": "stable"
+  },
   "paresh-maheshwari": {
     "source": "gitlab",
     "repo": "Paresh-Maheshwari/paresh-patches",
@@ -1993,27 +2025,27 @@
     "firstSeen": "2026-06-30T14:24:47",
     "stable": {
       "file": "patches/prathxm-stable.json",
-      "version": "v1.9.0",
-      "releaseUrl": "https://github.com/PrathxmOp/Prathxm-Patches/releases/tag/v1.9.0",
-      "createdAt": "2026-07-04T11:49:43",
+      "version": "v1.9.1",
+      "releaseUrl": "https://github.com/PrathxmOp/Prathxm-Patches/releases/tag/v1.9.1",
+      "createdAt": "2026-07-04T19:36:58",
       "targetApps": [
         "com.chess"
       ],
       "appCount": 1,
-      "patchCount": 6
+      "patchCount": 5
     },
     "dev": {
       "file": "patches/prathxm-dev.json",
-      "version": "v1.6.0-dev.1",
-      "releaseUrl": "https://github.com/PrathxmOp/Prathxm-Patches/releases/tag/v1.6.0-dev.1",
-      "createdAt": "2026-07-03T06:11:35",
+      "version": "v1.0.0-dev.1",
+      "releaseUrl": "https://github.com/PrathxmOp/Prathxm-Patches/releases/tag/v1.0.0-dev.1",
+      "createdAt": "2026-07-04T19:41:10",
       "targetApps": [
         "com.chess"
       ],
       "appCount": 1,
-      "patchCount": 4
+      "patchCount": 5
     },
-    "latest": "stable"
+    "latest": "dev"
   },
   "prathxm-ytmusic": {
     "source": "github",
@@ -2337,17 +2369,19 @@
     },
     "dev": {
       "file": "patches/rushiranpise-dev.json",
-      "version": "v1.9.1-dev.1",
-      "releaseUrl": "https://github.com/rushiranpise/morphe-patches/releases/tag/v1.9.1-dev.1",
-      "createdAt": "2026-07-03T23:11:13",
+      "version": "v1.10.0-dev.1",
+      "releaseUrl": "https://github.com/rushiranpise/morphe-patches/releases/tag/v1.10.0-dev.1",
+      "createdAt": "2026-07-04T19:45:17",
       "targetApps": [
         "ai.topicfinder.podcastdiscovery",
         "air.com.musclemotion.anatomy",
         "air.com.musclemotion.kyphosis",
         "air.com.musclemotion.posture",
+        "air.com.musclemotion.strength.mobile",
         "air.com.musclemotion.workout",
         "air.com.musclemotion.yoga",
         "app.ninjavpn.android",
+        "app.simple.inure.play",
         "apps.automan.blurwallpaper",
         "ch.protonvpn.android",
         "com.Splitwise.SplitwiseMobile",
@@ -2369,14 +2403,17 @@
         "com.finalwire.aida64",
         "com.flightradar24free",
         "com.inscode.autoclicker",
+        "com.intsig.camscanner",
         "com.iudesk.android.photo.editor",
         "com.javiersantos.mlmanager",
         "com.joincarbon.nutrition",
         "com.kevinforeman.nzb360",
         "com.lawfully.lawfully_ai_tracker",
         "com.localaiapp.scoops",
+        "com.mindful.code.studio.toxly.scanner",
         "com.mobond.mindicator",
         "com.mtv.sai",
+        "com.nationaledtech.spinbrowser",
         "com.newsbreak.crimeradar",
         "com.oasisfeng.greenify",
         "com.particlenews.newsbreak",
@@ -2393,16 +2430,20 @@
         "com.tecso.MigraConnect",
         "com.thetransitapp.droid",
         "com.tomtom.gplay.navapp",
+        "com.tracked.mobile",
         "com.tranzmate",
         "com.truebill",
         "com.twtapp",
         "com.waze",
         "com.weather.Weather",
+        "com.weawow",
         "com.windscribe.vpn",
         "com.windyty.android",
         "com.yatrirailways.yatri",
         "cz.mroczis.netmonster",
         "eu.darken.myperm",
+        "eu.duong.imagedatefixer",
+        "eu.duong.picturemanager",
         "eu.faircode.netguard",
         "it.mirko.beta",
         "kha.prog.mikrotik",
@@ -2415,10 +2456,10 @@
         "universal",
         "verbosus.pialytic"
       ],
-      "appCount": 72,
-      "patchCount": 107
+      "appCount": 81,
+      "patchCount": 117
     },
-    "latest": "stable"
+    "latest": "dev"
   },
   "rvx-morphed": {
     "source": "github",
