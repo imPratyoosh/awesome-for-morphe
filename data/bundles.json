@@ -1353,10 +1353,11 @@
     "firstSeen": "2026-06-11T14:43:14",
     "stable": {
       "file": "patches/kondratjev-stable.json",
-      "version": "v1.16.0",
-      "releaseUrl": "https://github.com/kondratjev/morphe-patches/releases/tag/v1.16.0",
-      "createdAt": "2026-07-03T19:53:54",
+      "version": "v1.17.0",
+      "releaseUrl": "https://github.com/kondratjev/morphe-patches/releases/tag/v1.17.0",
+      "createdAt": "2026-07-05T13:34:07",
       "targetApps": [
+        "air.com.musclemotion.strength.mobile",
         "com.brightstripe.parcels",
         "com.fatsecret.android",
         "com.lyfta",
@@ -1370,15 +1371,16 @@
         "universal",
         "xyz.rtrvr.pillo"
       ],
-      "appCount": 11,
-      "patchCount": 24
+      "appCount": 12,
+      "patchCount": 25
     },
     "dev": {
       "file": "patches/kondratjev-dev.json",
-      "version": "v1.16.0-dev.1",
-      "releaseUrl": "https://github.com/kondratjev/morphe-patches/releases/tag/v1.16.0-dev.1",
-      "createdAt": "2026-07-03T19:50:36",
+      "version": "v1.17.0-dev.1",
+      "releaseUrl": "https://github.com/kondratjev/morphe-patches/releases/tag/v1.17.0-dev.1",
+      "createdAt": "2026-07-05T13:27:55",
       "targetApps": [
+        "air.com.musclemotion.strength.mobile",
         "com.brightstripe.parcels",
         "com.fatsecret.android",
         "com.lyfta",
@@ -1392,8 +1394,8 @@
         "universal",
         "xyz.rtrvr.pillo"
       ],
-      "appCount": 11,
-      "patchCount": 24
+      "appCount": 12,
+      "patchCount": 25
     },
     "latest": "stable"
   },
@@ -1697,9 +1699,9 @@
     "firstSeen": "2026-07-03T02:41:59",
     "stable": {
       "file": "patches/nai64-stable.json",
-      "version": "1.10.2",
-      "releaseUrl": "https://github.com/Nai64/Nai64Patches/releases/tag/1.10.2",
-      "createdAt": "2026-07-04T12:58:20",
+      "version": "1.11.0",
+      "releaseUrl": "https://github.com/Nai64/Nai64Patches/releases/tag/1.11.0",
+      "createdAt": "2026-07-05T13:33:56",
       "targetApps": [
         "universal"
       ],
@@ -1951,15 +1953,15 @@
     },
     "dev": {
       "file": "patches/piko-dev.json",
-      "version": "v3.8.0-dev.2",
-      "releaseUrl": "https://github.com/crimera/piko/releases/tag/v3.8.0-dev.2",
-      "createdAt": "2026-06-28T13:21:07",
+      "version": "v3.8.0-dev.3",
+      "releaseUrl": "https://github.com/crimera/piko/releases/tag/v3.8.0-dev.3",
+      "createdAt": "2026-07-05T13:02:07",
       "targetApps": [
         "com.instagram.android",
         "com.twitter.android"
       ],
       "appCount": 2,
-      "patchCount": 124
+      "patchCount": 125
     },
     "latest": "dev"
   },
