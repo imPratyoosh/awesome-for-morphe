@@ -103,67 +103,74 @@ createApp({
     const patchesLoaded = ref(false);
     const errorMsg = ref("");
 
-    const params = new URLSearchParams(location.search);
-    const initialQuery = params.get("q") || "";
-    const showParam = params.get("show");
 
+    const initialParams = new URLSearchParams(location.search);
     const priorityKeys = new Set();
-    if (showParam) {
-      showParam.split(",").forEach((p) => {
-        const key = p.split(":")[0];
+    if (initialParams.get('show')) {
+      initialParams.get('show').split(',').forEach((p) => {
+        const key = p.split(':')[0];
         if (key) priorityKeys.add(key);
       });
     }
 
-    query.value = initialQuery;
-    channel.value = normalizeChannel(params.get("channel") || DEFAULT_CHANNEL);
-    sortOrder.value = params.get("sort") || "stars";
+    const isChangelogView = ref(false);
+    const changelogHighlights = ref([]);
 
-    function parseShowParam() {
+    function syncFromUrl(searchStr) {
+      const params = new URLSearchParams(searchStr);
+      
+      const newQuery = params.get("q") || "";
+      if (query.value !== newQuery) query.value = newQuery;
+
+      const newChannel = normalizeChannel(params.get("channel") || DEFAULT_CHANNEL);
+      if (channel.value !== newChannel) channel.value = newChannel;
+
+      const newSortOrder = params.get("sort") || "stars";
+      if (sortOrder.value !== newSortOrder) sortOrder.value = newSortOrder;
+
       const rawParam = params.get("show");
-      if (!rawParam) return [];
-      return parseShowTrie(rawParam);
-    }
+      let showArr = [];
+      let bundleParam = params.get("bundle");
+      let appParam = params.get("app");
+      
+      if (bundleParam || appParam) {
+        showArr = [`${bundleParam || ""}${appParam ? ":" + appParam : ""}`];
+      } else if (rawParam) {
+        showArr = parseShowTrie(decodeURIComponent(rawParam));
+      }
+      
+      if (JSON.stringify(showOptions.value) !== JSON.stringify(showArr)) {
+        showOptions.value = showArr;
+      }
+      
+      let initBundle = "", initApp = "";
+      if (showArr.length > 0) {
+        const parsed = showArr.map((item) => {
+          const parts = item.split(":");
+          return { bundle: parts[0] || "", app: parts[1] || "" };
+        });
+        const firstBundle = parsed[0].bundle;
+        if (parsed.every((p) => p.bundle === firstBundle)) initBundle = firstBundle;
+        const firstApp = parsed[0].app;
+        if (parsed.every((p) => p.app === firstApp)) initApp = firstApp;
+      }
+      if (bundle.value !== initBundle) bundle.value = initBundle;
+      if (app.value !== initApp) app.value = initApp;
 
-    let bundleParam = params.get("bundle");
-    let appParam = params.get("app");
-    let showArr = [];
-    if (bundleParam || appParam) {
-      showArr = [`${bundleParam || ""}${appParam ? ":" + appParam : ""}`];
-    } else {
-      showArr = parseShowParam();
+      const isNew = params.has("new");
+      if (isChangelogView.value !== isNew) isChangelogView.value = isNew;
+      changelogHighlights.value = isNew ? showArr : [];
     }
-    showOptions.value = showArr;
+    syncFromUrl(location.search);
 
-    const isChangelogView = ref(params.has("new"));
-    const changelogHighlights = isChangelogView.value ? showArr : [];
+    window.addEventListener("popstate", () => {
+      syncFromUrl(location.search);
+    });
 
     const hasHighlight = (prefix) => {
       if (!isChangelogView.value) return false;
-      return changelogHighlights.includes(prefix);
+      return changelogHighlights.value.includes(prefix);
     };
-
-    let initialBundle = "",
-      initialApp = "";
-    if (showArr.length > 0) {
-      const parsed = showArr.map((item) => {
-        const parts = item.split(":");
-        return {
-          bundle: parts[0] || "",
-          app: parts[1] || "",
-        };
-      });
-      const firstBundle = parsed[0].bundle;
-      if (parsed.every((p) => p.bundle === firstBundle)) {
-        initialBundle = firstBundle;
-      }
-      const firstApp = parsed[0].app;
-      if (parsed.every((p) => p.app === firstApp)) {
-        initialApp = firstApp;
-      }
-    }
-    bundle.value = initialBundle;
-    app.value = initialApp;
 
     watch([bundle, app], () => {
       const targetPrefix = `${bundle.value || ""}${app.value ? ":" + app.value : ""}`;
@@ -213,7 +220,21 @@ createApp({
         if (isChangelogView.value) urlParts.push("new");
 
         const queryString = urlParts.join("&");
-        history.replaceState(null, "", `${location.pathname}${queryString ? `?${queryString}` : ""}`);
+        const newUrl = `${location.pathname}${queryString ? `?${queryString}` : ""}`;
+        const currentUrl = location.pathname + location.search;
+        
+        if (currentUrl !== newUrl) {
+          if (!oldVals) {
+            history.replaceState(null, "", newUrl);
+          } else {
+            const otherChanged = oldVals[1] !== newVals[1] || oldVals[2] !== newVals[2] || oldVals[3] !== newVals[3];
+            if (otherChanged) {
+              history.pushState(null, "", newUrl);
+            } else {
+              history.replaceState(null, "", newUrl);
+            }
+          }
+        }
       },
       { immediate: true },
     );
@@ -699,6 +720,7 @@ createApp({
 
     const urlParamsSetup = new URLSearchParams(window.location.search);
     const isTwoColumns = ref(urlParamsSetup.get("view") !== "list");
+    
     const toggleColumns = () => {
       isTwoColumns.value = !isTwoColumns.value;
       const url = new URL(window.location);
@@ -707,8 +729,16 @@ createApp({
       } else {
         url.searchParams.delete("view");
       }
-      window.history.replaceState({}, "", url);
+      history.pushState(null, "", url);
     };
+
+    window.addEventListener("popstate", () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const newIsTwoColumns = urlParams.get("view") !== "list";
+      if (isTwoColumns.value !== newIsTwoColumns) {
+        isTwoColumns.value = newIsTwoColumns;
+      }
+    });
 
     return {
       query,
