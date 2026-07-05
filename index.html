@@ -426,20 +426,24 @@
                     <span v-else class="badge text-blue"><i class="fa-solid fa-clock-rotate-left"></i><span>{{
                         group.bundle.version }}</span></span>
                   </template>
-                  <button @click.stop="filterByBundle(group.key)" class="badge shrink-0" title="Filter by this bundle">
-                    <i class="fa-solid fa-filter text-green"></i>
-                  </button>
                   <span v-if="group.bundle.stars !== undefined" class="badge">
                     <i class="fa-solid fa-star text-yellow"></i><span>{{ group.bundle.stars }}</span>
                   </span>
                   <span v-if="group.bundle.createdAt" class="badge"><i class="fa-solid fa-calendar-days"></i><span>{{ formatDate(group.bundle.createdAt)
                       }}</span></span>
+                  <button @click.stop="filterByBundle(group.key)" class="badge shrink-0" title="Filter by this bundle">
+                    <i class="fa-solid fa-filter text-green"></i>
+                  </button>
+                  <button @click.stop="toggleBundleView(group.key)" class="badge shrink-0" :title="bundleViews[group.key] ? 'Switch to grid view' : 'Switch to list view'">
+                    <i class="fa-solid text-green" :class="bundleViews[group.key] ? 'fa-grip' : 'fa-list'"></i>
+                  </button>
                 </span>
               </div>
 
               <div class="border-t-2 border-lightGray bg-dark shadow-inner flex flex-col">
                 <template v-for="appsList in [group.appsList]">
                   <div :ref="(el) => setupOverflowObserver(el, group.key)"
+                    v-show="!bundleViews[group.key]"
                     class="flex gap-1.5 py-1.5 px-3 border-b border-lightGray"
                     :class="expandedAppLists.has(group.key) ? 'flex-wrap' : 'overflow-x-auto'">
                     <i v-show="overflowingAppLists.has(group.key)" @click.stop="toggleAppList(group.key)"
@@ -460,11 +464,21 @@
                   </div>
 
                   <template v-for="(app, index) in appsList" :key="'content-'+app.id">
+                    <div v-if="bundleViews[group.key]" @click.stop="selectApp(group.key, app, appsList)" 
+                      class="flex items-center gap-2 px-3 sm:px-4 py-2 border-b border-lightGray/50 cursor-pointer hover:bg-white/5 transition-colors"
+                      :class="expandedOptions.has('app_' + group.key + '_' + app.id) ? 'bg-white/5' : ''">
+                      <img v-if="app.appIcon" :src="app.appIcon" class="w-5 h-5 rounded-sm object-contain shrink-0" :alt="app.appName" loading="lazy">
+                      <i v-else class="fa-brands fa-android text-green text-base shrink-0 icon-center -ml-1 sm:ml-0"></i>
+                      <span class="font-medium truncate" :class="expandedOptions.has('app_' + group.key + '_' + app.id) ? 'text-blue' : 'text-light'">{{ app.appName }}</span>
+                      <span v-if="isChangelogView && (changelogHighlights.includes(group.key + ':' + (app.packageName || 'universal')) || changelogHighlights.includes(group.key + ':' + app.appName))" class="badge text-yellow shrink-0"><span>✨ New</span></span>
+                      <i class="fa-solid ml-auto text-light transition-transform" :class="expandedOptions.has('app_' + group.key + '_' + app.id) ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                    </div>
+
                     <div v-if="expandedOptions.has('app_' + group.key + '_' + app.id)" @touchstart="handleTouchStart"
                       @touchend="handleTouchEnd($event, group.key, app, appsList)"
-                      class="pl-4 pr-1 py-3 sm:p-3 flex flex-col gap-2 shadow-inner"
+                      class="flex flex-col gap-2 shadow-inner pt-2 pb-3"
                       :class="activeSwipeGroup === group.key && swipeDirection ? 'swipe-transition-' + swipeDirection : ''">
-                      <div class="flex flex-wrap items-center gap-2 min-w-0">
+                      <div class="flex flex-wrap items-center gap-2 min-w-0 px-3 sm:px-4">
                         <template v-if="app.packageName && app.packageName !== 'universal'">
                           <button @click.stop="filterByApp(app.packageName)" class="badge shrink-0">
                             <i class="fa-solid fa-filter"></i>
@@ -489,70 +503,73 @@
                         </template>
                       </div>
 
-                      <div class="flex flex-col gap-1.5 max-h-[50vh] overflow-y-auto pr-1.5 py-0.5 patches-scroll">
-                        <div
-                          v-for="patch in group.patches.filter(p => p.apps.some(a => (a.packageName || a.appName || 'any') === (app.packageName || app.appName || 'any')))"
-                          :key="patch.id" @click="patch.options.length && toggleOptions(patch.id)"
-                          class="bg-gray py-1.5 pl-3.5 pr-1.5 sm:px-3 rounded-xl border border-lightGray shadow-sm flex flex-col"
-                          :class="{'cursor-pointer': patch.options.length}">
-                          <div class="flex flex-wrap items-start justify-between gap-2 mb-0.5">
-                            <div class="flex items-center gap-2 flex-wrap min-w-0">
-                              <strong class="font-bold text-white text-sm flex items-center gap-2">
-                                {{ patch.patchName }}
-                                <span
-                                  v-if="hasHighlight(group.key + ':' + (app.packageName || 'universal') + ':' + patch.patchName)"
-                                  class="badge text-yellow"><span>✨ New</span></span>
-                              </strong>
-                              <span v-if="!patch.enabled" class="badge text-yellow cursor-help" title="off by default"><span>off</span></span>
-                              <button v-if="patch.options.length" @click.stop="toggleOptions(patch.id)"
-                                class="text-light hover:text-white px-1 shrink-0"
-                                :title="expandedOptions.has(patch.id) ? 'Hide options' : 'Show options'">
-                                <i class="fa-solid fa-chevron-down transition-transform"
-                                  :class="{'rotate-180': expandedOptions.has(patch.id)}"></i>
-                              </button>
-                            </div>
-                            <div class="flex flex-wrap gap-1 items-center justify-end min-w-0 ml-auto max-w-full">
-                              <template
-                                v-for="a in patch.apps.filter(x => (x.packageName || x.appName || 'any') === (app.packageName || app.appName || 'any'))"
-                                :key="a.id">
-                                <template v-if="a.versions && a.versions.length">
-                                  <template v-if="!expandedVersions.has(a.id)">
-                                    <span class="badge badge-sm text-green"
-                                      :title="a.versions[a.versions.length - 1].isExperimental ? 'Experimental version' : ''">
-                                      <i v-if="a.versions[a.versions.length - 1].isExperimental"
-                                        class="fa-solid fa-flask text-yellow"></i>
-                                      <span>{{ a.versions[a.versions.length - 1].version }}</span>
-                                    </span>
-                                    <button v-if="a.versions.length > 1" @click.stop="toggleVersions(a.id)"
-                                      class="badge badge-sm text-blue">
-                                      <span>+{{ a.versions.length - 1 }}</span>
-                                    </button>
+                      <div class="pl-6 pr-1 sm:px-4">
+                        <div class="flex flex-col gap-1.5 pr-1.5 sm:pr-0 py-0.5 patches-scroll"
+                             :class="!bundleViews[group.key] ? 'max-h-[50vh] overflow-y-auto' : ''">
+                          <div
+                            v-for="patch in group.patches.filter(p => p.apps.some(a => (a.packageName || a.appName || 'any') === (app.packageName || app.appName || 'any')))"
+                            :key="patch.id" @click="patch.options.length && toggleOptions(patch.id)"
+                            class="bg-gray py-1 pl-2.5 pr-1 sm:px-2.5 rounded-xl border border-lightGray shadow-sm flex flex-col"
+                            :class="{'cursor-pointer': patch.options.length}">
+                            <div class="flex flex-wrap items-start justify-between gap-2 mb-0.5">
+                              <div class="flex items-center gap-2 flex-wrap min-w-0">
+                                <strong class="font-bold text-white text-sm flex items-center gap-2">
+                                  {{ patch.patchName }}
+                                  <span
+                                    v-if="hasHighlight(group.key + ':' + (app.packageName || 'universal') + ':' + patch.patchName)"
+                                    class="badge text-yellow"><span>✨ New</span></span>
+                                </strong>
+                                <span v-if="!patch.enabled" class="badge text-yellow cursor-help" title="off by default"><span>off</span></span>
+                                <button v-if="patch.options.length" @click.stop="toggleOptions(patch.id)"
+                                  class="text-light hover:text-white px-1 shrink-0"
+                                  :title="expandedOptions.has(patch.id) ? 'Hide options' : 'Show options'">
+                                  <i class="fa-solid fa-chevron-down transition-transform"
+                                    :class="{'rotate-180': expandedOptions.has(patch.id)}"></i>
+                                </button>
+                              </div>
+                              <div class="flex flex-wrap gap-1 items-center justify-end min-w-0 ml-auto max-w-full">
+                                <template
+                                  v-for="a in patch.apps.filter(x => (x.packageName || x.appName || 'any') === (app.packageName || app.appName || 'any'))"
+                                  :key="a.id">
+                                  <template v-if="a.versions && a.versions.length">
+                                    <template v-if="!expandedVersions.has(a.id)">
+                                      <span class="badge badge-sm text-green"
+                                        :title="a.versions[a.versions.length - 1].isExperimental ? 'Experimental version' : ''">
+                                        <i v-if="a.versions[a.versions.length - 1].isExperimental"
+                                          class="fa-solid fa-flask text-yellow"></i>
+                                        <span>{{ a.versions[a.versions.length - 1].version }}</span>
+                                      </span>
+                                      <button v-if="a.versions.length > 1" @click.stop="toggleVersions(a.id)"
+                                        class="badge badge-sm text-blue">
+                                        <span>+{{ a.versions.length - 1 }}</span>
+                                      </button>
+                                    </template>
+                                    <template v-else>
+                                      <span
+                                        v-for="v in [...a.versions].sort((v1, v2) => v1.version.localeCompare(v2.version, undefined, { numeric: true }))"
+                                        :key="v.version" class="badge badge-sm text-green"
+                                        :title="v.isExperimental ? 'Experimental version' : ''">
+                                        <i v-if="v.isExperimental" class="fa-solid fa-flask text-yellow"></i>
+                                        <span>{{ v.version }}</span>
+                                      </span>
+                                      <button @click.stop="toggleVersions(a.id)" class="badge badge-sm text-blue">
+                                        <span>Less</span>
+                                      </button>
+                                    </template>
                                   </template>
-                                  <template v-else>
-                                    <span
-                                      v-for="v in [...a.versions].sort((v1, v2) => v1.version.localeCompare(v2.version, undefined, { numeric: true }))"
-                                      :key="v.version" class="badge badge-sm text-green"
-                                      :title="v.isExperimental ? 'Experimental version' : ''">
-                                      <i v-if="v.isExperimental" class="fa-solid fa-flask text-yellow"></i>
-                                      <span>{{ v.version }}</span>
-                                    </span>
-                                    <button @click.stop="toggleVersions(a.id)" class="badge badge-sm text-blue">
-                                      <span>Less</span>
-                                    </button>
-                                  </template>
+                                  <span v-else class="badge badge-sm text-green">Any version</span>
                                 </template>
-                                <span v-else class="badge badge-sm text-green">Any version</span>
-                              </template>
+                              </div>
                             </div>
-                          </div>
 
-                          <p class="text-xs text-light">{{ patch.description }}</p>
+                            <p class="text-xs text-light">{{ patch.description }}</p>
 
-                          <div v-if="expandedOptions.has(patch.id)"
-                            class="mt-1.5 py-1 px-2 bg-lightGray border border-lightGray rounded flex flex-col gap-1 shadow-inner">
-                            <div v-for="opt in patch.options" :key="opt.key">
-                              <strong class="font-bold text-xs text-white block">{{ opt.title || opt.key }}</strong>
-                              <p class="text-[10px] text-light">{{ opt.description }}</p>
+                            <div v-if="expandedOptions.has(patch.id)"
+                              class="mt-1.5 py-1 px-2 bg-lightGray border border-lightGray rounded flex flex-col gap-1 shadow-inner">
+                              <div v-for="opt in patch.options" :key="opt.key">
+                                <strong class="font-bold text-xs text-white block">{{ opt.title || opt.key }}</strong>
+                                <p class="text-[10px] text-light">{{ opt.description }}</p>
+                              </div>
                             </div>
                           </div>
                         </div>

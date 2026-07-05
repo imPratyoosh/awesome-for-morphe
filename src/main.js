@@ -677,6 +677,11 @@ createApp({
       window.scrollTo({ top: 0, behavior: "smooth" });
     };
 
+    const bundleViews = reactive({});
+    const toggleBundleView = (key) => {
+      bundleViews[key] = !bundleViews[key];
+    };
+
     const formatDate = (val) => {
       const d = val ? new Date(val) : null;
       return d && !isNaN(d.getTime())
@@ -794,6 +799,8 @@ createApp({
       getAppIcon,
       getBundleIcon,
       filterByBundle,
+      bundleViews,
+      toggleBundleView,
     };
   },
 }).mount("#app");
