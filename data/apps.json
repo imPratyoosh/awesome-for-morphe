@@ -1428,5 +1428,9 @@
   "eu.duong.picturemanager": {
     "name": "Rename & Organize",
     "iconUrl": "https://play-lh.googleusercontent.com/nsIwmjQGkl0Hi7xeJlO2xGSWZzew4pY-9x83rVoaCtUIPqpIhOIzgsRCAgFWGNfO1_vRHt6QmNBtb8V_PfrE"
+  },
+  "studio.muggle.chatboost": {
+    "name": "ChatBoost",
+    "iconUrl": "https://play-lh.googleusercontent.com/T3CAUVTyQVRydZSmaJjYJEU7K05vKBxLC_-m_ahnbVd0n0JnfVqRXPk83tgL2m2EwxShBh90Zg8jVZDaPGpw9Q"
   }
 }
