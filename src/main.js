@@ -528,11 +528,22 @@ createApp({
           const firstApp = group.appsList[0];
           expandedOptions.add("app_" + group.key + "_" + firstApp.id);
         }
+        if (overflowingAppLists.has(group.key)) {
+          expandedAppLists.add(group.key);
+          setTimeout(() => {
+            const el = appListRefs.get(group.key);
+            if (el) checkOverflow(el, group.key);
+          }, 50);
+        }
       });
     };
 
     const collapseAll = () => {
       expandedOptions.clear();
+      expandedAppLists.clear();
+      for (const key in bundleViews) {
+        delete bundleViews[key];
+      }
     };
 
     const checkOverflow = (el, key) => {
@@ -716,6 +727,9 @@ createApp({
       isChangelogView.value = false;
       expandedOptions.clear();
       expandedVersions.clear();
+      for (const key in bundleViews) {
+        delete bundleViews[key];
+      }
     };
 
     const isNewBundle = (group) => {
@@ -746,9 +760,17 @@ createApp({
       return activeData.value.bundleMap[key]?.avatarUrl || "";
     };
 
-    const isTwoColumns = ref(true);
+    const urlParamsSetup = new URLSearchParams(window.location.search);
+    const isTwoColumns = ref(urlParamsSetup.get("view") !== "list");
     const toggleColumns = () => {
       isTwoColumns.value = !isTwoColumns.value;
+      const url = new URL(window.location);
+      if (!isTwoColumns.value) {
+        url.searchParams.set("view", "list");
+      } else {
+        url.searchParams.delete("view");
+      }
+      window.history.replaceState({}, "", url);
     };
 
     return {

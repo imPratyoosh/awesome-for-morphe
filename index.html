@@ -505,7 +505,7 @@
 
                       <div class="pl-6 pr-1 sm:px-4">
                         <div class="flex flex-col gap-1.5 pr-1.5 sm:pr-0 py-0.5 patches-scroll"
-                             :class="!bundleViews[group.key] ? 'max-h-[50vh] overflow-y-auto' : ''">
+                             :class="!bundleViews[group.key] ? 'max-h-[45vh] overflow-y-auto' : ''">
                           <div
                             v-for="patch in group.patches.filter(p => p.apps.some(a => (a.packageName || a.appName || 'any') === (app.packageName || app.appName || 'any')))"
                             :key="patch.id" @click="patch.options.length && toggleOptions(patch.id)"
