@@ -502,6 +502,10 @@
     ]
   },
   "arunpdl": {
+    "com.byairapp.android": [
+      "Enable Online Pro",
+      "Enable Pro"
+    ],
     "com.harwin.prismatica": [
       "Remove License Activity",
       "Remove License Check",
@@ -662,7 +666,7 @@
       "Enable Online Pro",
       "Enable Pro"
     ],
-    "com.hello.german": [
+    "com.linguist": [
       "Enable Pro"
     ],
     "epixler.de.hypnobox_android": [
@@ -1393,6 +1397,11 @@
       "Hide version notice"
     ]
   },
+  "okish-morphe": {
+    "com.generalcomp.truecloud": [
+      "TrueCloud Ad Removal"
+    ]
+  },
   "paresh-maheshwari": {
     "app.vinztech.trackit": [
       "TrackIt Premium"
@@ -1745,6 +1754,7 @@
     "com.chess": [
       "Ad-Free & Local Analysis",
       "Clone Chess.com",
+      "Custom Titles",
       "Lichess Puzzles",
       "Unlock All Bots"
     ]
@@ -1938,6 +1948,9 @@
     "air.com.musclemotion.posture": [
       "Unlock Premium"
     ],
+    "air.com.musclemotion.strength.mobile": [
+      "Unlock Premium"
+    ],
     "air.com.musclemotion.workout": [
       "Unlock Premium"
     ],
@@ -1946,6 +1959,9 @@
     ],
     "app.ninjavpn.android": [
       "Unlock Premium"
+    ],
+    "app.simple.inure.play": [
+      "Unlock Full Version"
     ],
     "apps.automan.blurwallpaper": [
       "Bypass PairIP License Check",
@@ -2020,6 +2036,10 @@
     "com.inscode.autoclicker": [
       "Unlock Premium "
     ],
+    "com.intsig.camscanner": [
+      "Disable telemetry",
+      "Yearly unlock"
+    ],
     "com.iudesk.android.photo.editor": [
       "Unlock Premium"
     ],
@@ -2038,11 +2058,17 @@
     "com.localaiapp.scoops": [
       "Unlock Drama Episodes"
     ],
+    "com.mindful.code.studio.toxly.scanner": [
+      "Unlock Premium"
+    ],
     "com.mobond.mindicator": [
       "Remove Ads"
     ],
     "com.mtv.sai": [
       "Unlock Premium"
+    ],
+    "com.nationaledtech.spinbrowser": [
+      "Unlock SPIN Plus"
     ],
     "com.newsbreak.crimeradar": [
       "Bypass License Check",
@@ -2098,6 +2124,9 @@
     "com.tomtom.gplay.navapp": [
       "Unlock Premium"
     ],
+    "com.tracked.mobile": [
+      "Unlock Premium"
+    ],
     "com.tranzmate": [
       "Unlock Moovit+"
     ],
@@ -2124,6 +2153,9 @@
     "com.weather.Weather": [
       "Unlock Premium"
     ],
+    "com.weawow": [
+      "Unlock donation"
+    ],
     "com.windscribe.vpn": [
       "Unlock Premium"
     ],
@@ -2138,6 +2170,12 @@
     ],
     "eu.darken.myperm": [
       "Unlock Pro"
+    ],
+    "eu.duong.imagedatefixer": [
+      "Unlock Premium"
+    ],
+    "eu.duong.picturemanager": [
+      "Unlock Premium"
     ],
     "eu.faircode.netguard": [
       "Unlock Pro"
