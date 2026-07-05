@@ -1432,5 +1432,9 @@
   "studio.muggle.chatboost": {
     "name": "ChatBoost",
     "iconUrl": "https://play-lh.googleusercontent.com/T3CAUVTyQVRydZSmaJjYJEU7K05vKBxLC_-m_ahnbVd0n0JnfVqRXPk83tgL2m2EwxShBh90Zg8jVZDaPGpw9Q"
+  },
+  "com.bytecaretech.merokarobar": {
+    "name": "Mero Karobar",
+    "iconUrl": "https://play-lh.googleusercontent.com/9Gx38ML5KX24JSQ4rJq1nlxvl7EEB_UosLexB7xhlZon_Fht7gNEsR-bClQ30qtmf9fa28JaLYyuXIwQGmiZ"
   }
 }

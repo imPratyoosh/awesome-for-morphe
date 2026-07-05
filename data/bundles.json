@@ -111,9 +111,9 @@
     },
     "dev": {
       "file": "patches/adobo-dev.json",
-      "version": "v1.3.0-dev.1",
-      "releaseUrl": "https://github.com/jkennethcarino/adobo/releases/tag/v1.3.0-dev.1",
-      "createdAt": "2026-06-20T16:24:40",
+      "version": "v1.3.0-dev.2",
+      "releaseUrl": "https://github.com/jkennethcarino/adobo/releases/tag/v1.3.0-dev.2",
+      "createdAt": "2026-07-05T15:47:57",
       "targetApps": [
         "com.google.android.inputmethod.latin",
         "com.imdb.mobile",
@@ -122,7 +122,7 @@
         "universal"
       ],
       "appCount": 4,
-      "patchCount": 38
+      "patchCount": 39
     },
     "latest": "dev"
   },
@@ -455,18 +455,19 @@
     },
     "dev": {
       "file": "patches/arunpdl-dev.json",
-      "version": "v1.0.4-dev.2",
-      "releaseUrl": "https://github.com/arunpdl/morphe-patches/releases/tag/v1.0.4-dev.2",
-      "createdAt": "2026-07-05T06:17:59",
+      "version": "v1.0.4-dev.3",
+      "releaseUrl": "https://github.com/arunpdl/morphe-patches/releases/tag/v1.0.4-dev.3",
+      "createdAt": "2026-07-05T16:07:16",
       "targetApps": [
         "com.byairapp.android",
+        "com.bytecaretech.merokarobar",
         "com.harwin.prismatica",
         "com.jellywatch.app"
       ],
-      "appCount": 3,
-      "patchCount": 7
+      "appCount": 4,
+      "patchCount": 8
     },
-    "latest": "stable"
+    "latest": "dev"
   },
   "bholeykabhakt": {
     "source": "github",
@@ -1069,9 +1070,9 @@
     },
     "dev": {
       "file": "patches/hoomans-morphe-dev.json",
-      "version": "v1.42.0-dev.2",
-      "releaseUrl": "https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.42.0-dev.2",
-      "createdAt": "2026-07-04T02:39:36",
+      "version": "v1.43.0-dev.1",
+      "releaseUrl": "https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.43.0-dev.1",
+      "createdAt": "2026-07-05T17:21:57",
       "targetApps": [
         "ak.alizandro.smartaudiobookplayer",
         "altergames.carlauncher",
@@ -1112,12 +1113,13 @@
         "dk.tacit.android.foldersync.lite",
         "io.stashteam.games.tracker.stashapp",
         "net.uniquegem.directchat",
+        "studio.muggle.chatboost",
         "tv.twitch.android.app"
       ],
-      "appCount": 40,
-      "patchCount": 53
+      "appCount": 41,
+      "patchCount": 54
     },
-    "latest": "stable"
+    "latest": "dev"
   },
   "icysymmetra-tiktok": {
     "source": "github",
