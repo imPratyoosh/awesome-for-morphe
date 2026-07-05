@@ -572,32 +572,47 @@ createApp({
       swipeDirection.value = "";
       const clickedKey = "app_" + groupKey + "_" + clickedApp.id;
       const isCurrentlyExpanded = expandedOptions.has(clickedKey);
-      appsList.forEach((a) => {
-        const key = "app_" + groupKey + "_" + a.id;
-        if (expandedOptions.has(key)) {
-          expandedOptions.delete(key);
-        }
-      });
-      if (!isCurrentlyExpanded) {
-        expandedOptions.add(clickedKey);
-        nextTick(() => {
-          const btn = document.getElementById("tab_" + groupKey + "_" + clickedApp.id);
-          if (btn) {
-            btn.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+      
+      if (!bundleViews[groupKey]) {
+        appsList.forEach((a) => {
+          const key = "app_" + groupKey + "_" + a.id;
+          if (expandedOptions.has(key)) {
+            expandedOptions.delete(key);
           }
         });
+        if (!isCurrentlyExpanded) {
+          expandedOptions.add(clickedKey);
+          nextTick(() => {
+            const btn = document.getElementById("tab_" + groupKey + "_" + clickedApp.id);
+            if (btn) {
+              btn.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+            }
+          });
+        }
+      } else {
+        if (isCurrentlyExpanded) {
+          expandedOptions.delete(clickedKey);
+        } else {
+          expandedOptions.add(clickedKey);
+        }
       }
     };
 
     const toggleBundle = (group) => {
       if (group.appsList && group.appsList.length > 0) {
-        const expandedApp = group.appsList.find((a) => expandedOptions.has("app_" + group.key + "_" + a.id));
-        if (expandedApp) {
+        const isAnyExpanded = group.appsList.some((a) => expandedOptions.has("app_" + group.key + "_" + a.id));
+        if (isAnyExpanded) {
           group.appsList.forEach((a) => {
             expandedOptions.delete("app_" + group.key + "_" + a.id);
           });
         } else {
-          expandedOptions.add("app_" + group.key + "_" + group.appsList[0].id);
+          if (bundleViews[group.key]) {
+            group.appsList.forEach((a) => {
+              expandedOptions.add("app_" + group.key + "_" + a.id);
+            });
+          } else {
+            expandedOptions.add("app_" + group.key + "_" + group.appsList[0].id);
+          }
         }
       }
     };
@@ -685,11 +700,8 @@ createApp({
       bundleSearch.value = "";
       showOptions.value = [];
       isChangelogView.value = false;
-      expandedOptions.clear();
       expandedVersions.clear();
-      for (const key in bundleViews) {
-        delete bundleViews[key];
-      }
+      collapseAll();
     };
 
     const isNewBundle = (group) => {
