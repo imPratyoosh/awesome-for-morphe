@@ -2025,9 +2025,9 @@
     "firstSeen": "2026-06-30T14:24:47",
     "stable": {
       "file": "patches/prathxm-stable.json",
-      "version": "v1.9.1",
-      "releaseUrl": "https://github.com/PrathxmOp/Prathxm-Patches/releases/tag/v1.9.1",
-      "createdAt": "2026-07-04T19:36:58",
+      "version": "v1.9.2",
+      "releaseUrl": "https://github.com/PrathxmOp/Prathxm-Patches/releases/tag/v1.9.2",
+      "createdAt": "2026-07-04T21:08:14",
       "targetApps": [
         "com.chess"
       ],
@@ -2036,16 +2036,16 @@
     },
     "dev": {
       "file": "patches/prathxm-dev.json",
-      "version": "v1.0.0-dev.1",
-      "releaseUrl": "https://github.com/PrathxmOp/Prathxm-Patches/releases/tag/v1.0.0-dev.1",
-      "createdAt": "2026-07-04T19:41:10",
+      "version": "v1.9.2-dev.1",
+      "releaseUrl": "https://github.com/PrathxmOp/Prathxm-Patches/releases/tag/v1.9.2-dev.1",
+      "createdAt": "2026-07-04T21:08:13",
       "targetApps": [
         "com.chess"
       ],
       "appCount": 1,
       "patchCount": 5
     },
-    "latest": "dev"
+    "latest": "stable"
   },
   "prathxm-ytmusic": {
     "source": "github",
