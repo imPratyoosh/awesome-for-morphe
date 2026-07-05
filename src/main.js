@@ -97,6 +97,7 @@ createApp({
     const showOptions = ref([]);
     const channel = ref(DEFAULT_CHANNEL);
     const sortOrder = ref("stars");
+    const isTwoColumns = ref(new URLSearchParams(location.search).get("view") !== "list");
 
     const activeData = ref(null);
     const isLoading = ref(true);
@@ -218,6 +219,7 @@ createApp({
         if (channel.value !== DEFAULT_CHANNEL) urlParts.push(`channel=${channel.value}`);
         if (sortOrder.value !== "stars") urlParts.push(`sort=${sortOrder.value}`);
         if (isChangelogView.value) urlParts.push("new");
+        if (!isTwoColumns.value) urlParts.push("view=list");
 
         const queryString = urlParts.join("&");
         const newUrl = `${location.pathname}${queryString ? `?${queryString}` : ""}`;
@@ -717,9 +719,6 @@ createApp({
       if (!key || !activeData.value) return "";
       return activeData.value.bundleMap[key]?.avatarUrl || "";
     };
-
-    const urlParamsSetup = new URLSearchParams(window.location.search);
-    const isTwoColumns = ref(urlParamsSetup.get("view") !== "list");
     
     const toggleColumns = () => {
       isTwoColumns.value = !isTwoColumns.value;
