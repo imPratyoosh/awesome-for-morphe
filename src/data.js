@@ -204,6 +204,7 @@ export async function loadChannelData(channelName, priorityKeys = [], onPatchLoa
       patchCount: channelObj.patchCount || 0,
       version: channelObj.version || "",
       tag: channelObj.version || "",
+      releaseUrl: channelObj.releaseUrl || "",
       createdAt: channelObj.createdAt || "",
     };
     bundleList.push(bundle);
