@@ -20,9 +20,9 @@
       theme: {
         extend: {
           colors: {
-            black: '#0C0C0D',
-            dark: '#18181B',
-            gray: '#27272A',
+            black: '#18181B',
+            dark: '#27272A',
+            gray: '#222222',
             lightGray: '#3F3F46',
             blue: '#3B82F6',
             green: '#10B981',
@@ -435,7 +435,7 @@
                       title="Filter by this bundle">
                       <i class="fa-solid fa-filter text-green"></i>
                     </button>
-                    <button @click.stop="toggleBundleView(group.key)" class="badge shrink-0"
+                    <button @click.stop="toggleBundleView(group)" class="badge shrink-0"
                       :title="bundleViews[group.key] ? 'Switch to grid view' : 'Switch to list view'">
                       <i class="fa-solid text-green" :class="bundleViews[group.key] ? 'fa-grip' : 'fa-list'"></i>
                     </button>
@@ -486,7 +486,7 @@
                       <div v-if="expandedOptions.has('app_' + group.key + '_' + appItem.id)"
                         @touchstart="handleTouchStart" @touchend="handleTouchEnd($event, group.key, appItem, appsList)"
                         class="flex flex-col gap-2 shadow-inner pt-2 pb-3"
-                        :class="activeSwipeGroup === group.key && swipeDirection ? 'swipe-transition-' + swipeDirection : ''">
+                        :class="(activeSwipeGroup === group.key && swipeDirection ? 'swipe-transition-' + swipeDirection : '') + (bundleViews[group.key] ? ' border-b-2 border-lightGray/30' : '')">
                         <div class="flex flex-wrap items-center gap-2 min-w-0 px-3 sm:px-4">
                           <template v-if="appItem.packageName && appItem.packageName !== 'universal'">
                             <button @click.stop="filterByApp(appItem.packageName)" class="badge shrink-0">

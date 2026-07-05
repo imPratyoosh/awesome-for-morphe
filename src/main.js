@@ -665,8 +665,21 @@ createApp({
     };
 
     const bundleViews = reactive({});
-    const toggleBundleView = (key) => {
+    const toggleBundleView = (group) => {
+      const key = typeof group === 'string' ? group : group.key;
       bundleViews[key] = !bundleViews[key];
+      
+      if (!bundleViews[key] && group.appsList) {
+        const expandedApps = group.appsList.filter((a) => expandedOptions.has("app_" + key + "_" + a.id));
+        if (expandedApps.length > 1) {
+          const firstExpanded = expandedApps[0];
+          group.appsList.forEach((a) => {
+            if (a.id !== firstExpanded.id) {
+              expandedOptions.delete("app_" + key + "_" + a.id);
+            }
+          });
+        }
+      }
     };
 
     const formatDate = (val) => {
