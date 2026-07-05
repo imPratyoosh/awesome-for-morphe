@@ -237,11 +237,11 @@ def build_notes(label, old_bundles, new_bundles, app_metadata, skip_words):
         sections.append(f"✨ [_View full changelog details_]({full_url})")
 
     if new_bundles_notes:
-        sections.append("## 🧩 New bundles\n" + "\n".join(new_bundles_notes))
+        sections.append("## 📦 New bundles\n" + "\n".join(new_bundles_notes))
     if new_apps_groups:
         sections.append("## 📱 New apps\n" + "\n".join(new_apps_groups))
     if new_patches_groups:
-        sections.append("## 🩹 New patches\n" + "\n".join(new_patches_groups))
+        sections.append("## 🧩 New patches\n" + "\n".join(new_patches_groups))
 
     if not sections:
         return ""

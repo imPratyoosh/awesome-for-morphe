@@ -665,11 +665,16 @@ createApp({
     };
 
     const filterByApp = (pkg) => {
+      resetFilters();
       app.value = pkg;
-      bundle.value = "";
-      query.value = "";
-      appSearch.value = "";
-      bundleSearch.value = "";
+      showOptions.value = [`:${pkg}`];
+    };
+
+    const filterByBundle = (bundleKey) => {
+      resetFilters();
+      bundle.value = bundleKey;
+      showOptions.value = [bundleKey];
+      window.scrollTo({ top: 0, behavior: "smooth" });
     };
 
     const formatDate = (val) => {
@@ -788,6 +793,7 @@ createApp({
       getAppName,
       getAppIcon,
       getBundleIcon,
+      filterByBundle,
     };
   },
 }).mount("#app");
