@@ -87,58 +87,6 @@ function parseShowTrie(str) {
   return results;
 }
 
-function formatPatchStr(p) {
-  if (p.includes(":") || p.includes(",") || p.includes("(") || p.includes(")")) {
-    return `"${p}"`;
-  }
-  return p;
-}
-
-function buildShowTrie(flatList) {
-  const root = {};
-  for (const item of flatList) {
-    const parts = item.split(":");
-    let bundle = parts[0];
-    let app = parts.length > 1 ? parts[1] : null;
-    let patch = parts.length > 2 ? parts.slice(2).join(":") : null;
-
-    if (!root[bundle]) root[bundle] = { _apps: {} };
-    if (app !== null) {
-      if (!root[bundle]._apps[app]) root[bundle]._apps[app] = { _patches: [] };
-      if (patch !== null) {
-        root[bundle]._apps[app]._patches.push(patch);
-      }
-    }
-  }
-
-  const bundleStrings = [];
-  for (const [bundle, bundleNode] of Object.entries(root)) {
-    const apps = Object.entries(bundleNode._apps);
-    if (apps.length === 0) {
-      bundleStrings.push(bundle);
-    } else {
-      const appStrings = [];
-      for (const [app, appNode] of apps) {
-        const patches = appNode._patches;
-        if (patches.length === 0) {
-          appStrings.push(app);
-        } else if (patches.length === 1) {
-          appStrings.push(`${app}:${formatPatchStr(patches[0])}`);
-        } else {
-          const patchStrings = patches.map(formatPatchStr);
-          appStrings.push(`${app}:(${patchStrings.join(",")})`);
-        }
-      }
-      if (appStrings.length === 1) {
-        bundleStrings.push(`${bundle}:${appStrings[0]}`);
-      } else {
-        bundleStrings.push(`${bundle}:(${appStrings.join(",")})`);
-      }
-    }
-  }
-  return bundleStrings.join(",");
-}
-
 createApp({
   setup() {
     const query = ref("");
@@ -172,19 +120,9 @@ createApp({
     sortOrder.value = params.get("sort") || "stars";
 
     function parseShowParam() {
-      const search = location.search.substring(1);
-      if (!search) return [];
-
-      const pairs = search.split("&");
-      let rawParam = "";
-      for (const pair of pairs) {
-        const [key, value] = pair.split("=");
-        if (key === "show" && value) {
-          rawParam = value;
-        }
-      }
+      const rawParam = params.get("show");
       if (!rawParam) return [];
-      return parseShowTrie(decodeURIComponent(rawParam));
+      return parseShowTrie(rawParam);
     }
 
     let bundleParam = params.get("bundle");
@@ -262,7 +200,7 @@ createApp({
         if (query.value) urlParts.push(`q=${encodeURIComponent(query.value)}`);
 
         if (showOptions.value.length > 0) {
-          const showStr = buildShowTrie(showOptions.value);
+          const showStr = showOptions.value.join(",");
           const encodedShow = encodeURIComponent(showStr)
             .replace(/%3A/g, ":")
             .replace(/%2C/g, ",")
@@ -675,10 +613,10 @@ createApp({
       }
     };
 
-    const filterByApp = (pkg) => {
+    const filterByApp = (packageName) => {
       resetFilters();
-      app.value = pkg;
-      showOptions.value = [`:${pkg}`];
+      app.value = packageName;
+      showOptions.value = [`:${packageName}`];
     };
 
     const filterByBundle = (bundleKey) => {
@@ -694,13 +632,12 @@ createApp({
     };
 
     const formatDate = (val) => {
-      const d = val ? new Date(val) : null;
-      return d && !isNaN(d.getTime())
-        ? d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })
+      const dateObj = val ? new Date(val) : null;
+      return dateObj && !isNaN(dateObj.getTime())
+        ? dateObj.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })
         : "";
     };
-    const countBy = (items, keyFn) => new Set(items.map(keyFn).filter(Boolean)).size;
-    const playUrl = (pkg) => `https://play.google.com/store/apps/details?id=${encodeURIComponent(pkg)}`;
+    const playUrl = (packageName) => `https://play.google.com/store/apps/details?id=${encodeURIComponent(packageName)}`;
 
     const copiedStates = reactive({});
     const copyText = (text, key) => {
@@ -743,16 +680,16 @@ createApp({
       return diffDays <= 7;
     };
 
-    const getAppName = (pkg) => {
-      if (!pkg || pkg === "universal") return "All Apps";
-      if (!activeData.value) return pkg;
-      return appName(pkg, activeData.value.namesMap, activeData.value.skipSet);
+    const getAppName = (packageName) => {
+      if (!packageName || packageName === "universal") return "All Apps";
+      if (!activeData.value) return packageName;
+      return appName(packageName, activeData.value.namesMap, activeData.value.skipSet);
     };
-    
-    const getAppIcon = (pkg) => {
-      if (!pkg || pkg === "universal") return "";
+
+    const getAppIcon = (packageName) => {
+      if (!packageName || packageName === "universal") return "";
       if (!activeData.value) return "";
-      return activeData.value.namesMap[pkg]?.iconUrl || "";
+      return activeData.value.namesMap[packageName]?.iconUrl || "";
     };
 
     const getBundleIcon = (key) => {
@@ -804,7 +741,6 @@ createApp({
       handleTouchEnd,
       filterByApp,
       formatDate,
-      countBy,
       playUrl,
       isTwoColumns,
       toggleColumns,

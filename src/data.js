@@ -136,10 +136,10 @@ async function loadSource(key, channelObj, names, sourceInfo, skipSet) {
         searchPatchesText: [
           patch.name,
           patch.description,
-          ...(Array.isArray(patch.options) ? patch.options : []).flatMap((opt) => [
-            opt.title,
-            opt.key,
-            opt.description,
+          ...(Array.isArray(patch.options) ? patch.options : []).flatMap((optionItem) => [
+            optionItem.title,
+            optionItem.key,
+            optionItem.description,
           ]),
         ]
           .filter(Boolean)
@@ -164,7 +164,9 @@ export async function loadChannelData(channelName, priorityKeys = [], onPatchLoa
   }
 
   let resolveCache;
-  const cachePromise = new Promise(resolve => { resolveCache = resolve; });
+  const cachePromise = new Promise((resolve) => {
+    resolveCache = resolve;
+  });
   dataCache.set(channel, cachePromise);
 
   const [names, sources, skipWordsArray] = await Promise.all([
