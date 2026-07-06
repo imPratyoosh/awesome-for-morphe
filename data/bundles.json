@@ -1601,9 +1601,9 @@
     },
     "dev": {
       "file": "patches/morphe-dev.json",
-      "version": "v1.34.0-dev.1",
-      "releaseUrl": "https://github.com/MorpheApp/morphe-patches/releases/tag/v1.34.0-dev.1",
-      "createdAt": "2026-07-05T09:47:02",
+      "version": "v1.34.0-dev.2",
+      "releaseUrl": "https://github.com/MorpheApp/morphe-patches/releases/tag/v1.34.0-dev.2",
+      "createdAt": "2026-07-05T19:53:20",
       "targetApps": [
         "com.google.android.apps.youtube.music",
         "com.google.android.youtube",
@@ -1701,14 +1701,14 @@
     "firstSeen": "2026-07-03T02:41:59",
     "stable": {
       "file": "patches/nai64-stable.json",
-      "version": "1.11.0",
-      "releaseUrl": "https://github.com/Nai64/Nai64Patches/releases/tag/1.11.0",
-      "createdAt": "2026-07-05T13:33:56",
+      "version": "1.13.0",
+      "releaseUrl": "https://github.com/Nai64/Nai64Patches/releases/tag/1.13.0",
+      "createdAt": "2026-07-05T20:38:55",
       "targetApps": [
         "universal"
       ],
       "appCount": 0,
-      "patchCount": 3
+      "patchCount": 4
     },
     "latest": "stable"
   },
@@ -2376,9 +2376,9 @@
     },
     "dev": {
       "file": "patches/rushiranpise-dev.json",
-      "version": "v1.10.0-dev.1",
-      "releaseUrl": "https://github.com/rushiranpise/morphe-patches/releases/tag/v1.10.0-dev.1",
-      "createdAt": "2026-07-04T19:45:17",
+      "version": "v1.10.0-dev.3",
+      "releaseUrl": "https://github.com/rushiranpise/morphe-patches/releases/tag/v1.10.0-dev.3",
+      "createdAt": "2026-07-05T22:15:14",
       "targetApps": [
         "ai.topicfinder.podcastdiscovery",
         "air.com.musclemotion.anatomy",
@@ -2387,6 +2387,7 @@
         "air.com.musclemotion.strength.mobile",
         "air.com.musclemotion.workout",
         "air.com.musclemotion.yoga",
+        "alldocumentreader.office.viewer.filereader.pdfviewer",
         "app.ninjavpn.android",
         "app.simple.inure.play",
         "apps.automan.blurwallpaper",
@@ -2424,6 +2425,7 @@
         "com.newsbreak.crimeradar",
         "com.oasisfeng.greenify",
         "com.particlenews.newsbreak",
+        "com.piksoft.turboscan.free",
         "com.proxyman.proxymanandroid",
         "com.psiphon3.subscription",
         "com.rarlab.rar",
@@ -2432,15 +2434,19 @@
         "com.shexa.permissionmanager",
         "com.skinsort",
         "com.snow_forecast.snowforecast",
+        "com.spotangels.android",
         "com.tafayor.hibernator",
         "com.tafayor.killall",
         "com.tecso.MigraConnect",
+        "com.thegrizzlylabs.geniusscan.free",
         "com.thetransitapp.droid",
         "com.tomtom.gplay.navapp",
         "com.tracked.mobile",
         "com.tranzmate",
         "com.truebill",
         "com.twtapp",
+        "com.urbandroid.kinestop",
+        "com.wavve.boating.gps",
         "com.waze",
         "com.weather.Weather",
         "com.weawow",
@@ -2454,6 +2460,7 @@
         "eu.faircode.netguard",
         "it.mirko.beta",
         "kha.prog.mikrotik",
+        "net.pkge.pkge",
         "org.hola.play",
         "org.zwanoo.android.speedtest",
         "police.scanner.radio.broadcastify.citizen",
@@ -2463,8 +2470,8 @@
         "universal",
         "verbosus.pialytic"
       ],
-      "appCount": 81,
-      "patchCount": 117
+      "appCount": 88,
+      "patchCount": 120
     },
     "latest": "dev"
   },

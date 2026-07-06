@@ -1436,5 +1436,33 @@
   "com.bytecaretech.merokarobar": {
     "name": "Mero Karobar",
     "iconUrl": "https://play-lh.googleusercontent.com/9Gx38ML5KX24JSQ4rJq1nlxvl7EEB_UosLexB7xhlZon_Fht7gNEsR-bClQ30qtmf9fa28JaLYyuXIwQGmiZ"
+  },
+  "com.piksoft.turboscan.free": {
+    "name": "TurboScan",
+    "iconUrl": "https://play-lh.googleusercontent.com/se79iBHBV6jc6JVSQg7cRlM77USmaZp7rHhuQz4LPrrbfI-H-R8_BPy_ITwTN9ZlELLRzP5AkCrBfwCIL9-F"
+  },
+  "alldocumentreader.office.viewer.filereader.pdfviewer": {
+    "name": "All Reader",
+    "iconUrl": "https://play-lh.googleusercontent.com/ukyw7ov7yMyPUhiudTMlZErtWgkoMLjsB2dwi5O_OTKDKU7jTrxwhQ4Vf0TAJLcPLibQ9wTZ_TG1RsxzD2y142M"
+  },
+  "net.pkge.pkge": {
+    "name": "pkge",
+    "iconUrl": "https://play-lh.googleusercontent.com/Cg2qJ_ZYQbkbDlquXnlbe4utHXUHdW7I1ruuAGi_J8cmbSV9vZHQFhM0AtOtLpA3c75Ua57Ma6mgE2vcXHmq8g"
+  },
+  "com.thegrizzlylabs.geniusscan.free": {
+    "name": "Genius Scan",
+    "iconUrl": "https://play-lh.googleusercontent.com/SK7dINLoGBg4JFtGP__81cj7F-0q8hTd6L_Laug7oOUXE5fiGfh9kcA-kHeic1RlDzwOnMfU91tpazGOsRnrSg"
+  },
+  "com.wavve.boating.gps": {
+    "name": "Wavve Boating",
+    "iconUrl": "https://play-lh.googleusercontent.com/zb8ihz1E4ePrDfFPPFQhW1Su07CXj_aRc1hdn5Jr-hwK4bfdbJaoXtX5pbcf9Y5T1u9jGu0ttSuVHV9T0zdnCg"
+  },
+  "com.urbandroid.kinestop": {
+    "name": "KineStop",
+    "iconUrl": "https://play-lh.googleusercontent.com/1OfzOcLpzowxO8D4OpS8yX_APtJPmwXCwUn9p-omx8I_FT3h1YiMhkdcfNOz3NYg_Z5Fk-RWCzA8GOuKO67UZQ"
+  },
+  "com.spotangels.android": {
+    "name": "SpotAngels",
+    "iconUrl": "https://play-lh.googleusercontent.com/ud7_eSQtO0lJe8P_svEttScCPMP1b7GTFhbyOh_HPOQKwDOB368hQbAGd8wCdHT-7hQiDLQWUREIyjGvAZ0cOA"
   }
 }
