@@ -57,6 +57,7 @@
       "Disable metrics collection in WebView",
       "Disable mobile ads",
       "Remove internet permission",
+      "Replace Google Maps API key",
       "Spoof Advertising ID",
       "Spoof Firebase certificate hash",
       "Spoof signature verification"
@@ -505,6 +506,9 @@
     "com.byairapp.android": [
       "Enable Online Pro",
       "Enable Pro"
+    ],
+    "com.bytecaretech.merokarobar": [
+      "Unlock Premium"
     ],
     "com.harwin.prismatica": [
       "Remove License Activity",
@@ -1025,6 +1029,9 @@
     "net.uniquegem.directchat": [
       "Unlock Premium"
     ],
+    "studio.muggle.chatboost": [
+      "Unlock Premium"
+    ],
     "tv.twitch.android.app": [
       "Auto claim channel points",
       "Block live ads",
@@ -1118,6 +1125,9 @@
     ]
   },
   "kondratjev": {
+    "air.com.musclemotion.strength.mobile": [
+      "Unlock Premium"
+    ],
     "com.brightstripe.parcels": [
       "Unlock Premium"
     ],
@@ -1142,8 +1152,8 @@
       "Unlock Premium"
     ],
     "com.soundcloud.android": [
-      "Disable OneTrust consent popup",
-      "Disable telemetry",
+      "Disable analytics",
+      "Disable consent popup",
       "Enable SoundCloud Go+"
     ],
     "com.yazio.android": [
@@ -1163,7 +1173,7 @@
       "Disable analytics"
     ],
     "xyz.rtrvr.pillo": [
-      "Disable Pulse tracking",
+      "Disable analytics",
       "Unlock Premium"
     ]
   },
@@ -1264,6 +1274,7 @@
       "Custom branding",
       "Disable DRC audio",
       "Disable QUIC protocol",
+      "Downloads",
       "Enable debugging",
       "Enable exclusive audio playback",
       "Enable forced miniplayer",
@@ -1721,6 +1732,7 @@
       "Import/Export login token",
       "Legacy share links",
       "Log server response",
+      "More information on profile",
       "Native downloader",
       "Native reader mode",
       "Native translator",
@@ -1957,6 +1969,9 @@
     "air.com.musclemotion.yoga": [
       "Unlock Premium"
     ],
+    "alldocumentreader.office.viewer.filereader.pdfviewer": [
+      "Unlock Premium"
+    ],
     "app.ninjavpn.android": [
       "Unlock Premium"
     ],
@@ -1964,8 +1979,6 @@
       "Unlock Full Version"
     ],
     "apps.automan.blurwallpaper": [
-      "Bypass PairIP License Check",
-      "Disable License Check",
       "Unlock Premium"
     ],
     "ch.protonvpn.android": [
@@ -2002,7 +2015,6 @@
       "Unlock Premium"
     ],
     "com.changayaf.inmigreat": [
-      "Bypass PairIP License Check",
       "Unlock Pro"
     ],
     "com.citymapper.app.release": [
@@ -2038,7 +2050,7 @@
     ],
     "com.intsig.camscanner": [
       "Disable telemetry",
-      "Yearly unlock"
+      "Yearly Unlock"
     ],
     "com.iudesk.android.photo.editor": [
       "Unlock Premium"
@@ -2084,6 +2096,9 @@
     "com.particlenews.newsbreak": [
       "Unlock Premium"
     ],
+    "com.piksoft.turboscan.free": [
+      "Unlock Pro features"
+    ],
     "com.proxyman.proxymanandroid": [
       "Unlock Lifetime"
     ],
@@ -2103,11 +2118,13 @@
       "Unlock Pro"
     ],
     "com.skinsort": [
-      "Disable Paywall Config",
       "Unlock Premium"
     ],
     "com.snow_forecast.snowforecast": [
       "Unlock Premium"
+    ],
+    "com.spotangels.android": [
+      "Unlock Plus"
     ],
     "com.tafayor.hibernator": [
       "Unlock Pro"
@@ -2117,6 +2134,9 @@
     ],
     "com.tecso.MigraConnect": [
       "Unlock Enterprise"
+    ],
+    "com.thegrizzlylabs.geniusscan.free": [
+      "Unlock Ultra"
     ],
     "com.thetransitapp.droid": [
       "Unlock Royale"
@@ -2135,6 +2155,12 @@
     ],
     "com.twtapp": [
       "Unlock Subscription"
+    ],
+    "com.urbandroid.kinestop": [
+      "Unlock pro"
+    ],
+    "com.wavve.boating.gps": [
+      "Unlock Premium"
     ],
     "com.waze": [
       "Alert Distances",
@@ -2185,6 +2211,9 @@
     ],
     "kha.prog.mikrotik": [
       "Unlock Pro"
+    ],
+    "net.pkge.pkge": [
+      "Unlock Premium"
     ],
     "org.hola.play": [
       "Unlock Premium"

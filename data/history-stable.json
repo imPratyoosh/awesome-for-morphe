@@ -1037,6 +1037,9 @@
     ]
   },
   "kondratjev": {
+    "air.com.musclemotion.strength.mobile": [
+      "Unlock Premium"
+    ],
     "com.brightstripe.parcels": [
       "Unlock Premium"
     ],
@@ -1061,8 +1064,8 @@
       "Unlock Premium"
     ],
     "com.soundcloud.android": [
-      "Disable OneTrust consent popup",
-      "Disable telemetry",
+      "Disable analytics",
+      "Disable consent popup",
       "Enable SoundCloud Go+"
     ],
     "com.yazio.android": [
@@ -1082,7 +1085,7 @@
       "Disable analytics"
     ],
     "xyz.rtrvr.pillo": [
-      "Disable Pulse tracking",
+      "Disable analytics",
       "Unlock Premium"
     ]
   },
@@ -1336,6 +1339,7 @@
     "universal": [
       "Ads Free Rewards",
       "No Ads",
+      "Pairip Application Redirect",
       "Spoof Play Store Install Source"
     ]
   },
@@ -2112,18 +2116,25 @@
     "air.com.musclemotion.posture": [
       "Unlock Premium"
     ],
+    "air.com.musclemotion.strength.mobile": [
+      "Unlock Premium"
+    ],
     "air.com.musclemotion.workout": [
       "Unlock Premium"
     ],
     "air.com.musclemotion.yoga": [
       "Unlock Premium"
     ],
+    "alldocumentreader.office.viewer.filereader.pdfviewer": [
+      "Unlock Premium"
+    ],
     "app.ninjavpn.android": [
       "Unlock Premium"
     ],
+    "app.simple.inure.play": [
+      "Unlock Full Version"
+    ],
     "apps.automan.blurwallpaper": [
-      "Bypass PairIP License Check",
-      "Disable License Check",
       "Unlock Premium"
     ],
     "ch.protonvpn.android": [
@@ -2160,7 +2171,6 @@
       "Unlock Premium"
     ],
     "com.changayaf.inmigreat": [
-      "Bypass PairIP License Check",
       "Unlock Pro"
     ],
     "com.citymapper.app.release": [
@@ -2194,6 +2204,10 @@
     "com.inscode.autoclicker": [
       "Unlock Premium "
     ],
+    "com.intsig.camscanner": [
+      "Disable telemetry",
+      "Yearly Unlock"
+    ],
     "com.iudesk.android.photo.editor": [
       "Unlock Premium"
     ],
@@ -2212,11 +2226,17 @@
     "com.localaiapp.scoops": [
       "Unlock Drama Episodes"
     ],
+    "com.mindful.code.studio.toxly.scanner": [
+      "Unlock Premium"
+    ],
     "com.mobond.mindicator": [
       "Remove Ads"
     ],
     "com.mtv.sai": [
       "Unlock Premium"
+    ],
+    "com.nationaledtech.spinbrowser": [
+      "Unlock SPIN Plus"
     ],
     "com.newsbreak.crimeradar": [
       "Bypass License Check",
@@ -2231,6 +2251,9 @@
     ],
     "com.particlenews.newsbreak": [
       "Unlock Premium"
+    ],
+    "com.piksoft.turboscan.free": [
+      "Unlock Pro features"
     ],
     "com.proxyman.proxymanandroid": [
       "Unlock Lifetime"
@@ -2251,11 +2274,13 @@
       "Unlock Pro"
     ],
     "com.skinsort": [
-      "Disable Paywall Config",
       "Unlock Premium"
     ],
     "com.snow_forecast.snowforecast": [
       "Unlock Premium"
+    ],
+    "com.spotangels.android": [
+      "Unlock Plus"
     ],
     "com.tafayor.hibernator": [
       "Unlock Pro"
@@ -2266,10 +2291,16 @@
     "com.tecso.MigraConnect": [
       "Unlock Enterprise"
     ],
+    "com.thegrizzlylabs.geniusscan.free": [
+      "Unlock Ultra"
+    ],
     "com.thetransitapp.droid": [
       "Unlock Royale"
     ],
     "com.tomtom.gplay.navapp": [
+      "Unlock Premium"
+    ],
+    "com.tracked.mobile": [
       "Unlock Premium"
     ],
     "com.tranzmate": [
@@ -2280,6 +2311,12 @@
     ],
     "com.twtapp": [
       "Unlock Subscription"
+    ],
+    "com.urbandroid.kinestop": [
+      "Unlock pro"
+    ],
+    "com.wavve.boating.gps": [
+      "Unlock Premium"
     ],
     "com.waze": [
       "Alert Distances",
@@ -2298,6 +2335,9 @@
     "com.weather.Weather": [
       "Unlock Premium"
     ],
+    "com.weawow": [
+      "Unlock donation"
+    ],
     "com.windscribe.vpn": [
       "Unlock Premium"
     ],
@@ -2313,6 +2353,12 @@
     "eu.darken.myperm": [
       "Unlock Pro"
     ],
+    "eu.duong.imagedatefixer": [
+      "Unlock Premium"
+    ],
+    "eu.duong.picturemanager": [
+      "Unlock Premium"
+    ],
     "eu.faircode.netguard": [
       "Unlock Pro"
     ],
@@ -2321,6 +2367,9 @@
     ],
     "kha.prog.mikrotik": [
       "Unlock Pro"
+    ],
+    "net.pkge.pkge": [
+      "Unlock Premium"
     ],
     "org.hola.play": [
       "Unlock Premium"

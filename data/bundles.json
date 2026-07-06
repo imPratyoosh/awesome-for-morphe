@@ -132,7 +132,7 @@
     "repoUrl": "https://github.com/ajstrick81/morphe-androidtv-patches",
     "deepLink": "https://morphe.software/add-source?github=ajstrick81/morphe-androidtv-patches",
     "avatarUrl": "https://github.com/ajstrick81.png?size=128",
-    "stars": 65,
+    "stars": 66,
     "firstSeen": "2026-05-25T15:05:44",
     "stable": {
       "file": "patches/ajstrick81-androidtv-stable.json",
@@ -269,7 +269,7 @@
     "repoUrl": "https://github.com/AmpleReVanced/revanced-patches",
     "deepLink": "https://morphe.software/add-source?github=AmpleReVanced/revanced-patches",
     "avatarUrl": "https://github.com/AmpleReVanced.png?size=128",
-    "stars": 123,
+    "stars": 124,
     "firstSeen": "2026-03-29T10:56:47",
     "stable": {
       "file": "patches/amplerevanced-stable.json",
@@ -310,7 +310,7 @@
     "repoUrl": "https://github.com/anddea/revanced-patches",
     "deepLink": "https://morphe.software/add-source?github=anddea/revanced-patches",
     "avatarUrl": "https://github.com/anddea.png?size=128",
-    "stars": 1767,
+    "stars": 1770,
     "firstSeen": "2026-06-16T15:37:39",
     "stable": {
       "file": "patches/anddea-stable.json",
@@ -372,7 +372,7 @@
     "repoUrl": "https://github.com/andronedev/morphe-patches",
     "deepLink": "https://morphe.software/add-source?github=andronedev/morphe-patches",
     "avatarUrl": "https://github.com/andronedev.png?size=128",
-    "stars": 81,
+    "stars": 82,
     "firstSeen": "2026-01-05T16:06:30",
     "stable": {
       "file": "patches/andronedev-stable.json",
@@ -404,7 +404,7 @@
     "repoUrl": "https://github.com/ariecos/gemini-patches",
     "deepLink": "https://morphe.software/add-source?github=ariecos/gemini-patches",
     "avatarUrl": "https://github.com/ariecos.png?size=128",
-    "stars": 12,
+    "stars": 13,
     "firstSeen": "2026-04-28T00:47:20",
     "stable": {
       "file": "patches/ariecos-stable.json",
@@ -475,7 +475,7 @@
     "repoUrl": "https://github.com/BholeyKaBhakt/android-patches-xtra",
     "deepLink": "https://morphe.software/add-source?github=BholeyKaBhakt/android-patches-xtra",
     "avatarUrl": "https://github.com/BholeyKaBhakt.png?size=128",
-    "stars": 46,
+    "stars": 47,
     "firstSeen": "2026-05-12T07:00:00",
     "stable": {
       "file": "patches/bholeykabhakt-stable.json",
@@ -535,7 +535,7 @@
     "repoUrl": "https://github.com/binarymend/morphe-patches",
     "deepLink": "https://morphe.software/add-source?github=binarymend/morphe-patches",
     "avatarUrl": "https://github.com/binarymend.png?size=128",
-    "stars": 121,
+    "stars": 122,
     "firstSeen": "2026-04-12T21:22:08",
     "stable": {
       "file": "patches/binarymend-stable.json",
@@ -579,7 +579,7 @@
     "repoUrl": "https://github.com/BrayDog2010/morphe-patches",
     "deepLink": "https://morphe.software/add-source?github=BrayDog2010/morphe-patches",
     "avatarUrl": "https://github.com/BrayDog2010.png?size=128",
-    "stars": 1,
+    "stars": 2,
     "firstSeen": "2026-06-22T21:11:54",
     "stable": {
       "file": "patches/braydog2010-stable.json",
@@ -611,7 +611,7 @@
     "repoUrl": "https://github.com/brosssh/morphe-patches",
     "deepLink": "https://morphe.software/add-source?github=brosssh/morphe-patches",
     "avatarUrl": "https://github.com/brosssh.png?size=128",
-    "stars": 271,
+    "stars": 273,
     "firstSeen": "2026-03-10T19:56:44",
     "stable": {
       "file": "patches/brosssh-stable.json",
@@ -651,7 +651,7 @@
     "repoUrl": "https://github.com/browzomje/browzomje-patches",
     "deepLink": "https://morphe.software/add-source?github=browzomje/browzomje-patches",
     "avatarUrl": "https://github.com/browzomje.png?size=128",
-    "stars": 15,
+    "stars": 16,
     "firstSeen": "2026-06-23T16:20:25",
     "stable": {
       "file": "patches/browzomje-stable.json",
@@ -882,7 +882,7 @@
     "repoUrl": "https://github.com/hoo-dles/morphe-patches",
     "deepLink": "https://morphe.software/add-source?github=hoo-dles/morphe-patches",
     "avatarUrl": "https://github.com/hoo-dles.png?size=128",
-    "stars": 782,
+    "stars": 785,
     "firstSeen": "2026-01-21T03:33:21",
     "stable": {
       "file": "patches/hoo-dles-stable.json",
@@ -1016,7 +1016,7 @@
     "repoUrl": "https://github.com/arandomhooman/hoomans-morphe-patches",
     "deepLink": "https://morphe.software/add-source?github=arandomhooman/hoomans-morphe-patches",
     "avatarUrl": "https://github.com/arandomhooman.png?size=128",
-    "stars": 69,
+    "stars": 71,
     "firstSeen": "2026-06-15T20:58:55",
     "stable": {
       "file": "patches/hoomans-morphe-stable.json",
@@ -1127,7 +1127,7 @@
     "repoUrl": "https://github.com/icysymmetra/tiktok-patches-for-morphe",
     "deepLink": "https://morphe.software/add-source?github=icysymmetra/tiktok-patches-for-morphe",
     "avatarUrl": "https://github.com/icysymmetra.png?size=128",
-    "stars": 106,
+    "stars": 107,
     "firstSeen": "2026-05-30T22:48:06",
     "stable": {
       "file": "patches/icysymmetra-tiktok-stable.json",
@@ -1159,7 +1159,7 @@
     "repoUrl": "https://github.com/bdgerszewski/morphe-patches-ihealth",
     "deepLink": "https://morphe.software/add-source?github=bdgerszewski/morphe-patches-ihealth",
     "avatarUrl": "https://github.com/bdgerszewski.png?size=128",
-    "stars": 3,
+    "stars": 4,
     "firstSeen": "2026-06-21T21:50:44",
     "stable": {
       "file": "patches/ihealth-morphe-stable.json",
@@ -1227,7 +1227,7 @@
     "repoUrl": "https://github.com/jasonwu1994/Gboard-patches",
     "deepLink": "https://morphe.software/add-source?github=jasonwu1994/Gboard-patches",
     "avatarUrl": "https://github.com/jasonwu1994.png?size=128",
-    "stars": 110,
+    "stars": 114,
     "firstSeen": "2026-04-07T13:23:23",
     "stable": {
       "file": "patches/jasonwu1994-stable.json",
@@ -1259,7 +1259,7 @@
     "repoUrl": "https://github.com/Joristdh/Platypatch",
     "deepLink": "https://morphe.software/add-source?github=Joristdh/Platypatch",
     "avatarUrl": "https://github.com/Joristdh.png?size=128",
-    "stars": 9,
+    "stars": 10,
     "firstSeen": "2026-04-14T15:21:40",
     "stable": {
       "file": "patches/joristdh-stable.json",
@@ -1351,7 +1351,7 @@
     "repoUrl": "https://github.com/kondratjev/morphe-patches",
     "deepLink": "https://morphe.software/add-source?github=kondratjev/morphe-patches",
     "avatarUrl": "https://github.com/kondratjev.png?size=128",
-    "stars": 13,
+    "stars": 14,
     "firstSeen": "2026-06-11T14:43:14",
     "stable": {
       "file": "patches/kondratjev-stable.json",
@@ -1407,7 +1407,7 @@
     "repoUrl": "https://github.com/kiraio-moe/Lain-Patches",
     "deepLink": "https://morphe.software/add-source?github=kiraio-moe/Lain-Patches",
     "avatarUrl": "https://github.com/kiraio-moe.png?size=128",
-    "stars": 12,
+    "stars": 14,
     "firstSeen": "2026-06-05T15:48:45",
     "stable": {
       "file": "patches/lain-stable.json",
@@ -1541,7 +1541,7 @@
     "repoUrl": "https://github.com/Lynx6319/patch-youtube-scroll-block",
     "deepLink": "https://morphe.software/add-source?github=Lynx6319/patch-youtube-scroll-block",
     "avatarUrl": "https://github.com/Lynx6319.png?size=128",
-    "stars": 4,
+    "stars": 5,
     "firstSeen": "2026-05-05T14:52:24",
     "stable": {
       "file": "patches/lynx6319-stable.json",
@@ -1562,7 +1562,7 @@
     "repoUrl": "https://github.com/meridianfresco/morphe-meta-patches",
     "deepLink": "https://morphe.software/add-source?github=meridianfresco/morphe-meta-patches",
     "avatarUrl": "https://github.com/meridianfresco.png?size=128",
-    "stars": 40,
+    "stars": 41,
     "firstSeen": "2026-04-12T04:45:39",
     "stable": {
       "file": "patches/meridianfresco-stable.json",
@@ -1583,7 +1583,7 @@
     "repoUrl": "https://github.com/MorpheApp/morphe-patches",
     "deepLink": "https://morphe.software/add-source?github=MorpheApp/morphe-patches",
     "avatarUrl": "https://github.com/MorpheApp.png?size=128",
-    "stars": 2748,
+    "stars": 2758,
     "firstSeen": "2026-06-23T13:04:19",
     "stable": {
       "file": "patches/morphe-stable.json",
@@ -1642,7 +1642,7 @@
     "repoUrl": "https://github.com/andronedev/morphe-portal-patch",
     "deepLink": "https://morphe.software/add-source?github=andronedev/morphe-portal-patch",
     "avatarUrl": "https://github.com/andronedev.png?size=128",
-    "stars": 1,
+    "stars": 2,
     "firstSeen": "2026-06-19T20:53:34",
     "stable": {
       "file": "patches/morphe-portal-stable.json",
@@ -1676,7 +1676,7 @@
     "repoUrl": "https://github.com/Pa-kon/morphe-screenshot-patches",
     "deepLink": "https://morphe.software/add-source?github=Pa-kon/morphe-screenshot-patches",
     "avatarUrl": "https://github.com/Pa-kon.png?size=128",
-    "stars": 3,
+    "stars": 4,
     "firstSeen": "2026-06-28T11:39:03",
     "stable": {
       "file": "patches/morphe-screenshot-stable.json",
@@ -1697,7 +1697,7 @@
     "repoUrl": "https://github.com/Nai64/Nai64Patches",
     "deepLink": "https://morphe.software/add-source?github=Nai64/Nai64Patches",
     "avatarUrl": "https://github.com/Nai64.png?size=128",
-    "stars": 125,
+    "stars": 129,
     "firstSeen": "2026-07-03T02:41:59",
     "stable": {
       "file": "patches/nai64-stable.json",
@@ -1739,7 +1739,7 @@
     "repoUrl": "https://github.com/byehi98/okish-morphe-patches",
     "deepLink": "https://morphe.software/add-source?github=byehi98/okish-morphe-patches",
     "avatarUrl": "https://github.com/byehi98.png?size=128",
-    "stars": 2,
+    "stars": 4,
     "firstSeen": "2026-07-04T20:11:48",
     "stable": {
       "file": "patches/okish-morphe-stable.json",
@@ -1841,7 +1841,7 @@
     "repoUrl": "https://github.com/wchill/patcheddit",
     "deepLink": "https://morphe.software/add-source?github=wchill/patcheddit",
     "avatarUrl": "https://github.com/wchill.png?size=128",
-    "stars": 691,
+    "stars": 694,
     "firstSeen": "2026-01-03T08:12:00",
     "stable": {
       "file": "patches/patcheddit-stable.json",
@@ -1939,7 +1939,7 @@
     "repoUrl": "https://github.com/crimera/piko",
     "deepLink": "https://morphe.software/add-source?github=crimera/piko",
     "avatarUrl": "https://github.com/crimera.png?size=128",
-    "stars": 4200,
+    "stars": 4210,
     "firstSeen": "2026-03-10T21:59:56",
     "stable": {
       "file": "patches/piko-stable.json",
@@ -2028,7 +2028,7 @@
     "repoUrl": "https://github.com/PrathxmOp/Prathxm-Patches",
     "deepLink": "https://morphe.software/add-source?github=PrathxmOp/Prathxm-Patches",
     "avatarUrl": "https://github.com/PrathxmOp.png?size=128",
-    "stars": 37,
+    "stars": 39,
     "firstSeen": "2026-06-30T14:24:47",
     "stable": {
       "file": "patches/prathxm-stable.json",
@@ -2104,7 +2104,7 @@
     "repoUrl": "https://github.com/rabilrbl/fluffy-patches",
     "deepLink": "https://morphe.software/add-source?github=rabilrbl/fluffy-patches",
     "avatarUrl": "https://github.com/rabilrbl.png?size=128",
-    "stars": 21,
+    "stars": 22,
     "firstSeen": "2026-03-31T00:06:52",
     "stable": {
       "file": "patches/rabilrbl-stable.json",
