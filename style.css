@@ -40,9 +40,6 @@ a.badge {
 a.badge:not([class*="text-"]) {
   color: #3b82f6;
 }
-a.badge:hover span {
-  color: #3b82f6;
-}
 
 button.badge {
   cursor: pointer;
@@ -57,4 +54,3 @@ button.badge:hover {
 button.badge:active {
   transform: scale(0.96);
 }
-

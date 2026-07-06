@@ -104,14 +104,16 @@ createApp({
     const patchesLoaded = ref(false);
     const errorMsg = ref("");
 
-
     const initialParams = new URLSearchParams(location.search);
     const priorityKeys = new Set();
-    if (initialParams.get('show')) {
-      initialParams.get('show').split(',').forEach((p) => {
-        const key = p.split(':')[0];
-        if (key) priorityKeys.add(key);
-      });
+    if (initialParams.get("show")) {
+      initialParams
+        .get("show")
+        .split(",")
+        .forEach((p) => {
+          const key = p.split(":")[0];
+          if (key) priorityKeys.add(key);
+        });
     }
 
     const isChangelogView = ref(false);
@@ -121,7 +123,7 @@ createApp({
     function syncFromUrl(searchStr) {
       isSyncing = true;
       const params = new URLSearchParams(searchStr);
-      
+
       const newQuery = params.get("q") || "";
       if (query.value !== newQuery) query.value = newQuery;
 
@@ -135,18 +137,19 @@ createApp({
       let showArr = [];
       let bundleParam = params.get("bundle");
       let appParam = params.get("app");
-      
+
       if (bundleParam || appParam) {
         showArr = [`${bundleParam || ""}${appParam ? ":" + appParam : ""}`];
       } else if (rawParam) {
         showArr = parseShowTrie(decodeURIComponent(rawParam));
       }
-      
+
       if (JSON.stringify(showOptions.value) !== JSON.stringify(showArr)) {
         showOptions.value = showArr;
       }
-      
-      let initBundle = "", initApp = "";
+
+      let initBundle = "",
+        initApp = "";
       if (showArr.length > 0) {
         const parsed = showArr.map((item) => {
           const parts = item.split(":");
@@ -167,7 +170,9 @@ createApp({
       const isNew = params.has("new");
       if (isChangelogView.value !== isNew) isChangelogView.value = isNew;
       changelogHighlights.value = isNew ? showArr : [];
-      nextTick(() => { isSyncing = false; });
+      nextTick(() => {
+        isSyncing = false;
+      });
     }
     syncFromUrl(location.search);
 
@@ -232,12 +237,16 @@ createApp({
         const queryString = urlParts.join("&");
         const newUrl = `${location.pathname}${queryString ? `?${queryString}` : ""}`;
         const currentUrl = location.pathname + location.search;
-        
+
         if (currentUrl !== newUrl) {
           if (!oldVals) {
             history.replaceState(null, "", newUrl);
           } else {
-            const otherChanged = oldVals[1] !== newVals[1] || oldVals[2] !== newVals[2] || oldVals[3] !== newVals[3] || oldVals[4] !== newVals[4];
+            const otherChanged =
+              oldVals[1] !== newVals[1] ||
+              oldVals[2] !== newVals[2] ||
+              oldVals[3] !== newVals[3] ||
+              oldVals[4] !== newVals[4];
             if (otherChanged) {
               history.pushState(null, "", newUrl);
             } else {
@@ -477,7 +486,7 @@ createApp({
         });
     });
 
-    const effectiveTwoColumns = computed(() => bundlesGroups.value.length === 1 ? false : isTwoColumns.value);
+    const effectiveTwoColumns = computed(() => (bundlesGroups.value.length === 1 ? false : isTwoColumns.value));
 
     const expandedVersions = reactive(new Set());
     const toggleVersions = (id) => {
@@ -581,7 +590,7 @@ createApp({
       swipeDirection.value = "";
       const clickedKey = "app_" + groupKey + "_" + clickedApp.id;
       const isCurrentlyExpanded = expandedOptions.has(clickedKey);
-      
+
       if (!bundleViews[groupKey]) {
         appsList.forEach((a) => {
           const key = "app_" + groupKey + "_" + a.id;
@@ -675,9 +684,9 @@ createApp({
 
     const bundleViews = reactive({});
     const toggleBundleView = (group) => {
-      const key = typeof group === 'string' ? group : group.key;
+      const key = typeof group === "string" ? group : group.key;
       bundleViews[key] = !bundleViews[key];
-      
+
       if (!bundleViews[key] && group.appsList) {
         const expandedApps = group.appsList.filter((a) => expandedOptions.has("app_" + key + "_" + a.id));
         if (expandedApps.length > 1) {
@@ -753,7 +762,7 @@ createApp({
       if (!key || !activeData.value) return "";
       return activeData.value.bundleMap[key]?.avatarUrl || "";
     };
-    
+
     const toggleColumns = () => {
       isTwoColumns.value = !isTwoColumns.value;
     };
