@@ -783,9 +783,9 @@
     },
     "dev": {
       "file": "patches/ee-morphe-dev.json",
-      "version": "v1.3.0-dev.17",
-      "releaseUrl": "https://gitlab.com/early.egg3707/ee-morphe-patches/-/releases/v1.3.0-dev.17",
-      "createdAt": "2026-07-04T19:14:49",
+      "version": "v1.3.0-dev.24",
+      "releaseUrl": "https://gitlab.com/early.egg3707/ee-morphe-patches/-/releases/v1.3.0-dev.24",
+      "createdAt": "2026-07-06T16:22:03",
       "targetApps": [
         "com.byairapp.android",
         "com.linguist",
@@ -949,9 +949,9 @@
     },
     "dev": {
       "file": "patches/hoo-dles-dev.json",
-      "version": "v1.38.2-dev.1",
-      "releaseUrl": "https://github.com/hoo-dles/morphe-patches/releases/tag/v1.38.2-dev.1",
-      "createdAt": "2026-07-05T22:40:53",
+      "version": "v1.38.2-dev.2",
+      "releaseUrl": "https://github.com/hoo-dles/morphe-patches/releases/tag/v1.38.2-dev.2",
+      "createdAt": "2026-07-06T16:24:41",
       "targetApps": [
         "app.ttmikstories.android",
         "bitpit.launcher",
@@ -2044,16 +2044,16 @@
     },
     "dev": {
       "file": "patches/prathxm-dev.json",
-      "version": "v1.9.2-dev.1",
-      "releaseUrl": "https://github.com/PrathxmOp/Prathxm-Patches/releases/tag/v1.9.2-dev.1",
-      "createdAt": "2026-07-04T21:08:13",
+      "version": "v1.9.2-dev.3",
+      "releaseUrl": "https://github.com/PrathxmOp/Prathxm-Patches/releases/tag/v1.9.2-dev.3",
+      "createdAt": "2026-07-06T16:38:57",
       "targetApps": [
         "com.chess"
       ],
       "appCount": 1,
       "patchCount": 5
     },
-    "latest": "stable"
+    "latest": "dev"
   },
   "prathxm-ytmusic": {
     "source": "github",
