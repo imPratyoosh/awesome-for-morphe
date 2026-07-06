@@ -1,18 +1,4 @@
 {
-  "AlexNaga": {
-    "se.matlistan.free": [
-      "Dark mode",
-      "Enable Premium"
-    ]
-  },
-  "ImmortalZeus": {
-    "com.example.app": [
-      "Example Patch"
-    ],
-    "universal": [
-      "Block hosts in string resources"
-    ]
-  },
   "abhis1n": {
     "com.Splitwise.SplitwiseMobile": [
       "Enable Features"
@@ -36,6 +22,7 @@
     ],
     "com.reddit.frontpage": [
       "Colorize comment indent lines",
+      "Disable home feed auto-refresh",
       "Disable home feed swipe",
       "Disable home screen redirect",
       "Disable post detail swipe",
@@ -62,6 +49,7 @@
       "Disable metrics collection in WebView",
       "Disable mobile ads",
       "Remove internet permission",
+      "Replace Google Maps API key",
       "Spoof Advertising ID",
       "Spoof Firebase certificate hash",
       "Spoof signature verification"
@@ -69,7 +57,6 @@
   },
   "ajstrick81-androidtv": {
     "com.amazon.amazonvideo.livingroom": [
-      "Clone Prime Video",
       "Disable auto-updates",
       "Override certificate pinning",
       "Prime Video extension",
@@ -88,25 +75,25 @@
       "Skip ads"
     ],
     "com.peacocktv.peacockandroid": [
-      "Clone Peacock",
-      "Disable auto-updates",
       "Skip ads"
     ],
     "com.tubitv": [
       "Skip ads"
     ],
     "com.univision.prendetv": [
-      "Override certificate pinning",
       "Skip ads"
     ],
     "com.wbd.hbomax": [
       "HBO Max - Disable Ads"
+    ]
+  },
+  "almewty": {
+    "com.application.pokecardex": [
+      "Disable scan counter",
+      "Increase scan limit"
     ],
-    "tv.pluto.android": [
-      "Clone Pluto TV",
-      "Disable auto-updates",
-      "Override certificate pinning",
-      "Skip ads"
+    "com.example.app": [
+      "Example Patch"
     ]
   },
   "ameen-morphe": {
@@ -141,8 +128,10 @@
       "Hide DC official notices",
       "Hide Main Ad",
       "Hide home components",
+      "Hide mini gallery cover image",
       "Register settings activity",
       "Render big DCCon as normal size",
+      "Restore old post icons",
       "Spoof Signature"
     ],
     "com.flexcil.flexcilnote": [
@@ -186,6 +175,8 @@
       "Force enable debug mode",
       "Force enable emoticon plus feature",
       "Ghost Mode",
+      "Hide More tab Game tab",
+      "Hide More tab components",
       "Hook Package Manager",
       "Override feature flag",
       "Play YouTube player in chat room",
@@ -199,7 +190,7 @@
       "Remove native ad",
       "Remove shop tab",
       "Show chatroom channel ID",
-      "Show deleted or hidden messages",
+      "Show deleted, hidden, or edited messages",
       "Spoof App ID",
       "Spoof apk checksums",
       "Spoof signature",
@@ -207,6 +198,9 @@
     ],
     "com.navercorp.game.android.community": [
       "Auto claim TongPow",
+      "Disable P2P"
+    ],
+    "kr.co.nowcom.mobile.afreeca": [
       "Disable P2P"
     ],
     "universal": [
@@ -252,6 +246,7 @@
       "Settings for YouTube Music",
       "SponsorBlock",
       "Spoof app version for lyrics",
+      "Track crossfade",
       "Translations for YouTube Music",
       "Video playback",
       "Visual preferences icons for YouTube Music",
@@ -336,6 +331,153 @@
       "Spoof signature"
     ]
   },
+  "anddea-morphed": {
+    "com.google.android.apps.youtube.music": [
+      "Bitrate default value",
+      "Bypass image region restrictions",
+      "Certificate spoof",
+      "Change share sheet",
+      "Change start page",
+      "Custom branding icon for YouTube Music",
+      "Custom branding name for YouTube Music",
+      "Custom header for YouTube Music",
+      "Dark theme",
+      "Disable Cairo splash animation",
+      "Disable QUIC protocol",
+      "Disable dislike redirection",
+      "Disable forced auto audio tracks",
+      "Disable forced auto captions",
+      "Disable music video in album",
+      "Enable debug logging",
+      "Enable landscape mode",
+      "Flyout menu components",
+      "GmsCore support",
+      "Hide account components",
+      "Hide action bar components",
+      "Hide ads",
+      "Hide layout components",
+      "Hide overlay filter",
+      "Hide player overlay filter",
+      "Navigation bar components",
+      "Player components",
+      "Remove background playback restrictions",
+      "Remove viewer discretion dialog",
+      "Restore old style library shelf",
+      "Return YouTube Dislike",
+      "Return YouTube Username",
+      "Sanitize sharing links",
+      "Settings for YouTube Music",
+      "SponsorBlock",
+      "Spoof app version for lyrics",
+      "Translations for YouTube Music",
+      "Video playback",
+      "Visual preferences icons for YouTube Music",
+      "Watch history"
+    ],
+    "com.google.android.youtube": [
+      "Alternative thumbnails",
+      "Ambient mode control",
+      "Bypass URL redirects",
+      "Bypass image region restrictions",
+      "Change form factor",
+      "Change live ring click action",
+      "Change player flyout menu toggles",
+      "Change share sheet",
+      "Change start page",
+      "Custom Shorts action buttons",
+      "Custom branding icon for YouTube",
+      "Custom branding name for YouTube",
+      "Custom double tap length",
+      "Custom header for YouTube",
+      "Description components",
+      "Disable QUIC protocol",
+      "Disable forced auto audio tracks",
+      "Disable forced auto captions",
+      "Disable haptic feedback",
+      "Disable layout updates",
+      "Disable resuming Miniplayer on startup",
+      "Disable resuming Shorts on startup",
+      "Disable sign in to TV popup",
+      "Disable splash animation",
+      "Enable debug logging",
+      "Enable gradient loading screen",
+      "Force player buttons background",
+      "Fullscreen components",
+      "GmsCore support",
+      "Hide Shorts dimming",
+      "Hide accessibility controls dialog",
+      "Hide action buttons",
+      "Hide ads",
+      "Hide comments components",
+      "Hide feed components",
+      "Hide feed flyout menu",
+      "Hide layout components",
+      "Hide player buttons",
+      "Hide player flyout menu",
+      "Hide shortcuts",
+      "Hook YouTube Music actions",
+      "Hook download actions",
+      "MaterialYou",
+      "Miniplayer",
+      "Navigation bar components",
+      "Open links externally",
+      "Overlay buttons",
+      "Player components",
+      "Remove background playback restrictions",
+      "Remove viewer discretion dialog",
+      "Return YouTube Dislike",
+      "Return YouTube Username",
+      "Sanitize sharing links",
+      "Seekbar components",
+      "Set Transcript Cookies",
+      "Settings for YouTube",
+      "Shorts components",
+      "Snack bar components",
+      "SponsorBlock",
+      "Spoof app version",
+      "Spoof watch history",
+      "Swipe controls",
+      "Theme",
+      "Toolbar components",
+      "Translations for YouTube",
+      "Video playback",
+      "Visual preferences icons for YouTube"
+    ],
+    "com.reddit.frontpage": [
+      "Change package name",
+      "Custom branding name for Reddit",
+      "Disable screenshot popup",
+      "Hide Recently Visited shelf",
+      "Hide Trending Today shelf",
+      "Hide ads",
+      "Hide navigation buttons",
+      "Hide recommended communities shelf",
+      "Open links directly",
+      "Open links externally",
+      "Premium icon",
+      "Remove subreddit dialog",
+      "Sanitize sharing links",
+      "Settings for Reddit",
+      "Translations for Reddit"
+    ],
+    "com.spotify.music": [
+      "Change lyrics provider",
+      "Custom branding name for Spotify",
+      "Custom theme",
+      "Fix Facebook login",
+      "Fix third party launchers widgets",
+      "Hide Create button",
+      "Lyrics search",
+      "Sanitize sharing links",
+      "Unlock Premium"
+    ],
+    "com.ysy.app.firewall": [
+      "Unlock Premium"
+    ],
+    "universal": [
+      "Spoof signature"
+    ]
+  },
   "andronedev": {
     "com.thetransitapp.droid": [
       "Custom Maps API Key",
@@ -356,6 +498,9 @@
     "com.byairapp.android": [
       "Enable Online Pro",
       "Enable Pro"
+    ],
+    "com.bytecaretech.merokarobar": [
+      "Unlock Premium"
     ],
     "com.harwin.prismatica": [
       "Remove License Activity",
@@ -452,7 +597,8 @@
   },
   "braydog2010": {
     "com.dubani.dub": [
-      "Remove Ads"
+      "Block trackers",
+      "Premium"
     ]
   },
   "brosssh": {
@@ -498,54 +644,10 @@
       "Set pin as wallpaper"
     ]
   },
-  "chiggi": {
-    "com.crazygames.crazygamesapp": [
-      "Bypass Play license check",
-      "Change app name",
-      "Disable analytics",
-      "Remove AD_ID permission",
-      "Remove ads"
-    ],
-    "com.easybrain.arrow.puzzle.game": [
-      "Change app name",
-      "Change package name",
-      "Disable analytics",
-      "Remove AD_ID permission",
-      "Remove ads"
-    ],
-    "com.instagram.barcelona": [
-      "Change app name",
-      "Change package name",
-      "Hide ads",
-      "Remove AD_ID permission"
-    ],
-    "com.sonyliv": [
-      "Auto skip intro and recap",
-      "Auto-skip Up Next",
-      "Change app name",
-      "Change package name",
-      "Disable AppsFlyer tracking",
-      "Disable Firebase tracking",
-      "Disable forced update",
-      "Hide promo banners",
-      "Remove video ads",
-      "Suppress geo / VPN block"
-    ],
-    "net.nutrilio": [
-      "Add food search bar",
-      "Change app name",
-      "Change package name",
-      "Disable analytics",
-      "Food search bar layout",
-      "Local backup & restore",
-      "Unlock Plus"
-    ]
-  },
   "docbt": {
     "com.ebay.kleinanzeigen": [
       "Hide Pur",
-      "Hide ads",
-      "Remove tracking parameters from share URLs"
+      "Hide ads"
     ],
     "com.google.android.apps.magazines": [
       "Enable CustomTabs",
@@ -555,16 +657,12 @@
       "Change package name"
     ]
   },
-  "edge-morphe": {
-    "com.microsoft.emmx": [
-      "Copilot feature toggle",
-      "Disable Play Store updates",
-      "Telemetry elimination"
-    ]
-  },
   "ee-morphe": {
     "com.byairapp.android": [
       "Enable Online Pro",
+      "Enable Pro"
+    ],
+    "com.linguist": [
       "Enable Pro"
     ],
     "epixler.de.hypnobox_android": [
@@ -576,17 +674,6 @@
       "Disable Pairip license check",
       "Enable debug",
       "Hide app icon"
-    ]
-  },
-  "eksi": {
-    "com.eksiteknoloji.eksisozluk": [
-      "Hide ads"
-    ]
-  },
-  "eyalm2000": {
-    "com.aspiro.tidal": [
-      "Export Debug Activity",
-      "Unlock Debug Menu"
     ]
   },
   "hk-morphe": {
@@ -931,6 +1018,9 @@
     "io.stashteam.games.tracker.stashapp": [
       "Unlock Pro"
     ],
+    "net.uniquegem.directchat": [
+      "Unlock Premium"
+    ],
     "studio.muggle.chatboost": [
       "Unlock Premium"
     ],
@@ -943,7 +1033,6 @@
   },
   "icysymmetra-tiktok": {
     "com.zhiliaoapp.musically": [
-      "Auto Translate comments",
       "Copy comments without username",
       "Custom offline videos limit",
       "Disable login requirement",
@@ -952,12 +1041,14 @@
       "Feed filter",
       "Feed tab navigation",
       "Fix Google login",
+      "Follow diagnostics",
       "Playback speed",
       "Remember clear display",
       "SIM spoof",
       "Sanitize sharing links",
       "Settings",
-      "Show seekbar"
+      "Show seekbar",
+      "Translate comments"
     ]
   },
   "ihealth-morphe": {
@@ -970,6 +1061,14 @@
     "com.persapps.multitimer": [
       "Bypass DRM",
       "Enable PRO"
+    ]
+  },
+  "ImmortalZeus": {
+    "com.example.app": [
+      "Example Patch"
+    ],
+    "universal": [
+      "Block hosts in string resources"
     ]
   },
   "imxeren": {
@@ -1007,28 +1106,17 @@
     ]
   },
   "joristdh": {
+    "com.laurencedawson.reddit_sync": [
+      "Experimental: Restore \"Swipe to return\" translucency"
+    ],
+    "com.laurencedawson.reddit_sync.dev": [
+      "Experimental: Restore \"Swipe to return\" translucency"
+    ],
+    "com.laurencedawson.reddit_sync.pro": [
+      "Experimental: Restore \"Swipe to return\" translucency"
+    ],
     "universal": [
       "Predictive back gesture"
-    ]
-  },
-  "kareemlukitomo": {
-    "com.instagram.android": [
-      "Change Instagram share domain"
-    ],
-    "com.instagram.barcelona": [
-      "Change Threads share domain"
-    ],
-    "com.reddit.frontpage": [
-      "Change Reddit share domain",
-      "Sanitize Reddit share links"
-    ],
-    "com.twitter.android": [
-      "Change Twitter share domain",
-      "Disable Twitter PairIP startup checks",
-      "Sanitize Twitter share links"
-    ],
-    "com.zhiliaoapp.musically": [
-      "Change TikTok share domain"
     ]
   },
   "kolaron": {
@@ -1093,6 +1181,9 @@
     "cn.adonet.proxyevery": [
       "Disable Ads"
     ],
+    "com.adsk.sketchbook": [
+      "Enable Premium"
+    ],
     "com.azefsw.audioconnect": [
       "Unlock Premium"
     ],
@@ -1116,6 +1207,9 @@
     ],
     "com.hopefactory2021.fakegpslocation": [
       "Unlock Premium"
+    ],
+    "com.ilovepdf.www": [
+      "Enable Premium"
     ],
     "com.imaginstudio.imagetools.pixellab": [
       "Unlock Premium"
@@ -1170,40 +1264,6 @@
       "Force Cronet SNI (YouTube arm64)"
     ]
   },
-  "lynx6319": {
-    "com.google.android.youtube": [
-      "Disable Shorts scroll"
-    ]
-  },
-  "meridianfresco": {
-    "com.facebook.katana": [
-      "Hide 'Sponsored Stories'",
-      "Hide story ads"
-    ]
-  },
-  "morphe-google": {
-    "com.google.android.googlequicksearchbox": [
-      "Install as standalone app",
-      "Remove Discover feed ads"
-    ]
-  },
-  "morphe-portal": {
-    "com.google.android.apps.youtube.music": [
-      "Custom DPI",
-      "Custom version name",
-      "Hide version notice"
-    ],
-    "com.google.android.youtube": [
-      "Custom DPI",
-      "Custom version name",
-      "Hide version notice"
-    ]
-  },
-  "morphe-screenshot": {
-    "universal": [
-      "Remove screenshot restriction"
-    ]
-  },
   "morphe": {
     "com.google.android.apps.youtube.music": [
       "Bypass certificate checks",
@@ -1214,6 +1274,7 @@
       "Custom branding",
       "Disable DRC audio",
       "Disable QUIC protocol",
+      "Downloads",
       "Enable debugging",
       "Enable exclusive audio playback",
       "Enable forced miniplayer",
@@ -1335,22 +1396,16 @@
       "Override certificate pinning"
     ]
   },
-  "nai64": {
-    "universal": [
-      "Ads Free Rewards",
-      "No Ads",
-      "Pairip Application Redirect",
-      "Spoof Play Store Install Source"
-    ]
-  },
-  "npci-bhim": {
-    "in.org.npci.upiapp": [
-      "Bypass License Activity",
-      "Bypass License Check",
-      "Bypass License Paywall",
-      "Bypass Signature Verification",
-      "Disable Blacklisting",
-      "Force Safe Root Status"
+  "morphe-portal": {
+    "com.google.android.apps.youtube.music": [
+      "Custom DPI",
+      "Custom version name",
+      "Hide version notice"
+    ],
+    "com.google.android.youtube": [
+      "Custom DPI",
+      "Custom version name",
+      "Hide version notice"
     ]
   },
   "okish-morphe": {
@@ -1565,189 +1620,6 @@
       "Enable Android debugging"
     ]
   },
-  "pepper-morphe": {
-    "Chollometros": [
-      "Always show event-theming icons",
-      "Block Pepper analytics-event-report tracker",
-      "Compact deal cards",
-      "Disable Adjust SDK",
-      "Disable Google Mobile Ads SDK init",
-      "Disable Google Mobile Ads ad-load entry points",
-      "Enable debug menu",
-      "Fix spacing around hidden ad cells",
-      "Hide banner ads in feed",
-      "Keep event icon after restart",
-      "Kill Datatransport upload pipeline",
-      "Kill Pepper first-party pixel tracking",
-      "Neuter tracker auto-init ContentProviders",
-      "Redirect tracker URLs to localhost",
-      "Skip Usercentrics consent screen",
-      "Unlock tier-locked icons"
-    ],
-    "Dealabs": [
-      "Always show event-theming icons",
-      "Block Pepper analytics-event-report tracker",
-      "Compact deal cards",
-      "Disable Adjust SDK",
-      "Disable Google Mobile Ads SDK init",
-      "Disable Google Mobile Ads ad-load entry points",
-      "Enable debug menu",
-      "Fix spacing around hidden ad cells",
-      "Hide banner ads in feed",
-      "Keep event icon after restart",
-      "Kill Datatransport upload pipeline",
-      "Kill Pepper first-party pixel tracking",
-      "Neuter tracker auto-init ContentProviders",
-      "Redirect tracker URLs to localhost",
-      "Skip Usercentrics consent screen",
-      "Unlock tier-locked icons"
-    ],
-    "HotUKDeals": [
-      "Always show event-theming icons",
-      "Block Pepper analytics-event-report tracker",
-      "Compact deal cards",
-      "Disable Adjust SDK",
-      "Disable Google Mobile Ads SDK init",
-      "Disable Google Mobile Ads ad-load entry points",
-      "Enable debug menu",
-      "Fix spacing around hidden ad cells",
-      "Hide banner ads in feed",
-      "Keep event icon after restart",
-      "Kill Datatransport upload pipeline",
-      "Kill Pepper first-party pixel tracking",
-      "Neuter tracker auto-init ContentProviders",
-      "Redirect tracker URLs to localhost",
-      "Skip Usercentrics consent screen",
-      "Unlock tier-locked icons"
-    ],
-    "Mydealz": [
-      "Always show event-theming icons",
-      "Block Pepper analytics-event-report tracker",
-      "Compact deal cards",
-      "Disable Adjust SDK",
-      "Disable Google Mobile Ads SDK init",
-      "Disable Google Mobile Ads ad-load entry points",
-      "Enable debug menu",
-      "Fix spacing around hidden ad cells",
-      "Hide banner ads in feed",
-      "Keep event icon after restart",
-      "Kill Datatransport upload pipeline",
-      "Kill Pepper first-party pixel tracking",
-      "Neuter tracker auto-init ContentProviders",
-      "Redirect tracker URLs to localhost",
-      "Skip Usercentrics consent screen",
-      "Unlock tier-locked icons"
-    ],
-    "Pepper NL": [
-      "Always show event-theming icons",
-      "Block Pepper analytics-event-report tracker",
-      "Compact deal cards",
-      "Disable Adjust SDK",
-      "Disable Google Mobile Ads SDK init",
-      "Disable Google Mobile Ads ad-load entry points",
-      "Enable debug menu",
-      "Fix spacing around hidden ad cells",
-      "Hide banner ads in feed",
-      "Keep event icon after restart",
-      "Kill Datatransport upload pipeline",
-      "Kill Pepper first-party pixel tracking",
-      "Neuter tracker auto-init ContentProviders",
-      "Redirect tracker URLs to localhost",
-      "Skip Usercentrics consent screen",
-      "Unlock tier-locked icons"
-    ],
-    "Pepper PL": [
-      "Always show event-theming icons",
-      "Block Pepper analytics-event-report tracker",
-      "Compact deal cards",
-      "Disable Adjust SDK",
-      "Disable Google Mobile Ads SDK init",
-      "Disable Google Mobile Ads ad-load entry points",
-      "Enable debug menu",
-      "Fix spacing around hidden ad cells",
-      "Hide banner ads in feed",
-      "Keep event icon after restart",
-      "Kill Datatransport upload pipeline",
-      "Kill Pepper first-party pixel tracking",
-      "Neuter tracker auto-init ContentProviders",
-      "Redirect tracker URLs to localhost",
-      "Skip Usercentrics consent screen",
-      "Unlock tier-locked icons"
-    ],
-    "Pepper SE": [
-      "Always show event-theming icons",
-      "Block Pepper analytics-event-report tracker",
-      "Compact deal cards",
-      "Disable Adjust SDK",
-      "Disable Google Mobile Ads SDK init",
-      "Disable Google Mobile Ads ad-load entry points",
-      "Enable debug menu",
-      "Fix spacing around hidden ad cells",
-      "Hide banner ads in feed",
-      "Keep event icon after restart",
-      "Kill Datatransport upload pipeline",
-      "Kill Pepper first-party pixel tracking",
-      "Neuter tracker auto-init ContentProviders",
-      "Redirect tracker URLs to localhost",
-      "Skip Usercentrics consent screen",
-      "Unlock tier-locked icons"
-    ],
-    "Pepper.com": [
-      "Always show event-theming icons",
-      "Block Pepper analytics-event-report tracker",
-      "Compact deal cards",
-      "Disable Adjust SDK",
-      "Disable Google Mobile Ads SDK init",
-      "Disable Google Mobile Ads ad-load entry points",
-      "Disable PAIRIP license check",
-      "Enable debug menu",
-      "Fix spacing around hidden ad cells",
-      "Hide banner ads in feed",
-      "Keep event icon after restart",
-      "Kill Datatransport upload pipeline",
-      "Kill Pepper first-party pixel tracking",
-      "Neuter tracker auto-init ContentProviders",
-      "Redirect tracker URLs to localhost",
-      "Skip Usercentrics consent screen",
-      "Unlock tier-locked icons"
-    ],
-    "Preisj\u0102\u00a4ger": [
-      "Always show event-theming icons",
-      "Block Pepper analytics-event-report tracker",
-      "Compact deal cards",
-      "Disable Adjust SDK",
-      "Disable Google Mobile Ads SDK init",
-      "Disable Google Mobile Ads ad-load entry points",
-      "Enable debug menu",
-      "Fix spacing around hidden ad cells",
-      "Hide banner ads in feed",
-      "Keep event icon after restart",
-      "Kill Datatransport upload pipeline",
-      "Kill Pepper first-party pixel tracking",
-      "Neuter tracker auto-init ContentProviders",
-      "Redirect tracker URLs to localhost",
-      "Skip Usercentrics consent screen",
-      "Unlock tier-locked icons"
-    ],
-    "PromoDescuentos": [
-      "Always show event-theming icons",
-      "Block Pepper analytics-event-report tracker",
-      "Compact deal cards",
-      "Disable Adjust SDK",
-      "Disable Google Mobile Ads SDK init",
-      "Disable Google Mobile Ads ad-load entry points",
-      "Enable debug menu",
-      "Fix spacing around hidden ad cells",
-      "Hide banner ads in feed",
-      "Keep event icon after restart",
-      "Kill Datatransport upload pipeline",
-      "Kill Pepper first-party pixel tracking",
-      "Neuter tracker auto-init ContentProviders",
-      "Redirect tracker URLs to localhost",
-      "Skip Usercentrics consent screen",
-      "Unlock tier-locked icons"
-    ]
-  },
   "piko": {
     "com.instagram.android": [
       "Add settings",
@@ -1814,6 +1686,7 @@
       "Custom download folder",
       "Custom emoji font",
       "Custom font",
+      "Custom share menu",
       "Custom sharing domain",
       "Customise post font size",
       "Customize Inline action Bar items",
@@ -1859,6 +1732,7 @@
       "Import/Export login token",
       "Legacy share links",
       "Log server response",
+      "More information on profile",
       "Native downloader",
       "Native reader mode",
       "Native translator",
@@ -1874,16 +1748,13 @@
       "Show changelogs",
       "Show poll results",
       "Show post source label",
-      "Show sensitive media"
-    ]
-  },
-  "pixelpusher247": {
-    "tv.trakt.trakt": [
-      "Hide VIP banner"
+      "Show sensitive media",
+      "Support external downloader"
     ]
   },
   "polka-bear": {
     "com.ipoji.app": [
+      "Bypass Integrity Protection",
       "Unlock Premium"
     ],
     "com.vladlee.easyblacklist": [
@@ -1900,36 +1771,10 @@
       "Unlock All Bots"
     ]
   },
-  "prathxm-ytmusic": {
-    "com.google.android.apps.youtube.music": [
-      "Discord Rich Presence",
-      "Scrobbling"
-    ],
-    "universal": [
-      "Change package name"
-    ]
-  },
-  "proguard": {
-    "com.java.inspector": [
-      "Assemble LSPosed module"
-    ],
-    "universal": [
-      "Find dummy classes"
-    ]
-  },
   "rabilrbl": {
-    "universal": [
-      "Disable FirebaseInitProvider",
-      "Dismiss Google Play error dialog (371 split research)",
-      "Enable cleartext traffic",
-      "Remove certificate pinning",
-      "Remove emulator detection",
-      "Remove root detection"
-    ]
-  },
-  "realcyberwash": {
-    "ru.oneme.app": [
-      "Bypass VPN Check"
+    "droom.sleepIfUCan": [
+      "Remove ads",
+      "Unlock Pro subscription"
     ]
   },
   "realme-link": {
@@ -1983,7 +1828,6 @@
     ],
     "com.google.android.apps.photos": [
       "Enable DCIM folders backup control",
-      "Fix selected account persistence",
       "GmsCore support",
       "Spoof features"
     ],
@@ -2530,28 +2374,6 @@
       "Disable Knox integrity checks"
     ]
   },
-  "sjshb57-pairip": {
-    "universal": [
-      "Inline pairip call wrappers",
-      "Remove pairip protection",
-      "Restore extracted methods",
-      "Strip debug info"
-    ]
-  },
-  "telegram-morphe": {
-    "org.telegram.messenger.web": [
-      "Anti-delete messages",
-      "Anti-disappearing media",
-      "Bypass channel restrictions",
-      "Bypass content restrictions",
-      "Bypass integrity",
-      "Disable auto update",
-      "Download speed boost",
-      "Hide typing indicator",
-      "Remove ads",
-      "Telegram Premium"
-    ]
-  },
   "ts-patches": {
     "com.teamsnap.teamsnap": [
       "Disable ads"
@@ -2560,31 +2382,6 @@
   "ts2": {
     "com.teamsnap.teamsnap": [
       "Disable ads"
-    ]
-  },
-  "vladon": {
-    "ru.yandex.yandexnavi": [
-      "Bypass Passport signature mismatch crash",
-      "Debuggable application manifest",
-      "Enable debug panel"
-    ]
-  },
-  "x-shim": {
-    "com.twitter.android": [
-      "Abstract shim layer",
-      "Abstract shim layer for method",
-      "Abstract shim layer for native library"
-    ]
-  },
-  "xhehab": {
-    "com.influencers.fst7": [
-      "Unlock FST-7 Subscription"
-    ],
-    "com.trainwiseapp.app": [
-      "Unlock Premium"
-    ],
-    "uni.cbum": [
-      "Unlock STNDRD Premium"
     ]
   },
   "xob0t": {

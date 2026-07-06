@@ -18,8 +18,8 @@ ROOT = Path.cwd()
 DATA_DIR = ROOT / "data"
 BUNDLES_DIR = DATA_DIR / "bundles"
 PATCHES_DIR = DATA_DIR / "patches"
-APPS_JSON_PATH = DATA_DIR / "apps.json"
 BUNDLES_JSON_PATH = DATA_DIR / "bundles.json"
+APPS_JSON_PATH = DATA_DIR / "apps.json"
 CONCURRENCY = 8
 GITHUB_CONCURRENCY = 3
 
@@ -315,7 +315,6 @@ def main():
             latest = "stable"
 
         latest_target_apps = []
-
         for channel, bundle_json, list_path in [
             ("stable", stable_json, stable_list_path),
             ("dev", dev_json, dev_list_path),
@@ -393,9 +392,7 @@ def main():
                             icon_tasks.add(package_name)
 
         source_entry["latest"] = latest
-
         bundle_sources[base] = source_entry
-
     print(f"Scanned {scanned_lists} list files.")
 
     if avatar_tasks:

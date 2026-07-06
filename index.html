@@ -365,12 +365,12 @@
 
                 <!-- Channels -->
                 <div class="flex items-center justify-center gap-1.5 sm:gap-2">
-                  <button @click="channel = 'stable'" class="badge badge-md transition-colors"
-                    :class="channel === 'stable' ? 'text-green' : 'text-light hover:text-white'"><i
-                      class="fa-solid fa-shield-halved"></i><span>Stable</span></button>
                   <button @click="channel = 'latest'" class="badge badge-md transition-colors"
                     :class="channel === 'latest' ? 'text-yellow' : 'text-light hover:text-white'"><i
                       class="fa-solid fa-bolt"></i><span>Latest</span></button>
+                  <button @click="channel = 'stable'" class="badge badge-md transition-colors"
+                    :class="channel === 'stable' ? 'text-green' : 'text-light hover:text-white'"><i
+                      class="fa-solid fa-shield-halved"></i><span>Stable</span></button>
                 </div>
               </div>
 

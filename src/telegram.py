@@ -5,15 +5,28 @@ import os
 import urllib.request
 import urllib.parse
 from pathlib import Path
+import datetime
+import re
+
+CHANGELOG_PATH = Path("changelog.md")
+
+
+def encode_url_parens(match):
+    text = match.group(1)
+    url = match.group(2).replace("(", "%28").replace(")", "%29")
+    return f"[{text}]({url})"
 
 
 def main():
-    if len(sys.argv) < 3:
-        print("Usage: python src/telegram-notify.py <title> <filepath>")
-        sys.exit(1)
+    now = datetime.datetime.now(datetime.timezone.utc)
+    title = f"🔔 What's New ({now.strftime('%B')} {now.day})"
+    filepath = CHANGELOG_PATH
 
-    title = sys.argv[1]
-    filepath = Path(sys.argv[2])
+    if len(sys.argv) == 2:
+        title = sys.argv[1]
+    elif len(sys.argv) >= 3:
+        title = sys.argv[1]
+        filepath = Path(sys.argv[2])
 
     if not filepath.exists():
         print(f"File {filepath} not found, skipping notification.")
@@ -28,22 +41,18 @@ def main():
     for line in content.splitlines():
         if line.startswith("📢 *Telegram:*") or line.startswith("📢 _Telegram:"):
             continue
-
         line = line.lstrip("# ") if line.startswith("#") else line
-
-        idx = line.find("](http")
-        if idx != -1 and line.endswith(")"):
-            text_part = line[: idx + 1]
-            url_part = line[idx + 2 : -1]
-            url_part = url_part.replace("(", "%28").replace(")", "%29")
-            line = f"{text_part}({url_part})"
-
         lines.append(line)
 
     content = "\n".join(lines).strip()
 
-    message = f"*{title}*\n\n{content}"
+    content = re.sub(
+        r"\[([^\]]+)\]\((https?://[^\s()]+(?:\([^\s()]+\)[^\s()]*)*)\)",
+        encode_url_parens,
+        content,
+    )
 
+    message = f"*{title}*\n\n{content}"
     token = os.environ.get("TG_TOKEN")
     chat_id = os.environ.get("TG_CHAT")
     if not token or not chat_id:

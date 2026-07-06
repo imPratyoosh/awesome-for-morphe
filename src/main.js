@@ -11,7 +11,7 @@ import {
 } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
 import { filterRows, getFilterOptions, loadChannelData, normalizeChannel, summarizeRows, appName } from "./data.js";
 
-const DEFAULT_CHANNEL = "stable";
+const DEFAULT_CHANNEL = "latest";
 
 function tokenize(str) {
   const tokens = [];
@@ -118,6 +118,7 @@ createApp({
 
     const isChangelogView = ref(false);
     const changelogHighlights = ref([]);
+    const rawShowParam = ref("");
 
     let isSyncing = false;
     function syncFromUrl(searchStr) {
@@ -141,7 +142,8 @@ createApp({
       if (bundleParam || appParam) {
         showArr = [`${bundleParam || ""}${appParam ? ":" + appParam : ""}`];
       } else if (rawParam) {
-        showArr = parseShowTrie(decodeURIComponent(rawParam));
+        rawShowParam.value = decodeURIComponent(rawParam);
+        showArr = parseShowTrie(rawShowParam.value);
       }
 
       if (JSON.stringify(showOptions.value) !== JSON.stringify(showArr)) {
@@ -221,7 +223,8 @@ createApp({
         if (query.value) urlParts.push(`q=${encodeURIComponent(query.value)}`);
 
         if (showOptions.value.length > 0) {
-          const showStr = showOptions.value.join(",");
+          const showStr =
+            isChangelogView.value && rawShowParam.value ? rawShowParam.value : showOptions.value.join(",");
           const encodedShow = encodeURIComponent(showStr)
             .replace(/%3A/g, ":")
             .replace(/%2C/g, ",")
