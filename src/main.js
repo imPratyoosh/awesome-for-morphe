@@ -117,7 +117,9 @@ createApp({
     const isChangelogView = ref(false);
     const changelogHighlights = ref([]);
 
+    let isSyncing = false;
     function syncFromUrl(searchStr) {
+      isSyncing = true;
       const params = new URLSearchParams(searchStr);
       
       const newQuery = params.get("q") || "";
@@ -158,9 +160,14 @@ createApp({
       if (bundle.value !== initBundle) bundle.value = initBundle;
       if (app.value !== initApp) app.value = initApp;
 
+      const isList = params.get("view") === "list";
+      const newIsTwoColumns = !isList;
+      if (isTwoColumns.value !== newIsTwoColumns) isTwoColumns.value = newIsTwoColumns;
+
       const isNew = params.has("new");
       if (isChangelogView.value !== isNew) isChangelogView.value = isNew;
       changelogHighlights.value = isNew ? showArr : [];
+      nextTick(() => { isSyncing = false; });
     }
     syncFromUrl(location.search);
 
@@ -174,6 +181,7 @@ createApp({
     };
 
     watch([bundle, app], () => {
+      if (isSyncing) return;
       const targetPrefix = `${bundle.value || ""}${app.value ? ":" + app.value : ""}`;
 
       const matches =
@@ -198,9 +206,9 @@ createApp({
     });
 
     watch(
-      [query, showOptions, channel, sortOrder],
+      [query, showOptions, channel, sortOrder, isTwoColumns],
       (newVals, oldVals) => {
-        if (oldVals && oldVals.some((v) => v !== undefined)) {
+        if (!isSyncing && oldVals && oldVals.some((v) => v !== undefined)) {
           isChangelogView.value = false;
         }
 
@@ -229,7 +237,7 @@ createApp({
           if (!oldVals) {
             history.replaceState(null, "", newUrl);
           } else {
-            const otherChanged = oldVals[1] !== newVals[1] || oldVals[2] !== newVals[2] || oldVals[3] !== newVals[3];
+            const otherChanged = oldVals[1] !== newVals[1] || oldVals[2] !== newVals[2] || oldVals[3] !== newVals[3] || oldVals[4] !== newVals[4];
             if (otherChanged) {
               history.pushState(null, "", newUrl);
             } else {
@@ -469,6 +477,8 @@ createApp({
         });
     });
 
+    const effectiveTwoColumns = computed(() => bundlesGroups.value.length === 1 ? false : isTwoColumns.value);
+
     const expandedVersions = reactive(new Set());
     const toggleVersions = (id) => {
       expandedVersions.has(id) ? expandedVersions.delete(id) : expandedVersions.add(id);
@@ -549,7 +559,6 @@ createApp({
 
     watch(bundlesGroups, (newGroups) => {
       if (newGroups && newGroups.length === 1) {
-        isTwoColumns.value = false;
         const singleGroup = newGroups[0];
         if (singleGroup.appsList && singleGroup.appsList.length > 0) {
           const firstApp = singleGroup.appsList[0];
@@ -747,13 +756,6 @@ createApp({
     
     const toggleColumns = () => {
       isTwoColumns.value = !isTwoColumns.value;
-      const url = new URL(window.location);
-      if (!isTwoColumns.value) {
-        url.searchParams.set("view", "list");
-      } else {
-        url.searchParams.delete("view");
-      }
-      history.pushState(null, "", url);
     };
 
     window.addEventListener("popstate", () => {
@@ -779,6 +781,7 @@ createApp({
       sortOrder,
       filterOptions,
       bundlesGroups,
+      effectiveTwoColumns,
       expandedVersions,
       toggleVersions,
       expandedOptions,
