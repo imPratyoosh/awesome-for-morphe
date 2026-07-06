@@ -1046,7 +1046,7 @@
     "iconUrl": "https://play-lh.googleusercontent.com/pKE_kPsExlHJ3q68oDr4sMdhRoskymtTGak4QaS_TXVrdOXq5uANlza3UGnG94vzslF45crK3NcbWFMC7obNMw"
   },
   "com.overdevs.at4k": {
-    "name": "AT4K Launcher",
+    "name": "com.overdevs.at4k",
     "iconUrl": "https://play-lh.googleusercontent.com/vypg_RTGsrWBg8Lo6dzgLdJ3KPPMCb23JNY0zuIiDuQFlfx0y3j2NKDBEeGnrF0atBQSmF7tGGXyLfTj0EB-6Q"
   },
   "dk.tacit.android.foldersync.lite": {
@@ -1464,5 +1464,29 @@
   "com.spotangels.android": {
     "name": "SpotAngels",
     "iconUrl": "https://play-lh.googleusercontent.com/ud7_eSQtO0lJe8P_svEttScCPMP1b7GTFhbyOh_HPOQKwDOB368hQbAGd8wCdHT-7hQiDLQWUREIyjGvAZ0cOA"
+  },
+  "com.mygate.user": {
+    "name": "MyGate",
+    "iconUrl": "https://play-lh.googleusercontent.com/gTgy9Nvj_jvHIgCq5V0WNghXwbMh0rsgo9kBjzTWcolYfsgmoL9UeGxelK4rY_AvB4AuGyr4HW5cCGcgznyhOg"
+  },
+  "com.bounce.connect": {
+    "name": "Bounce Companion",
+    "iconUrl": "https://play-lh.googleusercontent.com/r8FvfnT6RFkKOaGZryYpn4XicjASUXMvGrL0o63MwwpLdgPZlFRLoh1Y1esImM8J2U1gnLJH8PU1jnz39TRB1g"
+  },
+  "com.medium.reader": {
+    "name": "Medium",
+    "iconUrl": "https://play-lh.googleusercontent.com/8l6kw0A7K9fxKx9LT1GxArx8DZpG3_Rg9ERNrEbe0scqRWl0ShWp3U5ZNLUL6Gyj1_Xt6ASeCnUl490gXe3o9iM"
+  },
+  "np.com.nepalipatro": {
+    "name": "Nepalipatro",
+    "iconUrl": "https://play-lh.googleusercontent.com/cZ9_hY4QA2qnDZrHFvcgJgL1su8EDhEUMIMDvQvTkkTJJtQQo5807PoTss6zx7kYks2CCqXax5PWtJF7xV03pg"
+  },
+  "com.crunchyroll.crunchyroid": {
+    "name": "Crunchyroll",
+    "iconUrl": "https://play-lh.googleusercontent.com/FUEOotGzxEZqItvGGov0YBiOhZBCACxCM6kF37OtpWrCG9H6EyxSeY2G8PDXQGueLxlxtL3Xr0fbkvXaQ67NLg"
+  },
+  "com.mxtech.videoplayer.ad": {
+    "name": "MX Player",
+    "iconUrl": "https://play-lh.googleusercontent.com/kuU8L2zHfkE8rDQ8iUwMpYcV8TzUDBz7n_KYaEV4R5M7W5qHiZGqxWk9f1ysP2Lk72GmRTps3iaXUXfH-18pWw"
   }
 }

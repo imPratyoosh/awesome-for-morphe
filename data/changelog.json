@@ -1,0 +1,129 @@
+[
+  {
+    "date": "July 06, 2026",
+    "released": false,
+    "bundles": {
+      "amplerevanced": {
+        "isNew": false,
+        "apps": {
+          "com.kakao.talk": {
+            "isNew": false,
+            "patches": [
+              "Open profile from open chat feed"
+            ]
+          }
+        }
+      },
+      "bufferk": {
+        "isNew": true,
+        "apps": {
+          "com.Splitwise.SplitwiseMobile": {
+            "isNew": true,
+            "patches": [
+              "Unlock Pro"
+            ]
+          },
+          "com.bounce.connect": {
+            "isNew": true,
+            "patches": [
+              "Bypass license check"
+            ]
+          },
+          "com.medium.reader": {
+            "isNew": true,
+            "patches": [
+              "Freedium"
+            ]
+          },
+          "com.mygate.user": {
+            "isNew": true,
+            "patches": [
+              "Flutter Premium Bypass",
+              "Hide ads",
+              "Unlock premium"
+            ]
+          },
+          "com.overdevs.at4k": {
+            "isNew": true,
+            "patches": [
+              "Unlock premium"
+            ]
+          },
+          "com.truecaller": {
+            "isNew": true,
+            "patches": [
+              "Disable analytics",
+              "Enable premium features",
+              "Hide 'Get Premium' banners",
+              "Hide ads",
+              "Hide premium upgrade prompts",
+              "Mock premium",
+              "Remove Premium UI"
+            ]
+          }
+        }
+      },
+      "franticg33k": {
+        "isNew": true,
+        "apps": {
+          "com.byairapp.android": {
+            "isNew": true,
+            "patches": [
+              "Enable Online Pro",
+              "Enable Pro"
+            ]
+          },
+          "com.bytecaretech.merokarobar": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.harwin.prismatica": {
+            "isNew": true,
+            "patches": [
+              "Remove License Activity",
+              "Remove License Check",
+              "Remove Watermark"
+            ]
+          },
+          "com.jellywatch.app": {
+            "isNew": true,
+            "patches": [
+              "Remove License Activity",
+              "Unlock Premium"
+            ]
+          },
+          "np.com.nepalipatro": {
+            "isNew": true,
+            "patches": [
+              "Remove Ads"
+            ]
+          }
+        }
+      },
+      "gryphous-morphe": {
+        "isNew": true,
+        "apps": {
+          "com.crunchyroll.crunchyroid": {
+            "isNew": true,
+            "patches": [
+              "Enable Picture-in-Picture"
+            ]
+          }
+        }
+      },
+      "prathxm": {
+        "isNew": false,
+        "apps": {
+          "com.chess": {
+            "isNew": false,
+            "patches": [
+              "Global Crash Handler"
+            ]
+          }
+        }
+      }
+    }
+  }
+]

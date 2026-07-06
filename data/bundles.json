@@ -288,9 +288,9 @@
     },
     "dev": {
       "file": "patches/amplerevanced-dev.json",
-      "version": "v1.2.0-dev.8",
-      "releaseUrl": "https://github.com/AmpleReVanced/revanced-patches/releases/tag/v1.2.0-dev.8",
-      "createdAt": "2026-06-27T15:43:34",
+      "version": "v1.2.0-dev.9",
+      "releaseUrl": "https://github.com/AmpleReVanced/revanced-patches/releases/tag/v1.2.0-dev.9",
+      "createdAt": "2026-07-06T17:38:08",
       "targetApps": [
         "com.dcinside.app.android",
         "com.flexcil.flexcilnote",
@@ -300,7 +300,7 @@
         "universal"
       ],
       "appCount": 5,
-      "patchCount": 85
+      "patchCount": 86
     },
     "latest": "dev"
   },
@@ -678,6 +678,48 @@
     },
     "latest": "stable"
   },
+  "bufferk": {
+    "source": "github",
+    "repo": "bufferk/morphe-patches",
+    "repoUrl": "https://github.com/bufferk/morphe-patches",
+    "deepLink": "https://morphe.software/add-source?github=bufferk/morphe-patches",
+    "avatarUrl": "https://github.com/bufferk.png?size=128",
+    "stars": 12,
+    "firstSeen": "2026-07-06T22:13:39",
+    "stable": {
+      "file": "patches/bufferk-stable.json",
+      "version": "v1.6.12",
+      "releaseUrl": "https://github.com/bufferk/morphe-patches/releases/tag/v1.6.12",
+      "createdAt": "2026-07-05T17:14:24",
+      "targetApps": [
+        "com.Splitwise.SplitwiseMobile",
+        "com.bounce.connect",
+        "com.medium.reader",
+        "com.mygate.user",
+        "com.overdevs.at4k",
+        "com.truecaller"
+      ],
+      "appCount": 6,
+      "patchCount": 14
+    },
+    "dev": {
+      "file": "patches/bufferk-dev.json",
+      "version": "v1.6.15-dev.6",
+      "releaseUrl": "https://github.com/bufferk/morphe-patches/releases/tag/v1.6.15-dev.6",
+      "createdAt": "2026-07-06T17:48:52",
+      "targetApps": [
+        "com.Splitwise.SplitwiseMobile",
+        "com.bounce.connect",
+        "com.medium.reader",
+        "com.mygate.user",
+        "com.overdevs.at4k",
+        "com.truecaller"
+      ],
+      "appCount": 6,
+      "patchCount": 14
+    },
+    "latest": "dev"
+  },
   "chiggi": {
     "source": "github",
     "repo": "durgesh0505/chiggi_morphe_patches",
@@ -783,9 +825,9 @@
     },
     "dev": {
       "file": "patches/ee-morphe-dev.json",
-      "version": "v1.3.0-dev.24",
-      "releaseUrl": "https://gitlab.com/early.egg3707/ee-morphe-patches/-/releases/v1.3.0-dev.24",
-      "createdAt": "2026-07-06T16:22:03",
+      "version": "v1.3.0-dev.25",
+      "releaseUrl": "https://gitlab.com/early.egg3707/ee-morphe-patches/-/releases/v1.3.0-dev.25",
+      "createdAt": "2026-07-06T16:46:29",
       "targetApps": [
         "com.byairapp.android",
         "com.linguist",
@@ -839,6 +881,78 @@
     },
     "latest": "stable"
   },
+  "franticg33k": {
+    "source": "github",
+    "repo": "franticg33k/morphe-patches",
+    "repoUrl": "https://github.com/franticg33k/morphe-patches",
+    "deepLink": "https://morphe.software/add-source?github=franticg33k/morphe-patches",
+    "avatarUrl": "https://github.com/franticg33k.png?size=128",
+    "stars": 1,
+    "firstSeen": "2026-07-06T22:13:39",
+    "stable": {
+      "file": "patches/franticg33k-stable.json",
+      "version": "v1.0.1",
+      "releaseUrl": "https://github.com/franticg33k/morphe-patches/releases/tag/v1.0.1",
+      "createdAt": "2026-07-06T13:27:27",
+      "targetApps": [
+        "com.byairapp.android",
+        "com.bytecaretech.merokarobar",
+        "com.harwin.prismatica",
+        "com.jellywatch.app",
+        "np.com.nepalipatro"
+      ],
+      "appCount": 5,
+      "patchCount": 9
+    },
+    "dev": {
+      "file": "patches/franticg33k-dev.json",
+      "version": "v1.0.0-dev.2",
+      "releaseUrl": "https://github.com/franticg33k/morphe-patches/releases/tag/v1.0.0-dev.2",
+      "createdAt": "2026-07-06T13:21:35",
+      "targetApps": [
+        "com.byairapp.android",
+        "com.bytecaretech.merokarobar",
+        "com.harwin.prismatica",
+        "com.jellywatch.app",
+        "np.com.nepalipatro"
+      ],
+      "appCount": 5,
+      "patchCount": 9
+    },
+    "latest": "stable"
+  },
+  "gryphous-morphe": {
+    "source": "github",
+    "repo": "NekoGryphou/gryphous-morphe-patches",
+    "repoUrl": "https://github.com/NekoGryphou/gryphous-morphe-patches",
+    "deepLink": "https://morphe.software/add-source?github=NekoGryphou/gryphous-morphe-patches",
+    "avatarUrl": "https://github.com/NekoGryphou.png?size=128",
+    "stars": 1,
+    "firstSeen": "2026-07-06T22:13:39",
+    "stable": {
+      "file": "patches/gryphous-morphe-stable.json",
+      "version": "v1.0.0",
+      "releaseUrl": "https://github.com/NekoGryphou/gryphous-morphe-patches/releases/tag/v1.0.0",
+      "createdAt": "2026-07-06T16:24:34",
+      "targetApps": [
+        "com.crunchyroll.crunchyroid"
+      ],
+      "appCount": 1,
+      "patchCount": 1
+    },
+    "dev": {
+      "file": "patches/gryphous-morphe-dev.json",
+      "version": "v1.0.0-dev.3",
+      "releaseUrl": "https://github.com/NekoGryphou/gryphous-morphe-patches/releases/tag/v1.0.0-dev.3",
+      "createdAt": "2026-07-06T16:13:04",
+      "targetApps": [
+        "com.crunchyroll.crunchyroid"
+      ],
+      "appCount": 1,
+      "patchCount": 1
+    },
+    "latest": "stable"
+  },
   "hk-morphe": {
     "source": "github",
     "repo": "humzakh/HK-Morphe-Patches",
@@ -887,9 +1001,9 @@
     "firstSeen": "2026-01-21T03:33:21",
     "stable": {
       "file": "patches/hoo-dles-stable.json",
-      "version": "v1.38.1",
-      "releaseUrl": "https://github.com/hoo-dles/morphe-patches/releases/tag/v1.38.1",
-      "createdAt": "2026-06-28T22:46:25",
+      "version": "v1.38.2",
+      "releaseUrl": "https://github.com/hoo-dles/morphe-patches/releases/tag/v1.38.2",
+      "createdAt": "2026-07-06T17:17:45",
       "targetApps": [
         "app.ttmikstories.android",
         "bitpit.launcher",
@@ -1009,7 +1123,7 @@
       "appCount": 51,
       "patchCount": 75
     },
-    "latest": "dev"
+    "latest": "stable"
   },
   "hoomans-morphe": {
     "source": "github",
@@ -1578,6 +1692,27 @@
     },
     "latest": "stable"
   },
+  "modx": {
+    "source": "github",
+    "repo": "Utsavrajputt/Modx-patches",
+    "repoUrl": "https://github.com/Utsavrajputt/Modx-patches",
+    "deepLink": "https://morphe.software/add-source?github=Utsavrajputt/Modx-patches",
+    "avatarUrl": "https://github.com/Utsavrajputt.png?size=128",
+    "stars": 1,
+    "firstSeen": "2026-07-06T22:13:39",
+    "stable": {
+      "file": "patches/modx-stable.json",
+      "version": "v1.1.1",
+      "releaseUrl": "https://github.com/Utsavrajputt/Modx-patches/releases/tag/v1.1.1",
+      "createdAt": "2026-07-06T14:39:10",
+      "targetApps": [
+        "com.mxtech.videoplayer.ad"
+      ],
+      "appCount": 1,
+      "patchCount": 1
+    },
+    "latest": "stable"
+  },
   "morphe": {
     "source": "github",
     "repo": "MorpheApp/morphe-patches",
@@ -2044,14 +2179,14 @@
     },
     "dev": {
       "file": "patches/prathxm-dev.json",
-      "version": "v1.9.2-dev.3",
-      "releaseUrl": "https://github.com/PrathxmOp/Prathxm-Patches/releases/tag/v1.9.2-dev.3",
-      "createdAt": "2026-07-06T16:38:57",
+      "version": "v1.10.0-dev.1",
+      "releaseUrl": "https://github.com/PrathxmOp/Prathxm-Patches/releases/tag/v1.10.0-dev.1",
+      "createdAt": "2026-07-06T18:32:35",
       "targetApps": [
         "com.chess"
       ],
       "appCount": 1,
-      "patchCount": 5
+      "patchCount": 6
     },
     "latest": "dev"
   },
@@ -2294,9 +2429,9 @@
     "firstSeen": "2026-06-02T17:21:27",
     "stable": {
       "file": "patches/rushiranpise-stable.json",
-      "version": "v1.10.0",
-      "releaseUrl": "https://github.com/rushiranpise/morphe-patches/releases/tag/v1.10.0",
-      "createdAt": "2026-07-05T22:32:58",
+      "version": "v1.10.1",
+      "releaseUrl": "https://github.com/rushiranpise/morphe-patches/releases/tag/v1.10.1",
+      "createdAt": "2026-07-06T18:36:32",
       "targetApps": [
         "ai.topicfinder.podcastdiscovery",
         "air.com.musclemotion.anatomy",
@@ -2393,9 +2528,9 @@
     },
     "dev": {
       "file": "patches/rushiranpise-dev.json",
-      "version": "v1.10.0-dev.3",
-      "releaseUrl": "https://github.com/rushiranpise/morphe-patches/releases/tag/v1.10.0-dev.3",
-      "createdAt": "2026-07-05T22:15:14",
+      "version": "v1.10.1-dev.1",
+      "releaseUrl": "https://github.com/rushiranpise/morphe-patches/releases/tag/v1.10.1-dev.1",
+      "createdAt": "2026-07-06T18:33:06",
       "targetApps": [
         "ai.topicfinder.podcastdiscovery",
         "air.com.musclemotion.anatomy",
