@@ -442,16 +442,17 @@
     "firstSeen": "2026-07-03T06:36:05",
     "stable": {
       "file": "patches/arunpdl-stable.json",
-      "version": "v1.0.4",
-      "releaseUrl": "https://github.com/arunpdl/morphe-patches/releases/tag/v1.0.4",
-      "createdAt": "2026-07-05T06:17:59",
+      "version": "v1.0.5",
+      "releaseUrl": "https://github.com/arunpdl/morphe-patches/releases/tag/v1.0.5",
+      "createdAt": "2026-07-06T07:08:57",
       "targetApps": [
         "com.byairapp.android",
+        "com.bytecaretech.merokarobar",
         "com.harwin.prismatica",
         "com.jellywatch.app"
       ],
-      "appCount": 3,
-      "patchCount": 7
+      "appCount": 4,
+      "patchCount": 8
     },
     "dev": {
       "file": "patches/arunpdl-dev.json",
@@ -467,7 +468,7 @@
       "appCount": 4,
       "patchCount": 8
     },
-    "latest": "dev"
+    "latest": "stable"
   },
   "bholeykabhakt": {
     "source": "github",
@@ -2032,9 +2033,9 @@
     "firstSeen": "2026-06-30T14:24:47",
     "stable": {
       "file": "patches/prathxm-stable.json",
-      "version": "v1.9.4",
-      "releaseUrl": "https://github.com/PrathxmOp/Prathxm-Patches/releases/tag/v1.9.4",
-      "createdAt": "2026-07-05T06:38:30",
+      "version": "v1.9.6",
+      "releaseUrl": "https://github.com/PrathxmOp/Prathxm-Patches/releases/tag/v1.9.6",
+      "createdAt": "2026-07-06T12:13:49",
       "targetApps": [
         "com.chess"
       ],
