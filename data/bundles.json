@@ -1827,6 +1827,27 @@
     },
     "latest": "stable"
   },
+  "movistar-block-ads": {
+    "source": "github",
+    "repo": "Tornillo2/movistar-block-ads-morphe",
+    "repoUrl": "https://github.com/Tornillo2/movistar-block-ads-morphe",
+    "deepLink": "https://morphe.software/add-source?github=Tornillo2/movistar-block-ads-morphe",
+    "avatarUrl": "https://github.com/Tornillo2.png?size=128",
+    "stars": 1,
+    "firstSeen": "2026-07-07T19:54:09",
+    "stable": {
+      "file": "patches/movistar-block-ads-stable.json",
+      "version": "v1.0.9",
+      "releaseUrl": "https://github.com/Tornillo2/movistar-block-ads-morphe/releases/tag/v1.0.9",
+      "createdAt": "2026-07-04T22:42:19",
+      "targetApps": [
+        "com.movistarplus.androidtv"
+      ],
+      "appCount": 1,
+      "patchCount": 1
+    },
+    "latest": "stable"
+  },
   "nai64": {
     "source": "github",
     "repo": "Nai64/Nai64Patches",

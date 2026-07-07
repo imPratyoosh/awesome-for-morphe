@@ -1488,5 +1488,9 @@
   "com.mxtech.videoplayer.ad": {
     "name": "MX Player",
     "iconUrl": "https://play-lh.googleusercontent.com/kuU8L2zHfkE8rDQ8iUwMpYcV8TzUDBz7n_KYaEV4R5M7W5qHiZGqxWk9f1ysP2Lk72GmRTps3iaXUXfH-18pWw"
+  },
+  "com.movistarplus.androidtv": {
+    "name": "Movistar Plus",
+    "iconUrl": "https://play-lh.googleusercontent.com/hrz4coRvzEr2euUSAUYdqlJkj4iv9aIk0nwg5EVl9Kif4cYRMqC2ussnVdcNjjclNtlbWq1_XaGWfC0SoC7U7A"
   }
 }
