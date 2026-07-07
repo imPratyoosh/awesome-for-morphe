@@ -334,7 +334,7 @@ def main():
                 0, {"date": today_str, "released": False, "bundles": json_diff}
             )
 
-    changelog_data = changelog_data[:30]
+    changelog_data = changelog_data[:15]
     write_json(CHANGELOG_JSON_PATH, changelog_data)
     print("Updated changelog.json.")
 

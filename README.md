@@ -39,7 +39,7 @@ Parses the downloaded JSON files and compiles the unified `bundles.json` and `ap
 
 ### `changelog.py`
 Generates the patch changelog by diffing current bundles against the history baseline.
-- `python src/changelog.py`: Generates `changelog.json` containing unreleased changes. Truncates older items to keep a maximum of 30 items.
+- `python src/changelog.py`: Generates `changelog.json` containing unreleased changes. Truncates older items to keep a maximum of 15 items.
 - `python src/changelog.py --release`: Additionally marks changes as released, generates `changelog.md` with hierarchical tree notes, and updates the `history.json` baseline.
 
 ### `telegram.py`
