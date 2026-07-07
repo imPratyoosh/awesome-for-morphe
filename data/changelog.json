@@ -1,7 +1,7 @@
 [
   {
     "date": "July 07, 2026",
-    "released": false,
+    "released": true,
     "bundles": {
       "amplerevanced": {
         "isNew": false,

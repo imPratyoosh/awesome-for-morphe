@@ -1,4 +1,12 @@
 {
+  "ImmortalZeus": {
+    "com.example.app": [
+      "Example Patch"
+    ],
+    "universal": [
+      "Block hosts in string resources"
+    ]
+  },
   "abhis1n": {
     "com.Splitwise.SplitwiseMobile": [
       "Enable Features"
@@ -178,6 +186,7 @@
       "Hide More tab Game tab",
       "Hide More tab components",
       "Hook Package Manager",
+      "Open profile from open chat feed",
       "Override feature flag",
       "Play YouTube player in chat room",
       "Register settings activity",
@@ -644,6 +653,34 @@
       "Set pin as wallpaper"
     ]
   },
+  "bufferk": {
+    "com.Splitwise.SplitwiseMobile": [
+      "Unlock Pro"
+    ],
+    "com.bounce.connect": [
+      "Bypass license check"
+    ],
+    "com.medium.reader": [
+      "Freedium"
+    ],
+    "com.mygate.user": [
+      "Flutter Premium Bypass",
+      "Hide ads",
+      "Unlock premium"
+    ],
+    "com.overdevs.at4k": [
+      "Unlock premium"
+    ],
+    "com.truecaller": [
+      "Disable analytics",
+      "Enable premium features",
+      "Hide 'Get Premium' banners",
+      "Hide ads",
+      "Hide premium upgrade prompts",
+      "Mock premium",
+      "Remove Premium UI"
+    ]
+  },
   "docbt": {
     "com.ebay.kleinanzeigen": [
       "Hide Pur",
@@ -674,6 +711,32 @@
       "Disable Pairip license check",
       "Enable debug",
       "Hide app icon"
+    ]
+  },
+  "franticg33k": {
+    "com.byairapp.android": [
+      "Enable Online Pro",
+      "Enable Pro"
+    ],
+    "com.bytecaretech.merokarobar": [
+      "Unlock Premium"
+    ],
+    "com.harwin.prismatica": [
+      "Remove License Activity",
+      "Remove License Check",
+      "Remove Watermark"
+    ],
+    "com.jellywatch.app": [
+      "Remove License Activity",
+      "Unlock Premium"
+    ],
+    "np.com.nepalipatro": [
+      "Remove Ads"
+    ]
+  },
+  "gryphous-morphe": {
+    "com.crunchyroll.crunchyroid": [
+      "Enable Picture-in-Picture"
     ]
   },
   "hk-morphe": {
@@ -1061,14 +1124,6 @@
     "com.persapps.multitimer": [
       "Bypass DRM",
       "Enable PRO"
-    ]
-  },
-  "ImmortalZeus": {
-    "com.example.app": [
-      "Example Patch"
-    ],
-    "universal": [
-      "Block hosts in string resources"
     ]
   },
   "imxeren": {
@@ -1767,6 +1822,7 @@
       "Ad-Free & Local Analysis",
       "Clone Chess.com",
       "Custom Titles",
+      "Global Crash Handler",
       "Lichess Puzzles",
       "Unlock All Bots"
     ]
@@ -2372,6 +2428,11 @@
     "com.sec.android.app.shealth": [
       "Bypass Samsung Account provider checks",
       "Disable Knox integrity checks"
+    ]
+  },
+  "shaun-sheep": {
+    "com.urbandroid.kinestop": [
+      "Unlock Premium"
     ]
   },
   "ts-patches": {
