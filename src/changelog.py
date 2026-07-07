@@ -277,7 +277,7 @@ def generate_markdown(json_diff, app_metadata, skip_words):
                 else:
                     bundle_md.append(f"    - 📱 {app_name}")
                     for p in sorted(app_data.get("patches", [])):
-                        bundle_md.append(f"        + 🧩 `{p}`")
+                        bundle_md.append(f"        + 🧩 `{p}` (✨New)")
 
             markdown_lines.append("\n".join(bundle_md))
 
@@ -316,7 +316,8 @@ def main():
     app_metadata = read_json(APPS_JSON_PATH, {})
     skip_words = read_json(SKIP_WORDS_PATH, []) or []
     changelog_data = read_json(CHANGELOG_JSON_PATH, []) or []
-    today_str = datetime.datetime.now(datetime.timezone.utc).strftime("%B %d, %Y")
+    now = datetime.datetime.now(datetime.timezone.utc)
+    today_str = now.strftime(f"%B {now.day}, %Y")
     _, new_dev = build_current_bundles()
     json_diff = build_json_diff(old_history, new_dev)
 
@@ -325,11 +326,7 @@ def main():
         return
 
     # Update or insert today's JSON entry
-    if (
-        changelog_data
-        and changelog_data[0].get("date") == today_str
-        and not changelog_data[0].get("released", False)
-    ):
+    if changelog_data and not changelog_data[0].get("released", False):
         changelog_data[0]["bundles"] = json_diff
     else:
         if json_diff:
