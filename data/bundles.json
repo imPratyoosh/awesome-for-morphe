@@ -2695,6 +2695,38 @@
     },
     "latest": "stable"
   },
+  "shaun-sheep": {
+    "source": "github",
+    "repo": "shaun-the-sheep-patches/morphe-patches",
+    "repoUrl": "https://github.com/shaun-the-sheep-patches/morphe-patches",
+    "deepLink": "https://morphe.software/add-source?github=shaun-the-sheep-patches/morphe-patches",
+    "avatarUrl": "https://github.com/shaun-the-sheep-patches.png?size=128",
+    "stars": 1,
+    "firstSeen": "2026-07-07T03:19:37",
+    "stable": {
+      "file": "patches/shaun-sheep-stable.json",
+      "version": "v1.0.1",
+      "releaseUrl": "https://github.com/shaun-the-sheep-patches/morphe-patches/releases/tag/v1.0.1",
+      "createdAt": "2026-07-05T10:34:17",
+      "targetApps": [
+        "com.urbandroid.kinestop"
+      ],
+      "appCount": 1,
+      "patchCount": 1
+    },
+    "dev": {
+      "file": "patches/shaun-sheep-dev.json",
+      "version": "v1.0.1-dev.1",
+      "releaseUrl": "https://github.com/shaun-the-sheep-patches/morphe-patches/releases/tag/v1.0.1-dev.1",
+      "createdAt": "2026-07-05T10:31:59",
+      "targetApps": [
+        "com.urbandroid.kinestop"
+      ],
+      "appCount": 1,
+      "patchCount": 1
+    },
+    "latest": "stable"
+  },
   "sjshb57-pairip": {
     "source": "github",
     "repo": "sjshb57/Pairip-Patches",
