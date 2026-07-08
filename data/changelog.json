@@ -1,5 +1,31 @@
 [
   {
+    "date": "July 8, 2026",
+    "released": false,
+    "bundles": {
+      "pinterest-morphed": {
+        "isNew": true,
+        "apps": {
+          "com.pinterest": {
+            "isNew": true,
+            "patches": [
+              "Disable Android Privacy Sandbox Ad Services",
+              "Disable AppsFlyer tracking",
+              "Disable Bugsnag crash tracking",
+              "Disable Google Ads SDK",
+              "Disable Google Engage integration",
+              "Disable Google Engage worker",
+              "Hide promoted pins",
+              "Opt out of Google Analytics",
+              "Remove Advertising ID permission",
+              "Sanitize sharing links"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
     "date": "July 6, 2026",
     "released": true,
     "bundles": {

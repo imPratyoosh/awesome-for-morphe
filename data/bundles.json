@@ -2124,6 +2124,38 @@
     },
     "latest": "dev"
   },
+  "pinterest-morphed": {
+    "source": "github",
+    "repo": "SouBryan/pinterest-morphed",
+    "repoUrl": "https://github.com/SouBryan/pinterest-morphed",
+    "deepLink": "https://morphe.software/add-source?github=SouBryan/pinterest-morphed",
+    "avatarUrl": "https://github.com/SouBryan.png?size=128",
+    "stars": 2,
+    "firstSeen": "2026-07-08T02:37:25",
+    "stable": {
+      "file": "patches/pinterest-morphed-stable.json",
+      "version": "v1.1.0",
+      "releaseUrl": "https://github.com/SouBryan/pinterest-morphed/releases/tag/v1.1.0",
+      "createdAt": "2026-07-07T23:35:35",
+      "targetApps": [
+        "com.pinterest"
+      ],
+      "appCount": 1,
+      "patchCount": 10
+    },
+    "dev": {
+      "file": "patches/pinterest-morphed-dev.json",
+      "version": "v1.0.0-dev.2",
+      "releaseUrl": "https://github.com/SouBryan/pinterest-morphed/releases/tag/v1.0.0-dev.2",
+      "createdAt": "2026-07-07T23:35:24",
+      "targetApps": [
+        "com.pinterest"
+      ],
+      "appCount": 1,
+      "patchCount": 10
+    },
+    "latest": "stable"
+  },
   "pixelpusher247": {
     "source": "github",
     "repo": "PixelPusher247/morphe-patches",
