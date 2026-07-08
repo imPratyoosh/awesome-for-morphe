@@ -38,7 +38,7 @@ jobs:
           python src/download.py
           pip install google-play-scraper
           python src/update.py
-          python src/changelog.py
+          python src/whats-new.py
 
       - name: Commit and push changes
         if: steps.changes.outputs.changed == 'true'

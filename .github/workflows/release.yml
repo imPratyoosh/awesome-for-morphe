@@ -46,8 +46,8 @@ jobs:
             python src/update.py --stars
           fi
 
-      - name: Generate changelog
-        run: python src/changelog.py --release
+      - name: Generate what's new
+        run: python src/whats-new.py --release
 
       - name: Check git changes
         id: changes
@@ -75,13 +75,13 @@ jobs:
           echo "DAY=${DAY}" >> $GITHUB_ENV
 
       - name: Create release
-        if: steps.changes.outputs.changed == 'true' && hashFiles('changelog.md') != ''
+        if: steps.changes.outputs.changed == 'true' && hashFiles('whats-new.md') != ''
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh release create "${{ env.TAG }}" --target "$(git rev-parse HEAD)" --title "🔔 What's New (${{ env.DAY }})" --notes-file changelog.md --latest=false
+        run: gh release create "${{ env.TAG }}" --target "$(git rev-parse HEAD)" --title "🔔 What's New (${{ env.DAY }})" --notes-file whats-new.md --latest=false
 
       - name: Send Telegram release notification
-        if: steps.changes.outputs.changed == 'true' && hashFiles('changelog.md') != ''
+        if: steps.changes.outputs.changed == 'true' && hashFiles('whats-new.md') != ''
         env:
           TG_CHAT: ${{ secrets.TG_CHAT }}
           TG_TOKEN: ${{ secrets.TG_TOKEN }}
