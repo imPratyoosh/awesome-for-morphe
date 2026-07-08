@@ -13,8 +13,8 @@ PATCHES_DIR = DATA_DIR / "patches"
 HISTORY_PATH = DATA_DIR / "history.json"
 APPS_JSON_PATH = DATA_DIR / "apps.json"
 SKIP_WORDS_PATH = ROOT / "src" / "skip-words.json"
-CHANGELOG_PATH = ROOT / "changelog.md"
-CHANGELOG_JSON_PATH = DATA_DIR / "changelog.json"
+WHATS_NEW_PATH = ROOT / "whats-new.md"
+WHATS_NEW_JSON_PATH = DATA_DIR / "whats-new.json"
 
 
 def read_json(path, default=None):
@@ -286,7 +286,7 @@ def generate_markdown(json_diff, app_metadata, skip_words):
         trie_str = stringify_trie(all_changes)
         q = urllib.parse.quote(trie_str, safe=':,"()')
         full_url = f"https://nvbangg.github.io/awesome-for-morphe/?show={q}&new"
-        sections.append(f"✨ [_View full changelog details_]({full_url})")
+        sections.append(f"✨ [_View full what's new details_]({full_url})")
 
     if markdown_lines:
         sections.append("\n".join(markdown_lines))
@@ -305,7 +305,7 @@ def main():
     parser.add_argument(
         "--release",
         action="store_true",
-        help="Generate changelog.md and update history.json",
+        help="Generate whats-new.md and update history.json",
     )
     args = parser.parse_args()
 
@@ -315,7 +315,7 @@ def main():
     old_history = read_json(HISTORY_PATH, {}) or {}
     app_metadata = read_json(APPS_JSON_PATH, {})
     skip_words = read_json(SKIP_WORDS_PATH, []) or []
-    changelog_data = read_json(CHANGELOG_JSON_PATH, []) or []
+    whats_new_data = read_json(WHATS_NEW_JSON_PATH, []) or []
     now = datetime.datetime.now(datetime.timezone.utc)
     today_str = now.strftime(f"%B {now.day}, %Y")
     _, new_dev = build_current_bundles()
@@ -326,31 +326,31 @@ def main():
         return
 
     # Update or insert today's JSON entry
-    if changelog_data and not changelog_data[0].get("released", False):
-        changelog_data[0]["bundles"] = json_diff
+    if whats_new_data and not whats_new_data[0].get("released", False):
+        whats_new_data[0]["bundles"] = json_diff
     else:
         if json_diff:
-            changelog_data.insert(
+            whats_new_data.insert(
                 0, {"date": today_str, "released": False, "bundles": json_diff}
             )
 
-    changelog_data = changelog_data[:15]
-    write_json(CHANGELOG_JSON_PATH, changelog_data)
-    print("Updated changelog.json.")
+    whats_new_data = whats_new_data[:15]
+    write_json(WHATS_NEW_JSON_PATH, whats_new_data)
+    print("Updated whats-new.json.")
 
     if args.release:
-        if changelog_data and not changelog_data[0].get("released", False):
-            diff_to_release = changelog_data[0].get("bundles", {})
+        if whats_new_data and not whats_new_data[0].get("released", False):
+            diff_to_release = whats_new_data[0].get("bundles", {})
             markdown_str = generate_markdown(diff_to_release, app_metadata, skip_words)
 
             if markdown_str:
-                CHANGELOG_PATH.write_text(markdown_str + "\n", encoding="utf8")
-                print("Changelog MD created.")
+                WHATS_NEW_PATH.write_text(markdown_str + "\n", encoding="utf8")
+                print("What's New MD created.")
             else:
                 print("No changes to write to MD.")
 
-            changelog_data[0]["released"] = True
-            write_json(CHANGELOG_JSON_PATH, changelog_data)
+            whats_new_data[0]["released"] = True
+            write_json(WHATS_NEW_JSON_PATH, whats_new_data)
 
             write_json(HISTORY_PATH, new_dev)
             print("History updated for a new baseline.")

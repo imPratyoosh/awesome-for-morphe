@@ -116,8 +116,8 @@ createApp({
         });
     }
 
-    const isChangelogView = ref(false);
-    const changelogHighlights = ref([]);
+    const isWhatsNewView = ref(false);
+    const whatsNewHighlights = ref([]);
     const rawShowParam = ref("");
 
     let isSyncing = false;
@@ -170,8 +170,8 @@ createApp({
       if (isTwoColumns.value !== newIsTwoColumns) isTwoColumns.value = newIsTwoColumns;
 
       const isNew = params.has("new");
-      if (isChangelogView.value !== isNew) isChangelogView.value = isNew;
-      changelogHighlights.value = isNew ? showArr : [];
+      if (isWhatsNewView.value !== isNew) isWhatsNewView.value = isNew;
+      whatsNewHighlights.value = isNew ? showArr : [];
       nextTick(() => {
         isSyncing = false;
       });
@@ -183,8 +183,8 @@ createApp({
     });
 
     const hasHighlight = (prefix) => {
-      if (!isChangelogView.value) return false;
-      return changelogHighlights.value.includes(prefix);
+      if (!isWhatsNewView.value) return false;
+      return whatsNewHighlights.value.includes(prefix);
     };
 
     watch([bundle, app], () => {
@@ -216,7 +216,7 @@ createApp({
       [query, showOptions, channel, sortOrder, isTwoColumns],
       (newVals, oldVals) => {
         if (!isSyncing && oldVals && oldVals.some((v) => v !== undefined)) {
-          isChangelogView.value = false;
+          isWhatsNewView.value = false;
         }
 
         const urlParts = [];
@@ -224,7 +224,7 @@ createApp({
 
         if (showOptions.value.length > 0) {
           const showStr =
-            isChangelogView.value && rawShowParam.value ? rawShowParam.value : showOptions.value.join(",");
+            isWhatsNewView.value && rawShowParam.value ? rawShowParam.value : showOptions.value.join(",");
           const encodedShow = encodeURIComponent(showStr)
             .replace(/%3A/g, ":")
             .replace(/%2C/g, ",")
@@ -234,7 +234,7 @@ createApp({
         }
         if (channel.value !== DEFAULT_CHANNEL) urlParts.push(`channel=${channel.value}`);
         if (sortOrder.value !== "stars") urlParts.push(`sort=${sortOrder.value}`);
-        if (isChangelogView.value) urlParts.push("new");
+        if (isWhatsNewView.value) urlParts.push("new");
         if (!isTwoColumns.value) urlParts.push("view=list");
 
         const queryString = urlParts.join("&");
@@ -733,7 +733,7 @@ createApp({
       appSearch.value = "";
       bundleSearch.value = "";
       showOptions.value = [];
-      isChangelogView.value = false;
+      isWhatsNewView.value = false;
       expandedVersions.clear();
       collapseAll();
     };
@@ -816,8 +816,8 @@ createApp({
       expandAll,
       collapseAll,
       resetFilters,
-      isChangelogView,
-      changelogHighlights,
+      isWhatsNewView,
+      whatsNewHighlights,
       hasHighlight,
       copyText,
       copiedStates,

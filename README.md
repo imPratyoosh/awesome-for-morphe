@@ -10,15 +10,15 @@ The `/data` directory is used as a Morphe patch database, sourced from [ReVanced
 - [`apps.json`](data/apps.json) — metadata for target apps
 - `/bundles/<bundle>-<channel>.json` — patches-bundle.json
 - `/patches/<bundle>-<channel>.json` — patches-list.json
-- [`changelog.json`](data/changelog.json) — rolling changelog history
-- [`history.json`](data/history.json) — baseline tracking for changelog diffs
+- [`whats-new.json`](data/whats-new.json) — rolling what's new history
+- [`history.json`](data/history.json) — baseline tracking for what's new diffs
 
 ## Automation
 
 | Workflow | Schedule | What it does |
 |---|---|---|
 | [**Sync Bundles**](https://github.com/nvbangg/awesome-for-morphe/blob/main/.github/workflows/ci.yml) | Every 3 hours | Sync `/bundles` and update `/patches`, `bundles.json`, `apps.json` if changed |
-| [**Generate Release**](https://github.com/nvbangg/awesome-for-morphe/blob/main/.github/workflows/release.yml) | Daily at 1:00 UTC | Release changelog + Telegram notification |
+| [**Generate Release**](https://github.com/nvbangg/awesome-for-morphe/blob/main/.github/workflows/release.yml) | Daily at 1:00 UTC | Release what's new + Telegram notification |
 
 ## Usage / Scripts
 
@@ -37,13 +37,13 @@ Parses the downloaded JSON files and compiles the unified `bundles.json` and `ap
 - `python src/update.py --icons`: Additionally forces an update of icons for **all** apps.
 - `python src/update.py --all`: Additionally forces an update of all API data for all entries.
 
-### `changelog.py`
-Generates the patch changelog by diffing current bundles against the history baseline.
-- `python src/changelog.py`: Generates `changelog.json` containing unreleased changes. Truncates older items to keep a maximum of 15 items.
-- `python src/changelog.py --release`: Additionally marks changes as released, generates `changelog.md` with hierarchical tree notes, and updates the `history.json` baseline.
+### `whats-new.py`
+Generates the what's new list by diffing current bundles against the history baseline.
+- `python src/whats-new.py`: Generates `whats-new.json` containing unreleased changes. Truncates older items to keep a maximum of 15 items.
+- `python src/whats-new.py --release`: Additionally marks changes as released, generates `whats-new.md` with hierarchical tree notes, and updates the `history.json` baseline.
 
 ### `telegram.py`
 Sends a notification to a Telegram channel.
-- `python src/telegram.py`: Sends the content of `changelog.md` using an automatically generated title (e.g. `🔔 What's New (July 06)`).
-- `python src/telegram.py "Custom Title"`: Sends the content of `changelog.md` with the specified title.
+- `python src/telegram.py`: Sends the content of `whats-new.md` using an automatically generated title (e.g. `🔔 What's New (July 06)`).
+- `python src/telegram.py "Custom Title"`: Sends the content of `whats-new.md` with the specified title.
 - `python src/telegram.py "Custom Title" "path/to/file.md"`: Sends the content of a specific file with a specific title.

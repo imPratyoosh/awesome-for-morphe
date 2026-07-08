@@ -199,7 +199,7 @@
                 <a href="https://github.com/nvbangg/awesome-for-morphe/releases" target="_blank" rel="noreferrer"
                   class="badge badge-md text-yellow">
                   <i class="fa-solid fa-clock-rotate-left icon-center"></i>
-                  <span>Changelog</span>
+                  <span>What's New</span>
                 </a>
               </div>
             </div>
@@ -479,7 +479,7 @@
                     :class="!effectiveTwoColumns ? 'justify-center md:justify-end md:w-auto' : 'justify-center'">
                     <template v-if="group.bundle.version">
                       <a v-if="group.bundle.releaseUrl" :href="group.bundle.releaseUrl" target="_blank" rel="noreferrer"
-                        @click.stop class="badge" title="Changelog"><i
+                        @click.stop class="badge" title="What's New"><i
                           class="fa-solid fa-clock-rotate-left"></i><span>{{
                           group.bundle.version }}</span></a>
                       <span v-else class="badge text-blue"><i class="fa-solid fa-clock-rotate-left"></i><span>{{
@@ -520,7 +520,7 @@
                         <i v-else class="fa-brands fa-android text-green"></i>
                         <span class="truncate">{{ appItem.appName }}</span>
                         <span
-                          v-if="isChangelogView && (changelogHighlights.includes(group.key + ':' + (appItem.packageName || 'universal')) || changelogHighlights.includes(group.key + ':' + appItem.appName))"
+                          v-if="isWhatsNewView && (whatsNewHighlights.includes(group.key + ':' + (appItem.packageName || 'universal')) || whatsNewHighlights.includes(group.key + ':' + appItem.appName))"
                           class="badge text-yellow"><span>✨ New</span></span>
                       </button>
                     </div>
@@ -537,7 +537,7 @@
                           :class="expandedOptions.has('app_' + group.key + '_' + appItem.id) ? 'text-blue' : 'text-light'">{{
                           appItem.appName }}</span>
                         <span
-                          v-if="isChangelogView && (changelogHighlights.includes(group.key + ':' + (appItem.packageName || 'universal')) || changelogHighlights.includes(group.key + ':' + appItem.appName))"
+                          v-if="isWhatsNewView && (whatsNewHighlights.includes(group.key + ':' + (appItem.packageName || 'universal')) || whatsNewHighlights.includes(group.key + ':' + appItem.appName))"
                           class="badge text-yellow shrink-0"><span>✨ New</span></span>
                         <i class="fa-solid ml-auto text-light transition-transform"
                           :class="expandedOptions.has('app_' + group.key + '_' + appItem.id) ? 'fa-chevron-up' : 'fa-chevron-down'"></i>

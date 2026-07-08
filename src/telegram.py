@@ -8,7 +8,7 @@ from pathlib import Path
 import datetime
 import re
 
-CHANGELOG_PATH = Path("changelog.md")
+WHATS_NEW_PATH = Path("whats-new.md")
 
 
 def encode_url_parens(match):
@@ -20,7 +20,7 @@ def encode_url_parens(match):
 def main():
     now = datetime.datetime.now(datetime.timezone.utc)
     title = f"🔔 What's New ({now.strftime('%B')} {now.day})"
-    filepath = CHANGELOG_PATH
+    filepath = WHATS_NEW_PATH
 
     if len(sys.argv) == 2:
         title = sys.argv[1]
