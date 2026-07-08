@@ -1564,5 +1564,9 @@
   "com.delphicoder.flud": {
     "name": "Flud",
     "iconUrl": "https://play-lh.googleusercontent.com/35qFT59FXT_QogXSqzkeV76iK23g3932gUM1ye7HIC_q_ELO9cTuYBLAJvTXIeeTLUk72UT_LxgqIg946p7DSQ"
+  },
+  "video.player.videoplayer": {
+    "name": "Video Player All Format",
+    "iconUrl": "https://play-lh.googleusercontent.com/uI_ZfaVBari9cQx3IbtJET5JN8uwxnMSSO8Y8wzWdg7p3gWrEYig5-DlSPiW6IBfBxjelgqATitc5xJ0EdhCWg"
   }
 }

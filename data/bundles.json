@@ -2961,16 +2961,17 @@
     "firstSeen": "2026-07-04T06:23:58",
     "stable": {
       "file": "patches/xhehab-stable.json",
-      "version": "v2.0.0",
-      "releaseUrl": "https://github.com/Xhehab/Xhehab-Patches/releases/tag/v2.0.0",
-      "createdAt": "2026-07-03T20:28:09",
+      "version": "v2.0.2",
+      "releaseUrl": "https://github.com/Xhehab/Xhehab-Patches/releases/tag/v2.0.2",
+      "createdAt": "2026-07-08T20:32:10",
       "targetApps": [
         "com.influencers.fst7",
         "com.trainwiseapp.app",
-        "uni.cbum"
+        "uni.cbum",
+        "video.player.videoplayer"
       ],
-      "appCount": 3,
-      "patchCount": 3
+      "appCount": 4,
+      "patchCount": 4
     },
     "latest": "stable"
   },
