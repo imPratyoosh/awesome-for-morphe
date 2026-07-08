@@ -1807,6 +1807,20 @@
       "Support external downloader"
     ]
   },
+  "pinterest-morphed": {
+    "com.pinterest": [
+      "Disable Android Privacy Sandbox Ad Services",
+      "Disable AppsFlyer tracking",
+      "Disable Bugsnag crash tracking",
+      "Disable Google Ads SDK",
+      "Disable Google Engage integration",
+      "Disable Google Engage worker",
+      "Hide promoted pins",
+      "Opt out of Google Analytics",
+      "Remove Advertising ID permission",
+      "Sanitize sharing links"
+    ]
+  },
   "polka-bear": {
     "com.ipoji.app": [
       "Bypass Integrity Protection",
