@@ -622,18 +622,14 @@ createApp({
     const toggleBundle = (group) => {
       if (group.appsList && group.appsList.length > 0) {
         const isAnyExpanded = group.appsList.some((a) => expandedOptions.has("app_" + group.key + "_" + a.id));
-        if (isAnyExpanded) {
+        if (isAnyExpanded || bundleViews[group.key]) {
+          bundleViews[group.key] = false;
+          expandedAppLists.delete(group.key);
           group.appsList.forEach((a) => {
             expandedOptions.delete("app_" + group.key + "_" + a.id);
           });
         } else {
-          if (bundleViews[group.key]) {
-            group.appsList.forEach((a) => {
-              expandedOptions.add("app_" + group.key + "_" + a.id);
-            });
-          } else {
-            expandedOptions.add("app_" + group.key + "_" + group.appsList[0].id);
-          }
+          expandedOptions.add("app_" + group.key + "_" + group.appsList[0].id);
         }
       }
     };
