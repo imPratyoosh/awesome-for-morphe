@@ -825,17 +825,18 @@
     },
     "dev": {
       "file": "patches/ee-morphe-dev.json",
-      "version": "v1.3.0-dev.25",
-      "releaseUrl": "https://gitlab.com/early.egg3707/ee-morphe-patches/-/releases/v1.3.0-dev.25",
-      "createdAt": "2026-07-06T16:46:29",
+      "version": "v1.3.0-dev.28",
+      "releaseUrl": "https://gitlab.com/early.egg3707/ee-morphe-patches/-/releases/v1.3.0-dev.28",
+      "createdAt": "2026-07-08T14:53:24",
       "targetApps": [
+        "com.arlosoft.macrodroid",
         "com.byairapp.android",
         "com.linguist",
         "epixler.de.hypnobox_android",
         "universal"
       ],
-      "appCount": 3,
-      "patchCount": 9
+      "appCount": 4,
+      "patchCount": 10
     },
     "latest": "dev"
   },
@@ -906,20 +907,21 @@
     },
     "dev": {
       "file": "patches/franticg33k-dev.json",
-      "version": "v1.0.0-dev.2",
-      "releaseUrl": "https://github.com/franticg33k/morphe-patches/releases/tag/v1.0.0-dev.2",
-      "createdAt": "2026-07-06T13:21:35",
+      "version": "v1.1.0-dev.3",
+      "releaseUrl": "https://github.com/franticg33k/morphe-patches/releases/tag/v1.1.0-dev.3",
+      "createdAt": "2026-07-08T03:26:40",
       "targetApps": [
         "com.byairapp.android",
         "com.bytecaretech.merokarobar",
         "com.harwin.prismatica",
+        "com.ideapreneurnepal.moneymitra",
         "com.jellywatch.app",
         "np.com.nepalipatro"
       ],
-      "appCount": 5,
-      "patchCount": 9
+      "appCount": 6,
+      "patchCount": 10
     },
-    "latest": "stable"
+    "latest": "dev"
   },
   "gryphous-morphe": {
     "source": "github",
@@ -931,9 +933,9 @@
     "firstSeen": "2026-07-06T22:13:39",
     "stable": {
       "file": "patches/gryphous-morphe-stable.json",
-      "version": "v1.0.0",
-      "releaseUrl": "https://github.com/NekoGryphou/gryphous-morphe-patches/releases/tag/v1.0.0",
-      "createdAt": "2026-07-06T16:24:34",
+      "version": "v1.0.1",
+      "releaseUrl": "https://github.com/NekoGryphou/gryphous-morphe-patches/releases/tag/v1.0.1",
+      "createdAt": "2026-07-06T20:32:07",
       "targetApps": [
         "com.crunchyroll.crunchyroid"
       ],
@@ -963,9 +965,9 @@
     "firstSeen": "2026-06-21T03:33:17",
     "stable": {
       "file": "patches/hk-morphe-stable.json",
-      "version": "v1.5.0",
-      "releaseUrl": "https://github.com/humzakh/HK-Morphe-Patches/releases/tag/v1.5.0",
-      "createdAt": "2026-07-05T04:17:16",
+      "version": "v1.6.0",
+      "releaseUrl": "https://github.com/humzakh/HK-Morphe-Patches/releases/tag/v1.6.0",
+      "createdAt": "2026-07-08T03:42:18",
       "targetApps": [
         "com.laurencedawson.reddit_sync",
         "com.laurencedawson.reddit_sync.dev",
@@ -973,13 +975,13 @@
         "universal"
       ],
       "appCount": 3,
-      "patchCount": 9
+      "patchCount": 10
     },
     "dev": {
       "file": "patches/hk-morphe-dev.json",
-      "version": "v1.5.0-dev.3",
-      "releaseUrl": "https://github.com/humzakh/HK-Morphe-Patches/releases/tag/v1.5.0-dev.3",
-      "createdAt": "2026-07-05T04:08:13",
+      "version": "v1.6.0-dev.1",
+      "releaseUrl": "https://github.com/humzakh/HK-Morphe-Patches/releases/tag/v1.6.0-dev.1",
+      "createdAt": "2026-07-08T03:22:01",
       "targetApps": [
         "com.laurencedawson.reddit_sync",
         "com.laurencedawson.reddit_sync.dev",
@@ -987,7 +989,7 @@
         "universal"
       ],
       "appCount": 3,
-      "patchCount": 9
+      "patchCount": 10
     },
     "latest": "stable"
   },
@@ -1737,9 +1739,9 @@
     },
     "dev": {
       "file": "patches/morphe-dev.json",
-      "version": "v1.34.0-dev.2",
-      "releaseUrl": "https://github.com/MorpheApp/morphe-patches/releases/tag/v1.34.0-dev.2",
-      "createdAt": "2026-07-05T19:53:20",
+      "version": "v1.34.0-dev.4",
+      "releaseUrl": "https://github.com/MorpheApp/morphe-patches/releases/tag/v1.34.0-dev.4",
+      "createdAt": "2026-07-08T07:28:43",
       "targetApps": [
         "com.google.android.apps.youtube.music",
         "com.google.android.youtube",
@@ -1747,7 +1749,7 @@
         "universal"
       ],
       "appCount": 3,
-      "patchCount": 122
+      "patchCount": 124
     },
     "latest": "dev"
   },
@@ -1932,9 +1934,9 @@
     "firstSeen": "2026-05-11T07:00:00",
     "stable": {
       "file": "patches/paresh-maheshwari-stable.json",
-      "version": "v1.18.0",
-      "releaseUrl": "https://gitlab.com/Paresh-Maheshwari/paresh-patches/-/releases/v1.18.0",
-      "createdAt": "2026-06-03T15:49:54",
+      "version": "v1.19.0",
+      "releaseUrl": "https://gitlab.com/Paresh-Maheshwari/paresh-patches/-/releases/v1.19.0",
+      "createdAt": "2026-07-07T17:45:47",
       "targetApps": [
         "app.vinztech.trackit",
         "ch.protonvpn.android",
@@ -1947,7 +1949,9 @@
         "com.frontrow.vlog",
         "com.lumina.wallpapers",
         "com.markOne.ss_app",
+        "com.mxtech.videoplayer.pro",
         "com.overlook.android.fing",
+        "com.rk.taskmanager",
         "com.solid.teleprompter",
         "com.ticktick.task",
         "com.truecaller",
@@ -1957,14 +1961,14 @@
         "org.telegram.messenger.web",
         "org.telegram.plus"
       ],
-      "appCount": 20,
-      "patchCount": 55
+      "appCount": 22,
+      "patchCount": 57
     },
     "dev": {
       "file": "patches/paresh-maheshwari-dev.json",
-      "version": "v1.18.1-dev.1",
-      "releaseUrl": "https://gitlab.com/Paresh-Maheshwari/paresh-patches/-/releases/v1.18.1-dev.1",
-      "createdAt": "2026-06-03T16:02:43",
+      "version": "v1.19.0-dev.1",
+      "releaseUrl": "https://gitlab.com/Paresh-Maheshwari/paresh-patches/-/releases/v1.19.0-dev.1",
+      "createdAt": "2026-07-07T17:15:08",
       "targetApps": [
         "app.vinztech.trackit",
         "ch.protonvpn.android",
@@ -1977,7 +1981,9 @@
         "com.frontrow.vlog",
         "com.lumina.wallpapers",
         "com.markOne.ss_app",
+        "com.mxtech.videoplayer.pro",
         "com.overlook.android.fing",
+        "com.rk.taskmanager",
         "com.solid.teleprompter",
         "com.ticktick.task",
         "com.truecaller",
@@ -1987,10 +1993,10 @@
         "org.telegram.messenger.web",
         "org.telegram.plus"
       ],
-      "appCount": 20,
-      "patchCount": 55
+      "appCount": 22,
+      "patchCount": 57
     },
-    "latest": "dev"
+    "latest": "stable"
   },
   "patcheddit": {
     "source": "github",
@@ -2221,25 +2227,25 @@
     "firstSeen": "2026-06-30T14:24:47",
     "stable": {
       "file": "patches/prathxm-stable.json",
-      "version": "v1.9.6",
-      "releaseUrl": "https://github.com/PrathxmOp/Prathxm-Patches/releases/tag/v1.9.6",
-      "createdAt": "2026-07-06T12:13:49",
+      "version": "v1.12.0",
+      "releaseUrl": "https://github.com/PrathxmOp/Prathxm-Patches/releases/tag/v1.12.0",
+      "createdAt": "2026-07-07T14:56:00",
       "targetApps": [
         "com.chess"
       ],
       "appCount": 1,
-      "patchCount": 5
+      "patchCount": 7
     },
     "dev": {
       "file": "patches/prathxm-dev.json",
-      "version": "v1.10.0-dev.1",
-      "releaseUrl": "https://github.com/PrathxmOp/Prathxm-Patches/releases/tag/v1.10.0-dev.1",
-      "createdAt": "2026-07-06T18:32:35",
+      "version": "v1.12.1-dev.1",
+      "releaseUrl": "https://github.com/PrathxmOp/Prathxm-Patches/releases/tag/v1.12.1-dev.1",
+      "createdAt": "2026-07-07T22:14:19",
       "targetApps": [
         "com.chess"
       ],
       "appCount": 1,
-      "patchCount": 6
+      "patchCount": 7
     },
     "latest": "dev"
   },
@@ -2581,9 +2587,9 @@
     },
     "dev": {
       "file": "patches/rushiranpise-dev.json",
-      "version": "v1.10.1-dev.1",
-      "releaseUrl": "https://github.com/rushiranpise/morphe-patches/releases/tag/v1.10.1-dev.1",
-      "createdAt": "2026-07-06T18:33:06",
+      "version": "v1.11.0-dev.3",
+      "releaseUrl": "https://github.com/rushiranpise/morphe-patches/releases/tag/v1.11.0-dev.3",
+      "createdAt": "2026-07-07T21:19:23",
       "targetApps": [
         "ai.topicfinder.podcastdiscovery",
         "air.com.musclemotion.anatomy",
@@ -2596,12 +2602,17 @@
         "app.ninjavpn.android",
         "app.simple.inure.play",
         "apps.automan.blurwallpaper",
+        "au.com.shiftyjelly.pocketcasts",
         "ch.protonvpn.android",
+        "cn.danatech.xingseus",
         "com.Splitwise.SplitwiseMobile",
         "com.a0soft.gphone.acc.free",
         "com.accuweather.android",
         "com.adguard.android",
+        "com.amazon.mShop.android.shopping",
+        "com.androholic.amoledpix",
         "com.anetcapture.mock",
+        "com.apkmirror.helper.prod",
         "com.app.social_gamebox",
         "com.blockerhero",
         "com.budget.tracker_app",
@@ -2614,7 +2625,9 @@
         "com.cpuid.cpu_z",
         "com.dubox.drive",
         "com.finalwire.aida64",
+        "com.fitbod.fitbod",
         "com.flightradar24free",
+        "com.glority.picturemushroom",
         "com.inscode.autoclicker",
         "com.intsig.camscanner",
         "com.iudesk.android.photo.editor",
@@ -2623,6 +2636,8 @@
         "com.kevinforeman.nzb360",
         "com.lawfully.lawfully_ai_tracker",
         "com.localaiapp.scoops",
+        "com.marsvard.stickermakerforwhatsapp",
+        "com.metalsoft.trackchecker_mobile",
         "com.mindful.code.studio.toxly.scanner",
         "com.mobond.mindicator",
         "com.mtv.sai",
@@ -2639,6 +2654,7 @@
         "com.shexa.permissionmanager",
         "com.skinsort",
         "com.snow_forecast.snowforecast",
+        "com.socialnmobile.dictapps.notepad.color.note",
         "com.spotangels.android",
         "com.tafayor.hibernator",
         "com.tafayor.killall",
@@ -2646,11 +2662,13 @@
         "com.thegrizzlylabs.geniusscan.free",
         "com.thetransitapp.droid",
         "com.tomtom.gplay.navapp",
+        "com.toomics.global.google",
         "com.tracked.mobile",
         "com.tranzmate",
         "com.truebill",
         "com.twtapp",
         "com.urbandroid.kinestop",
+        "com.vizmanga.android",
         "com.wavve.boating.gps",
         "com.waze",
         "com.weather.Weather",
@@ -2663,6 +2681,8 @@
         "eu.duong.imagedatefixer",
         "eu.duong.picturemanager",
         "eu.faircode.netguard",
+        "game.puzzle.blockpuzzle",
+        "io.goodservice.theweekendest",
         "it.mirko.beta",
         "kha.prog.mikrotik",
         "net.pkge.pkge",
@@ -2675,10 +2695,10 @@
         "universal",
         "verbosus.pialytic"
       ],
-      "appCount": 88,
-      "patchCount": 120
+      "appCount": 102,
+      "patchCount": 141
     },
-    "latest": "stable"
+    "latest": "dev"
   },
   "rvx-morphed": {
     "source": "github",
@@ -2758,27 +2778,30 @@
     "firstSeen": "2026-07-07T03:19:37",
     "stable": {
       "file": "patches/shaun-sheep-stable.json",
-      "version": "v1.0.1",
-      "releaseUrl": "https://github.com/shaun-the-sheep-patches/morphe-patches/releases/tag/v1.0.1",
-      "createdAt": "2026-07-05T10:34:17",
+      "version": "v1.1.0",
+      "releaseUrl": "https://github.com/shaun-the-sheep-patches/morphe-patches/releases/tag/v1.1.0",
+      "createdAt": "2026-07-07T18:52:06",
       "targetApps": [
-        "com.urbandroid.kinestop"
+        "com.urbandroid.kinestop",
+        "com.vanniktech.rssreader"
       ],
-      "appCount": 1,
-      "patchCount": 1
+      "appCount": 2,
+      "patchCount": 2
     },
     "dev": {
       "file": "patches/shaun-sheep-dev.json",
-      "version": "v1.0.1-dev.1",
-      "releaseUrl": "https://github.com/shaun-the-sheep-patches/morphe-patches/releases/tag/v1.0.1-dev.1",
-      "createdAt": "2026-07-05T10:31:59",
+      "version": "v1.1.3-dev.1",
+      "releaseUrl": "https://github.com/shaun-the-sheep-patches/morphe-patches/releases/tag/v1.1.3-dev.1",
+      "createdAt": "2026-07-08T06:15:26",
       "targetApps": [
-        "com.urbandroid.kinestop"
+        "com.delphicoder.flud",
+        "com.urbandroid.kinestop",
+        "com.vanniktech.rssreader"
       ],
-      "appCount": 1,
-      "patchCount": 1
+      "appCount": 3,
+      "patchCount": 3
     },
-    "latest": "stable"
+    "latest": "dev"
   },
   "sjshb57-pairip": {
     "source": "github",
@@ -2961,9 +2984,9 @@
     "firstSeen": "2026-05-08T17:36:45",
     "stable": {
       "file": "patches/xob0t-stable.json",
-      "version": "v1.6.0",
-      "releaseUrl": "https://github.com/xob0t/morphe-patches/releases/tag/v1.6.0",
-      "createdAt": "2026-06-23T06:18:13",
+      "version": "v1.6.1",
+      "releaseUrl": "https://github.com/xob0t/morphe-patches/releases/tag/v1.6.1",
+      "createdAt": "2026-07-07T11:05:57",
       "targetApps": [
         "com.avito.android",
         "com.idamob.tinkoff.android",
@@ -2976,9 +2999,9 @@
     },
     "dev": {
       "file": "patches/xob0t-dev.json",
-      "version": "v1.6.0-dev.1",
-      "releaseUrl": "https://github.com/xob0t/morphe-patches/releases/tag/v1.6.0-dev.1",
-      "createdAt": "2026-06-23T06:17:33",
+      "version": "v1.6.0-dev.3",
+      "releaseUrl": "https://github.com/xob0t/morphe-patches/releases/tag/v1.6.0-dev.3",
+      "createdAt": "2026-07-07T11:04:59",
       "targetApps": [
         "com.avito.android",
         "com.idamob.tinkoff.android",

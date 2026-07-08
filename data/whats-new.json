@@ -1,6 +1,211 @@
 [
   {
     "date": "July 8, 2026",
+    "released": false,
+    "bundles": {
+      "ee-morphe": {
+        "isNew": false,
+        "apps": {
+          "com.arlosoft.macrodroid": {
+            "isNew": true,
+            "patches": [
+              "Dog Patch"
+            ]
+          }
+        }
+      },
+      "franticg33k": {
+        "isNew": false,
+        "apps": {
+          "com.ideapreneurnepal.moneymitra": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          }
+        }
+      },
+      "hk-morphe": {
+        "isNew": false,
+        "apps": {
+          "com.laurencedawson.reddit_sync": {
+            "isNew": false,
+            "patches": [
+              "Fix Reddit Video Links"
+            ]
+          },
+          "com.laurencedawson.reddit_sync.dev": {
+            "isNew": false,
+            "patches": [
+              "Fix Reddit Video Links"
+            ]
+          },
+          "com.laurencedawson.reddit_sync.pro": {
+            "isNew": false,
+            "patches": [
+              "Fix Reddit Video Links"
+            ]
+          }
+        }
+      },
+      "morphe": {
+        "isNew": false,
+        "apps": {
+          "com.google.android.apps.youtube.music": {
+            "isNew": false,
+            "patches": [
+              "Hide flyout menu components",
+              "Hide layout components"
+            ]
+          }
+        }
+      },
+      "paresh-maheshwari": {
+        "isNew": false,
+        "apps": {
+          "com.mxtech.videoplayer.pro": {
+            "isNew": true,
+            "patches": [
+              "MX Player Pro License"
+            ]
+          },
+          "com.rk.taskmanager": {
+            "isNew": true,
+            "patches": [
+              "Unlock Pro"
+            ]
+          }
+        }
+      },
+      "prathxm": {
+        "isNew": false,
+        "apps": {
+          "com.chess": {
+            "isNew": false,
+            "patches": [
+              "Ad-Free",
+              "Local Stockfish Analysis"
+            ]
+          }
+        }
+      },
+      "rushiranpise": {
+        "isNew": false,
+        "apps": {
+          "au.com.shiftyjelly.pocketcasts": {
+            "isNew": true,
+            "patches": [
+              "Unlock Patron"
+            ]
+          },
+          "cn.danatech.xingseus": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.amazon.mShop.android.shopping": {
+            "isNew": true,
+            "patches": [
+              "Dark mode",
+              "Disable search suggestions tracking",
+              "Disable video autoplay",
+              "Hide Rufus tab",
+              "Open links in browser",
+              "Price history charts",
+              "Remove ads",
+              "Sanitize share links"
+            ]
+          },
+          "com.androholic.amoledpix": {
+            "isNew": true,
+            "patches": [
+              "Unlock premium"
+            ]
+          },
+          "com.apkmirror.helper.prod": {
+            "isNew": true,
+            "patches": [
+              "Unlock Ultimate"
+            ]
+          },
+          "com.fitbod.fitbod": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.glority.picturemushroom": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.marsvard.stickermakerforwhatsapp": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.metalsoft.trackchecker_mobile": {
+            "isNew": true,
+            "patches": [
+              "Unlock Pro / No Ads"
+            ]
+          },
+          "com.socialnmobile.dictapps.notepad.color.note": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.toomics.global.google": {
+            "isNew": true,
+            "patches": [
+              "Remove ADS"
+            ]
+          },
+          "com.vizmanga.android": {
+            "isNew": true,
+            "patches": [
+              "Remove Ads"
+            ]
+          },
+          "game.puzzle.blockpuzzle": {
+            "isNew": true,
+            "patches": [
+              "Remove ads"
+            ]
+          },
+          "io.goodservice.theweekendest": {
+            "isNew": true,
+            "patches": [
+              "Unlock Plus"
+            ]
+          }
+        }
+      },
+      "shaun-sheep": {
+        "isNew": false,
+        "apps": {
+          "com.delphicoder.flud": {
+            "isNew": true,
+            "patches": [
+              "Flud Ad-Free & Bypasses"
+            ]
+          },
+          "com.vanniktech.rssreader": {
+            "isNew": true,
+            "patches": [
+              "RSS Reader Premium"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "date": "July 8, 2026",
     "released": true,
     "bundles": {
       "pinterest-morphed": {

@@ -1492,5 +1492,77 @@
   "com.movistarplus.androidtv": {
     "name": "Movistar Plus",
     "iconUrl": "https://play-lh.googleusercontent.com/hrz4coRvzEr2euUSAUYdqlJkj4iv9aIk0nwg5EVl9Kif4cYRMqC2ussnVdcNjjclNtlbWq1_XaGWfC0SoC7U7A"
+  },
+  "com.ideapreneurnepal.moneymitra": {
+    "name": "MoneyMitra",
+    "iconUrl": "https://play-lh.googleusercontent.com/lroD6kGHm08_wdr9B4djgM7PjIeB8BvVujPZW_i_gWpST6eEaIcsToC9xzX3tbblbf1jXm3y9EgSQ2znnfhi"
+  },
+  "com.mxtech.videoplayer.pro": {
+    "name": "MX Player Pro",
+    "iconUrl": ""
+  },
+  "com.rk.taskmanager": {
+    "name": "TaskManager",
+    "iconUrl": "https://play-lh.googleusercontent.com/PGIYRXc-vBlKInTp-i0dvz1E3NCUNWkDn5DGgHaPkMY5QQQ4rzQtprwdepBRLhzyaj60oNzHM2UZfxVyVzmz"
+  },
+  "com.fitbod.fitbod": {
+    "name": "Fitbod",
+    "iconUrl": "https://play-lh.googleusercontent.com/bHwuoAEtZW40k3A15ya6of1_p930CXTXGNy01ybT3ICFciBum0PLnIfWjwWFk2iiKsSXdusVQTOckn7rTMREBA"
+  },
+  "com.vizmanga.android": {
+    "name": "VIZ Manga",
+    "iconUrl": "https://play-lh.googleusercontent.com/EY_X2EIcNjp6ugIGzz-2g6H-OXfJlA78ompF5sbOc52e1YYy3_rrmBnB_5zhEOIKUa0gwV1rDC3yGt9WBw4e3w"
+  },
+  "au.com.shiftyjelly.pocketcasts": {
+    "name": "Pocket Casts",
+    "iconUrl": "https://play-lh.googleusercontent.com/9VEAFZhJZgBzOnGXhSLqxwGt_11eQ4KBczz5UpaRGWK95z1isxCv4Xpp1T4gtCAtK6OlSBILVcbM9XaWaTK05hQ"
+  },
+  "com.metalsoft.trackchecker_mobile": {
+    "name": "TrackChecker Mobile",
+    "iconUrl": "https://play-lh.googleusercontent.com/l76xi1ycN3T0CsoSjKshBWEZpt1fY5i2jDaoBOCJOzhm9IoZtyE6DNWfQign8MdTgECDUvN1AuZ2BeXVOR0ZqdA"
+  },
+  "cn.danatech.xingseus": {
+    "name": "PictureThis - Plant Identifier",
+    "iconUrl": "https://play-lh.googleusercontent.com/sOAGaLPazp5jvgrz7JQNV_hcvjpMdgjrkVUfSbrdp1uDn601yv0iVajsQBHnTxmr6IllOl9j7n3mehjBwDE3kg"
+  },
+  "game.puzzle.blockpuzzle": {
+    "name": "Block Puzzle",
+    "iconUrl": "https://play-lh.googleusercontent.com/LykZe_bTYCKYSv8j903U7YSynvqmMTPaikpAHGiS65aYr_Za8RV9pGuXNqDhTmglMN6ppdB209IIihK874DxMA"
+  },
+  "com.glority.picturemushroom": {
+    "name": "Picture Mushroom - Mushroom ID",
+    "iconUrl": "https://play-lh.googleusercontent.com/DXrF5vnF9dq1oD4tH9QYTC_T-LMWnBZnBrgRc_HUyULImVzcLnfaYw8Awg7qkwxHvcEIXY05qoCEgM7L4T4Rvw"
+  },
+  "com.apkmirror.helper.prod": {
+    "name": "APKMirror Installer",
+    "iconUrl": "https://play-lh.googleusercontent.com/LqHlOO3vapxTGOa5OPjzXNGkAMUkgq-3s2-FjLNSgO1Po7S2gUTUctfeCMN3M7qiB58BgNY8xh9TfA8xTNnO5Q"
+  },
+  "com.androholic.amoledpix": {
+    "name": "AmoledPix",
+    "iconUrl": "https://play-lh.googleusercontent.com/lei7zeC9KhdwRwEejaEjFTCR4NEsdR92dWcJYz2X-5Vk9CPVdPBRxwXODcou4GzS_LNw1EElcDtsnzfqz2_0qA"
+  },
+  "io.goodservice.theweekendest": {
+    "name": "Subway Now",
+    "iconUrl": "https://play-lh.googleusercontent.com/av9eXXziNDbeT8eubEph_TIfLVB53bPcusIVnbF7aCjMEA6bX_y0HITrfk9039DeK3siiVGgCCSzYuDRIpFS"
+  },
+  "com.socialnmobile.dictapps.notepad.color.note": {
+    "name": "ColorNote",
+    "iconUrl": "https://play-lh.googleusercontent.com/IoYdXZ5Z9ooJ7QoQA4LOACcrXhndg3nBZgy81s4UmxuQUoXB-gwAlGXyf1qFrYxTXxGsFE6jFwYuFXWJe0InYnw"
+  },
+  "com.marsvard.stickermakerforwhatsapp": {
+    "name": "Sticker Maker",
+    "iconUrl": "https://play-lh.googleusercontent.com/PTcO4Uf0LJzFZDp-N_5PYR0_4CuFqjm1ipAy-bUhOb-oPlzX18OSgQoSs_94gt8M_tXUslGXUKruObvbQzyR"
+  },
+  "com.toomics.global.google": {
+    "name": "Toomics",
+    "iconUrl": "https://play-lh.googleusercontent.com/bVCtSs3SL17q4bEwnVahuJxqoYKKP-2uzicSDoEMVULHahXIZhHeJwbyTBJjMshIPkV8dOQKRkh__Ly_BYHBcw"
+  },
+  "com.vanniktech.rssreader": {
+    "name": "RSS Reader",
+    "iconUrl": "https://play-lh.googleusercontent.com/xzJ2JhtIX6QQtnMEFhYGY--PQwQr1eHBiN45JMAPbPdc1IKADVarWrZEeQB7lMLHcAE5ve497rVnoyHp7QOSxg"
+  },
+  "com.delphicoder.flud": {
+    "name": "Flud",
+    "iconUrl": "https://play-lh.googleusercontent.com/35qFT59FXT_QogXSqzkeV76iK23g3932gUM1ye7HIC_q_ELO9cTuYBLAJvTXIeeTLUk72UT_LxgqIg946p7DSQ"
   }
 }
