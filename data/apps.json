@@ -1580,5 +1580,109 @@
   "diozz.cubex": {
     "name": "CubeX Solver",
     "iconUrl": "https://play-lh.googleusercontent.com/L3BjsGX7Rixnki8p27jkdJTa1Bpu7PBE7QGzAqJONNMnZha8SKv1SuHrcPJrbuqA8BRtOzf3TeY_kJRg6xRRYA"
+  },
+  "com.live.flight.tracker": {
+    "name": "Flightsky",
+    "iconUrl": "https://play-lh.googleusercontent.com/ux2S5buGvoSF7fOTJDgQ-rJz9XVsdj2WLA1cyy_Isuyo8XjFLcdW0gsVmvngkvytghOslSNmeJmoPNsdlUGg"
+  },
+  "com.alexandrucene.dayhistory": {
+    "name": "Historical Calendar",
+    "iconUrl": "https://play-lh.googleusercontent.com/wyJ9Mw4u63ai7NKa30_Dq1At7dFKuI4-IeAmM3qGcMvTh5wlpbq784B7qYBlJ2Q-EL6kop0W-IGB0maQq2XBGIo"
+  },
+  "com.microsoft.office.word": {
+    "name": "Word",
+    "iconUrl": "https://play-lh.googleusercontent.com/FRNCqOBET5SQO_mtuKLb1f9Y9kVvU3wsQ9Hqni1S2jteiglIJLRdZ10XMe0VYb1gQJXM3OVa7uxxfny_wyOO-g"
+  },
+  "com.onesports.score": {
+    "name": "AiScore",
+    "iconUrl": "https://play-lh.googleusercontent.com/qfl_NN753JFAOcc54LYnm5rTY7fgLPi4IJ650cB-WNNQ26h9qCPbMir6lmLkydY8yOzu0enzIQIWAUIwkQ7PBw"
+  },
+  "com.community.mbox.tv": {
+    "name": "MovieBox TV",
+    "iconUrl": ""
+  },
+  "com.wolfram.android.alphapro": {
+    "name": "WolframAlpha",
+    "iconUrl": "https://play-lh.googleusercontent.com/27jY2voB8CFgMexjvusccPuqJYdMLTSEwbb7aCP0TI-cegOvhExyRXmBqHUFwdiFU1A5ndDh9KKTxFUqf0vbBg"
+  },
+  "com.livescore": {
+    "name": "LiveScore",
+    "iconUrl": "https://play-lh.googleusercontent.com/143fvnWCsd-0dOJVSJTmYo9dG_1Xk6fEHwvzteUVMRyYiXCOlG5v3oCohG-VkHdNtNPWQf30CK6Si3VDGDY4Sg"
+  },
+  "je.fit": {
+    "name": "JEFIT",
+    "iconUrl": "https://play-lh.googleusercontent.com/urhFtqMp4ZIAsERTr8WVQFCqEFU-ZYK2a-B2NeGqvy2jxL8PyXhYi5ybwxFQemQ9VVYQyS-QhA8zn5iKaGmbpgo"
+  },
+  "com.pocketprep.android.itcybersecurity": {
+    "name": "Pocket Prep",
+    "iconUrl": "https://play-lh.googleusercontent.com/hRmqBwclSreWYl3aGXxFFfQbv4JLRYRUI-I83LaoYr7ftnVnThsHIm553TMBuCBSVYEXJQ761fU_AMXPR8xB"
+  },
+  "com.recipebro.cookingbuddy": {
+    "name": "RecipeBro",
+    "iconUrl": "https://play-lh.googleusercontent.com/XFq8lr7WJehXZS6ku2yDJ5n6Nv3RA9-lzP3T0TrUrhnB1va4JwxICWd01M0Rv7sjXexnLQRjq_dCmT-518dbG24"
+  },
+  "com.appostrophe.scrl": {
+    "name": "SCRL",
+    "iconUrl": "https://play-lh.googleusercontent.com/lxQjbpVTFHvkfuOZVrcIBqlj8LJNYspLJppPXJwa4oTXswlR-vwCKvi09-ic4HeaQioowYHr_olZCj2lj3EH"
+  },
+  "com.microsoft.office.excel": {
+    "name": "Excel",
+    "iconUrl": "https://play-lh.googleusercontent.com/Wbq7u5yCFe9dqtZv1Gp3E1OefzPmNKoYRJ1m0J9hVyqfhxd9c-CC_mJZn3ZVl_mE-uTmeVN8CiRMQ6ZgC3MNb0o"
+  },
+  "com.snowcorp.stickerly.android": {
+    "name": "Sticker.ly",
+    "iconUrl": "https://play-lh.googleusercontent.com/GDTdv4IhXcgZi5pXufGLXXa-AgXgkQiyv5sPJuChz6MN-ieBCOvY5P-9ChL_RldXL0IkO64gQ2WxoLxL13zZ6g"
+  },
+  "com.thecarousell.Carousell": {
+    "name": "Carousell",
+    "iconUrl": "https://play-lh.googleusercontent.com/r1f5W1ePhZMhGwhNhnX3fFCH8mFebO8fAGUEpQk2IYi7h3F8TPE8slANAMza86LVqpFBO7QyJSBEEO3rXAXD"
+  },
+  "com.flightaware.android.liveFlightTracker": {
+    "name": "FlightAware",
+    "iconUrl": "https://play-lh.googleusercontent.com/8a6whh4j6GTSlj2KCmY749Y912Oi-x0kO5n0X28T8bW3UmYs0jJUOxeIwxEjNNucoWBtbr5-1PxqBT6WUxlsx5s"
+  },
+  "in.amazon.mShop.android.shopping": {
+    "name": "Amazon India",
+    "iconUrl": "https://play-lh.googleusercontent.com/E2Nyw1kSrYFvi5DFOznWOR2iXY9mwxwfYHXV37aLHmuKtEW3gs7StIvVptoV2x8_ykiHQQmliwpfDsFm0Quuwbk"
+  },
+  "com.amboss.medical.knowledge": {
+    "name": "AMBOSS",
+    "iconUrl": "https://play-lh.googleusercontent.com/J-Pc204_kdwbcofGJOOeOWSjmFSbqyPYyu6UmWrVzbHoZJIb3sVcHOd2NKWA-sS998AnKUm_3hxn3Xm1vAlK"
+  },
+  "com.tradingview.tradingviewapp": {
+    "name": "TradingView",
+    "iconUrl": "https://play-lh.googleusercontent.com/bRMYA4FYUqYgSnAB3ukCsx_P80UYLmCYmjURoVodvWWg6fPnXTX17K1bSkTHWSafgWFVPr-Oa_0Vv1hIql9b53E"
+  },
+  "com.blurams.ipc": {
+    "name": "Blurams",
+    "iconUrl": "https://play-lh.googleusercontent.com/va0hKwmF81DIXNYDmW6NhUGgmOeKZUmF_YcYWADs1-Yj4C4Kl5mpvBZVcEz8LevjNKhKrJt7wK13-L-vtzQxpQ"
+  },
+  "com.acmeaom.android.myradar": {
+    "name": "MyRadar",
+    "iconUrl": "https://play-lh.googleusercontent.com/F52HuW1lgyBoNYlpzGOuO-Zj6rCXLOIFfv7nOCzpZUxRJU_87AK_T3gcv9T5BRIXJYBJcdEuFnnTIT4I8j8b"
+  },
+  "com.bws.appv2": {
+    "name": "Built With Science",
+    "iconUrl": "https://play-lh.googleusercontent.com/Y2uM2nf8RFNiwpc9gzDlrUYNuekuMLfqw9i_leJS2zGG0KaEeOO7A7CMh7nUzDHuv_HufS5UbGtgnIEl6z0g6ig"
+  },
+  "com.bpmhealth.boostcamp": {
+    "name": "Boostcamp",
+    "iconUrl": "https://play-lh.googleusercontent.com/ngXzwC03EmpgxNO6IJuBkrrT7EXOlsKO0hv-GBCO-ND1QeamlxGsY9qmU3qHojoq0vmyQm8QKgvy5IygYTde"
+  },
+  "com.sysops.thenx": {
+    "name": "THENX",
+    "iconUrl": "https://play-lh.googleusercontent.com/txCpTN4FC1U5uGZkmbyoZ1NOQQCO9fi9gfp-dXFr-uqTUZArV9fov0rU042PEOWfmuwVM9Vd9r1HwcxXa2QG7Q"
+  },
+  "com.ganbaru.method": {
+    "name": "Ganbaru Method",
+    "iconUrl": "https://play-lh.googleusercontent.com/hggaT6tuXIJQ6SFLvScwcyXV7g8TQp_oYM3YGaMEvx6SXUYTyHk2-TP8K_QPQADQIhg19cOwdgS137UR-f6Liw"
+  },
+  "app.mhphysique.fitness": {
+    "name": "MH Physique",
+    "iconUrl": "https://play-lh.googleusercontent.com/7b_qgfy6Vo7Kv9-gomelozwe1PzL425JD04740fB02-nWSfehhOiNJj4fv1GbewMNXx0Kzxd2m9RWKK0tSpSRQ"
+  },
+  "com.myoadapt.app.android": {
+    "name": "MyoAdapt - Build Muscle Fast",
+    "iconUrl": "https://play-lh.googleusercontent.com/nUxstMZiYpZ95f1w1FlH-TNYY0pq82ZrdRkUwSOZPIVhpHrAUCVvoC-oeozgB0ClEsIKY-Dih0OtKkdoQePong"
   }
 }

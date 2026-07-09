@@ -1,5 +1,164 @@
 [
   {
+    "date": "July 9, 2026",
+    "released": false,
+    "bundles": {
+      "morphe": {
+        "isNew": false,
+        "apps": {
+          "com.google.android.apps.youtube.music": {
+            "isNew": false,
+            "patches": [
+              "Hide filter bar"
+            ]
+          }
+        }
+      },
+      "rushiranpise": {
+        "isNew": false,
+        "apps": {
+          "com.acmeaom.android.myradar": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.alexandrucene.dayhistory": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.amboss.medical.knowledge": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.appostrophe.scrl": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.blurams.ipc": {
+            "isNew": true,
+            "patches": [
+              "Unlock Cloud Service"
+            ]
+          },
+          "com.community.mbox.tv": {
+            "isNew": true,
+            "patches": [
+              "Bypass TV episode VIP gate",
+              "Clear VIP resolution tip",
+              "Spoof TV account VIP status",
+              "Unlock member resolution"
+            ]
+          },
+          "com.duolingo": {
+            "isNew": true,
+            "patches": [
+              "Enable Debug Menu",
+              "Unlock Subscription"
+            ]
+          },
+          "com.flightaware.android.liveFlightTracker": {
+            "isNew": true,
+            "patches": [
+              "Unlock Ad-Free"
+            ]
+          },
+          "com.live.flight.tracker": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.livescore": {
+            "isNew": true,
+            "patches": [
+              "Remove ads"
+            ]
+          },
+          "com.microsoft.office.excel": {
+            "isNew": true,
+            "patches": [
+              "Unlock Excel"
+            ]
+          },
+          "com.microsoft.office.word": {
+            "isNew": true,
+            "patches": [
+              "Unlock Word"
+            ]
+          },
+          "com.onesports.score": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.pocketprep.android.itcybersecurity": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.recipebro.cookingbuddy": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.snowcorp.stickerly.android": {
+            "isNew": true,
+            "patches": [
+              "Unlock Plus"
+            ]
+          },
+          "com.thecarousell.Carousell": {
+            "isNew": true,
+            "patches": [
+              "Remove ads"
+            ]
+          },
+          "com.tradingview.tradingviewapp": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.wolfram.android.alphapro": {
+            "isNew": true,
+            "patches": [
+              "Unlock Professional"
+            ]
+          },
+          "in.amazon.mShop.android.shopping": {
+            "isNew": true,
+            "patches": [
+              "Dark mode",
+              "Disable search suggestions tracking",
+              "Disable video autoplay",
+              "Hide Rufus tab",
+              "Open links in browser",
+              "Price history charts",
+              "Remove ads",
+              "Sanitize share links"
+            ]
+          },
+          "je.fit": {
+            "isNew": true,
+            "patches": [
+              "Unlock Elite"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
     "date": "July 8, 2026",
     "released": true,
     "bundles": {
