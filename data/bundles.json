@@ -1596,9 +1596,9 @@
     "firstSeen": "2026-06-11T14:22:48",
     "stable": {
       "file": "patches/lakaka-stable.json",
-      "version": "v1.3.0",
-      "releaseUrl": "https://github.com/LaKakaReal/LaKakaShitPatches/releases/tag/v1.3.0",
-      "createdAt": "2026-07-08T22:40:48",
+      "version": "v1.3.1",
+      "releaseUrl": "https://github.com/LaKakaReal/LaKakaShitPatches/releases/tag/v1.3.1",
+      "createdAt": "2026-07-09T05:27:58",
       "targetApps": [
         "com.instapaper.android",
         "com.jndapp.depth.live.wallpaper",
@@ -1609,9 +1609,9 @@
     },
     "dev": {
       "file": "patches/lakaka-dev.json",
-      "version": "v1.3.0-dev.1",
-      "releaseUrl": "https://github.com/LaKakaReal/LaKakaShitPatches/releases/tag/v1.3.0-dev.1",
-      "createdAt": "2026-07-08T22:29:58",
+      "version": "v1.3.1-dev.1",
+      "releaseUrl": "https://github.com/LaKakaReal/LaKakaShitPatches/releases/tag/v1.3.1-dev.1",
+      "createdAt": "2026-07-09T04:51:50",
       "targetApps": [
         "com.instapaper.android",
         "com.jndapp.depth.live.wallpaper",
