@@ -1684,5 +1684,17 @@
   "com.myoadapt.app.android": {
     "name": "MyoAdapt - Build Muscle Fast",
     "iconUrl": "https://play-lh.googleusercontent.com/nUxstMZiYpZ95f1w1FlH-TNYY0pq82ZrdRkUwSOZPIVhpHrAUCVvoC-oeozgB0ClEsIKY-Dih0OtKkdoQePong"
+  },
+  "com.getepic.Epic": {
+    "name": "Epic!",
+    "iconUrl": "https://play-lh.googleusercontent.com/sk6Aa-h578gTTNLynITakkAh1g7yZDQ6CppwPCSWjvz7MXYsCeLZFl9BWqOJMKxR_rr_YnVlV071WmvLTyOj"
+  },
+  "jp.co.shueisha.mangaplus": {
+    "name": "Manga Plus",
+    "iconUrl": "https://play-lh.googleusercontent.com/ONRtv3AJrkOZy9XhINn66xi_J5MkHIGJQp5s71I_JA1l1znuwfKIhDR502TnAfcvhsjDSoVd8eO_tLqpoEiij6Y"
+  },
+  "jpark.AOS5": {
+    "name": "Anger of Stick 5",
+    "iconUrl": "https://play-lh.googleusercontent.com/w7_4FvVtFRhH0VwVlY-isETzj8WJpEM7CwG1290zzl_5j1aTj6NNgm8QAGUDPOL-VQWoXEfdBKAP3xnLz9944Ws"
   }
 }

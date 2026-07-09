@@ -892,9 +892,9 @@
     "firstSeen": "2026-07-06T22:13:39",
     "stable": {
       "file": "patches/franticg33k-stable.json",
-      "version": "v1.0.1",
-      "releaseUrl": "https://github.com/franticg33k/morphe-patches/releases/tag/v1.0.1",
-      "createdAt": "2026-07-06T13:27:27",
+      "version": "v1.1.2",
+      "releaseUrl": "https://github.com/franticg33k/morphe-patches/releases/tag/v1.1.2",
+      "createdAt": "2026-07-09T16:44:37",
       "targetApps": [
         "com.byairapp.android",
         "com.bytecaretech.merokarobar",
@@ -907,9 +907,9 @@
     },
     "dev": {
       "file": "patches/franticg33k-dev.json",
-      "version": "v1.1.0-dev.3",
-      "releaseUrl": "https://github.com/franticg33k/morphe-patches/releases/tag/v1.1.0-dev.3",
-      "createdAt": "2026-07-08T03:26:40",
+      "version": "v1.1.1-dev.1",
+      "releaseUrl": "https://github.com/franticg33k/morphe-patches/releases/tag/v1.1.1-dev.1",
+      "createdAt": "2026-07-09T16:35:44",
       "targetApps": [
         "com.byairapp.android",
         "com.bytecaretech.merokarobar",
@@ -921,7 +921,7 @@
       "appCount": 6,
       "patchCount": 10
     },
-    "latest": "dev"
+    "latest": "stable"
   },
   "gryphous-morphe": {
     "source": "github",
@@ -1556,9 +1556,9 @@
     },
     "dev": {
       "file": "patches/lain-dev.json",
-      "version": "v1.3.0-dev.1",
-      "releaseUrl": "https://github.com/kiraio-moe/Lain-Patches/releases/tag/v1.3.0-dev.1",
-      "createdAt": "2026-07-04T04:57:06",
+      "version": "v1.3.0-dev.2",
+      "releaseUrl": "https://github.com/kiraio-moe/Lain-Patches/releases/tag/v1.3.0-dev.2",
+      "createdAt": "2026-07-09T14:46:08",
       "targetApps": [
         "cn.adonet.proxyevery",
         "com.adsk.sketchbook",
@@ -1568,6 +1568,7 @@
         "com.degenk.boorusama",
         "com.flavionet.android.camera.lite",
         "com.flavionet.android.cinema.lite",
+        "com.getepic.Epic",
         "com.hopefactory2021.fakegpslocation",
         "com.ilovepdf.www",
         "com.imaginstudio.imagetools.pixellab",
@@ -1579,10 +1580,11 @@
         "com.regasoftware.udisc",
         "com.scheler.superproxy",
         "com.surmin.photofancie.lite",
+        "jp.co.shueisha.mangaplus",
         "universal"
       ],
-      "appCount": 19,
-      "patchCount": 31
+      "appCount": 21,
+      "patchCount": 35
     },
     "latest": "dev"
   },
@@ -1708,13 +1710,14 @@
     "firstSeen": "2026-07-09T04:53:42",
     "stable": {
       "file": "patches/miguel-stable.json",
-      "version": "v1.2.0",
-      "releaseUrl": "https://github.com/MiguelNinja19/miguel-morphe-patches/releases/tag/v1.2.0",
-      "createdAt": "2026-07-08T23:45:30",
+      "version": "v1.3.4",
+      "releaseUrl": "https://github.com/MiguelNinja19/miguel-morphe-patches/releases/tag/v1.3.4",
+      "createdAt": "2026-07-09T17:46:25",
       "targetApps": [
-        "diozz.cubex"
+        "diozz.cubex",
+        "jpark.AOS5"
       ],
-      "appCount": 1,
+      "appCount": 2,
       "patchCount": 2
     },
     "latest": "stable"
@@ -1729,14 +1732,14 @@
     "firstSeen": "2026-07-06T22:13:39",
     "stable": {
       "file": "patches/modx-stable.json",
-      "version": "v1.1.1",
-      "releaseUrl": "https://github.com/Utsavrajputt/Modx-patches/releases/tag/v1.1.1",
-      "createdAt": "2026-07-06T14:39:10",
+      "version": "v1.2.2",
+      "releaseUrl": "https://github.com/Utsavrajputt/Modx-patches/releases/tag/v1.2.2",
+      "createdAt": "2026-07-09T15:04:23",
       "targetApps": [
         "com.mxtech.videoplayer.ad"
       ],
       "appCount": 1,
-      "patchCount": 1
+      "patchCount": 3
     },
     "latest": "stable"
   },
@@ -1764,9 +1767,9 @@
     },
     "dev": {
       "file": "patches/morphe-dev.json",
-      "version": "v1.34.0-dev.5",
-      "releaseUrl": "https://github.com/MorpheApp/morphe-patches/releases/tag/v1.34.0-dev.5",
-      "createdAt": "2026-07-09T09:54:22",
+      "version": "v1.34.0-dev.7",
+      "releaseUrl": "https://github.com/MorpheApp/morphe-patches/releases/tag/v1.34.0-dev.7",
+      "createdAt": "2026-07-09T16:25:42",
       "targetApps": [
         "com.google.android.apps.youtube.music",
         "com.google.android.youtube",
@@ -1774,7 +1777,7 @@
         "universal"
       ],
       "appCount": 3,
-      "patchCount": 122
+      "patchCount": 123
     },
     "latest": "dev"
   },
@@ -3007,9 +3010,9 @@
     "firstSeen": "2026-07-04T06:23:58",
     "stable": {
       "file": "patches/xhehab-stable.json",
-      "version": "v3.0.2",
-      "releaseUrl": "https://github.com/Xhehab/Xhehab-Patches/releases/tag/v3.0.2",
-      "createdAt": "2026-07-09T12:01:26",
+      "version": "v3.0.11",
+      "releaseUrl": "https://github.com/Xhehab/Xhehab-Patches/releases/tag/v3.0.11",
+      "createdAt": "2026-07-09T17:54:44",
       "targetApps": [
         "app.mhphysique.fitness",
         "com.bpmhealth.boostcamp",
