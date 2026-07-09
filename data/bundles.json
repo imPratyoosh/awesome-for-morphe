@@ -1710,9 +1710,9 @@
     "firstSeen": "2026-07-09T04:53:42",
     "stable": {
       "file": "patches/miguel-stable.json",
-      "version": "v1.3.4",
-      "releaseUrl": "https://github.com/MiguelNinja19/miguel-morphe-patches/releases/tag/v1.3.4",
-      "createdAt": "2026-07-09T17:46:25",
+      "version": "v1.3.8",
+      "releaseUrl": "https://github.com/MiguelNinja19/miguel-morphe-patches/releases/tag/v1.3.8",
+      "createdAt": "2026-07-09T20:42:11",
       "targetApps": [
         "diozz.cubex",
         "jpark.AOS5"
@@ -2266,9 +2266,9 @@
     },
     "dev": {
       "file": "patches/prathxm-dev.json",
-      "version": "v1.12.1-dev.1",
-      "releaseUrl": "https://github.com/PrathxmOp/Prathxm-Patches/releases/tag/v1.12.1-dev.1",
-      "createdAt": "2026-07-07T22:14:19",
+      "version": "v1.12.1-dev.2",
+      "releaseUrl": "https://github.com/PrathxmOp/Prathxm-Patches/releases/tag/v1.12.1-dev.2",
+      "createdAt": "2026-07-09T21:39:45",
       "targetApps": [
         "com.chess"
       ],
@@ -3010,9 +3010,9 @@
     "firstSeen": "2026-07-04T06:23:58",
     "stable": {
       "file": "patches/xhehab-stable.json",
-      "version": "v3.0.11",
-      "releaseUrl": "https://github.com/Xhehab/Xhehab-Patches/releases/tag/v3.0.11",
-      "createdAt": "2026-07-09T17:54:44",
+      "version": "v3.0.15",
+      "releaseUrl": "https://github.com/Xhehab/Xhehab-Patches/releases/tag/v3.0.15",
+      "createdAt": "2026-07-09T20:38:15",
       "targetApps": [
         "app.mhphysique.fitness",
         "com.bpmhealth.boostcamp",
