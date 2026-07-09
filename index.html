@@ -110,6 +110,14 @@
       animation-delay: -7s;
     }
 
+    @keyframes floatIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .animate-float-in {
+      animation: floatIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
     .sn { position: absolute; top: -5vh; width: 3px; height: 3px; background: white; border-radius: 50%; opacity: 0.5; animation: fall var(--d, 30s) linear infinite; }
     @keyframes fall { to { transform: translateY(110vh); } }
     @media (max-width: 639px) {
@@ -168,9 +176,9 @@
   </div>
 
   <div id="app" v-cloak>
-    <section class="mt-2 md:mt-12 max-w-4xl mx-auto px-0 sm:px-3 flex flex-col gap-2 md:gap-4"
+    <section class="mt-0 md:mt-4 max-w-4xl mx-auto px-0 sm:px-3 flex flex-col gap-2 md:gap-4"
       aria-label="Main Content">
-      <div class="p-[1px] bg-gradient-to-r from-blue to-green rounded-2xl shadow-lg relative z-10 mt-2 md:mt-4">
+      <div class="p-[1px] bg-gradient-to-r from-blue to-green rounded-2xl shadow-lg relative z-10 mt-0 md:mt-0">
         <div class="bg-gray rounded-[14px] overflow-hidden h-full">
           <div
             class="relative flex flex-col items-center justify-center border-b-2 border-blue/10 py-3 md:py-0 md:h-12 gap-3 px-3">
@@ -244,7 +252,7 @@
                     </div>
                     <div :class="!bundle ? 'text-white bg-white/10 font-medium' : 'text-white hover:bg-white/5'"
                       :data-selected="!bundle ? 'true' : null"
-                      @click="bundle = ''; bundleSearch = ''; $event.target.closest('.dd-root').classList.remove('open')"
+                      @click="selectBundleFromDropdown(''); bundleSearch = ''; $event.target.closest('.dd-root').classList.remove('open')"
                       class="px-3 py-2 text-sm cursor-pointer transition-colors flex items-center gap-2">
                       <i class="fa-solid fa-cubes text-light text-base w-4 shrink-0 text-center icon-center"></i>
                       <span class="leading-tight flex-1">All Bundles</span>
@@ -252,7 +260,7 @@
                     <div v-for="optionItem in filteredBundleOptions" :key="optionItem.value"
                       :class="bundle === optionItem.value ? 'text-white bg-white/10 font-medium' : 'text-white hover:bg-white/5'"
                       :data-selected="bundle === optionItem.value ? 'true' : null"
-                      @click="bundle = optionItem.value; bundleSearch = ''; $event.target.closest('.dd-root').classList.remove('open')"
+                      @click="selectBundleFromDropdown(optionItem.value); bundleSearch = ''; $event.target.closest('.dd-root').classList.remove('open')"
                       class="px-3 py-2 text-sm cursor-pointer transition-colors flex items-center gap-2">
                       <img v-if="optionItem.icon" :src="optionItem.icon"
                         class="w-4 h-4 rounded-full object-cover shrink-0" alt="" loading="lazy">
@@ -439,7 +447,7 @@
             <div class="grid gap-4 items-start" :class="effectiveTwoColumns ? 'md:grid-cols-2' : 'grid-cols-1'">
               <div v-for="group in bundlesGroups" :key="group.key"
                 class="bg-dark border-2 border-lightGray rounded-2xl overflow-hidden group/bundle shadow-sm flex flex-col">
-                <div @click="toggleBundle(group)" class="flex justify-between gap-3 py-2 px-2 sm:px-3 cursor-pointer"
+                <div @click="openBundlePopup(group.key)" class="flex justify-between gap-3 py-2 px-2 sm:px-3 cursor-pointer"
                   :class="!effectiveTwoColumns ? 'flex-col md:flex-row items-stretch md:items-center' : 'flex-col items-stretch'">
                   <div class="flex items-center gap-3 min-w-0 flex-1 w-full text-left"
                     :class="!effectiveTwoColumns ? 'justify-center sm:justify-start md:w-auto' : 'justify-center'">
@@ -491,14 +499,6 @@
                     <span v-if="group.bundle.createdAt" class="badge"><i class="fa-solid fa-calendar-days"></i><span>{{
                         formatDate(group.bundle.createdAt)
                         }}</span></span>
-                    <button @click.stop="filterByBundle(group.key)" class="badge shrink-0"
-                      title="Filter by this bundle">
-                      <i class="fa-solid fa-filter text-green"></i>
-                    </button>
-                    <button @click.stop="toggleBundleView(group)" class="badge shrink-0"
-                      :title="bundleViews[group.key] ? 'Switch to grid view' : 'Switch to list view'">
-                      <i class="fa-solid text-green" :class="bundleViews[group.key] ? 'fa-grip' : 'fa-list'"></i>
-                    </button>
                   </span>
                 </div>
 
@@ -665,6 +665,248 @@
         </div>
       </div>
     </main>
+
+
+    <div v-if="popupBundleKey" class="fixed inset-0 z-[10000] flex flex-col items-center justify-center p-2 sm:p-4 bg-black/80 backdrop-blur-sm transition-opacity" @click="closePopup">
+      <div class="w-full max-w-4xl max-h-full flex flex-col gap-2 overflow-hidden animate-float-in" @click.stop>
+
+        <div class="flex items-center justify-between gap-2 w-full shrink-0">
+          <button @click.stop="filterByBundle(popupGroup?.key)" class="badge bg-green hover:bg-green/80 text-white border-green/50 cursor-pointer transition-colors shrink-0">
+            <i class="fa-solid fa-filter icon-center"></i>
+            <span>View full</span>
+          </button>
+          
+          <div class="flex items-center gap-1 sm:gap-2">
+            <span class="badge bg-dark border-lightGray text-light"><i class="fa-solid fa-mobile-screen"></i><span>{{ popupGroup?.appsList?.length || 0 }} apps</span></span>
+            <span class="badge bg-dark border-lightGray text-light"><i class="fa-solid fa-puzzle-piece"></i><span>{{ popupGroup?.patches?.length || 0 }} patches</span></span>
+            <button @click="closePopup" class="badge bg-red-500/10 text-red-400 hover:bg-red-500/20 border-red-500/30 cursor-pointer transition-colors">
+              <i class="fa-solid fa-xmark icon-center"></i>
+              <span class="hidden sm:inline">Close</span>
+            </button>
+          </div>
+        </div>
+        
+
+        <div v-if="popupGroup" class="w-full border-2 border-lightGray rounded-2xl overflow-hidden shadow-2xl bg-dark flex flex-col shrink min-h-0"
+        :class="popupBundleViews[popupGroup.key] ? 'overflow-y-auto apps-scroll' : ''">
+        <div v-for="group in [popupGroup]" :key="group.key" class="bg-dark flex flex-col flex-1 min-h-0">
+          <div class="flex justify-between gap-3 py-2 px-2 sm:px-3 flex-col items-stretch shrink-0">
+              <div class="flex items-center gap-3 min-w-0 flex-1 w-full text-left justify-center">
+                <img v-if="group.bundle.avatarUrl" :src="group.bundle.avatarUrl" alt="Avatar"
+                  class="w-12 h-12 rounded-full bg-lightGray/20 object-cover pointer-events-none select-none shrink-0 sm:mt-0.5">
+                <div v-else
+                  class="w-12 h-12 rounded-full bg-lightGray/20 flex items-center justify-center shrink-0 sm:mt-0.5">
+                  <i class="fa-solid fa-cubes text-light text-xl icon-center"></i>
+                </div>
+                <div class="flex flex-col min-w-0 justify-center items-start gap-1 sm:gap-1.5 max-w-full">
+
+                  <div class="flex flex-wrap items-center gap-2 min-w-0 w-full justify-center">
+                    <strong
+                      class="font-bold text-lg sm:text-xl text-transparent bg-clip-text bg-gradient-to-r from-blue to-green break-words leading-tight">{{
+                      group.key }}</strong>
+                    <span v-if="hasHighlight(group.key) || isNewBundle(group)"
+                      class="badge text-yellow shrink-0"><span>✨ New</span></span>
+                    <a v-if="group.bundle.deepLink" :href="group.bundle.deepLink" target="_blank" rel="noreferrer"
+                      @click.stop
+                      class="inline-flex items-center gap-1 px-[6px] py-[2px] rounded-full text-xs font-bold leading-[1.4] whitespace-nowrap border border-transparent text-[#fafafa] bg-gradient-to-r from-blue to-green cursor-pointer transition-all duration-150 hover:opacity-85 active:scale-95 shrink-0 select-none">
+                      <i class="fa-solid fa-plus icon-center"></i>
+                      <span class="sm:hidden">Add</span>
+                      <span class="hidden sm:inline">Add to Morphe</span>
+                    </a>
+                  </div>
+
+                  <a v-if="group.bundle.repo" :href="group.bundle.repoUrl" target="_blank" rel="noreferrer"
+                    @click.stop class="badge badge-sm max-w-full">
+                    <i
+                      :class="group.bundle.source === 'github' ? 'fa-brands fa-github text-white' : group.bundle.source === 'gitlab' ? 'fa-brands fa-gitlab text-orange' : 'fa-solid fa-globe text-light'"></i>
+                    <span class="truncate">{{ group.bundle.repo }}</span>
+                  </a>
+                </div>
+              </div>
+              <span class="flex flex-row flex-wrap items-center gap-2 text-xs text-light shrink-0 w-full justify-center">
+                <template v-if="group.bundle.version">
+                  <a v-if="group.bundle.releaseUrl" :href="group.bundle.releaseUrl" target="_blank" rel="noreferrer"
+                    @click.stop class="badge" title="What's New"><i
+                      class="fa-solid fa-clock-rotate-left"></i><span>{{
+                      group.bundle.version }}</span></a>
+                  <span v-else class="badge text-blue"><i class="fa-solid fa-clock-rotate-left"></i><span>{{
+                      group.bundle.version }}</span></span>
+                </template>
+                <span v-if="group.bundle.stars !== undefined" class="badge">
+                  <i class="fa-solid fa-star text-yellow"></i><span>{{ group.bundle.stars }}</span>
+                </span>
+                <span v-if="group.bundle.createdAt" class="badge"><i class="fa-solid fa-calendar-days"></i><span>{{
+                    formatDate(group.bundle.createdAt)
+                    }}</span></span>
+                <button @click.stop="togglePopupBundleView(group)" class="badge shrink-0"
+                  :title="popupBundleViews[group.key] ? 'Switch to grid view' : 'Switch to list view'">
+                  <i class="fa-solid text-green" :class="popupBundleViews[group.key] ? 'fa-grip' : 'fa-list'"></i>
+                </button>
+              </span>
+            </div>
+
+            <div class="border-t-2 border-lightGray bg-dark shadow-inner flex flex-col flex-1 min-h-0">
+              <template v-for="appsList in [group.appsList]">
+                <div :ref="(el) => setupPopupOverflowObserver(el, group.key)" v-show="!popupBundleViews[group.key]"
+                  class="flex gap-1.5 py-1.5 px-3 border-b border-lightGray shrink-0"
+                  :class="popupExpandedAppLists.has(group.key) ? 'flex-wrap' : 'overflow-x-auto'">
+                  <i v-show="popupOverflowingAppLists.has(group.key)" @click.stop="togglePopupAppList(group.key)"
+                    class="fa-solid shrink-0 text-light cursor-pointer hover:text-white transition-colors flex items-center justify-center px-1"
+                    :class="popupExpandedAppLists.has(group.key) ? 'fa-chevron-up' : 'fa-chevron-down'"
+                    title="Toggle Apps"></i>
+                  <button v-for="(appItem, index) in appsList" :key="appItem.id"
+                    :id="'tab_popup_' + group.key + '_' + appItem.id"
+                    @click.stop="selectPopupApp(group.key, appItem, appsList)" class="badge badge-md shrink-0"
+                    :class="popupExpandedOptions.has('popup_app_' + group.key + '_' + appItem.id) ? 'text-blue' : 'text-light'">
+                    <img v-if="appItem.appIcon" :src="appItem.appIcon"
+                      class="w-4 h-4 rounded-sm object-contain shrink-0" :alt="appItem.appName" loading="lazy">
+                    <i v-else class="fa-brands fa-android text-green"></i>
+                    <span class="truncate">{{ appItem.appName }}</span>
+                    <span
+                      v-if="isWhatsNewView && (whatsNewHighlights.includes(group.key + ':' + (appItem.packageName || 'universal')) || whatsNewHighlights.includes(group.key + ':' + appItem.appName))"
+                      class="badge text-yellow"><span>✨ New</span></span>
+                  </button>
+                </div>
+
+                <template v-for="(appItem, index) in appsList" :key="'content-'+appItem.id">
+                  <div v-if="popupBundleViews[group.key]" @click.stop="selectPopupApp(group.key, appItem, appsList)"
+                    class="flex items-center gap-2 px-3 sm:px-4 py-2 border-b border-lightGray/50 cursor-pointer hover:bg-white/5 transition-colors shrink-0"
+                    :class="popupExpandedOptions.has('popup_app_' + group.key + '_' + appItem.id) ? 'bg-white/5' : ''">
+                    <img v-if="appItem.appIcon" :src="appItem.appIcon"
+                      class="w-5 h-5 rounded-sm object-contain shrink-0" :alt="appItem.appName" loading="lazy">
+                    <i v-else
+                      class="fa-brands fa-android text-green text-base shrink-0 icon-center -ml-1 sm:ml-0"></i>
+                    <span class="font-medium truncate"
+                      :class="popupExpandedOptions.has('popup_app_' + group.key + '_' + appItem.id) ? 'text-blue' : 'text-light'">{{
+                      appItem.appName }}</span>
+                    <span
+                      v-if="isWhatsNewView && (whatsNewHighlights.includes(group.key + ':' + (appItem.packageName || 'universal')) || whatsNewHighlights.includes(group.key + ':' + appItem.appName))"
+                      class="badge text-yellow shrink-0"><span>✨ New</span></span>
+                    <i class="fa-solid ml-auto text-light transition-transform"
+                      :class="popupExpandedOptions.has('popup_app_' + group.key + '_' + appItem.id) ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                  </div>
+
+                  <div v-if="popupExpandedOptions.has('popup_app_' + group.key + '_' + appItem.id)"
+                    @touchstart="handlePopupTouchStart" @touchend="handlePopupTouchEnd($event, group.key, appItem, appsList)"
+                    class="flex flex-col gap-2 shadow-inner pt-2 pb-3 flex-1 min-h-0"
+                    :class="(popupActiveSwipeGroup === group.key && popupSwipeDirection ? 'swipe-transition-' + popupSwipeDirection : '') + (popupBundleViews[group.key] ? ' border-b-2 border-lightGray/30 shrink-0' : '')">
+                    <div class="flex flex-wrap items-center gap-2 min-w-0 px-3 sm:px-4 shrink-0">
+                      <template v-if="appItem.packageName && appItem.packageName !== 'universal'">
+                        <button @click.stop="filterByApp(appItem.packageName)" class="badge shrink-0">
+                          <i class="fa-solid fa-filter"></i>
+                          <span>Filter by this app</span>
+                        </button>
+                        <a :href="playUrl(appItem.packageName)" class="badge shrink-0" target="_blank" @click.stop
+                          title="Open on Play Store">
+                          <i class="fa-brands fa-google-play"></i>
+                          <span>{{ appItem.packageName }}</span>
+                        </a>
+                        <button @click.stop="copyText(appItem.packageName, 'pkg_' + group.key + '_' + appItem.id)"
+                          class="badge text-light shrink-0" title="Copy package name">
+                          <i class="fa-solid"
+                            :class="copiedStates['pkg_' + group.key + '_' + appItem.id] ? 'fa-check text-green' : 'fa-regular fa-copy'"></i>
+                        </button>
+                      </template>
+                      <template v-else>
+                        <button @click.stop="filterByApp('universal')" class="badge shrink-0">
+                          <i class="fa-solid fa-filter"></i>
+                          <span>Filter by this app</span>
+                        </button>
+                      </template>
+                    </div>
+
+                    <div class="pl-6 pr-1 sm:px-4 flex-1 min-h-0 flex flex-col">
+                      <div class="flex flex-col gap-1.5 pr-1.5 sm:pr-0 py-0.5 patches-scroll flex-1 min-h-0"
+                        :class="!popupBundleViews[group.key] ? 'overflow-y-auto' : ''">
+                        <div
+                          v-for="patchItem in group.patches.filter(patchElem => patchElem.apps.some(appElem => (appElem.packageName || appElem.appName || 'any') === (appItem.packageName || appItem.appName || 'any')))"
+                          :key="patchItem.id" @click="patchItem.options.length && togglePopupOptions(patchItem.id)"
+                          class="bg-gray py-1 pl-2.5 pr-1 sm:px-2.5 rounded-xl border border-lightGray shadow-sm flex flex-col"
+                          :class="{'cursor-pointer': patchItem.options.length}">
+                          <div class="flex flex-wrap items-start justify-between gap-2 mb-0.5">
+                            <div class="flex items-center gap-2 flex-wrap min-w-0">
+                              <strong class="font-bold text-white text-sm flex items-center gap-2">
+                                {{ patchItem.patchName }}
+                                <span
+                                  v-if="hasHighlight(group.key + ':' + (appItem.packageName || 'universal') + ':' + patchItem.patchName)"
+                                  class="badge text-yellow"><span>✨ New</span></span>
+                              </strong>
+                              <span v-if="!patchItem.enabled" class="badge text-yellow cursor-help"
+                                title="off by default"><span>off</span></span>
+                              <button v-if="patchItem.options.length" @click.stop="togglePopupOptions(patchItem.id)"
+                                class="text-light hover:text-white px-1 shrink-0"
+                                :title="popupExpandedOptions.has(patchItem.id) ? 'Hide options' : 'Show options'">
+                                <i class="fa-solid fa-chevron-down transition-transform"
+                                  :class="{'rotate-180': popupExpandedOptions.has(patchItem.id)}"></i>
+                              </button>
+                            </div>
+                            <div class="flex flex-wrap gap-1 items-center justify-end min-w-0 ml-auto max-w-full">
+                              <template
+                                v-for="appElem in patchItem.apps.filter(x => (x.packageName || x.appName || 'any') === (appItem.packageName || appItem.appName || 'any'))"
+                                :key="appElem.id">
+                                <template v-if="appElem.versions && appElem.versions.length">
+                                  <template v-if="!popupExpandedVersions.has(appElem.id)">
+                                    <button
+                                      @click.stop="copyText(appElem.versions[appElem.versions.length - 1].version, 'ver_' + appElem.id + '_last')"
+                                      class="badge badge-sm text-green"
+                                      :title="copiedStates['ver_' + appElem.id + '_last'] ? 'Copied!' : (appElem.versions[appElem.versions.length - 1].isExperimental ? 'Copy experimental version' : 'Copy app version')">
+                                      <i v-if="copiedStates['ver_' + appElem.id + '_last']"
+                                        class="fa-solid fa-check text-green"></i>
+                                      <i v-else-if="appElem.versions[appElem.versions.length - 1].isExperimental"
+                                        class="fa-solid fa-flask text-yellow"></i>
+                                      <span>{{ appElem.versions[appElem.versions.length - 1].version }}</span>
+                                    </button>
+                                    <button v-if="appElem.versions.length > 1"
+                                      @click.stop="togglePopupVersions(appElem.id)" class="badge badge-sm text-blue">
+                                      <span>+{{ appElem.versions.length - 1 }}</span>
+                                    </button>
+                                  </template>
+                                  <template v-else>
+                                    <button
+                                      v-for="versionItem in [...appElem.versions].sort((ver1, ver2) => ver1.version.localeCompare(ver2.version, undefined, { numeric: true }))"
+                                      :key="versionItem.version"
+                                      @click.stop="copyText(versionItem.version, 'ver_' + appElem.id + '_' + versionItem.version)"
+                                      class="badge badge-sm text-green"
+                                      :title="copiedStates['ver_' + appElem.id + '_' + versionItem.version] ? 'Copied!' : (versionItem.isExperimental ? 'Copy experimental version' : 'Copy app version')">
+                                      <i v-if="copiedStates['ver_' + appElem.id + '_' + versionItem.version]"
+                                        class="fa-solid fa-check text-green"></i>
+                                      <i v-else-if="versionItem.isExperimental"
+                                        class="fa-solid fa-flask text-yellow"></i>
+                                      <span>{{ versionItem.version }}</span>
+                                    </button>
+                                    <button @click.stop="togglePopupVersions(appElem.id)"
+                                      class="badge badge-sm text-blue">
+                                      <span>Less</span>
+                                    </button>
+                                  </template>
+                                </template>
+                                <span v-else class="badge badge-sm text-green">Any version</span>
+                              </template>
+                            </div>
+                          </div>
+
+                          <p class="text-xs text-light">{{ patchItem.description }}</p>
+
+                          <div v-if="popupExpandedOptions.has(patchItem.id)"
+                            class="mt-1.5 py-1 px-2 bg-lightGray border border-lightGray rounded flex flex-col gap-1 shadow-inner">
+                            <div v-for="optionItem in patchItem.options" :key="optionItem.key">
+                              <strong class="font-bold text-xs text-white block">{{ optionItem.title ||
+                                optionItem.key }}</strong>
+                              <p class="text-[10px] text-light">{{ optionItem.description }}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </template>
+              </template>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
   <script type="module" src="src/main.js"></script>
 
@@ -698,6 +940,10 @@
           const selectedItem = panel.querySelector('[data-selected]');
           if (selectedItem) {
             selectedItem.scrollIntoView({ block: 'nearest' });
+          }
+          if (window.matchMedia('(pointer: fine)').matches) {
+            const input = panel.querySelector('input[type="search"]');
+            if (input) input.focus();
           }
         });
       }

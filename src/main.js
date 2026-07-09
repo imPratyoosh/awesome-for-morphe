@@ -99,6 +99,9 @@ createApp({
     const sortOrder = ref("stars");
     const isTwoColumns = ref(new URLSearchParams(location.search).get("view") !== "list");
 
+    const popupBundleKey = ref(null);
+    const returnUrlOnClose = ref(null);
+
     const activeData = ref(null);
     const isLoading = ref(true);
     const patchesLoaded = ref(false);
@@ -172,10 +175,25 @@ createApp({
       const isNew = params.has("new");
       if (isWhatsNewView.value !== isNew) isWhatsNewView.value = isNew;
       whatsNewHighlights.value = isNew ? showArr : [];
+
+      if (isInitialLoad && bundle.value) {
+        popupBundleKey.value = bundle.value;
+        returnUrlOnClose.value = location.pathname;
+        document.body.style.overflow = 'hidden';
+      } else if (!isInitialLoad) {
+        if (popupBundleKey.value && initBundle !== popupBundleKey.value) {
+          popupBundleKey.value = null;
+          document.body.style.overflow = '';
+          returnUrlOnClose.value = null;
+        }
+      }
+      isInitialLoad = false;
+
       nextTick(() => {
         isSyncing = false;
       });
     }
+    let isInitialLoad = true;
     syncFromUrl(location.search);
 
     window.addEventListener("popstate", () => {
@@ -570,7 +588,7 @@ createApp({
     };
 
     watch(bundlesGroups, (newGroups) => {
-      if (newGroups && newGroups.length === 1) {
+      if (newGroups && newGroups.length === 1 && !popupBundleKey.value) {
         const singleGroup = newGroups[0];
         if (singleGroup.appsList && singleGroup.appsList.length > 0) {
           const firstApp = singleGroup.appsList[0];
@@ -609,6 +627,8 @@ createApp({
               btn.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
             }
           });
+        } else {
+          expandedAppLists.delete(groupKey);
         }
       } else {
         if (isCurrentlyExpanded) {
@@ -620,6 +640,7 @@ createApp({
     };
 
     const toggleBundle = (group) => {
+
       if (group.appsList && group.appsList.length > 0) {
         const isAnyExpanded = group.appsList.some((a) => expandedOptions.has("app_" + group.key + "_" + a.id));
         if (isAnyExpanded || bundleViews[group.key]) {
@@ -633,6 +654,227 @@ createApp({
         }
       }
     };
+
+    const openBundlePopup = (groupKey) => {
+      if (popupBundleKey.value === groupKey) return;
+      returnUrlOnClose.value = location.pathname + location.search;
+      popupBundleKey.value = groupKey;
+      if (bundle.value !== groupKey) {
+        bundle.value = groupKey;
+      }
+      document.body.style.overflow = 'hidden';
+    };
+
+    const closePopup = () => {
+      popupBundleKey.value = null;
+      document.body.style.overflow = '';
+      if (returnUrlOnClose.value) {
+        const url = returnUrlOnClose.value;
+        if (location.pathname + location.search !== url) {
+          history.pushState(null, "", url);
+          syncFromUrl(location.search);
+        }
+      }
+    };
+
+    const selectBundleFromDropdown = (bundleKey) => {
+      if (!bundleKey) {
+        bundle.value = '';
+        return;
+      }
+      bundle.value = bundleKey;
+      setTimeout(() => {
+        returnUrlOnClose.value = location.pathname + location.search;
+        popupBundleKey.value = bundleKey;
+        document.body.style.overflow = 'hidden';
+      }, 50);
+    };
+
+    const popupExpandedOptions = reactive(new Set());
+    const popupExpandedAppLists = reactive(new Set());
+    const popupOverflowingAppLists = reactive(new Set());
+    const popupAppListRefs = new Map();
+    const popupBundleViews = reactive({});
+    const popupActiveSwipeGroup = ref("");
+    const popupSwipeDirection = ref("");
+    const popupExpandedVersions = reactive(new Set());
+
+    const togglePopupOptions = (id) => popupExpandedOptions.has(id) ? popupExpandedOptions.delete(id) : popupExpandedOptions.add(id);
+    const togglePopupVersions = (id) => popupExpandedVersions.has(id) ? popupExpandedVersions.delete(id) : popupExpandedVersions.add(id);
+
+    const checkPopupOverflow = (el, key) => {
+      if (!el) return;
+      if (popupExpandedAppLists.has(key)) {
+        popupOverflowingAppLists.add(key);
+        return;
+      }
+      if (el.scrollWidth > Math.ceil(el.clientWidth)) {
+        popupOverflowingAppLists.add(key);
+      } else {
+        popupOverflowingAppLists.delete(key);
+      }
+    };
+
+    const setupPopupOverflowObserver = (el, key) => {
+      if (el) {
+        popupAppListRefs.set(key, el);
+        if (!el._ro) {
+          const observer = new ResizeObserver(() => checkPopupOverflow(el, key));
+          observer.observe(el);
+          el._ro = observer;
+        }
+        checkPopupOverflow(el, key);
+      } else {
+        const oldEl = popupAppListRefs.get(key);
+        if (oldEl && oldEl._ro) {
+          oldEl._ro.disconnect();
+          oldEl._ro = null;
+        }
+        popupAppListRefs.delete(key);
+      }
+    };
+
+    const togglePopupAppList = (id) => {
+      popupExpandedAppLists.has(id) ? popupExpandedAppLists.delete(id) : popupExpandedAppLists.add(id);
+      setTimeout(() => {
+        const el = popupAppListRefs.get(id);
+        if (el) checkPopupOverflow(el, id);
+      }, 50);
+    };
+
+    const selectPopupApp = (groupKey, clickedApp, appsList) => {
+      popupActiveSwipeGroup.value = "";
+      popupSwipeDirection.value = "";
+      const clickedKey = "popup_app_" + groupKey + "_" + clickedApp.id;
+      const isCurrentlyExpanded = popupExpandedOptions.has(clickedKey);
+
+      if (!popupBundleViews[groupKey]) {
+        appsList.forEach((a) => {
+          const key = "popup_app_" + groupKey + "_" + a.id;
+          if (key !== clickedKey && popupExpandedOptions.has(key)) {
+            popupExpandedOptions.delete(key);
+          }
+        });
+        if (!isCurrentlyExpanded) {
+          popupExpandedOptions.add(clickedKey);
+          nextTick(() => {
+            const btn = document.getElementById("tab_popup_" + groupKey + "_" + clickedApp.id);
+            if (btn) {
+              btn.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+            }
+          });
+        } else {
+
+          popupExpandedAppLists.delete(groupKey);
+        }
+      } else {
+        if (isCurrentlyExpanded) {
+          popupExpandedOptions.delete(clickedKey);
+        } else {
+          popupExpandedOptions.add(clickedKey);
+        }
+      }
+    };
+
+    const popupTouchStartX = ref(0);
+    const popupTouchStartY = ref(0);
+
+    const handlePopupTouchStart = (e) => {
+      if (e.touches && e.touches.length > 0) {
+        popupTouchStartX.value = e.touches[0].clientX;
+        popupTouchStartY.value = e.touches[0].clientY;
+      }
+    };
+
+    const handlePopupTouchEnd = (e, groupKey, currentApp, appsList) => {
+      if (!e.changedTouches || e.changedTouches.length === 0) return;
+      const deltaX = e.changedTouches[0].clientX - popupTouchStartX.value;
+      const deltaY = e.changedTouches[0].clientY - popupTouchStartY.value;
+      if (Math.abs(deltaX) > 60 && Math.abs(deltaY) < 40) {
+        const currentIndex = appsList.findIndex((a) => a.id === currentApp.id);
+        if (currentIndex !== -1) {
+          if (deltaX < 0) {
+            if (currentIndex < appsList.length - 1) {
+              popupActiveSwipeGroup.value = groupKey;
+              popupSwipeDirection.value = "left";
+              selectPopupApp(groupKey, appsList[currentIndex + 1], appsList);
+            }
+          } else {
+            if (currentIndex > 0) {
+              popupActiveSwipeGroup.value = groupKey;
+              popupSwipeDirection.value = "right";
+              selectPopupApp(groupKey, appsList[currentIndex - 1], appsList);
+            }
+          }
+        }
+      }
+    };
+
+    const togglePopupBundleView = (group) => {
+      const key = typeof group === "string" ? group : group.key;
+      popupBundleViews[key] = !popupBundleViews[key];
+
+      if (!popupBundleViews[key] && group.appsList) {
+        const expandedApps = group.appsList.filter((a) => popupExpandedOptions.has("popup_app_" + key + "_" + a.id));
+        if (expandedApps.length > 1) {
+          const firstExpanded = expandedApps[0];
+          group.appsList.forEach((a) => {
+            if (a.id !== firstExpanded.id) {
+              popupExpandedOptions.delete("popup_app_" + key + "_" + a.id);
+            }
+          });
+        }
+      }
+    };
+
+    const autoExpandPopupApp = () => {
+      if (popupBundleKey.value) {
+        const singleGroup = bundlesGroups.value.find(g => g.key === popupBundleKey.value);
+        if (singleGroup && singleGroup.appsList && singleGroup.appsList.length > 0) {
+          let targetApp = singleGroup.appsList[0];
+          if (app.value) {
+            const matchedApp = singleGroup.appsList.find(a => a.packageName === app.value || a.appName === app.value);
+            if (matchedApp) targetApp = matchedApp;
+          }
+          const appKey = "popup_app_" + singleGroup.key + "_" + targetApp.id;
+          const isAnyExpanded = singleGroup.appsList.some((a) =>
+            popupExpandedOptions.has("popup_app_" + singleGroup.key + "_" + a.id),
+          );
+          if (!isAnyExpanded) {
+            popupExpandedOptions.add(appKey);
+            nextTick(() => {
+              const btn = document.getElementById("tab_popup_" + singleGroup.key + "_" + targetApp.id);
+              if (btn) {
+                btn.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+              }
+            });
+          }
+        }
+      }
+    };
+
+    watch(popupBundleKey, (newKey) => {
+      if (newKey) {
+        autoExpandPopupApp();
+      } else {
+        popupExpandedOptions.clear();
+        popupExpandedAppLists.clear();
+        for (const key in popupBundleViews) delete popupBundleViews[key];
+      }
+    });
+
+    watch(patchesLoaded, (loaded) => {
+      if (loaded && popupBundleKey.value) {
+        popupExpandedOptions.clear();
+        nextTick(() => {
+          autoExpandPopupApp();
+        });
+      }
+    });
+
+    const popupGroup = computed(() => {
+      return bundlesGroups.value.find(g => g.key === popupBundleKey.value) || null;
+    });
 
     const touchStartX = ref(0);
     const touchStartY = ref(0);
@@ -672,12 +914,24 @@ createApp({
       resetFilters();
       app.value = packageName;
       showOptions.value = [`:${packageName}`];
+      if (popupBundleKey.value) {
+        popupBundleKey.value = null;
+        document.body.style.overflow = '';
+        returnUrlOnClose.value = null;
+      }
     };
 
     const filterByBundle = (bundleKey) => {
       resetFilters();
       bundle.value = bundleKey;
       showOptions.value = [bundleKey];
+      
+      setTimeout(() => {
+        returnUrlOnClose.value = location.pathname + location.search;
+        popupBundleKey.value = bundleKey;
+        document.body.style.overflow = 'hidden';
+      }, 50);
+
       window.scrollTo({ top: 0, behavior: "smooth" });
     };
 
@@ -824,6 +1078,27 @@ createApp({
       filterByBundle,
       bundleViews,
       toggleBundleView,
+      popupBundleKey,
+      popupGroup,
+      closePopup,
+      openBundlePopup,
+      selectBundleFromDropdown,
+      popupExpandedOptions,
+      popupExpandedAppLists,
+      popupOverflowingAppLists,
+      popupBundleViews,
+      popupActiveSwipeGroup,
+      popupSwipeDirection,
+      popupExpandedVersions,
+      togglePopupOptions,
+      togglePopupVersions,
+      setupPopupOverflowObserver,
+      togglePopupAppList,
+      selectPopupApp,
+      handlePopupTouchStart,
+      handlePopupTouchEnd,
+      togglePopupBundleView,
     };
   },
 }).mount("#app");
+
