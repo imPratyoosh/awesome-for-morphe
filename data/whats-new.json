@@ -48,6 +48,23 @@
           }
         }
       },
+      "lakaka": {
+        "isNew": false,
+        "apps": {
+          "com.instapaper.android": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.soundbrenner.pulse": {
+            "isNew": true,
+            "patches": [
+              "Unlock Plus"
+            ]
+          }
+        }
+      },
       "morphe": {
         "isNew": false,
         "apps": {

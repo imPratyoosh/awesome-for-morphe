@@ -1596,25 +1596,29 @@
     "firstSeen": "2026-06-11T14:22:48",
     "stable": {
       "file": "patches/lakaka-stable.json",
-      "version": "v1.2.0",
-      "releaseUrl": "https://github.com/LaKakaReal/LaKakaShitPatches/releases/tag/v1.2.0",
-      "createdAt": "2026-06-22T23:30:27",
+      "version": "v1.3.0",
+      "releaseUrl": "https://github.com/LaKakaReal/LaKakaShitPatches/releases/tag/v1.3.0",
+      "createdAt": "2026-07-08T22:40:48",
       "targetApps": [
-        "com.jndapp.depth.live.wallpaper"
+        "com.instapaper.android",
+        "com.jndapp.depth.live.wallpaper",
+        "com.soundbrenner.pulse"
       ],
-      "appCount": 1,
-      "patchCount": 1
+      "appCount": 3,
+      "patchCount": 3
     },
     "dev": {
       "file": "patches/lakaka-dev.json",
-      "version": "v1.2.0-dev.1",
-      "releaseUrl": "https://github.com/LaKakaReal/LaKakaShitPatches/releases/tag/v1.2.0-dev.1",
-      "createdAt": "2026-06-22T22:12:35",
+      "version": "v1.3.0-dev.1",
+      "releaseUrl": "https://github.com/LaKakaReal/LaKakaShitPatches/releases/tag/v1.3.0-dev.1",
+      "createdAt": "2026-07-08T22:29:58",
       "targetApps": [
-        "com.jndapp.depth.live.wallpaper"
+        "com.instapaper.android",
+        "com.jndapp.depth.live.wallpaper",
+        "com.soundbrenner.pulse"
       ],
-      "appCount": 1,
-      "patchCount": 1
+      "appCount": 3,
+      "patchCount": 3
     },
     "latest": "stable"
   },

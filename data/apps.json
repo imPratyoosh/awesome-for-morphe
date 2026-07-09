@@ -1568,5 +1568,13 @@
   "video.player.videoplayer": {
     "name": "Video Player All Format",
     "iconUrl": "https://play-lh.googleusercontent.com/uI_ZfaVBari9cQx3IbtJET5JN8uwxnMSSO8Y8wzWdg7p3gWrEYig5-DlSPiW6IBfBxjelgqATitc5xJ0EdhCWg"
+  },
+  "com.instapaper.android": {
+    "name": "Instapaper",
+    "iconUrl": "https://play-lh.googleusercontent.com/gZegND2p4cCle70hA9KVvESOb8-f0_MILCQ11kkr8sTN8IQX1l3AxjqwbhTJWclQlIRFH4c5cgan9hM9rkV83A"
+  },
+  "com.soundbrenner.pulse": {
+    "name": "Soundbrenner",
+    "iconUrl": "https://play-lh.googleusercontent.com/_R9e9F6wRrKOIe0xuU6I68KSSLyiO9oGXBUF8WHcO2Pf3cxnL_WDGQUp7aIV6o8ZTJVve7tIamVzj-aQI2Qy0g"
   }
 }
