@@ -695,6 +695,9 @@
     ]
   },
   "ee-morphe": {
+    "com.arlosoft.macrodroid": [
+      "Dog Patch"
+    ],
     "com.byairapp.android": [
       "Enable Online Pro",
       "Enable Pro"
@@ -726,6 +729,9 @@
       "Remove License Check",
       "Remove Watermark"
     ],
+    "com.ideapreneurnepal.moneymitra": [
+      "Unlock Premium"
+    ],
     "com.jellywatch.app": [
       "Remove License Activity",
       "Unlock Premium"
@@ -744,6 +750,7 @@
       "Fix \"Other Discussions\"",
       "Fix \"Restore Comment\"",
       "Fix Image Post Selftext",
+      "Fix Reddit Video Links",
       "Fix imgur links",
       "Fix r/random",
       "Predictive back gesture (Reddit Sync)",
@@ -754,6 +761,7 @@
       "Fix \"Other Discussions\"",
       "Fix \"Restore Comment\"",
       "Fix Image Post Selftext",
+      "Fix Reddit Video Links",
       "Fix imgur links",
       "Fix r/random",
       "Predictive back gesture (Reddit Sync)",
@@ -764,6 +772,7 @@
       "Fix \"Other Discussions\"",
       "Fix \"Restore Comment\"",
       "Fix Image Post Selftext",
+      "Fix Reddit Video Links",
       "Fix imgur links",
       "Fix r/random",
       "Predictive back gesture (Reddit Sync)",
@@ -1307,8 +1316,14 @@
     ]
   },
   "lakaka": {
+    "com.instapaper.android": [
+      "Unlock Premium"
+    ],
     "com.jndapp.depth.live.wallpaper": [
       "Unlock Premium"
+    ],
+    "com.soundbrenner.pulse": [
+      "Unlock Plus"
     ]
   },
   "loskutov": {
@@ -1339,6 +1354,8 @@
       "Hide ads",
       "Hide buttons",
       "Hide category bar",
+      "Hide flyout menu components",
+      "Hide layout components",
       "Hide music video ads",
       "Miniplayer previous and next buttons",
       "Navigation bar",
@@ -1504,8 +1521,14 @@
     "com.markOne.ss_app": [
       "Mark Premium"
     ],
+    "com.mxtech.videoplayer.pro": [
+      "MX Player Pro License"
+    ],
     "com.overlook.android.fing": [
       "Fing Premium"
+    ],
+    "com.rk.taskmanager": [
+      "Unlock Pro"
     ],
     "com.solid.teleprompter": [
       "Teleprompter Premium"
@@ -1833,11 +1856,12 @@
   },
   "prathxm": {
     "com.chess": [
-      "Ad-Free & Local Analysis",
+      "Ad-Free",
       "Clone Chess.com",
       "Custom Titles",
       "Global Crash Handler",
       "Lichess Puzzles",
+      "Local Stockfish Analysis",
       "Unlock All Bots"
     ]
   },
@@ -2051,7 +2075,13 @@
     "apps.automan.blurwallpaper": [
       "Unlock Premium"
     ],
+    "au.com.shiftyjelly.pocketcasts": [
+      "Unlock Patron"
+    ],
     "ch.protonvpn.android": [
+      "Unlock Premium"
+    ],
+    "cn.danatech.xingseus": [
       "Unlock Premium"
     ],
     "com.Splitwise.SplitwiseMobile": [
@@ -2066,8 +2096,24 @@
     "com.adguard.android": [
       "Unlock Lifetime Premium"
     ],
+    "com.amazon.mShop.android.shopping": [
+      "Dark mode",
+      "Disable search suggestions tracking",
+      "Disable video autoplay",
+      "Hide Rufus tab",
+      "Open links in browser",
+      "Price history charts",
+      "Remove ads",
+      "Sanitize share links"
+    ],
+    "com.androholic.amoledpix": [
+      "Unlock premium"
+    ],
     "com.anetcapture.mock": [
       "Unlock VIP (Lifetime)"
+    ],
+    "com.apkmirror.helper.prod": [
+      "Unlock Ultimate"
     ],
     "com.app.social_gamebox": [
       "Unlock Premium"
@@ -2112,8 +2158,14 @@
     "com.finalwire.aida64": [
       "Remove ads"
     ],
+    "com.fitbod.fitbod": [
+      "Unlock Premium"
+    ],
     "com.flightradar24free": [
       "Unlock Business Premium"
+    ],
+    "com.glority.picturemushroom": [
+      "Unlock Premium"
     ],
     "com.inscode.autoclicker": [
       "Unlock Premium "
@@ -2139,6 +2191,12 @@
     ],
     "com.localaiapp.scoops": [
       "Unlock Drama Episodes"
+    ],
+    "com.marsvard.stickermakerforwhatsapp": [
+      "Unlock Premium"
+    ],
+    "com.metalsoft.trackchecker_mobile": [
+      "Unlock Pro / No Ads"
     ],
     "com.mindful.code.studio.toxly.scanner": [
       "Unlock Premium"
@@ -2193,6 +2251,9 @@
     "com.snow_forecast.snowforecast": [
       "Unlock Premium"
     ],
+    "com.socialnmobile.dictapps.notepad.color.note": [
+      "Unlock Premium"
+    ],
     "com.spotangels.android": [
       "Unlock Plus"
     ],
@@ -2214,6 +2275,9 @@
     "com.tomtom.gplay.navapp": [
       "Unlock Premium"
     ],
+    "com.toomics.global.google": [
+      "Remove ADS"
+    ],
     "com.tracked.mobile": [
       "Unlock Premium"
     ],
@@ -2228,6 +2292,9 @@
     ],
     "com.urbandroid.kinestop": [
       "Unlock pro"
+    ],
+    "com.vizmanga.android": [
+      "Remove Ads"
     ],
     "com.wavve.boating.gps": [
       "Unlock Premium"
@@ -2275,6 +2342,12 @@
     ],
     "eu.faircode.netguard": [
       "Unlock Pro"
+    ],
+    "game.puzzle.blockpuzzle": [
+      "Remove ads"
+    ],
+    "io.goodservice.theweekendest": [
+      "Unlock Plus"
     ],
     "it.mirko.beta": [
       "Unlock Premium"
@@ -2445,8 +2518,14 @@
     ]
   },
   "shaun-sheep": {
+    "com.delphicoder.flud": [
+      "Flud Ad-Free & Bypasses"
+    ],
     "com.urbandroid.kinestop": [
       "Unlock Premium"
+    ],
+    "com.vanniktech.rssreader": [
+      "RSS Reader Premium"
     ]
   },
   "ts-patches": {

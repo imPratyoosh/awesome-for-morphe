@@ -1576,5 +1576,9 @@
   "com.soundbrenner.pulse": {
     "name": "Soundbrenner",
     "iconUrl": "https://play-lh.googleusercontent.com/_R9e9F6wRrKOIe0xuU6I68KSSLyiO9oGXBUF8WHcO2Pf3cxnL_WDGQUp7aIV6o8ZTJVve7tIamVzj-aQI2Qy0g"
+  },
+  "diozz.cubex": {
+    "name": "CubeX Solver",
+    "iconUrl": "https://play-lh.googleusercontent.com/L3BjsGX7Rixnki8p27jkdJTa1Bpu7PBE7QGzAqJONNMnZha8SKv1SuHrcPJrbuqA8BRtOzf3TeY_kJRg6xRRYA"
   }
 }
