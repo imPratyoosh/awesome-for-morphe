@@ -659,9 +659,6 @@ createApp({
       if (popupBundleKey.value === groupKey) return;
       returnUrlOnClose.value = location.pathname + location.search;
       popupBundleKey.value = groupKey;
-      if (bundle.value !== groupKey) {
-        bundle.value = groupKey;
-      }
       document.body.style.overflow = 'hidden';
     };
 
