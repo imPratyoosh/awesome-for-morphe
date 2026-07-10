@@ -327,9 +327,9 @@
     },
     "dev": {
       "file": "patches/anddea-dev.json",
-      "version": "v4.2.0-dev.2",
-      "releaseUrl": "https://github.com/anddea/revanced-patches/releases/tag/v4.2.0-dev.2",
-      "createdAt": "2026-07-03T18:34:13",
+      "version": "v4.2.0-dev.3",
+      "releaseUrl": "https://github.com/anddea/revanced-patches/releases/tag/v4.2.0-dev.3",
+      "createdAt": "2026-07-10T11:22:55",
       "targetApps": [
         "com.google.android.apps.youtube.music",
         "com.google.android.youtube",
