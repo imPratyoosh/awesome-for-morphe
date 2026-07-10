@@ -1065,9 +1065,9 @@
     },
     "dev": {
       "file": "patches/hoo-dles-dev.json",
-      "version": "v1.39.0-dev.1",
-      "releaseUrl": "https://github.com/hoo-dles/morphe-patches/releases/tag/v1.39.0-dev.1",
-      "createdAt": "2026-07-10T02:05:28",
+      "version": "v1.39.0-dev.2",
+      "releaseUrl": "https://github.com/hoo-dles/morphe-patches/releases/tag/v1.39.0-dev.2",
+      "createdAt": "2026-07-10T04:44:07",
       "targetApps": [
         "app.ttmikstories.android",
         "bitpit.launcher",
@@ -1733,9 +1733,9 @@
     "firstSeen": "2026-07-06T22:13:39",
     "stable": {
       "file": "patches/modx-stable.json",
-      "version": "v1.2.2",
-      "releaseUrl": "https://github.com/Utsavrajputt/Modx-patches/releases/tag/v1.2.2",
-      "createdAt": "2026-07-09T15:04:23",
+      "version": "v1.3.1",
+      "releaseUrl": "https://github.com/Utsavrajputt/Modx-patches/releases/tag/v1.3.1",
+      "createdAt": "2026-07-10T07:59:32",
       "targetApps": [
         "com.mxtech.videoplayer.ad"
       ],
@@ -1754,9 +1754,9 @@
     "firstSeen": "2026-06-23T13:04:19",
     "stable": {
       "file": "patches/morphe-stable.json",
-      "version": "v1.33.0",
-      "releaseUrl": "https://github.com/MorpheApp/morphe-patches/releases/tag/v1.33.0",
-      "createdAt": "2026-07-03T06:10:52",
+      "version": "v1.34.0",
+      "releaseUrl": "https://github.com/MorpheApp/morphe-patches/releases/tag/v1.34.0",
+      "createdAt": "2026-07-10T07:06:08",
       "targetApps": [
         "com.google.android.apps.youtube.music",
         "com.google.android.youtube",
@@ -1764,7 +1764,7 @@
         "universal"
       ],
       "appCount": 3,
-      "patchCount": 121
+      "patchCount": 123
     },
     "dev": {
       "file": "patches/morphe-dev.json",
@@ -1780,7 +1780,7 @@
       "appCount": 3,
       "patchCount": 123
     },
-    "latest": "dev"
+    "latest": "stable"
   },
   "morphe-google": {
     "source": "github",
@@ -2256,9 +2256,9 @@
     "firstSeen": "2026-06-30T14:24:47",
     "stable": {
       "file": "patches/prathxm-stable.json",
-      "version": "v1.12.0",
-      "releaseUrl": "https://github.com/PrathxmOp/Prathxm-Patches/releases/tag/v1.12.0",
-      "createdAt": "2026-07-07T14:56:00",
+      "version": "v1.13.0",
+      "releaseUrl": "https://github.com/PrathxmOp/Prathxm-Patches/releases/tag/v1.13.0",
+      "createdAt": "2026-07-10T09:33:46",
       "targetApps": [
         "com.chess"
       ],
@@ -2267,16 +2267,16 @@
     },
     "dev": {
       "file": "patches/prathxm-dev.json",
-      "version": "v1.12.1-dev.2",
-      "releaseUrl": "https://github.com/PrathxmOp/Prathxm-Patches/releases/tag/v1.12.1-dev.2",
-      "createdAt": "2026-07-09T21:39:45",
+      "version": "v1.13.0-dev.2",
+      "releaseUrl": "https://github.com/PrathxmOp/Prathxm-Patches/releases/tag/v1.13.0-dev.2",
+      "createdAt": "2026-07-10T09:15:25",
       "targetApps": [
         "com.chess"
       ],
       "appCount": 1,
       "patchCount": 7
     },
-    "latest": "dev"
+    "latest": "stable"
   },
   "prathxm-ytmusic": {
     "source": "github",
