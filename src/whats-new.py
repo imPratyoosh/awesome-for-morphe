@@ -1,6 +1,5 @@
 # Copyright (c) 2026 nvbangg (github.com/nvbangg)
 
-import argparse
 import datetime
 import json
 import re
@@ -301,14 +300,6 @@ def generate_markdown(json_diff, app_metadata, skip_words):
 
 
 def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "--release",
-        action="store_true",
-        help="Generate whats-new.md and update history.json",
-    )
-    args = parser.parse_args()
-
     if not any(PATCHES_DIR.glob("*.json")):
         raise SystemExit("No patches found — run download.py first")
 
@@ -316,46 +307,37 @@ def main():
     app_metadata = read_json(APPS_JSON_PATH, {})
     skip_words = read_json(SKIP_WORDS_PATH, []) or []
     whats_new_data = read_json(WHATS_NEW_JSON_PATH, []) or []
-    now = datetime.datetime.now(datetime.timezone.utc)
+
+    # Shift time back by 12 hours to handle GitHub Actions delays
+    now = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(hours=12)
     today_str = now.strftime(f"%B {now.day}, %Y")
+
     _, new_dev = build_current_bundles()
     json_diff = build_json_diff(old_history, new_dev)
 
-    if not json_diff and not args.release:
+    if not json_diff:
         print("No changes found.")
         return
 
-    # Update or insert today's JSON entry
-    if whats_new_data and not whats_new_data[0].get("released", False):
-        whats_new_data[0]["bundles"] = json_diff
+    # Create markdown
+    markdown_str = generate_markdown(json_diff, app_metadata, skip_words)
+    if markdown_str:
+        WHATS_NEW_PATH.write_text(markdown_str + "\n", encoding="utf8")
+        print("What's New MD created.")
     else:
-        if json_diff:
-            whats_new_data.insert(
-                0, {"date": today_str, "released": False, "bundles": json_diff}
-            )
+        print("No changes to write to MD.")
+
+    # Insert today's JSON entry
+    whats_new_data.insert(
+        0, {"date": today_str, "released": True, "bundles": json_diff}
+    )
 
     whats_new_data = whats_new_data[:15]
     write_json(WHATS_NEW_JSON_PATH, whats_new_data)
     print("Updated whats-new.json.")
 
-    if args.release:
-        if whats_new_data and not whats_new_data[0].get("released", False):
-            diff_to_release = whats_new_data[0].get("bundles", {})
-            markdown_str = generate_markdown(diff_to_release, app_metadata, skip_words)
-
-            if markdown_str:
-                WHATS_NEW_PATH.write_text(markdown_str + "\n", encoding="utf8")
-                print("What's New MD created.")
-            else:
-                print("No changes to write to MD.")
-
-            whats_new_data[0]["released"] = True
-            write_json(WHATS_NEW_JSON_PATH, whats_new_data)
-
-            write_json(HISTORY_PATH, new_dev)
-            print("History updated for a new baseline.")
-        else:
-            print("No unreleased changes to release.")
+    write_json(HISTORY_PATH, new_dev)
+    print("History updated for a new baseline.")
 
 
 if __name__ == "__main__":

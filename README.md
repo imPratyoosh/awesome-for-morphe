@@ -39,8 +39,7 @@ Parses the downloaded JSON files and compiles the unified `bundles.json` and `ap
 
 ### `whats-new.py`
 Generates the what's new list by diffing current bundles against the history baseline.
-- `python src/whats-new.py`: Generates `whats-new.json` containing unreleased changes. Truncates older items to keep a maximum of 15 items.
-- `python src/whats-new.py --release`: Additionally marks changes as released, generates `whats-new.md` with hierarchical tree notes, and updates the `history.json` baseline.
+- `python src/whats-new.py`: Generates `whats-new.md` with hierarchical tree notes, adds the new released entry to `whats-new.json` (keeping max 15 items), and updates the `history.json` baseline.
 
 ### `telegram.py`
 Sends a notification to a Telegram channel.
