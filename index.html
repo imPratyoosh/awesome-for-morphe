@@ -511,7 +511,7 @@
                         class="fa-solid shrink-0 text-light cursor-pointer hover:text-white transition-colors flex items-center justify-center px-1"
                         :class="expandedAppLists.has(group.key) ? 'fa-chevron-up' : 'fa-chevron-down'"
                         title="Toggle Apps"></i>
-                      <button v-for="(appItem, index) in appsList" :key="appItem.id"
+                      <button v-for="appItem in appsList" :key="appItem.id"
                         :id="'tab_' + group.key + '_' + appItem.id"
                         @click.stop="selectApp(group.key, appItem, appsList)" class="badge badge-md shrink-0"
                         :class="expandedOptions.has('app_' + group.key + '_' + appItem.id) ? 'text-blue' : 'text-light'">
@@ -520,12 +520,12 @@
                         <i v-else class="fa-brands fa-android text-green"></i>
                         <span class="truncate">{{ appItem.appName }}</span>
                         <span
-                          v-if="isWhatsNewView && (whatsNewHighlights.includes(group.key + ':' + (appItem.packageName || 'universal')) || whatsNewHighlights.includes(group.key + ':' + appItem.appName))"
+                          v-if="isAppHighlighted(group.key, appItem)"
                           class="badge text-yellow"><span>✨ New</span></span>
                       </button>
                     </div>
 
-                    <template v-for="(appItem, index) in appsList" :key="'content-'+appItem.id">
+                    <template v-for="appItem in appsList" :key="'content-'+appItem.id">
                       <div v-if="bundleViews[group.key]" @click.stop="selectApp(group.key, appItem, appsList)"
                         class="flex items-center gap-2 px-3 sm:px-4 py-2 border-b border-lightGray/50 cursor-pointer hover:bg-white/5 transition-colors"
                         :class="expandedOptions.has('app_' + group.key + '_' + appItem.id) ? 'bg-white/5' : ''">
@@ -537,7 +537,7 @@
                           :class="expandedOptions.has('app_' + group.key + '_' + appItem.id) ? 'text-blue' : 'text-light'">{{
                           appItem.appName }}</span>
                         <span
-                          v-if="isWhatsNewView && (whatsNewHighlights.includes(group.key + ':' + (appItem.packageName || 'universal')) || whatsNewHighlights.includes(group.key + ':' + appItem.appName))"
+                          v-if="isAppHighlighted(group.key, appItem)"
                           class="badge text-yellow shrink-0"><span>✨ New</span></span>
                         <i class="fa-solid ml-auto text-light transition-transform"
                           :class="expandedOptions.has('app_' + group.key + '_' + appItem.id) ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
@@ -754,7 +754,7 @@
                     class="fa-solid shrink-0 text-light cursor-pointer hover:text-white transition-colors flex items-center justify-center px-1"
                     :class="popupExpandedAppLists.has(group.key) ? 'fa-chevron-up' : 'fa-chevron-down'"
                     title="Toggle Apps"></i>
-                  <button v-for="(appItem, index) in appsList" :key="appItem.id"
+                  <button v-for="appItem in appsList" :key="appItem.id"
                     :id="'tab_popup_' + group.key + '_' + appItem.id"
                     @click.stop="selectPopupApp(group.key, appItem, appsList)" class="badge badge-md shrink-0"
                     :class="popupExpandedOptions.has('popup_app_' + group.key + '_' + appItem.id) ? 'text-blue' : 'text-light'">
@@ -763,12 +763,12 @@
                     <i v-else class="fa-brands fa-android text-green"></i>
                     <span class="truncate">{{ appItem.appName }}</span>
                     <span
-                      v-if="isWhatsNewView && (whatsNewHighlights.includes(group.key + ':' + (appItem.packageName || 'universal')) || whatsNewHighlights.includes(group.key + ':' + appItem.appName))"
+                      v-if="isAppHighlighted(group.key, appItem)"
                       class="badge text-yellow"><span>✨ New</span></span>
                   </button>
                 </div>
 
-                <template v-for="(appItem, index) in appsList" :key="'content-'+appItem.id">
+                <template v-for="appItem in appsList" :key="'content-'+appItem.id">
                   <div v-if="popupBundleViews[group.key]" @click.stop="selectPopupApp(group.key, appItem, appsList)"
                     class="flex items-center gap-2 px-3 sm:px-4 py-2 border-b border-lightGray/50 cursor-pointer hover:bg-white/5 transition-colors shrink-0"
                     :class="popupExpandedOptions.has('popup_app_' + group.key + '_' + appItem.id) ? 'bg-white/5' : ''">
@@ -780,7 +780,7 @@
                       :class="popupExpandedOptions.has('popup_app_' + group.key + '_' + appItem.id) ? 'text-blue' : 'text-light'">{{
                       appItem.appName }}</span>
                     <span
-                      v-if="isWhatsNewView && (whatsNewHighlights.includes(group.key + ':' + (appItem.packageName || 'universal')) || whatsNewHighlights.includes(group.key + ':' + appItem.appName))"
+                      v-if="isAppHighlighted(group.key, appItem)"
                       class="badge text-yellow shrink-0"><span>✨ New</span></span>
                     <i class="fa-solid ml-auto text-light transition-transform"
                       :class="popupExpandedOptions.has('popup_app_' + group.key + '_' + appItem.id) ? 'fa-chevron-up' : 'fa-chevron-down'"></i>

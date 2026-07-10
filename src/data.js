@@ -92,38 +92,22 @@ function packages(patch) {
 
 async function loadSource(key, channelObj, names, sourceInfo, skipSet) {
   const list = await json(new URL(`../data/${channelObj.file}`, import.meta.url)).catch(() => ({}));
+  const repo = sourceInfo.repo || "";
+  const bundleVersion = channelObj.version || "";
+  const bundleCreatedAt = channelObj.createdAt || "";
 
-  const bundle = {
-    key,
-    source: sourceInfo.source || "github",
-    repo: sourceInfo.repo || "",
-    repoUrl: sourceInfo.repoUrl || "",
-    deepLink: sourceInfo.deepLink || "",
-    avatarUrl: sourceInfo.avatarUrl || "",
-    stars: sourceInfo.stars || 0,
-    firstSeen: sourceInfo.firstSeen || "",
-    patchCount: sourceInfo.patchCount || 0,
-    appCount: sourceInfo.appCount || 0,
-    targetApps: sourceInfo.targetApps || [],
-    version: channelObj.version || "",
-    tag: channelObj.version || "",
-    releaseUrl: channelObj.releaseUrl || "",
-    createdAt: channelObj.createdAt || "",
-  };
-
-  const rows = (list.patches || []).flatMap((patch, patchIndex) => {
+  return (list.patches || []).flatMap((patch, patchIndex) => {
     const patchId = `${key}:${patchIndex}`;
     return packages(patch).map((target, targetIndex) => {
       const packageName = target.packageName || "";
       const name = appName(packageName, names, skipSet);
-
       return {
         id: `${patchId}:${targetIndex}`,
         patchId,
         bundleKey: key,
-        repo: bundle.repo,
-        bundleVersion: bundle.version,
-        bundleCreatedAt: bundle.createdAt,
+        repo,
+        bundleVersion,
+        bundleCreatedAt,
         patchName: patch.name || "Unnamed patch",
         description: patch.description || "",
         packageName,
@@ -132,7 +116,6 @@ async function loadSource(key, channelObj, names, sourceInfo, skipSet) {
         versions: target.versions,
         enabled: patch.use ?? patch.default ?? true,
         options: Array.isArray(patch.options) ? patch.options : [],
-        searchAppsText: [key, bundle.repo, packageName, name].filter(Boolean).join(" ").toLowerCase(),
         searchPatchesText: [
           patch.name,
           patch.description,
@@ -148,8 +131,6 @@ async function loadSource(key, channelObj, names, sourceInfo, skipSet) {
       };
     });
   });
-
-  return { bundle, rows };
 }
 
 export async function loadChannelData(channelName, priorityKeys = [], onPatchLoaded) {
@@ -203,7 +184,6 @@ export async function loadChannelData(channelName, priorityKeys = [], onPatchLoa
       appCount: channelObj.appCount || 0,
       patchCount: channelObj.patchCount || 0,
       version: channelObj.version || "",
-      tag: channelObj.version || "",
       releaseUrl: channelObj.releaseUrl || "",
       createdAt: channelObj.createdAt || "",
     };
@@ -211,7 +191,7 @@ export async function loadChannelData(channelName, priorityKeys = [], onPatchLoa
 
     const task = async () => {
       try {
-        const { rows } = await loadSource(key, channelObj, names, sourceObj, skipSet);
+        const rows = await loadSource(key, channelObj, names, sourceObj, skipSet);
         return rows || [];
       } catch (err) {
         console.error(`Failed to load source ${key} for channel ${channel}:`, err);

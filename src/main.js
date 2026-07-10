@@ -123,6 +123,7 @@ createApp({
     const whatsNewHighlights = ref([]);
     const rawShowParam = ref("");
 
+    let isInitialLoad = true;
     let isSyncing = false;
     function syncFromUrl(searchStr) {
       isSyncing = true;
@@ -193,7 +194,6 @@ createApp({
         isSyncing = false;
       });
     }
-    let isInitialLoad = true;
     syncFromUrl(location.search);
 
     window.addEventListener("popstate", () => {
@@ -326,8 +326,6 @@ createApp({
     const filterOptions = computed(() => {
       if (!activeData.value) return { bundleOptions: [], appOptions: [] };
 
-      const showOptSet = new Set(showOptions.value);
-
       const rowsForSource = filterRows(activeData.value, {
         query: query.value,
         showOptions: app.value ? [`:${app.value}`] : [],
@@ -335,11 +333,10 @@ createApp({
 
       let bundleOptions = getFilterOptions(rowsForSource, activeData.value.namesMap).bundleOptions.map(
         (bundleOption) => {
-          const isSelected = showOptSet.has("bundle:" + bundleOption.value);
           const bundleObj = activeData.value.bundleMap[bundleOption.value];
           const repo = bundleObj ? bundleObj.repo.toLowerCase() : "";
           const icon = bundleObj ? bundleObj.avatarUrl : "";
-          return { ...bundleOption, selected: isSelected, repo, icon };
+          return { ...bundleOption, repo, icon };
         },
       );
 
@@ -529,6 +526,7 @@ createApp({
 
     const expandedAppLists = reactive(new Set());
     const overflowingAppLists = reactive(new Set());
+    const bundleViews = reactive({});
     const appListRefs = new Map();
 
     const expandAll = () => {
@@ -940,7 +938,6 @@ createApp({
       window.scrollTo({ top: 0, behavior: "smooth" });
     };
 
-    const bundleViews = reactive({});
     const toggleBundleView = (group) => {
       const key = typeof group === "string" ? group : group.key;
       bundleViews[key] = !bundleViews[key];
@@ -994,13 +991,10 @@ createApp({
     };
 
     const isNewBundle = (group) => {
-      const urlParams = new URLSearchParams(window.location.search);
-      if (urlParams.has("new")) return false;
-
+      if (isWhatsNewView.value) return false;
       if (!group || !group.bundle || !group.bundle.firstSeen) return false;
       const firstSeenTime = new Date(group.bundle.firstSeen).getTime();
-      const currentTime = new Date().getTime();
-      const diffDays = (currentTime - firstSeenTime) / (1000 * 3600 * 24);
+      const diffDays = (Date.now() - firstSeenTime) / (1000 * 3600 * 24);
       return diffDays <= 7;
     };
 
@@ -1025,13 +1019,13 @@ createApp({
       isTwoColumns.value = !isTwoColumns.value;
     };
 
-    window.addEventListener("popstate", () => {
-      const urlParams = new URLSearchParams(window.location.search);
-      const newIsTwoColumns = urlParams.get("view") !== "list";
-      if (isTwoColumns.value !== newIsTwoColumns) {
-        isTwoColumns.value = newIsTwoColumns;
-      }
-    });
+    const isAppHighlighted = (groupKey, appItem) => {
+      if (!isWhatsNewView.value) return false;
+      return (
+        whatsNewHighlights.value.includes(groupKey + ":" + (appItem.packageName || "universal")) ||
+        whatsNewHighlights.value.includes(groupKey + ":" + appItem.appName)
+      );
+    };
 
     return {
       query,
@@ -1103,6 +1097,7 @@ createApp({
       handlePopupTouchStart,
       handlePopupTouchEnd,
       togglePopupBundleView,
+      isAppHighlighted,
     };
   },
 }).mount("#app");
