@@ -487,7 +487,7 @@
                     :class="!effectiveTwoColumns ? 'justify-center md:justify-end md:w-auto' : 'justify-center'">
                     <template v-if="group.bundle.version">
                       <a v-if="group.bundle.releaseUrl" :href="group.bundle.releaseUrl" target="_blank" rel="noreferrer"
-                        @click.stop class="badge" title="What's New"><i
+                        @click.stop class="badge" title="Changelog"><i
                           class="fa-solid fa-clock-rotate-left"></i><span>{{
                           group.bundle.version }}</span></a>
                       <span v-else class="badge text-blue"><i class="fa-solid fa-clock-rotate-left"></i><span>{{
@@ -726,7 +726,7 @@
               <span class="flex flex-row flex-wrap items-center gap-2 text-xs text-light shrink-0 w-full justify-center">
                 <template v-if="group.bundle.version">
                   <a v-if="group.bundle.releaseUrl" :href="group.bundle.releaseUrl" target="_blank" rel="noreferrer"
-                    @click.stop class="badge" title="What's New"><i
+                    @click.stop class="badge" title="Changelog"><i
                       class="fa-solid fa-clock-rotate-left"></i><span>{{
                       group.bundle.version }}</span></a>
                   <span v-else class="badge text-blue"><i class="fa-solid fa-clock-rotate-left"></i><span>{{

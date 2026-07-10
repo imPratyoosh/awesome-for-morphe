@@ -286,7 +286,7 @@ def generate_markdown(json_diff, app_metadata, skip_words):
         trie_str = stringify_trie(all_changes)
         q = urllib.parse.quote(trie_str, safe=':,"()')
         full_url = f"https://nvbangg.github.io/awesome-for-morphe/?show={q}&new"
-        sections.append(f"✨ [_View full what's new details_]({full_url})")
+        sections.append(f"✨ [_View full changelog_]({full_url})")
 
     if markdown_lines:
         sections.append("\n".join(markdown_lines))
