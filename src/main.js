@@ -289,6 +289,7 @@ createApp({
           if (channel.value !== currentChannel) return;
           if (isUpdate === null) {
             patchesLoaded.value = true;
+            isLoading.value = false;
 
             const otherChannel = channel.value === "stable" ? "latest" : "stable";
             setTimeout(() => {
@@ -296,11 +297,17 @@ createApp({
             }, 100);
           } else if (activeData.value) {
             activeData.value.rows = [...activeData.value.rows];
+            if (isUpdate === true && showOptions.value.length > 0 && !query.value) {
+              isLoading.value = false;
+            }
           }
         });
+        
+        if (!query.value && showOptions.value.length === 0) {
+          isLoading.value = false;
+        }
       } catch (err) {
         errorMsg.value = err.message || err;
-      } finally {
         isLoading.value = false;
       }
     };
@@ -422,7 +429,8 @@ createApp({
 
           const appsMap = new Map();
 
-          if (!patchesLoaded.value && bundle.targetApps) {
+          const hasFilters = queryWords.length > 0 || showOptions.value.length > 0;
+          if (!patchesLoaded.value && bundle.targetApps && !hasFilters) {
             for (const packageName of bundle.targetApps) {
               const name = appName(packageName, activeData.value.namesMap, activeData.value.skipSet);
               appsMap.set(packageName, {
