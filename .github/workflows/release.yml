@@ -4,7 +4,7 @@ name: Generate Release
 
 on:
   schedule:
-    - cron: "0 1 * * *"
+    - cron: "0 23 * * *"
   workflow_dispatch:
 
 permissions:
@@ -20,24 +20,13 @@ jobs:
         with:
           ref: gh-pages
 
-      - name: Download bundles
-        run: python src/download.py --bundles
-
-      - name: Check bundle changes
-        id: bundle_changes
+      - name: Download and process data
         run: |
+          python src/download.py --bundles
           if [ -n "$(git status --porcelain)" ]; then
-            echo "changed=true" >> $GITHUB_OUTPUT
-          else
-            echo "changed=false" >> $GITHUB_OUTPUT
+            python src/download.py
           fi
-
-      - name: Download patches
-        if: steps.bundle_changes.outputs.changed == 'true'
-        run: python src/download.py
-
-      - name: Update metadata (Stars/Avatars/Icons)
-        run: |
+          
           pip install google-play-scraper
           DAY_OF_MONTH=$(date +%d)
           if [ "$DAY_OF_MONTH" -eq 1 ] || [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
@@ -45,43 +34,38 @@ jobs:
           else
             python src/update.py --stars
           fi
+          
+          python src/whats-new.py
 
-      - name: Generate what's new
-        run: python src/whats-new.py --release
-
-      - name: Check git changes
-        id: changes
+      - name: Commit and push changes
+        id: commit
         run: |
           if [ -n "$(git status --porcelain)" ]; then
+            git config --global user.name "github-actions[bot]"
+            git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+            TAG=$(date +'%Y.%m.%d')
+            DAY=$(date +'%B %-d')
+
+            git add data/
+            git commit -m "Update release history (${TAG})"
+            git push origin HEAD:gh-pages
+
             echo "changed=true" >> $GITHUB_OUTPUT
+            echo "TAG=${TAG}" >> $GITHUB_ENV
+            echo "DAY=${DAY}" >> $GITHUB_ENV
           else
             echo "changed=false" >> $GITHUB_OUTPUT
           fi
 
-      - name: Commit and push changes
-        if: steps.changes.outputs.changed == 'true'
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
-          TAG=$(date +'%Y.%m.%d')
-          DAY=$(date +'%B %-d')
-
-          git add data/
-          git commit -m "Update release history (${TAG})"
-          git push origin HEAD:gh-pages
-
-          echo "TAG=${TAG}" >> $GITHUB_ENV
-          echo "DAY=${DAY}" >> $GITHUB_ENV
-
       - name: Create release
-        if: steps.changes.outputs.changed == 'true' && hashFiles('whats-new.md') != ''
+        if: steps.commit.outputs.changed == 'true' && hashFiles('whats-new.md') != ''
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: gh release create "${{ env.TAG }}" --target "$(git rev-parse HEAD)" --title "🔔 What's New (${{ env.DAY }})" --notes-file whats-new.md --latest=false
 
       - name: Send Telegram release notification
-        if: steps.changes.outputs.changed == 'true' && hashFiles('whats-new.md') != ''
+        if: steps.commit.outputs.changed == 'true' && hashFiles('whats-new.md') != ''
         env:
           TG_CHAT: ${{ secrets.TG_CHAT }}
           TG_TOKEN: ${{ secrets.TG_TOKEN }}

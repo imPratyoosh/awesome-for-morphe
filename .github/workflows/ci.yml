@@ -20,28 +20,21 @@ jobs:
         with:
           ref: gh-pages
 
-      - name: Download bundles
-        run: python src/download.py --bundles
-
-      - name: Check git changes
-        id: changes
+      - name: Download and update bundles
+        id: update
         run: |
+          python src/download.py --bundles
           if [ -n "$(git status --porcelain)" ]; then
+            python src/download.py
+            pip install google-play-scraper
+            python src/update.py
             echo "changed=true" >> $GITHUB_OUTPUT
           else
             echo "changed=false" >> $GITHUB_OUTPUT
           fi
 
-      - name: Update bundles
-        if: steps.changes.outputs.changed == 'true'
-        run: |
-          python src/download.py
-          pip install google-play-scraper
-          python src/update.py
-          python src/whats-new.py
-
       - name: Commit and push changes
-        if: steps.changes.outputs.changed == 'true'
+        if: steps.update.outputs.changed == 'true'
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
