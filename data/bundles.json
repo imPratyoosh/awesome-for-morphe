@@ -327,9 +327,9 @@
     },
     "dev": {
       "file": "patches/anddea-dev.json",
-      "version": "v4.2.0-dev.3",
-      "releaseUrl": "https://github.com/anddea/revanced-patches/releases/tag/v4.2.0-dev.3",
-      "createdAt": "2026-07-10T11:22:55",
+      "version": "v4.2.0-dev.4",
+      "releaseUrl": "https://github.com/anddea/revanced-patches/releases/tag/v4.2.0-dev.4",
+      "createdAt": "2026-07-10T18:06:51",
       "targetApps": [
         "com.google.android.apps.youtube.music",
         "com.google.android.youtube",
@@ -1711,16 +1711,17 @@
     "firstSeen": "2026-07-09T04:53:42",
     "stable": {
       "file": "patches/miguel-stable.json",
-      "version": "v1.4.3",
-      "releaseUrl": "https://github.com/MiguelNinja19/miguel-morphe-patches/releases/tag/v1.4.3",
-      "createdAt": "2026-07-10T17:28:05",
+      "version": "v1.6.4",
+      "releaseUrl": "https://github.com/MiguelNinja19/miguel-morphe-patches/releases/tag/v1.6.4",
+      "createdAt": "2026-07-10T20:43:07",
       "targetApps": [
         "com.ea.game.pvzfree_row",
+        "com.rubygames.assassin",
         "diozz.cubex",
         "jpark.AOS5"
       ],
-      "appCount": 3,
-      "patchCount": 5
+      "appCount": 4,
+      "patchCount": 7
     },
     "latest": "stable"
   },

@@ -1720,5 +1720,9 @@
   "com.ea.game.pvzfree_row": {
     "name": "Plants vs. Zombies FREE",
     "iconUrl": "https://play-lh.googleusercontent.com/FGB00L2-aGHPAiRJPxbC3Th_KEaGvVroVF-tPSf_1Unh9kzzY-al4mp1yJT16I16FuLK6oJ-3H-KrVgTrg3ABFc"
+  },
+  "com.rubygames.assassin": {
+    "name": "Hunter Assassin",
+    "iconUrl": "https://play-lh.googleusercontent.com/c2plZekGHW4efm2udEpRub-HPnIrZ8LjpF1LhwlaIdu8cbGHIXtDAyno_skY-ujbhBfOSpOJbtKFeaphTZl4Pg"
   }
 }
