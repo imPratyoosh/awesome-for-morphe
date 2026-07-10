@@ -704,9 +704,9 @@
     },
     "dev": {
       "file": "patches/bufferk-dev.json",
-      "version": "v1.6.15-dev.6",
-      "releaseUrl": "https://github.com/bufferk/morphe-patches/releases/tag/v1.6.15-dev.6",
-      "createdAt": "2026-07-06T17:48:52",
+      "version": "v1.6.15-dev.7",
+      "releaseUrl": "https://github.com/bufferk/morphe-patches/releases/tag/v1.6.15-dev.7",
+      "createdAt": "2026-07-10T17:50:44",
       "targetApps": [
         "com.Splitwise.SplitwiseMobile",
         "com.bounce.connect",
@@ -1711,9 +1711,9 @@
     "firstSeen": "2026-07-09T04:53:42",
     "stable": {
       "file": "patches/miguel-stable.json",
-      "version": "v1.4.0",
-      "releaseUrl": "https://github.com/MiguelNinja19/miguel-morphe-patches/releases/tag/v1.4.0",
-      "createdAt": "2026-07-10T15:31:42",
+      "version": "v1.4.3",
+      "releaseUrl": "https://github.com/MiguelNinja19/miguel-morphe-patches/releases/tag/v1.4.3",
+      "createdAt": "2026-07-10T17:28:05",
       "targetApps": [
         "com.ea.game.pvzfree_row",
         "diozz.cubex",
