@@ -574,11 +574,11 @@
 
                         <div class="pl-6 pr-1 sm:px-4">
                           <div class="flex flex-col gap-1.5 pr-1.5 sm:pr-0 py-0.5 patches-scroll"
-                            :class="!bundleViews[group.key] ? 'max-h-[45vh] overflow-y-auto' : ''">
+                            :class="!bundleViews[group.key] ? 'max-h-[50vh] overflow-y-auto' : ''">
                             <div
                               v-for="patchItem in group.patches.filter(patchElem => patchElem.apps.some(appElem => (appElem.packageName || appElem.appName || 'any') === (appItem.packageName || appItem.appName || 'any')))"
                               :key="patchItem.id" @click="patchItem.options.length && toggleOptions(patchItem.id)"
-                              class="bg-gray py-1 pl-2.5 pr-1 sm:px-2.5 rounded-xl border border-lightGray shadow-sm flex flex-col"
+                              class="bg-gray py-1 pl-2.5 pr-1 sm:px-2.5 rounded-xl border border-lightGray shadow-sm flex flex-col shrink-0"
                               :class="{'cursor-pointer': patchItem.options.length}">
                               <div class="flex flex-wrap items-start justify-between gap-2 mb-0.5">
                                 <div class="flex items-center gap-2 flex-wrap min-w-0">
@@ -687,9 +687,8 @@
         </div>
         
 
-        <div v-if="popupGroup" class="w-full border-2 border-lightGray rounded-2xl overflow-hidden shadow-2xl bg-dark flex flex-col shrink min-h-0"
-        :class="popupBundleViews[popupGroup.key] ? 'overflow-y-auto apps-scroll' : ''">
-        <div v-for="group in [popupGroup]" :key="group.key" class="bg-dark flex flex-col flex-1 min-h-0">
+        <div v-if="popupGroup" class="w-full border-2 border-lightGray rounded-2xl shadow-2xl bg-dark flex flex-col shrink min-h-0 overflow-y-auto apps-scroll">
+        <div v-for="group in [popupGroup]" :key="group.key" class="bg-dark flex flex-col">
           <div class="flex justify-between gap-3 py-2 px-2 sm:px-3 flex-col items-stretch shrink-0">
               <div class="flex items-center gap-3 min-w-0 flex-1 w-full text-left justify-center">
                 <img v-if="group.bundle.avatarUrl" :src="group.bundle.avatarUrl" alt="Avatar"
@@ -745,7 +744,7 @@
               </span>
             </div>
 
-            <div class="border-t-2 border-lightGray bg-dark shadow-inner flex flex-col flex-1 min-h-0">
+            <div class="border-t-2 border-lightGray bg-dark shadow-inner flex flex-col">
               <template v-for="appsList in [group.appsList]">
                 <div :ref="(el) => setupPopupOverflowObserver(el, group.key)" v-show="!popupBundleViews[group.key]"
                   class="flex gap-1.5 py-1.5 px-3 border-b border-lightGray shrink-0"
@@ -788,8 +787,8 @@
 
                   <div v-if="popupExpandedOptions.has('popup_app_' + group.key + '_' + appItem.id)"
                     @touchstart="handlePopupTouchStart" @touchend="handlePopupTouchEnd($event, group.key, appItem, appsList)"
-                    class="flex flex-col gap-2 shadow-inner pt-2 pb-3 flex-1 min-h-0"
-                    :class="(popupActiveSwipeGroup === group.key && popupSwipeDirection ? 'swipe-transition-' + popupSwipeDirection : '') + (popupBundleViews[group.key] ? ' border-b-2 border-lightGray/30 shrink-0' : '')">
+                    class="flex flex-col gap-2 shadow-inner pt-2 pb-3"
+                    :class="(popupActiveSwipeGroup === group.key && popupSwipeDirection ? 'swipe-transition-' + popupSwipeDirection : '') + (popupBundleViews[group.key] ? ' border-b-2 border-lightGray/30' : '')">
                     <div class="flex flex-wrap items-center gap-2 min-w-0 px-3 sm:px-4 shrink-0">
                       <template v-if="appItem.packageName && appItem.packageName !== 'universal'">
                         <button @click.stop="filterByApp(appItem.packageName)" class="badge shrink-0">
@@ -815,13 +814,13 @@
                       </template>
                     </div>
 
-                    <div class="pl-6 pr-1 sm:px-4 flex-1 min-h-0 flex flex-col">
-                      <div class="flex flex-col gap-1.5 pr-1.5 sm:pr-0 py-0.5 patches-scroll flex-1 min-h-0"
-                        :class="!popupBundleViews[group.key] ? 'overflow-y-auto' : ''">
+                    <div class="pl-6 pr-1 sm:px-4 flex flex-col">
+                      <div class="flex flex-col gap-1.5 pr-1.5 sm:pr-0 py-0.5 patches-scroll"
+                        :class="!popupBundleViews[group.key] ? 'max-h-[50vh] overflow-y-auto' : ''">
                         <div
                           v-for="patchItem in group.patches.filter(patchElem => patchElem.apps.some(appElem => (appElem.packageName || appElem.appName || 'any') === (appItem.packageName || appItem.appName || 'any')))"
                           :key="patchItem.id" @click="patchItem.options.length && togglePopupOptions(patchItem.id)"
-                          class="bg-gray py-1 pl-2.5 pr-1 sm:px-2.5 rounded-xl border border-lightGray shadow-sm flex flex-col"
+                          class="bg-gray py-1 pl-2.5 pr-1 sm:px-2.5 rounded-xl border border-lightGray shadow-sm flex flex-col shrink-0"
                           :class="{'cursor-pointer': patchItem.options.length}">
                           <div class="flex flex-wrap items-start justify-between gap-2 mb-0.5">
                             <div class="flex items-center gap-2 flex-wrap min-w-0">
