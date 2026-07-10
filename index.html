@@ -239,7 +239,7 @@
                       class="fa-solid fa-chevron-down dd-chevron text-light text-xs flex-shrink-0 transition-transform duration-200 -mr-0.5 sm:mr-0"></i>
                   </button>
                   <div
-                    class="dd-panel max-h-[400px] overflow-y-auto apps-scroll bg-dark border border-lightGray rounded-md shadow-xl py-1 divide-y divide-white/10">
+                    class="dd-panel max-h-[400px] overflow-y-auto bg-dark border border-lightGray rounded-md shadow-xl py-1 divide-y divide-white/10">
                     <div class="sticky top-0 bg-dark px-2 pb-2 pt-1 border-b border-lightGray/30 z-10">
                       <div class="relative">
                         <span class="absolute left-2 top-0 h-8 flex items-center text-light pointer-events-none">
@@ -294,7 +294,7 @@
                     class="fa-solid fa-chevron-down dd-chevron text-light text-xs flex-shrink-0 transition-transform duration-200 -mr-0.5 sm:mr-0"></i>
                 </button>
                 <div
-                  class="dd-panel max-h-[400px] overflow-y-auto apps-scroll bg-dark border border-lightGray rounded-md shadow-xl py-1 divide-y divide-white/10">
+                  class="dd-panel max-h-[400px] overflow-y-auto bg-dark border border-lightGray rounded-md shadow-xl py-1 divide-y divide-white/10">
                   <div class="sticky top-0 bg-dark px-2 pb-2 pt-1 border-b border-lightGray/30 z-10">
                     <div class="relative">
                       <span class="absolute left-2 top-0 h-8 flex items-center text-light pointer-events-none">
@@ -573,7 +573,7 @@
                         </div>
 
                         <div class="pl-6 pr-1 sm:px-4">
-                          <div class="flex flex-col gap-1.5 pr-1.5 sm:pr-0 py-0.5 patches-scroll"
+                          <div class="flex flex-col gap-1.5 pr-1.5 sm:pr-0 py-0.5"
                             :class="!bundleViews[group.key] ? 'max-h-[50vh] overflow-y-auto' : ''">
                             <div
                               v-for="patchItem in group.patches.filter(patchElem => patchElem.apps.some(appElem => (appElem.packageName || appElem.appName || 'any') === (appItem.packageName || appItem.appName || 'any')))"
@@ -687,9 +687,9 @@
         </div>
         
 
-        <div v-if="popupGroup" class="w-full border-2 border-lightGray rounded-2xl shadow-2xl bg-dark flex flex-col shrink min-h-0 overflow-y-auto apps-scroll">
+        <div v-if="popupGroup" class="w-full border-2 border-lightGray rounded-2xl shadow-2xl bg-dark flex flex-col shrink min-h-0 overflow-y-auto">
         <div v-for="group in [popupGroup]" :key="group.key" class="bg-dark flex flex-col">
-          <div class="flex justify-between gap-3 py-2 px-2 sm:px-3 flex-col items-stretch shrink-0">
+          <div class="flex justify-between gap-3 py-2 px-2 sm:px-3 flex-col items-stretch shrink-0 sticky top-0 z-10 bg-dark shadow-sm">
               <div class="flex items-center gap-3 min-w-0 flex-1 w-full text-left justify-center">
                 <img v-if="group.bundle.avatarUrl" :src="group.bundle.avatarUrl" alt="Avatar"
                   class="w-12 h-12 rounded-full bg-lightGray/20 object-cover pointer-events-none select-none shrink-0 sm:mt-0.5">
@@ -815,7 +815,7 @@
                     </div>
 
                     <div class="pl-6 pr-1 sm:px-4 flex flex-col">
-                      <div class="flex flex-col gap-1.5 pr-1.5 sm:pr-0 py-0.5 patches-scroll"
+                      <div class="flex flex-col gap-1.5 pr-1.5 sm:pr-0 py-0.5"
                         :class="!popupBundleViews[group.key] ? 'max-h-[50vh] overflow-y-auto' : ''">
                         <div
                           v-for="patchItem in group.patches.filter(patchElem => patchElem.apps.some(appElem => (appElem.packageName || appElem.appName || 'any') === (appItem.packageName || appItem.appName || 'any')))"

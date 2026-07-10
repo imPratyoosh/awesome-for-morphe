@@ -56,8 +56,6 @@ function extractVersions(value) {
     versionB.version.localeCompare(versionA.version, undefined, { numeric: true, sensitivity: "base" }),
   );
 
-  if (versionList.length === 1) return versionList;
-
   const mainVersion = versionList.find((versionObj) => !versionObj.isExperimental) || versionList[0];
   return [...versionList.filter((versionObj) => versionObj !== mainVersion), mainVersion];
 }

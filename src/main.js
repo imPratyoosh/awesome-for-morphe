@@ -89,6 +89,27 @@ function parseShowTrie(str) {
 
 createApp({
   setup() {
+    const sortBundlesHelper = (bundleA, bundleB, keyA, keyB, order) => {
+      if (order === "apps") {
+        const countA = bundleA?.appCount || 0;
+        const countB = bundleB?.appCount || 0;
+        if (countA !== countB) return countB - countA;
+      } else if (order === "patches") {
+        const countA = bundleA?.patchCount || 0;
+        const countB = bundleB?.patchCount || 0;
+        if (countA !== countB) return countB - countA;
+      } else if (order === "latest") {
+        const dateA = bundleA?.createdAt ? new Date(bundleA.createdAt).getTime() : 0;
+        const dateB = bundleB?.createdAt ? new Date(bundleB.createdAt).getTime() : 0;
+        if (dateA !== dateB) return dateB - dateA;
+      } else if (order === "stars") {
+        const starsA = bundleA?.stars || 0;
+        const starsB = bundleB?.stars || 0;
+        if (starsA !== starsB) return starsB - starsA;
+      }
+      return keyA.localeCompare(keyB);
+    };
+
     const query = ref("");
     const bundle = ref("");
     const app = ref("");
@@ -312,7 +333,14 @@ createApp({
       }
     };
 
-    onMounted(loadData);
+    onMounted(() => {
+      loadData();
+      window.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && popupBundleKey.value) {
+          closePopup();
+        }
+      });
+    });
     watch(channel, loadData);
 
     const filteredRows = computed(() => {
@@ -340,28 +368,15 @@ createApp({
         },
       );
 
-      bundleOptions = [...bundleOptions].sort((a, b) => {
-        const bundleA = activeData.value.bundleMap[a.value];
-        const bundleB = activeData.value.bundleMap[b.value];
-        if (sortOrder.value === "apps") {
-          const countA = bundleA.appCount || 0;
-          const countB = bundleB.appCount || 0;
-          if (countA !== countB) return countB - countA;
-        } else if (sortOrder.value === "patches") {
-          const countA = bundleA.patchCount || 0;
-          const countB = bundleB.patchCount || 0;
-          if (countA !== countB) return countB - countA;
-        } else if (sortOrder.value === "latest") {
-          const dateA = bundleA?.createdAt ? new Date(bundleA.createdAt).getTime() : 0;
-          const dateB = bundleB?.createdAt ? new Date(bundleB.createdAt).getTime() : 0;
-          if (dateA !== dateB) return dateB - dateA;
-        } else if (sortOrder.value === "stars") {
-          const starsA = bundleA?.stars || 0;
-          const starsB = bundleB?.stars || 0;
-          if (starsA !== starsB) return starsB - starsA;
-        }
-        return a.value.localeCompare(b.value);
-      });
+      bundleOptions = [...bundleOptions].sort((a, b) =>
+        sortBundlesHelper(
+          activeData.value.bundleMap[a.value],
+          activeData.value.bundleMap[b.value],
+          a.value,
+          b.value,
+          sortOrder.value
+        )
+      );
 
       const rowsForApp = filterRows(activeData.value, {
         query: query.value,
@@ -490,26 +505,7 @@ createApp({
 
           return true;
         })
-        .sort((a, b) => {
-          if (sortOrder.value === "apps") {
-            const countA = a.bundle.appCount || 0;
-            const countB = b.bundle.appCount || 0;
-            if (countA !== countB) return countB - countA;
-          } else if (sortOrder.value === "patches") {
-            const countA = a.bundle.patchCount || 0;
-            const countB = b.bundle.patchCount || 0;
-            if (countA !== countB) return countB - countA;
-          } else if (sortOrder.value === "latest") {
-            const dateA = a.bundle.createdAt ? new Date(a.bundle.createdAt).getTime() : 0;
-            const dateB = b.bundle.createdAt ? new Date(b.bundle.createdAt).getTime() : 0;
-            if (dateA !== dateB) return dateB - dateA;
-          } else if (sortOrder.value === "stars") {
-            const starsA = a.bundle.stars || 0;
-            const starsB = b.bundle.stars || 0;
-            if (starsA !== starsB) return starsB - starsA;
-          }
-          return a.key.localeCompare(b.key);
-        });
+        .sort((a, b) => sortBundlesHelper(a.bundle, b.bundle, a.key, b.key, sortOrder.value));
     });
 
     const effectiveTwoColumns = computed(() => (bundlesGroups.value.length === 1 ? false : isTwoColumns.value));
@@ -548,6 +544,7 @@ createApp({
     const collapseAll = () => {
       expandedOptions.clear();
       expandedAppLists.clear();
+      expandedVersions.clear();
       for (const key in bundleViews) {
         delete bundleViews[key];
       }
