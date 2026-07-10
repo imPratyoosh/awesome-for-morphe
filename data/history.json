@@ -1,12 +1,4 @@
 {
-  "ImmortalZeus": {
-    "com.example.app": [
-      "Example Patch"
-    ],
-    "universal": [
-      "Block hosts in string resources"
-    ]
-  },
   "abhis1n": {
     "com.Splitwise.SplitwiseMobile": [
       "Enable Features"
@@ -1137,6 +1129,14 @@
     "com.persapps.multitimer": [
       "Bypass DRM",
       "Enable PRO"
+    ]
+  },
+  "ImmortalZeus": {
+    "com.example.app": [
+      "Example Patch"
+    ],
+    "universal": [
+      "Block hosts in string resources"
     ]
   },
   "imxeren": {

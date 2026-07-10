@@ -59,7 +59,7 @@ def collect_apps(list_json):
 
 def build_current_bundles():
     stable_dict, dev_dict = {}, {}
-    for patch_file in sorted(PATCHES_DIR.glob("*.json")):
+    for patch_file in sorted(PATCHES_DIR.glob("*.json"), key=lambda p: p.name.lower()):
         match = re.match(r"(.*)-(stable|dev)\.json$", patch_file.name)
         if not match:
             continue
@@ -262,7 +262,7 @@ def generate_markdown(json_diff, app_metadata, skip_words):
 
             trie_dict = {bundle_key: bundle_changes}
             trie_str = stringify_trie(trie_dict)
-            q = urllib.parse.quote(trie_str, safe=':,"()')
+            q = urllib.parse.quote(trie_str, safe=':,"')
             url = f"https://nvbangg.github.io/awesome-for-morphe/?show={q}&new"
 
             link = f"[{bundle_key}]({url})"
@@ -284,7 +284,7 @@ def generate_markdown(json_diff, app_metadata, skip_words):
     sections = []
     if all_changes:
         trie_str = stringify_trie(all_changes)
-        q = urllib.parse.quote(trie_str, safe=':,"()')
+        q = urllib.parse.quote(trie_str, safe=':,"')
         full_url = f"https://nvbangg.github.io/awesome-for-morphe/?show={q}&new"
         sections.append(f"✨ [_View full changelog_]({full_url})")
 
