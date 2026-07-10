@@ -894,6 +894,10 @@
       "Disable telemetry",
       "Enable SoundCloud Go+"
     ],
+    "com.superchinese": [
+      "Disable telemetry",
+      "Unlock all lessons"
+    ],
     "com.teslacoilsw.launcher": [
       "Enable Prime"
     ],
@@ -1269,6 +1273,10 @@
       "Fix Camera Mode Intent",
       "Higher Video Resolution"
     ],
+    "com.getepic.Epic": [
+      "Disable Region Lock",
+      "Enable Epic Family"
+    ],
     "com.hopefactory2021.fakegpslocation": [
       "Unlock Premium"
     ],
@@ -1306,6 +1314,10 @@
     ],
     "com.surmin.photofancie.lite": [
       "Unlock Pro"
+    ],
+    "jp.co.shueisha.mangaplus": [
+      "Bypass Reading Limitation",
+      "Enable Deluxe Plan"
     ],
     "universal": [
       "Change package name",
@@ -1353,10 +1365,10 @@
       "GmsCore support",
       "Hide ads",
       "Hide buttons",
-      "Hide category bar",
+      "Hide filter bar",
       "Hide flyout menu components",
       "Hide layout components",
-      "Hide music video ads",
+      "Hide music action buttons",
       "Miniplayer previous and next buttons",
       "Navigation bar",
       "Network proxy",
@@ -1440,7 +1452,6 @@
       "Spoof video streams",
       "Swipe controls",
       "Theme",
-      "Video ads",
       "Video quality",
       "Voice over translation"
     ],
@@ -2093,13 +2104,20 @@
     "com.accuweather.android": [
       "Unlock Premium+"
     ],
+    "com.acmeaom.android.myradar": [
+      "Unlock Premium"
+    ],
     "com.adguard.android": [
       "Unlock Lifetime Premium"
+    ],
+    "com.alexandrucene.dayhistory": [
+      "Unlock Premium"
     ],
     "com.amazon.mShop.android.shopping": [
       "Dark mode",
       "Disable search suggestions tracking",
       "Disable video autoplay",
+      "Fix Amazon manifest conflicts",
       "Hide Rufus tab",
       "Open links in browser",
       "Price history charts",
@@ -2118,8 +2136,14 @@
     "com.app.social_gamebox": [
       "Unlock Premium"
     ],
+    "com.appostrophe.scrl": [
+      "Unlock Premium"
+    ],
     "com.blockerhero": [
       "Unlock Lifetime"
+    ],
+    "com.blurams.ipc": [
+      "Unlock Cloud Service"
     ],
     "com.budget.tracker_app": [
       "Unlock Pro"
@@ -2140,13 +2164,30 @@
       "Disable Analytics / Telemetry",
       "Spoof WARP+ Unlimited UI"
     ],
+    "com.community.mbox.in": [
+      "Bypass member rights check",
+      "Clear VIP resolution tip",
+      "Spoof member brief info",
+      "Spoof member info",
+      "Spoof member provider flags",
+      "Suppress newbie bonus dialog",
+      "Unlock download member requirement",
+      "Unlock member resolution"
+    ],
+    "com.community.mbox.tv": [
+      "Bypass TV episode VIP gate",
+      "Clear VIP resolution tip",
+      "Spoof TV account VIP status",
+      "Unlock member resolution"
+    ],
     "com.community.oneroom": [
       "Bypass member rights check",
       "Clear VIP resolution tip",
-      "Spoof member active status",
-      "Spoof member days left",
+      "Spoof member brief info",
+      "Spoof member info",
       "Spoof member provider flags",
       "Suppress newbie bonus dialog",
+      "Unlock download member requirement",
       "Unlock member resolution"
     ],
     "com.cpuid.cpu_z": [
@@ -2155,11 +2196,18 @@
     "com.dubox.drive": [
       "Unlock VIP"
     ],
+    "com.duolingo": [
+      "Enable Debug Menu",
+      "Unlock Subscription"
+    ],
     "com.finalwire.aida64": [
       "Remove ads"
     ],
     "com.fitbod.fitbod": [
       "Unlock Premium"
+    ],
+    "com.flightaware.android.liveFlightTracker": [
+      "Unlock Ad-Free"
     ],
     "com.flightradar24free": [
       "Unlock Business Premium"
@@ -2189,6 +2237,15 @@
     "com.lawfully.lawfully_ai_tracker": [
       "Unlock Premium"
     ],
+    "com.life360.android.safetymapd": [
+      "Unlock Platinum"
+    ],
+    "com.live.flight.tracker": [
+      "Unlock Premium"
+    ],
+    "com.livescore": [
+      "Remove ads"
+    ],
     "com.localaiapp.scoops": [
       "Unlock Drama Episodes"
     ],
@@ -2197,6 +2254,12 @@
     ],
     "com.metalsoft.trackchecker_mobile": [
       "Unlock Pro / No Ads"
+    ],
+    "com.microsoft.office.excel": [
+      "Unlock Excel"
+    ],
+    "com.microsoft.office.word": [
+      "Unlock Word"
     ],
     "com.mindful.code.studio.toxly.scanner": [
       "Unlock Premium"
@@ -2221,11 +2284,17 @@
     "com.oasisfeng.greenify": [
       "Unlock Donation Features"
     ],
+    "com.onesports.score": [
+      "Unlock Premium"
+    ],
     "com.particlenews.newsbreak": [
       "Unlock Premium"
     ],
     "com.piksoft.turboscan.free": [
       "Unlock Pro features"
+    ],
+    "com.pocketprep.android.itcybersecurity": [
+      "Unlock Premium"
     ],
     "com.proxyman.proxymanandroid": [
       "Unlock Lifetime"
@@ -2236,6 +2305,9 @@
     "com.rarlab.rar": [
       "Unlock Pro"
     ],
+    "com.recipebro.cookingbuddy": [
+      "Unlock Premium"
+    ],
     "com.regasoftware.udisc": [
       "Unlock Pro"
     ],
@@ -2245,11 +2317,11 @@
     "com.shexa.permissionmanager": [
       "Unlock Pro"
     ],
-    "com.skinsort": [
-      "Unlock Premium"
-    ],
     "com.snow_forecast.snowforecast": [
       "Unlock Premium"
+    ],
+    "com.snowcorp.stickerly.android": [
+      "Unlock Plus"
     ],
     "com.socialnmobile.dictapps.notepad.color.note": [
       "Unlock Premium"
@@ -2266,6 +2338,9 @@
     "com.tecso.MigraConnect": [
       "Unlock Enterprise"
     ],
+    "com.thecarousell.Carousell": [
+      "Remove ads"
+    ],
     "com.thegrizzlylabs.geniusscan.free": [
       "Unlock Ultra"
     ],
@@ -2278,7 +2353,7 @@
     "com.toomics.global.google": [
       "Remove ADS"
     ],
-    "com.tracked.mobile": [
+    "com.tradingview.tradingviewapp": [
       "Unlock Premium"
     ],
     "com.tranzmate": [
@@ -2325,6 +2400,9 @@
     "com.windyty.android": [
       "Unlock Premium"
     ],
+    "com.wolfram.android.alphapro": [
+      "Unlock Professional"
+    ],
     "com.yatrirailways.yatri": [
       "Unlock VIP"
     ],
@@ -2343,8 +2421,22 @@
     "eu.faircode.netguard": [
       "Unlock Pro"
     ],
+    "eu.toneiv.ubktouch": [
+      "Unlock Pro"
+    ],
     "game.puzzle.blockpuzzle": [
       "Remove ads"
+    ],
+    "in.amazon.mShop.android.shopping": [
+      "Dark mode",
+      "Disable search suggestions tracking",
+      "Disable video autoplay",
+      "Fix Amazon manifest conflicts",
+      "Hide Rufus tab",
+      "Open links in browser",
+      "Price history charts",
+      "Remove ads",
+      "Sanitize share links"
     ],
     "io.goodservice.theweekendest": [
       "Unlock Plus"
@@ -2352,8 +2444,14 @@
     "it.mirko.beta": [
       "Unlock Premium"
     ],
+    "je.fit": [
+      "Unlock Elite"
+    ],
     "kha.prog.mikrotik": [
       "Unlock Pro"
+    ],
+    "mobi.lockdown.weather": [
+      "Unlock Premium"
     ],
     "net.pkge.pkge": [
       "Unlock Premium"

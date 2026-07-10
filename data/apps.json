@@ -1218,7 +1218,7 @@
     "iconUrl": "https://play-lh.googleusercontent.com/GSUQQyIV4kE_eODmBaJDuhfCqzA2rKuxFXmV6jjec8--M98EP4n3JdcwJDqyfkymqagQV-zqmrdPRSVnlUeU"
   },
   "com.community.oneroom": {
-    "name": "MovieBox TV",
+    "name": "MovieBox",
     "iconUrl": null
   },
   "app.ninjavpn.android": {
@@ -1696,5 +1696,25 @@
   "jpark.AOS5": {
     "name": "Anger of Stick 5",
     "iconUrl": "https://play-lh.googleusercontent.com/w7_4FvVtFRhH0VwVlY-isETzj8WJpEM7CwG1290zzl_5j1aTj6NNgm8QAGUDPOL-VQWoXEfdBKAP3xnLz9944Ws"
+  },
+  "com.superchinese": {
+    "name": "SuperChinese",
+    "iconUrl": "https://play-lh.googleusercontent.com/oqEWB9fLSMEayfQyRsGy88Ketkt7EdM5DGg5a43tprbki_m1W8IrU5OCdMXAuJAtPOIQ8VRrcFKcJFVgGnJTgw"
+  },
+  "com.community.mbox.in": {
+    "name": "MovieBox (India)",
+    "iconUrl": ""
+  },
+  "eu.toneiv.ubktouch": {
+    "name": "UbikiTouch",
+    "iconUrl": "https://play-lh.googleusercontent.com/mwINWGvA1fZZwTzDfYgl7FTTTj-iElnsWrRCjuwnVAtR62hJyZdcHgG1SRSSi5LiBjlcKINIchP-Ut0DRWPDfQ"
+  },
+  "mobi.lockdown.weather": {
+    "name": "Today Weather",
+    "iconUrl": "https://play-lh.googleusercontent.com/zFBEG3LySRSOn0BrgmHF87oExCusVHOyTG1rLirsJzI0Ffv2sCtFTLpKnOFIdE4kLkd8LWiw9oc_HTFdRlGpQg"
+  },
+  "com.life360.android.safetymapd": {
+    "name": "Life360",
+    "iconUrl": "https://play-lh.googleusercontent.com/nQsrQf5cd6IeIhFTvVFjez12UiB1QTYYyX1UiVA448XkK--5jQYBhDuiMHtBOWrVnoldLTlnUN1x3AbCt4vflg"
   }
 }

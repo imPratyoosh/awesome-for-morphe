@@ -1,8 +1,20 @@
 [
   {
     "date": "July 9, 2026",
-    "released": false,
+    "released": true,
     "bundles": {
+      "hoo-dles": {
+        "isNew": false,
+        "apps": {
+          "com.superchinese": {
+            "isNew": true,
+            "patches": [
+              "Disable telemetry",
+              "Unlock all lessons"
+            ]
+          }
+        }
+      },
       "lain": {
         "isNew": false,
         "apps": {
@@ -37,6 +49,20 @@
       "rushiranpise": {
         "isNew": false,
         "apps": {
+          "com.amazon.mShop.android.shopping": {
+            "isNew": false,
+            "patches": [
+              "Fix Amazon manifest conflicts"
+            ]
+          },
+          "com.community.oneroom": {
+            "isNew": false,
+            "patches": [
+              "Spoof member brief info",
+              "Spoof member info",
+              "Unlock download member requirement"
+            ]
+          },
           "com.acmeaom.android.myradar": {
             "isNew": true,
             "patches": [
@@ -44,12 +70,6 @@
             ]
           },
           "com.alexandrucene.dayhistory": {
-            "isNew": true,
-            "patches": [
-              "Unlock Premium"
-            ]
-          },
-          "com.amboss.medical.knowledge": {
             "isNew": true,
             "patches": [
               "Unlock Premium"
@@ -65,6 +85,19 @@
             "isNew": true,
             "patches": [
               "Unlock Cloud Service"
+            ]
+          },
+          "com.community.mbox.in": {
+            "isNew": true,
+            "patches": [
+              "Bypass member rights check",
+              "Clear VIP resolution tip",
+              "Spoof member brief info",
+              "Spoof member info",
+              "Spoof member provider flags",
+              "Suppress newbie bonus dialog",
+              "Unlock download member requirement",
+              "Unlock member resolution"
             ]
           },
           "com.community.mbox.tv": {
@@ -87,6 +120,12 @@
             "isNew": true,
             "patches": [
               "Unlock Ad-Free"
+            ]
+          },
+          "com.life360.android.safetymapd": {
+            "isNew": true,
+            "patches": [
+              "Unlock Platinum"
             ]
           },
           "com.live.flight.tracker": {
@@ -155,12 +194,19 @@
               "Unlock Professional"
             ]
           },
+          "eu.toneiv.ubktouch": {
+            "isNew": true,
+            "patches": [
+              "Unlock Pro"
+            ]
+          },
           "in.amazon.mShop.android.shopping": {
             "isNew": true,
             "patches": [
               "Dark mode",
               "Disable search suggestions tracking",
               "Disable video autoplay",
+              "Fix Amazon manifest conflicts",
               "Hide Rufus tab",
               "Open links in browser",
               "Price history charts",
@@ -172,6 +218,12 @@
             "isNew": true,
             "patches": [
               "Unlock Elite"
+            ]
+          },
+          "mobi.lockdown.weather": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
             ]
           }
         }
