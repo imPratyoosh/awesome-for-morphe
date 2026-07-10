@@ -1711,15 +1711,16 @@
     "firstSeen": "2026-07-09T04:53:42",
     "stable": {
       "file": "patches/miguel-stable.json",
-      "version": "v1.3.8",
-      "releaseUrl": "https://github.com/MiguelNinja19/miguel-morphe-patches/releases/tag/v1.3.8",
-      "createdAt": "2026-07-09T20:42:11",
+      "version": "v1.4.0",
+      "releaseUrl": "https://github.com/MiguelNinja19/miguel-morphe-patches/releases/tag/v1.4.0",
+      "createdAt": "2026-07-10T15:31:42",
       "targetApps": [
+        "com.ea.game.pvzfree_row",
         "diozz.cubex",
         "jpark.AOS5"
       ],
-      "appCount": 2,
-      "patchCount": 2
+      "appCount": 3,
+      "patchCount": 5
     },
     "latest": "stable"
   },
@@ -1733,14 +1734,14 @@
     "firstSeen": "2026-07-06T22:13:39",
     "stable": {
       "file": "patches/modx-stable.json",
-      "version": "v1.3.1",
-      "releaseUrl": "https://github.com/Utsavrajputt/Modx-patches/releases/tag/v1.3.1",
-      "createdAt": "2026-07-10T07:59:32",
+      "version": "v1.3.3",
+      "releaseUrl": "https://github.com/Utsavrajputt/Modx-patches/releases/tag/v1.3.3",
+      "createdAt": "2026-07-10T14:48:34",
       "targetApps": [
         "com.mxtech.videoplayer.ad"
       ],
       "appCount": 1,
-      "patchCount": 3
+      "patchCount": 4
     },
     "latest": "stable"
   },

@@ -1716,5 +1716,9 @@
   "com.life360.android.safetymapd": {
     "name": "Life360",
     "iconUrl": "https://play-lh.googleusercontent.com/nQsrQf5cd6IeIhFTvVFjez12UiB1QTYYyX1UiVA448XkK--5jQYBhDuiMHtBOWrVnoldLTlnUN1x3AbCt4vflg"
+  },
+  "com.ea.game.pvzfree_row": {
+    "name": "Plants vs. Zombies FREE",
+    "iconUrl": "https://play-lh.googleusercontent.com/FGB00L2-aGHPAiRJPxbC3Th_KEaGvVroVF-tPSf_1Unh9kzzY-al4mp1yJT16I16FuLK6oJ-3H-KrVgTrg3ABFc"
   }
 }
