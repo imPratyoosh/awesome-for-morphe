@@ -1711,9 +1711,9 @@
     "firstSeen": "2026-07-09T04:53:42",
     "stable": {
       "file": "patches/miguel-stable.json",
-      "version": "v1.6.8",
-      "releaseUrl": "https://github.com/MiguelNinja19/miguel-morphe-patches/releases/tag/v1.6.8",
-      "createdAt": "2026-07-10T23:24:21",
+      "version": "v1.6.9",
+      "releaseUrl": "https://github.com/MiguelNinja19/miguel-morphe-patches/releases/tag/v1.6.9",
+      "createdAt": "2026-07-11T01:06:20",
       "targetApps": [
         "com.ea.game.pvzfree_row",
         "com.rubygames.assassin",
