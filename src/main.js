@@ -601,7 +601,7 @@ createApp({
         overflowingAppLists.add(key);
         return;
       }
-      if (el.scrollHeight > Math.ceil(el.clientHeight)) {
+      if (el.scrollHeight > Math.ceil(el.clientHeight) + 2) {
         overflowingAppLists.add(key);
       } else {
         overflowingAppLists.delete(key);
@@ -723,6 +723,7 @@ createApp({
     };
 
     const closePopup = () => {
+      document.body.style.overflow = '';
       popupBundleKey.value = null;
       if (isWhatsNewView.value) {
         const urlParams = new URLSearchParams(location.search);
@@ -762,7 +763,7 @@ createApp({
         popupOverflowingAppLists.add(key);
         return;
       }
-      if (el.scrollHeight > Math.ceil(el.clientHeight)) {
+      if (el.scrollHeight > Math.ceil(el.clientHeight) + 2) {
         popupOverflowingAppLists.add(key);
       } else {
         popupOverflowingAppLists.delete(key);

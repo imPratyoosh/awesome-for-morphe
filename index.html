@@ -527,7 +527,7 @@
                   <template v-for="appsList in [group.appsList]">
                     <div :ref="(el) => setupOverflowObserver(el, group.key)" v-show="!bundleViews[group.key]"
                       class="flex content-start flex-wrap gap-1.5 py-1.5 px-3 border-b border-lightGray custom-scrollbar relative"
-                      :class="expandedAppLists.has(group.key) ? '' : 'overflow-y-auto overflow-x-hidden max-h-[110px]'">
+                      :class="expandedAppLists.has(group.key) ? '' : 'overflow-y-auto overflow-x-hidden max-h-[120px]'">
                       <i v-show="overflowingAppLists.has(group.key)" @click.stop="toggleAppList(group.key)"
                         class="fa-solid shrink-0 text-light cursor-pointer hover:text-white transition-colors flex items-center justify-center px-1"
                         :class="expandedAppLists.has(group.key) ? 'fa-chevron-up' : 'fa-chevron-down'"
@@ -769,7 +769,7 @@
               <template v-for="appsList in [group.appsList]">
                 <div :ref="(el) => setupPopupOverflowObserver(el, group.key)" v-show="!popupBundleViews[group.key]"
                   class="flex content-start flex-wrap gap-1.5 py-1.5 px-3 border-b border-lightGray shrink-0 custom-scrollbar relative"
-                  :class="popupExpandedAppLists.has(group.key) ? '' : 'overflow-y-auto overflow-x-hidden max-h-[110px]'">
+                  :class="popupExpandedAppLists.has(group.key) ? '' : 'overflow-y-auto overflow-x-hidden max-h-[120px]'">
                   <i v-show="popupOverflowingAppLists.has(group.key)" @click.stop="togglePopupAppList(group.key)"
                     class="fa-solid shrink-0 text-light cursor-pointer hover:text-white transition-colors flex items-center justify-center px-1"
                     :class="popupExpandedAppLists.has(group.key) ? 'fa-chevron-up' : 'fa-chevron-down'"
