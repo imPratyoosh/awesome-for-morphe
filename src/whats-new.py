@@ -135,10 +135,9 @@ def make_url(bundle, app=None, patches=None):
     else:
         query.append(f"show={bundle}")
 
-    query.append("new")
-
     if query:
         url += "?" + "&".join(query)
+    url += "#whats-new"
     return url
 
 
@@ -262,7 +261,7 @@ def generate_markdown(json_diff, app_metadata, skip_words):
             trie_dict = {bundle_key: bundle_changes}
             trie_str = stringify_trie(trie_dict)
             q = urllib.parse.quote(trie_str, safe=':,"')
-            url = f"https://nvbangg.github.io/awesome-for-morphe/?show={q}&new"
+            url = f"https://nvbangg.github.io/awesome-for-morphe/?show={q}#whats-new"
 
             link = f"[{bundle_key}]({url})"
             bundle_md = [f"- 📦 {link}"]
@@ -282,9 +281,7 @@ def generate_markdown(json_diff, app_metadata, skip_words):
 
     sections = []
     if all_changes:
-        trie_str = stringify_trie(all_changes)
-        q = urllib.parse.quote(trie_str, safe=':,"')
-        full_url = f"https://nvbangg.github.io/awesome-for-morphe/?show={q}&new"
+        full_url = "https://nvbangg.github.io/awesome-for-morphe/#whats-new"
         sections.append(f"✨ [_View full changelog_]({full_url})")
 
     if markdown_lines:

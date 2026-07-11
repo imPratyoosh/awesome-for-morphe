@@ -149,6 +149,18 @@ createApp({
       isSyncing = true;
       const params = new URLSearchParams(searchStr);
 
+      if (params.has("new")) {
+        params.delete("new");
+        const queryString = params.toString().replace(/=&/g, '&').replace(/=$/, '');
+        const newUrl = `${location.pathname}${queryString ? '?' + queryString : ''}#whats-new`;
+        history.replaceState(null, "", newUrl);
+        nextTick(() => {
+          isSyncing = false;
+          syncFromUrl(location.search);
+        });
+        return;
+      }
+
       const newQuery = params.get("q") || "";
       if (query.value !== newQuery) query.value = newQuery;
 
@@ -162,7 +174,7 @@ createApp({
       const newIsTwoColumns = !isList;
       if (isTwoColumns.value !== newIsTwoColumns) isTwoColumns.value = newIsTwoColumns;
 
-      const isNew = params.has("new");
+      const isNew = location.hash === "#whats-new";
       if (isWhatsNewView.value !== isNew) isWhatsNewView.value = isNew;
 
       const newBundle = params.get("bundle") || "";
@@ -194,9 +206,8 @@ createApp({
         } else {
           // Fallback to /#whats-new
           params.delete("show");
-          params.set("new", "");
           const queryString = params.toString().replace(/=&/g, '&').replace(/=$/, '');
-          const newUrl = `${location.pathname}?${queryString}#whats-new`;
+          const newUrl = `${location.pathname}${queryString ? '?' + queryString : ''}#whats-new`;
           history.replaceState(null, "", newUrl);
           
           nextTick(() => {
@@ -225,6 +236,9 @@ createApp({
     syncFromUrl(location.search);
 
     window.addEventListener("popstate", () => {
+      syncFromUrl(location.search);
+    });
+    window.addEventListener("hashchange", () => {
       syncFromUrl(location.search);
     });
 
@@ -257,11 +271,18 @@ createApp({
         }
         if (channel.value !== DEFAULT_CHANNEL) urlParts.push(`channel=${channel.value}`);
         if (sortOrder.value !== "stars") urlParts.push(`sort=${sortOrder.value}`);
-        if (isWhatsNewView.value) urlParts.push("new");
         if (!isTwoColumns.value) urlParts.push("view=list");
 
         const queryString = urlParts.join("&");
-        const newUrl = `${location.pathname}${queryString ? `?${queryString}` : ""}${location.hash}`;
+        
+        let targetHash = location.hash;
+        if (!isWhatsNewView.value && targetHash === '#whats-new') {
+          targetHash = "";
+        } else if (isWhatsNewView.value) {
+          targetHash = "#whats-new";
+        }
+        
+        const newUrl = `${location.pathname}${queryString ? `?${queryString}` : ""}${targetHash}`;
         const currentUrl = location.pathname + location.search + location.hash;
 
         if (currentUrl !== newUrl) {
@@ -659,7 +680,7 @@ createApp({
       const params = new URLSearchParams();
       if (channel.value !== DEFAULT_CHANNEL) params.set("channel", channel.value);
       params.set("show", groupKey);
-      return `?${params.toString()}`;
+      return `?${params.toString()}${location.hash === '#whats-new' ? '#whats-new' : ''}`;
     };
 
     const openPopupFast = (groupKey) => {
