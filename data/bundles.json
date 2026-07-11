@@ -891,9 +891,9 @@
     "firstSeen": "2026-07-06T22:13:39",
     "stable": {
       "file": "patches/franticg33k-stable.json",
-      "version": "v1.2.0",
-      "releaseUrl": "https://github.com/franticg33k/morphe-patches/releases/tag/v1.2.0",
-      "createdAt": "2026-07-10T21:53:39",
+      "version": "v1.2.1",
+      "releaseUrl": "https://github.com/franticg33k/morphe-patches/releases/tag/v1.2.1",
+      "createdAt": "2026-07-11T06:17:29",
       "targetApps": [
         "com.byairapp.android",
         "com.bytecaretech.merokarobar",
@@ -903,13 +903,13 @@
         "np.com.nepalipatro"
       ],
       "appCount": 6,
-      "patchCount": 11
+      "patchCount": 12
     },
     "dev": {
       "file": "patches/franticg33k-dev.json",
-      "version": "v1.2.0-dev.2",
-      "releaseUrl": "https://github.com/franticg33k/morphe-patches/releases/tag/v1.2.0-dev.2",
-      "createdAt": "2026-07-10T21:49:43",
+      "version": "v1.2.1-dev.1",
+      "releaseUrl": "https://github.com/franticg33k/morphe-patches/releases/tag/v1.2.1-dev.1",
+      "createdAt": "2026-07-11T06:13:34",
       "targetApps": [
         "com.byairapp.android",
         "com.bytecaretech.merokarobar",
@@ -919,7 +919,7 @@
         "np.com.nepalipatro"
       ],
       "appCount": 6,
-      "patchCount": 11
+      "patchCount": 12
     },
     "latest": "stable"
   },
@@ -1711,9 +1711,9 @@
     "firstSeen": "2026-07-09T04:53:42",
     "stable": {
       "file": "patches/miguel-stable.json",
-      "version": "v1.6.8",
-      "releaseUrl": "https://github.com/MiguelNinja19/miguel-morphe-patches/releases/tag/v1.6.8",
-      "createdAt": "2026-07-10T23:24:21",
+      "version": "v1.6.9",
+      "releaseUrl": "https://github.com/MiguelNinja19/miguel-morphe-patches/releases/tag/v1.6.9",
+      "createdAt": "2026-07-11T01:06:20",
       "targetApps": [
         "com.ea.game.pvzfree_row",
         "com.rubygames.assassin",
