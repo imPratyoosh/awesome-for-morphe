@@ -447,7 +447,7 @@
             <div class="grid gap-4 items-start" :class="effectiveTwoColumns ? 'md:grid-cols-2' : 'grid-cols-1'">
               <div v-for="group in bundlesGroups" :key="group.key"
                 class="bg-dark border-2 border-lightGray rounded-2xl overflow-hidden group/bundle shadow-sm flex flex-col">
-                <div @click="openBundlePopup(group.key)" class="flex justify-between gap-3 py-2 px-2 sm:px-3 cursor-pointer"
+                <div @click="toggleBundle(group)" class="flex justify-between gap-3 py-2 px-2 sm:px-3 cursor-pointer"
                   :class="!effectiveTwoColumns ? 'flex-col md:flex-row items-stretch md:items-center' : 'flex-col items-stretch'">
                   <div class="flex items-center gap-3 min-w-0 flex-1 w-full text-left"
                     :class="!effectiveTwoColumns ? 'justify-center sm:justify-start md:w-auto' : 'justify-center'">
@@ -499,6 +499,13 @@
                     <span v-if="group.bundle.createdAt" class="badge"><i class="fa-solid fa-calendar-days"></i><span>{{
                         formatDate(group.bundle.createdAt)
                         }}</span></span>
+                    <a :href="getBundlePopupUrl(group.key)" @click.stop.prevent="openPopupFast(group.key)" class="badge shrink-0" title="View this bundle">
+                      <i class="fa-solid fa-eye text-green"></i>
+                    </a>
+                    <button @click.stop="toggleBundleView(group)" class="badge shrink-0"
+                      :title="bundleViews[group.key] ? 'Switch to grid view' : 'Switch to list view'">
+                      <i class="fa-solid text-green" :class="bundleViews[group.key] ? 'fa-grip' : 'fa-list'"></i>
+                    </button>
                   </span>
                 </div>
 
@@ -670,16 +677,11 @@
     <div v-if="popupBundleKey" class="fixed inset-0 z-[10000] flex flex-col items-center justify-center p-2 sm:p-4 bg-black/80 backdrop-blur-sm transition-opacity" @click="closePopup">
       <div class="w-full max-w-4xl max-h-full flex flex-col gap-2 overflow-hidden animate-float-in" @click.stop>
 
-        <div class="flex items-center justify-between gap-2 w-full shrink-0">
-          <button @click.stop="filterByBundle(popupGroup?.key)" class="badge bg-green hover:bg-green/80 text-white border-green/50 cursor-pointer transition-colors shrink-0">
-            <i class="fa-solid fa-filter icon-center"></i>
-            <span>View full</span>
-          </button>
-          
+        <div class="flex items-center justify-end gap-2 w-full shrink-0">
           <div class="flex items-center gap-1 sm:gap-2">
             <span class="badge bg-dark border-lightGray text-light"><i class="fa-solid fa-mobile-screen"></i><span>{{ popupGroup?.appsList?.length || 0 }} apps</span></span>
             <span class="badge bg-dark border-lightGray text-light"><i class="fa-solid fa-puzzle-piece"></i><span>{{ popupGroup?.patches?.length || 0 }} patches</span></span>
-            <button @click="closePopup" class="badge bg-red-500/10 text-red-400 hover:bg-red-500/20 border-red-500/30 cursor-pointer transition-colors">
+            <button @click="closePopup" class="badge bg-dark border-lightGray text-orange hover:text-white cursor-pointer transition-colors">
               <i class="fa-solid fa-xmark icon-center"></i>
               <span class="hidden sm:inline">Close</span>
             </button>
@@ -689,8 +691,8 @@
 
         <div v-if="popupGroup" class="w-full border-2 border-lightGray rounded-2xl shadow-2xl bg-dark flex flex-col shrink min-h-0 overflow-y-auto">
         <div v-for="group in [popupGroup]" :key="group.key" class="bg-dark flex flex-col">
-          <div class="flex justify-between gap-3 py-2 px-2 sm:px-3 flex-col items-stretch shrink-0 sticky top-0 z-10 bg-dark shadow-sm">
-              <div class="flex items-center gap-3 min-w-0 flex-1 w-full text-left justify-center">
+          <div class="flex justify-between gap-3 py-2 px-2 sm:px-3 flex-col md:flex-row items-stretch md:items-center shrink-0 sticky top-0 z-10 bg-dark shadow-sm">
+              <div class="flex items-center gap-3 min-w-0 flex-1 w-full text-left justify-center sm:justify-start md:w-auto">
                 <img v-if="group.bundle.avatarUrl" :src="group.bundle.avatarUrl" alt="Avatar"
                   class="w-12 h-12 rounded-full bg-lightGray/20 object-cover pointer-events-none select-none shrink-0 sm:mt-0.5">
                 <div v-else
@@ -699,7 +701,7 @@
                 </div>
                 <div class="flex flex-col min-w-0 justify-center items-start gap-1 sm:gap-1.5 max-w-full">
 
-                  <div class="flex flex-wrap items-center gap-2 min-w-0 w-full justify-center">
+                  <div class="flex flex-wrap items-center gap-2 min-w-0 w-full justify-center sm:justify-start">
                     <strong
                       class="font-bold text-lg sm:text-xl text-transparent bg-clip-text bg-gradient-to-r from-blue to-green break-words leading-tight">{{
                       group.key }}</strong>
@@ -722,7 +724,7 @@
                   </a>
                 </div>
               </div>
-              <span class="flex flex-row flex-wrap items-center gap-2 text-xs text-light shrink-0 w-full justify-center">
+              <span class="flex flex-row flex-wrap items-center gap-2 text-xs text-light shrink-0 w-full justify-center md:justify-end md:w-auto">
                 <template v-if="group.bundle.version">
                   <a v-if="group.bundle.releaseUrl" :href="group.bundle.releaseUrl" target="_blank" rel="noreferrer"
                     @click.stop class="badge" title="Changelog"><i
@@ -737,6 +739,9 @@
                 <span v-if="group.bundle.createdAt" class="badge"><i class="fa-solid fa-calendar-days"></i><span>{{
                     formatDate(group.bundle.createdAt)
                     }}</span></span>
+                <a :href="getBundlePopupUrl(group.key)" @click.stop.prevent="openPopupFast(group.key)" class="badge shrink-0" title="View this bundle">
+                  <i class="fa-solid fa-eye text-green"></i>
+                </a>
                 <button @click.stop="togglePopupBundleView(group)" class="badge shrink-0"
                   :title="popupBundleViews[group.key] ? 'Switch to grid view' : 'Switch to list view'">
                   <i class="fa-solid text-green" :class="popupBundleViews[group.key] ? 'fa-grip' : 'fa-list'"></i>

@@ -121,7 +121,6 @@ createApp({
     const isTwoColumns = ref(new URLSearchParams(location.search).get("view") !== "list");
 
     const popupBundleKey = ref(null);
-    const returnUrlOnClose = ref(null);
 
     const activeData = ref(null);
     const isLoading = ref(true);
@@ -159,56 +158,64 @@ createApp({
       const newSortOrder = params.get("sort") || "stars";
       if (sortOrder.value !== newSortOrder) sortOrder.value = newSortOrder;
 
-      const rawParam = params.get("show");
-      let showArr = [];
-      let bundleParam = params.get("bundle");
-      let appParam = params.get("app");
-
-      if (bundleParam || appParam) {
-        showArr = [`${bundleParam || ""}${appParam ? ":" + appParam : ""}`];
-      } else if (rawParam) {
-        rawShowParam.value = decodeURIComponent(rawParam);
-        showArr = parseShowTrie(rawShowParam.value);
-      }
-
-      if (JSON.stringify(showOptions.value) !== JSON.stringify(showArr)) {
-        showOptions.value = showArr;
-      }
-
-      let initBundle = "",
-        initApp = "";
-      if (showArr.length > 0) {
-        const parsed = showArr.map((item) => {
-          const parts = item.split(":");
-          return { bundle: parts[0] || "", app: parts[1] || "" };
-        });
-        const firstBundle = parsed[0].bundle;
-        if (parsed.every((p) => p.bundle === firstBundle)) initBundle = firstBundle;
-        const firstApp = parsed[0].app;
-        if (parsed.every((p) => p.app === firstApp)) initApp = firstApp;
-      }
-      if (bundle.value !== initBundle) bundle.value = initBundle;
-      if (app.value !== initApp) app.value = initApp;
-
       const isList = params.get("view") === "list";
       const newIsTwoColumns = !isList;
       if (isTwoColumns.value !== newIsTwoColumns) isTwoColumns.value = newIsTwoColumns;
 
       const isNew = params.has("new");
       if (isWhatsNewView.value !== isNew) isWhatsNewView.value = isNew;
-      whatsNewHighlights.value = isNew ? showArr : [];
 
-      if (isInitialLoad && bundle.value) {
-        popupBundleKey.value = bundle.value;
-        returnUrlOnClose.value = location.pathname;
-        document.body.style.overflow = 'hidden';
-      } else if (!isInitialLoad) {
-        if (popupBundleKey.value && initBundle !== popupBundleKey.value) {
-          popupBundleKey.value = null;
-          document.body.style.overflow = '';
-          returnUrlOnClose.value = null;
+      const newBundle = params.get("bundle") || "";
+      if (bundle.value !== newBundle) bundle.value = newBundle;
+      
+      const newApp = params.get("app") || "";
+      if (app.value !== newApp) app.value = newApp;
+
+      const rawParam = params.get("show");
+      let showArr = [];
+      let foundValidPopup = false;
+      
+      if (rawParam) {
+        rawShowParam.value = decodeURIComponent(rawParam);
+        showArr = parseShowTrie(rawShowParam.value);
+        
+        const bundlesInShow = new Set(showArr.map(item => item.split(":")[0]).filter(Boolean));
+        
+        if (bundlesInShow.size === 1) {
+          foundValidPopup = true;
+          if (JSON.stringify(showOptions.value) !== JSON.stringify(showArr)) {
+            showOptions.value = showArr;
+          }
+          const targetBundle = Array.from(bundlesInShow)[0];
+          if (popupBundleKey.value !== targetBundle) {
+            popupBundleKey.value = targetBundle;
+            document.body.style.overflow = 'hidden';
+          }
+        } else {
+          // Fallback to /#whats-new
+          params.delete("show");
+          params.set("new", "");
+          const queryString = params.toString().replace(/=&/g, '&').replace(/=$/, '');
+          const newUrl = `${location.pathname}?${queryString}#whats-new`;
+          history.replaceState(null, "", newUrl);
+          
+          nextTick(() => {
+            isSyncing = false;
+            syncFromUrl(location.search);
+          });
+          return;
         }
       }
+
+      if (!foundValidPopup) {
+        if (showOptions.value.length > 0) showOptions.value = [];
+        if (popupBundleKey.value) {
+          popupBundleKey.value = null;
+          document.body.style.overflow = '';
+        }
+      }
+
+      whatsNewHighlights.value = isWhatsNewView.value && showOptions.value.length > 0 ? showOptions.value : [];
       isInitialLoad = false;
 
       nextTick(() => {
@@ -226,33 +233,8 @@ createApp({
       return whatsNewHighlights.value.includes(prefix);
     };
 
-    watch([bundle, app], () => {
-      if (isSyncing) return;
-      const targetPrefix = `${bundle.value || ""}${app.value ? ":" + app.value : ""}`;
-
-      const matches =
-        showOptions.value.length > 0 &&
-        showOptions.value.every((item) => {
-          const parts = item.split(":");
-          if (app.value) {
-            return parts[0] === bundle.value && parts[1] === app.value;
-          }
-          return parts[0] === bundle.value && parts.length === 1;
-        });
-
-      if (matches) {
-        return;
-      }
-
-      if (bundle.value || app.value) {
-        showOptions.value = [targetPrefix];
-      } else {
-        showOptions.value = [];
-      }
-    });
-
     watch(
-      [query, showOptions, channel, sortOrder, isTwoColumns],
+      [query, bundle, app, channel, sortOrder, isTwoColumns, showOptions],
       (newVals, oldVals) => {
         if (!isSyncing && oldVals && oldVals.some((v) => v !== undefined)) {
           isWhatsNewView.value = false;
@@ -260,6 +242,8 @@ createApp({
 
         const urlParts = [];
         if (query.value) urlParts.push(`q=${encodeURIComponent(query.value)}`);
+        if (bundle.value) urlParts.push(`bundle=${encodeURIComponent(bundle.value)}`);
+        if (app.value) urlParts.push(`app=${encodeURIComponent(app.value)}`);
 
         if (showOptions.value.length > 0) {
           const showStr =
@@ -277,18 +261,20 @@ createApp({
         if (!isTwoColumns.value) urlParts.push("view=list");
 
         const queryString = urlParts.join("&");
-        const newUrl = `${location.pathname}${queryString ? `?${queryString}` : ""}`;
-        const currentUrl = location.pathname + location.search;
+        const newUrl = `${location.pathname}${queryString ? `?${queryString}` : ""}${location.hash}`;
+        const currentUrl = location.pathname + location.search + location.hash;
 
         if (currentUrl !== newUrl) {
           if (!oldVals) {
             history.replaceState(null, "", newUrl);
           } else {
+            // Only push state if channel, show, app, or bundle changed significantly, else replace
             const otherChanged =
-              oldVals[1] !== newVals[1] ||
-              oldVals[2] !== newVals[2] ||
-              oldVals[3] !== newVals[3] ||
-              oldVals[4] !== newVals[4];
+              oldVals[1] !== newVals[1] || // bundle
+              oldVals[2] !== newVals[2] || // app
+              oldVals[3] !== newVals[3] || // channel
+              JSON.stringify(oldVals[6]) !== JSON.stringify(newVals[6]); // showOptions
+            
             if (otherChanged) {
               history.pushState(null, "", newUrl);
             } else {
@@ -345,9 +331,14 @@ createApp({
 
     const filteredRows = computed(() => {
       if (!activeData.value) return [];
+      let currentShowOptions = showOptions.value;
+      if (currentShowOptions.length === 0) {
+        const targetPrefix = `${bundle.value || ""}${app.value ? ":" + app.value : ""}`;
+        if (targetPrefix) currentShowOptions = [targetPrefix];
+      }
       return filterRows(activeData.value, {
         query: query.value,
-        showOptions: showOptions.value,
+        showOptions: currentShowOptions,
       });
     });
 
@@ -481,8 +472,14 @@ createApp({
           if (group.rows.length > 0) return true;
           if (patchesLoaded.value) return false;
 
-          if (showOptions.value.length > 0) {
-            const matched = showOptions.value.some((showOpt) => {
+          let currentShowOptions = showOptions.value;
+          if (currentShowOptions.length === 0) {
+            const targetPrefix = `${bundle.value || ""}${app.value ? ":" + app.value : ""}`;
+            if (targetPrefix) currentShowOptions = [targetPrefix];
+          }
+
+          if (currentShowOptions.length > 0) {
+            const matched = currentShowOptions.some((showOpt) => {
               const parts = showOpt.split(":");
               const b = parts[0];
               const a = parts.length > 1 ? parts[1] : "";
@@ -658,36 +655,35 @@ createApp({
       }
     };
 
-    const openBundlePopup = (groupKey) => {
-      if (popupBundleKey.value === groupKey) return;
-      returnUrlOnClose.value = location.pathname + location.search;
-      popupBundleKey.value = groupKey;
-      document.body.style.overflow = 'hidden';
+    const getBundlePopupUrl = (groupKey) => {
+      const params = new URLSearchParams();
+      if (channel.value !== DEFAULT_CHANNEL) params.set("channel", channel.value);
+      params.set("show", groupKey);
+      return `?${params.toString()}`;
+    };
+
+    const openPopupFast = (groupKey) => {
+      const newUrl = getBundlePopupUrl(groupKey);
+      history.pushState(null, "", newUrl);
+      syncFromUrl(location.search);
     };
 
     const closePopup = () => {
       popupBundleKey.value = null;
       document.body.style.overflow = '';
-      if (returnUrlOnClose.value) {
-        const url = returnUrlOnClose.value;
-        if (location.pathname + location.search !== url) {
-          history.pushState(null, "", url);
-          syncFromUrl(location.search);
-        }
-      }
+      
+      const urlParams = new URLSearchParams(location.search);
+      urlParams.delete("show");
+      const newUrl = `${location.pathname}${urlParams.toString() ? '?' + urlParams.toString() : ''}${location.hash}`;
+      history.pushState(null, "", newUrl);
+      
+      nextTick(() => {
+        syncFromUrl(location.search);
+      });
     };
 
     const selectBundleFromDropdown = (bundleKey) => {
-      if (!bundleKey) {
-        bundle.value = '';
-        return;
-      }
-      bundle.value = bundleKey;
-      setTimeout(() => {
-        returnUrlOnClose.value = location.pathname + location.search;
-        popupBundleKey.value = bundleKey;
-        document.body.style.overflow = 'hidden';
-      }, 50);
+      bundle.value = bundleKey || '';
     };
 
     const popupExpandedOptions = reactive(new Set());
@@ -913,26 +909,9 @@ createApp({
     const filterByApp = (packageName) => {
       resetFilters();
       app.value = packageName;
-      showOptions.value = [`:${packageName}`];
       if (popupBundleKey.value) {
-        popupBundleKey.value = null;
-        document.body.style.overflow = '';
-        returnUrlOnClose.value = null;
+        closePopup();
       }
-    };
-
-    const filterByBundle = (bundleKey) => {
-      resetFilters();
-      bundle.value = bundleKey;
-      showOptions.value = [bundleKey];
-      
-      setTimeout(() => {
-        returnUrlOnClose.value = location.pathname + location.search;
-        popupBundleKey.value = bundleKey;
-        document.body.style.overflow = 'hidden';
-      }, 50);
-
-      window.scrollTo({ top: 0, behavior: "smooth" });
     };
 
     const toggleBundleView = (group) => {
@@ -1071,13 +1050,13 @@ createApp({
       getAppName,
       getAppIcon,
       getBundleIcon,
-      filterByBundle,
       bundleViews,
       toggleBundleView,
       popupBundleKey,
       popupGroup,
       closePopup,
-      openBundlePopup,
+      getBundlePopupUrl,
+      openPopupFast,
       selectBundleFromDropdown,
       popupExpandedOptions,
       popupExpandedAppLists,
