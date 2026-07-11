@@ -687,17 +687,17 @@
     ]
   },
   "ee-morphe": {
-    "com.arlosoft.macrodroid": [
-      "Dog Patch"
-    ],
     "com.byairapp.android": [
       "Enable Online Pro",
       "Enable Pro"
     ],
-    "com.linguist": [
+    "com.going.mobile": [
       "Enable Pro"
     ],
     "epixler.de.hypnobox_android": [
+      "Enable Pro"
+    ],
+    "net.tsapps.appsales": [
       "Enable Pro"
     ],
     "universal": [
@@ -721,10 +721,12 @@
       "Remove License Check",
       "Remove Watermark"
     ],
-    "com.ideapreneurnepal.moneymitra": [
+    "com.jellywatch.app": [
+      "Remove License Activity",
       "Unlock Premium"
     ],
-    "com.jellywatch.app": [
+    "com.providelite.epicplay": [
+      "Remove Ads",
       "Remove License Activity",
       "Unlock Premium"
     ],

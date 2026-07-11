@@ -1,5 +1,40 @@
 [
   {
+    "date": "July 11, 2026",
+    "bundles": {
+      "ee-morphe": {
+        "isNew": false,
+        "apps": {
+          "com.going.mobile": {
+            "isNew": true,
+            "patches": [
+              "Enable Pro"
+            ]
+          },
+          "net.tsapps.appsales": {
+            "isNew": true,
+            "patches": [
+              "Enable Pro"
+            ]
+          }
+        }
+      },
+      "franticg33k": {
+        "isNew": false,
+        "apps": {
+          "com.providelite.epicplay": {
+            "isNew": true,
+            "patches": [
+              "Remove Ads",
+              "Remove License Activity",
+              "Unlock Premium"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
     "date": "July 9, 2026",
     "bundles": {
       "hoo-dles": {
