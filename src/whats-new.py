@@ -326,7 +326,7 @@ def main():
 
     # Insert today's JSON entry
     whats_new_data.insert(
-        0, {"date": today_str, "released": True, "bundles": json_diff}
+        0, {"date": today_str, "bundles": json_diff}
     )
 
     whats_new_data = whats_new_data[:15]

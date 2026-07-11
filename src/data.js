@@ -12,7 +12,7 @@ const simplifyString = (inputString) =>
     .toLowerCase()
     .replace(/[^a-z0-9]/g, "");
 
-async function fetchJson(url) {
+export async function fetchJson(url) {
   const key = url.toString();
   if (!jsonCache.has(key)) {
     jsonCache.set(

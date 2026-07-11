@@ -1,5 +1,3 @@
-// Copyright (c) 2026 nvbangg (github.com/nvbangg)
-
 import {
   createApp,
   ref,
@@ -9,7 +7,7 @@ import {
   reactive,
   nextTick,
 } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
-import { filterRows, getFilterOptions, loadChannelData, normalizeChannel, summarizeRows, appName } from "./data.js";
+import { filterRows, getFilterOptions, loadChannelData, normalizeChannel, summarizeRows, appName, fetchJson } from "./data.js";
 
 const DEFAULT_CHANNEL = "latest";
 
@@ -177,6 +175,21 @@ createApp({
         params.delete("new");
         hadNewParam = true;
         isWhatsNewView.value = true;
+      } else {
+        const isNew = location.hash === "#whats-new";
+        if (isWhatsNewView.value !== isNew) isWhatsNewView.value = isNew;
+      }
+
+      // Strip channel when entering What's New — it always uses the default (latest) channel
+      if (isWhatsNewView.value && params.has("channel")) {
+        params.delete("channel");
+        const queryString = params.toString();
+        const newUrl = `${location.pathname}${queryString ? "?" + queryString : ""}#whats-new`;
+        try {
+          history.replaceState(null, "", newUrl);
+        } catch (error) {
+          /* Ignore cross-origin iframe DOMExceptions */
+        }
       }
 
       const newQuery = params.get("q") || "";
@@ -191,11 +204,6 @@ createApp({
       const isList = params.get("view") === "list";
       const newIsTwoColumns = !isList;
       if (isTwoColumns.value !== newIsTwoColumns) isTwoColumns.value = newIsTwoColumns;
-
-      if (!hadNewParam) {
-        const isNew = location.hash === "#whats-new";
-        if (isWhatsNewView.value !== isNew) isWhatsNewView.value = isNew;
-      }
 
       const newBundle = params.get("bundle") || "";
       if (bundle.value !== newBundle) bundle.value = newBundle;
@@ -367,9 +375,135 @@ createApp({
       }
     };
 
-    onMounted(() => {
-      loadData();
+    const isShowingFullBundle = (groupKey) => {
+      if (showOptions.value.length === 0) return true;
+      if (showOptions.value.length === 1 && showOptions.value[0] === groupKey) return true;
+      return false;
+    };
+
+    const whatsNewHistory = ref([]);
+    const whatsNewAppsData = ref({});
+    const isWhatsNewLoading = ref(false);
+
+    const loadWhatsNewData = async () => {
+      isWhatsNewLoading.value = true;
+      try {
+        const [history, apps] = await Promise.all([
+          fetchJson(new URL("../data/whats-new.json", import.meta.url)),
+          fetchJson(new URL("../data/apps.json", import.meta.url))
+        ]);
+        whatsNewHistory.value = history || [];
+        whatsNewAppsData.value = apps || {};
+      } catch (err) {
+        console.error("Failed to load what's new data", err);
+      } finally {
+        isWhatsNewLoading.value = false;
+      }
+    };
+
+    const getWhatsNewAppIcon = (packageName) => {
+      return whatsNewAppsData.value[packageName]?.iconUrl || "";
+    };
+
+    const formatWhatsNewAppName = (packageName) => {
+      return appName(packageName, whatsNewAppsData.value, activeData.value ? activeData.value.skipSet : null);
+    };
+
+    const formatPatchName = (patchName) => {
+      if (typeof patchName !== "string") return patchName;
+      if (/[:,()]/.test(patchName)) return `"${patchName}"`;
+      return patchName;
+    };
+
+    const stringifyTrie = (bundlesDict) => {
+      const bundleStrs = [];
+      for (const [bundle, apps] of Object.entries(bundlesDict)) {
+        if (!apps || Object.keys(apps).length === 0) {
+          bundleStrs.push(bundle);
+        } else {
+          const appStrs = [];
+          for (const [app, patches] of Object.entries(apps)) {
+            if (!patches || patches.length === 0) {
+              appStrs.push(app);
+            } else if (patches.length === 1) {
+              appStrs.push(`${app}:${formatPatchName(patches[0])}`);
+            } else {
+              const patchStrs = patches.map(formatPatchName);
+              appStrs.push(`${app}:(${patchStrs.join(',')})`);
+            }
+          }
+          if (appStrs.length === 1) {
+            bundleStrs.push(`${bundle}:${appStrs[0]}`);
+          } else {
+            bundleStrs.push(`${bundle}:(${appStrs.join(',')})`);
+          }
+        }
+      }
+      return bundleStrs.join(',');
+    };
+
+    const navigateToWhatsNewShow = (trieStr) => {
+      const encodedShow = encodeURIComponent(trieStr)
+        .replace(/%3A/g, ":")
+        .replace(/%2C/g, ",")
+        .replace(/%28/g, "(")
+        .replace(/%29/g, ")");
+
+      // What's New always uses the default (latest) channel — strip channel param.
+      // Preserve sort and view so settings are retained when returning to search.
+      const currentParams = new URLSearchParams(location.search);
+      const urlParts = [];
+      if (currentParams.get("sort") && currentParams.get("sort") !== "stars") urlParts.push(`sort=${currentParams.get("sort")}`);
+      if (currentParams.get("view") === "list") urlParts.push("view=list");
+      urlParts.push(`show=${encodedShow}`);
+
+      const newUrl = `${location.pathname}?${urlParts.join("&")}#whats-new`;
+      try {
+        history.pushState(null, "", newUrl);
+      } catch (error) {
+        /* Ignore cross-origin iframe DOMExceptions */
+      }
       syncFromUrl(location.search);
+    };
+
+    const openBundlePopup = (bundleKey, bundleData) => {
+      if (!bundleData || bundleData.isNew) {
+        navigateToWhatsNewShow(bundleKey);
+      } else {
+        const bundleChanges = {};
+        for (const [packageName, data] of Object.entries(bundleData.apps || {})) {
+          if (data.isNew) {
+            bundleChanges[packageName] = [];
+          } else {
+            bundleChanges[packageName] = [...(data.patches || [])].sort();
+          }
+        }
+        navigateToWhatsNewShow(stringifyTrie({ [bundleKey]: bundleChanges }));
+      }
+    };
+    const openAppPopup = (bundleKey, packageName, appData) => {
+      if (!appData || appData.isNew) {
+        navigateToWhatsNewShow(`${bundleKey}:${packageName}`);
+      } else {
+        navigateToWhatsNewShow(stringifyTrie({ [bundleKey]: { [packageName]: [...(appData.patches || [])].sort() } }));
+      }
+    };
+    const openPatchPopup = (bundleKey, packageName, patchName) => {
+      navigateToWhatsNewShow(stringifyTrie({ [bundleKey]: { [packageName]: [patchName] } }));
+    };
+
+    watch(isWhatsNewView, (newVal) => {
+      if (newVal && whatsNewHistory.value.length === 0) {
+        loadWhatsNewData();
+      }
+    });
+
+    onMounted(async () => {
+      syncFromUrl(location.search);
+      if (isWhatsNewView.value && whatsNewHistory.value.length === 0) {
+        await loadWhatsNewData();
+      }
+      loadData();
       window.addEventListener("keydown", (event) => {
         if (event.key === "Escape" && popupBundleKey.value) {
           closePopup();
@@ -1080,12 +1214,6 @@ createApp({
       }
     };
 
-    const isShowingFullBundle = (groupKey) => {
-      if (showOptions.value.length === 0) return true;
-      if (showOptions.value.length === 1 && showOptions.value[0] === groupKey) return true;
-      return false;
-    };
-
     const isNewBundle = (groupItem) => {
       if (isWhatsNewView.value) return false;
       if (!groupItem || !groupItem.bundle || !groupItem.bundle.firstSeen) return false;
@@ -1168,6 +1296,13 @@ createApp({
       copyText,
       copiedStates,
       isShowingFullBundle,
+      whatsNewHistory,
+      isWhatsNewLoading,
+      getWhatsNewAppIcon,
+      formatWhatsNewAppName,
+      openBundlePopup,
+      openAppPopup,
+      openPatchPopup,
       isNewBundle,
       getAppName,
       getAppIcon,

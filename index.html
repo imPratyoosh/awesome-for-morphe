@@ -218,7 +218,7 @@
             </div>
           </div>
 
-          <div class="flex flex-col gap-3 p-2 md:p-3">
+          <div v-show="!isWhatsNewView" class="flex flex-col gap-3 p-2 md:p-3">
             <!-- Row 1: Filters -->
             <div class="flex flex-col md:flex-row gap-2.5">
               <!-- Reset & Bundle Container -->
@@ -404,7 +404,58 @@
     </section>
 
     <main class="max-w-4xl mx-auto px-0 sm:px-3 py-4 pb-16">
-      <div>
+      <div v-if="isWhatsNewView" class="text-white">
+        <div class="text-center mb-3">
+          <h2 class="text-3xl font-bold mb-1">What's New</h2>
+          <p class="text-light text-sm">Recently added bundles, apps &amp; patches</p>
+        </div>
+
+        <div v-if="isWhatsNewLoading" class="grid min-h-[220px] place-items-center text-light">Loading history...</div>
+        <div v-else class="flex flex-col gap-4">
+          <div v-for="day in whatsNewHistory" :key="day.date">
+            <div class="sticky top-0 bg-black z-10 py-2 mb-2 pl-2 md:pl-4">
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-calendar-days text-blue text-sm"></i>
+                <h3 class="text-base font-bold text-blue">{{ day.date }}</h3>
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-2 pl-2 pr-2 sm:pr-0 md:pl-4">
+              <div v-for="(bundleData, bundleKey) in day.bundles" :key="bundleKey" class="bg-gray border border-lightGray rounded-lg p-2.5 md:p-3">
+                <div class="flex items-center gap-2 mb-2 cursor-pointer hover:opacity-80 transition-opacity w-fit" @click="openBundlePopup(bundleKey, bundleData)">
+                  <i class="fa-solid fa-cubes text-light text-sm"></i>
+                  <h4 class="text-base font-bold text-white leading-snug">{{ bundleKey }}</h4>
+                  <span v-if="bundleData.isNew" class="badge text-yellow"><span>✨ New</span></span>
+                </div>
+
+                <div class="ml-3 md:ml-5 flex flex-col gap-2 border-l-2 border-lightGray/30 pl-2.5 md:pl-3">
+                  <div v-for="(appData, packageName) in bundleData.apps" :key="packageName">
+                    <div class="flex items-center gap-1.5 mb-1.5 cursor-pointer hover:opacity-80 transition-opacity w-fit" @click="openAppPopup(bundleKey, packageName, appData)">
+                      <img v-if="getWhatsNewAppIcon(packageName)" :src="getWhatsNewAppIcon(packageName)" class="w-4 h-4 rounded-sm object-contain shrink-0" alt="" loading="lazy">
+                      <i v-else class="fa-brands fa-android text-green text-sm w-4 text-center icon-center shrink-0"></i>
+                      <h5 class="font-medium text-sm text-white leading-snug">{{ formatWhatsNewAppName(packageName) }}</h5>
+                      <span v-if="appData.isNew &amp;&amp; !bundleData.isNew" class="badge text-yellow"><span>✨ New</span></span>
+                    </div>
+
+                    <div class="ml-2 md:ml-3 border-l-2 border-lightGray/30 pl-2 md:pl-3">
+                      <div class="flex flex-wrap gap-1.5">
+                        <div v-for="patch in appData.patches" :key="patch"
+                             class="badge border-lightGray hover:border-white/50 text-light cursor-pointer bg-dark shrink-0"
+                             @click="openPatchPopup(bundleKey, packageName, patch)">
+                          <span>{{ patch }}</span>
+                          <span v-if="!appData.isNew &amp;&amp; !bundleData.isNew" class="badge text-yellow"><span>✨ New</span></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div v-show="!isWhatsNewView">
         <div v-if="isLoading" class="grid min-h-[220px] place-items-center text-light">Loading {{ channel }} data...
         </div>
         <div v-else-if="errorMsg" class="grid min-h-[220px] place-items-center">
