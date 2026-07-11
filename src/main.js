@@ -147,18 +147,16 @@ createApp({
     let isSyncing = false;
     function syncFromUrl(searchStr) {
       isSyncing = true;
+      
       const params = new URLSearchParams(searchStr);
 
+      let hadNewParam = false;
       if (params.has("new")) {
         params.delete("new");
-        const queryString = params.toString().replace(/=&/g, '&').replace(/=$/, '');
-        const newUrl = `${location.pathname}${queryString ? '?' + queryString : ''}#whats-new`;
-        history.replaceState(null, "", newUrl);
-        nextTick(() => {
-          isSyncing = false;
-          syncFromUrl(location.search);
-        });
-        return;
+        hadNewParam = true;
+        isWhatsNewView.value = true;
+        // Don't return — fall through to process the show param synchronously.
+        // The watcher will fix the URL once isSyncing becomes false.
       }
 
       const newQuery = params.get("q") || "";
@@ -174,8 +172,10 @@ createApp({
       const newIsTwoColumns = !isList;
       if (isTwoColumns.value !== newIsTwoColumns) isTwoColumns.value = newIsTwoColumns;
 
-      const isNew = location.hash === "#whats-new";
-      if (isWhatsNewView.value !== isNew) isWhatsNewView.value = isNew;
+      if (!hadNewParam) {
+        const isNew = location.hash === "#whats-new";
+        if (isWhatsNewView.value !== isNew) isWhatsNewView.value = isNew;
+      }
 
       const newBundle = params.get("bundle") || "";
       if (bundle.value !== newBundle) bundle.value = newBundle;
@@ -208,7 +208,11 @@ createApp({
           params.delete("show");
           const queryString = params.toString().replace(/=&/g, '&').replace(/=$/, '');
           const newUrl = `${location.pathname}${queryString ? '?' + queryString : ''}#whats-new`;
-          history.replaceState(null, "", newUrl);
+          try {
+            history.replaceState(null, "", newUrl);
+          } catch (e) {
+            location.hash = "whats-new";
+          }
           
           nextTick(() => {
             isSyncing = false;
@@ -229,7 +233,27 @@ createApp({
       whatsNewHighlights.value = isWhatsNewView.value && showOptions.value.length > 0 ? showOptions.value : [];
       isInitialLoad = false;
 
+      const syncHadNew = hadNewParam;
       nextTick(() => {
+        if (syncHadNew) {
+          // Build the correct URL with #whats-new and without &new
+          const urlParts = [];
+          if (query.value) urlParts.push(`q=${encodeURIComponent(query.value)}`);
+          if (bundle.value) urlParts.push(`bundle=${encodeURIComponent(bundle.value)}`);
+          if (app.value) urlParts.push(`app=${encodeURIComponent(app.value)}`);
+          if (showOptions.value.length > 0) {
+            const showStr = rawShowParam.value || showOptions.value.join(",");
+            const encodedShow = encodeURIComponent(showStr)
+              .replace(/%3A/g, ":").replace(/%2C/g, ",").replace(/%28/g, "(").replace(/%29/g, ")");
+            urlParts.push(`show=${encodedShow}`);
+          }
+          if (channel.value !== DEFAULT_CHANNEL) urlParts.push(`channel=${channel.value}`);
+          if (sortOrder.value !== "stars") urlParts.push(`sort=${sortOrder.value}`);
+          if (!isTwoColumns.value) urlParts.push("view=list");
+          const qs = urlParts.join("&");
+          const newUrl = `${location.pathname}${qs ? "?" + qs : ""}#whats-new`;
+          try { history.replaceState(null, "", newUrl); } catch(e) {}
+        }
         isSyncing = false;
       });
     }
@@ -244,7 +268,7 @@ createApp({
 
     const hasHighlight = (prefix) => {
       if (!isWhatsNewView.value) return false;
-      return whatsNewHighlights.value.includes(prefix);
+      return whatsNewHighlights.value.includes(prefix) || whatsNewHighlights.value.some(p => p.startsWith(prefix + ":"));
     };
 
     watch(
@@ -253,6 +277,8 @@ createApp({
         if (!isSyncing && oldVals && oldVals.some((v) => v !== undefined)) {
           isWhatsNewView.value = false;
         }
+
+        if (isSyncing) return;
 
         const urlParts = [];
         if (query.value) urlParts.push(`q=${encodeURIComponent(query.value)}`);
@@ -282,24 +308,24 @@ createApp({
           targetHash = "#whats-new";
         }
         
-        const newUrl = `${location.pathname}${queryString ? `?${queryString}` : ""}${targetHash}`;
+        const newUrl = `${location.pathname}${queryString ? "?" + queryString : ""}${targetHash}`;
         const currentUrl = location.pathname + location.search + location.hash;
 
         if (currentUrl !== newUrl) {
           if (!oldVals) {
-            history.replaceState(null, "", newUrl);
+            try { history.replaceState(null, "", newUrl); } catch (e) {}
           } else {
-            // Only push state if channel, show, app, or bundle changed significantly, else replace
             const otherChanged =
-              oldVals[1] !== newVals[1] || // bundle
-              oldVals[2] !== newVals[2] || // app
-              oldVals[3] !== newVals[3] || // channel
-              JSON.stringify(oldVals[6]) !== JSON.stringify(newVals[6]); // showOptions
+              oldVals[0] !== newVals[0] ||
+              oldVals[1] !== newVals[1] ||
+              oldVals[2] !== newVals[2] ||
+              oldVals[3] !== newVals[3] ||
+              JSON.stringify(oldVals[6]) !== JSON.stringify(newVals[6]);
             
             if (otherChanged) {
-              history.pushState(null, "", newUrl);
+              try { history.pushState(null, "", newUrl); } catch (e) {}
             } else {
-              history.replaceState(null, "", newUrl);
+              try { history.replaceState(null, "", newUrl); } catch (e) {}
             }
           }
         }
@@ -342,6 +368,7 @@ createApp({
 
     onMounted(() => {
       loadData();
+      syncFromUrl(location.search);
       window.addEventListener("keydown", (e) => {
         if (e.key === "Escape" && popupBundleKey.value) {
           closePopup();
@@ -352,7 +379,7 @@ createApp({
 
     const filteredRows = computed(() => {
       if (!activeData.value) return [];
-      let currentShowOptions = popupBundleKey.value ? [] : showOptions.value;
+      let currentShowOptions = popupBundleKey.value && !(isWhatsNewView.value && showOptions.value.length > 0) ? [] : showOptions.value;
       if (currentShowOptions.length === 0) {
         const targetPrefix = `${bundle.value || ""}${app.value ? ":" + app.value : ""}`;
         if (targetPrefix) currentShowOptions = [targetPrefix];
@@ -691,17 +718,26 @@ createApp({
 
     const openPopupFast = (groupKey) => {
       const newUrl = getBundlePopupUrl(groupKey);
-      history.pushState(null, "", newUrl);
+      try { history.pushState(null, "", newUrl); } catch(e) {}
       syncFromUrl(location.search);
     };
 
     const closePopup = () => {
-      const urlParams = new URLSearchParams(location.search);
-      urlParams.delete("show");
-      const newUrl = `${location.pathname}${urlParams.toString() ? '?' + urlParams.toString() : ''}${location.hash}`;
-      history.pushState(null, "", newUrl);
-      
-      syncFromUrl(location.search);
+      popupBundleKey.value = null;
+      if (isWhatsNewView.value) {
+        const urlParams = new URLSearchParams(location.search);
+        urlParams.delete("show");
+        const newUrl = `${location.pathname}${urlParams.toString() ? '?' + urlParams.toString() : ''}#whats-new`;
+        try { history.replaceState(null, "", newUrl); } catch(e) { location.hash = "whats-new"; }
+        syncFromUrl(location.search);
+      } else {
+        const urlParams = new URLSearchParams(location.search);
+        urlParams.delete("show");
+        const newUrl = `${location.pathname}${urlParams.toString() ? '?' + urlParams.toString() : ''}${location.hash}`;
+        try { history.pushState(null, "", newUrl); } catch(e) {}
+        
+        syncFromUrl(location.search);
+      }
     };
 
     const selectBundleFromDropdown = (bundleKey) => {
