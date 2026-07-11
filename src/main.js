@@ -352,7 +352,7 @@ createApp({
 
     const filteredRows = computed(() => {
       if (!activeData.value) return [];
-      let currentShowOptions = showOptions.value;
+      let currentShowOptions = popupBundleKey.value ? [] : showOptions.value;
       if (currentShowOptions.length === 0) {
         const targetPrefix = `${bundle.value || ""}${app.value ? ":" + app.value : ""}`;
         if (targetPrefix) currentShowOptions = [targetPrefix];
@@ -574,7 +574,7 @@ createApp({
         overflowingAppLists.add(key);
         return;
       }
-      if (el.scrollWidth > Math.ceil(el.clientWidth)) {
+      if (el.scrollHeight > Math.ceil(el.clientHeight)) {
         overflowingAppLists.add(key);
       } else {
         overflowingAppLists.delete(key);
@@ -645,7 +645,13 @@ createApp({
           nextTick(() => {
             const btn = document.getElementById("tab_" + groupKey + "_" + clickedApp.id);
             if (btn) {
-              btn.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+              const container = btn.parentElement;
+              if (container) {
+                container.scrollTo({
+                  top: btn.offsetTop - container.clientHeight / 2 + btn.clientHeight / 2,
+                  behavior: "smooth"
+                });
+              }
             }
           });
         } else {
@@ -690,17 +696,12 @@ createApp({
     };
 
     const closePopup = () => {
-      popupBundleKey.value = null;
-      document.body.style.overflow = '';
-      
       const urlParams = new URLSearchParams(location.search);
       urlParams.delete("show");
       const newUrl = `${location.pathname}${urlParams.toString() ? '?' + urlParams.toString() : ''}${location.hash}`;
       history.pushState(null, "", newUrl);
       
-      nextTick(() => {
-        syncFromUrl(location.search);
-      });
+      syncFromUrl(location.search);
     };
 
     const selectBundleFromDropdown = (bundleKey) => {
@@ -725,7 +726,7 @@ createApp({
         popupOverflowingAppLists.add(key);
         return;
       }
-      if (el.scrollWidth > Math.ceil(el.clientWidth)) {
+      if (el.scrollHeight > Math.ceil(el.clientHeight)) {
         popupOverflowingAppLists.add(key);
       } else {
         popupOverflowingAppLists.delete(key);
@@ -777,7 +778,13 @@ createApp({
           nextTick(() => {
             const btn = document.getElementById("tab_popup_" + groupKey + "_" + clickedApp.id);
             if (btn) {
-              btn.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+              const container = btn.parentElement;
+              if (container) {
+                container.scrollTo({
+                  top: btn.offsetTop - container.clientHeight / 2 + btn.clientHeight / 2,
+                  behavior: "smooth"
+                });
+              }
             }
           });
         } else {
@@ -862,7 +869,13 @@ createApp({
             nextTick(() => {
               const btn = document.getElementById("tab_popup_" + singleGroup.key + "_" + targetApp.id);
               if (btn) {
-                btn.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+                const container = btn.parentElement;
+                if (container) {
+                  container.scrollTo({
+                    top: btn.offsetTop - container.clientHeight / 2 + btn.clientHeight / 2,
+                    behavior: "smooth"
+                  });
+                }
               }
             });
           }

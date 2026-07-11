@@ -11,7 +11,7 @@
   border: 1px solid color-mix(in srgb, currentColor 20%, transparent);
   background: color-mix(in srgb, currentColor 10%, transparent);
   transition: all 150ms;
-  color: #a1a1aa;
+  color: #bfbfbf;
 }
 
 .badge i,
@@ -23,7 +23,6 @@
 }
 
 .badge-sm {
-  padding: 1px 4px;
   font-size: 12px;
 }
 
@@ -38,7 +37,12 @@ a.badge {
   cursor: pointer;
 }
 a.badge:not([class*="text-"]) {
-  color: #3b82f6;
+  color: #3B82F6;
+  background: #222222;
+}
+a.badge:not([class*="bg-"]):hover {
+  background: color-mix(in srgb, currentColor 20%, transparent);
+  border-color: color-mix(in srgb, currentColor 30%, transparent);
 }
 
 button.badge {
@@ -48,9 +52,8 @@ button.badge:not([class*="text-"]) {
   color: #10b981;
 }
 button.badge:hover {
-  background: color-mix(in srgb, currentColor 20%, transparent);
-  border-color: color-mix(in srgb, currentColor 30%, transparent);
+  transform: scale(1.05);
 }
 button.badge:active {
-  transform: scale(0.96);
+  transform: scale(0.95);
 }
