@@ -626,11 +626,10 @@
                                       <template v-if="!expandedVersions.has(appElem.id)">
                                         <button
                                           @click.stop="copyText(appElem.versions[appElem.versions.length - 1].version, 'ver_' + appElem.id + '_last')"
-                                          class="badge badge-sm text-green"
-                                          :title="copiedStates['ver_' + appElem.id + '_last'] ? 'Copied!' : (appElem.versions[appElem.versions.length - 1].isExperimental ? 'Copy experimental version' : 'Copy app version')">
-                                          <i v-if="copiedStates['ver_' + appElem.id + '_last']"
-                                            class="fa-solid fa-check text-green"></i>
-                                          <i v-else-if="appElem.versions[appElem.versions.length - 1].isExperimental"
+                                          class="badge badge-sm text-green relative"
+                                          :title="appElem.versions[appElem.versions.length - 1].isExperimental ? 'Copy experimental version' : 'Copy app version'">
+                                          <span v-if="copiedStates['ver_' + appElem.id + '_last']" class="absolute top-full right-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-white bg-lightGray rounded shadow-lg whitespace-nowrap z-[60] pointer-events-none animate-float-in">Copied!</span>
+                                          <i v-if="appElem.versions[appElem.versions.length - 1].isExperimental"
                                             class="fa-solid fa-flask text-yellow"></i>
                                           <span>{{ appElem.versions[appElem.versions.length - 1].version }}</span>
                                         </button>
@@ -644,11 +643,10 @@
                                           v-for="versionItem in [...appElem.versions].sort((ver1, ver2) => ver1.version.localeCompare(ver2.version, undefined, { numeric: true }))"
                                           :key="versionItem.version"
                                           @click.stop="copyText(versionItem.version, 'ver_' + appElem.id + '_' + versionItem.version)"
-                                          class="badge badge-sm text-green"
-                                          :title="copiedStates['ver_' + appElem.id + '_' + versionItem.version] ? 'Copied!' : (versionItem.isExperimental ? 'Copy experimental version' : 'Copy app version')">
-                                          <i v-if="copiedStates['ver_' + appElem.id + '_' + versionItem.version]"
-                                            class="fa-solid fa-check text-green"></i>
-                                          <i v-else-if="versionItem.isExperimental"
+                                          class="badge badge-sm text-green relative"
+                                          :title="versionItem.isExperimental ? 'Copy experimental version' : 'Copy app version'">
+                                          <span v-if="copiedStates['ver_' + appElem.id + '_' + versionItem.version]" class="absolute top-full right-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-white bg-lightGray rounded shadow-lg whitespace-nowrap z-[60] pointer-events-none animate-float-in">Copied!</span>
+                                          <i v-if="versionItem.isExperimental"
                                             class="fa-solid fa-flask text-yellow"></i>
                                           <span>{{ versionItem.version }}</span>
                                         </button>
@@ -688,8 +686,8 @@
     </main>
 
 
-    <div v-if="popupBundleKey" class="fixed inset-0 z-[10000] flex flex-col items-center justify-start sm:justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-sm transition-opacity" style="padding-top: max(1.5rem, env(safe-area-inset-top, 1.5rem))" @click="closePopup">
-      <div class="w-full max-w-4xl max-h-full flex flex-col gap-2 overflow-visible animate-float-in" @click.stop>
+    <div v-if="popupBundleKey" class="fixed inset-0 z-[10000] flex flex-col items-center justify-start sm:justify-center px-0 py-4 sm:py-6 bg-black/80 backdrop-blur-sm transition-opacity" style="padding-top: max(1.5rem, env(safe-area-inset-top, 1.5rem))" @click="closePopup">
+      <div class="w-full max-w-4xl px-0 sm:px-3 max-h-full flex flex-col gap-2 overflow-visible animate-float-in" @click.stop>
         <div class="flex items-center justify-end gap-2 w-full shrink-0 pt-2 px-2">
           <div class="flex items-center gap-1 sm:gap-2">
             <span class="badge text-light"><i class="fa-solid fa-mobile-screen"></i><span>{{ popupGroup?.appsList?.length || 0 }} apps</span></span>
@@ -701,7 +699,7 @@
           </button>
         </div>
 
-        <div v-if="popupGroup" class="w-full border-2 border-lightGray rounded-2xl shadow-2xl bg-dark flex flex-col shrink min-h-0 overflow-y-auto">
+        <div v-if="popupGroup" class="w-full border-2 border-lightGray rounded-2xl shadow-2xl bg-dark flex flex-col shrink min-h-0" :class="popupExpandedAppLists.has(popupGroup.key) ? 'overflow-y-auto' : 'overflow-hidden'">
         <div v-for="group in [popupGroup]" :key="group.key" class="bg-dark flex flex-col">
           <div class="flex justify-between gap-3 py-2 px-2 sm:px-3 flex-col md:flex-row items-stretch md:items-center shrink-0 sticky top-0 z-10 bg-dark shadow-sm">
               <div class="flex items-center gap-3 min-w-0 flex-1 w-full text-left justify-center sm:justify-start md:w-auto">
@@ -839,7 +837,7 @@
 
                     <div class="pl-6 pr-1 sm:px-4 flex flex-col">
                       <div class="flex flex-col gap-1.5 pr-1.5 sm:pr-0 py-0.5"
-                        :class="!popupBundleViews[group.key] ? 'max-h-[50vh] overflow-y-auto' : ''">
+                        :class="!popupBundleViews[group.key] ? 'h-[60vh] overflow-y-auto' : ''">
                         <div
                           v-for="patchItem in group.patches.filter(patchElem => patchElem.apps.some(appElem => (appElem.packageName || appElem.appName || 'any') === (appItem.packageName || appItem.appName || 'any')))"
                           :key="patchItem.id" @click="patchItem.options.length && togglePopupOptions(patchItem.id)"
@@ -870,11 +868,10 @@
                                   <template v-if="!popupExpandedVersions.has(appElem.id)">
                                     <button
                                       @click.stop="copyText(appElem.versions[appElem.versions.length - 1].version, 'ver_' + appElem.id + '_last')"
-                                      class="badge badge-sm text-green"
-                                      :title="copiedStates['ver_' + appElem.id + '_last'] ? 'Copied!' : (appElem.versions[appElem.versions.length - 1].isExperimental ? 'Copy experimental version' : 'Copy app version')">
-                                      <i v-if="copiedStates['ver_' + appElem.id + '_last']"
-                                        class="fa-solid fa-check text-green"></i>
-                                      <i v-else-if="appElem.versions[appElem.versions.length - 1].isExperimental"
+                                      class="badge badge-sm text-green relative"
+                                      :title="appElem.versions[appElem.versions.length - 1].isExperimental ? 'Copy experimental version' : 'Copy app version'">
+                                      <span v-if="copiedStates['ver_' + appElem.id + '_last']" class="absolute top-full left-1/2 -translate-x-1/2 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-white bg-lightGray rounded shadow-lg whitespace-nowrap z-[60] pointer-events-none animate-float-in">Copied!</span>
+                                      <i v-if="appElem.versions[appElem.versions.length - 1].isExperimental"
                                         class="fa-solid fa-flask text-yellow"></i>
                                       <span>{{ appElem.versions[appElem.versions.length - 1].version }}</span>
                                     </button>
@@ -888,11 +885,10 @@
                                       v-for="versionItem in [...appElem.versions].sort((ver1, ver2) => ver1.version.localeCompare(ver2.version, undefined, { numeric: true }))"
                                       :key="versionItem.version"
                                       @click.stop="copyText(versionItem.version, 'ver_' + appElem.id + '_' + versionItem.version)"
-                                      class="badge badge-sm text-green"
-                                      :title="copiedStates['ver_' + appElem.id + '_' + versionItem.version] ? 'Copied!' : (versionItem.isExperimental ? 'Copy experimental version' : 'Copy app version')">
-                                      <i v-if="copiedStates['ver_' + appElem.id + '_' + versionItem.version]"
-                                        class="fa-solid fa-check text-green"></i>
-                                      <i v-else-if="versionItem.isExperimental"
+                                      class="badge badge-sm text-green relative"
+                                      :title="versionItem.isExperimental ? 'Copy experimental version' : 'Copy app version'">
+                                      <span v-if="copiedStates['ver_' + appElem.id + '_' + versionItem.version]" class="absolute top-full left-1/2 -translate-x-1/2 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-white bg-lightGray rounded shadow-lg whitespace-nowrap z-[60] pointer-events-none animate-float-in">Copied!</span>
+                                      <i v-if="versionItem.isExperimental"
                                         class="fa-solid fa-flask text-yellow"></i>
                                       <span>{{ versionItem.version }}</span>
                                     </button>
