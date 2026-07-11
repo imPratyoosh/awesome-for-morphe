@@ -825,18 +825,17 @@
     },
     "dev": {
       "file": "patches/ee-morphe-dev.json",
-      "version": "v1.3.0-dev.28",
-      "releaseUrl": "https://gitlab.com/early.egg3707/ee-morphe-patches/-/releases/v1.3.0-dev.28",
-      "createdAt": "2026-07-08T14:53:24",
+      "version": "v1.3.0-dev.32",
+      "releaseUrl": "https://gitlab.com/early.egg3707/ee-morphe-patches/-/releases/v1.3.0-dev.32",
+      "createdAt": "2026-07-10T23:15:55",
       "targetApps": [
-        "com.arlosoft.macrodroid",
         "com.byairapp.android",
-        "com.linguist",
+        "com.going.mobile",
         "epixler.de.hypnobox_android",
         "universal"
       ],
-      "appCount": 4,
-      "patchCount": 10
+      "appCount": 3,
+      "patchCount": 9
     },
     "latest": "dev"
   },
@@ -892,34 +891,35 @@
     "firstSeen": "2026-07-06T22:13:39",
     "stable": {
       "file": "patches/franticg33k-stable.json",
-      "version": "v1.1.2",
-      "releaseUrl": "https://github.com/franticg33k/morphe-patches/releases/tag/v1.1.2",
-      "createdAt": "2026-07-09T16:44:37",
+      "version": "v1.2.0",
+      "releaseUrl": "https://github.com/franticg33k/morphe-patches/releases/tag/v1.2.0",
+      "createdAt": "2026-07-10T21:53:39",
       "targetApps": [
         "com.byairapp.android",
         "com.bytecaretech.merokarobar",
         "com.harwin.prismatica",
         "com.jellywatch.app",
-        "np.com.nepalipatro"
-      ],
-      "appCount": 5,
-      "patchCount": 9
-    },
-    "dev": {
-      "file": "patches/franticg33k-dev.json",
-      "version": "v1.1.1-dev.1",
-      "releaseUrl": "https://github.com/franticg33k/morphe-patches/releases/tag/v1.1.1-dev.1",
-      "createdAt": "2026-07-09T16:35:44",
-      "targetApps": [
-        "com.byairapp.android",
-        "com.bytecaretech.merokarobar",
-        "com.harwin.prismatica",
-        "com.ideapreneurnepal.moneymitra",
-        "com.jellywatch.app",
+        "com.providelite.epicplay",
         "np.com.nepalipatro"
       ],
       "appCount": 6,
-      "patchCount": 10
+      "patchCount": 11
+    },
+    "dev": {
+      "file": "patches/franticg33k-dev.json",
+      "version": "v1.2.0-dev.2",
+      "releaseUrl": "https://github.com/franticg33k/morphe-patches/releases/tag/v1.2.0-dev.2",
+      "createdAt": "2026-07-10T21:49:43",
+      "targetApps": [
+        "com.byairapp.android",
+        "com.bytecaretech.merokarobar",
+        "com.harwin.prismatica",
+        "com.jellywatch.app",
+        "com.providelite.epicplay",
+        "np.com.nepalipatro"
+      ],
+      "appCount": 6,
+      "patchCount": 11
     },
     "latest": "stable"
   },
@@ -1065,9 +1065,9 @@
     },
     "dev": {
       "file": "patches/hoo-dles-dev.json",
-      "version": "v1.39.0-dev.2",
-      "releaseUrl": "https://github.com/hoo-dles/morphe-patches/releases/tag/v1.39.0-dev.2",
-      "createdAt": "2026-07-10T04:44:07",
+      "version": "v1.39.0-dev.3",
+      "releaseUrl": "https://github.com/hoo-dles/morphe-patches/releases/tag/v1.39.0-dev.3",
+      "createdAt": "2026-07-10T23:03:15",
       "targetApps": [
         "app.ttmikstories.android",
         "bitpit.launcher",
@@ -1711,9 +1711,9 @@
     "firstSeen": "2026-07-09T04:53:42",
     "stable": {
       "file": "patches/miguel-stable.json",
-      "version": "v1.6.4",
-      "releaseUrl": "https://github.com/MiguelNinja19/miguel-morphe-patches/releases/tag/v1.6.4",
-      "createdAt": "2026-07-10T20:43:07",
+      "version": "v1.6.8",
+      "releaseUrl": "https://github.com/MiguelNinja19/miguel-morphe-patches/releases/tag/v1.6.8",
+      "createdAt": "2026-07-10T23:24:21",
       "targetApps": [
         "com.ea.game.pvzfree_row",
         "com.rubygames.assassin",

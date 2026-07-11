@@ -1724,5 +1724,13 @@
   "com.rubygames.assassin": {
     "name": "Hunter Assassin",
     "iconUrl": "https://play-lh.googleusercontent.com/c2plZekGHW4efm2udEpRub-HPnIrZ8LjpF1LhwlaIdu8cbGHIXtDAyno_skY-ujbhBfOSpOJbtKFeaphTZl4Pg"
+  },
+  "com.going.mobile": {
+    "name": "Going",
+    "iconUrl": "https://play-lh.googleusercontent.com/GRGFAZQdcTYd549h1OtEpsCd-vpatHbAMhSN9SAxFNeqDvpJCsxlxpacNe6IpQLXy8sjXKW7iA2UyhbuFFY6"
+  },
+  "com.providelite.epicplay": {
+    "name": "Provide Lite",
+    "iconUrl": "https://play-lh.googleusercontent.com/Zhteg0XDRd__NcR7tjpCGjnMZyQ_YQFatsJVyXaH7R4Q1Svkl28vnlgLpfXpaAbKJRth9osJ6j6HMa5ewvSSTY8"
   }
 }
