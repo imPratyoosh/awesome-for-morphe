@@ -1735,9 +1735,9 @@
     "firstSeen": "2026-07-06T22:13:39",
     "stable": {
       "file": "patches/modx-stable.json",
-      "version": "v1.3.3",
-      "releaseUrl": "https://github.com/Utsavrajputt/Modx-patches/releases/tag/v1.3.3",
-      "createdAt": "2026-07-10T14:48:34",
+      "version": "v1.3.4",
+      "releaseUrl": "https://github.com/Utsavrajputt/Modx-patches/releases/tag/v1.3.4",
+      "createdAt": "2026-07-11T09:39:06",
       "targetApps": [
         "com.mxtech.videoplayer.ad"
       ],
