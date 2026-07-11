@@ -4,14 +4,15 @@ const CHANNELS = new Set(["stable", "latest"]);
 const DEFAULT_CHANNEL = "stable";
 const jsonCache = new Map();
 const dataCache = new Map();
-const simplify = (text) =>
-  (text || "")
+
+const simplifyString = (inputString) =>
+  (inputString || "")
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase()
     .replace(/[^a-z0-9]/g, "");
 
-async function json(url) {
+async function fetchJson(url) {
   const key = url.toString();
   if (!jsonCache.has(key)) {
     jsonCache.set(
@@ -45,9 +46,9 @@ export function appName(packageName, metadata, skipSet) {
 
 function extractVersions(value) {
   if (!Array.isArray(value)) return [];
-  const versionList = value.flatMap((item) => {
-    if (typeof item === "string") return [{ version: item, isExperimental: false }];
-    if (item?.version) return [{ version: String(item.version), isExperimental: !!item.isExperimental }];
+  const versionList = value.flatMap((versionItem) => {
+    if (typeof versionItem === "string") return [{ version: versionItem, isExperimental: false }];
+    if (versionItem?.version) return [{ version: String(versionItem.version), isExperimental: !!versionItem.isExperimental }];
     return [];
   });
 
@@ -89,7 +90,7 @@ function packages(patch) {
 }
 
 async function loadSource(key, channelObj, names, sourceInfo, skipSet) {
-  const list = await json(new URL(`../data/${channelObj.file}`, import.meta.url)).catch(() => ({}));
+  const list = await fetchJson(new URL(`../data/${channelObj.file}`, import.meta.url)).catch(() => ({}));
   const repo = sourceInfo.repo || "";
   const bundleVersion = channelObj.version || "";
   const bundleCreatedAt = channelObj.createdAt || "";
@@ -149,13 +150,13 @@ export async function loadChannelData(channelName, priorityKeys = [], onPatchLoa
   dataCache.set(channel, cachePromise);
 
   const [names, sources, skipWordsArray] = await Promise.all([
-    json(new URL("../data/apps.json", import.meta.url)).catch(() => ({})),
-    json(new URL(`../data/bundles.json`, import.meta.url)).catch(() => ({})),
-    json(new URL("./skip-words.json", import.meta.url)).catch(() => []),
+    fetchJson(new URL("../data/apps.json", import.meta.url)).catch(() => ({})),
+    fetchJson(new URL(`../data/bundles.json`, import.meta.url)).catch(() => ({})),
+    fetchJson(new URL("./skip-words.json", import.meta.url)).catch(() => []),
   ]);
 
   const skipSet = new Set(skipWordsArray);
-  const bundleKeys = Object.keys(sources).sort((a, b) => a.localeCompare(b));
+  const bundleKeys = Object.keys(sources).sort((bundleA, bundleB) => bundleA.localeCompare(bundleB));
 
   const bundleList = [];
   const priorityTasks = [];
@@ -191,8 +192,8 @@ export async function loadChannelData(channelName, priorityKeys = [], onPatchLoa
       try {
         const rows = await loadSource(key, channelObj, names, sourceObj, skipSet);
         return rows || [];
-      } catch (err) {
-        console.error(`Failed to load source ${key} for channel ${channel}:`, err);
+      } catch (error) {
+        console.error(`Failed to load source ${key} for channel ${channel}:`, error);
         return [];
       }
     };
@@ -208,7 +209,7 @@ export async function loadChannelData(channelName, priorityKeys = [], onPatchLoa
     channel,
     bundles: bundleList,
     rows: [],
-    bundleMap: Object.fromEntries(bundleList.map((bundle) => [bundle.key, bundle])),
+    bundleMap: Object.fromEntries(bundleList.map((bundleObj) => [bundleObj.key, bundleObj])),
     namesMap: names,
     skipSet: skipSet,
   };
@@ -222,8 +223,8 @@ export async function loadChannelData(channelName, priorityKeys = [], onPatchLoa
         if (onPatchLoaded && priorityRows.length > 0) {
           onPatchLoaded(true);
         }
-      } catch (e) {
-        console.error("Priority load failed", e);
+      } catch (error) {
+        console.error("Priority load failed", error);
       }
     }
 
@@ -235,8 +236,8 @@ export async function loadChannelData(channelName, priorityKeys = [], onPatchLoa
         if (onPatchLoaded && backgroundRows.length > 0) {
           onPatchLoaded(true);
         }
-      } catch (e) {
-        console.error("Background load failed", e);
+      } catch (error) {
+        console.error("Background load failed", error);
       }
     }
 
@@ -250,12 +251,12 @@ export async function loadChannelData(channelName, priorityKeys = [], onPatchLoa
 }
 
 export function filterRows(data, filters) {
-  const searchQueryWords = (filters.query || "").split(/\s+/).map(simplify).filter(Boolean);
+  const searchQueryWords = (filters.query || "").split(/\s+/).map(simplifyString).filter(Boolean);
 
   let parsedShowOptions = null;
   if (filters.showOptions && filters.showOptions.length > 0) {
-    parsedShowOptions = filters.showOptions.map((showOptionStr) => {
-      const parts = showOptionStr.split(":");
+    parsedShowOptions = filters.showOptions.map((showOptionString) => {
+      const parts = showOptionString.split(":");
       return {
         level: parts.length === 1 ? "bundle" : parts.length === 2 ? "app" : "patch",
         bundle: parts[0],
@@ -289,7 +290,7 @@ export function filterRows(data, filters) {
     }
 
     if (searchQueryWords.length > 0) {
-      const searchTarget = simplify(row.searchPatchesText);
+      const searchTarget = simplifyString(row.searchPatchesText);
       if (!searchQueryWords.every((searchWord) => searchTarget.includes(searchWord))) return false;
     }
     return true;
@@ -314,7 +315,7 @@ export function getFilterOptions(rows, namesMap = {}) {
 
   const appOptions = [...appMap]
     .map(([value, { label, icon }]) => ({ value, label, icon }))
-    .sort((a, b) => a.label.localeCompare(b.label) || a.value.localeCompare(b.value));
+    .sort((appA, appB) => appA.label.localeCompare(appB.label) || appA.value.localeCompare(appB.value));
 
   if (hasUniversal) {
     const universalName =
@@ -324,7 +325,7 @@ export function getFilterOptions(rows, namesMap = {}) {
 
   return {
     bundleOptions: Array.from(bundleSet)
-      .sort((a, b) => a.localeCompare(b))
+      .sort((bundleA, bundleB) => bundleA.localeCompare(bundleB))
       .map((value) => ({ value, label: value })),
     appOptions,
   };

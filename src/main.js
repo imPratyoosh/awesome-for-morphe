@@ -13,16 +13,16 @@ import { filterRows, getFilterOptions, loadChannelData, normalizeChannel, summar
 
 const DEFAULT_CHANNEL = "latest";
 
-function tokenize(str) {
+function tokenize(inputString) {
   const tokens = [];
   let current = "";
-  for (let i = 0; i < str.length; i++) {
-    const char = str[i];
+  for (let i = 0; i < inputString.length; i++) {
+    const char = inputString[i];
     if (char === '"') {
       let quoted = "";
       i++;
-      while (i < str.length && str[i] !== '"') {
-        quoted += str[i];
+      while (i < inputString.length && inputString[i] !== '"') {
+        quoted += inputString[i];
         i++;
       }
       tokens.push({ type: "STRING", value: quoted });
@@ -44,18 +44,18 @@ function tokenize(str) {
   return tokens;
 }
 
-function parseShowTrie(str) {
-  const tokens = tokenize(str);
+function parseShowTrie(inputString) {
+  const tokens = tokenize(inputString);
   let pos = 0;
   const results = [];
 
-  function parseNode(prefix) {
+  function parseNode(prefixItem) {
     if (pos >= tokens.length) return;
 
     if (tokens[pos].type === "(") {
       pos++;
       while (pos < tokens.length && tokens[pos].type !== ")") {
-        parseNode(prefix);
+        parseNode(prefixItem);
         if (pos < tokens.length && tokens[pos].type === ",") {
           pos++;
         }
@@ -64,9 +64,9 @@ function parseShowTrie(str) {
         pos++;
       }
     } else {
-      const val = tokens[pos].value;
+      const tokenValue = tokens[pos].value;
       pos++;
-      const newPrefix = prefix !== null && prefix !== undefined ? prefix + ":" + val : val;
+      const newPrefix = prefixItem !== null && prefixItem !== undefined ? prefixItem + ":" + tokenValue : tokenValue;
 
       if (pos < tokens.length && tokens[pos].type === ":") {
         pos++;
@@ -133,8 +133,8 @@ createApp({
       initialParams
         .get("show")
         .split(",")
-        .forEach((p) => {
-          const key = p.split(":")[0];
+        .forEach((part) => {
+          const key = part.split(":")[0];
           if (key) priorityKeys.add(key);
         });
     }
@@ -143,11 +143,33 @@ createApp({
     const whatsNewHighlights = ref([]);
     const rawShowParam = ref("");
 
-    let isInitialLoad = true;
+    const buildUrlString = (targetHash) => {
+      const urlParts = [];
+      if (query.value) urlParts.push(`q=${encodeURIComponent(query.value)}`);
+      if (bundle.value) urlParts.push(`bundle=${encodeURIComponent(bundle.value)}`);
+      if (app.value) urlParts.push(`app=${encodeURIComponent(app.value)}`);
+
+      if (showOptions.value.length > 0) {
+        const showStr = isWhatsNewView.value && rawShowParam.value ? rawShowParam.value : showOptions.value.join(",");
+        const encodedShow = encodeURIComponent(showStr)
+          .replace(/%3A/g, ":")
+          .replace(/%2C/g, ",")
+          .replace(/%28/g, "(")
+          .replace(/%29/g, ")");
+        urlParts.push(`show=${encodedShow}`);
+      }
+      if (channel.value !== DEFAULT_CHANNEL) urlParts.push(`channel=${channel.value}`);
+      if (sortOrder.value !== "stars") urlParts.push(`sort=${sortOrder.value}`);
+      if (!isTwoColumns.value) urlParts.push("view=list");
+
+      const queryString = urlParts.join("&");
+      return `${location.pathname}${queryString ? "?" + queryString : ""}${targetHash || ""}`;
+    };
+
     let isSyncing = false;
     function syncFromUrl(searchStr) {
       isSyncing = true;
-      
+
       const params = new URLSearchParams(searchStr);
 
       let hadNewParam = false;
@@ -155,8 +177,6 @@ createApp({
         params.delete("new");
         hadNewParam = true;
         isWhatsNewView.value = true;
-        // Don't return — fall through to process the show param synchronously.
-        // The watcher will fix the URL once isSyncing becomes false.
       }
 
       const newQuery = params.get("q") || "";
@@ -179,20 +199,20 @@ createApp({
 
       const newBundle = params.get("bundle") || "";
       if (bundle.value !== newBundle) bundle.value = newBundle;
-      
+
       const newApp = params.get("app") || "";
       if (app.value !== newApp) app.value = newApp;
 
       const rawParam = params.get("show");
       let showArr = [];
       let foundValidPopup = false;
-      
+
       if (rawParam) {
         rawShowParam.value = decodeURIComponent(rawParam);
         showArr = parseShowTrie(rawShowParam.value);
-        
-        const bundlesInShow = new Set(showArr.map(item => item.split(":")[0]).filter(Boolean));
-        
+
+        const bundlesInShow = new Set(showArr.map((item) => item.split(":")[0]).filter(Boolean));
+
         if (bundlesInShow.size === 1) {
           foundValidPopup = true;
           if (JSON.stringify(showOptions.value) !== JSON.stringify(showArr)) {
@@ -201,19 +221,19 @@ createApp({
           const targetBundle = Array.from(bundlesInShow)[0];
           if (popupBundleKey.value !== targetBundle) {
             popupBundleKey.value = targetBundle;
-            document.body.style.overflow = 'hidden';
+            document.body.style.overflow = "hidden";
           }
         } else {
-          // Fallback to /#whats-new
           params.delete("show");
-          const queryString = params.toString().replace(/=&/g, '&').replace(/=$/, '');
-          const newUrl = `${location.pathname}${queryString ? '?' + queryString : ''}#whats-new`;
+          const queryString = params.toString().replace(/=&/g, "&").replace(/=$/, "");
+          const newUrl = `${location.pathname}${queryString ? "?" + queryString : ""}#whats-new`;
           try {
             history.replaceState(null, "", newUrl);
-          } catch (e) {
+          } catch (error) {
+            /* Ignore cross-origin iframe DOMExceptions */
             location.hash = "whats-new";
           }
-          
+
           nextTick(() => {
             isSyncing = false;
             syncFromUrl(location.search);
@@ -226,33 +246,18 @@ createApp({
         if (showOptions.value.length > 0) showOptions.value = [];
         if (popupBundleKey.value) {
           popupBundleKey.value = null;
-          document.body.style.overflow = '';
+          document.body.style.overflow = "";
         }
       }
 
       whatsNewHighlights.value = isWhatsNewView.value && showOptions.value.length > 0 ? showOptions.value : [];
-      isInitialLoad = false;
 
-      const syncHadNew = hadNewParam;
       nextTick(() => {
-        if (syncHadNew) {
-          // Build the correct URL with #whats-new and without &new
-          const urlParts = [];
-          if (query.value) urlParts.push(`q=${encodeURIComponent(query.value)}`);
-          if (bundle.value) urlParts.push(`bundle=${encodeURIComponent(bundle.value)}`);
-          if (app.value) urlParts.push(`app=${encodeURIComponent(app.value)}`);
-          if (showOptions.value.length > 0) {
-            const showStr = rawShowParam.value || showOptions.value.join(",");
-            const encodedShow = encodeURIComponent(showStr)
-              .replace(/%3A/g, ":").replace(/%2C/g, ",").replace(/%28/g, "(").replace(/%29/g, ")");
-            urlParts.push(`show=${encodedShow}`);
-          }
-          if (channel.value !== DEFAULT_CHANNEL) urlParts.push(`channel=${channel.value}`);
-          if (sortOrder.value !== "stars") urlParts.push(`sort=${sortOrder.value}`);
-          if (!isTwoColumns.value) urlParts.push("view=list");
-          const qs = urlParts.join("&");
-          const newUrl = `${location.pathname}${qs ? "?" + qs : ""}#whats-new`;
-          try { history.replaceState(null, "", newUrl); } catch(e) {}
+        if (hadNewParam) {
+          const newUrl = buildUrlString("#whats-new");
+          try {
+            history.replaceState(null, "", newUrl);
+          } catch (error) { /* Ignore cross-origin iframe DOMExceptions */ }
         }
         isSyncing = false;
       });
@@ -266,54 +271,37 @@ createApp({
       syncFromUrl(location.search);
     });
 
-    const hasHighlight = (prefix) => {
+    const hasHighlight = (highlightPrefix) => {
       if (!isWhatsNewView.value) return false;
-      return whatsNewHighlights.value.includes(prefix) || whatsNewHighlights.value.some(p => p.startsWith(prefix + ":"));
+      return (
+        whatsNewHighlights.value.includes(highlightPrefix) || whatsNewHighlights.value.some((prefixItem) => prefixItem.startsWith(highlightPrefix + ":"))
+      );
     };
 
     watch(
       [query, bundle, app, channel, sortOrder, isTwoColumns, showOptions],
       (newVals, oldVals) => {
-        if (!isSyncing && oldVals && oldVals.some((v) => v !== undefined)) {
+        if (!isSyncing && oldVals && oldVals.some((value) => value !== undefined)) {
           isWhatsNewView.value = false;
         }
 
         if (isSyncing) return;
 
-        const urlParts = [];
-        if (query.value) urlParts.push(`q=${encodeURIComponent(query.value)}`);
-        if (bundle.value) urlParts.push(`bundle=${encodeURIComponent(bundle.value)}`);
-        if (app.value) urlParts.push(`app=${encodeURIComponent(app.value)}`);
-
-        if (showOptions.value.length > 0) {
-          const showStr =
-            isWhatsNewView.value && rawShowParam.value ? rawShowParam.value : showOptions.value.join(",");
-          const encodedShow = encodeURIComponent(showStr)
-            .replace(/%3A/g, ":")
-            .replace(/%2C/g, ",")
-            .replace(/%28/g, "(")
-            .replace(/%29/g, ")");
-          urlParts.push(`show=${encodedShow}`);
-        }
-        if (channel.value !== DEFAULT_CHANNEL) urlParts.push(`channel=${channel.value}`);
-        if (sortOrder.value !== "stars") urlParts.push(`sort=${sortOrder.value}`);
-        if (!isTwoColumns.value) urlParts.push("view=list");
-
-        const queryString = urlParts.join("&");
-        
         let targetHash = location.hash;
-        if (!isWhatsNewView.value && targetHash === '#whats-new') {
+        if (!isWhatsNewView.value && targetHash === "#whats-new") {
           targetHash = "";
         } else if (isWhatsNewView.value) {
           targetHash = "#whats-new";
         }
-        
-        const newUrl = `${location.pathname}${queryString ? "?" + queryString : ""}${targetHash}`;
+
+        const newUrl = buildUrlString(targetHash);
         const currentUrl = location.pathname + location.search + location.hash;
 
         if (currentUrl !== newUrl) {
           if (!oldVals) {
-            try { history.replaceState(null, "", newUrl); } catch (e) {}
+            try {
+              history.replaceState(null, "", newUrl);
+            } catch (error) { /* Ignore cross-origin iframe DOMExceptions */ }
           } else {
             const otherChanged =
               oldVals[0] !== newVals[0] ||
@@ -321,11 +309,15 @@ createApp({
               oldVals[2] !== newVals[2] ||
               oldVals[3] !== newVals[3] ||
               JSON.stringify(oldVals[6]) !== JSON.stringify(newVals[6]);
-            
+
             if (otherChanged) {
-              try { history.pushState(null, "", newUrl); } catch (e) {}
+              try {
+                history.pushState(null, "", newUrl);
+              } catch (error) { /* Ignore cross-origin iframe DOMExceptions */ }
             } else {
-              try { history.replaceState(null, "", newUrl); } catch (e) {}
+              try {
+                history.replaceState(null, "", newUrl);
+              } catch (error) { /* Ignore cross-origin iframe DOMExceptions */ }
             }
           }
         }
@@ -356,12 +348,12 @@ createApp({
             }
           }
         });
-        
+
         if (!query.value && showOptions.value.length === 0) {
           isLoading.value = false;
         }
-      } catch (err) {
-        errorMsg.value = err.message || err;
+      } catch (error) {
+        errorMsg.value = error.message || error;
         isLoading.value = false;
       }
     };
@@ -369,8 +361,8 @@ createApp({
     onMounted(() => {
       loadData();
       syncFromUrl(location.search);
-      window.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && popupBundleKey.value) {
+      window.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && popupBundleKey.value) {
           closePopup();
         }
       });
@@ -379,7 +371,8 @@ createApp({
 
     const filteredRows = computed(() => {
       if (!activeData.value) return [];
-      let currentShowOptions = popupBundleKey.value && !(isWhatsNewView.value && showOptions.value.length > 0) ? [] : showOptions.value;
+      let currentShowOptions =
+        popupBundleKey.value && !(isWhatsNewView.value && showOptions.value.length > 0) ? [] : showOptions.value;
       if (currentShowOptions.length === 0) {
         const targetPrefix = `${bundle.value || ""}${app.value ? ":" + app.value : ""}`;
         if (targetPrefix) currentShowOptions = [targetPrefix];
@@ -407,14 +400,14 @@ createApp({
         },
       );
 
-      bundleOptions = [...bundleOptions].sort((a, b) =>
+      bundleOptions = [...bundleOptions].sort((bundleA, bundleB) =>
         sortBundlesHelper(
-          activeData.value.bundleMap[a.value],
-          activeData.value.bundleMap[b.value],
-          a.value,
-          b.value,
-          sortOrder.value
-        )
+          activeData.value.bundleMap[bundleA.value],
+          activeData.value.bundleMap[bundleB.value],
+          bundleA.value,
+          bundleB.value,
+          sortOrder.value,
+        ),
       );
 
       const rowsForApp = filterRows(activeData.value, {
@@ -429,8 +422,8 @@ createApp({
     function filterDropdownOptions(options, searchValue, extraFields) {
       const queryWords = searchValue.toLowerCase().split(/\s+/).filter(Boolean);
       if (queryWords.length === 0) return options;
-      return options.filter((o) => {
-        const searchable = [o.label, o.value, ...extraFields.map((f) => o[f] || "")].join(" ").toLowerCase();
+      return options.filter((optionItem) => {
+        const searchable = [optionItem.label, optionItem.value, ...extraFields.map((field) => optionItem[field] || "")].join(" ").toLowerCase();
         return queryWords.every((word) => searchable.includes(word));
       });
     }
@@ -451,41 +444,41 @@ createApp({
       const queryWords = (query.value || "").toLowerCase().split(/\s+/).filter(Boolean);
 
       return activeData.value.bundles
-        .map((bundle) => {
-          const rows = filteredRows.value.filter((r) => r.bundleKey === bundle.key);
+        .map((bundleItem) => {
+          const rows = filteredRows.value.filter((rowItem) => rowItem.bundleKey === bundleItem.key);
 
-          const patchMap = new Map();
-          for (const row of rows) {
-            if (!patchMap.has(row.patchId)) {
-              patchMap.set(row.patchId, {
-                id: row.patchId,
-                patchName: row.patchName,
-                description: row.description,
-                enabled: row.enabled,
-                options: row.options || [],
+          const patchIdMap = new Map();
+          for (const rowItem of rows) {
+            if (!patchIdMap.has(rowItem.patchId)) {
+              patchIdMap.set(rowItem.patchId, {
+                id: rowItem.patchId,
+                patchName: rowItem.patchName,
+                description: rowItem.description,
+                enabled: rowItem.enabled,
+                options: rowItem.options || [],
                 apps: [],
               });
             }
-            if (row.packageName || row.appName) {
-              patchMap.get(row.patchId).apps.push({
-                id: row.id,
-                appName: row.appName,
-                appIcon: row.appIcon,
-                packageName: row.packageName,
-                versions: row.versions,
+            if (rowItem.packageName || rowItem.appName) {
+              patchIdMap.get(rowItem.patchId).apps.push({
+                id: rowItem.id,
+                appName: rowItem.appName,
+                appIcon: rowItem.appIcon,
+                packageName: rowItem.packageName,
+                versions: rowItem.versions,
               });
             }
           }
-          const patches = Array.from(patchMap.values()).sort((a, b) => a.patchName.localeCompare(b.patchName));
+          const patches = Array.from(patchIdMap.values()).sort((patchA, patchB) => patchA.patchName.localeCompare(patchB.patchName));
 
           const appsMap = new Map();
 
           const hasFilters = queryWords.length > 0 || showOptions.value.length > 0;
-          if (!patchesLoaded.value && bundle.targetApps && !hasFilters) {
-            for (const packageName of bundle.targetApps) {
+          if (!patchesLoaded.value && bundleItem.targetApps && !hasFilters) {
+            for (const packageName of bundleItem.targetApps) {
               const name = appName(packageName, activeData.value.namesMap, activeData.value.skipSet);
               appsMap.set(packageName, {
-                id: `${bundle.key}:${packageName}`,
+                id: `${bundleItem.key}:${packageName}`,
                 appName: name,
                 appIcon: activeData.value.namesMap[packageName]?.iconUrl || "",
                 packageName,
@@ -494,30 +487,30 @@ createApp({
             }
           }
 
-          for (const p of patches) {
-            for (const app of p.apps) {
-              const appKey = app.packageName || app.appName || "any";
-              appsMap.set(appKey, app);
+          for (const patchItem of patches) {
+            for (const appItem of patchItem.apps) {
+              const appKey = appItem.packageName || appItem.appName || "any";
+              appsMap.set(appKey, appItem);
             }
           }
 
-          const appsList = Array.from(appsMap.values()).sort((a, b) => {
-            const isAnyA = !a.packageName || a.packageName === "universal" ? 1 : 0;
-            const isAnyB = !b.packageName || b.packageName === "universal" ? 1 : 0;
+          const appsList = Array.from(appsMap.values()).sort((appA, appB) => {
+            const isAnyA = !appA.packageName || appA.packageName === "universal" ? 1 : 0;
+            const isAnyB = !appB.packageName || appB.packageName === "universal" ? 1 : 0;
             if (isAnyA !== isAnyB) return isAnyA - isAnyB;
-            return (a.appName || "").localeCompare(b.appName || "");
+            return (appA.appName || "").localeCompare(appB.appName || "");
           });
 
           return {
-            key: bundle.key,
-            bundle: bundle,
+            key: bundleItem.key,
+            bundle: bundleItem,
             rows,
             patches,
             appsList,
           };
         })
-        .filter((group) => {
-          if (group.rows.length > 0) return true;
+        .filter((groupItem) => {
+          if (groupItem.rows.length > 0) return true;
           if (patchesLoaded.value) return false;
 
           let currentShowOptions = showOptions.value;
@@ -529,20 +522,20 @@ createApp({
           if (currentShowOptions.length > 0) {
             const matched = currentShowOptions.some((showOpt) => {
               const parts = showOpt.split(":");
-              const b = parts[0];
-              const a = parts.length > 1 ? parts[1] : "";
-              if (b && b !== group.key) return false;
-              if (a && a !== "universal" && !group.bundle.targetApps?.includes(a)) return false;
+              const targetBundle = parts[0];
+              const targetApp = parts.length > 1 ? parts[1] : "";
+              if (targetBundle && targetBundle !== groupItem.key) return false;
+              if (targetApp && targetApp !== "universal" && !groupItem.bundle.targetApps?.includes(targetApp)) return false;
               return true;
             });
             if (!matched) return false;
           }
 
           if (queryWords.length > 0) {
-            const appNamesStr = (group.bundle.targetApps || [])
+            const appNamesStr = (groupItem.bundle.targetApps || [])
               .map((pkg) => appName(pkg, activeData.value.namesMap, activeData.value.skipSet))
               .join(" ");
-            const searchable = [group.key, group.bundle.repo, ...(group.bundle.targetApps || []), appNamesStr]
+            const searchable = [groupItem.key, groupItem.bundle.repo, ...(groupItem.bundle.targetApps || []), appNamesStr]
               .join(" ")
               .toLowerCase();
             if (!queryWords.every((word) => searchable.includes(word))) return false;
@@ -550,7 +543,7 @@ createApp({
 
           return true;
         })
-        .sort((a, b) => sortBundlesHelper(a.bundle, b.bundle, a.key, b.key, sortOrder.value));
+        .sort((groupA, groupB) => sortBundlesHelper(groupA.bundle, groupB.bundle, groupA.key, groupB.key, sortOrder.value));
     });
 
     const effectiveTwoColumns = computed(() => (bundlesGroups.value.length === 1 ? false : isTwoColumns.value));
@@ -571,16 +564,16 @@ createApp({
     const appListRefs = new Map();
 
     const expandAll = () => {
-      bundlesGroups.value.forEach((group) => {
-        if (group.appsList && group.appsList.length > 0) {
-          const firstApp = group.appsList[0];
-          expandedOptions.add("app_" + group.key + "_" + firstApp.id);
+      bundlesGroups.value.forEach((groupItem) => {
+        if (groupItem.appsList && groupItem.appsList.length > 0) {
+          const firstApp = groupItem.appsList[0];
+          expandedOptions.add("app_" + groupItem.key + "_" + firstApp.id);
         }
-        if (overflowingAppLists.has(group.key)) {
-          expandedAppLists.add(group.key);
+        if (overflowingAppLists.has(groupItem.key)) {
+          expandedAppLists.add(groupItem.key);
           setTimeout(() => {
-            const el = appListRefs.get(group.key);
-            if (el) checkOverflow(el, group.key);
+            const element = appListRefs.get(groupItem.key);
+            if (element) checkOverflow(element, groupItem.key);
           }, 50);
         }
       });
@@ -595,33 +588,33 @@ createApp({
       }
     };
 
-    const checkOverflow = (el, key) => {
-      if (!el) return;
+    const checkOverflow = (element, key) => {
+      if (!element) return;
       if (expandedAppLists.has(key)) {
         overflowingAppLists.add(key);
         return;
       }
-      if (el.scrollHeight > Math.ceil(el.clientHeight) + 2) {
+      if (element.scrollHeight > Math.ceil(element.clientHeight) + 2) {
         overflowingAppLists.add(key);
       } else {
         overflowingAppLists.delete(key);
       }
     };
 
-    const setupOverflowObserver = (el, key) => {
-      if (el) {
-        appListRefs.set(key, el);
-        if (!el._ro) {
-          const observer = new ResizeObserver(() => checkOverflow(el, key));
-          observer.observe(el);
-          el._ro = observer;
+    const setupOverflowObserver = (element, key) => {
+      if (element) {
+        appListRefs.set(key, element);
+        if (!element.resizeObserver) {
+          const observer = new ResizeObserver(() => checkOverflow(element, key));
+          observer.observe(element);
+          element.resizeObserver = observer;
         }
-        checkOverflow(el, key);
+        checkOverflow(element, key);
       } else {
-        const oldEl = appListRefs.get(key);
-        if (oldEl && oldEl._ro) {
-          oldEl._ro.disconnect();
-          oldEl._ro = null;
+        const oldElement = appListRefs.get(key);
+        if (oldElement && oldElement.resizeObserver) {
+          oldElement.resizeObserver.disconnect();
+          oldElement.resizeObserver = null;
         }
         appListRefs.delete(key);
       }
@@ -630,8 +623,8 @@ createApp({
     const toggleAppList = (id) => {
       expandedAppLists.has(id) ? expandedAppLists.delete(id) : expandedAppLists.add(id);
       setTimeout(() => {
-        const el = appListRefs.get(id);
-        if (el) checkOverflow(el, id);
+        const element = appListRefs.get(id);
+        if (element) checkOverflow(element, id);
       }, 50);
     };
 
@@ -641,8 +634,8 @@ createApp({
         if (singleGroup.appsList && singleGroup.appsList.length > 0) {
           const firstApp = singleGroup.appsList[0];
           const appKey = "app_" + singleGroup.key + "_" + firstApp.id;
-          const isAnyExpanded = singleGroup.appsList.some((a) =>
-            expandedOptions.has("app_" + singleGroup.key + "_" + a.id),
+          const isAnyExpanded = singleGroup.appsList.some((appItem) =>
+            expandedOptions.has("app_" + singleGroup.key + "_" + appItem.id),
           );
           if (!isAnyExpanded) {
             expandedOptions.add(appKey);
@@ -661,8 +654,8 @@ createApp({
       const isCurrentlyExpanded = expandedOptions.has(clickedKey);
 
       if (!bundleViews[groupKey]) {
-        appsList.forEach((a) => {
-          const key = "app_" + groupKey + "_" + a.id;
+        appsList.forEach((appItem) => {
+          const key = "app_" + groupKey + "_" + appItem.id;
           if (expandedOptions.has(key)) {
             expandedOptions.delete(key);
           }
@@ -670,13 +663,13 @@ createApp({
         if (!isCurrentlyExpanded) {
           expandedOptions.add(clickedKey);
           nextTick(() => {
-            const btn = document.getElementById("tab_" + groupKey + "_" + clickedApp.id);
-            if (btn) {
-              const container = btn.parentElement;
+            const buttonElement = document.getElementById("tab_" + groupKey + "_" + clickedApp.id);
+            if (buttonElement) {
+              const container = buttonElement.parentElement;
               if (container) {
                 container.scrollTo({
-                  top: btn.offsetTop - container.clientHeight / 2 + btn.clientHeight / 2,
-                  behavior: "smooth"
+                  top: buttonElement.offsetTop - container.clientHeight / 2 + buttonElement.clientHeight / 2,
+                  behavior: "smooth",
                 });
               }
             }
@@ -693,18 +686,17 @@ createApp({
       }
     };
 
-    const toggleBundle = (group) => {
-
-      if (group.appsList && group.appsList.length > 0) {
-        const isAnyExpanded = group.appsList.some((a) => expandedOptions.has("app_" + group.key + "_" + a.id));
-        if (isAnyExpanded || bundleViews[group.key]) {
-          bundleViews[group.key] = false;
-          expandedAppLists.delete(group.key);
-          group.appsList.forEach((a) => {
-            expandedOptions.delete("app_" + group.key + "_" + a.id);
+    const toggleBundle = (groupItem) => {
+      if (groupItem.appsList && groupItem.appsList.length > 0) {
+        const isAnyExpanded = groupItem.appsList.some((appItem) => expandedOptions.has("app_" + groupItem.key + "_" + appItem.id));
+        if (isAnyExpanded || bundleViews[groupItem.key]) {
+          bundleViews[groupItem.key] = false;
+          expandedAppLists.delete(groupItem.key);
+          groupItem.appsList.forEach((appItem) => {
+            expandedOptions.delete("app_" + groupItem.key + "_" + appItem.id);
           });
         } else {
-          expandedOptions.add("app_" + group.key + "_" + group.appsList[0].id);
+          expandedOptions.add("app_" + groupItem.key + "_" + groupItem.appsList[0].id);
         }
       }
     };
@@ -713,36 +705,44 @@ createApp({
       const params = new URLSearchParams();
       if (channel.value !== DEFAULT_CHANNEL) params.set("channel", channel.value);
       params.set("show", groupKey);
-      return `?${params.toString()}${location.hash === '#whats-new' ? '#whats-new' : ''}`;
+      return `?${params.toString()}${location.hash === "#whats-new" ? "#whats-new" : ""}`;
     };
 
     const openPopupFast = (groupKey) => {
       const newUrl = getBundlePopupUrl(groupKey);
-      try { history.pushState(null, "", newUrl); } catch(e) {}
+      try {
+        history.pushState(null, "", newUrl);
+      } catch (error) { /* Ignore cross-origin iframe DOMExceptions */ }
       syncFromUrl(location.search);
     };
 
     const closePopup = () => {
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
       popupBundleKey.value = null;
       if (isWhatsNewView.value) {
         const urlParams = new URLSearchParams(location.search);
         urlParams.delete("show");
-        const newUrl = `${location.pathname}${urlParams.toString() ? '?' + urlParams.toString() : ''}#whats-new`;
-        try { history.replaceState(null, "", newUrl); } catch(e) { location.hash = "whats-new"; }
+        const newUrl = `${location.pathname}${urlParams.toString() ? "?" + urlParams.toString() : ""}#whats-new`;
+        try {
+          history.replaceState(null, "", newUrl);
+        } catch (error) {
+          location.hash = "whats-new";
+        }
         syncFromUrl(location.search);
       } else {
         const urlParams = new URLSearchParams(location.search);
         urlParams.delete("show");
-        const newUrl = `${location.pathname}${urlParams.toString() ? '?' + urlParams.toString() : ''}${location.hash}`;
-        try { history.pushState(null, "", newUrl); } catch(e) {}
-        
+        const newUrl = `${location.pathname}${urlParams.toString() ? "?" + urlParams.toString() : ""}${location.hash}`;
+        try {
+          history.pushState(null, "", newUrl);
+        } catch (error) { /* Ignore cross-origin iframe DOMExceptions */ }
+
         syncFromUrl(location.search);
       }
     };
 
     const selectBundleFromDropdown = (bundleKey) => {
-      bundle.value = bundleKey || '';
+      bundle.value = bundleKey || "";
     };
 
     const popupExpandedOptions = reactive(new Set());
@@ -754,36 +754,38 @@ createApp({
     const popupSwipeDirection = ref("");
     const popupExpandedVersions = reactive(new Set());
 
-    const togglePopupOptions = (id) => popupExpandedOptions.has(id) ? popupExpandedOptions.delete(id) : popupExpandedOptions.add(id);
-    const togglePopupVersions = (id) => popupExpandedVersions.has(id) ? popupExpandedVersions.delete(id) : popupExpandedVersions.add(id);
+    const togglePopupOptions = (id) =>
+      popupExpandedOptions.has(id) ? popupExpandedOptions.delete(id) : popupExpandedOptions.add(id);
+    const togglePopupVersions = (id) =>
+      popupExpandedVersions.has(id) ? popupExpandedVersions.delete(id) : popupExpandedVersions.add(id);
 
-    const checkPopupOverflow = (el, key) => {
-      if (!el) return;
+    const checkPopupOverflow = (element, key) => {
+      if (!element) return;
       if (popupExpandedAppLists.has(key)) {
         popupOverflowingAppLists.add(key);
         return;
       }
-      if (el.scrollHeight > Math.ceil(el.clientHeight) + 2) {
+      if (element.scrollHeight > Math.ceil(element.clientHeight) + 2) {
         popupOverflowingAppLists.add(key);
       } else {
         popupOverflowingAppLists.delete(key);
       }
     };
 
-    const setupPopupOverflowObserver = (el, key) => {
-      if (el) {
-        popupAppListRefs.set(key, el);
-        if (!el._ro) {
-          const observer = new ResizeObserver(() => checkPopupOverflow(el, key));
-          observer.observe(el);
-          el._ro = observer;
+    const setupPopupOverflowObserver = (element, key) => {
+      if (element) {
+        popupAppListRefs.set(key, element);
+        if (!element.resizeObserver) {
+          const observer = new ResizeObserver(() => checkPopupOverflow(element, key));
+          observer.observe(element);
+          element.resizeObserver = observer;
         }
-        checkPopupOverflow(el, key);
+        checkPopupOverflow(element, key);
       } else {
-        const oldEl = popupAppListRefs.get(key);
-        if (oldEl && oldEl._ro) {
-          oldEl._ro.disconnect();
-          oldEl._ro = null;
+        const oldElement = popupAppListRefs.get(key);
+        if (oldElement && oldElement.resizeObserver) {
+          oldElement.resizeObserver.disconnect();
+          oldElement.resizeObserver = null;
         }
         popupAppListRefs.delete(key);
       }
@@ -792,8 +794,8 @@ createApp({
     const togglePopupAppList = (id) => {
       popupExpandedAppLists.has(id) ? popupExpandedAppLists.delete(id) : popupExpandedAppLists.add(id);
       setTimeout(() => {
-        const el = popupAppListRefs.get(id);
-        if (el) checkPopupOverflow(el, id);
+        const element = popupAppListRefs.get(id);
+        if (element) checkPopupOverflow(element, id);
       }, 50);
     };
 
@@ -804,8 +806,8 @@ createApp({
       const isCurrentlyExpanded = popupExpandedOptions.has(clickedKey);
 
       if (!popupBundleViews[groupKey]) {
-        appsList.forEach((a) => {
-          const key = "popup_app_" + groupKey + "_" + a.id;
+        appsList.forEach((appItem) => {
+          const key = "popup_app_" + groupKey + "_" + appItem.id;
           if (key !== clickedKey && popupExpandedOptions.has(key)) {
             popupExpandedOptions.delete(key);
           }
@@ -813,19 +815,18 @@ createApp({
         if (!isCurrentlyExpanded) {
           popupExpandedOptions.add(clickedKey);
           nextTick(() => {
-            const btn = document.getElementById("tab_popup_" + groupKey + "_" + clickedApp.id);
-            if (btn) {
-              const container = btn.parentElement;
+            const buttonElement = document.getElementById("tab_popup_" + groupKey + "_" + clickedApp.id);
+            if (buttonElement) {
+              const container = buttonElement.parentElement;
               if (container) {
                 container.scrollTo({
-                  top: btn.offsetTop - container.clientHeight / 2 + btn.clientHeight / 2,
-                  behavior: "smooth"
+                  top: buttonElement.offsetTop - container.clientHeight / 2 + buttonElement.clientHeight / 2,
+                  behavior: "smooth",
                 });
               }
             }
           });
         } else {
-
           popupExpandedAppLists.delete(groupKey);
         }
       } else {
@@ -840,19 +841,19 @@ createApp({
     const popupTouchStartX = ref(0);
     const popupTouchStartY = ref(0);
 
-    const handlePopupTouchStart = (e) => {
-      if (e.touches && e.touches.length > 0) {
-        popupTouchStartX.value = e.touches[0].clientX;
-        popupTouchStartY.value = e.touches[0].clientY;
+    const handlePopupTouchStart = (event) => {
+      if (event.touches && event.touches.length > 0) {
+        popupTouchStartX.value = event.touches[0].clientX;
+        popupTouchStartY.value = event.touches[0].clientY;
       }
     };
 
-    const handlePopupTouchEnd = (e, groupKey, currentApp, appsList) => {
-      if (!e.changedTouches || e.changedTouches.length === 0) return;
-      const deltaX = e.changedTouches[0].clientX - popupTouchStartX.value;
-      const deltaY = e.changedTouches[0].clientY - popupTouchStartY.value;
+    const handlePopupTouchEnd = (event, groupKey, currentApp, appsList) => {
+      if (!event.changedTouches || event.changedTouches.length === 0) return;
+      const deltaX = event.changedTouches[0].clientX - popupTouchStartX.value;
+      const deltaY = event.changedTouches[0].clientY - popupTouchStartY.value;
       if (Math.abs(deltaX) > 60 && Math.abs(deltaY) < 40) {
-        const currentIndex = appsList.findIndex((a) => a.id === currentApp.id);
+        const currentIndex = appsList.findIndex((appItem) => appItem.id === currentApp.id);
         if (currentIndex !== -1) {
           if (deltaX < 0) {
             if (currentIndex < appsList.length - 1) {
@@ -871,17 +872,17 @@ createApp({
       }
     };
 
-    const togglePopupBundleView = (group) => {
-      const key = typeof group === "string" ? group : group.key;
+    const togglePopupBundleView = (groupItem) => {
+      const key = typeof groupItem === "string" ? groupItem : groupItem.key;
       popupBundleViews[key] = !popupBundleViews[key];
 
-      if (!popupBundleViews[key] && group.appsList) {
-        const expandedApps = group.appsList.filter((a) => popupExpandedOptions.has("popup_app_" + key + "_" + a.id));
+      if (!popupBundleViews[key] && groupItem.appsList) {
+        const expandedApps = groupItem.appsList.filter((appItem) => popupExpandedOptions.has("popup_app_" + key + "_" + appItem.id));
         if (expandedApps.length > 1) {
           const firstExpanded = expandedApps[0];
-          group.appsList.forEach((a) => {
-            if (a.id !== firstExpanded.id) {
-              popupExpandedOptions.delete("popup_app_" + key + "_" + a.id);
+          groupItem.appsList.forEach((appItem) => {
+            if (appItem.id !== firstExpanded.id) {
+              popupExpandedOptions.delete("popup_app_" + key + "_" + appItem.id);
             }
           });
         }
@@ -890,27 +891,27 @@ createApp({
 
     const autoExpandPopupApp = () => {
       if (popupBundleKey.value) {
-        const singleGroup = bundlesGroups.value.find(g => g.key === popupBundleKey.value);
+        const singleGroup = bundlesGroups.value.find((groupItem) => groupItem.key === popupBundleKey.value);
         if (singleGroup && singleGroup.appsList && singleGroup.appsList.length > 0) {
           let targetApp = singleGroup.appsList[0];
           if (app.value) {
-            const matchedApp = singleGroup.appsList.find(a => a.packageName === app.value || a.appName === app.value);
+            const matchedApp = singleGroup.appsList.find((appItem) => appItem.packageName === app.value || appItem.appName === app.value);
             if (matchedApp) targetApp = matchedApp;
           }
           const appKey = "popup_app_" + singleGroup.key + "_" + targetApp.id;
-          const isAnyExpanded = singleGroup.appsList.some((a) =>
-            popupExpandedOptions.has("popup_app_" + singleGroup.key + "_" + a.id),
+          const isAnyExpanded = singleGroup.appsList.some((appItem) =>
+            popupExpandedOptions.has("popup_app_" + singleGroup.key + "_" + appItem.id),
           );
           if (!isAnyExpanded) {
             popupExpandedOptions.add(appKey);
             nextTick(() => {
-              const btn = document.getElementById("tab_popup_" + singleGroup.key + "_" + targetApp.id);
-              if (btn) {
-                const container = btn.parentElement;
+              const buttonElement = document.getElementById("tab_popup_" + singleGroup.key + "_" + targetApp.id);
+              if (buttonElement) {
+                const container = buttonElement.parentElement;
                 if (container) {
                   container.scrollTo({
-                    top: btn.offsetTop - container.clientHeight / 2 + btn.clientHeight / 2,
-                    behavior: "smooth"
+                    top: buttonElement.offsetTop - container.clientHeight / 2 + buttonElement.clientHeight / 2,
+                    behavior: "smooth",
                   });
                 }
               }
@@ -940,25 +941,25 @@ createApp({
     });
 
     const popupGroup = computed(() => {
-      return bundlesGroups.value.find(g => g.key === popupBundleKey.value) || null;
+      return bundlesGroups.value.find((groupItem) => groupItem.key === popupBundleKey.value) || null;
     });
 
     const touchStartX = ref(0);
     const touchStartY = ref(0);
 
-    const handleTouchStart = (e) => {
-      if (e.touches && e.touches.length > 0) {
-        touchStartX.value = e.touches[0].clientX;
-        touchStartY.value = e.touches[0].clientY;
+    const handleTouchStart = (event) => {
+      if (event.touches && event.touches.length > 0) {
+        touchStartX.value = event.touches[0].clientX;
+        touchStartY.value = event.touches[0].clientY;
       }
     };
 
-    const handleTouchEnd = (e, groupKey, currentApp, appsList) => {
-      if (!e.changedTouches || e.changedTouches.length === 0) return;
-      const deltaX = e.changedTouches[0].clientX - touchStartX.value;
-      const deltaY = e.changedTouches[0].clientY - touchStartY.value;
+    const handleTouchEnd = (event, groupKey, currentApp, appsList) => {
+      if (!event.changedTouches || event.changedTouches.length === 0) return;
+      const deltaX = event.changedTouches[0].clientX - touchStartX.value;
+      const deltaY = event.changedTouches[0].clientY - touchStartY.value;
       if (Math.abs(deltaX) > 60 && Math.abs(deltaY) < 40) {
-        const currentIndex = appsList.findIndex((a) => a.id === currentApp.id);
+        const currentIndex = appsList.findIndex((appItem) => appItem.id === currentApp.id);
         if (currentIndex !== -1) {
           if (deltaX < 0) {
             if (currentIndex < appsList.length - 1) {
@@ -985,25 +986,25 @@ createApp({
       }
     };
 
-    const toggleBundleView = (group) => {
-      const key = typeof group === "string" ? group : group.key;
+    const toggleBundleView = (groupItem) => {
+      const key = typeof groupItem === "string" ? groupItem : groupItem.key;
       bundleViews[key] = !bundleViews[key];
 
-      if (!bundleViews[key] && group.appsList) {
-        const expandedApps = group.appsList.filter((a) => expandedOptions.has("app_" + key + "_" + a.id));
+      if (!bundleViews[key] && groupItem.appsList) {
+        const expandedApps = groupItem.appsList.filter((appItem) => expandedOptions.has("app_" + key + "_" + appItem.id));
         if (expandedApps.length > 1) {
           const firstExpanded = expandedApps[0];
-          group.appsList.forEach((a) => {
-            if (a.id !== firstExpanded.id) {
-              expandedOptions.delete("app_" + key + "_" + a.id);
+          groupItem.appsList.forEach((appItem) => {
+            if (appItem.id !== firstExpanded.id) {
+              expandedOptions.delete("app_" + key + "_" + appItem.id);
             }
           });
         }
       }
     };
 
-    const formatDate = (val) => {
-      const dateObj = val ? new Date(val) : null;
+    const formatDate = (value) => {
+      const dateObj = value ? new Date(value) : null;
       return dateObj && !isNaN(dateObj.getTime())
         ? dateObj.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })
         : "";
@@ -1020,8 +1021,8 @@ createApp({
             copiedStates[key] = false;
           }, 1500);
         })
-        .catch((err) => {
-          console.error("Failed to copy text: ", err);
+        .catch((error) => {
+          console.error("Failed to copy text: ", error);
         });
     };
 
@@ -1037,10 +1038,10 @@ createApp({
       collapseAll();
     };
 
-    const isNewBundle = (group) => {
+    const isNewBundle = (groupItem) => {
       if (isWhatsNewView.value) return false;
-      if (!group || !group.bundle || !group.bundle.firstSeen) return false;
-      const firstSeenTime = new Date(group.bundle.firstSeen).getTime();
+      if (!groupItem || !groupItem.bundle || !groupItem.bundle.firstSeen) return false;
+      const firstSeenTime = new Date(groupItem.bundle.firstSeen).getTime();
       const diffDays = (Date.now() - firstSeenTime) / (1000 * 3600 * 24);
       return diffDays <= 7;
     };
@@ -1148,4 +1149,3 @@ createApp({
     };
   },
 }).mount("#app");
-
