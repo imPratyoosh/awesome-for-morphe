@@ -48,7 +48,8 @@ function extractVersions(value) {
   if (!Array.isArray(value)) return [];
   const versionList = value.flatMap((versionItem) => {
     if (typeof versionItem === "string") return [{ version: versionItem, isExperimental: false }];
-    if (versionItem?.version) return [{ version: String(versionItem.version), isExperimental: !!versionItem.isExperimental }];
+    if (versionItem?.version)
+      return [{ version: String(versionItem.version), isExperimental: !!versionItem.isExperimental }];
     return [];
   });
 

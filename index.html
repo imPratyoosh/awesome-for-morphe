@@ -189,7 +189,8 @@
             class="relative flex flex-col items-center justify-center border-b-2 border-blue/10 py-3 md:py-0 md:h-12 gap-3 px-3">
             <h1
               class="text-2xl md:text-3xl font-extrabold flex items-center justify-center text-transparent bg-clip-text bg-gradient-to-r from-blue to-green relative order-1 md:order-none">
-              Awesome for Morphe
+              <button type="button" @click="closeWhatsNew" class="cursor-pointer focus:outline-none">Awesome for
+                Morphe</button>
               <img src="favicon.svg" alt="Logo"
                 class="w-6 h-6 md:w-8 md:h-8 absolute -right-8 md:-right-10 top-1/2 -translate-y-1/2 object-contain">
             </h1>
@@ -209,8 +210,7 @@
               </div>
 
               <div class="flex items-center gap-2 md:absolute md:right-3 md:top-1/2 md:-translate-y-1/2">
-                <a href="https://github.com/nvbangg/awesome-for-morphe/releases" target="_blank" rel="noreferrer"
-                  class="badge badge-md text-yellow">
+                <a href="#whats-new" class="badge badge-md text-yellow">
                   <i class="fa-solid fa-clock-rotate-left icon-center"></i>
                   <span>What's New</span>
                 </a>
@@ -577,7 +577,9 @@
                               <span>{{ appItem.packageName }}</span>
                             </a>
                             <button @click.stop="copyText(appItem.packageName, 'pkg_' + group.key + '_' + appItem.id)"
-                              class="badge text-light shrink-0" title="Copy package name">
+                              class="badge text-light shrink-0 relative" title="Copy package name">
+                              <span v-if="copiedStates['pkg_' + group.key + '_' + appItem.id]"
+                                class="absolute top-full right-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-white bg-lightGray rounded shadow-lg whitespace-nowrap z-[60] pointer-events-none animate-float-in">Copied!</span>
                               <i class="fa-solid"
                                 :class="copiedStates['pkg_' + group.key + '_' + appItem.id] ? 'fa-check text-green' : 'fa-regular fa-copy'"></i>
                             </button>
@@ -760,7 +762,8 @@
                       }}</span></span>
                 </span>
                 <span class="flex flex-row items-center gap-2 text-xs text-light w-full justify-center md:justify-end">
-                  <button @click.stop="openPopupFast(group.key)" class="badge shrink-0 text-green">
+                  <button v-if="!isShowingFullBundle(group.key)" @click.stop="openPopupFast(group.key)"
+                    class="badge shrink-0 text-green">
                     <i class="fa-solid fa-eye icon-center"></i>
                     <span>View this bundle</span>
                   </button>
@@ -828,7 +831,9 @@
                           <span>{{ appItem.packageName }}</span>
                         </a>
                         <button @click.stop="copyText(appItem.packageName, 'pkg_' + group.key + '_' + appItem.id)"
-                          class="badge text-light shrink-0" title="Copy package name">
+                          class="badge text-light shrink-0 relative" title="Copy package name">
+                          <span v-if="copiedStates['pkg_' + group.key + '_' + appItem.id]"
+                            class="absolute top-full right-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-white bg-lightGray rounded shadow-lg whitespace-nowrap z-[60] pointer-events-none animate-float-in">Copied!</span>
                           <i class="fa-solid"
                             :class="copiedStates['pkg_' + group.key + '_' + appItem.id] ? 'fa-check text-green' : 'fa-regular fa-copy'"></i>
                         </button>
@@ -877,7 +882,7 @@
                                       class="badge badge-sm text-green relative"
                                       :title="appElem.versions[appElem.versions.length - 1].isExperimental ? 'Copy experimental version' : 'Copy app version'">
                                       <span v-if="copiedStates['ver_' + appElem.id + '_last']"
-                                        class="absolute top-full left-1/2 -translate-x-1/2 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-white bg-lightGray rounded shadow-lg whitespace-nowrap z-[60] pointer-events-none animate-float-in">Copied!</span>
+                                        class="absolute top-full right-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-white bg-lightGray rounded shadow-lg whitespace-nowrap z-[60] pointer-events-none animate-float-in">Copied!</span>
                                       <i v-if="appElem.versions[appElem.versions.length - 1].isExperimental"
                                         class="fa-solid fa-flask text-yellow"></i>
                                       <span>{{ appElem.versions[appElem.versions.length - 1].version }}</span>
@@ -895,7 +900,7 @@
                                       class="badge badge-sm text-green relative"
                                       :title="versionItem.isExperimental ? 'Copy experimental version' : 'Copy app version'">
                                       <span v-if="copiedStates['ver_' + appElem.id + '_' + versionItem.version]"
-                                        class="absolute top-full left-1/2 -translate-x-1/2 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-white bg-lightGray rounded shadow-lg whitespace-nowrap z-[60] pointer-events-none animate-float-in">Copied!</span>
+                                        class="absolute top-full right-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-white bg-lightGray rounded shadow-lg whitespace-nowrap z-[60] pointer-events-none animate-float-in">Copied!</span>
                                       <i v-if="versionItem.isExperimental" class="fa-solid fa-flask text-yellow"></i>
                                       <span>{{ versionItem.version }}</span>
                                     </button>

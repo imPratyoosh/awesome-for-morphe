@@ -257,7 +257,9 @@ createApp({
           const newUrl = buildUrlString("#whats-new");
           try {
             history.replaceState(null, "", newUrl);
-          } catch (error) { /* Ignore cross-origin iframe DOMExceptions */ }
+          } catch (error) {
+            /* Ignore cross-origin iframe DOMExceptions */
+          }
         }
         isSyncing = false;
       });
@@ -274,7 +276,8 @@ createApp({
     const hasHighlight = (highlightPrefix) => {
       if (!isWhatsNewView.value) return false;
       return (
-        whatsNewHighlights.value.includes(highlightPrefix) || whatsNewHighlights.value.some((prefixItem) => prefixItem.startsWith(highlightPrefix + ":"))
+        whatsNewHighlights.value.includes(highlightPrefix) ||
+        whatsNewHighlights.value.some((prefixItem) => prefixItem.startsWith(highlightPrefix + ":"))
       );
     };
 
@@ -301,7 +304,9 @@ createApp({
           if (!oldVals) {
             try {
               history.replaceState(null, "", newUrl);
-            } catch (error) { /* Ignore cross-origin iframe DOMExceptions */ }
+            } catch (error) {
+              /* Ignore cross-origin iframe DOMExceptions */
+            }
           } else {
             const otherChanged =
               oldVals[0] !== newVals[0] ||
@@ -313,11 +318,15 @@ createApp({
             if (otherChanged) {
               try {
                 history.pushState(null, "", newUrl);
-              } catch (error) { /* Ignore cross-origin iframe DOMExceptions */ }
+              } catch (error) {
+                /* Ignore cross-origin iframe DOMExceptions */
+              }
             } else {
               try {
                 history.replaceState(null, "", newUrl);
-              } catch (error) { /* Ignore cross-origin iframe DOMExceptions */ }
+              } catch (error) {
+                /* Ignore cross-origin iframe DOMExceptions */
+              }
             }
           }
         }
@@ -423,7 +432,9 @@ createApp({
       const queryWords = searchValue.toLowerCase().split(/\s+/).filter(Boolean);
       if (queryWords.length === 0) return options;
       return options.filter((optionItem) => {
-        const searchable = [optionItem.label, optionItem.value, ...extraFields.map((field) => optionItem[field] || "")].join(" ").toLowerCase();
+        const searchable = [optionItem.label, optionItem.value, ...extraFields.map((field) => optionItem[field] || "")]
+          .join(" ")
+          .toLowerCase();
         return queryWords.every((word) => searchable.includes(word));
       });
     }
@@ -469,7 +480,9 @@ createApp({
               });
             }
           }
-          const patches = Array.from(patchIdMap.values()).sort((patchA, patchB) => patchA.patchName.localeCompare(patchB.patchName));
+          const patches = Array.from(patchIdMap.values()).sort((patchA, patchB) =>
+            patchA.patchName.localeCompare(patchB.patchName),
+          );
 
           const appsMap = new Map();
 
@@ -525,7 +538,8 @@ createApp({
               const targetBundle = parts[0];
               const targetApp = parts.length > 1 ? parts[1] : "";
               if (targetBundle && targetBundle !== groupItem.key) return false;
-              if (targetApp && targetApp !== "universal" && !groupItem.bundle.targetApps?.includes(targetApp)) return false;
+              if (targetApp && targetApp !== "universal" && !groupItem.bundle.targetApps?.includes(targetApp))
+                return false;
               return true;
             });
             if (!matched) return false;
@@ -535,7 +549,12 @@ createApp({
             const appNamesStr = (groupItem.bundle.targetApps || [])
               .map((pkg) => appName(pkg, activeData.value.namesMap, activeData.value.skipSet))
               .join(" ");
-            const searchable = [groupItem.key, groupItem.bundle.repo, ...(groupItem.bundle.targetApps || []), appNamesStr]
+            const searchable = [
+              groupItem.key,
+              groupItem.bundle.repo,
+              ...(groupItem.bundle.targetApps || []),
+              appNamesStr,
+            ]
               .join(" ")
               .toLowerCase();
             if (!queryWords.every((word) => searchable.includes(word))) return false;
@@ -543,7 +562,9 @@ createApp({
 
           return true;
         })
-        .sort((groupA, groupB) => sortBundlesHelper(groupA.bundle, groupB.bundle, groupA.key, groupB.key, sortOrder.value));
+        .sort((groupA, groupB) =>
+          sortBundlesHelper(groupA.bundle, groupB.bundle, groupA.key, groupB.key, sortOrder.value),
+        );
     });
 
     const effectiveTwoColumns = computed(() => (bundlesGroups.value.length === 1 ? false : isTwoColumns.value));
@@ -569,23 +590,33 @@ createApp({
           const firstApp = groupItem.appsList[0];
           expandedOptions.add("app_" + groupItem.key + "_" + firstApp.id);
         }
-        if (overflowingAppLists.has(groupItem.key)) {
-          expandedAppLists.add(groupItem.key);
-          setTimeout(() => {
-            const element = appListRefs.get(groupItem.key);
-            if (element) checkOverflow(element, groupItem.key);
-          }, 50);
-        }
       });
     };
 
-    const collapseAll = () => {
-      expandedOptions.clear();
-      expandedAppLists.clear();
-      expandedVersions.clear();
-      for (const key in bundleViews) {
-        delete bundleViews[key];
+    const collapseBundle = (groupItem) => {
+      bundleViews[groupItem.key] = false;
+      expandedAppLists.delete(groupItem.key);
+      if (groupItem.appsList) {
+        groupItem.appsList.forEach((appItem) => {
+          expandedOptions.delete("app_" + groupItem.key + "_" + appItem.id);
+        });
       }
+      if (groupItem.patches) {
+        groupItem.patches.forEach((patch) => {
+          expandedOptions.delete(patch.id);
+          if (patch.apps) {
+            patch.apps.forEach((appElem) => {
+              expandedVersions.delete(appElem.id);
+            });
+          }
+        });
+      }
+    };
+
+    const collapseAll = () => {
+      bundlesGroups.value.forEach((groupItem) => {
+        collapseBundle(groupItem);
+      });
     };
 
     const checkOverflow = (element, key) => {
@@ -688,13 +719,11 @@ createApp({
 
     const toggleBundle = (groupItem) => {
       if (groupItem.appsList && groupItem.appsList.length > 0) {
-        const isAnyExpanded = groupItem.appsList.some((appItem) => expandedOptions.has("app_" + groupItem.key + "_" + appItem.id));
+        const isAnyExpanded = groupItem.appsList.some((appItem) =>
+          expandedOptions.has("app_" + groupItem.key + "_" + appItem.id),
+        );
         if (isAnyExpanded || bundleViews[groupItem.key]) {
-          bundleViews[groupItem.key] = false;
-          expandedAppLists.delete(groupItem.key);
-          groupItem.appsList.forEach((appItem) => {
-            expandedOptions.delete("app_" + groupItem.key + "_" + appItem.id);
-          });
+          collapseBundle(groupItem);
         } else {
           expandedOptions.add("app_" + groupItem.key + "_" + groupItem.appsList[0].id);
         }
@@ -712,7 +741,9 @@ createApp({
       const newUrl = getBundlePopupUrl(groupKey);
       try {
         history.pushState(null, "", newUrl);
-      } catch (error) { /* Ignore cross-origin iframe DOMExceptions */ }
+      } catch (error) {
+        /* Ignore cross-origin iframe DOMExceptions */
+      }
       syncFromUrl(location.search);
     };
 
@@ -735,7 +766,9 @@ createApp({
         const newUrl = `${location.pathname}${urlParams.toString() ? "?" + urlParams.toString() : ""}${location.hash}`;
         try {
           history.pushState(null, "", newUrl);
-        } catch (error) { /* Ignore cross-origin iframe DOMExceptions */ }
+        } catch (error) {
+          /* Ignore cross-origin iframe DOMExceptions */
+        }
 
         syncFromUrl(location.search);
       }
@@ -877,12 +910,16 @@ createApp({
       popupBundleViews[key] = !popupBundleViews[key];
 
       if (!popupBundleViews[key] && groupItem.appsList) {
-        const expandedApps = groupItem.appsList.filter((appItem) => popupExpandedOptions.has("popup_app_" + key + "_" + appItem.id));
-        if (expandedApps.length > 1) {
-          const firstExpanded = expandedApps[0];
-          groupItem.appsList.forEach((appItem) => {
-            if (appItem.id !== firstExpanded.id) {
-              popupExpandedOptions.delete("popup_app_" + key + "_" + appItem.id);
+        groupItem.appsList.forEach((appItem) => {
+          popupExpandedOptions.delete("popup_app_" + key + "_" + appItem.id);
+        });
+        if (groupItem.patches) {
+          groupItem.patches.forEach((patch) => {
+            popupExpandedOptions.delete(patch.id);
+            if (patch.apps) {
+              patch.apps.forEach((appElem) => {
+                popupExpandedVersions.delete(appElem.id);
+              });
             }
           });
         }
@@ -895,7 +932,9 @@ createApp({
         if (singleGroup && singleGroup.appsList && singleGroup.appsList.length > 0) {
           let targetApp = singleGroup.appsList[0];
           if (app.value) {
-            const matchedApp = singleGroup.appsList.find((appItem) => appItem.packageName === app.value || appItem.appName === app.value);
+            const matchedApp = singleGroup.appsList.find(
+              (appItem) => appItem.packageName === app.value || appItem.appName === app.value,
+            );
             if (matchedApp) targetApp = matchedApp;
           }
           const appKey = "popup_app_" + singleGroup.key + "_" + targetApp.id;
@@ -988,18 +1027,11 @@ createApp({
 
     const toggleBundleView = (groupItem) => {
       const key = typeof groupItem === "string" ? groupItem : groupItem.key;
+      const actualGroup = typeof groupItem === "string" ? bundlesGroups.value.find((g) => g.key === key) : groupItem;
       bundleViews[key] = !bundleViews[key];
 
-      if (!bundleViews[key] && groupItem.appsList) {
-        const expandedApps = groupItem.appsList.filter((appItem) => expandedOptions.has("app_" + key + "_" + appItem.id));
-        if (expandedApps.length > 1) {
-          const firstExpanded = expandedApps[0];
-          groupItem.appsList.forEach((appItem) => {
-            if (appItem.id !== firstExpanded.id) {
-              expandedOptions.delete("app_" + key + "_" + appItem.id);
-            }
-          });
-        }
+      if (!bundleViews[key] && actualGroup) {
+        collapseBundle(actualGroup);
       }
     };
 
@@ -1036,6 +1068,22 @@ createApp({
       isWhatsNewView.value = false;
       expandedVersions.clear();
       collapseAll();
+    };
+
+    const closeWhatsNew = () => {
+      if (isWhatsNewView.value) {
+        isWhatsNewView.value = false;
+        const newUrl = buildUrlString("");
+        if (location.pathname + location.search + location.hash !== newUrl) {
+          history.pushState(null, "", newUrl);
+        }
+      }
+    };
+
+    const isShowingFullBundle = (groupKey) => {
+      if (showOptions.value.length === 0) return true;
+      if (showOptions.value.length === 1 && showOptions.value[0] === groupKey) return true;
+      return false;
     };
 
     const isNewBundle = (groupItem) => {
@@ -1113,11 +1161,13 @@ createApp({
       expandAll,
       collapseAll,
       resetFilters,
+      closeWhatsNew,
       isWhatsNewView,
       whatsNewHighlights,
       hasHighlight,
       copyText,
       copiedStates,
+      isShowingFullBundle,
       isNewBundle,
       getAppName,
       getAppIcon,
