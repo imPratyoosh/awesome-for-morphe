@@ -1752,5 +1752,21 @@
   "dev.sasikanth.pinnit": {
     "name": "Pinnit",
     "iconUrl": null
+  },
+  "com.PixelStudio": {
+    "name": "Pixel Studio",
+    "iconUrl": "https://play-lh.googleusercontent.com/a1q-5XEN2sauPJDEKkY1dtqJu6IjaXZocQqRTyPXmCl2josZ004Nv1OOaykeFjbAtd_ciM52UD04nzXPhvL9Kg"
+  },
+  "com.jlindemann.science": {
+    "name": "Atomic",
+    "iconUrl": "https://play-lh.googleusercontent.com/w-HEh0Yv0dDFilA1KQLa4bpOHCr0W05TQIYhMer6LoWUKisOH85m63KmnStbvzTEH7XYGAlqSCdZnff8zZY3ng8"
+  },
+  "net.nemostudio.keymate": {
+    "name": "Keymate",
+    "iconUrl": "https://play-lh.googleusercontent.com/_EnBD5MqTudNwvT5g6vLgwhSPnKhcIG3s-U-HBRjsbUBkz9u8iTiEkTn4kDQogr2nu292Wibz_pFQGviMu38HQ"
+  },
+  "air.com.midjiwan.polytopia": {
+    "name": "The Battle of Polytopia",
+    "iconUrl": "https://play-lh.googleusercontent.com/_XOGXn-bwLMfsaeGMdIkMFtj4zBgTUldfJpFMS76akYHNLZX2oXKvwiPsmE3o0DLE9p-gM_CU8nLc6WbdKpREQ"
   }
 }

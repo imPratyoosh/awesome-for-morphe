@@ -111,9 +111,9 @@
     },
     "dev": {
       "file": "patches/adobo-dev.json",
-      "version": "v1.3.0-dev.2",
-      "releaseUrl": "https://github.com/jkennethcarino/adobo/releases/tag/v1.3.0-dev.2",
-      "createdAt": "2026-07-05T15:47:57",
+      "version": "v1.3.0-dev.4",
+      "releaseUrl": "https://github.com/jkennethcarino/adobo/releases/tag/v1.3.0-dev.4",
+      "createdAt": "2026-07-12T15:19:57",
       "targetApps": [
         "com.google.android.inputmethod.latin",
         "com.imdb.mobile",
@@ -122,7 +122,7 @@
         "universal"
       ],
       "appCount": 4,
-      "patchCount": 39
+      "patchCount": 40
     },
     "latest": "dev"
   },
@@ -1530,39 +1530,12 @@
     "firstSeen": "2026-06-05T15:48:45",
     "stable": {
       "file": "patches/lain-stable.json",
-      "version": "v1.2.0",
-      "releaseUrl": "https://github.com/kiraio-moe/Lain-Patches/releases/tag/v1.2.0",
-      "createdAt": "2026-06-28T19:23:17",
+      "version": "v1.3.0",
+      "releaseUrl": "https://github.com/kiraio-moe/Lain-Patches/releases/tag/v1.3.0",
+      "createdAt": "2026-07-12T15:14:45",
       "targetApps": [
         "cn.adonet.proxyevery",
-        "com.azefsw.audioconnect",
-        "com.ceyhan.sets",
-        "com.chimbori.hermitcrab",
-        "com.degenk.boorusama",
-        "com.flavionet.android.camera.lite",
-        "com.flavionet.android.cinema.lite",
-        "com.hopefactory2021.fakegpslocation",
-        "com.imaginstudio.imagetools.pixellab",
-        "com.jeyluta.timestampcamerafree",
-        "com.jeyluta.timestampcamerafreeent",
-        "com.kcstream.cing",
-        "com.medibang.android.medibangpro",
-        "com.medibang.android.paint.tablet",
-        "com.regasoftware.udisc",
-        "com.scheler.superproxy",
-        "com.surmin.photofancie.lite",
-        "universal"
-      ],
-      "appCount": 17,
-      "patchCount": 29
-    },
-    "dev": {
-      "file": "patches/lain-dev.json",
-      "version": "v1.3.0-dev.2",
-      "releaseUrl": "https://github.com/kiraio-moe/Lain-Patches/releases/tag/v1.3.0-dev.2",
-      "createdAt": "2026-07-09T14:46:08",
-      "targetApps": [
-        "cn.adonet.proxyevery",
+        "com.PixelStudio",
         "com.adsk.sketchbook",
         "com.azefsw.audioconnect",
         "com.ceyhan.sets",
@@ -1576,6 +1549,7 @@
         "com.imaginstudio.imagetools.pixellab",
         "com.jeyluta.timestampcamerafree",
         "com.jeyluta.timestampcamerafreeent",
+        "com.jlindemann.science",
         "com.kcstream.cing",
         "com.medibang.android.medibangpro",
         "com.medibang.android.paint.tablet",
@@ -1583,12 +1557,50 @@
         "com.scheler.superproxy",
         "com.surmin.photofancie.lite",
         "jp.co.shueisha.mangaplus",
+        "net.nemostudio.keymate",
+        "studio.muggle.chatboost",
         "universal"
       ],
-      "appCount": 21,
-      "patchCount": 35
+      "appCount": 25,
+      "patchCount": 39
     },
-    "latest": "dev"
+    "dev": {
+      "file": "patches/lain-dev.json",
+      "version": "v1.3.0-dev.3",
+      "releaseUrl": "https://github.com/kiraio-moe/Lain-Patches/releases/tag/v1.3.0-dev.3",
+      "createdAt": "2026-07-12T15:00:00",
+      "targetApps": [
+        "cn.adonet.proxyevery",
+        "com.PixelStudio",
+        "com.adsk.sketchbook",
+        "com.azefsw.audioconnect",
+        "com.ceyhan.sets",
+        "com.chimbori.hermitcrab",
+        "com.degenk.boorusama",
+        "com.flavionet.android.camera.lite",
+        "com.flavionet.android.cinema.lite",
+        "com.getepic.Epic",
+        "com.hopefactory2021.fakegpslocation",
+        "com.ilovepdf.www",
+        "com.imaginstudio.imagetools.pixellab",
+        "com.jeyluta.timestampcamerafree",
+        "com.jeyluta.timestampcamerafreeent",
+        "com.jlindemann.science",
+        "com.kcstream.cing",
+        "com.medibang.android.medibangpro",
+        "com.medibang.android.paint.tablet",
+        "com.regasoftware.udisc",
+        "com.scheler.superproxy",
+        "com.surmin.photofancie.lite",
+        "jp.co.shueisha.mangaplus",
+        "net.nemostudio.keymate",
+        "studio.muggle.chatboost",
+        "universal"
+      ],
+      "appCount": 25,
+      "patchCount": 39
+    },
+    "latest": "stable"
   },
   "lakaka": {
     "source": "github",
@@ -1733,18 +1745,19 @@
     "firstSeen": "2026-07-09T04:53:42",
     "stable": {
       "file": "patches/miguel-stable.json",
-      "version": "v1.7.11",
-      "releaseUrl": "https://github.com/MiguelNinja19/miguel-morphe-patches/releases/tag/v1.7.11",
-      "createdAt": "2026-07-12T00:41:42",
+      "version": "v1.8.6",
+      "releaseUrl": "https://github.com/MiguelNinja19/miguel-morphe-patches/releases/tag/v1.8.6",
+      "createdAt": "2026-07-12T14:57:01",
       "targetApps": [
+        "air.com.midjiwan.polytopia",
         "com.ea.game.pvzfree_row",
         "com.rubygames.assassin",
         "diozz.cubex",
         "jpark.AOS5",
         "universal"
       ],
-      "appCount": 4,
-      "patchCount": 8
+      "appCount": 5,
+      "patchCount": 9
     },
     "latest": "stable"
   },
@@ -1758,9 +1771,9 @@
     "firstSeen": "2026-07-06T22:13:39",
     "stable": {
       "file": "patches/modx-stable.json",
-      "version": "v1.4.0",
-      "releaseUrl": "https://github.com/Utsavrajputt/Modx-patches/releases/tag/v1.4.0",
-      "createdAt": "2026-07-12T07:18:57",
+      "version": "v1.4.2",
+      "releaseUrl": "https://github.com/Utsavrajputt/Modx-patches/releases/tag/v1.4.2",
+      "createdAt": "2026-07-12T13:59:03",
       "targetApps": [
         "com.mxtech.videoplayer.ad"
       ],
@@ -2193,15 +2206,15 @@
     },
     "dev": {
       "file": "patches/piko-dev.json",
-      "version": "v3.8.0-dev.3",
-      "releaseUrl": "https://github.com/crimera/piko/releases/tag/v3.8.0-dev.3",
-      "createdAt": "2026-07-05T13:02:07",
+      "version": "v3.8.0-dev.4",
+      "releaseUrl": "https://github.com/crimera/piko/releases/tag/v3.8.0-dev.4",
+      "createdAt": "2026-07-12T13:22:24",
       "targetApps": [
         "com.instagram.android",
         "com.twitter.android"
       ],
       "appCount": 2,
-      "patchCount": 125
+      "patchCount": 126
     },
     "latest": "dev"
   },
