@@ -812,9 +812,9 @@
     "firstSeen": "2026-06-20T17:36:44",
     "stable": {
       "file": "patches/ee-morphe-stable.json",
-      "version": "v1.3.0",
-      "releaseUrl": "https://gitlab.com/early.egg3707/ee-morphe-patches/-/releases/v1.3.0",
-      "createdAt": "2026-07-12T00:03:34",
+      "version": "v1.4.1",
+      "releaseUrl": "https://gitlab.com/early.egg3707/ee-morphe-patches/-/releases/v1.4.1",
+      "createdAt": "2026-07-12T10:15:09",
       "targetApps": [
         "com.byairapp.android",
         "epixler.de.hypnobox_android",
@@ -826,20 +826,19 @@
     },
     "dev": {
       "file": "patches/ee-morphe-dev.json",
-      "version": "v1.3.0-dev.37",
-      "releaseUrl": "https://gitlab.com/early.egg3707/ee-morphe-patches/-/releases/v1.3.0-dev.37",
-      "createdAt": "2026-07-11T23:35:17",
+      "version": "v1.5.0-dev.2",
+      "releaseUrl": "https://gitlab.com/early.egg3707/ee-morphe-patches/-/releases/v1.5.0-dev.2",
+      "createdAt": "2026-07-12T10:39:13",
       "targetApps": [
         "com.byairapp.android",
-        "com.going.mobile",
         "epixler.de.hypnobox_android",
         "net.tsapps.appsales",
         "universal"
       ],
-      "appCount": 4,
-      "patchCount": 10
+      "appCount": 3,
+      "patchCount": 9
     },
-    "latest": "stable"
+    "latest": "dev"
   },
   "eksi": {
     "source": "github",
@@ -1794,9 +1793,9 @@
     },
     "dev": {
       "file": "patches/morphe-dev.json",
-      "version": "v1.34.0-dev.7",
-      "releaseUrl": "https://github.com/MorpheApp/morphe-patches/releases/tag/v1.34.0-dev.7",
-      "createdAt": "2026-07-09T16:25:42",
+      "version": "v1.35.0-dev.1",
+      "releaseUrl": "https://github.com/MorpheApp/morphe-patches/releases/tag/v1.35.0-dev.1",
+      "createdAt": "2026-07-12T11:11:38",
       "targetApps": [
         "com.google.android.apps.youtube.music",
         "com.google.android.youtube",
@@ -1804,9 +1803,9 @@
         "universal"
       ],
       "appCount": 3,
-      "patchCount": 123
+      "patchCount": 124
     },
-    "latest": "stable"
+    "latest": "dev"
   },
   "morphe-google": {
     "source": "github",
