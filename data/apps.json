@@ -1748,5 +1748,9 @@
   "com.adobe.lrmobile": {
     "name": "Lightroom",
     "iconUrl": "https://play-lh.googleusercontent.com/ALv_YzwUQTXc17qvu2oy7JTl8Qn-zm22M4FoZKVv2Ru541nDa2EltKPSlv_KyQGacLdpHLotR9Z98bamyEd9rKc"
+  },
+  "dev.sasikanth.pinnit": {
+    "name": "Pinnit",
+    "iconUrl": null
   }
 }
