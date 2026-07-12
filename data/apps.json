@@ -1768,5 +1768,61 @@
   "air.com.midjiwan.polytopia": {
     "name": "The Battle of Polytopia",
     "iconUrl": "https://play-lh.googleusercontent.com/_XOGXn-bwLMfsaeGMdIkMFtj4zBgTUldfJpFMS76akYHNLZX2oXKvwiPsmE3o0DLE9p-gM_CU8nLc6WbdKpREQ"
+  },
+  "com.rs.explorer.filemanager": {
+    "name": "RS File Manager",
+    "iconUrl": "https://play-lh.googleusercontent.com/qk5ZNXn_E2bAi_9JSHhMB_pn1b1NloWWCeMr16cJIAsv05Gy5Rm8nlmd5KjnLOIisgiMtNrG5LOjmdlF_ksQk8o"
+  },
+  "com.jndapp.anime.depth.live.wallpaper": {
+    "name": "Anime Depth Wallpapers",
+    "iconUrl": "https://play-lh.googleusercontent.com/jYmevEkyKdHZs_FSQEIRg8Ifxx4YU2-BQtso3Z0iQkMPM9w9ZkrOcbD7rys6Kq34t4Evufy1UVOgwwP0y4KKWc8"
+  },
+  "mega.privacy.android.app": {
+    "name": "MEGA",
+    "iconUrl": "https://play-lh.googleusercontent.com/4IDzX-5oH2pR3xvhtV7U0q2_3hPFd7KHmcK9Jj5oN0ISJfIBuctADot0Z1kQK1OFLX87nWxmPUzUU6TdymGdIw"
+  },
+  "com.dywx.larkplayer": {
+    "name": "Lark Player",
+    "iconUrl": "https://play-lh.googleusercontent.com/R9N82-_YF9nBKiJrelXqDhIAkTsRGXbr7wSZAKRp9G_If69LgSbHgGeaQC8EWCi9ln9o2rQSP_ww66K9Bm3w"
+  },
+  "com.jndapp.minimal.widgets": {
+    "name": "Minimal Widgets",
+    "iconUrl": "https://play-lh.googleusercontent.com/YdxN2n40wSiPp-WZi832aZHxGFQSafDcHqNif-Wy9YH__t2nCXoB5yGaCQkisJaHWe13H37lI_olM7sKsfONBg"
+  },
+  "com.guochao.faceshow": {
+    "name": "BuzzCast",
+    "iconUrl": "https://play-lh.googleusercontent.com/m47d-2epJmb3wScj2W_4gLc8CYbmd6_NIfR33YJHHkIbVoOc40whqKW90hRDL_bYM9LzW2FGLFyDIGMp1gVe"
+  },
+  "com.eterno": {
+    "name": "Dailyhunt",
+    "iconUrl": "https://play-lh.googleusercontent.com/gQO-QGyxpIHxi2BpUbz00wwssXNO1qIpEkafN8FrxJi0wiD4ZiKT4KYFcUFLI2DvyrS_vV0UGXY0WRt612t3"
+  },
+  "com.uptodown": {
+    "name": "Uptodown App Store",
+    "iconUrl": null
+  },
+  "com.playit.videoplayer": {
+    "name": "PLAYit",
+    "iconUrl": "https://play-lh.googleusercontent.com/NjgxMQUNrXlfiVATypBUGsfdjw-jdXfWiE5sld3KXAFt6O207w7XvTie5AR2WpZMCXBLBp0-QGGy_yqbrODE4w"
+  },
+  "com.MojoFilterMediaLLC.RPGSoundSystem": {
+    "name": "Pocket Bard",
+    "iconUrl": "https://play-lh.googleusercontent.com/p6wWz2ElINiV83AsQyIHEDt6vFkecywNKIoi4ZNzhLi7Sa-lhS-M7XwKJqhAbGUvB0mzkAxSRx4uuxtT6gCJ"
+  },
+  "com.nexstreaming.app.kinemasterfree": {
+    "name": "KineMaster",
+    "iconUrl": "https://play-lh.googleusercontent.com/Jc_gKnGxM5p4_FuWQ_v2k6HlMaCcExeIDt--PkcWrLj_VQ2OyMPhDaycC1s9wG3yOwjviVA4M1go0O-foAx0"
+  },
+  "com.ace.ex.file.manager": {
+    "name": "Ace Ex File Manager",
+    "iconUrl": "https://play-lh.googleusercontent.com/nz9hmHaHAynzg6g25uEqTkdjBNyCw3ojPPxW-IvVAH0Rf0OOZIxMu6acfVsciCP_0J2uPSdwaRIRW430tNjW9g"
+  },
+  "com.nytimes.crossword": {
+    "name": "NYT Games",
+    "iconUrl": "https://play-lh.googleusercontent.com/TBQl70kBjktUn0lqfEAIhSo4ooo_zaWfBAoIn2XdXvAsgfHchPnJdzEESs4G3gvhOxDTeUbLbsrJ-U8H9UFRVD4"
+  },
+  "com.pixel.al.pixelhabittracker": {
+    "name": "Pixel Habit Tracker",
+    "iconUrl": "https://play-lh.googleusercontent.com/UOwh11oam6H0hAqMT0Dy5kMX_c_PrxfFf5TW55yE5UAh2dAcTpVYOopEyHqUstERrERs81SWyzOoGcvRJQEqfw"
   }
 }
