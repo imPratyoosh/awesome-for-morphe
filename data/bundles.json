@@ -136,9 +136,9 @@
     "firstSeen": "2026-05-25T15:05:44",
     "stable": {
       "file": "patches/ajstrick81-androidtv-stable.json",
-      "version": "v1.10.0",
-      "releaseUrl": "https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.10.0",
-      "createdAt": "2026-07-04T18:45:00",
+      "version": "v1.11.0",
+      "releaseUrl": "https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.11.0",
+      "createdAt": "2026-07-12T03:29:06",
       "targetApps": [
         "com.amazon.amazonvideo.livingroom",
         "com.bamnetworks.mobile.android.gameday.atbat",
@@ -1627,6 +1627,27 @@
     },
     "latest": "stable"
   },
+  "letterboxd-stremio": {
+    "source": "github",
+    "repo": "ethanm6/letterboxd-stremio-morphe-patch",
+    "repoUrl": "https://github.com/ethanm6/letterboxd-stremio-morphe-patch",
+    "deepLink": "https://morphe.software/add-source?github=ethanm6/letterboxd-stremio-morphe-patch",
+    "avatarUrl": "https://github.com/ethanm6.png?size=128",
+    "stars": 1,
+    "firstSeen": "2026-07-12T05:58:07",
+    "stable": {
+      "file": "patches/letterboxd-stremio-stable.json",
+      "version": "v1.3.1",
+      "releaseUrl": "https://github.com/ethanm6/letterboxd-stremio-morphe-patch/releases/tag/v1.3.1",
+      "createdAt": "2026-07-08T23:57:02",
+      "targetApps": [
+        "com.letterboxd.letterboxd"
+      ],
+      "appCount": 1,
+      "patchCount": 3
+    },
+    "latest": "stable"
+  },
   "loskutov": {
     "source": "github",
     "repo": "loskutov/youtube-domain-fronting-patch",
@@ -1713,9 +1734,9 @@
     "firstSeen": "2026-07-09T04:53:42",
     "stable": {
       "file": "patches/miguel-stable.json",
-      "version": "v1.7.8",
-      "releaseUrl": "https://github.com/MiguelNinja19/miguel-morphe-patches/releases/tag/v1.7.8",
-      "createdAt": "2026-07-11T22:13:30",
+      "version": "v1.7.11",
+      "releaseUrl": "https://github.com/MiguelNinja19/miguel-morphe-patches/releases/tag/v1.7.11",
+      "createdAt": "2026-07-12T00:41:42",
       "targetApps": [
         "com.ea.game.pvzfree_row",
         "com.rubygames.assassin",
@@ -2127,6 +2148,27 @@
       ],
       "appCount": 10,
       "patchCount": 17
+    },
+    "latest": "stable"
+  },
+  "pichiwa": {
+    "source": "github",
+    "repo": "alejandrobellver/pichiwa-patches",
+    "repoUrl": "https://github.com/alejandrobellver/pichiwa-patches",
+    "deepLink": "https://morphe.software/add-source?github=alejandrobellver/pichiwa-patches",
+    "avatarUrl": "https://github.com/alejandrobellver.png?size=128",
+    "stars": 2,
+    "firstSeen": "2026-07-12T05:58:07",
+    "stable": {
+      "file": "patches/pichiwa-stable.json",
+      "version": "v0.3.1",
+      "releaseUrl": "https://github.com/alejandrobellver/pichiwa-patches/releases/tag/v0.3.1",
+      "createdAt": "2026-07-12T03:44:42",
+      "targetApps": [
+        "com.whatsapp"
+      ],
+      "appCount": 1,
+      "patchCount": 19
     },
     "latest": "stable"
   },
@@ -2825,6 +2867,29 @@
       ],
       "appCount": 2,
       "patchCount": 113
+    },
+    "latest": "stable"
+  },
+  "saiesh": {
+    "source": "github",
+    "repo": "saieshshirodkar/saiesh-morphe-patches",
+    "repoUrl": "https://github.com/saieshshirodkar/saiesh-morphe-patches",
+    "deepLink": "https://morphe.software/add-source?github=saieshshirodkar/saiesh-morphe-patches",
+    "avatarUrl": "https://github.com/saieshshirodkar.png?size=128",
+    "stars": 2,
+    "firstSeen": "2026-07-12T05:58:07",
+    "stable": {
+      "file": "patches/saiesh-stable.json",
+      "version": "v1.0.4",
+      "releaseUrl": "https://github.com/saieshshirodkar/saiesh-morphe-patches/releases/tag/v1.0.4",
+      "createdAt": "2026-07-11T10:18:55",
+      "targetApps": [
+        "com.adobe.lrmobile",
+        "com.overdevs.at4k",
+        "universal"
+      ],
+      "appCount": 2,
+      "patchCount": 10
     },
     "latest": "stable"
   },
