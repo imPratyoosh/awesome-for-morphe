@@ -1,5 +1,5 @@
 {
-    "version": "v1.9.1",
+    "version": "v1.9.3",
     "patches": [
         {
             "compatiblePackages": [
@@ -53,7 +53,7 @@
             ],
             "default": false,
             "dependencies": [],
-            "description": "Skips Google Play Billing by creating a fake Purchase and calling nativeOnPurchasesUpdated directly via extension.",
+            "description": "Skips Google Play Billing by intercepting launchBillingFlow. Creates a fake Purchase and calls nativeOnPurchasesUpdated directly.",
             "name": "Free in-app purchases",
             "options": []
         },

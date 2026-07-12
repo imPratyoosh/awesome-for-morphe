@@ -136,9 +136,9 @@
     "firstSeen": "2026-05-25T15:05:44",
     "stable": {
       "file": "patches/ajstrick81-androidtv-stable.json",
-      "version": "v1.11.0",
-      "releaseUrl": "https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.11.0",
-      "createdAt": "2026-07-12T03:29:06",
+      "version": "v1.12.0",
+      "releaseUrl": "https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.12.0",
+      "createdAt": "2026-07-12T19:54:20",
       "targetApps": [
         "com.amazon.amazonvideo.livingroom",
         "com.bamnetworks.mobile.android.gameday.atbat",
@@ -826,17 +826,18 @@
     },
     "dev": {
       "file": "patches/ee-morphe-dev.json",
-      "version": "v1.5.0-dev.2",
-      "releaseUrl": "https://gitlab.com/early.egg3707/ee-morphe-patches/-/releases/v1.5.0-dev.2",
-      "createdAt": "2026-07-12T10:39:13",
+      "version": "v1.5.0-dev.3",
+      "releaseUrl": "https://gitlab.com/early.egg3707/ee-morphe-patches/-/releases/v1.5.0-dev.3",
+      "createdAt": "2026-07-12T20:51:37",
       "targetApps": [
         "com.byairapp.android",
+        "com.going.mobile",
         "epixler.de.hypnobox_android",
         "net.tsapps.appsales",
         "universal"
       ],
-      "appCount": 3,
-      "patchCount": 9
+      "appCount": 4,
+      "patchCount": 10
     },
     "latest": "dev"
   },
@@ -1139,9 +1140,9 @@
     "firstSeen": "2026-06-15T20:58:55",
     "stable": {
       "file": "patches/hoomans-morphe-stable.json",
-      "version": "v1.42.0",
-      "releaseUrl": "https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.42.0",
-      "createdAt": "2026-07-05T04:02:14",
+      "version": "v1.42.1",
+      "releaseUrl": "https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.42.1",
+      "createdAt": "2026-07-12T20:49:57",
       "targetApps": [
         "ak.alizandro.smartaudiobookplayer",
         "altergames.carlauncher",
@@ -1238,7 +1239,7 @@
       "appCount": 41,
       "patchCount": 54
     },
-    "latest": "dev"
+    "latest": "stable"
   },
   "icysymmetra-tiktok": {
     "source": "github",
@@ -1745,9 +1746,9 @@
     "firstSeen": "2026-07-09T04:53:42",
     "stable": {
       "file": "patches/miguel-stable.json",
-      "version": "v1.9.1",
-      "releaseUrl": "https://github.com/MiguelNinja19/miguel-morphe-patches/releases/tag/v1.9.1",
-      "createdAt": "2026-07-12T17:55:03",
+      "version": "v1.9.3",
+      "releaseUrl": "https://github.com/MiguelNinja19/miguel-morphe-patches/releases/tag/v1.9.3",
+      "createdAt": "2026-07-12T20:23:08",
       "targetApps": [
         "air.com.midjiwan.polytopia",
         "com.ea.game.pvzfree_row",
