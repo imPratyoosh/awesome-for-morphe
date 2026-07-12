@@ -1,5 +1,252 @@
 [
   {
+    "date": "July 12, 2026",
+    "bundles": {
+      "adobo": {
+        "isNew": false,
+        "apps": {
+          "com.google.android.inputmethod.latin": {
+            "isNew": false,
+            "patches": [
+              "Enable access points menu redesign"
+            ]
+          }
+        }
+      },
+      "lain": {
+        "isNew": false,
+        "apps": {
+          "com.PixelStudio": {
+            "isNew": true,
+            "patches": [
+              "Enable Pro"
+            ]
+          },
+          "com.jlindemann.science": {
+            "isNew": true,
+            "patches": [
+              "Enable PRO+"
+            ]
+          },
+          "net.nemostudio.keymate": {
+            "isNew": true,
+            "patches": [
+              "Enable Premium"
+            ]
+          },
+          "studio.muggle.chatboost": {
+            "isNew": true,
+            "patches": [
+              "Enable Premium"
+            ]
+          }
+        }
+      },
+      "morphe": {
+        "isNew": false,
+        "apps": {
+          "com.google.android.apps.youtube.music": {
+            "isNew": false,
+            "patches": [
+              "Spoof app version"
+            ]
+          }
+        }
+      },
+      "piko": {
+        "isNew": false,
+        "apps": {
+          "com.instagram.android": {
+            "isNew": false,
+            "patches": [
+              "Filter stories",
+              "Mark chat as read manually"
+            ]
+          }
+        }
+      },
+      "rushiranpise": {
+        "isNew": false,
+        "apps": {
+          "com.community.mbox.in": {
+            "isNew": false,
+            "patches": [
+              "Unlock VIP"
+            ]
+          },
+          "com.community.mbox.tv": {
+            "isNew": false,
+            "patches": [
+              "Unlock VIP"
+            ]
+          },
+          "com.community.oneroom": {
+            "isNew": false,
+            "patches": [
+              "Unlock VIP"
+            ]
+          },
+          "universal": {
+            "isNew": false,
+            "patches": [
+              "Add resource file",
+              "Change package name",
+              "Change version code",
+              "Custom certificates",
+              "Disable Play Integrity",
+              "Disable ad SDK calls",
+              "Disable clipboard access",
+              "Disable shake ads",
+              "Enable Android debugging",
+              "Enable ROM signature spoofing",
+              "Enable debug build target",
+              "Export all activities",
+              "Export internal data documents provider",
+              "Force dark theme",
+              "Hex patch",
+              "Hide ADB status",
+              "Hide VPN and proxy",
+              "Hide app icon",
+              "Hide mock location",
+              "Override certificate pinning",
+              "Predictive back gesture",
+              "Remove ad manifest entries",
+              "Remove audio capture policy",
+              "Remove screen capture restriction",
+              "Remove screenshot restriction",
+              "Remove share targets",
+              "Set target SDK 34",
+              "Spoof Android ID",
+              "Spoof Bluetooth identifiers",
+              "Spoof Pixel device",
+              "Spoof Play age signals",
+              "Spoof SIM provider",
+              "Spoof Wi-Fi connection",
+              "Spoof Wi-Fi identifiers",
+              "Spoof build info",
+              "Spoof keystore security level",
+              "Spoof root of trust",
+              "Spoof telephony IDs"
+            ]
+          },
+          "com.MojoFilterMediaLLC.RPGSoundSystem": {
+            "isNew": true,
+            "patches": [
+              "Unlock premium"
+            ]
+          },
+          "com.ace.ex.file.manager": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.dywx.larkplayer": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.eterno": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.guochao.faceshow": {
+            "isNew": true,
+            "patches": [
+              "Unlock SVIP"
+            ]
+          },
+          "com.jndapp.anime.depth.live.wallpaper": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.jndapp.depth.live.wallpaper": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.jndapp.minimal.widgets": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.nexstreaming.app.kinemasterfree": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.nytimes.crossword": {
+            "isNew": true,
+            "patches": [
+              "Unlock subscription"
+            ]
+          },
+          "com.pixel.al.pixelhabittracker": {
+            "isNew": true,
+            "patches": [
+              "Unlock PRO"
+            ]
+          },
+          "com.playit.videoplayer": {
+            "isNew": true,
+            "patches": [
+              "Unlock VIP"
+            ]
+          },
+          "com.rs.explorer.filemanager": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.strava": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.uptodown": {
+            "isNew": true,
+            "patches": [
+              "Unlock Turbo"
+            ]
+          },
+          "de.komoot.android": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "mega.privacy.android.app": {
+            "isNew": true,
+            "patches": [
+              "Unlock Pro"
+            ]
+          }
+        }
+      },
+      "shaun-sheep": {
+        "isNew": false,
+        "apps": {
+          "dev.sasikanth.pinnit": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
     "date": "July 11, 2026",
     "bundles": {
       "ee-morphe": {

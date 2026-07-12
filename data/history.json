@@ -9,6 +9,7 @@
       "Always-incognito mode",
       "Enable OCR feature",
       "Enable Undo feature",
+      "Enable access points menu redesign",
       "Enable clipboard in incognito",
       "Enable key shape selection",
       "Enable voice typing in incognito",
@@ -1251,6 +1252,9 @@
     "cn.adonet.proxyevery": [
       "Disable Ads"
     ],
+    "com.PixelStudio": [
+      "Enable Pro"
+    ],
     "com.adsk.sketchbook": [
       "Enable Premium"
     ],
@@ -1294,6 +1298,9 @@
     "com.jeyluta.timestampcamerafreeent": [
       "Disable Ads"
     ],
+    "com.jlindemann.science": [
+      "Enable PRO+"
+    ],
     "com.kcstream.cing": [
       "Disable Ads",
       "Disable Anti-Tamper Detection",
@@ -1320,6 +1327,12 @@
     "jp.co.shueisha.mangaplus": [
       "Bypass Reading Limitation",
       "Enable Deluxe Plan"
+    ],
+    "net.nemostudio.keymate": [
+      "Enable Premium"
+    ],
+    "studio.muggle.chatboost": [
+      "Enable Premium"
     ],
     "universal": [
       "Change package name",
@@ -1379,6 +1392,7 @@
       "Sanitize sharing links",
       "Scrobbling",
       "SponsorBlock",
+      "Spoof app version",
       "Spoof video streams",
       "Theme",
       "Track crossfade"
@@ -1738,6 +1752,7 @@
       "Download media",
       "Download voice message",
       "External downloader",
+      "Filter stories",
       "Friendship status indicator",
       "Hide group creation button on sharesheet",
       "Hide navigation buttons",
@@ -1748,6 +1763,7 @@
       "Improve image viewing",
       "Limit feed to following profiles",
       "Make ephemeral media permanent",
+      "Mark chat as read manually",
       "More options on post",
       "More options on profile",
       "Open links externally",
@@ -1769,7 +1785,6 @@
       "Add ability to copy media link",
       "Block redirecting to X Lite",
       "Bring back twitter",
-      "Browse tweet object",
       "Change app icon",
       "Change version code",
       "Clear tracking params",
@@ -2097,6 +2112,9 @@
     "cn.danatech.xingseus": [
       "Unlock Premium"
     ],
+    "com.MojoFilterMediaLLC.RPGSoundSystem": [
+      "Unlock premium"
+    ],
     "com.Splitwise.SplitwiseMobile": [
       "Unlock Pro"
     ],
@@ -2105,6 +2123,9 @@
     ],
     "com.accuweather.android": [
       "Unlock Premium+"
+    ],
+    "com.ace.ex.file.manager": [
+      "Unlock Premium"
     ],
     "com.acmeaom.android.myradar": [
       "Unlock Premium"
@@ -2167,30 +2188,13 @@
       "Spoof WARP+ Unlimited UI"
     ],
     "com.community.mbox.in": [
-      "Bypass member rights check",
-      "Clear VIP resolution tip",
-      "Spoof member brief info",
-      "Spoof member info",
-      "Spoof member provider flags",
-      "Suppress newbie bonus dialog",
-      "Unlock download member requirement",
-      "Unlock member resolution"
+      "Unlock VIP"
     ],
     "com.community.mbox.tv": [
-      "Bypass TV episode VIP gate",
-      "Clear VIP resolution tip",
-      "Spoof TV account VIP status",
-      "Unlock member resolution"
+      "Unlock VIP"
     ],
     "com.community.oneroom": [
-      "Bypass member rights check",
-      "Clear VIP resolution tip",
-      "Spoof member brief info",
-      "Spoof member info",
-      "Spoof member provider flags",
-      "Suppress newbie bonus dialog",
-      "Unlock download member requirement",
-      "Unlock member resolution"
+      "Unlock VIP"
     ],
     "com.cpuid.cpu_z": [
       "Unlock Premium"
@@ -2201,6 +2205,12 @@
     "com.duolingo": [
       "Enable Debug Menu",
       "Unlock Subscription"
+    ],
+    "com.dywx.larkplayer": [
+      "Unlock Premium"
+    ],
+    "com.eterno": [
+      "Unlock Premium"
     ],
     "com.finalwire.aida64": [
       "Remove ads"
@@ -2217,6 +2227,9 @@
     "com.glority.picturemushroom": [
       "Unlock Premium"
     ],
+    "com.guochao.faceshow": [
+      "Unlock SVIP"
+    ],
     "com.inscode.autoclicker": [
       "Unlock Premium "
     ],
@@ -2229,6 +2242,15 @@
     ],
     "com.javiersantos.mlmanager": [
       "Unlock Pro"
+    ],
+    "com.jndapp.anime.depth.live.wallpaper": [
+      "Unlock Premium"
+    ],
+    "com.jndapp.depth.live.wallpaper": [
+      "Unlock Premium"
+    ],
+    "com.jndapp.minimal.widgets": [
+      "Unlock Premium"
     ],
     "com.joincarbon.nutrition": [
       "Unlock Premium"
@@ -2283,6 +2305,12 @@
       "Unlock Followed Locations",
       "Unlock Premium"
     ],
+    "com.nexstreaming.app.kinemasterfree": [
+      "Unlock Premium"
+    ],
+    "com.nytimes.crossword": [
+      "Unlock subscription"
+    ],
     "com.oasisfeng.greenify": [
       "Unlock Donation Features"
     ],
@@ -2294,6 +2322,12 @@
     ],
     "com.piksoft.turboscan.free": [
       "Unlock Pro features"
+    ],
+    "com.pixel.al.pixelhabittracker": [
+      "Unlock PRO"
+    ],
+    "com.playit.videoplayer": [
+      "Unlock VIP"
     ],
     "com.pocketprep.android.itcybersecurity": [
       "Unlock Premium"
@@ -2313,6 +2347,9 @@
     "com.regasoftware.udisc": [
       "Unlock Pro"
     ],
+    "com.rs.explorer.filemanager": [
+      "Unlock Premium"
+    ],
     "com.saldous.casetracker": [
       "Unlock Pro"
     ],
@@ -2330,6 +2367,9 @@
     ],
     "com.spotangels.android": [
       "Unlock Plus"
+    ],
+    "com.strava": [
+      "Unlock Premium"
     ],
     "com.tafayor.hibernator": [
       "Unlock Pro"
@@ -2366,6 +2406,9 @@
     ],
     "com.twtapp": [
       "Unlock Subscription"
+    ],
+    "com.uptodown": [
+      "Unlock Turbo"
     ],
     "com.urbandroid.kinestop": [
       "Unlock pro"
@@ -2411,6 +2454,9 @@
     "cz.mroczis.netmonster": [
       "Unlock Premium"
     ],
+    "de.komoot.android": [
+      "Unlock Premium"
+    ],
     "eu.darken.myperm": [
       "Unlock Pro"
     ],
@@ -2452,6 +2498,9 @@
     "kha.prog.mikrotik": [
       "Unlock Pro"
     ],
+    "mega.privacy.android.app": [
+      "Unlock Pro"
+    ],
     "mobi.lockdown.weather": [
       "Unlock Premium"
     ],
@@ -2479,12 +2528,50 @@
       "Unlock Pro"
     ],
     "universal": [
+      "Add resource file",
+      "Change package name",
+      "Change version code",
+      "Custom certificates",
+      "Disable Play Integrity",
+      "Disable ad SDK calls",
+      "Disable clipboard access",
+      "Disable shake ads",
+      "Enable Android debugging",
+      "Enable ROM signature spoofing",
+      "Enable debug build target",
+      "Export all activities",
+      "Export internal data documents provider",
       "Fix Firebase after re-signing",
+      "Force dark theme",
       "GmsCore support (MicroG)",
+      "Hex patch",
+      "Hide ADB status",
+      "Hide VPN and proxy",
+      "Hide app icon",
+      "Hide mock location",
+      "Override certificate pinning",
+      "Predictive back gesture",
       "Provide Original app certificate",
+      "Remove ad manifest entries",
+      "Remove audio capture policy",
+      "Remove screen capture restriction",
+      "Remove screenshot restriction",
+      "Remove share targets",
+      "Set target SDK 34",
+      "Spoof Android ID",
+      "Spoof Bluetooth identifiers",
+      "Spoof Pixel device",
+      "Spoof Play age signals",
+      "Spoof SIM provider",
+      "Spoof Wi-Fi connection",
+      "Spoof Wi-Fi identifiers",
       "Spoof Widevine / DRM level",
       "Spoof app signature",
-      "Spoof install source"
+      "Spoof build info",
+      "Spoof install source",
+      "Spoof keystore security level",
+      "Spoof root of trust",
+      "Spoof telephony IDs"
     ],
     "verbosus.pialytic": [
       "Unlock All Features"
@@ -2626,6 +2713,9 @@
     ],
     "com.vanniktech.rssreader": [
       "RSS Reader Premium"
+    ],
+    "dev.sasikanth.pinnit": [
+      "Unlock Premium"
     ]
   },
   "ts-patches": {
