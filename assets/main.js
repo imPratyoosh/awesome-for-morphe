@@ -333,6 +333,17 @@ const app = createApp({
     const whatsNewHighlights = ref([]);
     const rawShowParam = ref("");
 
+    const backgroundReady = ref(!initialParams.get("show"));
+    watch(activeData, (newData) => {
+      if (newData && !backgroundReady.value) {
+        nextTick(() => {
+          setTimeout(() => {
+            backgroundReady.value = true;
+          }, 150);
+        });
+      }
+    });
+
     const buildUrlString = (targetHash) => {
       const urlParts = [];
       if (query.value) urlParts.push(`q=${encodeURIComponent(query.value)}`);
@@ -443,8 +454,15 @@ const app = createApp({
 
     onMounted(async () => {
       syncFromUrl(location.search);
-      if (isWhatsNewView.value && whatsNewHistory.value.length === 0) await loadWhatsNewData();
-      loadData();
+      if (isWhatsNewView.value && whatsNewHistory.value.length === 0) {
+        await loadWhatsNewData();
+        setTimeout(loadData, 300);
+      } else {
+        loadData();
+        setTimeout(() => {
+          if (whatsNewHistory.value.length === 0) loadWhatsNewData();
+        }, 1000);
+      }
       window.addEventListener("popstate", () => syncFromUrl(location.search));
       window.addEventListener("hashchange", () => syncFromUrl(location.search));
       window.addEventListener("keydown", (event) => {
@@ -579,13 +597,9 @@ const app = createApp({
     });
 
     const filteredRows = computed(() => {
-      if (!activeData.value) return [];
-      let currentShowOptions =
-        popupBundleKey.value && !(isWhatsNewView.value && showOptions.value.length > 0) ? [] : showOptions.value;
-      if (currentShowOptions.length === 0) {
-        const targetPrefix = `${bundle.value || ""}${app.value ? ":" + app.value : ""}`;
-        if (targetPrefix) currentShowOptions = [targetPrefix];
-      }
+      if (!activeData.value || !backgroundReady.value) return [];
+      const targetPrefix = `${bundle.value || ""}${app.value ? ":" + app.value : ""}`;
+      const currentShowOptions = targetPrefix ? [targetPrefix] : [];
       return filterRows(activeData.value, { query: query.value, showOptions: currentShowOptions });
     });
 
@@ -675,9 +689,10 @@ const app = createApp({
     };
 
     const bundlesGroups = computed(() => {
-      if (!activeData.value) return [];
+      if (!activeData.value || !backgroundReady.value) return [];
       const queryWords = (query.value || "").toLowerCase().split(/\s+/).filter(Boolean);
-      const hasFilters = queryWords.length > 0 || showOptions.value.length > 0;
+      const targetPrefix = `${bundle.value || ""}${app.value ? ":" + app.value : ""}`;
+      const hasFilters = queryWords.length > 0 || !!targetPrefix;
 
       return activeData.value.bundles
         .map((bItem) =>
@@ -691,10 +706,7 @@ const app = createApp({
           if (group.rows.length > 0) return true;
           if (patchesLoaded.value) return false;
 
-          let currentShowOptions =
-            showOptions.value.length === 0 && (bundle.value || app.value)
-              ? [`${bundle.value || ""}${app.value ? ":" + app.value : ""}`]
-              : showOptions.value;
+          const currentShowOptions = targetPrefix ? [targetPrefix] : [];
           if (currentShowOptions.length > 0) {
             const matched = currentShowOptions.some((showOpt) => {
               const parts = showOpt.split(":");
