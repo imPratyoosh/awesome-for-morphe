@@ -856,19 +856,28 @@ const app = createApp({
 
     const selectPopupAppFromDropdown = (appValue) => {
       isSyncing = true;
+      popupUI.expandedOptions.clear();
       const newShow = appValue ? `${popupBundleKey.value}:${appValue}` : popupBundleKey.value;
       showOptions.value = [newShow];
       if (isWhatsNewView.value) rawShowParam.value = newShow;
       try {
         history.pushState(null, "", buildUrlString(location.hash));
       } catch (e) {}
-      nextTick(() => (isSyncing = false));
+      nextTick(() => {
+        isSyncing = false;
+        if (!appValue) {
+          autoExpandPopupApp();
+        }
+      });
     };
 
     const filterByApp = (packageName) => {
+      if (popupBundleKey.value) {
+        document.body.style.overflow = "";
+        popupBundleKey.value = null;
+      }
       resetFilters();
       app.value = packageName;
-      if (popupBundleKey.value) closePopup();
     };
     const resetFilters = () => {
       query.value =
@@ -970,7 +979,7 @@ const app = createApp({
         (Date.now() - new Date(group.bundle.firstSeen).getTime()) / 86400000 <= 7,
       hasHighlight: (prefix) =>
         isWhatsNewView.value &&
-        (whatsNewHighlights.value.includes(prefix) || whatsNewHighlights.value.some((p) => p.startsWith(prefix + ":"))),
+        whatsNewHighlights.value.includes(prefix),
       isAppHighlighted: (groupKey, appItem) =>
         isWhatsNewView.value &&
         (whatsNewHighlights.value.includes(`${groupKey}:${appItem.packageName}`) ||
