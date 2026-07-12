@@ -363,10 +363,12 @@
     "iconUrl": "https://play-lh.googleusercontent.com/6ju9TruWgDf8FH1HLnxMj4ykfoIzQt52-Q8mfI4FsHAxryD7uLGbQD1Xhy6FAOBm1PI"
   },
   "o.o.joey.dev": {
-    "name": "Joey for Reddit (Dev)"
+    "name": "Joey for Reddit (Dev)",
+    "iconUrl": "https://play-lh.googleusercontent.com/6ju9TruWgDf8FH1HLnxMj4ykfoIzQt52-Q8mfI4FsHAxryD7uLGbQD1Xhy6FAOBm1PI"
   },
   "o.o.joey.pro": {
-    "name": "Joey for Reddit (Pro)"
+    "name": "Joey for Reddit (Pro)",
+    "iconUrl": "https://play-lh.googleusercontent.com/6ju9TruWgDf8FH1HLnxMj4ykfoIzQt52-Q8mfI4FsHAxryD7uLGbQD1Xhy6FAOBm1PI"
   },
   "io.syncapps.lemmy_sync": {
     "name": "Sync for Lemmy",
@@ -577,7 +579,8 @@
     "iconUrl": "https://play-lh.googleusercontent.com/XSoqEDquJuenUosbMN_EA2n2U5lsomPEUdCKj4j9bUdPfdWMCtRqXlyPgQ6zxQxWaDFIXrqbqyFjwXQ5FMYubw"
   },
   "com.example.app": {
-    "name": "XYZ app"
+    "name": "XYZ app",
+    "iconUrl": ""
   },
   "com.unicornsoft.android.unicornpro": {
     "name": "Unicorn Pro"
@@ -739,7 +742,8 @@
     "iconUrl": "https://play-lh.googleusercontent.com/3prZ4AWUkRpB76xwwWQV_cvDrlu87YAmlEv2j_5QEB_ZC3-9lZiIXdwKW7-40in7Fs7l9iHUGVHcQZWmgdWqXA"
   },
   "com.java.inspector": {
-    "name": "Java Inspector"
+    "name": "Java Inspector",
+    "iconUrl": "https://www.apkmirror.com/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fdownloadr2.apkmirror.com%2Fwp-content%2Fuploads%2F2018%2F12%2F5c1e727e7be97.png&w=192&h=192&q=100"
   },
   "com.flavionet.android.cinema.lite": {
     "name": "Cinema FV-5 Lite",
@@ -835,7 +839,7 @@
   },
   "ru.vk.store": {
     "name": "RuStore",
-    "iconUrl": null
+    "iconUrl": "https://www.apkmirror.com/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fdownloadr2.apkmirror.com%2Fwp-content%2Fuploads%2F2025%2F03%2F53%2F67c787cb4f546_ru.vk.store.png&w=192&h=192&q=100"
   },
   "com.medisafe.android.client": {
     "name": "Medisafe",
@@ -915,7 +919,7 @@
   },
   "com.kcstream.cing": {
     "name": "Nekopoi",
-    "iconUrl": null
+    "iconUrl": "https://image.winudf.com/v2/user/admin/YWRtaW5fODk0NDRjMjUtNGIzNi00YjFmLWJhZTAtN2FjZGI3YWMxYWY2LnBuZ18xNzAwMTAxMTA4Njg4/icon.webp?w=360&fakeurl=1&type=.webp"
   },
   "com.jeyluta.timestampcamerafreeent": {
     "name": "Timestamp Camera Enterprise Free",
@@ -1219,7 +1223,7 @@
   },
   "com.community.oneroom": {
     "name": "MovieBox",
-    "iconUrl": null
+    "iconUrl": "https://play-lh.googleusercontent.com/9a9K_hQnwPmOD2-ivUJnnUDOIvUv2NrjPgs0DXBuAo-o8mima3ceccEdS95rsT0QY-A5iAv9OBsRpae7SWM0fQ"
   },
   "app.ninjavpn.android": {
     "name": "Ninja VPN",
@@ -1499,7 +1503,7 @@
   },
   "com.mxtech.videoplayer.pro": {
     "name": "MX Player Pro",
-    "iconUrl": ""
+    "iconUrl": "https://play-lh.googleusercontent.com/kuU8L2zHfkE8rDQ8iUwMpYcV8TzUDBz7n_KYaEV4R5M7W5qHiZGqxWk9f1ysP2Lk72GmRTps3iaXUXfH-18pWw"
   },
   "com.rk.taskmanager": {
     "name": "TaskManager",
@@ -1599,7 +1603,7 @@
   },
   "com.community.mbox.tv": {
     "name": "MovieBox TV",
-    "iconUrl": ""
+    "iconUrl": "https://play-lh.googleusercontent.com/j1RGYIBiC6g9zy_KrVCaRq1YmVUZ802xFipAJlYPG0TotXg-GpzTykCHVgZmV9uHpc0dbvc-7EfF28k6hPb_"
   },
   "com.wolfram.android.alphapro": {
     "name": "WolframAlpha",
@@ -1703,7 +1707,7 @@
   },
   "com.community.mbox.in": {
     "name": "MovieBox (India)",
-    "iconUrl": ""
+    "iconUrl": "https://play-lh.googleusercontent.com/j1RGYIBiC6g9zy_KrVCaRq1YmVUZ802xFipAJlYPG0TotXg-GpzTykCHVgZmV9uHpc0dbvc-7EfF28k6hPb_"
   },
   "eu.toneiv.ubktouch": {
     "name": "UbikiTouch",

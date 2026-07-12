@@ -160,14 +160,14 @@ def fetch_app_icon(package_name):
         print(
             "Warning: google-play-scraper is not installed. Run: pip install google-play-scraper"
         )
-        return ""
+        return None
     try:
         result = gplay_app(package_name)
         if result and "icon" in result:
             return result["icon"]
     except Exception as exception:
         print(f"Failed to fetch app icon for {package_name}: {exception}")
-    return ""
+    return None
 
 
 def collect_apps(list_json):
@@ -374,15 +374,15 @@ def main():
                         seen_packages.add(package_name)
                         meta = app_metadata.get(package_name)
                         is_new_app = not meta
-                        name = discovered.get(package_name, "")
+                        name = discovered.get(package_name, None)
 
                         if not meta:
-                            app_metadata[package_name] = {"name": name, "iconUrl": ""}
+                            app_metadata[package_name] = {"name": name, "iconUrl": None}
                         elif isinstance(meta, str):
                             new_name = name or meta
                             app_metadata[package_name] = {
-                                "name": new_name,
-                                "iconUrl": "",
+                                "name": new_name if new_name else None,
+                                "iconUrl": None,
                             }
                         elif isinstance(meta, dict):
                             if name and meta.get("name") != name:
@@ -408,6 +408,8 @@ def main():
                     new_avatar = future.result()
                     if new_avatar:
                         bundle_sources[base]["avatarUrl"] = new_avatar
+                    else:
+                        print(f"[ERROR] Missing avatar for bundle: {base}")
                 except Exception as exception:
                     print(f"Failed to fetch avatar for {base}: {exception}")
 
@@ -426,6 +428,8 @@ def main():
                     new_stars = future.result()
                     if new_stars is not None:
                         bundle_sources[base]["stars"] = new_stars
+                    else:
+                        print(f"[ERROR] Missing stars for bundle: {base}")
                 except Exception as exception:
                     print(f"Failed to fetch stars for {base}: {exception}")
 
@@ -442,6 +446,8 @@ def main():
                     new_icon = future.result()
                     if new_icon:
                         app_metadata[package_name]["iconUrl"] = new_icon
+                    else:
+                        print(f"[ERROR] Missing iconUrl for package: {package_name}")
                 except Exception as exception:
                     print(f"Failed to fetch icon for {package_name}: {exception}")
 
@@ -457,19 +463,33 @@ def main():
         for package_name in all_packages
         if (
             package_name not in app_metadata
-            or not app_metadata[package_name].get("name")
+            or app_metadata[package_name].get("name") is None
         )
         and package_name != "universal"
         and " " not in package_name
         and "." in package_name
     )
     if missing:
-        print("\n[WARNING] Missing app names for packages:")
-        print(json.dumps(missing, indent=2))
+        print(f"\n[WARNING] Missing app name for {len(missing)} packages.")
         if "GITHUB_ACTIONS" in os.environ:
-            print(f"::warning::Missing app names for packages: {', '.join(missing)}")
-    else:
-        print("\nNo missing app names. Everything is up to date!")
+            print(f"::warning::Missing app name for {len(missing)} packages: {', '.join(missing)}")
+
+    missing_icons = sorted(
+        package_name
+        for package_name in all_packages
+        if (
+            package_name in app_metadata
+            and app_metadata[package_name].get("iconUrl") is None
+        )
+        and package_name != "universal"
+        and " " not in package_name
+        and "." in package_name
+    )
+    if missing_icons:
+        print(f"\n[INFO] Missing iconUrl for {len(missing_icons)} packages.")
+        
+    if not missing and not missing_icons:
+        print("\nEverything is up to date!")
 
 
 if __name__ == "__main__":

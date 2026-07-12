@@ -7,7 +7,15 @@ import {
   reactive,
   nextTick,
 } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
-import { filterRows, getFilterOptions, loadChannelData, normalizeChannel, summarizeRows, appName, fetchJson } from "./data.js";
+import {
+  filterRows,
+  getFilterOptions,
+  loadChannelData,
+  normalizeChannel,
+  summarizeRows,
+  appName,
+  fetchJson,
+} from "./data.js";
 
 const DEFAULT_CHANNEL = "latest";
 
@@ -390,7 +398,7 @@ createApp({
       try {
         const [history, apps] = await Promise.all([
           fetchJson(new URL("../data/whats-new.json", import.meta.url)),
-          fetchJson(new URL("../data/apps.json", import.meta.url))
+          fetchJson(new URL("../data/apps.json", import.meta.url)),
         ]);
         whatsNewHistory.value = history || [];
         whatsNewAppsData.value = apps || {};
@@ -429,17 +437,17 @@ createApp({
               appStrs.push(`${app}:${formatPatchName(patches[0])}`);
             } else {
               const patchStrs = patches.map(formatPatchName);
-              appStrs.push(`${app}:(${patchStrs.join(',')})`);
+              appStrs.push(`${app}:(${patchStrs.join(",")})`);
             }
           }
           if (appStrs.length === 1) {
             bundleStrs.push(`${bundle}:${appStrs[0]}`);
           } else {
-            bundleStrs.push(`${bundle}:(${appStrs.join(',')})`);
+            bundleStrs.push(`${bundle}:(${appStrs.join(",")})`);
           }
         }
       }
-      return bundleStrs.join(',');
+      return bundleStrs.join(",");
     };
 
     const navigateToWhatsNewShow = (trieStr) => {
@@ -453,7 +461,8 @@ createApp({
       // Preserve sort and view so settings are retained when returning to search.
       const currentParams = new URLSearchParams(location.search);
       const urlParts = [];
-      if (currentParams.get("sort") && currentParams.get("sort") !== "stars") urlParts.push(`sort=${currentParams.get("sort")}`);
+      if (currentParams.get("sort") && currentParams.get("sort") !== "stars")
+        urlParts.push(`sort=${currentParams.get("sort")}`);
       if (currentParams.get("view") === "list") urlParts.push("view=list");
       urlParts.push(`show=${encodedShow}`);
 

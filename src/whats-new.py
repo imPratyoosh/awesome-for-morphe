@@ -325,9 +325,7 @@ def main():
         print("No changes to write to MD.")
 
     # Insert today's JSON entry
-    whats_new_data.insert(
-        0, {"date": today_str, "bundles": json_diff}
-    )
+    whats_new_data.insert(0, {"date": today_str, "bundles": json_diff})
 
     whats_new_data = whats_new_data[:15]
     write_json(WHATS_NEW_JSON_PATH, whats_new_data)
