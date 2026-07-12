@@ -23,11 +23,11 @@ jobs:
       - name: Download and update bundles
         id: update
         run: |
-          python src/download.py --bundles
+          python scripts/download.py --bundles
           if [ -n "$(git status --porcelain)" ]; then
-            python src/download.py
+            python scripts/download.py
             pip install google-play-scraper
-            python src/update.py
+            python scripts/update.py
             echo "changed=true" >> $GITHUB_OUTPUT
           else
             echo "changed=false" >> $GITHUB_OUTPUT

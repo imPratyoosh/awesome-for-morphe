@@ -22,20 +22,20 @@ jobs:
 
       - name: Download and process data
         run: |
-          python src/download.py --bundles
+          python scripts/download.py --bundles
           if [ -n "$(git status --porcelain)" ]; then
-            python src/download.py
+            python scripts/download.py
           fi
           
           pip install google-play-scraper
           DAY_OF_MONTH=$(date +%d)
           if [ "$DAY_OF_MONTH" -eq 1 ] || [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
-            python src/update.py --all
+            python scripts/update.py --all
           else
-            python src/update.py --stars
+            python scripts/update.py --stars
           fi
           
-          python src/whats-new.py
+          python scripts/whats_new.py
 
       - name: Commit and push changes
         id: commit
@@ -69,4 +69,4 @@ jobs:
         env:
           TG_CHAT: ${{ secrets.TG_CHAT }}
           TG_TOKEN: ${{ secrets.TG_TOKEN }}
-        run: python src/telegram.py
+        run: python scripts/telegram.py
