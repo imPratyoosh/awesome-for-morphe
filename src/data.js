@@ -15,13 +15,11 @@ const simplifyString = (inputString) =>
 export async function fetchJson(url) {
   const key = url.toString();
   if (!jsonCache.has(key)) {
-    jsonCache.set(
-      key,
-      fetch(url, { cache: "no-cache" }).then((response) => {
-        if (!response.ok) throw new Error(`Failed to load ${url.pathname}: ${response.status}`);
-        return response.json();
-      }),
-    );
+    const fetchPromise = fetch(url, { cache: "no-cache" }).then((response) => {
+      if (!response.ok) throw new Error(`Failed to load ${new URL(url).pathname}: ${response.status}`);
+      return response.json();
+    });
+    jsonCache.set(key, fetchPromise);
   }
   return jsonCache.get(key);
 }
@@ -33,39 +31,51 @@ export function normalizeChannel(channelName) {
 export function appName(packageName, metadata, skipSet) {
   const key = packageName || "universal";
   const meta = metadata[key];
-  if (meta && meta.name) return meta.name;
-  if (typeof meta === "string") return meta;
 
+  if (meta?.name) return meta.name;
+  if (typeof meta === "string") return meta;
   if (!packageName) return key;
 
   const skip = skipSet || new Set();
   const parts = packageName.split(".").filter((part) => part.length > 1 && !skip.has(part));
   const last = parts.at(-1) || packageName.split(".").at(-1) || packageName;
+
   return last.replace(/[-_]/g, " ").replace(/\b[a-z]/g, (char) => char.toUpperCase());
 }
 
 function extractVersions(value) {
   if (!Array.isArray(value)) return [];
-  const versionList = value.flatMap((versionItem) => {
-    if (typeof versionItem === "string") return [{ version: versionItem, isExperimental: false }];
-    if (versionItem?.version)
-      return [{ version: String(versionItem.version), isExperimental: !!versionItem.isExperimental }];
-    return [];
-  });
+
+  const versionList = value.reduce((acc, versionItem) => {
+    if (typeof versionItem === "string") {
+      acc.push({ version: versionItem, isExperimental: false });
+    } else if (versionItem?.version) {
+      acc.push({ version: String(versionItem.version), isExperimental: !!versionItem.isExperimental });
+    }
+    return acc;
+  }, []);
 
   if (!versionList.length) return [];
+
   versionList.sort((versionA, versionB) =>
     versionB.version.localeCompare(versionA.version, undefined, { numeric: true, sensitivity: "base" }),
   );
 
-  const mainVersion = versionList.find((versionObj) => !versionObj.isExperimental) || versionList[0];
-  return [...versionList.filter((versionObj) => versionObj !== mainVersion), mainVersion];
+  const mainVersionIndex = versionList.findIndex((versionObj) => !versionObj.isExperimental);
+  if (mainVersionIndex > 0) {
+    const mainVersion = versionList.splice(mainVersionIndex, 1)[0];
+    versionList.push(mainVersion);
+  }
+
+  return versionList;
 }
 
 function packages(patch) {
   const compatiblePackages = patch.compatiblePackages;
+  const universalResult = [{ packageName: "universal", versions: [] }];
+
   if (!compatiblePackages || (typeof compatiblePackages === "object" && Object.keys(compatiblePackages).length === 0)) {
-    return [{ packageName: "universal", versions: [] }];
+    return universalResult;
   }
 
   if (!Array.isArray(compatiblePackages)) {
@@ -75,22 +85,22 @@ function packages(patch) {
     }));
   }
 
-  const packageRows = compatiblePackages.flatMap((packageItem) => {
-    if (typeof packageItem === "string") return [{ packageName: packageItem, versions: [] }];
-    if (packageItem?.packageName)
-      return [
-        {
-          packageName: packageItem.packageName,
-          versions: extractVersions(packageItem.versions || packageItem.targets || []),
-        },
-      ];
-    return [];
-  });
+  const packageRows = compatiblePackages.reduce((acc, packageItem) => {
+    if (typeof packageItem === "string") {
+      acc.push({ packageName: packageItem, versions: [] });
+    } else if (packageItem?.packageName) {
+      acc.push({
+        packageName: packageItem.packageName,
+        versions: extractVersions(packageItem.versions || packageItem.targets || []),
+      });
+    }
+    return acc;
+  }, []);
 
-  return packageRows.length ? packageRows : [{ packageName: "universal", versions: [] }];
+  return packageRows.length ? packageRows : universalResult;
 }
 
-async function loadSource(key, channelObj, names, sourceInfo, skipSet) {
+async function loadSource(key, channelObj, namesMap, sourceInfo, skipSet) {
   const list = await fetchJson(new URL(`../data/${channelObj.file}`, import.meta.url)).catch(() => ({}));
   const repo = sourceInfo.repo || "";
   const bundleVersion = channelObj.version || "";
@@ -98,9 +108,16 @@ async function loadSource(key, channelObj, names, sourceInfo, skipSet) {
 
   return (list.patches || []).flatMap((patch, patchIndex) => {
     const patchId = `${key}:${patchIndex}`;
+
     return packages(patch).map((target, targetIndex) => {
       const packageName = target.packageName || "";
-      const name = appName(packageName, names, skipSet);
+      const name = appName(packageName, namesMap, skipSet);
+      const options = Array.isArray(patch.options) ? patch.options : [];
+
+      const searchPatchesTextParts = [patch.name, patch.description];
+      options.forEach((opt) => searchPatchesTextParts.push(opt.title, opt.key, opt.description));
+      const searchPatchesText = searchPatchesTextParts.filter(Boolean).join(" ").toLowerCase();
+
       return {
         id: `${patchId}:${targetIndex}`,
         patchId,
@@ -112,22 +129,11 @@ async function loadSource(key, channelObj, names, sourceInfo, skipSet) {
         description: patch.description || "",
         packageName,
         appName: name,
-        appIcon: names[packageName] && names[packageName].iconUrl ? names[packageName].iconUrl : "",
+        appIcon: namesMap[packageName]?.iconUrl || "",
         versions: target.versions,
         enabled: patch.use ?? patch.default ?? true,
-        options: Array.isArray(patch.options) ? patch.options : [],
-        searchPatchesText: [
-          patch.name,
-          patch.description,
-          ...(Array.isArray(patch.options) ? patch.options : []).flatMap((optionItem) => [
-            optionItem.title,
-            optionItem.key,
-            optionItem.description,
-          ]),
-        ]
-          .filter(Boolean)
-          .join(" ")
-          .toLowerCase(),
+        options,
+        searchPatchesText,
       };
     });
   });
@@ -138,9 +144,7 @@ export async function loadChannelData(channelName, priorityKeys = [], onPatchLoa
 
   if (dataCache.has(channel)) {
     const cachedData = await dataCache.get(channel);
-    if (onPatchLoaded) {
-      onPatchLoaded(null);
-    }
+    if (onPatchLoaded) onPatchLoaded(null);
     return cachedData;
   }
 
@@ -150,14 +154,14 @@ export async function loadChannelData(channelName, priorityKeys = [], onPatchLoa
   });
   dataCache.set(channel, cachePromise);
 
-  const [names, sources, skipWordsArray] = await Promise.all([
+  const [namesMap, sources, skipWordsArray] = await Promise.all([
     fetchJson(new URL("../data/apps.json", import.meta.url)).catch(() => ({})),
     fetchJson(new URL(`../data/bundles.json`, import.meta.url)).catch(() => ({})),
     fetchJson(new URL("./skip-words.json", import.meta.url)).catch(() => []),
   ]);
 
   const skipSet = new Set(skipWordsArray);
-  const bundleKeys = Object.keys(sources).sort((bundleA, bundleB) => bundleA.localeCompare(bundleB));
+  const bundleKeys = Object.keys(sources).sort((a, b) => a.localeCompare(b));
 
   const bundleList = [];
   const priorityTasks = [];
@@ -165,13 +169,10 @@ export async function loadChannelData(channelName, priorityKeys = [], onPatchLoa
 
   for (const key of bundleKeys) {
     const sourceObj = sources[key];
-    let channelObj = sourceObj[channel];
-    if (typeof channelObj === "string") {
-      channelObj = sourceObj[channelObj];
-    }
+    const channelObj = typeof sourceObj[channel] === "string" ? sourceObj[sourceObj[channel]] : sourceObj[channel];
     if (!channelObj) continue;
 
-    const bundle = {
+    bundleList.push({
       key,
       source: sourceObj.source || "github",
       repo: sourceObj.repo || "",
@@ -186,12 +187,11 @@ export async function loadChannelData(channelName, priorityKeys = [], onPatchLoa
       version: channelObj.version || "",
       releaseUrl: channelObj.releaseUrl || "",
       createdAt: channelObj.createdAt || "",
-    };
-    bundleList.push(bundle);
+    });
 
     const task = async () => {
       try {
-        const rows = await loadSource(key, channelObj, names, sourceObj, skipSet);
+        const rows = await loadSource(key, channelObj, namesMap, sourceObj, skipSet);
         return rows || [];
       } catch (error) {
         console.error(`Failed to load source ${key} for channel ${channel}:`, error);
@@ -210,41 +210,28 @@ export async function loadChannelData(channelName, priorityKeys = [], onPatchLoa
     channel,
     bundles: bundleList,
     rows: [],
-    bundleMap: Object.fromEntries(bundleList.map((bundleObj) => [bundleObj.key, bundleObj])),
-    namesMap: names,
-    skipSet: skipSet,
+    bundleMap: Object.fromEntries(bundleList.map((bundle) => [bundle.key, bundle])),
+    namesMap,
+    skipSet,
   };
 
   (async () => {
-    if (priorityTasks.length > 0) {
+    const executeTasks = async (tasks, isPriority) => {
+      if (!tasks.length) return;
       try {
-        const priorityResults = await Promise.all(priorityTasks.map((task) => task()));
-        const priorityRows = priorityResults.flat();
-        activeData.rows.push(...priorityRows);
-        if (onPatchLoaded && priorityRows.length > 0) {
-          onPatchLoaded(true);
-        }
+        const results = await Promise.all(tasks.map((task) => task()));
+        const rows = results.flat();
+        activeData.rows.push(...rows);
+        if (onPatchLoaded && rows.length > 0) onPatchLoaded(true);
       } catch (error) {
-        console.error("Priority load failed", error);
+        console.error(`${isPriority ? "Priority" : "Background"} load failed`, error);
       }
-    }
+    };
 
-    if (backgroundTasks.length > 0) {
-      try {
-        const backgroundResults = await Promise.all(backgroundTasks.map((task) => task()));
-        const backgroundRows = backgroundResults.flat();
-        activeData.rows.push(...backgroundRows);
-        if (onPatchLoaded && backgroundRows.length > 0) {
-          onPatchLoaded(true);
-        }
-      } catch (error) {
-        console.error("Background load failed", error);
-      }
-    }
+    await executeTasks(priorityTasks, true);
+    await executeTasks(backgroundTasks, false);
 
-    if (onPatchLoaded) {
-      onPatchLoaded(null);
-    }
+    if (onPatchLoaded) onPatchLoaded(null);
     resolveCache(activeData);
   })();
 
@@ -255,9 +242,9 @@ export function filterRows(data, filters) {
   const searchQueryWords = (filters.query || "").split(/\s+/).map(simplifyString).filter(Boolean);
 
   let parsedShowOptions = null;
-  if (filters.showOptions && filters.showOptions.length > 0) {
-    parsedShowOptions = filters.showOptions.map((showOptionString) => {
-      const parts = showOptionString.split(":");
+  if (filters.showOptions?.length > 0) {
+    parsedShowOptions = filters.showOptions.map((showOption) => {
+      const parts = showOption.split(":");
       return {
         level: parts.length === 1 ? "bundle" : parts.length === 2 ? "app" : "patch",
         bundle: parts[0],
@@ -270,22 +257,19 @@ export function filterRows(data, filters) {
   return data.rows.filter((row) => {
     if (parsedShowOptions) {
       const matched = parsedShowOptions.some((showFilter) => {
-        const matchBundle = !showFilter.bundle || row.bundleKey === showFilter.bundle;
+        if (showFilter.bundle && row.bundleKey !== showFilter.bundle) return false;
 
-        let matchApp = true;
         if (showFilter.app) {
-          if (showFilter.app === "universal") {
-            matchApp = !row.packageName || row.packageName === "universal";
-          } else {
-            matchApp = row.packageName === showFilter.app;
-          }
+          const appMatch =
+            showFilter.app === "universal"
+              ? !row.packageName || row.packageName === "universal"
+              : row.packageName === showFilter.app;
+          if (!appMatch) return false;
         }
 
-        const matchPatch = !showFilter.patch || row.patchName === showFilter.patch;
+        if (showFilter.patch && row.patchName !== showFilter.patch) return false;
 
-        if (showFilter.level === "bundle") return matchBundle;
-        if (showFilter.level === "app") return matchBundle && matchApp;
-        return matchBundle && matchApp && matchPatch;
+        return true;
       });
       if (!matched) return false;
     }
@@ -294,6 +278,7 @@ export function filterRows(data, filters) {
       const searchTarget = simplifyString(row.searchPatchesText);
       if (!searchQueryWords.every((searchWord) => searchTarget.includes(searchWord))) return false;
     }
+
     return true;
   });
 }
@@ -314,19 +299,20 @@ export function getFilterOptions(rows, namesMap = {}) {
     }
   }
 
-  const appOptions = [...appMap]
+  const appOptions = Array.from(appMap.entries())
     .map(([value, { label, icon }]) => ({ value, label, icon }))
     .sort((appA, appB) => appA.label.localeCompare(appB.label) || appA.value.localeCompare(appB.value));
 
   if (hasUniversal) {
-    const universalName =
-      namesMap["universal"] && namesMap["universal"].name ? namesMap["universal"].name : "universal";
-    appOptions.unshift({ value: "universal", label: universalName });
+    appOptions.unshift({
+      value: "universal",
+      label: namesMap["universal"]?.name || "universal",
+    });
   }
 
   return {
     bundleOptions: Array.from(bundleSet)
-      .sort((bundleA, bundleB) => bundleA.localeCompare(bundleB))
+      .sort((a, b) => a.localeCompare(b))
       .map((value) => ({ value, label: value })),
     appOptions,
   };

@@ -472,7 +472,9 @@ def main():
     if missing:
         print(f"\n[WARNING] Missing app name for {len(missing)} packages.")
         if "GITHUB_ACTIONS" in os.environ:
-            print(f"::warning::Missing app name for {len(missing)} packages: {', '.join(missing)}")
+            print(
+                f"::warning::Missing app name for {len(missing)} packages: {', '.join(missing)}"
+            )
 
     missing_icons = sorted(
         package_name
@@ -487,7 +489,7 @@ def main():
     )
     if missing_icons:
         print(f"\n[INFO] Missing iconUrl for {len(missing_icons)} packages.")
-        
+
     if not missing and not missing_icons:
         print("\nEverything is up to date!")
 
