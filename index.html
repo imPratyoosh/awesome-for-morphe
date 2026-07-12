@@ -576,11 +576,11 @@
                     </span>
                     <span class="flex flex-row items-center gap-2 text-xs text-light w-full"
                       :class="!effectiveTwoColumns ? 'justify-center md:justify-end' : 'justify-center'">
-                      <button @click.stop="openPopupFast(group.key)" class="badge shrink-0 text-green">
+                      <button @click.stop="openPopupFast(group.key)" class="badge shrink-0 text-green select-none">
                         <i class="fa-solid fa-eye icon-center"></i>
                         <span>View this bundle</span>
                       </button>
-                      <button @click.stop="toggleBundleView(group)" class="badge shrink-0 text-green"
+                      <button @click.stop="toggleBundleView(group)" class="badge shrink-0 text-green select-none"
                         :title="bundleViews[group.key] ? 'Switch to grid view' : 'Switch to list view'">
                         <i class="fa-solid icon-center" :class="bundleViews[group.key] ? 'fa-grip' : 'fa-list'"></i>
                         <span>{{ bundleViews[group.key] ? 'Grid view' : 'List view' }}</span>
@@ -633,7 +633,7 @@
                         :class="(activeSwipeGroup === group.key && swipeDirection ? 'swipe-transition-' + swipeDirection : '') + (bundleViews[group.key] ? ' border-b-2 border-lightGray/30' : '')">
                         <div class="flex flex-wrap items-center gap-2 min-w-0 px-3 sm:px-4">
                           <template v-if="appItem.packageName && appItem.packageName !== 'universal'">
-                            <button @click.stop="filterByApp(appItem.packageName)" class="badge shrink-0">
+                            <button @click.stop="filterByApp(appItem.packageName)" class="badge shrink-0 select-none">
                               <i class="fa-solid fa-filter"></i>
                               <span>Filter by this app</span>
                             </button>
@@ -758,19 +758,18 @@
         @click.stop>
         <div class="flex flex-row items-center justify-between gap-2 w-full shrink-0 pt-2 px-2" v-if="popupGroup">
           <!-- Patch Search -->
-          <div class="relative flex-1 min-w-0 sm:max-w-[300px]">
+          <form @submit.prevent="$event.target.querySelector('input').blur()" class="relative flex-1 min-w-0 sm:max-w-[300px]">
             <span class="absolute left-3 top-0 h-[34px] flex items-center text-light pointer-events-none">
               <i class="fa-solid fa-magnifying-glass text-xs icon-center"></i>
             </span>
-            <input type="search" v-model="popupSearchQuery" placeholder="Search patches"
-              class="w-full h-[34px] pl-8 pr-3 bg-black border border-lightGray rounded-md text-sm text-white placeholder-light focus:border-white/50 focus:ring-1 focus:ring-white/20 outline-none transition-all"
-              autocomplete="off">
-            <button v-show="popupSearchQuery" @click="popupSearchQuery = ''" type="button"
-              class="absolute right-3 top-0 h-[34px] flex items-center text-light hover:text-white transition-colors"
+            <input type="search" v-model="popupSearchQuery" autocomplete="off" enterkeyhint="search" placeholder="Search"
+              class="w-full h-[34px] pl-8 pr-9 bg-black border border-lightGray hover:border-white/50 rounded-md focus:border-light focus:ring-2 focus:ring-light/20 outline-none transition-all text-sm text-white">
+            <button v-if="popupSearchQuery" @click="popupSearchQuery = ''" type="button"
+              class="absolute right-0 top-0 h-[34px] w-9 flex items-center justify-center text-light hover:text-white transition-colors"
               title="Clear search">
-              <i class="fa-solid fa-xmark text-sm icon-center"></i>
+              <i class="fa-solid fa-circle-xmark icon-center"></i>
             </button>
-          </div>
+          </form>
 
           <!-- Apps/Patches counts and Close button -->
           <div class="flex items-center justify-end gap-2 shrink-0">
@@ -890,7 +889,7 @@
                       </div>
                     </div>
                   </div>
-                  <button @click.stop="togglePopupBundleView(group)" class="badge shrink-0 text-green"
+                  <button @click.stop="togglePopupBundleView(group)" class="badge shrink-0 text-green select-none"
                     :title="popupBundleViews[group.key] ? 'Switch to grid view' : 'Switch to list view'">
                     <i class="fa-solid icon-center" :class="popupBundleViews[group.key] ? 'fa-grip' : 'fa-list'"></i>
                     <span>{{ popupBundleViews[group.key] ? 'Grid view' : 'List view' }}</span>
@@ -944,7 +943,7 @@
                     :class="(popupActiveSwipeGroup === group.key && popupSwipeDirection ? 'swipe-transition-' + popupSwipeDirection : '') + (popupBundleViews[group.key] ? ' border-b-2 border-lightGray/30' : '')">
                     <div class="flex flex-wrap items-center gap-2 min-w-0 px-3 sm:px-4 shrink-0">
                       <template v-if="appItem.packageName">
-                        <button @click.stop="filterByApp(appItem.packageName)" class="badge shrink-0">
+                        <button @click.stop="filterByApp(appItem.packageName)" class="badge shrink-0 select-none">
                           <i class="fa-solid fa-filter"></i>
                           <span>Filter by this app</span>
                         </button>

@@ -779,14 +779,20 @@ const app = createApp({
 
     const checkOverflow = (element, key) => {
       if (!element) return;
-      if (expandedAppLists.has(key)) {
-        overflowingAppLists.add(key);
-        return;
+      const wasExpanded = expandedAppLists.has(key);
+      if (wasExpanded) {
+        element.classList.add('max-h-[120px]', 'overflow-y-auto', 'overflow-x-hidden');
       }
-      if (element.scrollHeight > Math.ceil(element.clientHeight) + 2) {
+      const isOverflowing = element.scrollHeight > Math.ceil(element.clientHeight) + 2;
+      if (wasExpanded) {
+        element.classList.remove('max-h-[120px]', 'overflow-y-auto', 'overflow-x-hidden');
+      }
+
+      if (isOverflowing) {
         overflowingAppLists.add(key);
       } else {
         overflowingAppLists.delete(key);
+        if (wasExpanded) expandedAppLists.delete(key);
       }
     };
 
@@ -957,14 +963,20 @@ const app = createApp({
 
     const checkPopupOverflow = (element, key) => {
       if (!element) return;
-      if (popupExpandedAppLists.has(key)) {
-        popupOverflowingAppLists.add(key);
-        return;
+      const wasExpanded = popupExpandedAppLists.has(key);
+      if (wasExpanded) {
+        element.classList.add('max-h-[120px]', 'overflow-y-auto', 'overflow-x-hidden');
       }
-      if (element.scrollHeight > Math.ceil(element.clientHeight) + 2) {
+      const isOverflowing = element.scrollHeight > Math.ceil(element.clientHeight) + 2;
+      if (wasExpanded) {
+        element.classList.remove('max-h-[120px]', 'overflow-y-auto', 'overflow-x-hidden');
+      }
+
+      if (isOverflowing) {
         popupOverflowingAppLists.add(key);
       } else {
         popupOverflowingAppLists.delete(key);
+        if (wasExpanded) popupExpandedAppLists.delete(key);
       }
     };
 
@@ -1070,14 +1082,15 @@ const app = createApp({
 
     const togglePopupBundleView = (groupItem) => {
       const key = typeof groupItem === "string" ? groupItem : groupItem.key;
+      const actualGroup = typeof groupItem === "string" ? bundlesGroups.value.find((g) => g.key === key) : groupItem;
       popupBundleViews[key] = !popupBundleViews[key];
 
-      if (!popupBundleViews[key] && groupItem.appsList) {
-        groupItem.appsList.forEach((appItem) => {
+      if (!popupBundleViews[key] && actualGroup && actualGroup.appsList) {
+        actualGroup.appsList.forEach((appItem) => {
           popupExpandedOptions.delete("popup_app_" + key + "_" + appItem.id);
         });
-        if (groupItem.patches) {
-          groupItem.patches.forEach((patch) => {
+        if (actualGroup.patches) {
+          actualGroup.patches.forEach((patch) => {
             popupExpandedOptions.delete(patch.id);
             if (patch.apps) {
               patch.apps.forEach((appElem) => {
@@ -1085,6 +1098,12 @@ const app = createApp({
               });
             }
           });
+        }
+        
+        if (key === popupBundleKey.value) {
+          autoExpandPopupApp();
+        } else if (actualGroup.appsList.length > 0) {
+          popupExpandedOptions.add("popup_app_" + key + "_" + actualGroup.appsList[0].id);
         }
       }
     };
@@ -1203,7 +1222,9 @@ const app = createApp({
       const newShow = appValue ? `${popupBundleKey.value}:${appValue}` : popupBundleKey.value;
       showOptions.value = [newShow];
       if (isWhatsNewView.value) rawShowParam.value = newShow;
-      history.replaceState(null, "", buildUrlString(location.hash));
+      try {
+        history.pushState(null, "", buildUrlString(location.hash));
+      } catch (error) {}
       
       nextTick(() => {
         isSyncing = false;
