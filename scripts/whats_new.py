@@ -6,7 +6,7 @@ import re
 import urllib.parse
 from pathlib import Path
 
-ROOT = Path.cwd()
+ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data"
 PATCHES_DIR = DATA_DIR / "patches"
 HISTORY_PATH = DATA_DIR / "history.json"

@@ -22,27 +22,27 @@ The `/data` directory is used as a Morphe patch database, sourced from [ReVanced
 
 ## Usage / Scripts
 
-All core logic is contained inside the `src/` directory.
+All core logic is contained inside the `scripts/` directory.
 
 ### `download.py`
 Downloads the raw JSON metadata from the remote source.
-- `python src/download.py --bundles`: Downloads the `*-patches-bundle.json` files and saves them to `/data/bundles/`. (Requires wiping out old bundles).
-- `python src/download.py`: (Run without flags) Reads the downloaded bundles and fetches the `*-patches-list.json` data, saving them directly to `/data/patches/`.
+- `python scripts/download.py --bundles`: Downloads the `*-patches-bundle.json` files and saves them to `/data/bundles/`. (Requires wiping out old bundles).
+- `python scripts/download.py`: (Run without flags) Reads the downloaded bundles and fetches the `*-patches-list.json` data, saving them directly to `/data/patches/`.
 
 ### `update.py`
 Parses the downloaded JSON files and compiles the unified `bundles.json` and `apps.json`.
-- `python src/update.py`: Compiles `bundles.json` and `apps.json`. Automatically fetches missing data (stars, avatars, icons) for new entries.
-- `python src/update.py --stars`: Additionally forces an update of stars for **all** bundles.
-- `python src/update.py --avatars`: Additionally forces an update of avatars for **all** bundles.
-- `python src/update.py --icons`: Additionally forces an update of icons for **all** apps.
-- `python src/update.py --all`: Additionally forces an update of all API data for all entries.
+- `python scripts/update.py`: Compiles `bundles.json` and `apps.json`. Automatically fetches missing data (stars, avatars, icons) for new entries.
+- `python scripts/update.py --stars`: Additionally forces an update of stars for **all** bundles.
+- `python scripts/update.py --avatars`: Additionally forces an update of avatars for **all** bundles.
+- `python scripts/update.py --icons`: Additionally forces an update of icons for **all** apps.
+- `python scripts/update.py --all`: Additionally forces an update of all API data for all entries.
 
-### `whats-new.py`
+### `whats_new.py`
 Generates the what's new list by diffing current bundles against the history baseline.
-- `python src/whats-new.py`: Generates `whats-new.md` with hierarchical tree notes, adds the new released entry to `whats-new.json` (keeping max 15 items), and updates the `history.json` baseline.
+- `python scripts/whats_new.py`: Generates `whats-new.md` with hierarchical tree notes, adds the new released entry to `whats-new.json` (keeping max 15 items), and updates the `history.json` baseline.
 
 ### `telegram.py`
 Sends a notification to a Telegram channel.
-- `python src/telegram.py`: Sends the content of `whats-new.md` using an automatically generated title (e.g. `🔔 What's New (July 06)`).
-- `python src/telegram.py "Custom Title"`: Sends the content of `whats-new.md` with the specified title.
-- `python src/telegram.py "Custom Title" "path/to/file.md"`: Sends the content of a specific file with a specific title.
+- `python scripts/telegram.py`: Sends the content of `whats-new.md` using an automatically generated title (e.g. `🔔 What's New (July 06)`).
+- `python scripts/telegram.py "Custom Title"`: Sends the content of `whats-new.md` with the specified title.
+- `python scripts/telegram.py "Custom Title" "path/to/file.md"`: Sends the content of a specific file with a specific title.
