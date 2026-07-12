@@ -977,9 +977,7 @@ const app = createApp({
         !isWhatsNewView.value &&
         group?.bundle?.firstSeen &&
         (Date.now() - new Date(group.bundle.firstSeen).getTime()) / 86400000 <= 7,
-      hasHighlight: (prefix) =>
-        isWhatsNewView.value &&
-        whatsNewHighlights.value.includes(prefix),
+      hasHighlight: (prefix) => isWhatsNewView.value && whatsNewHighlights.value.includes(prefix),
       isAppHighlighted: (groupKey, appItem) =>
         isWhatsNewView.value &&
         (whatsNewHighlights.value.includes(`${groupKey}:${appItem.packageName}`) ||

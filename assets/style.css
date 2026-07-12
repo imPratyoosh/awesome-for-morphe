@@ -38,7 +38,7 @@ a.badge {
   cursor: pointer;
 }
 a.badge:not([class*="text-"]) {
-  color: #3B82F6;
+  color: #3b82f6;
   background: #222222;
 }
 a.badge:not([class*="bg-"]):hover {
