@@ -76,7 +76,15 @@ def fetch_avatar_url(repo_url):
                         if data and len(data) > 0:
                             avatar = data[0].get("avatar_url", "")
                             if avatar:
-                                return avatar.replace("s=80", "s=128")
+                                if "secure.gravatar.com" in avatar:
+                                    if "s=80" in avatar:
+                                        avatar = avatar.replace("s=80", "s=128")
+                                    elif "s=" not in avatar:
+                                        avatar += ("&" if "?" in avatar else "?") + "s=128"
+                                elif "gitlab.com/uploads/" in avatar:
+                                    if "width=" not in avatar:
+                                        avatar += ("&" if "?" in avatar else "?") + "width=128"
+                                return avatar
                 except Exception as exception:
                     print(f"Failed to fetch gitlab avatar for {username}: {exception}")
                     return None
@@ -86,7 +94,7 @@ def fetch_avatar_url(repo_url):
         if len(parts) > 1:
             username = parts[1].split("/")[0]
             if username:
-                return f"https://github.com/{username}.png?size=128"
+                return f"https://avatars.githubusercontent.com/{username}?s=128"
 
     return None
 
@@ -165,7 +173,12 @@ def fetch_app_icon(package_name):
     try:
         result = gplay_app(package_name)
         if result and "icon" in result:
-            return result["icon"]
+            icon_url = result["icon"]
+            if icon_url:
+                if "=" in icon_url:
+                    icon_url = icon_url.split("=")[0]
+                icon_url += "=s64"
+            return icon_url
     except Exception as exception:
         print(f"Failed to fetch app icon for {package_name}: {exception}")
     return None
