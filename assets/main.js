@@ -1006,8 +1006,6 @@ const app = createApp({
         isWhatsNewView.value &&
         (whatsNewHighlights.value.includes(`${groupKey}:${appItem.packageName}`) ||
           whatsNewHighlights.value.includes(`${groupKey}:${appItem.appName}`)),
-      isShowingFullBundle: (groupKey) =>
-        showOptions.value.length === 0 || (showOptions.value.length === 1 && showOptions.value[0] === groupKey),
     };
   },
 });

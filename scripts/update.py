@@ -411,9 +411,6 @@ def main():
         source, repo, repo_url = (
             get_repo_info(stable_json) if stable_json else get_repo_info(dev_json)
         )
-        deep_link = (
-            f"https://morphe.software/add-source?{source}={repo}" if repo else ""
-        )
 
         avatar_url = avatar_cache.get(base, "")
         if args.avatars or not avatar_url:

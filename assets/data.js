@@ -131,8 +131,6 @@ async function loadSource(bundleKey, bundleObj, namesMap, skipSet) {
         bundleVersion,
         bundleCreatedAt,
         patchName: patch.name || "Unnamed patch",
-        patchDescription: patch.description || "",
-        patchOptions: patch.options || [],
         description: patch.description || "",
         packageName,
         appName: name,
