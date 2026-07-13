@@ -452,8 +452,9 @@ const app = createApp({
       });
     }
 
+    syncFromUrl(location.search);
+
     onMounted(async () => {
-      syncFromUrl(location.search);
       if (isWhatsNewView.value && whatsNewHistory.value.length === 0) {
         await loadWhatsNewData();
         setTimeout(loadData, 300);
