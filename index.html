@@ -460,7 +460,7 @@
                   <span>Expand all</span>
                 </button>
                 <button v-show="bundlesGroups.length > 1" @click="toggleColumns"
-                  class="badge hidden md:inline-flex text-light"
+                  class="badge hidden md:inline-flex text-green"
                   :title="effectiveTwoColumns ? 'Switch to list view' : 'Switch to grid view'">
                   <i class="fa-solid icon-center" :class="effectiveTwoColumns ? 'fa-list' : 'fa-grip'"></i>
                   <span v-if="!effectiveTwoColumns">Grid view</span><span v-else>List view</span>
@@ -470,15 +470,15 @@
               <!-- Sort Dropdown -->
               <div class="relative w-[115px] shrink-0 flex items-center">
                 <select v-model="sortOrder"
-                  class="w-full h-6 pl-7 pr-4 appearance-none bg-black border border-lightGray hover:border-white/50 rounded-full text-xs text-[#bfbfbf] font-semibold focus:border-light outline-none transition-all cursor-pointer">
+                  class="w-full h-6 pl-7 pr-4 appearance-none bg-black border border-lightGray hover:border-white/50 rounded-full text-xs text-white font-semibold focus:border-light outline-none transition-all cursor-pointer">
                   <option value="stars">Most Stars</option>
                   <option value="latest">Latest</option>
                   <option value="apps">Most Apps</option>
                 </select>
                 <i
-                  class="fa-solid fa-sort-amount-down absolute left-2 top-1/2 -translate-y-1/2 text-light text-[10px] pointer-events-none icon-center"></i>
+                  class="fa-solid fa-sort-amount-down absolute left-2 top-1/2 -translate-y-1/2 text-white text-[10px] pointer-events-none icon-center"></i>
                 <i
-                  class="fa-solid fa-chevron-down absolute right-2 top-1/2 -translate-y-1/2 text-light text-[8px] pointer-events-none icon-center"></i>
+                  class="fa-solid fa-chevron-down absolute right-2 top-1/2 -translate-y-1/2 text-white text-[8px] pointer-events-none icon-center"></i>
               </div>
             </div>
 
@@ -491,30 +491,28 @@
                   <div class="flex items-center gap-3 min-w-0 flex-1 w-full text-left"
                     :class="!effectiveTwoColumns ? 'justify-center md:justify-start md:w-auto' : 'justify-center'">
                     <img v-if="group.bundle.avatarUrl" :src="group.bundle.avatarUrl" alt="Avatar"
-                      class="w-12 h-12 rounded-full bg-lightGray/20 object-cover pointer-events-none select-none shrink-0 sm:mt-0.5">
+                      @click.stop="openPopupFast(group.key)" title="View this bundle"
+                      class="w-12 h-12 rounded-full bg-lightGray/20 object-cover shrink-0 sm:mt-0.5 cursor-pointer hover:opacity-80 transition-opacity">
                     <div v-else
-                      class="w-12 h-12 rounded-full bg-lightGray/20 flex items-center justify-center shrink-0 sm:mt-0.5">
+                      @click.stop="openPopupFast(group.key)" title="View this bundle"
+                      class="w-12 h-12 rounded-full bg-lightGray/20 flex items-center justify-center shrink-0 sm:mt-0.5 cursor-pointer hover:bg-lightGray/35 transition-colors">
                       <i class="fa-solid fa-cubes text-light text-xl icon-center"></i>
                     </div>
                     <div class="flex flex-col min-w-0 justify-center items-start gap-1 sm:gap-1.5 max-w-full">
                       <!-- Title Row -->
                       <div class="flex flex-wrap items-center gap-2 min-w-0 w-full"
                         :class="!effectiveTwoColumns ? 'justify-center md:justify-start' : 'justify-center'">
-                        <strong
-                          class="font-bold text-lg sm:text-xl text-transparent bg-clip-text bg-gradient-to-r from-blue to-green break-words leading-tight">{{
+                        <strong @click.stop="openPopupFast(group.key)" title="View this bundle"
+                          class="font-bold text-lg sm:text-xl text-transparent bg-clip-text bg-gradient-to-r from-blue to-green break-words leading-tight cursor-pointer hover:opacity-80 transition-all">{{
                           group.key }}</strong>
                         <span v-if="hasHighlight(group.key) || isNewBundle(group)"
                           class="badge text-yellow shrink-0"><span>✨ New</span></span>
                         <span v-if="group.bundle.isPreRelease && !(hasHighlight(group.key) || isNewBundle(group))"
                           class="badge text-yellow shrink-0"><span><i class="fa-solid fa-flask"></i>
                             Pre-release</span></span>
-                        <a v-if="group.bundle.deepLink" :href="group.bundle.deepLink" target="_blank" rel="noreferrer"
-                          @click.stop
-                          class="inline-flex items-center gap-1 px-[6px] py-[2px] rounded-full text-xs font-bold leading-[1.4] whitespace-nowrap border border-transparent text-[#fafafa] bg-gradient-to-r from-blue to-green cursor-pointer transition-all duration-150 hover:opacity-85 active:scale-95 shrink-0 select-none">
-                          <i class="fa-solid fa-plus icon-center"></i>
-                          <span class="sm:hidden">Add</span>
-                          <span class="hidden sm:inline">Add to Morphe</span>
-                        </a>
+                        <span v-if="group.bundle.stars !== undefined" class="badge shrink-0">
+                          <i class="fa-solid fa-star text-yellow"></i><span>{{ group.bundle.stars }}</span>
+                        </span>
                       </div>
                       <!-- Repo Row -->
                       <a v-if="group.bundle.repo" :href="group.bundle.repoUrl" target="_blank" rel="noreferrer"
@@ -529,28 +527,20 @@
                     :class="!effectiveTwoColumns ? 'gap-2 items-center md:items-end' : 'gap-1.5 items-center'">
                     <span class="flex flex-row flex-wrap items-center gap-2 text-xs text-light w-full"
                       :class="!effectiveTwoColumns ? 'justify-center md:justify-end' : 'justify-center'">
-                      <template v-if="group.bundle.version">
-                        <a v-if="group.bundle.changelogUrl" :href="group.bundle.changelogUrl" target="_blank"
-                          rel="noreferrer" @click.stop class="badge" title="Changelog"><i
-                            class="fa-solid fa-clock-rotate-left"></i><span>{{
-                            group.bundle.version }}</span></a>
-                        <span v-else class="badge text-blue"><i class="fa-solid fa-clock-rotate-left"></i><span>{{
-                            group.bundle.version }}</span></span>
-                      </template>
-                      <span v-if="group.bundle.stars !== undefined" class="badge">
-                        <i class="fa-solid fa-star text-yellow"></i><span>{{ group.bundle.stars }}</span>
-                      </span>
-                      <span v-if="group.bundle.createdAt" class="badge"><i
-                          class="fa-solid fa-calendar-days"></i><span>{{
-                          formatDate(group.bundle.createdAt)
-                          }}</span></span>
-                    </span>
-                    <span class="flex flex-row items-center gap-2 text-xs text-light w-full"
-                      :class="!effectiveTwoColumns ? 'justify-center md:justify-end' : 'justify-center'">
-                      <button @click.stop="openPopupFast(group.key)" class="badge shrink-0 text-green select-none">
-                        <i class="fa-solid fa-eye icon-center"></i>
-                        <span>View this bundle</span>
-                      </button>
+                      <a v-if="group.bundle.deepLink" :href="group.bundle.deepLink" target="_blank" rel="noreferrer"
+                        @click.stop
+                        class="badge text-white bg-gradient-to-r from-blue to-green border-transparent hover:opacity-85 active:scale-95 cursor-pointer shrink-0 select-none">
+                        <i class="fa-solid fa-plus icon-center"></i>
+                        <span>Add to Morphe</span>
+                      </a>
+                      <a v-if="group.bundle.createdAt"
+                        :href="group.bundle.changelogUrl || (group.bundle.repoUrl ? group.bundle.repoUrl + '/releases' : '#')"
+                        target="_blank" rel="noreferrer" @click.stop
+                        class="badge"
+                        title="View changelog">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        <span>{{ formatDate(group.bundle.createdAt) }}</span>
+                      </a>
                       <button @click.stop="mainUI.toggleBundleView(group)" class="badge shrink-0 text-green select-none"
                         :title="mainUI.bundleViews[group.key] ? 'Switch to grid view' : 'Switch to list view'">
                         <i class="fa-solid icon-center"
@@ -857,13 +847,9 @@
                         New</span></span>
                     <span v-if="group.bundle.isPreRelease && !(hasHighlight(group.key) || isNewBundle(group))"
                       class="badge text-yellow"><span><i class="fa-solid fa-flask"></i> Pre-release</span></span>
-                    <a v-if="group.bundle.deepLink" :href="group.bundle.deepLink" target="_blank" rel="noreferrer"
-                      @click.stop
-                      class="inline-flex items-center gap-1 px-[6px] py-[2px] rounded-full text-xs font-bold leading-[1.4] whitespace-nowrap border border-transparent text-[#fafafa] bg-gradient-to-r from-blue to-green cursor-pointer transition-all duration-150 hover:opacity-85 active:scale-95 shrink-0 select-none">
-                      <i class="fa-solid fa-plus icon-center"></i>
-                      <span class="sm:hidden">Add</span>
-                      <span class="hidden sm:inline">Add to Morphe</span>
-                    </a>
+                    <span v-if="group.bundle.stars !== undefined" class="badge shrink-0">
+                      <i class="fa-solid fa-star text-yellow"></i><span>{{ group.bundle.stars }}</span>
+                    </span>
                   </div>
 
                   <a v-if="group.bundle.repo" :href="group.bundle.repoUrl" target="_blank" rel="noreferrer" @click.stop
@@ -876,19 +862,20 @@
               </div>
               <span
                 class="flex flex-row flex-wrap items-center gap-2 text-xs text-light shrink-0 w-full md:w-auto justify-center md:justify-end">
-                <template v-if="group.bundle.version">
-                  <a v-if="group.bundle.changelogUrl" :href="group.bundle.changelogUrl" target="_blank" rel="noreferrer"
-                    @click.stop class="badge" title="Changelog"><i class="fa-solid fa-clock-rotate-left"></i><span>{{
-                      group.bundle.version }}</span></a>
-                  <span v-else class="badge text-blue"><i class="fa-solid fa-clock-rotate-left"></i><span>{{
-                      group.bundle.version }}</span></span>
-                </template>
-                <span v-if="group.bundle.stars !== undefined" class="badge">
-                  <i class="fa-solid fa-star text-yellow"></i><span>{{ group.bundle.stars }}</span>
-                </span>
-                <span v-if="group.bundle.createdAt" class="badge"><i class="fa-solid fa-calendar-days"></i><span>{{
-                    formatDate(group.bundle.createdAt)
-                    }}</span></span>
+                <a v-if="group.bundle.deepLink" :href="group.bundle.deepLink" target="_blank" rel="noreferrer"
+                  @click.stop
+                  class="badge text-white bg-gradient-to-r from-blue to-green border-transparent hover:opacity-85 active:scale-95 cursor-pointer shrink-0 select-none">
+                  <i class="fa-solid fa-plus icon-center"></i>
+                  <span>Add to Morphe</span>
+                </a>
+                <a v-if="group.bundle.createdAt"
+                  :href="group.bundle.changelogUrl || (group.bundle.repoUrl ? group.bundle.repoUrl + '/releases' : '#')"
+                  target="_blank" rel="noreferrer" @click.stop
+                  class="badge"
+                  title="View changelog">
+                  <i class="fa-solid fa-clock-rotate-left"></i>
+                  <span>{{ formatDate(group.bundle.createdAt) }}</span>
+                </a>
                 <button @click.stop="popupUI.toggleBundleView(group)" class="badge shrink-0 text-green select-none"
                   :title="popupUI.bundleViews[group.key] ? 'Switch to grid view' : 'Switch to list view'">
                   <i class="fa-solid icon-center" :class="popupUI.bundleViews[group.key] ? 'fa-grip' : 'fa-list'"></i>
