@@ -41,6 +41,15 @@
     "description": "Removes the PairIP LicenseActivity from AndroidManifest.xml.",
     "compatiblePackages": [
       {
+        "packageName": "com.ensembleai.scoutai"
+      }
+    ]
+  },
+  {
+    "name": "Remove License Activity",
+    "description": "Removes the PairIP LicenseActivity from AndroidManifest.xml.",
+    "compatiblePackages": [
+      {
         "packageName": "com.jellywatch.app"
       }
     ]
@@ -60,6 +69,15 @@
     "compatiblePackages": [
       {
         "packageName": "com.providelite.epicplay"
+      }
+    ]
+  },
+  {
+    "name": "Remove License Check",
+    "description": "Bypasses the PairIP Google Play Licensing check so Atlas Photo runs without a valid Play Store license.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.ensembleai.scoutai"
       }
     ]
   },
@@ -105,6 +123,15 @@
     "compatiblePackages": [
       {
         "packageName": "com.providelite.epicplay"
+      }
+    ]
+  },
+  {
+    "name": "Unlock Pro",
+    "description": "Forces Atlas Photo's Hermes (React Native) JS runtime to treat every session as a Pro subscriber by patching the setIsProMember reducer so its isPro field is always truthy. Unlocks all Pro features and removes the Pro paywall.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.ensembleai.scoutai"
       }
     ]
   }

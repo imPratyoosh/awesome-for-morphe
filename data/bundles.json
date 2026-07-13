@@ -51,8 +51,8 @@
     "stars": 183,
     "firstSeen": "2026-02-20T17:59:24",
     "patches": "site/adobo.json",
-    "version": "v1.3.0-dev.4",
-    "createdAt": "2026-07-12T15:19:57",
+    "version": "v1.3.0-dev.5",
+    "createdAt": "2026-07-13T13:22:09",
     "targetApps": [
       "com.google.android.inputmethod.latin",
       "com.imdb.mobile",
@@ -238,6 +238,21 @@
     "appCount": 4,
     "patchCount": 8
   },
+  "babyhuehnchen": {
+    "source": "github",
+    "repo": "babyhuehnchen/morphe-patches",
+    "avatarUrl": "https://github.com/babyhuehnchen.png?size=128",
+    "stars": 1,
+    "firstSeen": "2026-07-13T17:12:18",
+    "patches": "site/babyhuehnchen.json",
+    "version": "v1.0.2",
+    "createdAt": "2026-07-13T13:59:29",
+    "targetApps": [
+      "at.notrufnoe.edi"
+    ],
+    "appCount": 1,
+    "patchCount": 1
+  },
   "bholeykabhakt": {
     "source": "github",
     "repo": "BholeyKaBhakt/android-patches-xtra",
@@ -382,8 +397,8 @@
     "stars": 1,
     "firstSeen": "2026-07-13T02:43:37",
     "patches": "site/cobalt-morphe.json",
-    "version": "v1.4.2",
-    "createdAt": "2026-07-13T05:04:39",
+    "version": "v1.5.0",
+    "createdAt": "2026-07-13T13:49:49",
     "targetApps": [
       "com.google.android.youtube"
     ],
@@ -477,18 +492,19 @@
     "stars": 1,
     "firstSeen": "2026-07-06T22:13:39",
     "patches": "site/franticg33k.json",
-    "version": "v1.2.1",
-    "createdAt": "2026-07-11T06:17:29",
+    "version": "v1.2.2",
+    "createdAt": "2026-07-13T11:14:39",
     "targetApps": [
       "com.byairapp.android",
       "com.bytecaretech.merokarobar",
+      "com.ensembleai.scoutai",
       "com.harwin.prismatica",
       "com.jellywatch.app",
       "com.providelite.epicplay",
       "np.com.nepalipatro"
     ],
-    "appCount": 6,
-    "patchCount": 12
+    "appCount": 7,
+    "patchCount": 15
   },
   "gryphous-morphe": {
     "source": "github",
@@ -789,8 +805,8 @@
     "stars": 15,
     "firstSeen": "2026-06-05T15:48:45",
     "patches": "site/lain.json",
-    "version": "v1.3.0",
-    "createdAt": "2026-07-12T15:14:45",
+    "version": "v1.4.0-dev.1",
+    "createdAt": "2026-07-13T14:13:02",
     "targetApps": [
       "cn.adonet.proxyevery",
       "com.PixelStudio",
@@ -811,6 +827,10 @@
       "com.kcstream.cing",
       "com.medibang.android.medibangpro",
       "com.medibang.android.paint.tablet",
+      "com.mixapplications.rufus",
+      "com.mixapplications.ultimateusb",
+      "com.mixapplications.usbtools",
+      "com.mixapplications.ventoy_app",
       "com.regasoftware.udisc",
       "com.scheler.superproxy",
       "com.surmin.photofancie.lite",
@@ -818,8 +838,8 @@
       "net.nemostudio.keymate",
       "studio.muggle.chatboost"
     ],
-    "appCount": 25,
-    "patchCount": 39
+    "appCount": 29,
+    "patchCount": 43
   },
   "lakaka": {
     "source": "github",
@@ -906,8 +926,8 @@
     "stars": 4,
     "firstSeen": "2026-07-09T04:53:42",
     "patches": "site/miguel.json",
-    "version": "v1.9.7",
-    "createdAt": "2026-07-13T01:23:25",
+    "version": "v1.9.8",
+    "createdAt": "2026-07-13T13:59:39",
     "targetApps": [
       "air.com.midjiwan.polytopia",
       "com.ea.game.pvzfree_row",
@@ -925,8 +945,8 @@
     "stars": 2,
     "firstSeen": "2026-07-06T22:13:39",
     "patches": "site/modx.json",
-    "version": "v1.4.1",
-    "createdAt": "2026-07-13T01:32:01",
+    "version": "v1.4.2",
+    "createdAt": "2026-07-13T10:25:35",
     "targetApps": [
       "com.mxtech.videoplayer.ad"
     ],
@@ -940,15 +960,15 @@
     "stars": 2829,
     "firstSeen": "2026-06-23T13:04:19",
     "patches": "site/morphe.json",
-    "version": "v1.35.0-dev.1",
-    "createdAt": "2026-07-12T11:11:38",
+    "version": "v1.35.0-dev.3",
+    "createdAt": "2026-07-13T14:59:32",
     "targetApps": [
       "com.google.android.apps.youtube.music",
       "com.google.android.youtube",
       "com.reddit.frontpage"
     ],
     "appCount": 3,
-    "patchCount": 124
+    "patchCount": 125
   },
   "morphe-google": {
     "source": "github",
@@ -1228,8 +1248,8 @@
     "stars": 39,
     "firstSeen": "2026-06-30T14:24:47",
     "patches": "site/prathxm.json",
-    "version": "v1.13.0",
-    "createdAt": "2026-07-10T09:33:46",
+    "version": "v1.13.1-dev.2",
+    "createdAt": "2026-07-13T11:03:17",
     "targetApps": [
       "com.chess"
     ],

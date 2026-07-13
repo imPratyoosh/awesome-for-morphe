@@ -1836,5 +1836,29 @@
   "com.estrongs.android.pop": {
     "name": "ES File Explorer",
     "iconUrl": null
+  },
+  "at.notrufnoe.edi": {
+    "name": "ESApp",
+    "iconUrl": "https://play-lh.googleusercontent.com/ltYcBcvtbyRJf14SaFyIIc2vLk5wLP4YryH7z8nWM3tc5-5MYtJbPW8e0gpdl-D6Agcen_-2cUt5pXfVvKzbzw"
+  },
+  "com.ensembleai.scoutai": {
+    "name": "Atlas Photo",
+    "iconUrl": "https://play-lh.googleusercontent.com/my1_lwCNvyyhh-nYyjNT9JXJo4uzxgJfbTzZaThrqoGmDdNu6wj8HU3sf86GgpFGh4Q5WySOO7syTsy0GF5tAsA"
+  },
+  "com.mixapplications.rufus": {
+    "name": "DROFUS",
+    "iconUrl": "https://play-lh.googleusercontent.com/rWQ8vSkeSMVt85fzmIhZKg02mA_VbL-ecF1k3sYoe1jo8I8WM6TeWiWV999mJmKDA4Bd5gRxbwwnS3iB6Mh3"
+  },
+  "com.mixapplications.ultimateusb": {
+    "name": "Ultimate USB",
+    "iconUrl": "https://play-lh.googleusercontent.com/KfoSg6mRuLJaJJfYllYX0l_8QvEV7bsf-R16dSsO6DcxMppopj8D8Yo6b-VHJWdMzNxFbMn_2uc_QPH24ykc"
+  },
+  "com.mixapplications.usbtools": {
+    "name": "USB TOOLS",
+    "iconUrl": "https://play-lh.googleusercontent.com/oBQsvUvNuEokudV-SEPjK7j1yT0Ky3pCwH8E6iZ0EeU3_o9WP19WI0Bj5MffkT-Xfrz9ijka9xKT7M43ZU7dbw"
+  },
+  "com.mixapplications.ventoy_app": {
+    "name": "Ventoy",
+    "iconUrl": "https://play-lh.googleusercontent.com/iDmPs-RP3nd2DwTpONpFk7CYDY6aBnsq36lS6Ac43w6uosKKaTTjaIl5LVKG6tVQ602ycUIeozQlpXKFSzFMug"
   }
 }

@@ -255,6 +255,66 @@
   },
   {
     "name": "Enable Premium",
+    "description": "Unlock unlimited use of ISO Burner, disable ads and disable coins system.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.mixapplications.rufus",
+        "targets": [
+          {
+            "version": "10.2.3"
+          }
+        ],
+        "isPreRelease": true
+      }
+    ]
+  },
+  {
+    "name": "Enable Premium",
+    "description": "Unlock unlimited use of all tools, disable ads and disable coins system.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.mixapplications.ultimateusb",
+        "targets": [
+          {
+            "version": "10.2.4"
+          }
+        ],
+        "isPreRelease": true
+      }
+    ]
+  },
+  {
+    "name": "Enable Premium",
+    "description": "Unlock unlimited use of Disk Management & Gaming Tools, disable ads and disable coins system.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.mixapplications.usbtools",
+        "targets": [
+          {
+            "version": "10.2.4"
+          }
+        ],
+        "isPreRelease": true
+      }
+    ]
+  },
+  {
+    "name": "Enable Premium",
+    "description": "Unlock unlimited use of Bootable USB drive creator, disable ads and disable coins system.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.mixapplications.ventoy_app",
+        "targets": [
+          {
+            "version": "10.2.3 (1.1.16)"
+          }
+        ],
+        "isPreRelease": true
+      }
+    ]
+  },
+  {
+    "name": "Enable Premium",
     "description": "Unlock premium features such as Advanced Color Tools, Clipping Masks & Alpha Masks, Manage layers with Groups, Import & customize brushes, and more...",
     "compatiblePackages": [
       {
