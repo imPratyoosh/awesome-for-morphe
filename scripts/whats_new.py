@@ -156,7 +156,7 @@ def build_json_diff(old_bundles, new_bundles, app_metadata, skip_words):
             format_app_name(pkg, app_metadata, skip_words).lower(),
         )
 
-    for key in sorted(new_bundles):
+    for key in sorted(new_bundles, key=lambda x: x.lower()):
         patches_dict = new_bundles[key]
         new_package_names = {
             package_name for package_name in patches_dict if is_valid_pkg(package_name)
