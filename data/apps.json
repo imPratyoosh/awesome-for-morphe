@@ -1828,5 +1828,13 @@
   "com.innologica.inoreader": {
     "name": "Inoreader",
     "iconUrl": "https://play-lh.googleusercontent.com/KrGL0xbbl_J9MbkQhtPA_Bz0Hy8SJ-v4iY1a5tRIyXVJiF3wKwIxACISm-3rRaLTG1TA74NTHVmkEAXPeeij"
+  },
+  "com.esuper.file.explorer": {
+    "name": "Super File",
+    "iconUrl": "https://play-lh.googleusercontent.com/KQM6SZZdY1mk15_m88HtiPqMD_0UTTXw0r60cEZxR8bQwXCy2YQv24try-UD1K1s65zCMwkrfPqr0EvmyQUL1g"
+  },
+  "com.estrongs.android.pop": {
+    "name": "ES File Explorer",
+    "iconUrl": null
   }
 }

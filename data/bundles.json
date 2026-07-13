@@ -755,9 +755,9 @@
     "firstSeen": "2026-07-13T02:43:37",
     "stable": {
       "file": "patches/cobalt-morphe-stable.json",
-      "version": "v1.4.1",
-      "releaseUrl": "https://github.com/skulldogged/cobalt-morphe/releases/tag/v1.4.1",
-      "createdAt": "2026-07-13T04:54:33",
+      "version": "v1.4.2",
+      "releaseUrl": "https://github.com/skulldogged/cobalt-morphe/releases/tag/v1.4.2",
+      "createdAt": "2026-07-13T05:04:39",
       "targetApps": [
         "com.google.android.youtube"
       ],
@@ -2762,9 +2762,9 @@
     },
     "dev": {
       "file": "patches/rushiranpise-dev.json",
-      "version": "v1.12.0-dev.1",
-      "releaseUrl": "https://github.com/rushiranpise/morphe-patches/releases/tag/v1.12.0-dev.1",
-      "createdAt": "2026-07-12T16:59:11",
+      "version": "v1.13.0-dev.1",
+      "releaseUrl": "https://github.com/rushiranpise/morphe-patches/releases/tag/v1.13.0-dev.1",
+      "createdAt": "2026-07-13T05:33:26",
       "targetApps": [
         "ai.topicfinder.podcastdiscovery",
         "air.com.musclemotion.anatomy",
@@ -2809,6 +2809,8 @@
         "com.dubox.drive",
         "com.duolingo",
         "com.dywx.larkplayer",
+        "com.estrongs.android.pop",
+        "com.esuper.file.explorer",
         "com.eterno",
         "com.finalwire.aida64",
         "com.fitbod.fitbod",
@@ -2909,10 +2911,10 @@
         "universal",
         "verbosus.pialytic"
       ],
-      "appCount": 141,
-      "patchCount": 212
+      "appCount": 143,
+      "patchCount": 215
     },
-    "latest": "stable"
+    "latest": "dev"
   },
   "rvx-morphed": {
     "source": "github",
