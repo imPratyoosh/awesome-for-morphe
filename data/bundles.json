@@ -755,9 +755,9 @@
     "firstSeen": "2026-07-13T02:43:37",
     "stable": {
       "file": "patches/cobalt-morphe-stable.json",
-      "version": "v1.0.0",
-      "releaseUrl": "https://github.com/skulldogged/cobalt-morphe/releases/tag/v1.0.0",
-      "createdAt": "2026-07-12T23:25:40",
+      "version": "v1.4.1",
+      "releaseUrl": "https://github.com/skulldogged/cobalt-morphe/releases/tag/v1.4.1",
+      "createdAt": "2026-07-13T04:54:33",
       "targetApps": [
         "com.google.android.youtube"
       ],
@@ -1768,9 +1768,9 @@
     "firstSeen": "2026-07-09T04:53:42",
     "stable": {
       "file": "patches/miguel-stable.json",
-      "version": "v1.9.6",
-      "releaseUrl": "https://github.com/MiguelNinja19/miguel-morphe-patches/releases/tag/v1.9.6",
-      "createdAt": "2026-07-13T01:02:26",
+      "version": "v1.9.7",
+      "releaseUrl": "https://github.com/MiguelNinja19/miguel-morphe-patches/releases/tag/v1.9.7",
+      "createdAt": "2026-07-13T01:23:25",
       "targetApps": [
         "air.com.midjiwan.polytopia",
         "com.ea.game.pvzfree_row",
@@ -1794,14 +1794,14 @@
     "firstSeen": "2026-07-06T22:13:39",
     "stable": {
       "file": "patches/modx-stable.json",
-      "version": "v1.4.2",
-      "releaseUrl": "https://github.com/Utsavrajputt/Modx-patches/releases/tag/v1.4.2",
-      "createdAt": "2026-07-12T13:59:03",
+      "version": "v1.4.1",
+      "releaseUrl": "https://github.com/Utsavrajputt/Modx-patches/releases/tag/v1.4.1",
+      "createdAt": "2026-07-13T01:32:01",
       "targetApps": [
         "com.mxtech.videoplayer.ad"
       ],
       "appCount": 1,
-      "patchCount": 4
+      "patchCount": 5
     },
     "latest": "stable"
   },
@@ -2207,14 +2207,14 @@
     },
     "dev": {
       "file": "patches/pichiwa-dev.json",
-      "version": "v0.3.2-dev.2",
-      "releaseUrl": "https://github.com/alejandrobellver/pichiwa-patches/releases/tag/v0.3.2-dev.2",
-      "createdAt": "2026-07-13T00:50:59",
+      "version": "v0.3.2-dev.13",
+      "releaseUrl": "https://github.com/alejandrobellver/pichiwa-patches/releases/tag/v0.3.2-dev.13",
+      "createdAt": "2026-07-13T04:08:36",
       "targetApps": [
         "com.whatsapp"
       ],
       "appCount": 1,
-      "patchCount": 19
+      "patchCount": 18
     },
     "latest": "dev"
   },
@@ -3051,9 +3051,9 @@
     "firstSeen": "2026-06-18T09:18:21",
     "stable": {
       "file": "patches/sjshb57-pairip-stable.json",
-      "version": "v1.10.1",
-      "releaseUrl": "https://github.com/sjshb57/Pairip-Patches/releases/tag/v1.10.1",
-      "createdAt": "2026-06-26T09:18:21",
+      "version": "v1.10.2",
+      "releaseUrl": "https://github.com/sjshb57/Pairip-Patches/releases/tag/v1.10.2",
+      "createdAt": "2026-07-13T02:42:37",
       "targetApps": [
         "universal"
       ],
