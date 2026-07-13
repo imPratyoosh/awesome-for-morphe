@@ -452,9 +452,8 @@ const app = createApp({
       });
     }
 
-    syncFromUrl(location.search);
-
     onMounted(async () => {
+      syncFromUrl(location.search);
       if (isWhatsNewView.value && whatsNewHistory.value.length === 0) {
         await loadWhatsNewData();
         setTimeout(loadData, 300);
@@ -478,34 +477,30 @@ const app = createApp({
         } catch (e) {}
     });
 
-    watch(
-      [query, bundle, app, channel, sortOrder, isTwoColumns, showOptions],
-      (newVals, oldVals) => {
-        if (!isSyncing && oldVals?.some((v) => v !== undefined)) isWhatsNewView.value = false;
-        if (isSyncing) return;
+    watch([query, bundle, app, channel, sortOrder, isTwoColumns, showOptions], (newVals, oldVals) => {
+      if (!isSyncing && oldVals?.some((v) => v !== undefined)) isWhatsNewView.value = false;
+      if (isSyncing) return;
 
-        const targetHash = isWhatsNewView.value ? "#whats-new" : location.hash === "#whats-new" ? "" : location.hash;
-        const newUrl = buildUrlString(targetHash);
+      const targetHash = isWhatsNewView.value ? "#whats-new" : location.hash === "#whats-new" ? "" : location.hash;
+      const newUrl = buildUrlString(targetHash);
 
-        if (location.pathname + location.search + location.hash !== newUrl) {
-          if (!oldVals) {
-            try {
-              history.replaceState(null, "", newUrl);
-            } catch (e) {}
-          } else {
-            const otherChanged =
-              oldVals[1] !== newVals[1] ||
-              oldVals[2] !== newVals[2] ||
-              oldVals[3] !== newVals[3] ||
-              JSON.stringify(oldVals[6]) !== JSON.stringify(newVals[6]);
-            try {
-              otherChanged ? history.pushState(null, "", newUrl) : history.replaceState(null, "", newUrl);
-            } catch (e) {}
-          }
+      if (location.pathname + location.search + location.hash !== newUrl) {
+        if (!oldVals) {
+          try {
+            history.replaceState(null, "", newUrl);
+          } catch (e) {}
+        } else {
+          const otherChanged =
+            oldVals[1] !== newVals[1] ||
+            oldVals[2] !== newVals[2] ||
+            oldVals[3] !== newVals[3] ||
+            JSON.stringify(oldVals[6]) !== JSON.stringify(newVals[6]);
+          try {
+            otherChanged ? history.pushState(null, "", newUrl) : history.replaceState(null, "", newUrl);
+          } catch (e) {}
         }
-      },
-      { immediate: true },
-    );
+      }
+    });
 
     const loadData = async () => {
       isLoading.value = true;
