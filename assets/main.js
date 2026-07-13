@@ -1005,13 +1005,4 @@ const app = createApp({
   },
 });
 
-app.config.errorHandler = (err, vm, info) => {
-  const banner = document.getElementById("debug-error-banner");
-  const msg = document.getElementById("debug-error-msg");
-  if (banner && msg) {
-    banner.style.display = "block";
-    msg.textContent = `Vue Error: ${err.stack || err.message} (info: ${info})`;
-  }
-  console.error(err);
-};
 app.mount("#app");

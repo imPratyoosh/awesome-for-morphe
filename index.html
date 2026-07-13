@@ -142,29 +142,6 @@
 
 <body class="bg-black min-h-screen relative overflow-x-hidden">
 
-  <div id="debug-error-banner"
-    style="display: none; background: #ef4444; color: #fff; padding: 12px; font-family: monospace; font-size: 14px; position: fixed; top: 0; left: 0; right: 0; z-index: 1000000; border-bottom: 2px solid #b91c1c;">
-    <strong>Error detected:</strong> <span id="debug-error-msg"></span>
-  </div>
-  <script>
-    window.addEventListener('error', function (event) {
-      const banner = document.getElementById('debug-error-banner');
-      const msg = document.getElementById('debug-error-msg');
-      if (banner && msg) {
-        banner.style.display = 'block';
-        msg.textContent = event.message + ' at ' + event.filename + ':' + event.lineno + ':' + event.colno;
-      }
-    });
-    window.addEventListener('unhandledrejection', function (event) {
-      const banner = document.getElementById('debug-error-banner');
-      const msg = document.getElementById('debug-error-msg');
-      if (banner && msg) {
-        banner.style.display = 'block';
-        msg.textContent = 'Unhandled promise rejection: ' + event.reason;
-      }
-    });
-  </script>
-
   <!-- Animated Geometric Background -->
   <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden opacity-50">
     <div
