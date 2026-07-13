@@ -1,5 +1,121 @@
 [
   {
+    "date": "July 13, 2026",
+    "bundles": {
+      "ee-morphe": {
+        "isNew": false,
+        "apps": {
+          "com.innologica.inoreader": {
+            "isNew": true,
+            "patches": [
+              "Enable Pro",
+              "Increase Daily Limits"
+            ]
+          }
+        }
+      },
+      "franticg33k": {
+        "isNew": false,
+        "apps": {
+          "com.ensembleai.scoutai": {
+            "isNew": true,
+            "patches": [
+              "Remove License Activity",
+              "Remove License Check",
+              "Unlock Pro"
+            ]
+          }
+        }
+      },
+      "lain": {
+        "isNew": false,
+        "apps": {
+          "com.mixapplications.rufus": {
+            "isNew": true,
+            "patches": [
+              "Enable Premium"
+            ]
+          },
+          "com.mixapplications.ultimateusb": {
+            "isNew": true,
+            "patches": [
+              "Enable Premium"
+            ]
+          },
+          "com.mixapplications.usbtools": {
+            "isNew": true,
+            "patches": [
+              "Enable Premium"
+            ]
+          },
+          "com.mixapplications.ventoy_app": {
+            "isNew": true,
+            "patches": [
+              "Enable Premium"
+            ]
+          }
+        }
+      },
+      "morphe": {
+        "isNew": false,
+        "apps": {
+          "com.google.android.apps.youtube.music": {
+            "isNew": false,
+            "patches": [
+              "Disable dislike redirection"
+            ]
+          }
+        }
+      },
+      "pichiwa": {
+        "isNew": true,
+        "apps": {
+          "com.whatsapp": {
+            "isNew": true,
+            "patches": [
+              "Anti Detector",
+              "Anti Disappearing",
+              "Anti Edit",
+              "Anti Expiration",
+              "Anti Revoke",
+              "Anti View Once",
+              "Copy Statuses",
+              "Freeze Last Seen",
+              "Ghost Mode",
+              "HD Media",
+              "Hide Forwarded",
+              "Hide Read Receipts",
+              "Hide Typing",
+              "No Forward Limit",
+              "Remove Communities",
+              "Remove Updates",
+              "Settings Menu",
+              "Spoof Installer"
+            ]
+          }
+        }
+      },
+      "rushiranpise": {
+        "isNew": false,
+        "apps": {
+          "com.estrongs.android.pop": {
+            "isNew": true,
+            "patches": [
+              "Disable Tracking",
+              "Unlock VIP Lifetime"
+            ]
+          },
+          "com.esuper.file.explorer": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
     "date": "July 12, 2026",
     "bundles": {
       "adobo": {

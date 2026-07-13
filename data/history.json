@@ -695,6 +695,10 @@
     "com.going.mobile": [
       "Enable Pro"
     ],
+    "com.innologica.inoreader": [
+      "Enable Pro",
+      "Increase Daily Limits"
+    ],
     "epixler.de.hypnobox_android": [
       "Enable Pro"
     ],
@@ -716,6 +720,11 @@
     ],
     "com.bytecaretech.merokarobar": [
       "Unlock Premium"
+    ],
+    "com.ensembleai.scoutai": [
+      "Remove License Activity",
+      "Remove License Check",
+      "Unlock Pro"
     ],
     "com.harwin.prismatica": [
       "Remove License Activity",
@@ -1313,6 +1322,18 @@
       "Disable Analytics",
       "Unlock Premium"
     ],
+    "com.mixapplications.rufus": [
+      "Enable Premium"
+    ],
+    "com.mixapplications.ultimateusb": [
+      "Enable Premium"
+    ],
+    "com.mixapplications.usbtools": [
+      "Enable Premium"
+    ],
+    "com.mixapplications.ventoy_app": [
+      "Enable Premium"
+    ],
     "com.regasoftware.udisc": [
       "Course Maps Fix",
       "Login Fix",
@@ -1371,6 +1392,7 @@
       "Custom branding",
       "Disable DRC audio",
       "Disable QUIC protocol",
+      "Disable dislike redirection",
       "Downloads",
       "Enable debugging",
       "Enable exclusive audio playback",
@@ -1723,6 +1745,28 @@
     ],
     "universal": [
       "Enable Android debugging"
+    ]
+  },
+  "pichiwa": {
+    "com.whatsapp": [
+      "Anti Detector",
+      "Anti Disappearing",
+      "Anti Edit",
+      "Anti Expiration",
+      "Anti Revoke",
+      "Anti View Once",
+      "Copy Statuses",
+      "Freeze Last Seen",
+      "Ghost Mode",
+      "HD Media",
+      "Hide Forwarded",
+      "Hide Read Receipts",
+      "Hide Typing",
+      "No Forward Limit",
+      "Remove Communities",
+      "Remove Updates",
+      "Settings Menu",
+      "Spoof Installer"
     ]
   },
   "piko": {
@@ -2207,6 +2251,13 @@
       "Unlock Subscription"
     ],
     "com.dywx.larkplayer": [
+      "Unlock Premium"
+    ],
+    "com.estrongs.android.pop": [
+      "Disable Tracking",
+      "Unlock VIP Lifetime"
+    ],
+    "com.esuper.file.explorer": [
       "Unlock Premium"
     ],
     "com.eterno": [
