@@ -745,6 +745,27 @@
     },
     "latest": "stable"
   },
+  "cobalt-morphe": {
+    "source": "github",
+    "repo": "skulldogged/cobalt-morphe",
+    "repoUrl": "https://github.com/skulldogged/cobalt-morphe",
+    "deepLink": "https://morphe.software/add-source?github=skulldogged/cobalt-morphe",
+    "avatarUrl": "https://github.com/skulldogged.png?size=128",
+    "stars": 1,
+    "firstSeen": "2026-07-13T02:43:37",
+    "stable": {
+      "file": "patches/cobalt-morphe-stable.json",
+      "version": "v1.0.0",
+      "releaseUrl": "https://github.com/skulldogged/cobalt-morphe/releases/tag/v1.0.0",
+      "createdAt": "2026-07-12T23:25:40",
+      "targetApps": [
+        "com.google.android.youtube"
+      ],
+      "appCount": 1,
+      "patchCount": 1
+    },
+    "latest": "stable"
+  },
   "docbt": {
     "source": "github",
     "repo": "docbt/patched-up",
@@ -826,18 +847,19 @@
     },
     "dev": {
       "file": "patches/ee-morphe-dev.json",
-      "version": "v1.5.0-dev.5",
-      "releaseUrl": "https://gitlab.com/early.egg3707/ee-morphe-patches/-/releases/v1.5.0-dev.5",
-      "createdAt": "2026-07-12T21:45:58",
+      "version": "v1.5.0-dev.6",
+      "releaseUrl": "https://gitlab.com/early.egg3707/ee-morphe-patches/-/releases/v1.5.0-dev.6",
+      "createdAt": "2026-07-12T23:05:57",
       "targetApps": [
         "com.byairapp.android",
         "com.going.mobile",
+        "com.innologica.inoreader",
         "epixler.de.hypnobox_android",
         "net.tsapps.appsales",
         "universal"
       ],
-      "appCount": 4,
-      "patchCount": 10
+      "appCount": 5,
+      "patchCount": 11
     },
     "latest": "dev"
   },
@@ -1746,9 +1768,9 @@
     "firstSeen": "2026-07-09T04:53:42",
     "stable": {
       "file": "patches/miguel-stable.json",
-      "version": "v1.9.4",
-      "releaseUrl": "https://github.com/MiguelNinja19/miguel-morphe-patches/releases/tag/v1.9.4",
-      "createdAt": "2026-07-12T21:27:35",
+      "version": "v1.9.6",
+      "releaseUrl": "https://github.com/MiguelNinja19/miguel-morphe-patches/releases/tag/v1.9.6",
+      "createdAt": "2026-07-13T01:02:26",
       "targetApps": [
         "air.com.midjiwan.polytopia",
         "com.ea.game.pvzfree_row",
@@ -2183,7 +2205,18 @@
       "appCount": 1,
       "patchCount": 19
     },
-    "latest": "stable"
+    "dev": {
+      "file": "patches/pichiwa-dev.json",
+      "version": "v0.3.2-dev.2",
+      "releaseUrl": "https://github.com/alejandrobellver/pichiwa-patches/releases/tag/v0.3.2-dev.2",
+      "createdAt": "2026-07-13T00:50:59",
+      "targetApps": [
+        "com.whatsapp"
+      ],
+      "appCount": 1,
+      "patchCount": 19
+    },
+    "latest": "dev"
   },
   "piko": {
     "source": "github",

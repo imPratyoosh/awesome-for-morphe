@@ -1824,5 +1824,9 @@
   "com.pixel.al.pixelhabittracker": {
     "name": "Pixel Habit Tracker",
     "iconUrl": "https://play-lh.googleusercontent.com/UOwh11oam6H0hAqMT0Dy5kMX_c_PrxfFf5TW55yE5UAh2dAcTpVYOopEyHqUstERrERs81SWyzOoGcvRJQEqfw"
+  },
+  "com.innologica.inoreader": {
+    "name": "Inoreader",
+    "iconUrl": "https://play-lh.googleusercontent.com/KrGL0xbbl_J9MbkQhtPA_Bz0Hy8SJ-v4iY1a5tRIyXVJiF3wKwIxACISm-3rRaLTG1TA74NTHVmkEAXPeeij"
   }
 }
