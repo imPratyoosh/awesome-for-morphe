@@ -277,8 +277,6 @@ const app = createApp({
     const sortBundlesHelper = (firstBundle, secondBundle, firstKey, secondKey, order) => {
       if (order === "apps" && firstBundle?.appCount !== secondBundle?.appCount)
         return (secondBundle?.appCount || 0) - (firstBundle?.appCount || 0);
-      if (order === "patches" && firstBundle?.patchCount !== secondBundle?.patchCount)
-        return (secondBundle?.patchCount || 0) - (firstBundle?.patchCount || 0);
       if (order === "latest") {
         const dateA = firstBundle?.createdAt ? new Date(firstBundle.createdAt).getTime() : 0;
         const dateB = secondBundle?.createdAt ? new Date(secondBundle.createdAt).getTime() : 0;
@@ -371,10 +369,27 @@ const app = createApp({
         isWhatsNewView.value = location.hash === "#whats-new";
       }
 
+      let urlChanged = false;
       if (isWhatsNewView.value && params.has("channel")) {
         params.delete("channel");
+        urlChanged = true;
+      }
+
+      const validSortOrders = ["stars", "latest", "apps"];
+      if (params.has("sort") && !validSortOrders.includes(params.get("sort"))) {
+        params.delete("sort");
+        urlChanged = true;
+      }
+      if (params.has("view") && params.get("view") !== "list") {
+        params.delete("view");
+        urlChanged = true;
+      }
+
+      if (urlChanged) {
         try {
-          history.replaceState(null, "", `${location.pathname}?${params.toString()}#whats-new`);
+          const newSearch = params.toString();
+          const targetHash = isWhatsNewView.value ? "#whats-new" : location.hash === "#whats-new" ? "" : location.hash;
+          history.replaceState(null, "", `${location.pathname}${newSearch ? "?" + newSearch : ""}${targetHash || ""}`);
         } catch (error) {}
       }
 

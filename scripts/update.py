@@ -327,7 +327,6 @@ def build_site_json(stable_list, dev_list, latest, discovered_names):
 
             out_patches.append(stripped)
 
-    patch_count = len(out_patches)
     app_count = len([app for app in target_apps if app != "universal"])
 
     return (
@@ -335,7 +334,6 @@ def build_site_json(stable_list, dev_list, latest, discovered_names):
         is_bundle_prerelease,
         sorted(list(target_apps)),
         app_count,
-        patch_count,
     )
 
 
@@ -459,14 +457,13 @@ def main():
         dev_list_json = read_json(dev_list_path) if dev_list_path.exists() else None
 
         discovered = {}
-        out_patches, is_bundle_prerelease, target_apps, app_count, patch_count = (
-            build_site_json(stable_list_json, dev_list_json, latest, discovered)
+        out_patches, is_bundle_prerelease, target_apps, app_count = build_site_json(
+            stable_list_json, dev_list_json, latest, discovered
         )
 
         for channel_json in [stable_list_json, dev_list_json]:
             if channel_json:
                 scanned_lists += 1
-
 
         all_packages.update(target_apps)
 
@@ -510,7 +507,6 @@ def main():
         source_entry["createdAt"] = latest_bundle_json.get("created_at", "")
         source_entry["targetApps"] = target_apps
         source_entry["appCount"] = app_count
-        source_entry["patchCount"] = patch_count
 
         if is_bundle_prerelease:
             source_entry["isPreRelease"] = True

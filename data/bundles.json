@@ -11,8 +11,7 @@
     "targetApps": [
       "se.matlistan.free"
     ],
-    "appCount": 1,
-    "patchCount": 2
+    "appCount": 1
   },
   "ImmortalZeus": {
     "source": "github",
@@ -26,8 +25,7 @@
     "targetApps": [
       "com.example.app"
     ],
-    "appCount": 1,
-    "patchCount": 2
+    "appCount": 1
   },
   "abhis1n": {
     "source": "github",
@@ -41,8 +39,7 @@
     "targetApps": [
       "com.Splitwise.SplitwiseMobile"
     ],
-    "appCount": 1,
-    "patchCount": 1
+    "appCount": 1
   },
   "adobo": {
     "source": "github",
@@ -59,8 +56,7 @@
       "com.ninegag.android.app",
       "com.reddit.frontpage"
     ],
-    "appCount": 4,
-    "patchCount": 40
+    "appCount": 4
   },
   "ajstrick81-androidtv": {
     "source": "github",
@@ -83,8 +79,7 @@
       "com.wbd.hbomax",
       "tv.pluto.android"
     ],
-    "appCount": 10,
-    "patchCount": 20
+    "appCount": 10
   },
   "almewty": {
     "source": "github",
@@ -100,7 +95,6 @@
       "com.example.app"
     ],
     "appCount": 2,
-    "patchCount": 3,
     "isPreRelease": true
   },
   "ameen-morphe": {
@@ -116,8 +110,7 @@
       "com.roidapp.photogrid",
       "io.foodvisor.foodvisor"
     ],
-    "appCount": 2,
-    "patchCount": 2
+    "appCount": 2
   },
   "ameenalasady": {
     "source": "github",
@@ -131,8 +124,7 @@
     "targetApps": [
       "com.roidapp.photogrid"
     ],
-    "appCount": 1,
-    "patchCount": 1
+    "appCount": 1
   },
   "amplerevanced": {
     "source": "github",
@@ -150,8 +142,7 @@
       "com.navercorp.game.android.community",
       "kr.co.nowcom.mobile.afreeca"
     ],
-    "appCount": 5,
-    "patchCount": 86
+    "appCount": 5
   },
   "anddea": {
     "source": "github",
@@ -166,8 +157,7 @@
       "com.google.android.apps.youtube.music",
       "com.google.android.youtube"
     ],
-    "appCount": 2,
-    "patchCount": 115
+    "appCount": 2
   },
   "anddea-morphed": {
     "source": "github",
@@ -186,7 +176,6 @@
       "com.ysy.app.firewall"
     ],
     "appCount": 5,
-    "patchCount": 133,
     "isPreRelease": true
   },
   "andronedev": {
@@ -201,8 +190,7 @@
     "targetApps": [
       "com.thetransitapp.droid"
     ],
-    "appCount": 1,
-    "patchCount": 2
+    "appCount": 1
   },
   "ariecos": {
     "source": "github",
@@ -217,8 +205,7 @@
       "com.google.android.apps.bard",
       "com.google.android.googlequicksearchbox"
     ],
-    "appCount": 2,
-    "patchCount": 2
+    "appCount": 2
   },
   "arunpdl": {
     "source": "github",
@@ -235,8 +222,7 @@
       "com.harwin.prismatica",
       "com.jellywatch.app"
     ],
-    "appCount": 4,
-    "patchCount": 8
+    "appCount": 4
   },
   "babyhuehnchen": {
     "source": "github",
@@ -250,8 +236,7 @@
     "targetApps": [
       "at.notrufnoe.edi"
     ],
-    "appCount": 1,
-    "patchCount": 1
+    "appCount": 1
   },
   "bholeykabhakt": {
     "source": "github",
@@ -278,8 +263,7 @@
       "org.zwanoo.android.speedtest",
       "pl.solidexplorer2"
     ],
-    "appCount": 14,
-    "patchCount": 24
+    "appCount": 14
   },
   "binarymend": {
     "source": "github",
@@ -299,8 +283,7 @@
       "com.truecaller",
       "org.withouthat.acalendar"
     ],
-    "appCount": 7,
-    "patchCount": 11
+    "appCount": 7
   },
   "braydog2010": {
     "source": "github",
@@ -314,8 +297,7 @@
     "targetApps": [
       "com.dubani.dub"
     ],
-    "appCount": 1,
-    "patchCount": 2
+    "appCount": 1
   },
   "brosssh": {
     "source": "github",
@@ -333,8 +315,7 @@
       "fr.chargeprice.app",
       "fr.tramb.park4night"
     ],
-    "appCount": 5,
-    "patchCount": 22
+    "appCount": 5
   },
   "browzomje": {
     "source": "github",
@@ -348,8 +329,7 @@
     "targetApps": [
       "com.pinterest"
     ],
-    "appCount": 1,
-    "patchCount": 5
+    "appCount": 1
   },
   "bufferk": {
     "source": "github",
@@ -368,8 +348,7 @@
       "com.overdevs.at4k",
       "com.truecaller"
     ],
-    "appCount": 6,
-    "patchCount": 14
+    "appCount": 6
   },
   "chiggi": {
     "source": "github",
@@ -387,8 +366,7 @@
       "com.sonyliv",
       "net.nutrilio"
     ],
-    "appCount": 5,
-    "patchCount": 31
+    "appCount": 5
   },
   "cobalt-morphe": {
     "source": "github",
@@ -402,8 +380,7 @@
     "targetApps": [
       "com.google.android.youtube"
     ],
-    "appCount": 1,
-    "patchCount": 1
+    "appCount": 1
   },
   "docbt": {
     "source": "github",
@@ -418,8 +395,7 @@
       "com.ebay.kleinanzeigen",
       "com.google.android.apps.magazines"
     ],
-    "appCount": 2,
-    "patchCount": 6
+    "appCount": 2
   },
   "edge-morphe": {
     "source": "github",
@@ -433,8 +409,7 @@
     "targetApps": [
       "com.microsoft.emmx"
     ],
-    "appCount": 1,
-    "patchCount": 3
+    "appCount": 1
   },
   "ee-morphe": {
     "source": "gitlab",
@@ -452,8 +427,7 @@
       "epixler.de.hypnobox_android",
       "net.tsapps.appsales"
     ],
-    "appCount": 5,
-    "patchCount": 11
+    "appCount": 5
   },
   "eksi": {
     "source": "github",
@@ -467,8 +441,7 @@
     "targetApps": [
       "com.eksiteknoloji.eksisozluk"
     ],
-    "appCount": 1,
-    "patchCount": 1
+    "appCount": 1
   },
   "eyalm2000": {
     "source": "github",
@@ -482,8 +455,7 @@
     "targetApps": [
       "com.aspiro.tidal"
     ],
-    "appCount": 1,
-    "patchCount": 2
+    "appCount": 1
   },
   "franticg33k": {
     "source": "github",
@@ -503,8 +475,7 @@
       "com.providelite.epicplay",
       "np.com.nepalipatro"
     ],
-    "appCount": 7,
-    "patchCount": 15
+    "appCount": 7
   },
   "gryphous-morphe": {
     "source": "github",
@@ -518,8 +489,7 @@
     "targetApps": [
       "com.crunchyroll.crunchyroid"
     ],
-    "appCount": 1,
-    "patchCount": 1
+    "appCount": 1
   },
   "hk-morphe": {
     "source": "github",
@@ -535,8 +505,7 @@
       "com.laurencedawson.reddit_sync.dev",
       "com.laurencedawson.reddit_sync.pro"
     ],
-    "appCount": 3,
-    "patchCount": 10
+    "appCount": 3
   },
   "hoo-dles": {
     "source": "github",
@@ -601,8 +570,7 @@
       "ru.iiec.pydroid3",
       "videoeditor.videorecorder.screenrecorder"
     ],
-    "appCount": 52,
-    "patchCount": 77
+    "appCount": 52
   },
   "hoomans-morphe": {
     "source": "github",
@@ -656,8 +624,7 @@
       "studio.muggle.chatboost",
       "tv.twitch.android.app"
     ],
-    "appCount": 41,
-    "patchCount": 54
+    "appCount": 41
   },
   "icysymmetra-tiktok": {
     "source": "github",
@@ -671,8 +638,7 @@
     "targetApps": [
       "com.zhiliaoapp.musically"
     ],
-    "appCount": 1,
-    "patchCount": 15
+    "appCount": 1
   },
   "ihealth-morphe": {
     "source": "github",
@@ -687,8 +653,7 @@
       "com.ihealthlabs.MyVitalsPro",
       "com.persapps.multitimer"
     ],
-    "appCount": 2,
-    "patchCount": 6
+    "appCount": 2
   },
   "imxeren": {
     "source": "github",
@@ -703,8 +668,7 @@
       "com.laurencedawson.reddit_sync",
       "tv.trakt.trakt"
     ],
-    "appCount": 2,
-    "patchCount": 2
+    "appCount": 2
   },
   "jasonwu1994": {
     "source": "github",
@@ -718,8 +682,7 @@
     "targetApps": [
       "com.google.android.inputmethod.latin"
     ],
-    "appCount": 1,
-    "patchCount": 22
+    "appCount": 1
   },
   "joristdh": {
     "source": "github",
@@ -735,8 +698,7 @@
       "com.laurencedawson.reddit_sync.dev",
       "com.laurencedawson.reddit_sync.pro"
     ],
-    "appCount": 3,
-    "patchCount": 2
+    "appCount": 3
   },
   "kareemlukitomo": {
     "source": "github",
@@ -754,8 +716,7 @@
       "com.twitter.android",
       "com.zhiliaoapp.musically"
     ],
-    "appCount": 5,
-    "patchCount": 8
+    "appCount": 5
   },
   "kolaron": {
     "source": "github",
@@ -769,8 +730,7 @@
     "targetApps": [
       "cz.mafra.jizdnirady"
     ],
-    "appCount": 1,
-    "patchCount": 1
+    "appCount": 1
   },
   "kondratjev": {
     "source": "github",
@@ -795,8 +755,7 @@
       "ru.vk.store",
       "xyz.rtrvr.pillo"
     ],
-    "appCount": 12,
-    "patchCount": 25
+    "appCount": 12
   },
   "lain": {
     "source": "github",
@@ -838,8 +797,7 @@
       "net.nemostudio.keymate",
       "studio.muggle.chatboost"
     ],
-    "appCount": 29,
-    "patchCount": 43
+    "appCount": 29
   },
   "lakaka": {
     "source": "github",
@@ -855,8 +813,7 @@
       "com.jndapp.depth.live.wallpaper",
       "com.soundbrenner.pulse"
     ],
-    "appCount": 3,
-    "patchCount": 3
+    "appCount": 3
   },
   "letterboxd-stremio": {
     "source": "github",
@@ -870,8 +827,7 @@
     "targetApps": [
       "com.letterboxd.letterboxd"
     ],
-    "appCount": 1,
-    "patchCount": 3
+    "appCount": 1
   },
   "loskutov": {
     "source": "github",
@@ -886,8 +842,7 @@
       "com.google.android.apps.youtube.music",
       "com.google.android.youtube"
     ],
-    "appCount": 2,
-    "patchCount": 2
+    "appCount": 2
   },
   "lynx6319": {
     "source": "github",
@@ -901,8 +856,7 @@
     "targetApps": [
       "com.google.android.youtube"
     ],
-    "appCount": 1,
-    "patchCount": 1
+    "appCount": 1
   },
   "meridianfresco": {
     "source": "github",
@@ -916,8 +870,7 @@
     "targetApps": [
       "com.facebook.katana"
     ],
-    "appCount": 1,
-    "patchCount": 2
+    "appCount": 1
   },
   "miguel": {
     "source": "github",
@@ -935,8 +888,7 @@
       "diozz.cubex",
       "jpark.AOS5"
     ],
-    "appCount": 5,
-    "patchCount": 10
+    "appCount": 5
   },
   "modx": {
     "source": "github",
@@ -950,8 +902,7 @@
     "targetApps": [
       "com.mxtech.videoplayer.ad"
     ],
-    "appCount": 1,
-    "patchCount": 5
+    "appCount": 1
   },
   "morphe": {
     "source": "github",
@@ -967,8 +918,7 @@
       "com.google.android.youtube",
       "com.reddit.frontpage"
     ],
-    "appCount": 3,
-    "patchCount": 125
+    "appCount": 3
   },
   "morphe-google": {
     "source": "github",
@@ -982,8 +932,7 @@
     "targetApps": [
       "com.google.android.googlequicksearchbox"
     ],
-    "appCount": 1,
-    "patchCount": 2
+    "appCount": 1
   },
   "morphe-portal": {
     "source": "github",
@@ -998,8 +947,7 @@
       "com.google.android.apps.youtube.music",
       "com.google.android.youtube"
     ],
-    "appCount": 2,
-    "patchCount": 3
+    "appCount": 2
   },
   "morphe-screenshot": {
     "source": "github",
@@ -1011,8 +959,7 @@
     "version": "v1.0.8",
     "createdAt": "2026-06-28T11:39:03",
     "targetApps": [],
-    "appCount": 0,
-    "patchCount": 1
+    "appCount": 0
   },
   "movistar-block-ads": {
     "source": "github",
@@ -1026,8 +973,7 @@
     "targetApps": [
       "com.movistarplus.androidtv"
     ],
-    "appCount": 1,
-    "patchCount": 1
+    "appCount": 1
   },
   "nai64": {
     "source": "github",
@@ -1039,8 +985,7 @@
     "version": "1.13.0",
     "createdAt": "2026-07-05T20:38:55",
     "targetApps": [],
-    "appCount": 0,
-    "patchCount": 4
+    "appCount": 0
   },
   "npci-bhim": {
     "source": "github",
@@ -1054,8 +999,7 @@
     "targetApps": [
       "in.org.npci.upiapp"
     ],
-    "appCount": 1,
-    "patchCount": 6
+    "appCount": 1
   },
   "okish-morphe": {
     "source": "github",
@@ -1069,8 +1013,7 @@
     "targetApps": [
       "com.generalcomp.truecloud"
     ],
-    "appCount": 1,
-    "patchCount": 1
+    "appCount": 1
   },
   "paresh-maheshwari": {
     "source": "gitlab",
@@ -1105,8 +1048,7 @@
       "org.telegram.messenger.web",
       "org.telegram.plus"
     ],
-    "appCount": 22,
-    "patchCount": 57
+    "appCount": 22
   },
   "patcheddit": {
     "source": "github",
@@ -1137,8 +1079,7 @@
       "org.cygnusx1.continuum",
       "reddit.news"
     ],
-    "appCount": 18,
-    "patchCount": 39
+    "appCount": 18
   },
   "pepper-morphe": {
     "source": "github",
@@ -1161,8 +1102,7 @@
       "PreisjĂ¤ger",
       "PromoDescuentos"
     ],
-    "appCount": 10,
-    "patchCount": 17
+    "appCount": 10
   },
   "pichiwa": {
     "source": "github",
@@ -1176,8 +1116,7 @@
     "targetApps": [
       "com.whatsapp"
     ],
-    "appCount": 1,
-    "patchCount": 18
+    "appCount": 1
   },
   "piko": {
     "source": "github",
@@ -1192,8 +1131,7 @@
       "com.instagram.android",
       "com.twitter.android"
     ],
-    "appCount": 2,
-    "patchCount": 126
+    "appCount": 2
   },
   "pinterest-morphed": {
     "source": "github",
@@ -1207,8 +1145,7 @@
     "targetApps": [
       "com.pinterest"
     ],
-    "appCount": 1,
-    "patchCount": 10
+    "appCount": 1
   },
   "pixelpusher247": {
     "source": "github",
@@ -1222,8 +1159,7 @@
     "targetApps": [
       "tv.trakt.trakt"
     ],
-    "appCount": 1,
-    "patchCount": 1
+    "appCount": 1
   },
   "polka-bear": {
     "source": "github",
@@ -1238,8 +1174,7 @@
       "com.ipoji.app",
       "com.vladlee.easyblacklist"
     ],
-    "appCount": 2,
-    "patchCount": 4
+    "appCount": 2
   },
   "prathxm": {
     "source": "github",
@@ -1253,8 +1188,7 @@
     "targetApps": [
       "com.chess"
     ],
-    "appCount": 1,
-    "patchCount": 7
+    "appCount": 1
   },
   "prathxm-ytmusic": {
     "source": "github",
@@ -1268,8 +1202,7 @@
     "targetApps": [
       "com.google.android.apps.youtube.music"
     ],
-    "appCount": 1,
-    "patchCount": 3
+    "appCount": 1
   },
   "proguard": {
     "source": "gitlab",
@@ -1283,8 +1216,7 @@
     "targetApps": [
       "com.java.inspector"
     ],
-    "appCount": 1,
-    "patchCount": 2
+    "appCount": 1
   },
   "rabilrbl": {
     "source": "github",
@@ -1298,8 +1230,7 @@
     "targetApps": [
       "droom.sleepIfUCan"
     ],
-    "appCount": 1,
-    "patchCount": 2
+    "appCount": 1
   },
   "realcyberwash": {
     "source": "github",
@@ -1313,8 +1244,7 @@
     "targetApps": [
       "ru.oneme.app"
     ],
-    "appCount": 1,
-    "patchCount": 1
+    "appCount": 1
   },
   "realme-link": {
     "source": "github",
@@ -1328,8 +1258,7 @@
     "targetApps": [
       "com.realme.link"
     ],
-    "appCount": 1,
-    "patchCount": 1
+    "appCount": 1
   },
   "rookieenough": {
     "source": "github",
@@ -1376,8 +1305,7 @@
       "nl.sanomamedia.android.nu",
       "tv.twitch.android.app"
     ],
-    "appCount": 34,
-    "patchCount": 84
+    "appCount": 34
   },
   "rushiranpise": {
     "source": "github",
@@ -1533,8 +1461,7 @@
       "sp0n.citizen",
       "verbosus.pialytic"
     ],
-    "appCount": 143,
-    "patchCount": 215
+    "appCount": 143
   },
   "rvx-morphed": {
     "source": "github",
@@ -1549,8 +1476,7 @@
       "com.google.android.apps.youtube.music",
       "com.google.android.youtube"
     ],
-    "appCount": 2,
-    "patchCount": 113
+    "appCount": 2
   },
   "saiesh": {
     "source": "github",
@@ -1565,8 +1491,7 @@
       "com.adobe.lrmobile",
       "com.overdevs.at4k"
     ],
-    "appCount": 2,
-    "patchCount": 10
+    "appCount": 2
   },
   "samsung-morphe": {
     "source": "github",
@@ -1580,8 +1505,7 @@
     "targetApps": [
       "com.sec.android.app.shealth"
     ],
-    "appCount": 1,
-    "patchCount": 2
+    "appCount": 1
   },
   "shaun-sheep": {
     "source": "github",
@@ -1598,8 +1522,7 @@
       "com.vanniktech.rssreader",
       "dev.sasikanth.pinnit"
     ],
-    "appCount": 4,
-    "patchCount": 4
+    "appCount": 4
   },
   "sjshb57-pairip": {
     "source": "github",
@@ -1611,8 +1534,7 @@
     "version": "v1.10.2",
     "createdAt": "2026-07-13T02:42:37",
     "targetApps": [],
-    "appCount": 0,
-    "patchCount": 4
+    "appCount": 0
   },
   "telegram-morphe": {
     "source": "github",
@@ -1626,8 +1548,7 @@
     "targetApps": [
       "org.telegram.messenger.web"
     ],
-    "appCount": 1,
-    "patchCount": 10
+    "appCount": 1
   },
   "ts-patches": {
     "source": "github",
@@ -1641,8 +1562,7 @@
     "targetApps": [
       "com.teamsnap.teamsnap"
     ],
-    "appCount": 1,
-    "patchCount": 1
+    "appCount": 1
   },
   "ts2": {
     "source": "github",
@@ -1656,8 +1576,7 @@
     "targetApps": [
       "com.teamsnap.teamsnap"
     ],
-    "appCount": 1,
-    "patchCount": 1
+    "appCount": 1
   },
   "vladon": {
     "source": "github",
@@ -1671,8 +1590,7 @@
     "targetApps": [
       "ru.yandex.yandexnavi"
     ],
-    "appCount": 1,
-    "patchCount": 3
+    "appCount": 1
   },
   "x-shim": {
     "source": "gitlab",
@@ -1686,8 +1604,7 @@
     "targetApps": [
       "com.twitter.android"
     ],
-    "appCount": 1,
-    "patchCount": 3
+    "appCount": 1
   },
   "xhehab": {
     "source": "github",
@@ -1711,8 +1628,7 @@
       "uni.cbum",
       "video.player.videoplayer"
     ],
-    "appCount": 11,
-    "patchCount": 12
+    "appCount": 11
   },
   "xob0t": {
     "source": "github",
@@ -1729,8 +1645,7 @@
       "com.wildberries.ru",
       "ru.ozon.app.android"
     ],
-    "appCount": 4,
-    "patchCount": 24
+    "appCount": 4
   },
   "ynotzort": {
     "source": "github",
@@ -1744,8 +1659,7 @@
     "targetApps": [
       "com.targo_prod.bad"
     ],
-    "appCount": 1,
-    "patchCount": 1
+    "appCount": 1
   },
   "zpatches": {
     "source": "github",
@@ -1760,7 +1674,6 @@
       "com.jcdecaux.vls.lyon",
       "ee.dustland.android.minesweeper"
     ],
-    "appCount": 2,
-    "patchCount": 6
+    "appCount": 2
   }
 }
