@@ -1,0 +1,164 @@
+[
+  {
+    "name": "Ad-Free",
+    "description": "Removes advertisements",
+    "compatiblePackages": [
+      {
+        "packageName": "com.chess",
+        "targets": [
+          {
+            "version": "4.9.49"
+          },
+          {
+            "version": "4.9.49-googleplay"
+          },
+          {
+            "version": "4.10.0"
+          },
+          {
+            "version": "4.10.0-googleplay"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Clone Chess.com",
+    "description": "Changes the package name to com.chess.prathxm, allowing the patched app to be installed side-by-side with the original Chess.com app.",
+    "default": false,
+    "compatiblePackages": [
+      {
+        "packageName": "com.chess",
+        "targets": [
+          {
+            "version": "4.9.49"
+          },
+          {
+            "version": "4.9.49-googleplay"
+          },
+          {
+            "version": "4.10.0"
+          },
+          {
+            "version": "4.10.0-googleplay"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Custom Titles",
+    "description": "Fetches and applies custom titles for users from a remote database. DM PrathxmOp to get yours for fun lol!",
+    "compatiblePackages": [
+      {
+        "packageName": "com.chess",
+        "targets": [
+          {
+            "version": "4.9.49"
+          },
+          {
+            "version": "4.9.49-googleplay"
+          },
+          {
+            "version": "4.10.0"
+          },
+          {
+            "version": "4.10.0-googleplay"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Global Crash Handler",
+    "description": "Catches uncaught exceptions and displays a custom crash screen with details to report issues.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.chess",
+        "targets": [
+          {
+            "version": "4.9.49"
+          },
+          {
+            "version": "4.9.49-googleplay"
+          },
+          {
+            "version": "4.10.0"
+          },
+          {
+            "version": "4.10.0-googleplay"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Lichess Puzzles",
+    "description": "Loads daily puzzles from Lichess and bypasses Chess.com puzzle premium limits.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.chess",
+        "targets": [
+          {
+            "version": "4.9.49"
+          },
+          {
+            "version": "4.9.49-googleplay"
+          },
+          {
+            "version": "4.10.0"
+          },
+          {
+            "version": "4.10.0-googleplay"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Local Stockfish Analysis",
+    "description": "Enables local Stockfish engine for post-game review & analysis.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.chess",
+        "targets": [
+          {
+            "version": "4.9.49"
+          },
+          {
+            "version": "4.9.49-googleplay"
+          },
+          {
+            "version": "4.10.0"
+          },
+          {
+            "version": "4.10.0-googleplay"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock All Bots",
+    "description": "Unlocks all premium and restricted bots in the Versus Bots feature.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.chess",
+        "targets": [
+          {
+            "version": "4.9.49"
+          },
+          {
+            "version": "4.9.49-googleplay"
+          },
+          {
+            "version": "4.10.0"
+          },
+          {
+            "version": "4.10.0-googleplay"
+          }
+        ]
+      }
+    ]
+  }
+]

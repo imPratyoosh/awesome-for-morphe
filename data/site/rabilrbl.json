@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Remove ads",
+    "description": "Bypasses ad-removal premium checks by forcing PremiumState.isRemoveAdPremium() to always return true.",
+    "compatiblePackages": [
+      {
+        "packageName": "droom.sleepIfUCan",
+        "targets": [
+          {
+            "version": "26.23.0"
+          }
+        ],
+        "isPreRelease": true
+      }
+    ]
+  },
+  {
+    "name": "Unlock Pro subscription",
+    "description": "Bypasses premium checks by forcing PremiumState.isPremium() to always return true.",
+    "compatiblePackages": [
+      {
+        "packageName": "droom.sleepIfUCan",
+        "targets": [
+          {
+            "version": "26.23.0"
+          }
+        ],
+        "isPreRelease": true
+      }
+    ]
+  }
+]

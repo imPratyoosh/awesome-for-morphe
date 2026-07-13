@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Fix Other discussions",
+    "description": "Fixes the 'Other discussions' tab showing '403 error loading page' by updating the API endpoint.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.laurencedawson.reddit_sync",
+        "targets": [
+          {
+            "version": "v23.06.30-13:39"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock pro",
+    "description": "Remove ads, add VIP badge and allow to view 'Your Month in Review'.",
+    "compatiblePackages": [
+      {
+        "packageName": "tv.trakt.trakt",
+        "targets": [
+          {
+            "version": "3.13.0"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,48 @@
+[
+  {
+    "name": "Abstract shim layer",
+    "description": "Adds an abstracted shim layer for fields, which improves compatibility to allow legacy patches to work.",
+    "options": [
+      {
+        "key": "fieldJSON",
+        "title": "Field JSON",
+        "description": "JSON containing static field initialization strings. If this is not provided, the patch may fail."
+      },
+      {
+        "key": "exceptions",
+        "title": "Exceptions",
+        "description": "Strings that must be used as local variables rather than global variables to restore the original method structure"
+      }
+    ],
+    "compatiblePackages": [
+      {
+        "packageName": "com.twitter.android"
+      }
+    ]
+  },
+  {
+    "name": "Abstract shim layer for method",
+    "description": "Adds an abstracted shim layer for methods, which improves compatibility to allow legacy patches to work.",
+    "options": [
+      {
+        "key": "advancedMode",
+        "title": "Advanced Mode",
+        "description": "If true, a shim layer for the synthetic method is added.\n\nEnable if testing is required."
+      }
+    ],
+    "compatiblePackages": [
+      {
+        "packageName": "com.twitter.android"
+      }
+    ]
+  },
+  {
+    "name": "Abstract shim layer for native library",
+    "description": "Adds an abstracted shim layer for native libraries, which improves compatibility to allow legacy patches to work.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.twitter.android"
+      }
+    ]
+  }
+]

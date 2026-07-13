@@ -1,0 +1,11 @@
+[
+  {
+    "name": "Bypass Session Expiry",
+    "description": "Kills session expiry dialogs",
+    "compatiblePackages": [
+      {
+        "packageName": "com.realme.link"
+      }
+    ]
+  }
+]

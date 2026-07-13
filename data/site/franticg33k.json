@@ -1,0 +1,111 @@
+[
+  {
+    "name": "Enable Online Pro",
+    "description": "Experimental companion patch that keeps byAir's online Pro gates open without forcing the crash-prone global entitlement refresh path.",
+    "default": false,
+    "compatiblePackages": [
+      {
+        "packageName": "com.byairapp.android"
+      }
+    ]
+  },
+  {
+    "name": "Enable Pro",
+    "description": "Suppresses the main byAir paywall, unlock banners, and local user gating.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.byairapp.android"
+      }
+    ]
+  },
+  {
+    "name": "Remove Ads",
+    "description": "Disables all ad serving from Facebook Audience Network (FAN) and Google Mobile Ads (AdMob). No-ops the plugin bridges so no ads are shown.",
+    "compatiblePackages": [
+      {
+        "packageName": "np.com.nepalipatro"
+      }
+    ]
+  },
+  {
+    "name": "Remove Ads",
+    "description": "Blocks all ad display in Provide Lite by forcing the app's central ad gate (in libapp.so) to always take its 'skip' path. Two branch instructions are rewritten to unconditional skips: the global 'ad enabled' flag check (tbz -> b #skip) and the interstitial/rewarded cooldown gate (b.ge -> b #skip). Verified on v1.4.6 (Dart 3.7.0, arm64, obfuscated) — no ad-show invocation is reached.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.providelite.epicplay"
+      }
+    ]
+  },
+  {
+    "name": "Remove License Activity",
+    "description": "Removes the PairIP LicenseActivity from AndroidManifest.xml.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.jellywatch.app"
+      }
+    ]
+  },
+  {
+    "name": "Remove License Activity",
+    "description": "Removes the PairIP LicenseActivity from AndroidManifest.xml.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.harwin.prismatica"
+      }
+    ]
+  },
+  {
+    "name": "Remove License Activity",
+    "description": "Removes the PairIP LicenseActivity and LicenseContentProvider from AndroidManifest.xml and the com.android.vending.CHECK_LICENSE permission, so the app runs without a valid Play Store license (required because the APK is re-signed during patching).",
+    "compatiblePackages": [
+      {
+        "packageName": "com.providelite.epicplay"
+      }
+    ]
+  },
+  {
+    "name": "Remove License Check",
+    "description": "Bypasses the PairIP Google Play Licensing check so the app runs without a valid Play Store license.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.harwin.prismatica"
+      }
+    ]
+  },
+  {
+    "name": "Remove Watermark",
+    "description": "Patches the procedural GLSL shader in libharwin_native.so to disable the \"PRISMATICA\" watermark in the video player and exported videos.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.harwin.prismatica"
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks all premium features and shop items in JellyWatch.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.jellywatch.app"
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Patches Dart AOT-compiled libapp.so to unlock all premium features. Forces hasPremiumAccess and isPaidUser to always return true by NOPing their ARM64 conditional branch instructions.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.bytecaretech.merokarobar"
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Patches the Dart AOT-compiled libapp.so to unlock all premium / VIP features. Forces the VIP state to always be true by rewriting the constant-pool loads (add xN, x22, #0x30 -> add xN, x22, #0x20) inside the cacheIsVipKey readers (getter + 3 callers). Verified on v1.4.6 (Dart 3.7.0, arm64, obfuscated) — flutter.cacheIsVipKey=true on device.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.providelite.epicplay"
+      }
+    ]
+  }
+]

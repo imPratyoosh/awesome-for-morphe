@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Custom Maps API Key",
+    "description": "Replace Transit Google Maps key with your own Android Maps SDK key for re-signed APKs.",
+    "options": [
+      {
+        "key": "mapsApiKey",
+        "title": "Google Maps API key",
+        "description": "Android Maps SDK key"
+      }
+    ],
+    "compatiblePackages": [
+      {
+        "packageName": "com.thetransitapp.droid",
+        "targets": []
+      }
+    ]
+  },
+  {
+    "name": "Pro Features Unlock",
+    "description": "Unlock all pro features in Transit",
+    "compatiblePackages": [
+      {
+        "packageName": "com.thetransitapp.droid",
+        "targets": []
+      }
+    ]
+  }
+]

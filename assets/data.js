@@ -1,7 +1,5 @@
 // Copyright (c) 2026 nvbangg (github.com/nvbangg)
 
-const CHANNELS = new Set(["stable", "latest"]);
-const DEFAULT_CHANNEL = "stable";
 const jsonCache = new Map();
 const dataCache = new Map();
 
@@ -24,8 +22,20 @@ export async function fetchJson(url) {
   return jsonCache.get(key);
 }
 
-export function normalizeChannel(channelName) {
-  return CHANNELS.has(channelName) ? channelName : DEFAULT_CHANNEL;
+export function buildBundleUrls(source, repo) {
+  if (!repo) return { repoUrl: "", deepLink: "", changelogUrl: "" };
+
+  const repoUrl = `https://${source}.com/${repo}`;
+  const deepLink = `https://morphe.software/add-source?${source}=${repo}`;
+  let changelogUrl = "";
+
+  if (source === "gitlab") {
+    changelogUrl = `${repoUrl}/-/releases`;
+  } else {
+    changelogUrl = `${repoUrl}/releases`;
+  }
+
+  return { repoUrl, deepLink, changelogUrl };
 }
 
 export function appName(packageName, metadata, skipSet) {
@@ -46,13 +56,13 @@ export function appName(packageName, metadata, skipSet) {
 function extractVersions(value) {
   if (!Array.isArray(value)) return [];
 
-  const versionList = value.reduce((acc, versionItem) => {
+  const versionList = value.reduce((accumulator, versionItem) => {
     if (typeof versionItem === "string") {
-      acc.push({ version: versionItem, isExperimental: false });
+      accumulator.push({ version: versionItem, isExperimental: false });
     } else if (versionItem?.version) {
-      acc.push({ version: String(versionItem.version), isExperimental: !!versionItem.isExperimental });
+      accumulator.push({ version: String(versionItem.version), isExperimental: !!versionItem.isExperimental });
     }
-    return acc;
+    return accumulator;
   }, []);
 
   if (!versionList.length) return [];
@@ -72,42 +82,37 @@ function extractVersions(value) {
 
 function packages(patch) {
   const compatiblePackages = patch.compatiblePackages;
-  const universalResult = [{ packageName: "universal", versions: [] }];
+  const universalResult = [{ packageName: "universal", versions: [], isPreRelease: false }];
 
-  if (!compatiblePackages || (typeof compatiblePackages === "object" && Object.keys(compatiblePackages).length === 0)) {
+  if (!compatiblePackages || !Array.isArray(compatiblePackages)) {
     return universalResult;
   }
 
-  if (!Array.isArray(compatiblePackages)) {
-    return Object.entries(compatiblePackages).map(([packageName, packageVersions]) => ({
-      packageName,
-      versions: extractVersions(packageVersions),
-    }));
-  }
-
-  const packageRows = compatiblePackages.reduce((acc, packageItem) => {
-    if (typeof packageItem === "string") {
-      acc.push({ packageName: packageItem, versions: [] });
-    } else if (packageItem?.packageName) {
-      acc.push({
+  const packageRows = compatiblePackages.reduce((accumulator, packageItem) => {
+    if (packageItem?.packageName) {
+      accumulator.push({
         packageName: packageItem.packageName,
-        versions: extractVersions(packageItem.versions || packageItem.targets || []),
+        isPreRelease: !!packageItem.isPreRelease,
+        versions: extractVersions(packageItem.targets || []),
       });
     }
-    return acc;
+    return accumulator;
   }, []);
 
   return packageRows.length ? packageRows : universalResult;
 }
 
-async function loadSource(key, channelObj, namesMap, sourceInfo, skipSet) {
-  const list = await fetchJson(new URL(`../data/${channelObj.file}`, import.meta.url)).catch(() => ({}));
-  const repo = sourceInfo.repo || "";
-  const bundleVersion = channelObj.version || "";
-  const bundleCreatedAt = channelObj.createdAt || "";
+async function loadSource(bundleKey, bundleObj, namesMap, skipSet) {
+  if (!bundleObj.patches) return [];
+  const listUrl = new URL(`../data/${bundleObj.patches}`, import.meta.url);
+  const list = await fetchJson(listUrl).catch(() => null);
 
-  return (list.patches || []).flatMap((patch, patchIndex) => {
-    const patchId = `${key}:${patchIndex}`;
+  const repo = bundleObj.repo || "";
+  const bundleVersion = bundleObj.version || "";
+  const bundleCreatedAt = bundleObj.createdAt || "";
+
+  return (list || []).flatMap((patch, patchIndex) => {
+    const patchId = `${bundleKey}:${patchIndex}`;
 
     return packages(patch).map((target, targetIndex) => {
       const packageName = target.packageName || "";
@@ -115,21 +120,26 @@ async function loadSource(key, channelObj, namesMap, sourceInfo, skipSet) {
       const options = Array.isArray(patch.options) ? patch.options : [];
 
       const searchPatchesTextParts = [patch.name, patch.description];
-      options.forEach((opt) => searchPatchesTextParts.push(opt.title, opt.key, opt.description));
+      options.forEach((option) => searchPatchesTextParts.push(option.title, option.key, option.description));
       const searchPatchesText = searchPatchesTextParts.filter(Boolean).join(" ").toLowerCase();
 
       return {
         id: `${patchId}:${targetIndex}`,
         patchId,
-        bundleKey: key,
+        bundleKey,
         repo,
         bundleVersion,
         bundleCreatedAt,
         patchName: patch.name || "Unnamed patch",
+        patchDescription: patch.description || "",
+        patchOptions: patch.options || [],
         description: patch.description || "",
         packageName,
         appName: name,
         appIcon: namesMap[packageName]?.iconUrl || "",
+        isBundlePreRelease: !!bundleObj.isPreRelease,
+        isAppPreRelease: !!target.isPreRelease,
+        isPatchPreRelease: !!patch.isPreRelease,
         versions: target.versions,
         enabled: patch.use ?? patch.default ?? true,
         options,
@@ -139,11 +149,9 @@ async function loadSource(key, channelObj, namesMap, sourceInfo, skipSet) {
   });
 }
 
-export async function loadChannelData(channelName, priorityKeys = [], onPatchLoaded) {
-  const channel = normalizeChannel(channelName);
-
-  if (dataCache.has(channel)) {
-    const cachedData = await dataCache.get(channel);
+export async function loadInitialData(priorityKeys = [], onPatchLoaded) {
+  if (dataCache.has("latest")) {
+    const cachedData = await dataCache.get("latest");
     if (onPatchLoaded) onPatchLoaded(null);
     return cachedData;
   }
@@ -152,7 +160,7 @@ export async function loadChannelData(channelName, priorityKeys = [], onPatchLoa
   const cachePromise = new Promise((resolve) => {
     resolveCache = resolve;
   });
-  dataCache.set(channel, cachePromise);
+  dataCache.set("latest", cachePromise);
 
   const [namesMap, sources, skipWordsArray] = await Promise.all([
     fetchJson(new URL("../data/apps.json", import.meta.url)).catch(() => ({})),
@@ -161,40 +169,30 @@ export async function loadChannelData(channelName, priorityKeys = [], onPatchLoa
   ]);
 
   const skipSet = new Set(skipWordsArray);
-  const bundleKeys = Object.keys(sources).sort((a, b) => a.localeCompare(b));
+  const bundleKeys = Object.keys(sources).sort((firstItem, secondItem) => firstItem.localeCompare(secondItem));
 
   const bundleList = [];
   const priorityTasks = [];
   const backgroundTasks = [];
 
   for (const key of bundleKeys) {
-    const sourceObj = sources[key];
-    const channelObj = typeof sourceObj[channel] === "string" ? sourceObj[sourceObj[channel]] : sourceObj[channel];
-    if (!channelObj) continue;
+    const bundleObj = sources[key];
+    if (!bundleObj.patches) continue;
 
-    bundleList.push({
-      key,
-      source: sourceObj.source || "github",
-      repo: sourceObj.repo || "",
-      repoUrl: sourceObj.repoUrl || "",
-      deepLink: sourceObj.deepLink || "",
-      avatarUrl: sourceObj.avatarUrl || "",
-      stars: sourceObj.stars || 0,
-      firstSeen: sourceObj.firstSeen || "",
-      targetApps: channelObj.targetApps || [],
-      appCount: channelObj.appCount || 0,
-      patchCount: channelObj.patchCount || 0,
-      version: channelObj.version || "",
-      releaseUrl: channelObj.releaseUrl || "",
-      createdAt: channelObj.createdAt || "",
-    });
+    bundleObj.key = key;
+    const urls = buildBundleUrls(bundleObj.source, bundleObj.repo);
+    bundleObj.repoUrl = urls.repoUrl;
+    bundleObj.deepLink = urls.deepLink;
+    bundleObj.changelogUrl = urls.changelogUrl;
+
+    bundleList.push(bundleObj);
 
     const task = async () => {
       try {
-        const rows = await loadSource(key, channelObj, namesMap, sourceObj, skipSet);
+        const rows = await loadSource(key, bundleObj, namesMap, skipSet);
         return rows || [];
       } catch (error) {
-        console.error(`Failed to load source ${key} for channel ${channel}:`, error);
+        console.error(`Failed to load source ${key}:`, error);
         return [];
       }
     };
@@ -207,10 +205,9 @@ export async function loadChannelData(channelName, priorityKeys = [], onPatchLoa
   }
 
   const activeData = {
-    channel,
     bundles: bundleList,
     rows: [],
-    bundleMap: Object.fromEntries(bundleList.map((bundle) => [bundle.key, bundle])),
+    bundleMap: Object.fromEntries(bundleList.map((bundle, index) => [bundleKeys[index], bundle])),
     namesMap,
     skipSet,
   };
@@ -312,7 +309,7 @@ export function getFilterOptions(rows, namesMap = {}) {
 
   return {
     bundleOptions: Array.from(bundleSet)
-      .sort((a, b) => a.localeCompare(b))
+      .sort((firstItem, secondItem) => firstItem.localeCompare(secondItem))
       .map((value) => ({ value, label: value })),
     appOptions,
   };

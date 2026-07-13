@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Custom DPI",
+    "description": "Forces a custom display density in dots-per-inch for YouTube and YouTube Music.",
+    "options": [
+      {
+        "key": "dpi",
+        "title": "Custom DPI",
+        "description": "Forced display density in dots-per-inch for this app only."
+      }
+    ],
+    "compatiblePackages": [
+      {
+        "packageName": "com.google.android.youtube",
+        "targets": [
+          {
+            "version": "20.51.39"
+          }
+        ]
+      },
+      {
+        "packageName": "com.google.android.apps.youtube.music",
+        "targets": [
+          {
+            "version": "8.51.51"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hide version notice",
+    "description": "Hides the version notice dialog.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.google.android.youtube",
+        "targets": [
+          {
+            "version": "20.51.39"
+          }
+        ]
+      },
+      {
+        "packageName": "com.google.android.apps.youtube.music",
+        "targets": [
+          {
+            "version": "8.51.51"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Custom version name",
+    "description": "Overrides android:versionName so a repatched build can install as an update.",
+    "options": [
+      {
+        "key": "versionName",
+        "title": "Version name",
+        "description": "Full value written to android:versionName."
+      }
+    ],
+    "compatiblePackages": [
+      {
+        "packageName": "com.google.android.youtube",
+        "targets": [
+          {
+            "version": "20.51.39"
+          }
+        ]
+      },
+      {
+        "packageName": "com.google.android.apps.youtube.music",
+        "targets": [
+          {
+            "version": "8.51.51"
+          }
+        ]
+      }
+    ]
+  }
+]

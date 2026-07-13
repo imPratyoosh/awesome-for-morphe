@@ -7,17 +7,7 @@ import {
   reactive,
   nextTick,
 } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
-import {
-  filterRows,
-  getFilterOptions,
-  loadChannelData,
-  normalizeChannel,
-  summarizeRows,
-  appName,
-  fetchJson,
-} from "./data.js";
-
-const DEFAULT_CHANNEL = "latest";
+import { filterRows, getFilterOptions, loadInitialData, summarizeRows, appName, fetchJson } from "./data.js";
 
 function tokenize(inputString) {
   const tokens = [];
@@ -176,7 +166,7 @@ function useListUI(namespace = "") {
     if (groupItem.patches) {
       groupItem.patches.forEach((patch) => {
         expandedOptions.delete(patch.id);
-        if (patch.apps) patch.apps.forEach((appElem) => expandedVersions.delete(appElem.id));
+        if (patch.apps) patch.apps.forEach((appElement) => expandedVersions.delete(appElement.id));
       });
     }
   };
@@ -284,18 +274,19 @@ function useListUI(namespace = "") {
 
 const app = createApp({
   setup() {
-    const sortBundlesHelper = (bundleA, bundleB, keyA, keyB, order) => {
-      if (order === "apps" && bundleA?.appCount !== bundleB?.appCount)
-        return (bundleB?.appCount || 0) - (bundleA?.appCount || 0);
-      if (order === "patches" && bundleA?.patchCount !== bundleB?.patchCount)
-        return (bundleB?.patchCount || 0) - (bundleA?.patchCount || 0);
+    const sortBundlesHelper = (firstBundle, secondBundle, firstKey, secondKey, order) => {
+      if (order === "apps" && firstBundle?.appCount !== secondBundle?.appCount)
+        return (secondBundle?.appCount || 0) - (firstBundle?.appCount || 0);
+      if (order === "patches" && firstBundle?.patchCount !== secondBundle?.patchCount)
+        return (secondBundle?.patchCount || 0) - (firstBundle?.patchCount || 0);
       if (order === "latest") {
-        const dateA = bundleA?.createdAt ? new Date(bundleA.createdAt).getTime() : 0;
-        const dateB = bundleB?.createdAt ? new Date(bundleB.createdAt).getTime() : 0;
+        const dateA = firstBundle?.createdAt ? new Date(firstBundle.createdAt).getTime() : 0;
+        const dateB = secondBundle?.createdAt ? new Date(secondBundle.createdAt).getTime() : 0;
         if (dateA !== dateB) return dateB - dateA;
       }
-      if (order === "stars" && bundleA?.stars !== bundleB?.stars) return (bundleB?.stars || 0) - (bundleA?.stars || 0);
-      return keyA.localeCompare(keyB);
+      if (order === "stars" && firstBundle?.stars !== secondBundle?.stars)
+        return (secondBundle?.stars || 0) - (firstBundle?.stars || 0);
+      return firstKey.localeCompare(secondKey);
     };
 
     const query = ref("");
@@ -304,7 +295,6 @@ const app = createApp({
     const appSearch = ref("");
     const bundleSearch = ref("");
     const showOptions = ref([]);
-    const channel = ref(DEFAULT_CHANNEL);
     const sortOrder = ref("stars");
     const isTwoColumns = ref(new URLSearchParams(location.search).get("view") !== "list");
 
@@ -360,7 +350,6 @@ const app = createApp({
         urlParts.push(`show=${encodedShow}`);
       }
       if (popupSearchQuery.value) urlParts.push(`pq=${encodeURIComponent(popupSearchQuery.value)}`);
-      if (channel.value !== DEFAULT_CHANNEL) urlParts.push(`channel=${channel.value}`);
       if (sortOrder.value !== "stars") urlParts.push(`sort=${sortOrder.value}`);
       if (!isTwoColumns.value) urlParts.push("view=list");
 
@@ -386,11 +375,10 @@ const app = createApp({
         params.delete("channel");
         try {
           history.replaceState(null, "", `${location.pathname}?${params.toString()}#whats-new`);
-        } catch (e) {}
+        } catch (error) {}
       }
 
       query.value = params.get("q") || "";
-      channel.value = normalizeChannel(params.get("channel") || DEFAULT_CHANNEL);
       sortOrder.value = params.get("sort") || "stars";
       isTwoColumns.value = params.get("view") !== "list";
       popupSearchQuery.value = params.get("pq") || "";
@@ -422,7 +410,7 @@ const app = createApp({
               "",
               `${location.pathname}?${params.toString().replace(/=&/g, "&").replace(/=$/, "")}#whats-new`,
             );
-          } catch (e) {
+          } catch (error) {
             location.hash = "whats-new";
           }
           nextTick(() => {
@@ -447,7 +435,7 @@ const app = createApp({
         if (hadNewParam)
           try {
             history.replaceState(null, "", buildUrlString("#whats-new"));
-          } catch (e) {}
+          } catch (error) {}
         isSyncing = false;
       });
     }
@@ -474,30 +462,30 @@ const app = createApp({
       if (!isSyncing)
         try {
           history.replaceState(null, "", buildUrlString(location.hash));
-        } catch (e) {}
+        } catch (error) {}
     });
 
-    watch([query, bundle, app, channel, sortOrder, isTwoColumns, showOptions], (newVals, oldVals) => {
-      if (!isSyncing && oldVals?.some((v) => v !== undefined)) isWhatsNewView.value = false;
+    watch([query, bundle, app, sortOrder, isTwoColumns, showOptions], (newValues, oldValues) => {
+      if (!isSyncing && oldValues?.some((value) => value !== undefined)) isWhatsNewView.value = false;
       if (isSyncing) return;
 
       const targetHash = isWhatsNewView.value ? "#whats-new" : location.hash === "#whats-new" ? "" : location.hash;
       const newUrl = buildUrlString(targetHash);
 
       if (location.pathname + location.search + location.hash !== newUrl) {
-        if (!oldVals) {
+        if (!oldValues) {
           try {
             history.replaceState(null, "", newUrl);
-          } catch (e) {}
+          } catch (error) {}
         } else {
           const otherChanged =
-            oldVals[1] !== newVals[1] ||
-            oldVals[2] !== newVals[2] ||
-            oldVals[3] !== newVals[3] ||
-            JSON.stringify(oldVals[6]) !== JSON.stringify(newVals[6]);
+            oldValues[1] !== newValues[1] ||
+            oldValues[2] !== newValues[2] ||
+            oldValues[3] !== newValues[3] ||
+            JSON.stringify(oldValues[6]) !== JSON.stringify(newValues[6]);
           try {
             otherChanged ? history.pushState(null, "", newUrl) : history.replaceState(null, "", newUrl);
-          } catch (e) {}
+          } catch (error) {}
         }
       }
     });
@@ -507,14 +495,10 @@ const app = createApp({
       patchesLoaded.value = false;
       errorMsg.value = "";
       try {
-        const currentChannel = channel.value;
-        activeData.value = await loadChannelData(channel.value, Array.from(priorityKeys), (isUpdate) => {
-          if (channel.value !== currentChannel) return;
+        activeData.value = await loadInitialData(Array.from(priorityKeys), (isUpdate) => {
           if (isUpdate === null) {
             patchesLoaded.value = true;
             isLoading.value = false;
-            const otherChannel = channel.value === "stable" ? "latest" : "stable";
-            setTimeout(() => loadChannelData(otherChannel, [], null).catch(() => {}), 100);
           } else if (activeData.value) {
             activeData.value.rows = [...activeData.value.rows];
             if (isUpdate === true && showOptions.value.length > 0 && !query.value) isLoading.value = false;
@@ -526,8 +510,6 @@ const app = createApp({
         isLoading.value = false;
       }
     };
-
-    watch(channel, loadData);
 
     const whatsNewHistory = ref([]);
     const whatsNewAppsData = ref({});
@@ -542,8 +524,8 @@ const app = createApp({
         ]);
         whatsNewHistory.value = history || [];
         whatsNewAppsData.value = apps || {};
-      } catch (err) {
-        console.error("Failed to load what's new data", err);
+      } catch (error) {
+        console.error("Failed to load what's new data", error);
       } finally {
         isWhatsNewLoading.value = false;
       }
@@ -564,7 +546,7 @@ const app = createApp({
       const newUrl = `${location.pathname}?${urlParts.join("&")}#whats-new`;
       try {
         history.pushState(null, "", newUrl);
-      } catch (e) {}
+      } catch (error) {}
       syncFromUrl(`?${urlParts.join("&")}`);
     };
 
@@ -606,16 +588,16 @@ const app = createApp({
         showOptions: app.value ? [`:${app.value}`] : [],
       });
       const bundleOptions = getFilterOptions(rowsForSource, activeData.value.namesMap)
-        .bundleOptions.map((opt) => {
-          const bObj = activeData.value.bundleMap[opt.value];
-          return { ...opt, repo: bObj?.repo.toLowerCase() || "", icon: bObj?.avatarUrl || "" };
+        .bundleOptions.map((option) => {
+          const bundleObject = activeData.value.bundleMap[option.value];
+          return { ...option, repo: bundleObject?.repo.toLowerCase() || "", icon: bundleObject?.avatarUrl || "" };
         })
-        .sort((a, b) =>
+        .sort((firstItem, secondItem) =>
           sortBundlesHelper(
-            activeData.value.bundleMap[a.value],
-            activeData.value.bundleMap[b.value],
-            a.value,
-            b.value,
+            activeData.value.bundleMap[firstItem.value],
+            activeData.value.bundleMap[secondItem.value],
+            firstItem.value,
+            secondItem.value,
             sortOrder.value,
           ),
         );
@@ -630,8 +612,10 @@ const app = createApp({
     const filterDropdownOptions = (options, searchValue, extraFields) => {
       const queryWords = searchValue.toLowerCase().split(/\s+/).filter(Boolean);
       if (queryWords.length === 0) return options;
-      return options.filter((opt) => {
-        const searchable = [opt.label, opt.value, ...extraFields.map((f) => opt[f] || "")].join(" ").toLowerCase();
+      return options.filter((option) => {
+        const searchable = [option.label, option.value, ...extraFields.map((field) => option[field] || "")]
+          .join(" ")
+          .toLowerCase();
         return queryWords.every((word) => searchable.includes(word));
       });
     };
@@ -659,7 +643,9 @@ const app = createApp({
           });
         }
       }
-      const patches = Array.from(patchIdMap.values()).sort((a, b) => a.patchName.localeCompare(b.patchName));
+      const patches = Array.from(patchIdMap.values()).sort((firstItem, secondItem) =>
+        firstItem.patchName.localeCompare(secondItem.patchName),
+      );
       const appsMap = new Map();
 
       if (!patchesLoaded.value && bundleItem.targetApps && !hasFilters) {
@@ -675,10 +661,10 @@ const app = createApp({
       }
       for (const patch of patches) for (const appItem of patch.apps) appsMap.set(appItem.packageName, appItem);
 
-      const appsList = Array.from(appsMap.values()).sort((a, b) => {
-        if ((a.packageName === "universal") !== (b.packageName === "universal"))
-          return (a.packageName === "universal" ? 1 : 0) - (b.packageName === "universal" ? 1 : 0);
-        return a.appName.localeCompare(b.appName);
+      const appsList = Array.from(appsMap.values()).sort((firstItem, secondItem) => {
+        if ((firstItem.packageName === "universal") !== (secondItem.packageName === "universal"))
+          return (firstItem.packageName === "universal" ? 1 : 0) - (secondItem.packageName === "universal" ? 1 : 0);
+        return firstItem.appName.localeCompare(secondItem.appName);
       });
 
       return { key: bundleItem.key, bundle: bundleItem, rows, patches, appsList };
@@ -691,10 +677,10 @@ const app = createApp({
       const hasFilters = queryWords.length > 0 || !!targetPrefix;
 
       return activeData.value.bundles
-        .map((bItem) =>
+        .map((bundleItem) =>
           buildGroupFromRows(
-            bItem,
-            filteredRows.value.filter((r) => r.bundleKey === bItem.key),
+            bundleItem,
+            filteredRows.value.filter((row) => row.bundleKey === bundleItem.key),
             hasFilters,
           ),
         )
@@ -715,7 +701,7 @@ const app = createApp({
 
           if (queryWords.length > 0) {
             const appNamesStr = (group.bundle.targetApps || [])
-              .map((pkg) => appName(pkg, activeData.value.namesMap, activeData.value.skipSet))
+              .map((packageName) => appName(packageName, activeData.value.namesMap, activeData.value.skipSet))
               .join(" ");
             const searchable = [group.key, group.bundle.repo, ...(group.bundle.targetApps || []), appNamesStr]
               .join(" ")
@@ -724,7 +710,9 @@ const app = createApp({
           }
           return true;
         })
-        .sort((a, b) => sortBundlesHelper(a.bundle, b.bundle, a.key, b.key, sortOrder.value));
+        .sort((firstItem, secondItem) =>
+          sortBundlesHelper(firstItem.bundle, secondItem.bundle, firstItem.key, secondItem.key, sortOrder.value),
+        );
     });
 
     const mainUI = useListUI("");
@@ -758,12 +746,11 @@ const app = createApp({
 
     const openPopupFast = (groupKey) => {
       const params = new URLSearchParams();
-      if (channel.value !== DEFAULT_CHANNEL) params.set("channel", channel.value);
       params.set("show", groupKey);
       const newUrl = `?${params.toString()}${location.hash === "#whats-new" ? "#whats-new" : ""}`;
       try {
         history.pushState(null, "", newUrl);
-      } catch (e) {}
+      } catch (error) {}
       syncFromUrl(newUrl.split("#")[0]);
     };
 
@@ -778,7 +765,7 @@ const app = createApp({
       const newUrl = `${location.pathname}${urlParams.toString() ? "?" + urlParams.toString() : ""}${isWhatsNewView.value ? "#whats-new" : location.hash}`;
       try {
         history[isWhatsNewView.value ? "replaceState" : "pushState"](null, "", newUrl);
-      } catch (e) {
+      } catch (error) {
         if (isWhatsNewView.value) location.hash = "whats-new";
       }
       syncFromUrl(urlParams.toString() ? "?" + urlParams.toString() : "");
@@ -789,9 +776,11 @@ const app = createApp({
         const group = popupGroup.value;
         if (group && group.key === popupBundleKey.value && group.appsList?.length > 0) {
           const targetApp = app.value
-            ? group.appsList.find((a) => a.packageName === app.value) || group.appsList[0]
+            ? group.appsList.find((firstItem) => firstItem.packageName === app.value) || group.appsList[0]
             : group.appsList[0];
-          if (!group.appsList.some((a) => popupUI.expandedOptions.has(`popup_app_${group.key}_${a.id}`))) {
+          if (
+            !group.appsList.some((appElement) => popupUI.expandedOptions.has(`popup_app_${group.key}_${appElement.id}`))
+          ) {
             popupUI.expandedOptions.add(`popup_app_${group.key}_${targetApp.id}`);
             nextTick(() => {
               const el = document.getElementById(`tab_popup_${group.key}_${targetApp.id}`);
@@ -819,12 +808,12 @@ const app = createApp({
 
     const popupGroup = computed(() => {
       if (!activeData.value || !popupBundleKey.value) return null;
-      const bundleItem = activeData.value.bundles.find((b) => b.key === popupBundleKey.value);
+      const bundleItem = activeData.value.bundles.find((bundleElement) => bundleElement.key === popupBundleKey.value);
       if (!bundleItem) return null;
       const rows = filterRows(activeData.value, {
         query: popupSearchQuery.value,
         showOptions: showOptions.value,
-      }).filter((r) => r.bundleKey === popupBundleKey.value);
+      }).filter((row) => row.bundleKey === popupBundleKey.value);
       return buildGroupFromRows(
         bundleItem,
         rows,
@@ -835,10 +824,12 @@ const app = createApp({
     watch(popupGroup, (newGroup) => {
       if (!newGroup) return;
       if (!popupUI.bundleViews[newGroup.key] && newGroup.appsList?.length > 0) {
-        const hasExpanded = newGroup.appsList.some((a) => popupUI.expandedOptions.has(`popup_app_${newGroup.key}_${a.id}`));
+        const hasExpanded = newGroup.appsList.some((appElement) =>
+          popupUI.expandedOptions.has(`popup_app_${newGroup.key}_${appElement.id}`),
+        );
         if (!hasExpanded) {
           const targetApp = app.value
-            ? newGroup.appsList.find((a) => a.packageName === app.value) || newGroup.appsList[0]
+            ? newGroup.appsList.find((firstItem) => firstItem.packageName === app.value) || newGroup.appsList[0]
             : newGroup.appsList[0];
           popupUI.expandedOptions.add(`popup_app_${newGroup.key}_${targetApp.id}`);
         }
@@ -858,16 +849,17 @@ const app = createApp({
     });
 
     const popupAllApps = computed(() => {
-      const bundleItem = activeData.value?.bundles.find((b) => b.key === popupBundleKey.value);
+      const bundleItem = activeData.value?.bundles.find((bundleElement) => bundleElement.key === popupBundleKey.value);
       return (bundleItem?.targetApps || [])
-        .map((pkg) => ({
-          value: pkg,
-          label: appName(pkg, activeData.value.namesMap, activeData.value.skipSet),
-          icon: activeData.value.namesMap[pkg]?.iconUrl || "",
+        .map((packageName) => ({
+          value: packageName,
+          label: appName(packageName, activeData.value.namesMap, activeData.value.skipSet),
+          icon: activeData.value.namesMap[packageName]?.iconUrl || "",
         }))
         .sort(
-          (a, b) =>
-            (a.value === "universal" ? 1 : 0) - (b.value === "universal" ? 1 : 0) || a.label.localeCompare(b.label),
+          (firstItem, secondItem) =>
+            (firstItem.value === "universal" ? 1 : 0) - (secondItem.value === "universal" ? 1 : 0) ||
+            firstItem.label.localeCompare(secondItem.label),
         );
     });
 
@@ -879,7 +871,7 @@ const app = createApp({
       if (isWhatsNewView.value) rawShowParam.value = newShow;
       try {
         history.pushState(null, "", buildUrlString(location.hash));
-      } catch (e) {}
+      } catch (error) {}
       nextTick(() => {
         isSyncing = false;
         if (!appValue) {
@@ -927,7 +919,6 @@ const app = createApp({
       showOptions,
       appSearch,
       bundleSearch,
-      channel,
       sortOrder,
       isTwoColumns,
       isLoading,
@@ -964,7 +955,7 @@ const app = createApp({
           isWhatsNewView.value = false;
           try {
             history.pushState(null, "", buildUrlString(""));
-          } catch (e) {}
+          } catch (error) {}
         }
       },
       openPopupFast,
@@ -983,11 +974,12 @@ const app = createApp({
             ? ""
             : new Date(value).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })
           : "",
-      playUrl: (pkg) => `https://play.google.com/store/apps/details?id=${encodeURIComponent(pkg)}`,
-      getWhatsNewAppIcon: (pkg) => whatsNewAppsData.value[pkg]?.iconUrl || "",
-      formatWhatsNewAppName: (pkg) => appName(pkg, whatsNewAppsData.value, activeData.value?.skipSet),
-      getAppName: (pkg) => (pkg ? appName(pkg, activeData.value?.namesMap, activeData.value?.skipSet) : "All Apps"),
-      getAppIcon: (pkg) => activeData.value?.namesMap[pkg]?.iconUrl || "",
+      playUrl: (packageName) => `https://play.google.com/store/apps/details?id=${encodeURIComponent(packageName)}`,
+      getWhatsNewAppIcon: (packageName) => whatsNewAppsData.value[packageName]?.iconUrl || "",
+      formatWhatsNewAppName: (packageName) => appName(packageName, whatsNewAppsData.value, activeData.value?.skipSet),
+      getAppName: (packageName) =>
+        packageName ? appName(packageName, activeData.value?.namesMap, activeData.value?.skipSet) : "All Apps",
+      getAppIcon: (packageName) => activeData.value?.namesMap[packageName]?.iconUrl || "",
       getBundleIcon: (key) => activeData.value?.bundleMap[key]?.avatarUrl || "",
       toggleColumns: () => (isTwoColumns.value = !isTwoColumns.value),
       isNewBundle: (group) =>

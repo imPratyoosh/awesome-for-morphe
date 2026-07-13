@@ -10,6 +10,7 @@ The `/data` directory is used as a Morphe patch database, sourced from [ReVanced
 - [`apps.json`](data/apps.json) — metadata for target apps
 - `/bundles/<bundle>-<channel>.json` — patches-bundle.json
 - `/patches/<bundle>-<channel>.json` — patches-list.json
+- `/site/<bundle>.json` — optimized list of patches for UI rendering
 - [`whats-new.json`](data/whats-new.json) — rolling what's new history
 - [`history.json`](data/history.json) — baseline tracking for what's new diffs
 
@@ -30,8 +31,8 @@ Downloads the raw JSON metadata from the remote source.
 - `python scripts/download.py`: (Run without flags) Reads the downloaded bundles and fetches the `*-patches-list.json` data, saving them directly to `/data/patches/`.
 
 ### `update.py`
-Parses the downloaded JSON files and compiles the unified `bundles.json` and `apps.json`.
-- `python scripts/update.py`: Compiles `bundles.json` and `apps.json`. Automatically fetches missing data (stars, avatars, icons) for new entries.
+Parses the downloaded JSON files and compiles the unified `bundles.json`, `apps.json`, and `/site/<bundle>.json` UI data files.
+- `python scripts/update.py`: Compiles JSON files and automatically fetches missing data (stars, avatars, icons).
 - `python scripts/update.py --stars`: Additionally forces an update of stars for **all** bundles.
 - `python scripts/update.py --avatars`: Additionally forces an update of avatars for **all** bundles.
 - `python scripts/update.py --icons`: Additionally forces an update of icons for **all** apps.

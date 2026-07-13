@@ -1,0 +1,255 @@
+[
+  {
+    "name": "Anti Desaparecer",
+    "description": "Mantiene los mensajes temporales visibles.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.whatsapp",
+        "targets": [
+          {
+            "version": "2.26.27.4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Anti Detector",
+    "description": "Bypass detección de root, emulador y ROM personalizada.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.whatsapp",
+        "targets": [
+          {
+            "version": "2.26.27.4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Anti Editar",
+    "description": "Evita que otros editen mensajes enviados.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.whatsapp",
+        "targets": [
+          {
+            "version": "2.26.27.4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Anti Expiracion",
+    "description": "Evita la verificacion forzada de version y expiracion de WhatsApp.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.whatsapp",
+        "targets": [
+          {
+            "version": "2.26.27.4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Anti Revoke",
+    "description": "Evita que otros borren sus mensajes o estados.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.whatsapp",
+        "targets": [
+          {
+            "version": "2.26.27.4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Anti-View Once",
+    "description": "Ve medios efímeros sin límite y permite capturas.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.whatsapp",
+        "targets": [
+          {
+            "version": "2.26.27.4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Copiar estados",
+    "description": "Permite copiar texto de estados de contactos.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.whatsapp",
+        "targets": [
+          {
+            "version": "2.26.27.4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Freeze Last Seen",
+    "description": "Congela la hora de ultima conexion.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.whatsapp",
+        "targets": [
+          {
+            "version": "2.26.27.4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "HD Media",
+    "description": "Envía imágenes y video sin compresión.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.whatsapp",
+        "targets": [
+          {
+            "version": "2.26.27.4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Modo Fantasma",
+    "description": "No recibes ni envias mensajes mientras este activo.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.whatsapp",
+        "targets": [
+          {
+            "version": "2.26.27.4"
+          }
+        ]
+      }
+    ],
+    "isPreRelease": true
+  },
+  {
+    "name": "Ocultar escritura",
+    "description": "Escribe sin mostrar \"escribiendo...\".",
+    "compatiblePackages": [
+      {
+        "packageName": "com.whatsapp",
+        "targets": [
+          {
+            "version": "2.26.27.4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ocultar lectura",
+    "description": "Lee mensajes sin enviar ticks azules.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.whatsapp",
+        "targets": [
+          {
+            "version": "2.26.27.4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ocultar reenviado",
+    "description": "Quita la etiqueta \"reenviado\" de los mensajes.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.whatsapp",
+        "targets": [
+          {
+            "version": "2.26.27.4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Quitar Comunidades",
+    "description": "Oculta la pestaña de comunidades.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.whatsapp",
+        "targets": [
+          {
+            "version": "2.26.27.4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Quitar Novedades",
+    "description": "Oculta la pestaña de novedades/estados.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.whatsapp",
+        "targets": [
+          {
+            "version": "2.26.27.4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Settings Menu",
+    "description": "Añade acceso a ajustes de PichiWA en el menú de Home.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.whatsapp",
+        "targets": [
+          {
+            "version": "2.26.27.4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sin límite de reenvío",
+    "description": "Reenvía mensajes a contactos ilimitados.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.whatsapp",
+        "targets": [
+          {
+            "version": "2.26.27.4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Spoof instalador",
+    "description": "Finge instalación desde Google Play para evitar restricciones.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.whatsapp",
+        "targets": [
+          {
+            "version": "2.26.27.4"
+          }
+        ]
+      }
+    ]
+  }
+]

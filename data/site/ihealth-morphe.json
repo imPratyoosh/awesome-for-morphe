@@ -1,0 +1,87 @@
+[
+  {
+    "name": "Bypass DRM",
+    "description": "Prevents PairIP license check from running so the app does not redirect to the Play Store paywall on launch.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.persapps.multitimer",
+        "targets": [
+          {
+            "version": "1.12"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Disable ad banner",
+    "description": "Prevents the rotating ad banner from appearing at the bottom of the Devices screen.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.ihealthlabs.MyVitalsPro",
+        "targets": [
+          {
+            "version": "4.14.5"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Disable AI motivational modal",
+    "description": "Prevents the AI-generated motivational modal from appearing after a blood pressure reading.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.ihealthlabs.MyVitalsPro",
+        "targets": [
+          {
+            "version": "4.14.5"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enable PRO",
+    "description": "Unlocks all PRO features by short-circuiting the purchase status check to always return true.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.persapps.multitimer",
+        "targets": [
+          {
+            "version": "1.12"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hide buy more devices link",
+    "description": "Hides the 'Buy more iHealth devices?' link at the bottom of the Devices screen.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.ihealthlabs.MyVitalsPro",
+        "targets": [
+          {
+            "version": "4.14.5"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Rebrand app",
+    "description": "Changes the package name to allow installation alongside the original app and renames the app to 'iHealth Morphe'. Disables Firebase initialization, which would otherwise crash on startup when the new package name is not registered.",
+    "default": false,
+    "compatiblePackages": [
+      {
+        "packageName": "com.ihealthlabs.MyVitalsPro",
+        "targets": [
+          {
+            "version": "4.14.5"
+          }
+        ]
+      }
+    ]
+  }
+]

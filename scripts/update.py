@@ -18,6 +18,7 @@ ROOT = Path.cwd()
 DATA_DIR = ROOT / "data"
 BUNDLES_DIR = DATA_DIR / "bundles"
 PATCHES_DIR = DATA_DIR / "patches"
+SITE_DIR = DATA_DIR / "site"
 BUNDLES_JSON_PATH = DATA_DIR / "bundles.json"
 APPS_JSON_PATH = DATA_DIR / "apps.json"
 CONCURRENCY = 8
@@ -170,33 +171,172 @@ def fetch_app_icon(package_name):
     return None
 
 
-def collect_apps(list_json):
-    apps = set()
-    discovered_names = {}
-    patch_count = len(list_json.get("patches", []))
+def strip_patch(patch, discovered_names):
+    out = {}
+    if "name" in patch:
+        out["name"] = patch["name"]
+    if patch.get("description"):
+        out["description"] = patch["description"]
 
-    for patch in list_json.get("patches", []):
-        compatible = patch.get("compatiblePackages")
-        has_app = False
+    if patch.get("default", True) is False:
+        out["default"] = False
 
-        if isinstance(compatible, dict):
-            for package_name in compatible.keys():
-                apps.add(package_name)
-                has_app = True
-        elif isinstance(compatible, list):
-            for entry in compatible:
-                if isinstance(entry, dict) and (
-                    package_name := entry.get("packageName")
-                ):
-                    apps.add(package_name)
-                    has_app = True
-                    if name := entry.get("name"):
-                        discovered_names[package_name] = name
+    if "options" in patch:
+        options_list = []
+        for option_item in patch["options"]:
+            option_obj = {}
+            if "key" in option_item:
+                option_obj["key"] = option_item["key"]
+            if option_item.get("title"):
+                option_obj["title"] = option_item["title"]
+            if option_item.get("description"):
+                option_obj["description"] = option_item["description"]
+            if option_obj:
+                options_list.append(option_obj)
+        if options_list:
+            out["options"] = options_list
 
-        if not has_app:
-            apps.add("universal")
+    compatible_packages = patch.get("compatiblePackages")
+    out_compat = []
+    has_real_app = False
 
-    return apps, discovered_names, patch_count
+    if isinstance(compatible_packages, dict):
+        for package_name, versions in compatible_packages.items():
+            if package_name == "universal":
+                continue
+            has_real_app = True
+            targets = []
+            if versions:
+                for version_item in versions:
+                    if isinstance(version_item, str):
+                        targets.append({"version": version_item})
+                    elif isinstance(version_item, dict) and "version" in version_item:
+                        targets.append({"version": version_item["version"]})
+            out_compat.append({"packageName": package_name, "targets": targets})
+    elif isinstance(compatible_packages, list):
+        for entry in compatible_packages:
+            if not isinstance(entry, dict):
+                continue
+            package_name = entry.get("packageName")
+            if package_name == "universal" or not package_name:
+                continue
+            if name := entry.get("name"):
+                discovered_names[package_name] = name
+            has_real_app = True
+            targets = []
+            for target_item in entry.get("targets", []):
+                target_out = {}
+                if "version" in target_item:
+                    target_out["version"] = target_item["version"]
+                if target_item.get("isExperimental"):
+                    target_out["isExperimental"] = True
+                if target_out:
+                    targets.append(target_out)
+            package_out = {"packageName": package_name}
+            if targets:
+                package_out["targets"] = targets
+            out_compat.append(package_out)
+
+    if has_real_app and out_compat:
+        out["compatiblePackages"] = out_compat
+
+    return out
+
+
+def build_site_json(stable_list, dev_list, latest, discovered_names):
+    is_bundle_prerelease = False
+    out_patches = []
+    target_apps = set()
+
+    stable_patches_raw = stable_list.get("patches", []) if stable_list else []
+    dev_patches_raw = dev_list.get("patches", []) if dev_list else []
+
+    if latest == "stable" or not dev_list:
+        for patch in stable_patches_raw:
+            stripped = strip_patch(patch, discovered_names)
+            out_patches.append(stripped)
+            for package_name in stripped.get("compatiblePackages", []):
+                target_apps.add(package_name["packageName"])
+    elif not stable_list:
+        is_bundle_prerelease = True
+        for patch in dev_patches_raw:
+            stripped = strip_patch(patch, discovered_names)
+            out_patches.append(stripped)
+            for package_name in stripped.get("compatiblePackages", []):
+                target_apps.add(package_name["packageName"])
+    else:
+        stable_apps = set()
+        stable_app_patches = {}
+
+        for patch in stable_patches_raw:
+            patch_name = patch.get("name")
+            compatible_packages = patch.get("compatiblePackages")
+            package_names = []
+            if isinstance(compatible_packages, dict):
+                package_names = [
+                    k for k in compatible_packages.keys() if k != "universal"
+                ]
+            elif isinstance(compatible_packages, list):
+                package_names = [
+                    package_element.get("packageName")
+                    for package_element in compatible_packages
+                    if isinstance(package_element, dict)
+                    and package_element.get("packageName")
+                    and package_element.get("packageName") != "universal"
+                ]
+
+            if not package_names:
+                package_names = ["universal"]
+
+            for package_name in package_names:
+                stable_apps.add(package_name)
+                if package_name not in stable_app_patches:
+                    stable_app_patches[package_name] = set()
+                if patch_name:
+                    stable_app_patches[package_name].add(patch_name)
+
+        for patch in dev_patches_raw:
+            stripped = strip_patch(patch, discovered_names)
+            patch_name = stripped.get("name")
+
+            compatible_packages = stripped.get("compatiblePackages")
+            if compatible_packages:
+                patch_is_new_for_some_old_app = False
+                for package_obj in compatible_packages:
+                    pkg_name = package_obj["packageName"]
+                    target_apps.add(pkg_name)
+
+                    if pkg_name not in stable_apps:
+                        package_obj["isPreRelease"] = True
+                    else:
+                        if patch_name and patch_name not in stable_app_patches.get(
+                            pkg_name, set()
+                        ):
+                            patch_is_new_for_some_old_app = True
+
+                if patch_is_new_for_some_old_app:
+                    stripped["isPreRelease"] = True
+            else:
+                if "universal" not in stable_apps:
+                    stripped["isPreRelease"] = True
+                else:
+                    if patch_name and patch_name not in stable_app_patches.get(
+                        "universal", set()
+                    ):
+                        stripped["isPreRelease"] = True
+
+            out_patches.append(stripped)
+
+    patch_count = len(out_patches)
+    app_count = len([app for app in target_apps if app != "universal"])
+
+    return (
+        out_patches,
+        is_bundle_prerelease,
+        sorted(list(target_apps)),
+        app_count,
+        patch_count,
+    )
 
 
 def main():
@@ -218,6 +358,7 @@ def main():
     if args.all:
         args.stars = args.avatars = args.icons = True
 
+    SITE_DIR.mkdir(parents=True, exist_ok=True)
     if not BUNDLES_DIR.exists():
         print("No bundles directory found. Run download.py first.")
         return
@@ -291,8 +432,6 @@ def main():
         source_entry = {
             "source": source,
             "repo": repo,
-            "repoUrl": repo_url,
-            "deepLink": deep_link,
             "avatarUrl": avatar_url,
             "stars": stars if stars is not None else 0,
         }
@@ -314,84 +453,68 @@ def main():
         if not dev_json:
             latest = "stable"
 
-        latest_target_apps = []
-        for channel, bundle_json, list_path in [
-            ("stable", stable_json, stable_list_path),
-            ("dev", dev_json, dev_list_path),
-        ]:
-            if bundle_json:
-                version = bundle_json.get("version", "")
-                created_at = bundle_json.get("created_at", "")
-                out_file = f"patches/{base}-{channel}.json"
+        stable_list_json = (
+            read_json(stable_list_path) if stable_list_path.exists() else None
+        )
+        dev_list_json = read_json(dev_list_path) if dev_list_path.exists() else None
 
-                list_json = read_json(list_path)
+        discovered = {}
+        out_patches, is_bundle_prerelease, target_apps, app_count, patch_count = (
+            build_site_json(stable_list_json, dev_list_json, latest, discovered)
+        )
+
+        for channel_json in [stable_list_json, dev_list_json]:
+            if channel_json:
                 scanned_lists += 1
 
-                packages, discovered, patch_count = collect_apps(list_json)
-                all_packages.update(packages)
 
-                target_apps = sorted(list(packages))
-                app_count = len(
-                    [
-                        package_name
-                        for package_name in target_apps
-                        if package_name != "universal"
-                    ]
-                )
+        all_packages.update(target_apps)
 
-                release_url = ""
-                if repo_url and version:
-                    import urllib.parse
+        for package_name in target_apps:
+            if package_name not in seen_packages:
+                seen_packages.add(package_name)
+                if (
+                    package_name == "universal"
+                    or " " in package_name
+                    or "." not in package_name
+                ):
+                    continue
 
-                    safe_version = urllib.parse.quote(version, safe="")
-                    if source == "gitlab":
-                        release_url = f"{repo_url}/-/releases/{safe_version}"
-                    else:
-                        release_url = f"{repo_url}/releases/tag/{safe_version}"
+                meta = app_metadata.get(package_name)
+                is_new_app = not meta
+                name = discovered.get(package_name, None)
 
-                source_entry[channel] = {
-                    "file": out_file,
-                    "version": version,
-                    "releaseUrl": release_url,
-                    "createdAt": created_at,
-                    "targetApps": target_apps,
-                    "appCount": app_count,
-                    "patchCount": patch_count,
-                }
+                if not meta:
+                    app_metadata[package_name] = {"name": name, "iconUrl": None}
+                elif isinstance(meta, str):
+                    new_name = name or meta
+                    app_metadata[package_name] = {
+                        "name": new_name if new_name else None,
+                        "iconUrl": None,
+                    }
+                elif isinstance(meta, dict):
+                    if name and meta.get("name") != name:
+                        app_metadata[package_name]["name"] = name
 
-                if channel == latest:
-                    latest_target_apps = target_apps
+                if args.icons or is_new_app:
+                    icon_tasks.add(package_name)
+        # Write to site/base.json
+        site_file_path = SITE_DIR / f"{base}.json"
+        write_json(site_file_path, out_patches)
 
-                for package_name in packages:
-                    if (
-                        package_name == "universal"
-                        or " " in package_name
-                        or "." not in package_name
-                    ):
-                        continue
+        latest_bundle_json = dev_json if latest == "dev" else stable_json
 
-                    if package_name not in seen_packages:
-                        seen_packages.add(package_name)
-                        meta = app_metadata.get(package_name)
-                        is_new_app = not meta
-                        name = discovered.get(package_name, None)
+        # Update source_entry with the new schema
+        source_entry["patches"] = f"site/{base}.json"
+        source_entry["version"] = latest_bundle_json.get("version", "")
+        source_entry["createdAt"] = latest_bundle_json.get("created_at", "")
+        source_entry["targetApps"] = target_apps
+        source_entry["appCount"] = app_count
+        source_entry["patchCount"] = patch_count
 
-                        if not meta:
-                            app_metadata[package_name] = {"name": name, "iconUrl": None}
-                        elif isinstance(meta, str):
-                            new_name = name or meta
-                            app_metadata[package_name] = {
-                                "name": new_name if new_name else None,
-                                "iconUrl": None,
-                            }
-                        elif isinstance(meta, dict):
-                            if name and meta.get("name") != name:
-                                app_metadata[package_name]["name"] = name
+        if is_bundle_prerelease:
+            source_entry["isPreRelease"] = True
 
-                        if args.icons or is_new_app:
-                            icon_tasks.add(package_name)
-
-        source_entry["latest"] = latest
         bundle_sources[base] = source_entry
     print(f"Scanned {scanned_lists} list files.")
 

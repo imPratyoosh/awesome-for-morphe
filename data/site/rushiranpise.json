@@ -1,0 +1,3172 @@
+[
+  {
+    "name": "Add resource file",
+    "description": "Adds or replaces one raw APK file from text options.",
+    "default": false,
+    "options": [
+      {
+        "key": "universalAddResourcePath",
+        "title": "Target path"
+      },
+      {
+        "key": "universalAddResourceContent",
+        "title": "File content"
+      }
+    ]
+  },
+  {
+    "name": "Alert Distances",
+    "description": "Configures radar/camera and hazard alert announcement distances.\nCredits: Waze CGE Mod.\n",
+    "options": [
+      {
+        "key": "accidentDist",
+        "title": "Accident alert (m)",
+        "description": "Official: 600m."
+      },
+      {
+        "key": "alertDist",
+        "title": "General alert (m)",
+        "description": "Official: 600m."
+      },
+      {
+        "key": "policeDist",
+        "title": "Police / camera alert (m)",
+        "description": "Official: 600m."
+      },
+      {
+        "key": "freewayDist",
+        "title": "Enforcement — freeways (m)",
+        "description": "Official: 2000m."
+      },
+      {
+        "key": "highwayDist",
+        "title": "Enforcement — highways (m)",
+        "description": "Official: 1000m."
+      },
+      {
+        "key": "streetDist",
+        "title": "Enforcement — streets (m)",
+        "description": "Official: 500m."
+      },
+      {
+        "key": "hazardDist",
+        "title": "Hazard alert (m)",
+        "description": "Official: 600m."
+      },
+      {
+        "key": "heavyTrafDist",
+        "title": "Heavy traffic alert (m)",
+        "description": "Official: 600m."
+      },
+      {
+        "key": "betweenDist",
+        "title": "Min between alerts (m)",
+        "description": "Official: 300m."
+      }
+    ],
+    "compatiblePackages": [
+      {
+        "packageName": "com.waze",
+        "targets": [
+          {
+            "version": "5.21.0.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "AutoZoom",
+    "description": "Controls how aggressively the map zooms in/out based on driving speed.\nCredits: Waze Chuppito Mod",
+    "options": [
+      {
+        "key": "speedFactor",
+        "title": "Speed factor",
+        "description": "Higher = more zoom-out at speed. Official: 10."
+      },
+      {
+        "key": "scaleFactor",
+        "title": "Scale factor",
+        "description": "Overall zoom scale multiplier. Official: 25."
+      },
+      {
+        "key": "maxScale",
+        "title": "Max scale",
+        "description": "Maximum zoom-out scale. Official: 8000."
+      },
+      {
+        "key": "gradientSpeed",
+        "title": "Gradient speed threshold (km/h)",
+        "description": "Zoom gradient activates above this speed. Official: 30."
+      }
+    ],
+    "compatiblePackages": [
+      {
+        "packageName": "com.waze",
+        "targets": [
+          {
+            "version": "5.21.0.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Bypass License Check",
+    "description": "Bypasses PairIP DRM license verification to prevent forced app shutdown on non-Play-licensed installs.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.newsbreak.crimeradar",
+        "targets": [
+          {
+            "version": "26.23.2"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Bypass Subscription Paywall",
+    "description": "Bypasses the subscription paywall in-app.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.newsbreak.crimeradar",
+        "targets": [
+          {
+            "version": "26.23.2"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Change package name",
+    "description": "Changes manifest package and optionally provider/permission authorities.",
+    "default": false,
+    "options": [
+      {
+        "key": "universalNewPackageName",
+        "title": "New package or suffix"
+      },
+      {
+        "key": "universalRewriteAuthorities",
+        "title": "Rewrite authorities"
+      }
+    ]
+  },
+  {
+    "name": "Change version code",
+    "description": "Changes android:versionCode.",
+    "default": false,
+    "options": [
+      {
+        "key": "universalVersionCode",
+        "title": "Version code",
+        "description": "Version code to write into AndroidManifest.xml."
+      }
+    ]
+  },
+  {
+    "name": "Custom certificates",
+    "description": "Adds a permissive network security config with system/user certs.",
+    "default": false,
+    "options": [
+      {
+        "key": "universalAllowCleartext",
+        "title": "Allow cleartext"
+      }
+    ]
+  },
+  {
+    "name": "Dark mode",
+    "description": "Force dark mode for Amazon Shopping.",
+    "default": false,
+    "options": [
+      {
+        "key": "amazonDarkMode",
+        "title": "Dark mode",
+        "description": "Off / Follow system / Always on."
+      }
+    ],
+    "compatiblePackages": [
+      {
+        "packageName": "com.amazon.mShop.android.shopping",
+        "targets": [
+          {
+            "version": "32.12.4.100"
+          }
+        ]
+      },
+      {
+        "packageName": "in.amazon.mShop.android.shopping",
+        "targets": [
+          {
+            "version": "32.12.4.300"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Disable ad SDK calls",
+    "description": "No-ops common ad SDK load/show/init/fetch methods in bundled ad packages.",
+    "default": false
+  },
+  {
+    "name": "Disable Ads",
+    "description": "Prevents the AppOpen ad preloader from initialising.",
+    "compatiblePackages": [
+      {
+        "packageName": "sensustech.universal.tv.remote.control",
+        "targets": [
+          {
+            "version": "1.8.1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Disable Ads",
+    "description": "Suppresses all Waze ad systems via bundled preferences file:\n• AdMob SDK (Ad_.*)\n• Google Ads (Google_Ads.*)\n• Ads Inventory Prediction\n• ExternalPOI pins, coupons, popups (ExternalPO_ + Extern__POI both key variants)\n• Search autocomplete server ads\nCredits: Waze CGE Mod (ExternalPOI keys), Waze Chuppito (dual-key coverage).",
+    "compatiblePackages": [
+      {
+        "packageName": "com.waze",
+        "targets": [
+          {
+            "version": "5.21.0.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Disable Advil Ad Requests",
+    "description": "Stubs AdvilRequest.getPageUrl() → \"\" so the Advil ad server receives no page URL and returns no ad content. ",
+    "compatiblePackages": [
+      {
+        "packageName": "com.waze",
+        "targets": [
+          {
+            "version": "5.21.0.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Disable Analytics / Telemetry",
+    "description": "Disables App Analytics / Telemetry.",
+    "default": false,
+    "compatiblePackages": [
+      {
+        "packageName": "com.cloudflare.onedotonedotonedotone",
+        "targets": [
+          {
+            "version": "6.38.7"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Disable clipboard access",
+    "description": "Blocks app clipboard reads and writes.",
+    "default": false
+  },
+  {
+    "name": "Disable Play Integrity",
+    "description": "Blocks Play Integrity service binding.",
+    "default": false
+  },
+  {
+    "name": "Disable search suggestions tracking",
+    "description": "Prevents search keypress and focus events from being sent with suggestion requests.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.amazon.mShop.android.shopping",
+        "targets": [
+          {
+            "version": "32.12.4.100"
+          }
+        ]
+      },
+      {
+        "packageName": "in.amazon.mShop.android.shopping",
+        "targets": [
+          {
+            "version": "32.12.4.300"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Disable shake ads",
+    "description": "Skips SensorManager.registerListener calls that can power shake-to-ad behavior.",
+    "default": false
+  },
+  {
+    "name": "Disable telemetry",
+    "description": "Disables CamScanner's custom telemetry/log-agent system.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.intsig.camscanner",
+        "targets": [
+          {
+            "version": "7.20.5.2606250000"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Disable Tracking",
+    "description": "Disables analytics and telemetry in ES File Explorer",
+    "compatiblePackages": [
+      {
+        "packageName": "com.estrongs.android.pop",
+        "targets": [
+          {
+            "version": "4.4.3.7"
+          }
+        ],
+        "isPreRelease": true
+      }
+    ]
+  },
+  {
+    "name": "Disable video autoplay",
+    "description": "Prevents product and ad videos from autoplaying.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.amazon.mShop.android.shopping",
+        "targets": [
+          {
+            "version": "32.12.4.100"
+          }
+        ]
+      },
+      {
+        "packageName": "in.amazon.mShop.android.shopping",
+        "targets": [
+          {
+            "version": "32.12.4.300"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enable Android debugging",
+    "description": "Sets android:debuggable=true.",
+    "default": false
+  },
+  {
+    "name": "Enable debug build target",
+    "description": "Forces compatible BUILD_TARGET debug providers to debug=true.",
+    "default": false
+  },
+  {
+    "name": "Enable Debug Menu",
+    "description": "Enables Duolingo's hidden debug menu in settings.",
+    "default": false,
+    "compatiblePackages": [
+      {
+        "packageName": "com.duolingo",
+        "targets": [
+          {
+            "version": "6.87.6"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enable ROM signature spoofing",
+    "description": "Adds fake-signature permission and metadata.",
+    "default": false,
+    "options": [
+      {
+        "key": "universalFakeSignature",
+        "title": "Certificate hex/signature"
+      }
+    ]
+  },
+  {
+    "name": "Enlarged Speedometer",
+    "description": "Increases speedometer digit size for better readability.",
+    "default": false,
+    "options": [
+      {
+        "key": "smallTextSize",
+        "title": "Text size — speed below 100",
+        "description": "Speedometer font size when speed < 100. Default: 28sp (original: 20sp)."
+      },
+      {
+        "key": "largeTextSize",
+        "title": "Text size — speed 100+",
+        "description": "Speedometer font size when speed ≥ 100. Default: 21sp (original: 13sp)."
+      }
+    ],
+    "compatiblePackages": [
+      {
+        "packageName": "com.waze",
+        "targets": [
+          {
+            "version": "5.21.0.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Export all activities",
+    "description": "Makes all activities exportable.",
+    "default": false
+  },
+  {
+    "name": "Export internal data documents provider",
+    "description": "Registers an extension DocumentsProvider for the app internal data directory.",
+    "default": false
+  },
+  {
+    "name": "Fix Amazon manifest conflicts",
+    "description": "Updates shared Amazon permissions so other Amazon apps can coexist.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.amazon.mShop.android.shopping",
+        "targets": [
+          {
+            "version": "32.12.4.100"
+          }
+        ]
+      },
+      {
+        "packageName": "in.amazon.mShop.android.shopping",
+        "targets": [
+          {
+            "version": "32.12.4.300"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Fix Firebase after re-signing",
+    "description": "Fixes Firebase services (push notifications, Remote Config, Firebase Auth) that break after Morphe re-signs the app with a different certificate.\n\nApply with Original app certificate patch no other config needed.",
+    "default": false
+  },
+  {
+    "name": "Force dark theme",
+    "description": "Forces common AppCompat, UiModeManager, and Configuration dark-mode checks to night mode.",
+    "default": false
+  },
+  {
+    "name": "GmsCore support (MicroG)",
+    "description": "Routes Google Play Services calls through MicroG instead of real GPS.\n\nWorks for: Google apps (YouTube, Maps, News, Photos) and third-party apps using classic Google Sign-In (Android 13 and below).\n\nDoes not work for: Android 14+ Credential Manager sign-in (most modern third-party apps), Play Integrity / SafetyNet checks, or apps with custom auth.\n\nRequires MicroG RE installed. Apply with Original app certificate patch.",
+    "default": false,
+    "options": [
+      {
+        "key": "gmsCoreVendor",
+        "title": "MicroG package name",
+        "description": "Which MicroG / GmsCore app is installed on your device. Check your device's app list for \"MicroG\" or \"GmsCore\" if unsure — most users should leave this as the default."
+      },
+      {
+        "key": "mainActivityName",
+        "title": "Main activity class (optional)",
+        "description": "The app's main Activity class name ending with a semicolon, e.g. /MainActivity; Used to inject the MicroG check at startup. Leave blank for auto-detection."
+      },
+      {
+        "key": "packageName",
+        "title": "Custom package name (optional)",
+        "description": "Rename the app to this package name. Leave blank to keep the original. Must be a valid package name (e.g. com.example.myapp)."
+      }
+    ]
+  },
+  {
+    "name": "Hex patch",
+    "description": "Replaces one hex byte pattern inside one APK file.",
+    "default": false,
+    "options": [
+      {
+        "key": "universalHexTargetPath",
+        "title": "Target path"
+      },
+      {
+        "key": "universalHexFrom",
+        "title": "Find hex"
+      },
+      {
+        "key": "universalHexTo",
+        "title": "Replace hex"
+      }
+    ]
+  },
+  {
+    "name": "Hide ADB status",
+    "description": "Hides adb_enabled and development_settings_enabled.",
+    "default": false
+  },
+  {
+    "name": "Hide app icon",
+    "description": "Removes launcher category from MAIN launcher filters.",
+    "default": false
+  },
+  {
+    "name": "Hide mock location",
+    "description": "Hides mock-location signals from app checks.",
+    "default": false,
+    "options": [
+      {
+        "key": "hideMockLocationMode",
+        "title": "Mode",
+        "description": "Which mock-location checks to hide."
+      },
+      {
+        "key": "hideMockLocationProvider",
+        "title": "Provider",
+        "description": "Provider returned when app reads an unknown/mock provider."
+      },
+      {
+        "key": "hideMockLocationAccuracy",
+        "title": "Accuracy meters",
+        "description": "Accuracy value returned by Location.getAccuracy()."
+      }
+    ]
+  },
+  {
+    "name": "Hide Rufus tab",
+    "description": "Removes the Rufus AI assistant tab from Amazon's bottom navigation bar.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.amazon.mShop.android.shopping",
+        "targets": [
+          {
+            "version": "32.12.4.100"
+          }
+        ]
+      },
+      {
+        "packageName": "in.amazon.mShop.android.shopping",
+        "targets": [
+          {
+            "version": "32.12.4.300"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hide VPN and proxy",
+    "description": "Hides common VPN transport/interface and Java proxy property checks.",
+    "default": false
+  },
+  {
+    "name": "Map Skin (Vitamin C)",
+    "description": "Applies Chuppito's 'Vitamin C' map skin. All visual values configurable.\n• Night: true black AMOLED background (saves battery, prevents burn-in)\n• Day: warm beige background\n• Larger font labels across the board\n• Wider navigation arrow head for better visibility\n• Custom car 3D models: Batmobile, Riddler, race car, 3D arrow\nCredits: ALEX02-GTT (skin design), Waze Chuppito Mod (integration).",
+    "options": [
+      {
+        "key": "nightBg",
+        "title": "Night background color (hex)",
+        "description": "Default: 000000 (true black, AMOLED). Original Waze: 1a1a2e."
+      },
+      {
+        "key": "dayBg",
+        "title": "Day background color (hex)",
+        "description": "Default: ebe7dd (warm beige). Original Waze: f7f3eb."
+      },
+      {
+        "key": "fontHuge",
+        "title": "Font size — huge labels",
+        "description": "Default: 18 (original: 14)."
+      },
+      {
+        "key": "fontBig",
+        "title": "Font size — big labels",
+        "description": "Default: 14 (original: 12)."
+      },
+      {
+        "key": "fontMedium",
+        "title": "Font size — medium labels",
+        "description": "Default: 12 (original: 10)."
+      },
+      {
+        "key": "fontSmall",
+        "title": "Font size — small labels",
+        "description": "Default: 10 (original: 8)."
+      },
+      {
+        "key": "navArrow",
+        "title": "Nav arrow head width factor",
+        "description": "Default: 10.0 (original: 3.0). Wider = more visible chevron."
+      }
+    ],
+    "compatiblePackages": [
+      {
+        "packageName": "com.waze",
+        "targets": [
+          {
+            "version": "5.21.0.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Navigation & Map",
+    "description": "Configures navigation and map behaviour:\n• Nearing destination distance (Credits: CGE Mod)\n• Android Auto head-up alert distances\n• Map turn mode (auto-zoom to upcoming turn)\n• Traffic bar minimum time threshold\n• GPS icon visibility\n• Route notifications (hazard, school zone) both disabled by default\nCredits: Waze CGE Mod (nearing destination), Waze Chuppito (remaining keys).",
+    "options": [
+      {
+        "key": "nearingDestDist",
+        "title": "Nearing destination distance (m)",
+        "description": "0 = silent arrival. Official: ~500m."
+      },
+      {
+        "key": "aaHeadUpNormal",
+        "title": "Android Auto head-up — normal roads (m)",
+        "description": "Official: 800m."
+      },
+      {
+        "key": "aaHeadUpFreeway",
+        "title": "Android Auto head-up — freeways (m)",
+        "description": "Official: 1000m."
+      },
+      {
+        "key": "trafficBarMinTime",
+        "title": "Traffic bar min time in traffic (seconds)",
+        "description": "Official: 300s."
+      },
+      {
+        "key": "showGpsIcon",
+        "title": "Show GPS icon on map",
+        "description": "Official: yes."
+      },
+      {
+        "key": "mapTurnMode",
+        "title": "Map turn mode (auto-zoom to turn)",
+        "description": "Default: enabled."
+      },
+      {
+        "key": "hazardNotif",
+        "title": "Permanent hazard route notification",
+        "description": "Default: disabled (0)."
+      },
+      {
+        "key": "schoolNotif",
+        "title": "School zone route notification",
+        "description": "Default: disabled (0)."
+      }
+    ],
+    "compatiblePackages": [
+      {
+        "packageName": "com.waze",
+        "targets": [
+          {
+            "version": "5.21.0.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Open links in browser",
+    "description": "Opens non-Amazon URLs in the default browser instead of the in-app WebView.",
+    "default": false,
+    "compatiblePackages": [
+      {
+        "packageName": "com.amazon.mShop.android.shopping",
+        "targets": [
+          {
+            "version": "32.12.4.100"
+          }
+        ]
+      },
+      {
+        "packageName": "in.amazon.mShop.android.shopping",
+        "targets": [
+          {
+            "version": "32.12.4.300"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Override certificate pinning",
+    "description": "Forces network security config trust anchors to override pins.",
+    "default": false
+  },
+  {
+    "name": "Popup Suppression",
+    "description": "Prevents promotional and ad popups from appearing while driving.\nRaises the minimum trigger speed to a near-impossible value so popups never appear.\nCredits: Waze Chuppito Mod.",
+    "options": [
+      {
+        "key": "minSpeed",
+        "title": "Min speed to show popups (MMSec)",
+        "description": "Default 999999 = never. Official: 0 (always shows)."
+      },
+      {
+        "key": "fullyStoppedSpeed",
+        "title": "Fully stopped speed (MMSec)",
+        "description": "-1 = disable stopped trigger. Official: 0."
+      },
+      {
+        "key": "minDistance",
+        "title": "Min distance to show popup (m)",
+        "description": "Official: 100m."
+      },
+      {
+        "key": "minResetScrollSpeed",
+        "title": "Min reset scroll speed (MMSec)",
+        "description": "Speed at which scroll suppression resets. Official: 1400."
+      },
+      {
+        "key": "delayAfterInteraction",
+        "title": "Delay after user interaction (seconds)",
+        "description": "Seconds before popup can appear post-interaction. Official: 0."
+      }
+    ],
+    "compatiblePackages": [
+      {
+        "packageName": "com.waze",
+        "targets": [
+          {
+            "version": "5.21.0.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Predictive back gesture",
+    "description": "Enables Android predictive back gesture.",
+    "default": false
+  },
+  {
+    "name": "Price history charts",
+    "description": "Injects Keepa and CamelCamelCamel price history charts on Amazon product pages.",
+    "default": false,
+    "compatiblePackages": [
+      {
+        "packageName": "com.amazon.mShop.android.shopping",
+        "targets": [
+          {
+            "version": "32.12.4.100"
+          }
+        ]
+      },
+      {
+        "packageName": "in.amazon.mShop.android.shopping",
+        "targets": [
+          {
+            "version": "32.12.4.300"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Provide Original app certificate",
+    "description": "By Default it Reads the signing certificate from the original app installed. Required for GmsCore, Firebase, and Signature spoof patches. Only fill options below if the original is uninstalled.",
+    "default": false,
+    "options": [
+      {
+        "key": "originalApkPath",
+        "title": "Path to original APK (if uninstalled)",
+        "description": "Full path to the original APK or .apks bundle. Example: /sdcard/Download/Waze.apks"
+      },
+      {
+        "key": "manualCertSha1",
+        "title": "Certificate SHA-1 (manual)",
+        "description": "40-char hex. Found on APKMirror under app signature info."
+      },
+      {
+        "key": "manualCertSha256",
+        "title": "Certificate SHA-256 (manual)",
+        "description": "64-char hex. Optional companion to SHA-1."
+      },
+      {
+        "key": "manualCertBase64",
+        "title": "Certificate Base64 DER (manual)",
+        "description": "Needed only for Signature spoof patch. Get it with: apksigner verify --print-certs original.apk"
+      }
+    ]
+  },
+  {
+    "name": "Radar Sound (Any Speed)",
+    "description": "Plays radar/speed camera sound alerts regardless of current speed. Official Waze only alerts when over the speed limit.\n",
+    "compatiblePackages": [
+      {
+        "packageName": "com.waze",
+        "targets": [
+          {
+            "version": "5.21.0.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Remove ad manifest entries",
+    "description": "Removes common ad SDK permissions, services, providers, libraries, and metadata.",
+    "default": false
+  },
+  {
+    "name": "Remove ADS",
+    "description": "Remove in-app ads",
+    "compatiblePackages": [
+      {
+        "packageName": "com.toomics.global.google",
+        "targets": [
+          {
+            "version": "1.6.7"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Remove Ads",
+    "description": "Removes interstitial and exit native ads from m-Indicator.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.mobond.mindicator",
+        "targets": [
+          {
+            "version": "18.0.356"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Remove Ads",
+    "description": "Remove in-app ads.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.vizmanga.android",
+        "targets": [
+          {
+            "version": "4.14.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Remove ads",
+    "description": "Stubs all ad loading paths: banner/interstitial loaders, billing callbacks, and ad SDK init.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.finalwire.aida64",
+        "targets": [
+          {
+            "version": "2.21"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Remove ads",
+    "description": "Hides sponsored and ad content in Amazon Shopping via CSS injection.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.amazon.mShop.android.shopping",
+        "targets": [
+          {
+            "version": "32.12.4.100"
+          }
+        ]
+      },
+      {
+        "packageName": "in.amazon.mShop.android.shopping",
+        "targets": [
+          {
+            "version": "32.12.4.300"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Remove ads",
+    "description": "Disables Block Puzzle AdMob initialization, banner, and interstitial ads.",
+    "compatiblePackages": [
+      {
+        "packageName": "game.puzzle.blockpuzzle",
+        "targets": [
+          {
+            "version": "6.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Remove ads",
+    "description": "Disables interstitial/banner ad loaders, hides promoted listings and profiles from search feeds.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.thecarousell.Carousell",
+        "targets": [
+          {
+            "version": "2.461.8"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Remove ads",
+    "description": "Disables LiveScore banner, native, and interstitial ad requests.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.livescore",
+        "targets": [
+          {
+            "version": "9.7.1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Remove Ads / Unlock Premium",
+    "description": "Forces SubscriptionStateImpl.getStatus() (LB2/c.h) to always return HAS_UNLIMITED_SUBSCRIPTION and getPurchase() (LB2/c.g) to return a well-formed fake Purchase, removing ads and the upgrade button/banner without crashing on the now-expected non-null Purchase object.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.psiphon3.subscription",
+        "targets": [
+          {
+            "version": "479"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Remove audio capture policy",
+    "description": "Forces runtime audio capture policy to ALLOW_CAPTURE_BY_ALL.",
+    "default": false
+  },
+  {
+    "name": "Remove Item Limits",
+    "description": "Removes all  item limits in-app.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.newsbreak.crimeradar",
+        "targets": [
+          {
+            "version": "26.23.2"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Remove screen capture restriction",
+    "description": "Allows audio playback capture in the manifest.",
+    "default": false
+  },
+  {
+    "name": "Remove screenshot restriction",
+    "description": "Removes FLAG_SECURE and screenshot blocking.",
+    "default": false
+  },
+  {
+    "name": "Remove share targets",
+    "description": "Removes chooser/direct share targets.",
+    "default": false
+  },
+  {
+    "name": "Remove Watermark",
+    "description": "Removes watermarks from Canva exports and previews.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.canva.editor",
+        "targets": [
+          {
+            "version": "2.367.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Report Speed Limit",
+    "description": "Adds a Report option when tapping the speedometer to report wrong or missing speed limits. Not available in the official version.\n",
+    "compatiblePackages": [
+      {
+        "packageName": "com.waze",
+        "targets": [
+          {
+            "version": "5.21.0.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sanitize share links",
+    "description": "Strips tracking parameters from copied/shared Amazon links, leaving only the clean product URL.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.amazon.mShop.android.shopping",
+        "targets": [
+          {
+            "version": "32.12.4.100"
+          }
+        ]
+      },
+      {
+        "packageName": "in.amazon.mShop.android.shopping",
+        "targets": [
+          {
+            "version": "32.12.4.300"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Set target SDK 34",
+    "description": "Sets targetSdkVersion to 34.",
+    "default": false
+  },
+  {
+    "name": "Speed Limit Sign",
+    "description": "Sets the speed limit sign style shown on the map.",
+    "options": [
+      {
+        "key": "signStyle",
+        "title": "Sign style",
+        "description": "us = large circular US-style (recommended). metric = small local-style."
+      }
+    ],
+    "compatiblePackages": [
+      {
+        "packageName": "com.waze",
+        "targets": [
+          {
+            "version": "5.21.0.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Spoof Android ID",
+    "description": "Spoofs Settings.Secure android_id reads.",
+    "default": false,
+    "options": [
+      {
+        "key": "universalAndroidId",
+        "title": "Android ID",
+        "description": "16 hex characters."
+      }
+    ]
+  },
+  {
+    "name": "Spoof app signature",
+    "description": "Makes the app think its signing certificate is unchanged after Morphe re-signs it.\n\nUseful when an app crashes or shows a tamper warning because it checks its own certificate.\n\nDoes not bypass Play Integrity / SafetyNet hardware attestation.\n\nApply with Original app certificate patch.",
+    "default": false,
+    "options": [
+      {
+        "key": "packageName",
+        "title": "Package name override (optional)",
+        "description": "Leave blank — read automatically from the app. Only set this if you changed the app's package name and the patch is using the wrong one."
+      }
+    ]
+  },
+  {
+    "name": "Spoof Bluetooth identifiers",
+    "description": "Spoofs Bluetooth adapter name and MAC address reads.",
+    "default": false,
+    "options": [
+      {
+        "key": "universalBluetoothName",
+        "title": "Bluetooth name"
+      },
+      {
+        "key": "universalBluetoothAddress",
+        "title": "Bluetooth MAC address"
+      }
+    ]
+  },
+  {
+    "name": "Spoof build info",
+    "description": "Spoofs common android.os.Build fields with configurable values.",
+    "default": false,
+    "options": [
+      {
+        "key": "universalBuildModel",
+        "title": "MODEL"
+      },
+      {
+        "key": "universalBuildManufacturer",
+        "title": "MANUFACTURER"
+      },
+      {
+        "key": "universalBuildBrand",
+        "title": "BRAND"
+      },
+      {
+        "key": "universalBuildDevice",
+        "title": "DEVICE"
+      },
+      {
+        "key": "universalBuildProduct",
+        "title": "PRODUCT"
+      },
+      {
+        "key": "universalBuildFingerprint",
+        "title": "FINGERPRINT"
+      },
+      {
+        "key": "universalBuildRelease",
+        "title": "VERSION.RELEASE"
+      },
+      {
+        "key": "universalBuildSdk",
+        "title": "VERSION.SDK_INT"
+      }
+    ]
+  },
+  {
+    "name": "Spoof install source",
+    "description": "Makes the app think it was installed from a specific store (default: Google Play).\n\nUseful when an app blocks features or shows errors because it detects it was not installed from the Play Store.\n\nOnly affects what the app itself sees - does not change the real system install record.",
+    "default": false,
+    "options": [
+      {
+        "key": "installerPackageName",
+        "title": "Store to impersonate",
+        "description": "Most apps only check for the Google Play Store, so the default is usually correct. Pick from the list, or type any package name directly if your app checks for a different store."
+      }
+    ]
+  },
+  {
+    "name": "Spoof keystore security level",
+    "description": "Forces key/security level getters to software/trusted-environment style values.",
+    "default": false
+  },
+  {
+    "name": "Spoof Pixel device",
+    "description": "Ports PixelSpoof-style Build, system property, and Pixel feature spoofing.",
+    "default": false,
+    "options": [
+      {
+        "key": "pixelSpoofMode",
+        "title": "Spoof mode",
+        "description": "Pixel 10 Pro XL / mustang profile, or Pixel XL / marlin for Google Photos."
+      }
+    ]
+  },
+  {
+    "name": "Spoof Play age signals",
+    "description": "Spoofs Play age signal result getters.",
+    "default": false,
+    "options": [
+      {
+        "key": "universalPlayAgeLower",
+        "title": "Lower age"
+      },
+      {
+        "key": "universalPlayAgeUpper",
+        "title": "Upper age"
+      }
+    ]
+  },
+  {
+    "name": "Spoof root of trust",
+    "description": "Spoofs common RootOfTrust verified boot getters.",
+    "default": false
+  },
+  {
+    "name": "Spoof SIM provider",
+    "description": "Spoofs TelephonyManager SIM/network provider values.",
+    "default": false,
+    "options": [
+      {
+        "key": "universalSimCountryIso",
+        "title": "Country ISO"
+      },
+      {
+        "key": "universalSimOperator",
+        "title": "Operator code"
+      },
+      {
+        "key": "universalSimOperatorName",
+        "title": "Operator name"
+      }
+    ]
+  },
+  {
+    "name": "Spoof telephony IDs",
+    "description": "Spoofs IMEI, MEID, subscriber ID, SIM serial, and line number reads.",
+    "default": false,
+    "options": [
+      {
+        "key": "universalImei",
+        "title": "IMEI"
+      },
+      {
+        "key": "universalMeid",
+        "title": "MEID"
+      },
+      {
+        "key": "universalSubscriberId",
+        "title": "Subscriber ID"
+      },
+      {
+        "key": "universalSimSerial",
+        "title": "SIM serial"
+      },
+      {
+        "key": "universalLineNumber",
+        "title": "Line number"
+      }
+    ]
+  },
+  {
+    "name": "Spoof WARP+ Unlimited UI",
+    "description": "Unlocks WARP+ UI locally.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.cloudflare.onedotonedotonedotone",
+        "targets": [
+          {
+            "version": "6.38.7"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Spoof Wi-Fi connection",
+    "description": "Forces common connectivity checks to connected/unmetered.",
+    "default": false
+  },
+  {
+    "name": "Spoof Wi-Fi identifiers",
+    "description": "Spoofs Wi-Fi SSID, BSSID, and MAC address reads.",
+    "default": false,
+    "options": [
+      {
+        "key": "universalWifiSsid",
+        "title": "SSID"
+      },
+      {
+        "key": "universalWifiBssid",
+        "title": "BSSID"
+      },
+      {
+        "key": "universalWifiMac",
+        "title": "MAC address"
+      }
+    ]
+  },
+  {
+    "name": "Spoof Widevine / DRM level",
+    "description": "Reports Widevine L1 (hardware DRM) to apps that check DRM level locally.\n\nUseful for apps that refuse to play HD/4K content on L3 devices or after re-signing.\n\nDoes not bypass server-side DRM - Netflix, Disney+ and similar are not affected.",
+    "default": false,
+    "options": [
+      {
+        "key": "securityLevel",
+        "title": "Widevine security level to report",
+        "description": "L1 = hardware DRM (highest quality). L3 = software only. Default L1."
+      },
+      {
+        "key": "hdcpLevel",
+        "title": "HDCP level to report",
+        "description": "HDCP_V2_2 is required for 4K content on most streaming apps."
+      }
+    ]
+  },
+  {
+    "name": "Suppress Paywall",
+    "description": "Suppresses the in-app paywall.",
+    "compatiblePackages": [
+      {
+        "packageName": "sensustech.universal.tv.remote.control",
+        "targets": [
+          {
+            "version": "1.8.1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Suppress Premium Promotions",
+    "description": "Supress all premium promotions in-app.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.newsbreak.crimeradar",
+        "targets": [
+          {
+            "version": "26.23.2"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Uncensored Radar / Camera Display",
+    "description": "Shows exact fixed and mobile speed camera locations, including those not yet in the official Waze radar zone. Enables enforcement alerts via preferences keys:\nCredits: Waze CGE Mod.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.waze",
+        "targets": [
+          {
+            "version": "5.21.0.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Ad-Free",
+    "description": "Forces FlightAware ad-free subscribed state.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.flightaware.android.liveFlightTracker",
+        "targets": [
+          {
+            "version": "5.15.4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Ad-Free",
+    "description": "Removes ads and unlocks ad-free status in Speedtest by Ookla.",
+    "compatiblePackages": [
+      {
+        "packageName": "org.zwanoo.android.speedtest",
+        "targets": [
+          {
+            "version": "7.0.7"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock All Access",
+    "description": "Unlocks All access in Nzb360.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.kevinforeman.nzb360",
+        "targets": [
+          {
+            "version": "23.5"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock All Features",
+    "description": "Bypasses PairIP DRM license check, removes all paywalls, and unlocks all premium features including cloud sync and remote access.",
+    "compatiblePackages": [
+      {
+        "packageName": "verbosus.pialytic",
+        "targets": [
+          {
+            "version": "1.2.8"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Business Premium",
+    "description": "Unlocks Business/Gold premium features in Flightradar24: ad-free map, weather layers, ATC, 3D view, flight history, and unlimited saved locations.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.flightradar24free",
+        "targets": [
+          {
+            "version": "11.7.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Cloud Service",
+    "description": "Unlocks BluramsGuard cloud storage, AI detection, and playback features.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.blurams.ipc",
+        "targets": [
+          {
+            "version": "5.1049.4.908"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Club",
+    "description": "Unlocks Citymapper Club Membership Note: Need to manually Purchase inside APP!.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.citymapper.app.release",
+        "targets": [
+          {
+            "version": "11.55.1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock donation",
+    "description": "Forces h0() to return \"yes\" so donate dialog never shows and providers unlock.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.weawow",
+        "targets": [
+          {
+            "version": "7.1.7"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Donation Features",
+    "description": "Unlocks all premium donation features in Greenify.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.oasisfeng.greenify",
+        "targets": [
+          {
+            "version": "5.1.1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Drama Episodes",
+    "description": "Bypasses the IAA (ad-watch-to-unlock) episode gate for drama mini-series.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.localaiapp.scoops",
+        "targets": [
+          {
+            "version": "3.28.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Elite",
+    "description": "Unlocks JEFIT Elite features in app.",
+    "compatiblePackages": [
+      {
+        "packageName": "je.fit",
+        "targets": [
+          {
+            "version": "17.2.5"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Enterprise",
+    "description": "Unlocks Enterprise features in app.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.tecso.MigraConnect",
+        "targets": [
+          {
+            "version": "2.8.1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Excel",
+    "description": "Removes login requirement, unlocks premium, blocks ads, bypasses signature and code transparency checks.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.microsoft.office.excel",
+        "targets": [
+          {
+            "version": "16.0.20131.20080"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Followed Locations",
+    "description": "Unlocks the Followed Locations premium feature.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.newsbreak.crimeradar",
+        "targets": [
+          {
+            "version": "26.23.2"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Full Version",
+    "description": "Unlocks all features in Inure App Manager.",
+    "compatiblePackages": [
+      {
+        "packageName": "app.simple.inure.play",
+        "targets": [
+          {
+            "version": "build107.0.5"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Lifetime",
+    "description": "Unlocks lifetime subscription features in BlockerHero.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.blockerhero",
+        "targets": [
+          {
+            "version": "1.5.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Lifetime",
+    "description": "Unlocks all Lifetime features in Proxyman.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.proxyman.proxymanandroid",
+        "targets": [
+          {
+            "version": "1.18.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Lifetime",
+    "description": "Unlocks SHAREit lifetime premium.",
+    "compatiblePackages": [
+      {
+        "packageName": "shareit.premium",
+        "targets": [
+          {
+            "version": "1.1.98"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Lifetime Premium",
+    "description": "Unlocks all features locked behind the subscription paywall.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.adguard.android",
+        "targets": [
+          {
+            "version": "4.14.68"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Moovit+",
+    "description": "Unlocks Moovit+",
+    "compatiblePackages": [
+      {
+        "packageName": "com.tranzmate",
+        "targets": [
+          {
+            "version": "5.195.2.1792"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Patron",
+    "description": "Unlocks Pocket Casts Patron yearly feature checks.",
+    "compatiblePackages": [
+      {
+        "packageName": "au.com.shiftyjelly.pocketcasts",
+        "targets": [
+          {
+            "version": "8.14"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Platinum",
+    "description": "Unlocks Life360 Platinum feature in app.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.life360.android.safetymapd",
+        "targets": [
+          {
+            "version": "26.25.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Plus",
+    "description": "Unlocks all SpotAngels Plus features in app",
+    "compatiblePackages": [
+      {
+        "packageName": "com.spotangels.android",
+        "targets": [
+          {
+            "version": "15.2.2"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Plus",
+    "description": "Unlocks Sticker.ly PLUS subscriptionNote: For Facebook Login, Uninstall Facebook App.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.snowcorp.stickerly.android",
+        "targets": [
+          {
+            "version": "3.35.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Plus",
+    "description": "Unlocks Subway Now Plus.",
+    "compatiblePackages": [
+      {
+        "packageName": "io.goodservice.theweekendest",
+        "targets": [
+          {
+            "version": "1.2.8"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks premium features in app.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.ace.ex.file.manager",
+        "targets": [
+          {
+            "version": "1.6.0.4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks AiScore Premium Features in app.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.onesports.score",
+        "targets": [
+          {
+            "version": "4.2.4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks premium.",
+    "compatiblePackages": [
+      {
+        "packageName": "alldocumentreader.office.viewer.filereader.pdfviewer",
+        "targets": [
+          {
+            "version": "3.2.3"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks all premium content in Anatomy by Muscle Motion.",
+    "compatiblePackages": [
+      {
+        "packageName": "air.com.musclemotion.anatomy",
+        "targets": [
+          {
+            "version": "3.2.1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks all premium wallpapers.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.jndapp.anime.depth.live.wallpaper",
+        "targets": [
+          {
+            "version": "1.0.4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlock Premium Features in app.",
+    "compatiblePackages": [
+      {
+        "packageName": "apps.automan.blurwallpaper",
+        "targets": [
+          {
+            "version": "2.9.2"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks Premium Features In the App.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.catalinagroup.callrecorder",
+        "targets": [
+          {
+            "version": "2.4.281"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks Carbon premium subscription.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.joincarbon.nutrition",
+        "targets": [
+          {
+            "version": "2.76.5784"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks ColorNote premium and removes advertising ID permissions.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.socialnmobile.dictapps.notepad.color.note",
+        "targets": [
+          {
+            "version": "4.8.4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks premium features in app.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.cpuid.cpu_z",
+        "targets": [
+          {
+            "version": "1.59"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks Premium Features In the App.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.newsbreak.crimeradar",
+        "targets": [
+          {
+            "version": "26.23.2"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks premium features after login.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.eterno",
+        "targets": [
+          {
+            "version": "33.5.4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks all premium wallpapers.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.jndapp.depth.live.wallpaper",
+        "targets": [
+          {
+            "version": "2.1.06"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks all Fitbod premium features.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.fitbod.fitbod",
+        "targets": [
+          {
+            "version": "8.24.1-0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks premium features in app.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.live.flight.tracker",
+        "targets": [
+          {
+            "version": "1.7.1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlock Premium features in app.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.alexandrucene.dayhistory",
+        "targets": [
+          {
+            "version": "7.5.4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "compatiblePackages": [
+      {
+        "packageName": "org.hola.play",
+        "targets": [
+          {
+            "version": "AARCH64_1.248.400"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks all premium features in Image & Video Date Fixer.",
+    "compatiblePackages": [
+      {
+        "packageName": "eu.duong.imagedatefixer",
+        "targets": [
+          {
+            "version": "3.7.1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlock Premium features after login.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.nexstreaming.app.kinemasterfree",
+        "targets": [
+          {
+            "version": "8.1.13.36552.GP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks premium features and all map packs.",
+    "compatiblePackages": [
+      {
+        "packageName": "de.komoot.android",
+        "targets": [
+          {
+            "version": "2026.28.2"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks all premium content.",
+    "compatiblePackages": [
+      {
+        "packageName": "air.com.musclemotion.kyphosis",
+        "targets": [
+          {
+            "version": "1.4.9"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks premium features in app.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.dywx.larkplayer",
+        "targets": [
+          {
+            "version": "2026.9.6"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks Premium Features in app.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.lawfully.lawfully_ai_tracker",
+        "targets": [
+          {
+            "version": "6.7.1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlock all premium widgets.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.jndapp.minimal.widgets",
+        "targets": [
+          {
+            "version": "1.0.08"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks premium in Beta by Mirko.",
+    "compatiblePackages": [
+      {
+        "packageName": "it.mirko.beta",
+        "targets": [
+          {
+            "version": "0.9.4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks MyRadar's yearly premium features",
+    "compatiblePackages": [
+      {
+        "packageName": "com.acmeaom.android.myradar",
+        "targets": [
+          {
+            "version": "8.71.2"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks all premium features.",
+    "compatiblePackages": [
+      {
+        "packageName": "cz.mroczis.netmonster",
+        "targets": [
+          {
+            "version": "3.4.1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks Premium features in app..",
+    "compatiblePackages": [
+      {
+        "packageName": "com.particlenews.newsbreak",
+        "targets": [
+          {
+            "version": "26.27.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks Ninja VPN premium.",
+    "compatiblePackages": [
+      {
+        "packageName": "app.ninjavpn.android",
+        "targets": [
+          {
+            "version": "1.4.7"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks all Photo Editor premium features",
+    "compatiblePackages": [
+      {
+        "packageName": "com.iudesk.android.photo.editor",
+        "targets": [
+          {
+            "version": "13.4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks Picture Mushroom premium features.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.glority.picturemushroom",
+        "targets": [
+          {
+            "version": "2.9.31"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks PictureThis premium features.",
+    "compatiblePackages": [
+      {
+        "packageName": "cn.danatech.xingseus",
+        "targets": [
+          {
+            "version": "5.29.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlock Premium features in app.",
+    "compatiblePackages": [
+      {
+        "packageName": "net.pkge.pkge",
+        "targets": [
+          {
+            "version": "19.0.13"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks Pocket Prep premium subscription gates.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.pocketprep.android.itcybersecurity",
+        "targets": [
+          {
+            "version": "3.27.2"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks all premium content in Posture Correction by Muscle Motion.",
+    "compatiblePackages": [
+      {
+        "packageName": "air.com.musclemotion.posture",
+        "targets": [
+          {
+            "version": "3.2.1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks local Proton VPN premium  features.",
+    "compatiblePackages": [
+      {
+        "packageName": "ch.protonvpn.android",
+        "targets": [
+          {
+            "version": "5.19.16.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlock premium features in RecipeBro.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.recipebro.cookingbuddy",
+        "targets": [
+          {
+            "version": "1.3.74"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks all premium features in Rename & Organize.",
+    "compatiblePackages": [
+      {
+        "packageName": "eu.duong.picturemanager",
+        "targets": [
+          {
+            "version": "8.25.1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks Rocket Money Premium Features.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.truebill",
+        "targets": [
+          {
+            "version": "13.15.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks premium features in app.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.rs.explorer.filemanager",
+        "targets": [
+          {
+            "version": "2.3.0.4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Bypasses PairIP license check, paywall, ads, and pro upsell in SAI.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.mtv.sai",
+        "targets": [
+          {
+            "version": "2.2.8"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks all premium feature in app.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.appostrophe.scrl",
+        "targets": [
+          {
+            "version": "1.22"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks all Premium features in Snipd: AI Podcast Player by spoofing the RevenueCat CustomerInfo.",
+    "compatiblePackages": [
+      {
+        "packageName": "ai.topicfinder.podcastdiscovery",
+        "targets": [
+          {
+            "version": "4.1.14"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks Premium features.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.snow_forecast.snowforecast",
+        "targets": [
+          {
+            "version": "8.0.6"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks Social Gamebox premium features.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.app.social_gamebox",
+        "targets": [
+          {
+            "version": "1.1.3"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks Sticker Maker premium and ad-free checks.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.marsvard.stickermakerforwhatsapp",
+        "targets": [
+          {
+            "version": "1.0.10-5"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks Premium features in app. Also re-enables password login after OTP.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.strava",
+        "targets": [
+          {
+            "version": "471.11"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks all premium content in Strength Training by Muscle Motion. Note: Create an exercise plan to access all videos",
+    "compatiblePackages": [
+      {
+        "packageName": "air.com.musclemotion.strength.mobile",
+        "targets": [
+          {
+            "version": "3.5.1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks premium/lifetime featuers in app.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.esuper.file.explorer",
+        "targets": [
+          {
+            "version": "1.5.6.2"
+          }
+        ],
+        "isPreRelease": true
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks The Weather Channel's Premium and Premium Pro subscription tiers. Enables the ad-free experience, extended 15-day hourly forecast, real-feel temperature, air quality index, minute-by-minute precipitation, severe weather notifications, and radar overlays gated behind the subscription paywall.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.weather.Weather",
+        "targets": [
+          {
+            "version": "16.12.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks all premium features.",
+    "compatiblePackages": [
+      {
+        "packageName": "mobi.lockdown.weather",
+        "targets": [
+          {
+            "version": "2.5.0-5"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks TomTom GO premium features for the selected vehicle type.",
+    "options": [
+      {
+        "key": "vehicleType",
+        "title": "Vehicle type",
+        "description": "Choose which premium path to unlock."
+      }
+    ],
+    "compatiblePackages": [
+      {
+        "packageName": "com.tomtom.gplay.navapp",
+        "targets": [
+          {
+            "version": "3.6.316-beta"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks Toxly Premium",
+    "compatiblePackages": [
+      {
+        "packageName": "com.mindful.code.studio.toxly.scanner",
+        "targets": [
+          {
+            "version": "1.16.6"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlock premium features in app.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.tradingview.tradingviewapp",
+        "targets": [
+          {
+            "version": "1.20.77.0.1002295"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks Premium Features In the App.",
+    "compatiblePackages": [
+      {
+        "packageName": "sensustech.universal.tv.remote.control",
+        "targets": [
+          {
+            "version": "1.8.1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks all Wavve Boating GPS premium features: charts, weather, tide data, and removes subscription paywall.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.wavve.boating.gps",
+        "targets": [
+          {
+            "version": "5.6.9"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks Windscribe premium account.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.windscribe.vpn",
+        "targets": [
+          {
+            "version": "4.2.2328"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks Windy Pro features.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.windyty.android",
+        "targets": [
+          {
+            "version": "50.1.1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks all premium content.",
+    "compatiblePackages": [
+      {
+        "packageName": "air.com.musclemotion.workout",
+        "targets": [
+          {
+            "version": "1.2.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks all premium content in Yoga by Muscle Motion.",
+    "compatiblePackages": [
+      {
+        "packageName": "air.com.musclemotion.yoga",
+        "targets": [
+          {
+            "version": "3.2.1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium ",
+    "description": "Unlocks premium in Clickmate",
+    "compatiblePackages": [
+      {
+        "packageName": "com.inscode.autoclicker",
+        "targets": [
+          {
+            "version": "7.1.4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock premium",
+    "description": "Unlocks AmoledPix premium features and disables ads.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.androholic.amoledpix",
+        "targets": [
+          {
+            "version": "7.2"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock premium",
+    "description": "Unlock Premium features in app",
+    "compatiblePackages": [
+      {
+        "packageName": "com.MojoFilterMediaLLC.RPGSoundSystem",
+        "targets": [
+          {
+            "version": "3.1.16"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium+",
+    "description": "Unlocks AccuWeather's Premium+ subscription tier without a Play Store purchase. Enables the full 15-day and hourly forecast detail, MinuteCast extended precision, air quality and health indexes, real-feel temperature, severe weather notifications, and widget customisation.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.accuweather.android",
+        "targets": [
+          {
+            "version": "21.1.13-1-rc"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock PRO",
+    "description": "Unlocks all PRO features in app",
+    "compatiblePackages": [
+      {
+        "packageName": "com.pixel.al.pixelhabittracker",
+        "targets": [
+          {
+            "version": "2.1.1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Pro",
+    "description": "Unlocks all premium features in Case Tracker — Immigration.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.saldous.casetracker",
+        "targets": [
+          {
+            "version": "5.5.3"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Pro",
+    "description": "Unlock Pro Features in Cashew App",
+    "compatiblePackages": [
+      {
+        "packageName": "com.budget.tracker_app",
+        "targets": [
+          {
+            "version": "6.6.11"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Pro",
+    "description": "Unlocks all Citizen Plus/Protect features: Safety Network, Safety Center, Zones, Live Agent, Offender alerts, Clarity crime map, incident video, and more.",
+    "compatiblePackages": [
+      {
+        "packageName": "sp0n.citizen",
+        "targets": [
+          {
+            "version": "0.1300.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Pro",
+    "description": "Unlocks all pro features in Hibernator.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.tafayor.hibernator",
+        "targets": [
+          {
+            "version": "2.56.10"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Pro",
+    "description": "Unlock Pro Features in app.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.changayaf.inmigreat",
+        "targets": [
+          {
+            "version": "2.3.4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Pro",
+    "description": "Unlocks all pro features in KillApps.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.tafayor.killall",
+        "targets": [
+          {
+            "version": "1.57.9"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Pro",
+    "description": "Unlocks all Pro features.",
+    "compatiblePackages": [
+      {
+        "packageName": "mega.privacy.android.app",
+        "targets": [
+          {
+            "version": "16.9(261881039)(3c7e30562a)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Pro",
+    "description": "Unlocks all pro features in ML Manager.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.javiersantos.mlmanager",
+        "targets": [
+          {
+            "version": "5.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Pro",
+    "description": "Unlocks all Pro features in app.",
+    "compatiblePackages": [
+      {
+        "packageName": "eu.darken.myperm",
+        "targets": [
+          {
+            "version": "2.1.1-rc0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Pro",
+    "description": "Unlocks all pro features in NetGuard.",
+    "compatiblePackages": [
+      {
+        "packageName": "eu.faircode.netguard",
+        "targets": [
+          {
+            "version": "2.335"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Pro",
+    "description": "Unlocks Pro features in app.",
+    "compatiblePackages": [
+      {
+        "packageName": "kha.prog.mikrotik",
+        "targets": [
+          {
+            "version": "277"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Pro",
+    "description": "Unlocks 1Tap Cleaner PRO: history export, app-group filters, unlimited cache targets, ad removal.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.a0soft.gphone.acc.free",
+        "targets": [
+          {
+            "version": "5.18"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Pro",
+    "description": "Unlocks premium features in app.",
+    "compatiblePackages": [
+      {
+        "packageName": "police.scanner.radio.broadcastify.citizen",
+        "targets": [
+          {
+            "version": "1.29.0-260420093"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Pro",
+    "description": "Removes ads and unlocks the no-ads subscription in RAR.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.rarlab.rar",
+        "targets": [
+          {
+            "version": "7.23.build133"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Pro",
+    "description": "Unlocks all Pro features in app.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.shexa.permissionmanager",
+        "targets": [
+          {
+            "version": "3.4.6.2"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Pro",
+    "description": "Unlocks Splitwise Pro features, removes ad banners, and suppresses all upgrade upsell prompts.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.Splitwise.SplitwiseMobile",
+        "targets": [
+          {
+            "version": "26.7.1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Pro",
+    "description": "Unlocks UbikiTouch Pro features in app.",
+    "compatiblePackages": [
+      {
+        "packageName": "eu.toneiv.ubktouch",
+        "targets": [
+          {
+            "version": "1.16.13"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Pro",
+    "description": "Unlocks UDisc Pro subscription.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.regasoftware.udisc",
+        "targets": [
+          {
+            "version": "24.2.1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock pro",
+    "description": "Unlocks all pro features.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.urbandroid.kinestop",
+        "targets": [
+          {
+            "version": "5.1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Pro / No Ads",
+    "description": "Unlocks Pro/No Ads feature in app",
+    "compatiblePackages": [
+      {
+        "packageName": "com.metalsoft.trackchecker_mobile",
+        "targets": [
+          {
+            "version": "2.29.3"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Pro features",
+    "description": "Unlock Pro features in app.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.piksoft.turboscan.free",
+        "targets": [
+          {
+            "version": "1.7.3"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Professional",
+    "description": "Unlocks Professional features inapp.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.wolfram.android.alphapro",
+        "targets": [
+          {
+            "version": "1.0.8.20260601651"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Royale",
+    "description": "Unlocks Transit Royale Membership.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.thetransitapp.droid",
+        "targets": [
+          {
+            "version": "6.1.12"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock SPIN Plus",
+    "description": "Unlocks SPIN Plus",
+    "compatiblePackages": [
+      {
+        "packageName": "com.nationaledtech.spinbrowser",
+        "targets": [
+          {
+            "version": "70.3.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Subscription",
+    "description": "Unlocks user-selectable Duolingo subscription tiers.",
+    "options": [
+      {
+        "key": "subscriptionTier",
+        "title": "Subscription tier",
+        "description": "Choose Super, Max, Lite, or Immersive metadata."
+      }
+    ],
+    "compatiblePackages": [
+      {
+        "packageName": "com.duolingo",
+        "targets": [
+          {
+            "version": "6.87.6"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Subscription",
+    "description": "Unlocks all subscription features in TWT App.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.twtapp",
+        "targets": [
+          {
+            "version": "3.3.1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock subscription",
+    "description": "Unlocks subscription in app",
+    "compatiblePackages": [
+      {
+        "packageName": "com.nytimes.crossword",
+        "targets": [
+          {
+            "version": "6.33.1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock SVIP",
+    "description": "Unlocks SViP features in app.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.guochao.faceshow",
+        "targets": [
+          {
+            "version": "3.2.80"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Turbo",
+    "description": "Unlocks Turbo subscription after login.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.uptodown",
+        "targets": [
+          {
+            "version": "7.34"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Ultimate",
+    "description": "Unlocks Ultimate Ad-Free + Android TV.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.apkmirror.helper.prod",
+        "targets": [
+          {
+            "version": "2.0.3 (41-d04e542)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Ultra",
+    "description": "Unlocks Ultra features in app.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.thegrizzlylabs.geniusscan.free",
+        "targets": [
+          {
+            "version": "7.40.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock VIP",
+    "description": "Unlocks Dubox Drive VIP/SVIP (Premium+)",
+    "compatiblePackages": [
+      {
+        "packageName": "com.dubox.drive",
+        "targets": [
+          {
+            "version": "4.20.1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock VIP",
+    "description": "Unlocks VIP features in app.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.community.oneroom",
+        "targets": [
+          {
+            "version": "3.0.16.0709.03"
+          }
+        ]
+      },
+      {
+        "packageName": "com.community.mbox.in",
+        "targets": [
+          {
+            "version": "3.0.16.0707.03"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock VIP",
+    "description": "Unlocks VIP Features in app.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.community.mbox.tv",
+        "targets": [
+          {
+            "version": "1.1.4.0710.03"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock VIP",
+    "description": "Unlock VIP subscription in app.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.playit.videoplayer",
+        "targets": [
+          {
+            "version": "2.7.50.12"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock VIP",
+    "description": "Unlocks Yatri VIP by forcing active plan status and spoofing active plan DB query.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.yatrirailways.yatri",
+        "targets": [
+          {
+            "version": "5.0.4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock VIP (Lifetime)",
+    "description": "Forces permanent professional VIP tier, removes ads and upgrade popups, bypasses PairIP.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.anetcapture.mock",
+        "targets": [
+          {
+            "version": "2.11.1-ad_mob"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock VIP Lifetime",
+    "description": "Unlock Vip Features in APP.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.estrongs.android.pop",
+        "targets": [
+          {
+            "version": "4.4.3.7"
+          }
+        ],
+        "isPreRelease": true
+      }
+    ]
+  },
+  {
+    "name": "Unlock Word",
+    "description": "Removes login requirement, unlocks premium, blocks ads, bypasses signature and code transparency checks.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.microsoft.office.word",
+        "targets": [
+          {
+            "version": "16.0.20131.20080"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Yearly Unlock",
+    "description": "Unlocks premium features without login. Note: Login Won't Work",
+    "compatiblePackages": [
+      {
+        "packageName": "com.intsig.camscanner",
+        "targets": [
+          {
+            "version": "7.20.5.2606250000"
+          }
+        ]
+      }
+    ]
+  }
+]

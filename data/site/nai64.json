@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Ads Free Rewards",
+    "description": "Auto-claim rewarded ad rewards without watching ads. WARNING: Enabling No Ads alongside this patch will prevent rewards from being claimed.",
+    "default": false
+  },
+  {
+    "name": "No Ads",
+    "description": "Blocks ads: interstitial, banner, app open, MREC. Each ad type can be toggled individually. WARNING: Enabling Ads Free Rewards alongside this patch will cause it to NOT work (No Ads takes priority).",
+    "default": false,
+    "options": [
+      {
+        "key": "blockInterstitials",
+        "title": "Block Interstitials",
+        "description": "Blocks interstitial and app open ads."
+      },
+      {
+        "key": "blockBanners",
+        "title": "Block Banners",
+        "description": "Blocks banner and MREC ads."
+      },
+      {
+        "key": "blockAppOpen",
+        "title": "Block App Open",
+        "description": "Blocks app open ads."
+      },
+      {
+        "key": "blockMRec",
+        "title": "Block MREC",
+        "description": "Blocks MREC ads."
+      },
+      {
+        "key": "blockRewarded",
+        "title": "Block Rewarded",
+        "description": "Blocks rewarded ads. Disable this if using Ads Free Rewards patch."
+      }
+    ]
+  },
+  {
+    "name": "Pairip Application Redirect",
+    "description": "Changes AndroidManifest.xml to redirect Pairip's Application entry point to the real app's Application class, preventing Pairip from ever starting. Auto-discovers the real app class from Pairip's DEX if not specified manually.",
+    "default": false,
+    "options": [
+      {
+        "key": "realAppClass",
+        "title": "Real Application Class",
+        "description": "The real app's Application class name (e.g., com.example.app.App). Leave empty to auto-discover from Pairip's DEX."
+      }
+    ]
+  },
+  {
+    "name": "Spoof Play Store Install Source",
+    "description": "Makes the app think it was installed from Google Play Store. Recommended if the app has a Play Store license check.",
+    "default": false
+  }
+]
