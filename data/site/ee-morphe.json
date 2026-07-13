@@ -157,5 +157,20 @@
     "name": "Hide app icon",
     "description": "Hides the app icon from the Android launcher.",
     "default": false
+  },
+  {
+    "name": "Increase Daily Limits",
+    "description": "Forces daily usage and other limits to 500 when loading from server.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.innologica.inoreader",
+        "targets": [
+          {
+            "version": "7.9.11"
+          }
+        ],
+        "isPreRelease": true
+      }
+    ]
   }
 ]

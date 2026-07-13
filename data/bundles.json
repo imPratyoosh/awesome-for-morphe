@@ -443,8 +443,8 @@
     "stars": 4,
     "firstSeen": "2026-06-20T17:36:44",
     "patches": "site/ee-morphe.json",
-    "version": "v1.5.0-dev.6",
-    "createdAt": "2026-07-12T23:05:57",
+    "version": "v1.5.0-dev.7",
+    "createdAt": "2026-07-13T16:24:21",
     "targetApps": [
       "com.byairapp.android",
       "com.going.mobile",
@@ -453,7 +453,7 @@
       "net.tsapps.appsales"
     ],
     "appCount": 5,
-    "patchCount": 11
+    "patchCount": 12
   },
   "eksi": {
     "source": "github",
@@ -926,8 +926,8 @@
     "stars": 4,
     "firstSeen": "2026-07-09T04:53:42",
     "patches": "site/miguel.json",
-    "version": "v1.9.8",
-    "createdAt": "2026-07-13T13:59:39",
+    "version": "v1.9.9",
+    "createdAt": "2026-07-13T16:44:25",
     "targetApps": [
       "air.com.midjiwan.polytopia",
       "com.ea.game.pvzfree_row",
