@@ -71,12 +71,6 @@ function extractVersions(value) {
     versionB.version.localeCompare(versionA.version, undefined, { numeric: true, sensitivity: "base" }),
   );
 
-  const mainVersionIndex = versionList.findIndex((versionObj) => !versionObj.isExperimental);
-  if (mainVersionIndex > 0) {
-    const mainVersion = versionList.splice(mainVersionIndex, 1)[0];
-    versionList.push(mainVersion);
-  }
-
   return versionList;
 }
 
@@ -205,7 +199,7 @@ export async function loadInitialData(priorityKeys = [], onPatchLoaded) {
   const activeData = {
     bundles: bundleList,
     rows: [],
-    bundleMap: Object.fromEntries(bundleList.map((bundle, index) => [bundleKeys[index], bundle])),
+    bundleMap: Object.fromEntries(bundleList.map((bundle) => [bundle.key, bundle])),
     namesMap,
     skipSet,
   };

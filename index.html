@@ -647,8 +647,8 @@
                               @click="patchItem.options.length && mainUI.toggleOptions(patchItem.id)"
                               class="bg-gray py-1 pl-2.5 pr-1 sm:px-2.5 rounded-xl border border-lightGray shadow-sm flex flex-col shrink-0"
                               :class="{'cursor-pointer': patchItem.options.length}">
-                              <div class="flex flex-wrap items-start justify-between gap-2 mb-0.5">
-                                <div class="flex items-center gap-2 flex-wrap min-w-0">
+                              <div class="flex flex-wrap items-center justify-end gap-x-1 gap-y-1 mb-0.5">
+                                <div class="flex items-center gap-2 flex-wrap min-w-0 mr-auto">
                                   <strong class="font-bold text-white text-sm flex items-center gap-2">
                                     {{ patchItem.patchName }}
                                     <span
@@ -669,52 +669,47 @@
                                       :class="{'rotate-180': mainUI.expandedOptions.has(patchItem.id)}"></i>
                                   </button>
                                 </div>
-                                <div class="flex flex-wrap gap-1 items-center justify-end min-w-0 ml-auto max-w-full">
-                                  <template
-                                    v-for="appElement in patchItem.apps.filter(appElementent => (appElementent.packageName || appElementent.appName || 'any') === (appItem.packageName || appItem.appName || 'any'))"
-                                    :key="appElement.id">
-                                    <template v-if="appElement.versions && appElement.versions.length">
-                                      <template v-if="!mainUI.expandedVersions.has(appElement.id)">
-                                        <button
-                                          @click.stop="copyText(appElement.versions[appElement.versions.length - 1].version, 'ver_' + appElement.id + '_last')"
-                                          class="badge badge-sm text-green relative"
-                                          :class="{ 'z-50': copiedStates['ver_' + appElement.id + '_last'] }"
-                                          :title="appElement.versions[appElement.versions.length - 1].isExperimental ? 'Copy experimental version' : 'Copy app version'">
-                                          <span v-if="copiedStates['ver_' + appElement.id + '_last']"
-                                            class="absolute top-full right-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-white bg-lightGray rounded shadow-lg whitespace-nowrap z-[60] pointer-events-none animate-float-in">Copied!</span>
-                                          <i v-if="appElement.versions[appElement.versions.length - 1].isExperimental"
-                                            class="fa-solid fa-flask text-yellow"></i>
-                                          <span>{{ appElement.versions[appElement.versions.length - 1].version }}</span>
-                                        </button>
-                                        <button v-if="appElement.versions.length > 1"
-                                          @click.stop="mainUI.toggleVersions(appElement.id)"
-                                          class="badge badge-sm text-blue">
-                                          <span>+{{ appElement.versions.length - 1 }}</span>
-                                        </button>
-                                      </template>
-                                      <template v-else>
-                                        <button
-                                          v-for="versionItem in [...appElement.versions].sort((version1, version2) => version1.version.localeCompare(version2.version, undefined, { numeric: true }))"
-                                          :key="versionItem.version"
-                                          @click.stop="copyText(versionItem.version, 'ver_' + appElement.id + '_' + versionItem.version)"
-                                          class="badge badge-sm text-green relative"
-                                          :class="{ 'z-50': copiedStates['ver_' + appElement.id + '_' + versionItem.version] }"
-                                          :title="versionItem.isExperimental ? 'Copy experimental version' : 'Copy app version'">
-                                          <span v-if="copiedStates['ver_' + appElement.id + '_' + versionItem.version]"
-                                            class="absolute top-full right-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-white bg-lightGray rounded shadow-lg whitespace-nowrap z-[60] pointer-events-none animate-float-in">Copied!</span>
-                                          <i v-if="versionItem.isExperimental"
-                                            class="fa-solid fa-flask text-yellow"></i>
-                                          <span>{{ versionItem.version }}</span>
-                                        </button>
-                                        <button @click.stop="mainUI.toggleVersions(appElement.id)"
-                                          class="badge badge-sm text-blue">
-                                          <span>Less</span>
-                                        </button>
-                                      </template>
+                                <template
+                                  v-for="appElement in patchItem.apps.filter(appElementent => (appElementent.packageName || appElementent.appName || 'any') === (appItem.packageName || appItem.appName || 'any'))"
+                                  :key="appElement.id">
+                                  <template v-if="appElement.versions && appElement.versions.length">
+                                    <template v-if="!mainUI.expandedVersions.has(appElement.id)">
+                                      <button
+                                        @click.stop="copyText(appElement.versions[0].version, 'ver_' + appElement.id + '_last')"
+                                        class="badge badge-sm text-green relative"
+                                        :class="{ 'z-50': copiedStates['ver_' + appElement.id + '_last'] }"
+                                        :title="appElement.versions[0].isExperimental ? 'Copy experimental version' : 'Copy app version'">
+                                        <span v-if="copiedStates['ver_' + appElement.id + '_last']"
+                                          class="absolute top-full right-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-white bg-lightGray rounded shadow-lg whitespace-nowrap z-[60] pointer-events-none animate-float-in">Copied!</span>
+                                        <i v-if="appElement.versions[0].isExperimental"
+                                          class="fa-solid fa-flask text-yellow"></i>
+                                        <span>{{ appElement.versions[0].version }}</span>
+                                      </button>
+                                      <button v-if="appElement.versions.length > 1"
+                                        @click.stop="mainUI.toggleVersions(appElement.id)"
+                                        class="badge badge-sm text-blue">
+                                        <span>+{{ appElement.versions.length - 1 }}</span>
+                                      </button>
                                     </template>
-                                    <span v-else class="badge badge-sm text-green">Any version</span>
+                                    <template v-else>
+                                      <button v-for="versionItem in appElement.versions" :key="versionItem.version"
+                                        @click.stop="copyText(versionItem.version, 'ver_' + appElement.id + '_' + versionItem.version)"
+                                        class="badge badge-sm text-green relative"
+                                        :class="{ 'z-50': copiedStates['ver_' + appElement.id + '_' + versionItem.version] }"
+                                        :title="versionItem.isExperimental ? 'Copy experimental version' : 'Copy app version'">
+                                        <span v-if="copiedStates['ver_' + appElement.id + '_' + versionItem.version]"
+                                          class="absolute top-full right-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-white bg-lightGray rounded shadow-lg whitespace-nowrap z-[60] pointer-events-none animate-float-in">Copied!</span>
+                                        <i v-if="versionItem.isExperimental" class="fa-solid fa-flask text-yellow"></i>
+                                        <span>{{ versionItem.version }}</span>
+                                      </button>
+                                      <button @click.stop="mainUI.toggleVersions(appElement.id)"
+                                        class="badge badge-sm text-blue">
+                                        <span>Less</span>
+                                      </button>
+                                    </template>
                                   </template>
-                                </div>
+                                  <span v-else class="badge badge-sm text-green">Any version</span>
+                                </template>
                               </div>
 
                               <p class="text-xs text-light">{{ patchItem.description }}</p>
@@ -986,8 +981,8 @@
                           :key="patchItem.id" @click="patchItem.options.length && popupUI.toggleOptions(patchItem.id)"
                           class="bg-gray py-1 pl-2.5 pr-1 sm:px-2.5 rounded-xl border border-lightGray shadow-sm flex flex-col shrink-0"
                           :class="{'cursor-pointer': patchItem.options.length}">
-                          <div class="flex flex-wrap items-start justify-between gap-2 mb-0.5">
-                            <div class="flex items-center gap-2 flex-wrap min-w-0">
+                          <div class="flex flex-wrap items-center justify-end gap-x-1 gap-y-1 mb-0.5">
+                            <div class="flex items-center gap-2 flex-wrap min-w-0 mr-auto">
                               <strong class="font-bold text-white text-sm flex items-center gap-2">
                                 {{ patchItem.patchName }}
                                 <span
@@ -1007,51 +1002,47 @@
                                   :class="{'rotate-180': popupUI.expandedOptions.has(patchItem.id)}"></i>
                               </button>
                             </div>
-                            <div class="flex flex-wrap gap-1 items-center justify-end min-w-0 ml-auto max-w-full">
-                              <template
-                                v-for="appElement in patchItem.apps.filter(appElementent => (appElementent.packageName || appElementent.appName || 'any') === (appItem.packageName || appItem.appName || 'any'))"
-                                :key="appElement.id">
-                                <template v-if="appElement.versions && appElement.versions.length">
-                                  <template v-if="!popupUI.expandedVersions.has(appElement.id)">
-                                    <button
-                                      @click.stop="copyText(appElement.versions[appElement.versions.length - 1].version, 'ver_' + appElement.id + '_last')"
-                                      class="badge badge-sm text-green relative"
-                                      :class="{ 'z-50': copiedStates['ver_' + appElement.id + '_last'] }"
-                                      :title="appElement.versions[appElement.versions.length - 1].isExperimental ? 'Copy experimental version' : 'Copy app version'">
-                                      <span v-if="copiedStates['ver_' + appElement.id + '_last']"
-                                        class="absolute top-full right-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-white bg-lightGray rounded shadow-lg whitespace-nowrap z-[60] pointer-events-none animate-float-in">Copied!</span>
-                                      <i v-if="appElement.versions[appElement.versions.length - 1].isExperimental"
-                                        class="fa-solid fa-flask text-yellow"></i>
-                                      <span>{{ appElement.versions[appElement.versions.length - 1].version }}</span>
-                                    </button>
-                                    <button v-if="appElement.versions.length > 1"
-                                      @click.stop="popupUI.toggleVersions(appElement.id)"
-                                      class="badge badge-sm text-blue">
-                                      <span>+{{ appElement.versions.length - 1 }}</span>
-                                    </button>
-                                  </template>
-                                  <template v-else>
-                                    <button
-                                      v-for="versionItem in [...appElement.versions].sort((version1, version2) => version1.version.localeCompare(version2.version, undefined, { numeric: true }))"
-                                      :key="versionItem.version"
-                                      @click.stop="copyText(versionItem.version, 'ver_' + appElement.id + '_' + versionItem.version)"
-                                      class="badge badge-sm text-green relative"
-                                      :class="{ 'z-50': copiedStates['ver_' + appElement.id + '_' + versionItem.version] }"
-                                      :title="versionItem.isExperimental ? 'Copy experimental version' : 'Copy app version'">
-                                      <span v-if="copiedStates['ver_' + appElement.id + '_' + versionItem.version]"
-                                        class="absolute top-full right-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-white bg-lightGray rounded shadow-lg whitespace-nowrap z-[60] pointer-events-none animate-float-in">Copied!</span>
-                                      <i v-if="versionItem.isExperimental" class="fa-solid fa-flask text-yellow"></i>
-                                      <span>{{ versionItem.version }}</span>
-                                    </button>
-                                    <button @click.stop="popupUI.toggleVersions(appElement.id)"
-                                      class="badge badge-sm text-blue">
-                                      <span>Less</span>
-                                    </button>
-                                  </template>
+                            <template
+                              v-for="appElement in patchItem.apps.filter(appElementent => (appElementent.packageName || appElementent.appName || 'any') === (appItem.packageName || appItem.appName || 'any'))"
+                              :key="appElement.id">
+                              <template v-if="appElement.versions && appElement.versions.length">
+                                <template v-if="!popupUI.expandedVersions.has(appElement.id)">
+                                  <button
+                                    @click.stop="copyText(appElement.versions[0].version, 'ver_' + appElement.id + '_last')"
+                                    class="badge badge-sm text-green relative"
+                                    :class="{ 'z-50': copiedStates['ver_' + appElement.id + '_last'] }"
+                                    :title="appElement.versions[0].isExperimental ? 'Copy experimental version' : 'Copy app version'">
+                                    <span v-if="copiedStates['ver_' + appElement.id + '_last']"
+                                      class="absolute top-full right-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-white bg-lightGray rounded shadow-lg whitespace-nowrap z-[60] pointer-events-none animate-float-in">Copied!</span>
+                                    <i v-if="appElement.versions[0].isExperimental"
+                                      class="fa-solid fa-flask text-yellow"></i>
+                                    <span>{{ appElement.versions[0].version }}</span>
+                                  </button>
+                                  <button v-if="appElement.versions.length > 1"
+                                    @click.stop="popupUI.toggleVersions(appElement.id)"
+                                    class="badge badge-sm text-blue">
+                                    <span>+{{ appElement.versions.length - 1 }}</span>
+                                  </button>
                                 </template>
-                                <span v-else class="badge badge-sm text-green">Any version</span>
+                                <template v-else>
+                                  <button v-for="versionItem in appElement.versions" :key="versionItem.version"
+                                    @click.stop="copyText(versionItem.version, 'ver_' + appElement.id + '_' + versionItem.version)"
+                                    class="badge badge-sm text-green relative"
+                                    :class="{ 'z-50': copiedStates['ver_' + appElement.id + '_' + versionItem.version] }"
+                                    :title="versionItem.isExperimental ? 'Copy experimental version' : 'Copy app version'">
+                                    <span v-if="copiedStates['ver_' + appElement.id + '_' + versionItem.version]"
+                                      class="absolute top-full right-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-white bg-lightGray rounded shadow-lg whitespace-nowrap z-[60] pointer-events-none animate-float-in">Copied!</span>
+                                    <i v-if="versionItem.isExperimental" class="fa-solid fa-flask text-yellow"></i>
+                                    <span>{{ versionItem.version }}</span>
+                                  </button>
+                                  <button @click.stop="popupUI.toggleVersions(appElement.id)"
+                                    class="badge badge-sm text-blue">
+                                    <span>Less</span>
+                                  </button>
+                                </template>
                               </template>
-                            </div>
+                              <span v-else class="badge badge-sm text-green">Any version</span>
+                            </template>
                           </div>
 
                           <p class="text-xs text-light">{{ patchItem.description }}</p>
