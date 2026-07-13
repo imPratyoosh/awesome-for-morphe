@@ -183,18 +183,18 @@
 
   <div id="app" v-cloak>
     <section class="mt-1 md:mt-4 max-w-4xl mx-auto px-0 sm:px-3 flex flex-col gap-2 md:gap-4" aria-label="Main Content">
-      <div class="p-[1px] bg-gradient-to-r from-blue to-green rounded-2xl shadow-lg relative z-10 mt-0 md:mt-0">
+      <div class="p-[1px] bg-gradient-to-r from-blue to-green rounded-2xl shadow-lg relative z-10 mt-0">
         <div class="bg-gray rounded-[14px] overflow-hidden h-full">
           <div
-            class="relative flex flex-col items-center justify-center border-b-2 border-blue/10 py-3 md:py-0 md:h-12 gap-3 px-3">
+            class="relative flex flex-col items-center justify-center border-b-2 border-blue/10 py-3 lg:py-0 lg:h-12 gap-3 px-3">
             <h1
-              class="text-2xl md:text-3xl font-extrabold flex items-center justify-center gap-2 md:gap-3 text-transparent bg-clip-text bg-gradient-to-r from-blue to-green relative order-1 md:order-none">
-              <img src="assets/images/favicon.svg" alt="Logo" class="w-6 h-6 md:w-8 md:h-8 object-contain">
+              class="text-2xl lg:text-3xl font-extrabold flex items-center justify-center gap-2 lg:gap-3 text-transparent bg-clip-text bg-gradient-to-r from-blue to-green relative order-1 lg:order-none">
+              <img src="assets/images/favicon.svg" alt="Logo" class="w-6 h-6 lg:w-8 lg:h-8 object-contain">
               <span>Awesome for Morphe</span>
             </h1>
 
-            <div class="flex items-center justify-center gap-2 flex-wrap order-2 md:order-none md:contents">
-              <div class="flex items-center gap-2 md:absolute md:left-3 md:top-1/2 md:-translate-y-1/2">
+            <div class="flex items-center justify-center gap-2 flex-wrap order-2 lg:order-none lg:contents">
+              <div class="flex items-center gap-2 lg:absolute lg:left-3 lg:top-1/2 lg:-translate-y-1/2">
                 <button v-if="isWhatsNewView" @click="closeWhatsNew" class="badge badge-md text-green">
                   <i class="fa-solid fa-house icon-center"></i>
                   <span>Back Home</span>
@@ -205,7 +205,7 @@
                 </a>
               </div>
 
-              <div class="flex items-center gap-2 md:absolute md:right-3 md:top-1/2 md:-translate-y-1/2">
+              <div class="flex items-center gap-2 lg:absolute lg:right-3 lg:top-1/2 lg:-translate-y-1/2">
                 <a href="https://github.com/nvbangg/awesome-for-morphe" target="_blank" rel="noreferrer"
                   class="badge badge-md bg-black border-lightGray hover:border-white/50 text-white">
                   <i class="fa-brands fa-github icon-center"></i>
@@ -222,16 +222,16 @@
 
           <div v-show="!isWhatsNewView" class="flex flex-col gap-3 p-2 md:p-3">
             <!-- Row 1: Filters -->
-            <div class="flex flex-col md:flex-row gap-2.5">
+            <div class="flex flex-col md:flex-row gap-2.5 md:gap-3">
               <!-- Reset & Bundle Container -->
-              <div class="flex items-center gap-2 w-full md:contents">
-                <button @click="resetFilters" class="badge badge-md shrink-0">
+              <div class="flex items-center gap-2 w-full md:w-1/2 min-w-0">
+                <button @click="resetFilters" class="badge badge-md shrink-0 h-[34px]">
                   <i class="fa-solid fa-arrow-rotate-left"></i>
                   <span>Reset Filters</span>
                 </button>
 
                 <!-- Bundle filter dropdown -->
-                <div class="relative flex-1 md:flex-[3] min-w-0 dd-root" id="bundle-dd">
+                <div class="relative flex-1 min-w-0 dd-root" id="bundle-dd">
                   <button type="button" onclick="toggleDropdown('bundle-dd')"
                     class="w-full h-[34px] px-2.5 sm:px-3 bg-black border border-lightGray rounded-md text-sm text-white flex items-center gap-2 sm:gap-3 hover:border-white/50 transition-all cursor-pointer"
                     aria-label="Patch Bundles filter">
@@ -279,7 +279,7 @@
               </div>
 
               <!-- App filter dropdown -->
-              <div class="relative w-full md:flex-[4] min-w-0 dd-root" id="app-dd">
+              <div class="relative w-full md:w-1/2 min-w-0 dd-root" id="app-dd">
                 <button type="button" onclick="toggleDropdown('app-dd')"
                   class="w-full h-[34px] px-2.5 sm:px-3 bg-black border border-lightGray rounded-md text-sm text-white flex items-center gap-2 sm:gap-3 hover:border-white/50 transition-all cursor-pointer"
                   aria-label="Apps filter">
@@ -327,11 +327,14 @@
                   </div>
                 </div>
               </div>
+            </div>
 
-              <!-- Search & Mobile Sort Container -->
-              <div class="flex items-center gap-2 w-full md:flex-[3] min-w-0">
+            <!-- Row 2: Search Patches & Stats -->
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-y-2 gap-x-4 mt-1">
+              <!-- Search Patches -->
+              <div class="w-full md:w-1/2 min-w-0">
                 <form @submit.prevent="$event.target.querySelector('input').blur()"
-                  class="relative flex-1 min-w-0 mt-0">
+                  class="relative w-full mt-0">
                   <span class="absolute left-3 top-0 h-[34px] flex items-center text-light pointer-events-none">
                     <i class="fa-solid fa-magnifying-glass text-xs icon-center"></i>
                   </span>
@@ -344,35 +347,10 @@
                     <i class="fa-solid fa-circle-xmark icon-center"></i>
                   </button>
                 </form>
-
-              </div>
-            </div>
-
-            <!-- Row 2: Actions & Stats -->
-            <div class="flex flex-row flex-wrap items-center justify-center md:justify-between gap-y-2 gap-x-4 mt-1">
-              <!-- Left & Center Group: Sort -->
-              <div class="flex flex-row flex-wrap items-center justify-center gap-2 sm:gap-3">
-                <!-- Sort Dropdown -->
-                <div class="relative w-[145px] shrink-0 flex items-center">
-                  <select v-model="sortOrder"
-                    class="w-full h-7 pl-7 pr-7 appearance-none bg-black border border-lightGray hover:border-white/50 rounded-md text-sm text-white focus:border-light focus:ring-1 focus:ring-light/20 outline-none transition-all cursor-pointer">
-                    <option value="stars">Most Stars</option>
-                    <option value="latest">Latest</option>
-                    <option value="apps">Most Apps</option>
-                    <option value="patches">Most Patches</option>
-                    <option value="alpha">Alphabetical</option>
-                  </select>
-                  <i
-                    class="fa-solid fa-sort-amount-down absolute left-2.5 top-1/2 -translate-y-1/2 text-light text-xs pointer-events-none icon-center"></i>
-                  <i
-                    class="fa-solid fa-chevron-down absolute right-2.5 top-1/2 -translate-y-1/2 text-light text-[10px] pointer-events-none icon-center"></i>
-                </div>
-
-
               </div>
 
               <!-- Right Group -->
-              <div class="flex flex-wrap items-center justify-center gap-2 text-xs text-light shrink-0"
+              <div class="flex flex-wrap items-center justify-center md:justify-end gap-2 text-xs text-light shrink-0"
                 aria-live="polite">
                 <span class="badge"><i class="fa-solid fa-cubes"></i><span>{{ stats?.bundles || 0 }}
                     bundles</span></span>
@@ -482,14 +460,29 @@
                   <i class="fa-solid fa-expand icon-center"></i>
                   <span>Expand all</span>
                 </button>
+                <button v-show="bundlesGroups.length > 1" @click="toggleColumns"
+                  class="badge hidden md:inline-flex text-light"
+                  :title="effectiveTwoColumns ? 'Switch to list view' : 'Switch to grid view'">
+                  <i class="fa-solid icon-center" :class="effectiveTwoColumns ? 'fa-list' : 'fa-grip'"></i>
+                  <span v-if="!effectiveTwoColumns">Grid view</span><span v-else>List view</span>
+                </button>
               </div>
 
-              <button v-show="bundlesGroups.length > 1" @click="toggleColumns"
-                class="badge hidden md:inline-flex text-light ml-auto"
-                :title="effectiveTwoColumns ? 'Switch to list view' : 'Switch to grid view'">
-                <i class="fa-solid icon-center" :class="effectiveTwoColumns ? 'fa-list' : 'fa-grip'"></i>
-                <span v-if="!effectiveTwoColumns">Grid view</span><span v-else>List view</span>
-              </button>
+              <!-- Sort Dropdown -->
+              <div class="relative w-[135px] shrink-0 flex items-center">
+                <select v-model="sortOrder"
+                  class="w-full h-6 pl-6 pr-5 appearance-none bg-black border border-lightGray hover:border-white/50 rounded-full text-xs text-[#bfbfbf] font-semibold focus:border-light outline-none transition-all cursor-pointer">
+                  <option value="stars">Most Stars</option>
+                  <option value="latest">Latest</option>
+                  <option value="apps">Most Apps</option>
+                  <option value="patches">Most Patches</option>
+                  <option value="alpha">Alphabetical</option>
+                </select>
+                <i
+                  class="fa-solid fa-sort-amount-down absolute left-2.5 top-1/2 -translate-y-1/2 text-light text-[10px] pointer-events-none icon-center"></i>
+                <i
+                  class="fa-solid fa-chevron-down absolute right-2.5 top-1/2 -translate-y-1/2 text-light text-[8px] pointer-events-none icon-center"></i>
+              </div>
             </div>
 
             <!-- Grid Container -->
@@ -499,7 +492,7 @@
                 <div @click="toggleBundle(group)" class="flex justify-between py-2 px-2 sm:px-3 cursor-pointer"
                   :class="!effectiveTwoColumns ? 'gap-3 flex-col md:flex-row items-stretch md:items-center' : 'gap-2 flex-col items-stretch'">
                   <div class="flex items-center gap-3 min-w-0 flex-1 w-full text-left"
-                    :class="!effectiveTwoColumns ? 'justify-center sm:justify-start md:w-auto' : 'justify-center'">
+                    :class="!effectiveTwoColumns ? 'justify-center md:justify-start md:w-auto' : 'justify-center'">
                     <img v-if="group.bundle.avatarUrl" :src="group.bundle.avatarUrl" alt="Avatar"
                       class="w-12 h-12 rounded-full bg-lightGray/20 object-cover pointer-events-none select-none shrink-0 sm:mt-0.5">
                     <div v-else
@@ -509,14 +502,14 @@
                     <div class="flex flex-col min-w-0 justify-center items-start gap-1 sm:gap-1.5 max-w-full">
                       <!-- Title Row -->
                       <div class="flex flex-wrap items-center gap-2 min-w-0 w-full"
-                        :class="!effectiveTwoColumns ? 'justify-center sm:justify-start' : 'justify-center'">
+                        :class="!effectiveTwoColumns ? 'justify-center md:justify-start' : 'justify-center'">
                         <strong
                           class="font-bold text-lg sm:text-xl text-transparent bg-clip-text bg-gradient-to-r from-blue to-green break-words leading-tight">{{
                           group.key }}</strong>
                         <span v-if="hasHighlight(group.key) || isNewBundle(group)"
                           class="badge text-yellow shrink-0"><span>✨ New</span></span>
                         <span v-if="group.bundle.isPreRelease && !(hasHighlight(group.key) || isNewBundle(group))"
-                          class="badge border-blue/50 text-blue shrink-0"><span><i class="fa-solid fa-flask"></i>
+                          class="badge text-yellow shrink-0"><span><i class="fa-solid fa-flask"></i>
                             Pre-release</span></span>
                         <a v-if="group.bundle.deepLink" :href="group.bundle.deepLink" target="_blank" rel="noreferrer"
                           @click.stop
@@ -593,7 +586,7 @@
                             New</span></span>
                         <span
                           v-if="appItem.isAppPreRelease && !group.bundle.isPreRelease && !isAppHighlighted(group.key, appItem)"
-                          class="badge border-blue/50 text-blue"><span><i class="fa-solid fa-flask"></i>
+                          class="badge text-yellow"><span><i class="fa-solid fa-flask"></i>
                             Pre-release</span></span>
                       </button>
                     </div>
@@ -614,7 +607,7 @@
                             New</span></span>
                         <span
                           v-if="appItem.isAppPreRelease && !group.bundle.isPreRelease && !isAppHighlighted(group.key, appItem)"
-                          class="badge border-blue/50 text-blue shrink-0"><span><i class="fa-solid fa-flask"></i>
+                          class="badge text-yellow shrink-0"><span><i class="fa-solid fa-flask"></i>
                             Pre-release</span></span>
                         <i class="fa-solid ml-auto text-light transition-transform"
                           :class="mainUI.expandedOptions.has('app_' + group.key + '_' + appItem.id) ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
@@ -666,7 +659,7 @@
                                       class="badge text-yellow"><span>✨ New</span></span>
                                     <span
                                       v-if="patchItem.isPatchPreRelease && !appItem.isAppPreRelease && !group.bundle.isPreRelease && !hasHighlight(group.key + ':' + appItem.packageName + ':' + patchItem.patchName)"
-                                      class="badge border-blue/50 text-blue"><span><i class="fa-solid fa-flask"></i>
+                                      class="badge text-yellow"><span><i class="fa-solid fa-flask"></i>
                                         Pre-release</span></span>
                                   </strong>
                                   <span v-if="!patchItem.enabled" class="badge text-yellow cursor-help"
@@ -756,31 +749,93 @@
       class="fixed inset-0 z-[10000] flex flex-col items-center justify-start sm:justify-center px-0 py-4 sm:py-6 bg-black/80 backdrop-blur-sm transition-opacity"
       style="padding-top: max(1.5rem, env(safe-area-inset-top, 1.5rem))" @click.self="closePopup">
       <div class="w-full max-w-4xl px-0 sm:px-3 max-h-full flex flex-col gap-2 overflow-visible animate-float-in">
-        <div class="flex flex-row items-center justify-between gap-2 w-full shrink-0 pt-2 px-2" v-if="popupGroup">
-          <!-- Patch Search -->
-          <form @submit.prevent="$event.target.querySelector('input').blur()"
-            class="relative flex-1 min-w-0 sm:max-w-[300px]">
-            <span class="absolute left-3 top-0 h-[34px] flex items-center text-light pointer-events-none">
-              <i class="fa-solid fa-magnifying-glass text-xs icon-center"></i>
-            </span>
-            <input type="search" v-model="popupSearchQuery" autocomplete="off" enterkeyhint="search"
-              placeholder="Search"
-              class="w-full h-[34px] pl-8 pr-9 bg-black border border-lightGray hover:border-white/50 rounded-md focus:border-light focus:ring-2 focus:ring-light/20 outline-none transition-all text-sm text-white">
-            <button v-if="popupSearchQuery" @click="popupSearchQuery = ''" type="button"
-              class="absolute right-0 top-0 h-[34px] w-9 flex items-center justify-center text-light hover:text-white transition-colors"
-              title="Clear search">
-              <i class="fa-solid fa-circle-xmark icon-center"></i>
-            </button>
-          </form>
-
-          <!-- Apps/Patches counts and Close button -->
-          <div class="flex items-center justify-end gap-2 shrink-0">
-            <div class="flex items-center gap-1 sm:gap-2">
-              <span class="badge text-light"><i class="fa-solid fa-mobile-screen"></i><span>{{
-                  popupGroup?.appsList?.length || 0 }} apps</span></span>
-              <span class="badge text-light"><i class="fa-solid fa-puzzle-piece"></i><span>{{
-                  popupGroup?.patches?.length || 0 }} patches</span></span>
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 w-full shrink-0 pt-2 px-2" v-if="popupGroup">
+          <!-- Left Group: App Selector + Search Input -->
+          <div class="flex items-center gap-2 w-full sm:w-auto flex-1 min-w-0">
+            <!-- App selection dropdown (popup-app-dd) -->
+            <div class="relative shrink-0 w-[45%] sm:w-[180px] dd-root" id="popup-app-dd" @click.stop>
+              <button type="button" onclick="toggleDropdown('popup-app-dd')"
+                class="w-full h-[34px] px-2.5 sm:px-3 bg-black border border-lightGray rounded-md text-sm text-[#bfbfbf] flex items-center justify-between gap-2 hover:border-white/50 transition-all cursor-pointer"
+                aria-label="Popup Apps filter">
+                <div class="flex items-center gap-1.5 min-w-0 flex-1">
+                  <template
+                    v-if="showOptions.length > 1 || (showOptions.length === 1 && showOptions[0].includes('('))">
+                    <i class="fa-solid fa-list text-light text-sm shrink-0 icon-center"></i>
+                    <span class="truncate text-left flex-1 font-semibold">Custom</span>
+                  </template>
+                  <template v-else-if="showOptions.length === 1 && showOptions[0].includes(':')">
+                    <img v-if="getAppIcon(showOptions[0].split(':')[1])"
+                      :src="getAppIcon(showOptions[0].split(':')[1])"
+                      class="w-4 h-4 rounded-sm object-contain shrink-0" alt="" loading="lazy">
+                    <i v-else class="fa-brands fa-android text-green text-sm shrink-0 icon-center"></i>
+                    <span class="truncate text-left flex-1 font-semibold">{{ getAppName(showOptions[0].split(':')[1])
+                      }}</span>
+                  </template>
+                  <template v-else>
+                    <i class="fa-solid fa-mobile-screen-button text-light text-sm shrink-0 icon-center"></i>
+                    <span class="truncate text-left flex-1 font-semibold">All Apps</span>
+                  </template>
+                </div>
+                <i
+                  class="fa-solid fa-chevron-down dd-chevron text-light text-xs shrink-0 transition-transform duration-200"></i>
+              </button>
+              <div
+                class="dd-panel w-max min-w-[200px] left-0 max-h-[300px] overflow-y-auto bg-dark border border-lightGray rounded-md shadow-xl py-1 divide-y divide-white/10 z-[70]">
+                <div class="sticky top-0 bg-dark px-2 pb-2 pt-1 border-b border-lightGray/30 z-10">
+                  <div class="relative">
+                    <span class="absolute left-2 top-0 h-8 flex items-center text-light pointer-events-none">
+                      <i class="fa-solid fa-magnifying-glass text-[10px] icon-center"></i>
+                    </span>
+                    <input type="search" v-model="popupAppSearch" placeholder="Search apps..."
+                      class="w-full h-8 pl-6 pr-2 bg-black border border-lightGray rounded-md text-xs text-white focus:border-light focus:ring-1 focus:ring-light/20 outline-none transition-all"
+                      autocomplete="off" @click.stop>
+                  </div>
+                </div>
+                <div
+                  :class="(!showOptions.length || (showOptions.length === 1 && !showOptions[0].includes(':') && !showOptions[0].includes('('))) ? 'text-white bg-white/10 font-medium' : 'text-white hover:bg-white/5'"
+                  @click="selectPopupAppFromDropdown(''); popupAppSearch = ''; $event.target.closest('.dd-root')?.classList?.remove('open')"
+                  class="px-3 py-2 text-sm cursor-pointer transition-colors flex items-center gap-2">
+                  <i
+                    class="fa-solid fa-mobile-screen-button text-light text-base w-4 shrink-0 text-center icon-center"></i>
+                  <span class="flex-1">All Apps</span>
+                </div>
+                <div v-for="optionItem in filteredPopupAllApps" :key="optionItem.value"
+                  :class="(showOptions.length === 1 && showOptions[0] === popupBundleKey + ':' + optionItem.value) ? 'text-white bg-white/10 font-medium' : 'text-white hover:bg-white/5'"
+                  @click="selectPopupAppFromDropdown(optionItem.value); popupAppSearch = ''; $event.target.closest('.dd-root')?.classList?.remove('open')"
+                  class="px-3 py-2 text-sm cursor-pointer transition-colors flex items-center gap-2">
+                  <img v-if="optionItem.icon" :src="optionItem.icon"
+                    class="w-4 h-4 rounded-sm object-contain shrink-0" alt="" loading="lazy">
+                  <i v-else
+                    class="fa-brands fa-android text-green text-base w-4 shrink-0 text-center icon-center"></i>
+                  <span class="leading-tight flex-1 font-normal">{{ optionItem.label }}</span>
+                </div>
+              </div>
             </div>
+
+            <!-- Patch Search -->
+            <form @submit.prevent="$event.target.querySelector('input').blur()"
+              class="relative flex-1 min-w-0 sm:w-[220px] sm:max-w-[220px]">
+              <span class="absolute left-3 top-0 h-[34px] flex items-center text-light pointer-events-none">
+                <i class="fa-solid fa-magnifying-glass text-xs icon-center"></i>
+              </span>
+              <input type="search" v-model="popupSearchQuery" autocomplete="off" enterkeyhint="search"
+                placeholder="Search"
+                class="w-full h-[34px] pl-8 pr-9 bg-black border border-lightGray hover:border-white/50 rounded-md focus:border-light focus:ring-2 focus:ring-light/20 outline-none transition-all text-sm text-white">
+              <button v-if="popupSearchQuery" @click="popupSearchQuery = ''" type="button"
+                class="absolute right-0 top-0 h-[34px] w-9 flex items-center justify-center text-light hover:text-white transition-colors"
+                title="Clear search">
+                <i class="fa-solid fa-circle-xmark icon-center"></i>
+              </button>
+            </form>
+          </div>
+
+          <!-- Right Group: Counts and Close button -->
+          <div class="flex flex-wrap items-center justify-end gap-2 shrink-0">
+            <span class="badge text-light"><i class="fa-solid fa-mobile-screen"></i><span>{{
+                popupGroup?.appsList?.length || 0 }} apps</span></span>
+            <span class="badge text-light"><i class="fa-solid fa-puzzle-piece"></i><span>{{
+                popupGroup?.patches?.length || 0 }} patches</span></span>
+
             <button @click="closePopup" class="badge text-yellow relative z-[60]">
               <i class="fa-solid fa-xmark icon-center"></i>
               <span>Close</span>
@@ -795,7 +850,7 @@
             <div
               class="flex justify-between gap-3 py-2 px-2 sm:px-3 flex-col md:flex-row items-stretch md:items-center shrink-0 sticky top-0 z-10 bg-dark shadow-sm">
               <div
-                class="flex items-center gap-3 min-w-0 flex-1 w-full text-left justify-center sm:justify-start md:w-auto">
+                class="flex items-center gap-3 min-w-0 flex-1 w-full text-left justify-center md:justify-start md:w-auto">
                 <img v-if="group.bundle.avatarUrl" :src="group.bundle.avatarUrl" alt="Avatar"
                   class="w-12 h-12 rounded-full bg-lightGray/20 object-cover pointer-events-none select-none shrink-0 sm:mt-0.5">
                 <div v-else
@@ -804,12 +859,14 @@
                 </div>
                 <div class="flex flex-col min-w-0 justify-center items-start gap-1 sm:gap-1.5 max-w-full">
 
-                  <div class="flex flex-wrap items-center gap-2 min-w-0 w-full justify-center sm:justify-start">
+                  <div class="flex flex-wrap items-center gap-2 min-w-0 w-full justify-center md:justify-start">
                     <strong
                       class="font-bold text-lg sm:text-xl text-transparent bg-clip-text bg-gradient-to-r from-blue to-green break-words leading-tight">{{
                       group.key }}</strong>
                     <span v-if="hasHighlight(group.key) || isNewBundle(group)" class="badge text-yellow"><span>✨
                         New</span></span>
+                    <span v-if="group.bundle.isPreRelease && !(hasHighlight(group.key) || isNewBundle(group))"
+                      class="badge text-yellow"><span><i class="fa-solid fa-flask"></i> Pre-release</span></span>
                     <a v-if="group.bundle.deepLink" :href="group.bundle.deepLink" target="_blank" rel="noreferrer"
                       @click.stop
                       class="inline-flex items-center gap-1 px-[6px] py-[2px] rounded-full text-xs font-bold leading-[1.4] whitespace-nowrap border border-transparent text-[#fafafa] bg-gradient-to-r from-blue to-green cursor-pointer transition-all duration-150 hover:opacity-85 active:scale-95 shrink-0 select-none">
@@ -827,87 +884,26 @@
                   </a>
                 </div>
               </div>
-              <span class="flex flex-col gap-2 shrink-0 w-full md:w-auto items-center md:items-end">
-                <span
-                  class="flex flex-row flex-wrap items-center gap-2 text-xs text-light w-full justify-center md:justify-end">
-                  <template v-if="group.bundle.version">
-                    <a v-if="group.bundle.changelogUrl" :href="group.bundle.changelogUrl" target="_blank"
-                      rel="noreferrer" @click.stop class="badge" title="Changelog"><i
-                        class="fa-solid fa-clock-rotate-left"></i><span>{{
-                        group.bundle.version }}</span></a>
-                    <span v-else class="badge text-blue"><i class="fa-solid fa-clock-rotate-left"></i><span>{{
-                        group.bundle.version }}</span></span>
-                  </template>
-                  <span v-if="group.bundle.stars !== undefined" class="badge">
-                    <i class="fa-solid fa-star text-yellow"></i><span>{{ group.bundle.stars }}</span>
-                  </span>
-                  <span v-if="group.bundle.createdAt" class="badge"><i class="fa-solid fa-calendar-days"></i><span>{{
-                      formatDate(group.bundle.createdAt)
-                      }}</span></span>
+              <span class="flex flex-row flex-wrap items-center gap-2 text-xs text-light shrink-0 w-full md:w-auto justify-center md:justify-end">
+                <template v-if="group.bundle.version">
+                  <a v-if="group.bundle.changelogUrl" :href="group.bundle.changelogUrl" target="_blank"
+                    rel="noreferrer" @click.stop class="badge" title="Changelog"><i
+                      class="fa-solid fa-clock-rotate-left"></i><span>{{
+                      group.bundle.version }}</span></a>
+                  <span v-else class="badge text-blue"><i class="fa-solid fa-clock-rotate-left"></i><span>{{
+                      group.bundle.version }}</span></span>
+                </template>
+                <span v-if="group.bundle.stars !== undefined" class="badge">
+                  <i class="fa-solid fa-star text-yellow"></i><span>{{ group.bundle.stars }}</span>
                 </span>
-                <span class="flex flex-row items-center gap-2 text-xs text-light w-full justify-center md:justify-end">
-                  <div class="relative shrink-0 w-[140px] sm:w-[160px] dd-root" id="popup-app-dd" @click.stop>
-                    <button type="button" onclick="toggleDropdown('popup-app-dd')"
-                      class="badge border border-lightGray/50 hover:border-white/50 bg-black text-white flex items-center justify-between gap-1 w-full transition-all cursor-pointer !px-2"
-                      aria-label="Popup Apps filter">
-                      <template
-                        v-if="showOptions.length > 1 || (showOptions.length === 1 && showOptions[0].includes('('))">
-                        <i class="fa-solid fa-list text-light text-sm shrink-0 icon-center"></i>
-                        <span class="truncate text-left flex-1 font-normal">Custom</span>
-                      </template>
-                      <template v-else-if="showOptions.length === 1 && showOptions[0].includes(':')">
-                        <img v-if="getAppIcon(showOptions[0].split(':')[1])"
-                          :src="getAppIcon(showOptions[0].split(':')[1])"
-                          class="w-3.5 h-3.5 rounded-sm object-contain shrink-0" alt="" loading="lazy">
-                        <i v-else class="fa-brands fa-android text-green text-sm shrink-0 icon-center"></i>
-                        <span class="truncate text-left flex-1 font-normal">{{ getAppName(showOptions[0].split(':')[1])
-                          }}</span>
-                      </template>
-                      <template v-else>
-                        <i class="fa-solid fa-mobile-screen-button text-light text-sm shrink-0 icon-center"></i>
-                        <span class="truncate text-left flex-1 font-normal">All Apps</span>
-                      </template>
-                      <i
-                        class="fa-solid fa-chevron-down dd-chevron text-[10px] ml-0.5 shrink-0 transition-transform duration-200"></i>
-                    </button>
-                    <div
-                      class="dd-panel w-max min-w-[200px] right-0 max-h-[300px] overflow-y-auto bg-dark border border-lightGray rounded-md shadow-xl py-1 divide-y divide-white/10 z-[70]">
-                      <div class="sticky top-0 bg-dark px-2 pb-2 pt-1 border-b border-lightGray/30 z-10">
-                        <div class="relative">
-                          <span class="absolute left-2 top-0 h-8 flex items-center text-light pointer-events-none">
-                            <i class="fa-solid fa-magnifying-glass text-[10px] icon-center"></i>
-                          </span>
-                          <input type="search" v-model="popupAppSearch" placeholder="Search apps..."
-                            class="w-full h-8 pl-6 pr-2 bg-black border border-lightGray rounded-md text-xs text-white focus:border-light focus:ring-1 focus:ring-light/20 outline-none transition-all"
-                            autocomplete="off" @click.stop>
-                        </div>
-                      </div>
-                      <div
-                        :class="(!showOptions.length || (showOptions.length === 1 && !showOptions[0].includes(':') && !showOptions[0].includes('('))) ? 'text-white bg-white/10 font-medium' : 'text-white hover:bg-white/5'"
-                        @click="selectPopupAppFromDropdown(''); popupAppSearch = ''; $event.target.closest('.dd-root')?.classList?.remove('open')"
-                        class="px-3 py-2 text-sm cursor-pointer transition-colors flex items-center gap-2">
-                        <i
-                          class="fa-solid fa-mobile-screen-button text-light text-base w-4 shrink-0 text-center icon-center"></i>
-                        <span class="flex-1">All Apps</span>
-                      </div>
-                      <div v-for="optionItem in filteredPopupAllApps" :key="optionItem.value"
-                        :class="(showOptions.length === 1 && showOptions[0] === popupBundleKey + ':' + optionItem.value) ? 'text-white bg-white/10 font-medium' : 'text-white hover:bg-white/5'"
-                        @click="selectPopupAppFromDropdown(optionItem.value); popupAppSearch = ''; $event.target.closest('.dd-root')?.classList?.remove('open')"
-                        class="px-3 py-2 text-sm cursor-pointer transition-colors flex items-center gap-2">
-                        <img v-if="optionItem.icon" :src="optionItem.icon"
-                          class="w-4 h-4 rounded-sm object-contain shrink-0" alt="" loading="lazy">
-                        <i v-else
-                          class="fa-brands fa-android text-green text-base w-4 shrink-0 text-center icon-center"></i>
-                        <span class="leading-tight flex-1 font-normal">{{ optionItem.label }}</span>
-                      </div>
-                    </div>
-                  </div>
-                  <button @click.stop="popupUI.toggleBundleView(group)" class="badge shrink-0 text-green select-none"
-                    :title="popupUI.bundleViews[group.key] ? 'Switch to grid view' : 'Switch to list view'">
-                    <i class="fa-solid icon-center" :class="popupUI.bundleViews[group.key] ? 'fa-grip' : 'fa-list'"></i>
-                    <span>{{ popupUI.bundleViews[group.key] ? 'Grid view' : 'List view' }}</span>
-                  </button>
-                </span>
+                <span v-if="group.bundle.createdAt" class="badge"><i class="fa-solid fa-calendar-days"></i><span>{{
+                    formatDate(group.bundle.createdAt)
+                    }}</span></span>
+                <button @click.stop="popupUI.toggleBundleView(group)" class="badge shrink-0 text-green select-none"
+                  :title="popupUI.bundleViews[group.key] ? 'Switch to grid view' : 'Switch to list view'">
+                  <i class="fa-solid icon-center" :class="popupUI.bundleViews[group.key] ? 'fa-grip' : 'fa-list'"></i>
+                  <span>{{ popupUI.bundleViews[group.key] ? 'Grid view' : 'List view' }}</span>
+                </button>
               </span>
             </div>
 
@@ -931,6 +927,9 @@
                     <span class="truncate">{{ appItem.appName }}</span>
                     <span v-if="isAppHighlighted(group.key, appItem)" class="badge text-yellow"><span>✨
                         New</span></span>
+                    <span
+                      v-if="appItem.isAppPreRelease && !group.bundle.isPreRelease && !isAppHighlighted(group.key, appItem)"
+                      class="badge text-yellow"><span><i class="fa-solid fa-flask"></i> Pre-release</span></span>
                   </button>
                 </div>
 
@@ -947,6 +946,9 @@
                       appItem.appName }}</span>
                     <span v-if="isAppHighlighted(group.key, appItem)" class="badge text-yellow shrink-0"><span>✨
                         New</span></span>
+                    <span
+                      v-if="appItem.isAppPreRelease && !group.bundle.isPreRelease && !isAppHighlighted(group.key, appItem)"
+                      class="badge text-yellow shrink-0"><span><i class="fa-solid fa-flask"></i> Pre-release</span></span>
                     <i class="fa-solid ml-auto text-light transition-transform"
                       :class="popupUI.expandedOptions.has('popup_app_' + group.key + '_' + appItem.id) ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
                   </div>
@@ -995,6 +997,9 @@
                                 <span
                                   v-if="hasHighlight(group.key + ':' + appItem.packageName + ':' + patchItem.patchName)"
                                   class="badge text-yellow"><span>✨ New</span></span>
+                                <span
+                                  v-if="patchItem.isPatchPreRelease && !appItem.isAppPreRelease && !group.bundle.isPreRelease && !hasHighlight(group.key + ':' + appItem.packageName + ':' + patchItem.patchName)"
+                                  class="badge text-yellow"><span><i class="fa-solid fa-flask"></i> Pre-release</span></span>
                               </strong>
                               <span v-if="!patchItem.enabled" class="badge text-yellow cursor-help"
                                 title="off by default"><span>off</span></span>
