@@ -16,16 +16,16 @@
       "lain": {
         "isNew": false,
         "apps": {
-          "com.PixelStudio": {
-            "isNew": true,
-            "patches": [
-              "Enable Pro"
-            ]
-          },
           "com.jlindemann.science": {
             "isNew": true,
             "patches": [
               "Enable PRO+"
+            ]
+          },
+          "studio.muggle.chatboost": {
+            "isNew": true,
+            "patches": [
+              "Enable Premium"
             ]
           },
           "net.nemostudio.keymate": {
@@ -34,10 +34,10 @@
               "Enable Premium"
             ]
           },
-          "studio.muggle.chatboost": {
+          "com.PixelStudio": {
             "isNew": true,
             "patches": [
-              "Enable Premium"
+              "Enable Pro"
             ]
           }
         }
@@ -68,6 +68,72 @@
       "rushiranpise": {
         "isNew": false,
         "apps": {
+          "com.ace.ex.file.manager": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.jndapp.anime.depth.live.wallpaper": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.guochao.faceshow": {
+            "isNew": true,
+            "patches": [
+              "Unlock SVIP"
+            ]
+          },
+          "com.eterno": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.jndapp.depth.live.wallpaper": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.nexstreaming.app.kinemasterfree": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "de.komoot.android": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.dywx.larkplayer": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "mega.privacy.android.app": {
+            "isNew": true,
+            "patches": [
+              "Unlock Pro"
+            ]
+          },
+          "com.jndapp.minimal.widgets": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.community.oneroom": {
+            "isNew": false,
+            "patches": [
+              "Unlock VIP"
+            ]
+          },
           "com.community.mbox.in": {
             "isNew": false,
             "patches": [
@@ -80,10 +146,46 @@
               "Unlock VIP"
             ]
           },
-          "com.community.oneroom": {
-            "isNew": false,
+          "com.nytimes.crossword": {
+            "isNew": true,
+            "patches": [
+              "Unlock subscription"
+            ]
+          },
+          "com.pixel.al.pixelhabittracker": {
+            "isNew": true,
+            "patches": [
+              "Unlock PRO"
+            ]
+          },
+          "com.playit.videoplayer": {
+            "isNew": true,
             "patches": [
               "Unlock VIP"
+            ]
+          },
+          "com.MojoFilterMediaLLC.RPGSoundSystem": {
+            "isNew": true,
+            "patches": [
+              "Unlock premium"
+            ]
+          },
+          "com.rs.explorer.filemanager": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.strava": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.uptodown": {
+            "isNew": true,
+            "patches": [
+              "Unlock Turbo"
             ]
           },
           "universal": {
@@ -128,108 +230,6 @@
               "Spoof root of trust",
               "Spoof telephony IDs"
             ]
-          },
-          "com.MojoFilterMediaLLC.RPGSoundSystem": {
-            "isNew": true,
-            "patches": [
-              "Unlock premium"
-            ]
-          },
-          "com.ace.ex.file.manager": {
-            "isNew": true,
-            "patches": [
-              "Unlock Premium"
-            ]
-          },
-          "com.dywx.larkplayer": {
-            "isNew": true,
-            "patches": [
-              "Unlock Premium"
-            ]
-          },
-          "com.eterno": {
-            "isNew": true,
-            "patches": [
-              "Unlock Premium"
-            ]
-          },
-          "com.guochao.faceshow": {
-            "isNew": true,
-            "patches": [
-              "Unlock SVIP"
-            ]
-          },
-          "com.jndapp.anime.depth.live.wallpaper": {
-            "isNew": true,
-            "patches": [
-              "Unlock Premium"
-            ]
-          },
-          "com.jndapp.depth.live.wallpaper": {
-            "isNew": true,
-            "patches": [
-              "Unlock Premium"
-            ]
-          },
-          "com.jndapp.minimal.widgets": {
-            "isNew": true,
-            "patches": [
-              "Unlock Premium"
-            ]
-          },
-          "com.nexstreaming.app.kinemasterfree": {
-            "isNew": true,
-            "patches": [
-              "Unlock Premium"
-            ]
-          },
-          "com.nytimes.crossword": {
-            "isNew": true,
-            "patches": [
-              "Unlock subscription"
-            ]
-          },
-          "com.pixel.al.pixelhabittracker": {
-            "isNew": true,
-            "patches": [
-              "Unlock PRO"
-            ]
-          },
-          "com.playit.videoplayer": {
-            "isNew": true,
-            "patches": [
-              "Unlock VIP"
-            ]
-          },
-          "com.rs.explorer.filemanager": {
-            "isNew": true,
-            "patches": [
-              "Unlock Premium"
-            ]
-          },
-          "com.strava": {
-            "isNew": true,
-            "patches": [
-              "Unlock Premium"
-            ]
-          },
-          "com.uptodown": {
-            "isNew": true,
-            "patches": [
-              "Unlock Turbo"
-            ]
-          },
-          "de.komoot.android": {
-            "isNew": true,
-            "patches": [
-              "Unlock Premium"
-            ]
-          },
-          "mega.privacy.android.app": {
-            "isNew": true,
-            "patches": [
-              "Unlock Pro"
-            ]
           }
         }
       },
@@ -252,13 +252,13 @@
       "ee-morphe": {
         "isNew": false,
         "apps": {
-          "com.going.mobile": {
+          "net.tsapps.appsales": {
             "isNew": true,
             "patches": [
               "Enable Pro"
             ]
           },
-          "net.tsapps.appsales": {
+          "com.going.mobile": {
             "isNew": true,
             "patches": [
               "Enable Pro"
@@ -330,21 +330,64 @@
       "rushiranpise": {
         "isNew": false,
         "apps": {
+          "com.onesports.score": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "in.amazon.mShop.android.shopping": {
+            "isNew": true,
+            "patches": [
+              "Dark mode",
+              "Disable search suggestions tracking",
+              "Disable video autoplay",
+              "Fix Amazon manifest conflicts",
+              "Hide Rufus tab",
+              "Open links in browser",
+              "Price history charts",
+              "Remove ads",
+              "Sanitize share links"
+            ]
+          },
           "com.amazon.mShop.android.shopping": {
             "isNew": false,
             "patches": [
               "Fix Amazon manifest conflicts"
             ]
           },
-          "com.community.oneroom": {
-            "isNew": false,
+          "com.blurams.ipc": {
+            "isNew": true,
             "patches": [
-              "Spoof member brief info",
-              "Spoof member info",
-              "Unlock download member requirement"
+              "Unlock Cloud Service"
             ]
           },
-          "com.acmeaom.android.myradar": {
+          "com.thecarousell.Carousell": {
+            "isNew": true,
+            "patches": [
+              "Remove ads"
+            ]
+          },
+          "com.duolingo": {
+            "isNew": true,
+            "patches": [
+              "Enable Debug Menu",
+              "Unlock Subscription"
+            ]
+          },
+          "com.microsoft.office.excel": {
+            "isNew": true,
+            "patches": [
+              "Unlock Excel"
+            ]
+          },
+          "com.flightaware.android.liveFlightTracker": {
+            "isNew": true,
+            "patches": [
+              "Unlock Ad-Free"
+            ]
+          },
+          "com.live.flight.tracker": {
             "isNew": true,
             "patches": [
               "Unlock Premium"
@@ -356,16 +399,30 @@
               "Unlock Premium"
             ]
           },
-          "com.appostrophe.scrl": {
+          "je.fit": {
             "isNew": true,
             "patches": [
-              "Unlock Premium"
+              "Unlock Elite"
             ]
           },
-          "com.blurams.ipc": {
+          "com.life360.android.safetymapd": {
             "isNew": true,
             "patches": [
-              "Unlock Cloud Service"
+              "Unlock Platinum"
+            ]
+          },
+          "com.livescore": {
+            "isNew": true,
+            "patches": [
+              "Remove ads"
+            ]
+          },
+          "com.community.oneroom": {
+            "isNew": false,
+            "patches": [
+              "Spoof member brief info",
+              "Spoof member info",
+              "Unlock download member requirement"
             ]
           },
           "com.community.mbox.in": {
@@ -390,50 +447,7 @@
               "Unlock member resolution"
             ]
           },
-          "com.duolingo": {
-            "isNew": true,
-            "patches": [
-              "Enable Debug Menu",
-              "Unlock Subscription"
-            ]
-          },
-          "com.flightaware.android.liveFlightTracker": {
-            "isNew": true,
-            "patches": [
-              "Unlock Ad-Free"
-            ]
-          },
-          "com.life360.android.safetymapd": {
-            "isNew": true,
-            "patches": [
-              "Unlock Platinum"
-            ]
-          },
-          "com.live.flight.tracker": {
-            "isNew": true,
-            "patches": [
-              "Unlock Premium"
-            ]
-          },
-          "com.livescore": {
-            "isNew": true,
-            "patches": [
-              "Remove ads"
-            ]
-          },
-          "com.microsoft.office.excel": {
-            "isNew": true,
-            "patches": [
-              "Unlock Excel"
-            ]
-          },
-          "com.microsoft.office.word": {
-            "isNew": true,
-            "patches": [
-              "Unlock Word"
-            ]
-          },
-          "com.onesports.score": {
+          "com.acmeaom.android.myradar": {
             "isNew": true,
             "patches": [
               "Unlock Premium"
@@ -451,16 +465,22 @@
               "Unlock Premium"
             ]
           },
+          "com.appostrophe.scrl": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
           "com.snowcorp.stickerly.android": {
             "isNew": true,
             "patches": [
               "Unlock Plus"
             ]
           },
-          "com.thecarousell.Carousell": {
+          "mobi.lockdown.weather": {
             "isNew": true,
             "patches": [
-              "Remove ads"
+              "Unlock Premium"
             ]
           },
           "com.tradingview.tradingviewapp": {
@@ -469,42 +489,22 @@
               "Unlock Premium"
             ]
           },
-          "com.wolfram.android.alphapro": {
-            "isNew": true,
-            "patches": [
-              "Unlock Professional"
-            ]
-          },
           "eu.toneiv.ubktouch": {
             "isNew": true,
             "patches": [
               "Unlock Pro"
             ]
           },
-          "in.amazon.mShop.android.shopping": {
+          "com.wolfram.android.alphapro": {
             "isNew": true,
             "patches": [
-              "Dark mode",
-              "Disable search suggestions tracking",
-              "Disable video autoplay",
-              "Fix Amazon manifest conflicts",
-              "Hide Rufus tab",
-              "Open links in browser",
-              "Price history charts",
-              "Remove ads",
-              "Sanitize share links"
+              "Unlock Professional"
             ]
           },
-          "je.fit": {
+          "com.microsoft.office.word": {
             "isNew": true,
             "patches": [
-              "Unlock Elite"
-            ]
-          },
-          "mobi.lockdown.weather": {
-            "isNew": true,
-            "patches": [
-              "Unlock Premium"
+              "Unlock Word"
             ]
           }
         }
@@ -620,18 +620,6 @@
       "rushiranpise": {
         "isNew": false,
         "apps": {
-          "au.com.shiftyjelly.pocketcasts": {
-            "isNew": true,
-            "patches": [
-              "Unlock Patron"
-            ]
-          },
-          "cn.danatech.xingseus": {
-            "isNew": true,
-            "patches": [
-              "Unlock Premium"
-            ]
-          },
           "com.amazon.mShop.android.shopping": {
             "isNew": true,
             "patches": [
@@ -657,6 +645,18 @@
               "Unlock Ultimate"
             ]
           },
+          "game.puzzle.blockpuzzle": {
+            "isNew": true,
+            "patches": [
+              "Remove ads"
+            ]
+          },
+          "com.socialnmobile.dictapps.notepad.color.note": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
           "com.fitbod.fitbod": {
             "isNew": true,
             "patches": [
@@ -669,22 +669,28 @@
               "Unlock Premium"
             ]
           },
+          "cn.danatech.xingseus": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "au.com.shiftyjelly.pocketcasts": {
+            "isNew": true,
+            "patches": [
+              "Unlock Patron"
+            ]
+          },
           "com.marsvard.stickermakerforwhatsapp": {
             "isNew": true,
             "patches": [
               "Unlock Premium"
             ]
           },
-          "com.metalsoft.trackchecker_mobile": {
+          "io.goodservice.theweekendest": {
             "isNew": true,
             "patches": [
-              "Unlock Pro / No Ads"
-            ]
-          },
-          "com.socialnmobile.dictapps.notepad.color.note": {
-            "isNew": true,
-            "patches": [
-              "Unlock Premium"
+              "Unlock Plus"
             ]
           },
           "com.toomics.global.google": {
@@ -693,22 +699,16 @@
               "Remove ADS"
             ]
           },
+          "com.metalsoft.trackchecker_mobile": {
+            "isNew": true,
+            "patches": [
+              "Unlock Pro / No Ads"
+            ]
+          },
           "com.vizmanga.android": {
             "isNew": true,
             "patches": [
               "Remove Ads"
-            ]
-          },
-          "game.puzzle.blockpuzzle": {
-            "isNew": true,
-            "patches": [
-              "Remove ads"
-            ]
-          },
-          "io.goodservice.theweekendest": {
-            "isNew": true,
-            "patches": [
-              "Unlock Plus"
             ]
           }
         }

@@ -147,8 +147,15 @@ def is_valid_pkg(package_name):
     ) or package_name == "universal"
 
 
-def build_json_diff(old_bundles, new_bundles):
+def build_json_diff(old_bundles, new_bundles, app_metadata, skip_words):
     json_diff = {}
+
+    def app_sort_key(pkg):
+        return (
+            pkg == "universal",
+            format_app_name(pkg, app_metadata, skip_words).lower(),
+        )
+
     for key in sorted(new_bundles):
         patches_dict = new_bundles[key]
         new_package_names = {
@@ -163,7 +170,7 @@ def build_json_diff(old_bundles, new_bundles):
                         "isNew": True,
                         "patches": sorted(list(patches_dict.get(package_name, []))),
                     }
-                    for package_name in sorted(new_package_names)
+                    for package_name in sorted(new_package_names, key=app_sort_key)
                 },
             }
         else:
@@ -198,7 +205,11 @@ def build_json_diff(old_bundles, new_bundles):
                     }
 
             if has_changes:
-                json_diff[key] = {"isNew": False, "apps": apps_dict}
+                sorted_apps_dict = {
+                    pkg: apps_dict[pkg]
+                    for pkg in sorted(apps_dict.keys(), key=app_sort_key)
+                }
+                json_diff[key] = {"isNew": False, "apps": sorted_apps_dict}
     return json_diff
 
 
@@ -245,7 +256,7 @@ def generate_markdown(json_diff, app_metadata, skip_words):
             link = f"[{bundle_key}]({url})"
             bundle_md = [f"+ 📦 {link} (✨New)"]
 
-            for package_name in sorted(apps_data.keys()):
+            for package_name in apps_data.keys():
                 app_name = format_app_name(package_name, app_metadata, skip_words)
                 bundle_md.append(f"    - 📱 {app_name}")
 
@@ -266,7 +277,7 @@ def generate_markdown(json_diff, app_metadata, skip_words):
             link = f"[{bundle_key}]({url})"
             bundle_md = [f"- 📦 {link}"]
 
-            for package_name in sorted(apps_data.keys()):
+            for package_name in apps_data.keys():
                 app_data = apps_data[package_name]
                 app_name = format_app_name(package_name, app_metadata, skip_words)
 
@@ -310,7 +321,7 @@ def main():
     today_str = now.strftime(f"%B {now.day}, %Y")
 
     _, new_dev = build_current_bundles()
-    json_diff = build_json_diff(old_history, new_dev)
+    json_diff = build_json_diff(old_history, new_dev, app_metadata, skip_words)
 
     if not json_diff:
         print("No changes found.")
