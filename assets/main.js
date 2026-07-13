@@ -786,8 +786,8 @@ const app = createApp({
 
     const autoExpandPopupApp = () => {
       if (popupBundleKey.value) {
-        const group = bundlesGroups.value.find((g) => g.key === popupBundleKey.value);
-        if (group?.appsList?.length > 0) {
+        const group = popupGroup.value;
+        if (group && group.key === popupBundleKey.value && group.appsList?.length > 0) {
           const targetApp = app.value
             ? group.appsList.find((a) => a.packageName === app.value) || group.appsList[0]
             : group.appsList[0];
@@ -834,6 +834,15 @@ const app = createApp({
 
     watch(popupGroup, (newGroup) => {
       if (!newGroup) return;
+      if (!popupUI.bundleViews[newGroup.key] && newGroup.appsList?.length > 0) {
+        const hasExpanded = newGroup.appsList.some((a) => popupUI.expandedOptions.has(`popup_app_${newGroup.key}_${a.id}`));
+        if (!hasExpanded) {
+          const targetApp = app.value
+            ? newGroup.appsList.find((a) => a.packageName === app.value) || newGroup.appsList[0]
+            : newGroup.appsList[0];
+          popupUI.expandedOptions.add(`popup_app_${newGroup.key}_${targetApp.id}`);
+        }
+      }
       if (
         (showOptions.value.length === 1 && showOptions.value[0].includes(":")) ||
         (popupSearchQuery.value || "").trim().length > 0 ||
