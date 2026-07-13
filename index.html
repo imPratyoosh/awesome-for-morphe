@@ -252,14 +252,14 @@
                         <span class="absolute left-2 top-0 h-8 flex items-center text-light pointer-events-none">
                           <i class="fa-solid fa-magnifying-glass text-[10px] icon-center"></i>
                         </span>
-                        <input type="search" v-model="bundleSearch" placeholder="Search bundles..."
+                        <input type="search" v-model="localBundleSearch" placeholder="Search bundles..."
                           class="w-full h-8 pl-6 pr-2 bg-black border border-lightGray rounded-md text-xs text-white focus:border-light focus:ring-1 focus:ring-light/20 outline-none transition-all"
                           autocomplete="off" @click.stop>
                       </div>
                     </div>
                     <div :class="!bundle ? 'text-white bg-white/10 font-medium' : 'text-white hover:bg-white/5'"
                       :data-selected="!bundle ? 'true' : null"
-                      @click="selectBundleFromDropdown(''); bundleSearch = ''; $event.target.closest('.dd-root').classList.remove('open')"
+                      @click="selectBundleFromDropdown(''); localBundleSearch = ''; $event.target.closest('.dd-root').classList.remove('open')"
                       class="px-3 py-2 text-sm cursor-pointer transition-colors flex items-center gap-2">
                       <i class="fa-solid fa-cubes text-light text-base w-4 shrink-0 text-center icon-center"></i>
                       <span class="leading-tight flex-1">All Bundles</span>
@@ -267,7 +267,7 @@
                     <div v-for="optionItem in filteredBundleOptions" :key="optionItem.value"
                       :class="bundle === optionItem.value ? 'text-white bg-white/10 font-medium' : 'text-white hover:bg-white/5'"
                       :data-selected="bundle === optionItem.value ? 'true' : null"
-                      @click="selectBundleFromDropdown(optionItem.value); bundleSearch = ''; $event.target.closest('.dd-root').classList.remove('open')"
+                      @click="selectBundleFromDropdown(optionItem.value); localBundleSearch = ''; $event.target.closest('.dd-root').classList.remove('open')"
                       class="px-3 py-2 text-sm cursor-pointer transition-colors flex items-center gap-2">
                       <img v-if="optionItem.icon" :src="optionItem.icon"
                         class="w-4 h-4 rounded-full object-cover shrink-0" alt="" loading="lazy">
@@ -301,14 +301,14 @@
                       <span class="absolute left-2 top-0 h-8 flex items-center text-light pointer-events-none">
                         <i class="fa-solid fa-magnifying-glass text-[10px] icon-center"></i>
                       </span>
-                      <input type="search" v-model="appSearch" placeholder="Search apps..."
+                      <input type="search" v-model="localAppSearch" placeholder="Search apps..."
                         class="w-full h-8 pl-6 pr-2 bg-black border border-lightGray rounded-md text-xs text-white focus:border-light focus:ring-1 focus:ring-light/20 outline-none transition-all"
                         autocomplete="off" @click.stop>
                     </div>
                   </div>
                   <div :class="!app ? 'text-white bg-white/10 font-medium' : 'text-white hover:bg-white/5'"
                     :data-selected="!app ? 'true' : null"
-                    @click="app = ''; appSearch = ''; $event.target.closest('.dd-root').classList.remove('open')"
+                    @click="app = ''; localAppSearch = ''; $event.target.closest('.dd-root').classList.remove('open')"
                     class="px-3 py-2 text-sm cursor-pointer transition-colors flex items-center gap-2">
                     <i
                       class="fa-solid fa-mobile-screen-button text-light text-base w-4 shrink-0 text-center icon-center"></i>
@@ -317,7 +317,7 @@
                   <div v-for="optionItem in filteredAppOptions" :key="optionItem.value"
                     :class="app === optionItem.value ? 'text-white bg-white/10 font-medium' : 'text-white hover:bg-white/5'"
                     :data-selected="app === optionItem.value ? 'true' : null"
-                    @click="app = optionItem.value; appSearch = ''; $event.target.closest('.dd-root').classList.remove('open')"
+                    @click="app = optionItem.value; localAppSearch = ''; $event.target.closest('.dd-root').classList.remove('open')"
                     class="px-3 py-2 text-sm cursor-pointer transition-colors flex items-center gap-2">
                     <img v-if="optionItem.icon" :src="optionItem.icon"
                       class="w-4 h-4 rounded-sm object-contain shrink-0" alt="" loading="lazy">
@@ -337,10 +337,10 @@
                   <span class="absolute left-3 top-0 h-[34px] flex items-center text-light pointer-events-none">
                     <i class="fa-solid fa-magnifying-glass text-xs icon-center"></i>
                   </span>
-                  <input type="search" v-model="query" autocomplete="off" enterkeyhint="search"
+                  <input type="search" v-model="localQuery" autocomplete="off" enterkeyhint="search"
                     placeholder="Search patches"
                     class="w-full h-[34px] pl-8 pr-9 bg-black border border-lightGray hover:border-white/50 rounded-md focus:border-light focus:ring-2 focus:ring-light/20 outline-none transition-all text-sm text-white">
-                  <button v-if="query" type="button" @click="query = ''"
+                  <button v-if="localQuery" type="button" @click="localQuery = ''"
                     class="absolute right-0 top-0 h-[34px] w-9 flex items-center justify-center text-light hover:text-white transition-colors"
                     title="Clear search">
                     <i class="fa-solid fa-circle-xmark icon-center"></i>
@@ -777,14 +777,14 @@
                     <span class="absolute left-2 top-0 h-8 flex items-center text-light pointer-events-none">
                       <i class="fa-solid fa-magnifying-glass text-[10px] icon-center"></i>
                     </span>
-                    <input type="search" v-model="popupAppSearch" placeholder="Search apps..."
+                    <input type="search" v-model="localPopupAppSearch" placeholder="Search apps..."
                       class="w-full h-8 pl-6 pr-2 bg-black border border-lightGray rounded-md text-xs text-white focus:border-light focus:ring-1 focus:ring-light/20 outline-none transition-all"
                       autocomplete="off" @click.stop>
                   </div>
                 </div>
                 <div
                   :class="(!showOptions.length || (showOptions.length === 1 && !showOptions[0].includes(':') && !showOptions[0].includes('('))) ? 'text-white bg-white/10 font-medium' : 'text-white hover:bg-white/5'"
-                  @click="selectPopupAppFromDropdown(''); popupAppSearch = ''; $event.target.closest('.dd-root')?.classList?.remove('open')"
+                  @click="selectPopupAppFromDropdown(''); localPopupAppSearch = ''; $event.target.closest('.dd-root')?.classList?.remove('open')"
                   class="px-3 py-2 text-sm cursor-pointer transition-colors flex items-center gap-2">
                   <i
                     class="fa-solid fa-mobile-screen-button text-light text-base w-4 shrink-0 text-center icon-center"></i>
@@ -792,7 +792,7 @@
                 </div>
                 <div v-for="optionItem in filteredPopupAllApps" :key="optionItem.value"
                   :class="(showOptions.length === 1 && showOptions[0] === popupBundleKey + ':' + optionItem.value) ? 'text-white bg-white/10 font-medium' : 'text-white hover:bg-white/5'"
-                  @click="selectPopupAppFromDropdown(optionItem.value); popupAppSearch = ''; $event.target.closest('.dd-root')?.classList?.remove('open')"
+                  @click="selectPopupAppFromDropdown(optionItem.value); localPopupAppSearch = ''; $event.target.closest('.dd-root')?.classList?.remove('open')"
                   class="px-3 py-2 text-sm cursor-pointer transition-colors flex items-center gap-2">
                   <img v-if="optionItem.icon" :src="optionItem.icon" class="w-4 h-4 rounded-sm object-contain shrink-0"
                     alt="" loading="lazy">
@@ -808,10 +808,10 @@
               <span class="absolute left-3 top-0 h-[34px] flex items-center text-light pointer-events-none">
                 <i class="fa-solid fa-magnifying-glass text-xs icon-center"></i>
               </span>
-              <input type="search" v-model="popupSearchQuery" autocomplete="off" enterkeyhint="search"
-                placeholder="Search"
+              <input type="search" v-model="localPopupSearchQuery" autocomplete="off" enterkeyhint="search"
+                placeholder="Search patches"
                 class="w-full h-[34px] pl-8 pr-9 bg-black border border-lightGray hover:border-white/50 rounded-md focus:border-light focus:ring-2 focus:ring-light/20 outline-none transition-all text-sm text-white">
-              <button v-if="popupSearchQuery" @click="popupSearchQuery = ''" type="button"
+              <button v-if="localPopupSearchQuery" @click="localPopupSearchQuery = ''" type="button"
                 class="absolute right-0 top-0 h-[34px] w-9 flex items-center justify-center text-light hover:text-white transition-colors"
                 title="Clear search">
                 <i class="fa-solid fa-circle-xmark icon-center"></i>

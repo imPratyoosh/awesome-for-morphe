@@ -305,6 +305,38 @@ const app = createApp({
     const patchesLoaded = ref(false);
     const errorMsg = ref("");
 
+    function debounce(fn, delay) {
+      let timeoutId;
+      return (...args) => {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => fn(...args), delay);
+      };
+    }
+
+    const localQuery = ref(query.value);
+    const localBundleSearch = ref(bundleSearch.value);
+    const localAppSearch = ref(appSearch.value);
+    const localPopupSearchQuery = ref(popupSearchQuery.value);
+    const localPopupAppSearch = ref(popupAppSearch.value);
+
+    watch(query, (val) => { if (val !== localQuery.value) localQuery.value = val; });
+    watch(bundleSearch, (val) => { if (val !== localBundleSearch.value) localBundleSearch.value = val; });
+    watch(appSearch, (val) => { if (val !== localAppSearch.value) localAppSearch.value = val; });
+    watch(popupSearchQuery, (val) => { if (val !== localPopupSearchQuery.value) localPopupSearchQuery.value = val; });
+    watch(popupAppSearch, (val) => { if (val !== localPopupAppSearch.value) localPopupAppSearch.value = val; });
+
+    const updateQuery = debounce((val) => { query.value = val; }, 200);
+    const updateBundleSearch = debounce((val) => { bundleSearch.value = val; }, 150);
+    const updateAppSearch = debounce((val) => { appSearch.value = val; }, 150);
+    const updatePopupSearchQuery = debounce((val) => { popupSearchQuery.value = val; }, 200);
+    const updatePopupAppSearch = debounce((val) => { popupAppSearch.value = val; }, 150);
+
+    watch(localQuery, (val) => updateQuery(val));
+    watch(localBundleSearch, (val) => updateBundleSearch(val));
+    watch(localAppSearch, (val) => updateAppSearch(val));
+    watch(localPopupSearchQuery, (val) => updatePopupSearchQuery(val));
+    watch(localPopupAppSearch, (val) => updatePopupAppSearch(val));
+
     const initialParams = new URLSearchParams(location.search);
     const priorityKeys = new Set();
     if (initialParams.get("show")) {
@@ -934,6 +966,11 @@ const app = createApp({
       showOptions,
       appSearch,
       bundleSearch,
+      localQuery,
+      localBundleSearch,
+      localAppSearch,
+      localPopupSearchQuery,
+      localPopupAppSearch,
       sortOrder,
       isTwoColumns,
       isLoading,
@@ -950,12 +987,12 @@ const app = createApp({
       popupSearchQuery,
       popupAppSearch,
       popupGroup,
-      filteredAppOptions: computed(() => filterDropdownOptions(filterOptions.value.appOptions, appSearch.value, [])),
+      filteredAppOptions: computed(() => filterDropdownOptions(filterOptions.value.appOptions, localAppSearch.value, [])),
       filteredBundleOptions: computed(() =>
-        filterDropdownOptions(filterOptions.value.bundleOptions, bundleSearch.value, ["repo"]),
+        filterDropdownOptions(filterOptions.value.bundleOptions, localBundleSearch.value, ["repo"]),
       ),
       filteredPopupAllApps: computed(() =>
-        filterDropdownOptions(popupAllApps.value, popupAppSearch.value, ["label", "value"]),
+        filterDropdownOptions(popupAllApps.value, localPopupAppSearch.value, ["label", "value"]),
       ),
 
       mainUI,
