@@ -1111,8 +1111,8 @@
     "stars": 3,
     "firstSeen": "2026-07-12T05:58:07",
     "patches": "site/pichiwa.json",
-    "version": "v0.3.2-dev.13",
-    "createdAt": "2026-07-13T04:08:36",
+    "version": "v0.3.2-dev.20",
+    "createdAt": "2026-07-13T19:56:35",
     "targetApps": [
       "com.whatsapp"
     ],
