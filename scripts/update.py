@@ -80,10 +80,14 @@ def fetch_avatar_url(repo_url):
                                     if "s=80" in avatar:
                                         avatar = avatar.replace("s=80", "s=128")
                                     elif "s=" not in avatar:
-                                        avatar += ("&" if "?" in avatar else "?") + "s=128"
+                                        avatar += (
+                                            "&" if "?" in avatar else "?"
+                                        ) + "s=128"
                                 elif "gitlab.com/uploads/" in avatar:
                                     if "width=" not in avatar:
-                                        avatar += ("&" if "?" in avatar else "?") + "width=128"
+                                        avatar += (
+                                            "&" if "?" in avatar else "?"
+                                        ) + "width=128"
                                 return avatar
                 except Exception as exception:
                     print(f"Failed to fetch gitlab avatar for {username}: {exception}")

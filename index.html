@@ -493,8 +493,7 @@
                     <img v-if="group.bundle.avatarUrl" :src="group.bundle.avatarUrl" alt="Avatar"
                       @click.stop="openPopupFast(group.key)" title="View this bundle"
                       class="w-12 h-12 rounded-full bg-lightGray/20 object-cover shrink-0 sm:mt-0.5 cursor-pointer hover:opacity-80 transition-opacity">
-                    <div v-else
-                      @click.stop="openPopupFast(group.key)" title="View this bundle"
+                    <div v-else @click.stop="openPopupFast(group.key)" title="View this bundle"
                       class="w-12 h-12 rounded-full bg-lightGray/20 flex items-center justify-center shrink-0 sm:mt-0.5 cursor-pointer hover:bg-lightGray/35 transition-colors">
                       <i class="fa-solid fa-cubes text-light text-xl icon-center"></i>
                     </div>
@@ -535,9 +534,7 @@
                       </a>
                       <a v-if="group.bundle.createdAt"
                         :href="group.bundle.changelogUrl || (group.bundle.repoUrl ? group.bundle.repoUrl + '/releases' : '#')"
-                        target="_blank" rel="noreferrer" @click.stop
-                        class="badge"
-                        title="View changelog">
+                        target="_blank" rel="noreferrer" @click.stop class="badge" title="View changelog">
                         <i class="fa-solid fa-clock-rotate-left"></i>
                         <span>{{ formatDate(group.bundle.createdAt) }}</span>
                       </a>
@@ -728,13 +725,13 @@
 
 
     <div v-if="popupBundleKey"
-      class="fixed inset-0 z-[10000] flex flex-col items-center justify-start sm:justify-center px-0 py-4 sm:py-6 bg-black/80 backdrop-blur-sm transition-opacity"
-      style="padding-top: max(1.5rem, env(safe-area-inset-top, 1.5rem))" @click.self="closePopup">
+      class="fixed inset-0 z-[10000] flex flex-col items-center justify-start sm:justify-center px-0 pt-2 pb-8 sm:px-4 sm:py-6 bg-black/80 backdrop-blur-sm transition-opacity"
+      style="padding-top: max(0.5rem, env(safe-area-inset-top, 0.5rem))" @click.self="closePopup">
       <div class="w-full max-w-4xl px-0 sm:px-3 max-h-full flex flex-col gap-2 overflow-visible animate-float-in">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 w-full shrink-0 pt-2 px-2"
-          v-if="popupGroup">
+          v-if="popupGroup" @click.self="closePopup">
           <!-- Left Group: App Selector + Search Input -->
-          <div class="flex items-center gap-2 w-full sm:w-auto flex-1 min-w-0">
+          <div class="flex items-center gap-2 w-full sm:w-auto flex-1 min-w-0" @click.self="closePopup">
             <!-- App selection dropdown (popup-app-dd) -->
             <div class="relative shrink-0 w-[45%] sm:w-[180px] dd-root" id="popup-app-dd" @click.stop>
               <button type="button" onclick="toggleDropdown('popup-app-dd')"
@@ -793,7 +790,7 @@
             </div>
 
             <!-- Patch Search -->
-            <form @submit.prevent="$event.target.querySelector('input').blur()"
+            <form @submit.prevent="$event.target.querySelector('input').blur()" @click.stop
               class="relative flex-1 min-w-0 sm:w-[220px] sm:max-w-[220px]">
               <span class="absolute left-3 top-0 h-[34px] flex items-center text-light pointer-events-none">
                 <i class="fa-solid fa-magnifying-glass text-xs icon-center"></i>
@@ -810,7 +807,7 @@
           </div>
 
           <!-- Right Group: Counts and Close button -->
-          <div class="flex flex-wrap items-center justify-end gap-2 shrink-0">
+          <div class="flex flex-wrap items-center justify-end gap-2 shrink-0" @click.self="closePopup">
             <span class="badge text-light"><i class="fa-solid fa-mobile-screen"></i><span>{{
                 popupGroup?.appsList?.length || 0 }} apps</span></span>
             <span class="badge text-light"><i class="fa-solid fa-puzzle-piece"></i><span>{{
@@ -828,7 +825,7 @@
           :class="(popupGroup && (popupUI.expandedAppLists.has(popupGroup.key) || popupUI.bundleViews[popupGroup.key])) ? 'overflow-y-auto' : 'overflow-hidden'">
           <div v-for="group in [popupGroup]" :key="group.key" class="bg-dark flex flex-col">
             <div
-              class="flex justify-between gap-3 py-2 px-2 sm:px-3 flex-col md:flex-row items-stretch md:items-center shrink-0 sticky top-0 z-10 bg-dark shadow-sm">
+              class="flex justify-between gap-3 py-2 px-3 flex-col md:flex-row items-stretch md:items-center shrink-0 sticky top-0 z-10 bg-dark shadow-sm">
               <div
                 class="flex items-center gap-3 min-w-0 flex-1 w-full text-left justify-center md:justify-start md:w-auto">
                 <img v-if="group.bundle.avatarUrl" :src="group.bundle.avatarUrl" alt="Avatar"
@@ -870,9 +867,7 @@
                 </a>
                 <a v-if="group.bundle.createdAt"
                   :href="group.bundle.changelogUrl || (group.bundle.repoUrl ? group.bundle.repoUrl + '/releases' : '#')"
-                  target="_blank" rel="noreferrer" @click.stop
-                  class="badge"
-                  title="View changelog">
+                  target="_blank" rel="noreferrer" @click.stop class="badge" title="View changelog">
                   <i class="fa-solid fa-clock-rotate-left"></i>
                   <span>{{ formatDate(group.bundle.createdAt) }}</span>
                 </a>
@@ -913,7 +908,7 @@
                 <template v-for="appItem in appsList" :key="'content-'+appItem.id">
                   <div v-if="popupUI.bundleViews[group.key]"
                     @click.stop="popupUI.selectApp(group.key, appItem, appsList)"
-                    class="flex items-center gap-2 px-3 sm:px-4 py-2 border-b border-lightGray/50 cursor-pointer hover:bg-white/5 transition-colors shrink-0"
+                    class="flex items-center gap-2 px-4 py-2 border-b border-lightGray/50 cursor-pointer hover:bg-white/5 transition-colors shrink-0"
                     :class="popupUI.expandedOptions.has('popup_app_' + group.key + '_' + appItem.id) ? 'bg-white/5' : ''">
                     <img v-if="appItem.appIcon" :src="appItem.appIcon"
                       class="w-5 h-5 rounded-sm object-contain shrink-0" :alt="appItem.appName" loading="lazy">
@@ -936,7 +931,7 @@
                     @touchend="popupUI.handleTouchEnd($event, group.key, appItem, appsList)"
                     class="flex flex-col gap-2 shadow-inner pt-2 pb-3"
                     :class="(popupUI.activeSwipeGroup === group.key && popupUI.swipeDirection ? 'swipe-transition-' + popupUI.swipeDirection : '') + (popupUI.bundleViews[group.key] ? ' border-b-2 border-lightGray/30' : '')">
-                    <div class="flex flex-wrap items-center gap-2 min-w-0 px-3 sm:px-4 shrink-0">
+                    <div class="flex flex-wrap items-center gap-2 min-w-0 px-4 shrink-0">
                       <template v-if="appItem.packageName">
                         <button @click.stop="filterByApp(appItem.packageName)" class="badge shrink-0 select-none">
                           <i class="fa-solid fa-filter"></i>
@@ -960,9 +955,9 @@
                       </template>
                     </div>
 
-                    <div class="pl-6 pr-1 sm:px-4 flex flex-col">
-                      <div class="flex flex-col gap-1.5 pr-1.5 sm:pr-0 py-0.5"
-                        :class="!popupUI.bundleViews[group.key] ? 'h-[60vh] overflow-y-auto' : ''">
+                    <div class="px-4 flex flex-col">
+                      <div class="flex flex-col gap-1.5 pr-0 py-0.5"
+                        :class="!popupUI.bundleViews[group.key] ? 'h-[55vh] sm:h-[60vh] overflow-y-auto' : ''">
                         <div
                           v-for="patchItem in group.patches.filter(patchElement => patchElement.apps.some(appElement => appElement.packageName === appItem.packageName))"
                           :key="patchItem.id" @click="patchItem.options.length && popupUI.toggleOptions(patchItem.id)"
