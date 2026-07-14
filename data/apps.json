@@ -1860,5 +1860,25 @@
   "com.mixapplications.ventoy_app": {
     "name": "Ventoy",
     "iconUrl": "https://play-lh.googleusercontent.com/iDmPs-RP3nd2DwTpONpFk7CYDY6aBnsq36lS6Ac43w6uosKKaTTjaIl5LVKG6tVQ602ycUIeozQlpXKFSzFMug=s64"
+  },
+  "com.vivredarija": {
+    "name": "Morolingo",
+    "iconUrl": "https://play-lh.googleusercontent.com/6ae6Dc2YMDJI-6zslbcslkSVxowwy0z-57uSdM_T-4YM0xUCDAWJMOhlh7Lym4sGaTEhbBA_HfcEOh7FbmvpXw=s64"
+  },
+  "com.blueinklabs.investifystocks.free": {
+    "name": "Investify",
+    "iconUrl": "https://play-lh.googleusercontent.com/vEzQQLVO50YaUAM2pOvjQjTy_DUkou5to3Wru4cfPgtaaV9Gh31n_PbqlJLpcXC_9WxBi69ouwtn55OB-Q6AkQ=s64"
+  },
+  "com.daraz.android": {
+    "name": "Daraz",
+    "iconUrl": "https://play-lh.googleusercontent.com/9TsiJAH3aOaYHFmYbV5UfWDGVW2ob1VicZZ1vjTwlUCSzKyHV-9GEWb2FA8Ldg2J7DnibJQ8ujh-t26-WOeVSA=s64"
+  },
+  "com.jazz.jazzworld": {
+    "name": "Simosa",
+    "iconUrl": "https://play-lh.googleusercontent.com/zJzp3VpEwpbBSonC7xY8f0O7Mwc3f490tFqO2lj6qfR4RjLKlD0-az0ZiUQ72QaCwL4g1fml-UjPV-i8OwrJCt0=s64"
+  },
+  "com.zong.customercare": {
+    "name": "MyZong",
+    "iconUrl": "https://play-lh.googleusercontent.com/DLt6nmeZ-ibGGaudFHT9dwkMN5IjNO64mdp26Ya4NsgiLlej3vE6jid8K1Ncw_TuyC4ShhTTfqYQgfMoyI1BTQ=s64"
   }
 }
