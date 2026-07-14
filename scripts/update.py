@@ -168,24 +168,29 @@ def fetch_repo_stars(repo_url):
     return None
 
 
-def fetch_app_icon(package_name):
+def fetch_app_details(package_name):
     if not gplay_app:
         print(
             "Warning: google-play-scraper is not installed. Run: pip install google-play-scraper"
         )
-        return None
+        return None, None
     try:
         result = gplay_app(package_name)
-        if result and "icon" in result:
-            icon_url = result["icon"]
-            if icon_url:
-                if "=" in icon_url:
-                    icon_url = icon_url.split("=")[0]
-                icon_url += "=s64"
-            return icon_url
+        icon_url = None
+        app_name = None
+        if result:
+            if "icon" in result:
+                icon_url = result["icon"]
+                if icon_url:
+                    if "=" in icon_url:
+                        icon_url = icon_url.split("=")[0]
+                    icon_url += "=s64"
+            if "title" in result:
+                app_name = result["title"]
+        return icon_url, app_name
     except Exception as exception:
-        print(f"Failed to fetch app icon for {package_name}: {exception}")
-    return None
+        print(f"Failed to fetch app details for {package_name}: {exception}")
+    return None, None
 
 
 def strip_patch(patch, discovered_names):
@@ -366,12 +371,15 @@ def main():
         "--icons", action="store_true", help="Update icons for all apps"
     )
     parser.add_argument(
+        "--daily", action="store_true", help="Daily update (stars, missing avatars, missing app icons/names)"
+    )
+    parser.add_argument(
         "--all", action="store_true", help="Update everything (stars, avatars, icons)"
     )
     args = parser.parse_args()
 
     if args.all:
-        args.stars = args.avatars = args.icons = True
+        args.stars = args.avatars = args.icons = args.daily = True
 
     SITE_DIR.mkdir(parents=True, exist_ok=True)
     if not BUNDLES_DIR.exists():
@@ -393,7 +401,8 @@ def main():
 
     avatar_tasks = {}
     stars_tasks = {}
-    icon_tasks = set()
+    app_tasks = set()
+    apps_with_patch_names = set()
 
     seen_packages = set()
     all_packages = set()
@@ -435,7 +444,7 @@ def main():
                 avatar_tasks[base] = repo_url
 
         stars = stars_cache.get(base)
-        if args.stars or stars is None:
+        if args.stars or args.daily or stars is None:
             if repo_url:
                 stars_tasks[base] = repo_url
             else:
@@ -494,6 +503,8 @@ def main():
                 meta = app_metadata.get(package_name)
                 is_new_app = not meta
                 name = discovered.get(package_name, None)
+                if name:
+                    apps_with_patch_names.add(package_name)
 
                 if not meta:
                     app_metadata[package_name] = {"name": name, "iconUrl": None}
@@ -507,8 +518,16 @@ def main():
                     if name and meta.get("name") != name:
                         app_metadata[package_name]["name"] = name
 
-                if args.icons or is_new_app:
-                    icon_tasks.add(package_name)
+                should_fetch = False
+                if args.icons:
+                    should_fetch = True
+                elif is_new_app:
+                    should_fetch = True
+                elif args.daily and (not app_metadata[package_name].get("name") or not app_metadata[package_name].get("iconUrl")):
+                    should_fetch = True
+
+                if should_fetch:
+                    app_tasks.add(package_name)
         # Write to site/base.json
         site_file_path = SITE_DIR / f"{base}.json"
         write_json(site_file_path, out_patches)
@@ -565,29 +584,34 @@ def main():
                 except Exception as exception:
                     print(f"Failed to fetch stars for {base}: {exception}")
 
-    if icon_tasks:
-        print(f"Fetching icons for {len(icon_tasks)} apps...")
+    if app_tasks:
+        print(f"Fetching app details for {len(app_tasks)} apps...")
         with concurrent.futures.ThreadPoolExecutor(max_workers=CONCURRENCY) as executor:
             future_to_package = {
-                executor.submit(fetch_app_icon, package_name): package_name
-                for package_name in icon_tasks
+                executor.submit(fetch_app_details, package_name): package_name
+                for package_name in app_tasks
             }
             for future in concurrent.futures.as_completed(future_to_package):
                 package_name = future_to_package[future]
                 try:
-                    new_icon = future.result()
+                    new_icon, app_name = future.result()
                     if new_icon:
-                        app_metadata[package_name]["iconUrl"] = new_icon
-                    else:
-                        print(f"[ERROR] Missing iconUrl for package: {package_name}")
+                        if args.icons or not app_metadata[package_name].get("iconUrl"):
+                            app_metadata[package_name]["iconUrl"] = new_icon
+                    if app_name:
+                        if package_name not in apps_with_patch_names:
+                            if not app_metadata[package_name].get("name"):
+                                app_metadata[package_name]["name"] = app_name
+                    if not new_icon and not app_name:
+                        print(f"[ERROR] Missing app details for package: {package_name}")
                 except Exception as exception:
-                    print(f"Failed to fetch icon for {package_name}: {exception}")
+                    print(f"Failed to fetch app details for {package_name}: {exception}")
 
     write_json(BUNDLES_JSON_PATH, bundle_sources)
     print(f"Generated bundles.json with {len(bundle_sources)} bundles.")
 
     write_json(APPS_JSON_PATH, app_metadata)
-    if icon_tasks:
+    if app_tasks:
         print(f"Updated apps.json with new metadata.")
 
     missing = sorted(
