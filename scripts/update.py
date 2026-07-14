@@ -371,7 +371,9 @@ def main():
         "--icons", action="store_true", help="Update icons for all apps"
     )
     parser.add_argument(
-        "--daily", action="store_true", help="Daily update (stars, missing avatars, missing app icons/names)"
+        "--daily",
+        action="store_true",
+        help="Daily update (stars, missing avatars, missing app icons/names)",
     )
     parser.add_argument(
         "--all", action="store_true", help="Update everything (stars, avatars, icons)"
@@ -438,23 +440,30 @@ def main():
             get_repo_info(stable_json) if stable_json else get_repo_info(dev_json)
         )
 
-        avatar_url = avatar_cache.get(base, "")
-        if args.avatars or not avatar_url:
+        avatar_url = avatar_cache.get(base, None)
+        if repo_url:
+            if not avatar_url:
+                avatar_url = None
+        else:
+            avatar_url = ""
+
+        if args.avatars or avatar_url is None:
             if repo_url:
                 avatar_tasks[base] = repo_url
 
-        stars = stars_cache.get(base)
+        stars = stars_cache.get(base, None)
+        if not repo_url:
+            stars = 0
+
         if args.stars or args.daily or stars is None:
             if repo_url:
                 stars_tasks[base] = repo_url
-            else:
-                stars = 0
 
         source_entry = {
             "source": source,
             "repo": repo,
             "avatarUrl": avatar_url,
-            "stars": stars if stars is not None else 0,
+            "stars": stars,
         }
 
         if base in existing_sources and existing_sources[base].get("firstSeen"):
@@ -523,7 +532,10 @@ def main():
                     should_fetch = True
                 elif is_new_app:
                     should_fetch = True
-                elif args.daily and (not app_metadata[package_name].get("name") or not app_metadata[package_name].get("iconUrl")):
+                elif args.daily and (
+                    app_metadata[package_name].get("name") is None
+                    or app_metadata[package_name].get("iconUrl") is None
+                ):
                     should_fetch = True
 
                 if should_fetch:
@@ -596,16 +608,23 @@ def main():
                 try:
                     new_icon, app_name = future.result()
                     if new_icon:
-                        if args.icons or not app_metadata[package_name].get("iconUrl"):
+                        if (
+                            args.icons
+                            or app_metadata[package_name].get("iconUrl") is None
+                        ):
                             app_metadata[package_name]["iconUrl"] = new_icon
                     if app_name:
                         if package_name not in apps_with_patch_names:
-                            if not app_metadata[package_name].get("name"):
+                            if app_metadata[package_name].get("name") is None:
                                 app_metadata[package_name]["name"] = app_name
                     if not new_icon and not app_name:
-                        print(f"[ERROR] Missing app details for package: {package_name}")
+                        print(
+                            f"[ERROR] Missing app details for package: {package_name}"
+                        )
                 except Exception as exception:
-                    print(f"Failed to fetch app details for {package_name}: {exception}")
+                    print(
+                        f"Failed to fetch app details for {package_name}: {exception}"
+                    )
 
     write_json(BUNDLES_JSON_PATH, bundle_sources)
     print(f"Generated bundles.json with {len(bundle_sources)} bundles.")
@@ -614,7 +633,7 @@ def main():
     if app_tasks:
         print(f"Updated apps.json with new metadata.")
 
-    missing = sorted(
+    missing_names = sorted(
         package_name
         for package_name in all_packages
         if (
@@ -625,28 +644,71 @@ def main():
         and " " not in package_name
         and "." in package_name
     )
-    if missing:
-        print(f"\n[WARNING] Missing app name for {len(missing)} packages.")
-        if "GITHUB_ACTIONS" in os.environ:
-            print(
-                f"::warning::Missing app name for {len(missing)} packages: {', '.join(missing)}"
-            )
 
     missing_icons = sorted(
         package_name
         for package_name in all_packages
         if (
-            package_name in app_metadata
-            and app_metadata[package_name].get("iconUrl") is None
+            package_name not in app_metadata
+            or app_metadata[package_name].get("iconUrl") is None
         )
         and package_name != "universal"
         and " " not in package_name
         and "." in package_name
     )
-    if missing_icons:
-        print(f"\n[INFO] Missing iconUrl for {len(missing_icons)} packages.")
 
-    if not missing and not missing_icons:
+    missing_avatars = sorted(
+        base
+        for base, info in bundle_sources.items()
+        if info.get("repo")
+        and (info.get("avatarUrl") is None or info.get("avatarUrl") == "")
+    )
+
+    missing_stars = sorted(
+        base
+        for base, info in bundle_sources.items()
+        if info.get("repo") and info.get("stars") is None
+    )
+
+    if missing_names:
+        print(f"\n[WARNING] Missing app name for {len(missing_names)} packages:")
+        for pkg in missing_names:
+            print(f"  - {pkg}")
+        if "GITHUB_ACTIONS" in os.environ:
+            print(
+                f"::warning::Missing app name for {len(missing_names)} packages: {', '.join(missing_names)}"
+            )
+
+    if missing_icons:
+        print(f"\n[WARNING] Missing app iconUrl for {len(missing_icons)} packages:")
+        for pkg in missing_icons:
+            print(f"  - {pkg}")
+        if "GITHUB_ACTIONS" in os.environ:
+            print(
+                f"::warning::Missing app iconUrl for {len(missing_icons)} packages: {', '.join(missing_icons)}"
+            )
+
+    if missing_avatars:
+        print(
+            f"\n[WARNING] Missing bundle avatarUrl (logo) for {len(missing_avatars)} bundles:"
+        )
+        for base in missing_avatars:
+            print(f"  - {base}")
+        if "GITHUB_ACTIONS" in os.environ:
+            print(
+                f"::warning::Missing bundle avatarUrl for {len(missing_avatars)} bundles: {', '.join(missing_avatars)}"
+            )
+
+    if missing_stars:
+        print(f"\n[WARNING] Missing bundle stars for {len(missing_stars)} bundles:")
+        for base in missing_stars:
+            print(f"  - {base}")
+        if "GITHUB_ACTIONS" in os.environ:
+            print(
+                f"::warning::Missing bundle stars for {len(missing_stars)} bundles: {', '.join(missing_stars)}"
+            )
+
+    if not (missing_names or missing_icons or missing_avatars or missing_stars):
         print("\nEverything is up to date!")
 
 

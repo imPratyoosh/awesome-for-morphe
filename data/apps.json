@@ -1,6 +1,7 @@
 {
   "universal": {
-    "name": "Any app"
+    "name": "Any app",
+    "iconUrl": ""
   },
   "com.google.android.youtube": {
     "name": "YouTube",
