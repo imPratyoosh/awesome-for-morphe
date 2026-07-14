@@ -935,9 +935,9 @@ const app = createApp({
       popupUI.expandedOptions.clear();
       const newShow = appValue ? `${popupBundleKey.value}:${appValue}` : popupBundleKey.value;
       showOptions.value = [newShow];
-      if (isWhatsNewView.value) rawShowParam.value = newShow;
+      isWhatsNewView.value = false;
       try {
-        history.pushState(null, "", buildUrlString(location.hash));
+        history.pushState(null, "", buildUrlString(""));
       } catch (error) {}
       nextTick(() => {
         isSyncing = false;
