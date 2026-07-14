@@ -1,17 +1,30 @@
 <!-- Copyright (c) 2026 nvbangg (github.com/nvbangg) -->
 
 <!doctype html>
-<html lang="en" class="bg-black text-white antialiased" style="color-scheme: dark;">
+<html lang="en" class="antialiased" data-theme="amoled">
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>Awesome for Morphe Website</title>
   <meta name="description" content="Explore all supported apps and patches, automatically updated.">
   <link rel="canonical" href="https://nvbangg.github.io/awesome-for-morphe/">
-  <meta name="theme-color" content="#0C0C0D">
-  <meta name="color-scheme" content="only dark">
+  <meta name="theme-color" content="#000000" id="theme-color-meta">
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- FOUC prevention: apply saved theme before first paint -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('afm-theme') || 'amoled';
+        document.documentElement.setAttribute('data-theme', saved);
+      } catch (e) { }
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
   <link rel="stylesheet" href="assets/style.css">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -20,16 +33,29 @@
       theme: {
         extend: {
           colors: {
-            black: '#18181B',
-            dark: '#27272A',
-            gray: '#222222',
-            lightGray: '#3F3F46',
-            blue: '#3B82F6',
-            green: '#10B981',
-            yellow: '#EAB308',
-            orange: '#FC6D26',
-            light: '#bfbfbf',
-            white: '#FAFAFA',
+            black: 'rgb(var(--c-black) / <alpha-value>)',
+            dark: 'rgb(var(--c-dark) / <alpha-value>)',
+            gray: 'rgb(var(--c-gray) / <alpha-value>)',
+            lightGray: 'rgb(var(--c-lightGray) / <alpha-value>)',
+            light: 'rgb(var(--c-light) / <alpha-value>)',
+            white: 'rgb(var(--c-white) / <alpha-value>)',
+            blue: 'rgb(var(--c-blue) / <alpha-value>)',
+            green: 'rgb(var(--c-green) / <alpha-value>)',
+            yellow: 'rgb(var(--c-yellow) / <alpha-value>)',
+            orange: 'rgb(var(--c-orange) / <alpha-value>)',
+            
+            bg: 'rgb(var(--bg) / <alpha-value>)',
+            surface: 'rgb(var(--surface) / <alpha-value>)',
+            surfaceHover: 'rgb(var(--surface-hover) / <alpha-value>)',
+            border: 'rgb(var(--border) / <alpha-value>)',
+            textMain: 'rgb(var(--text-main) / <alpha-value>)',
+            textMuted: 'rgb(var(--text-muted) / <alpha-value>)',
+            primary: 'rgb(var(--primary) / <alpha-value>)',
+            primaryInvert: 'rgb(var(--primary-invert) / <alpha-value>)',
+          },
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
           }
         }
       }
@@ -37,9 +63,7 @@
   </script>
   <style type="text/tailwindcss">
     @layer base {
-      [v-cloak] {
-        display: none !important;
-      }
+      [v-cloak] { display: none !important; }
 
       input[type="search"]::-webkit-search-decoration,
       input[type="search"]::-webkit-search-cancel-button,
@@ -49,79 +73,175 @@
       }
     }
 
+    /* ---------- Theme Engine ---------- */
+    html[data-theme="amoled"] {
+      --bg: 0 0 0;
+      --surface: 10 10 11;
+      --surface-hover: 20 20 23;
+      --border: 34 34 34;
+      --text-main: 250 250 250;
+      --text-muted: 150 150 158;
+      --primary: 250 250 250;
+      --primary-invert: 0 0 0;
+      color-scheme: dark;
+    }
+
+    html[data-theme="dark"] {
+      --bg: 20 20 23;
+      --surface: 28 28 31;
+      --surface-hover: 36 36 40;
+      --border: 59 59 66;
+      --text-main: 245 245 245;
+      --text-muted: 163 163 171;
+      --primary: 245 245 245;
+      --primary-invert: 20 20 23;
+      color-scheme: dark;
+    }
+
+    html[data-theme="day"] {
+      --bg: 242 242 244;
+      --surface: 255 255 255;
+      --surface-hover: 235 235 238;
+      --border: 214 214 220;
+      --text-main: 24 24 27;
+      --text-muted: 108 108 117;
+      --primary: 24 24 27;
+      --primary-invert: 255 255 255;
+      color-scheme: light;
+    }
+
+    html[data-theme="catppuccin"] {
+      --bg: 30 30 46;
+      --surface: 24 24 37;
+      --surface-hover: 49 50 68;
+      --border: 49 50 68;
+      --text-main: 205 214 244;
+      --text-muted: 166 173 200;
+      --primary: 180 190 254;
+      --primary-invert: 24 24 37;
+      color-scheme: dark;
+    }
+
+    /* Generic Brand Colors */
+    html {
+      --c-black: 0 0 0;
+      --c-dark: 24 24 27;
+      --c-gray: 39 39 42;
+      --c-lightGray: 63 63 70;
+      --c-light: 161 161 170;
+      --c-white: 255 255 255;
+      --c-blue: 59 130 246;
+      --c-green: 16 185 129;
+      --c-yellow: 234 179 8;
+      --c-orange: 252 109 38;
+    }
+
+    /* ---------- Native app resets ---------- */
+    * {
+      -webkit-tap-highlight-color: transparent;
+      tap-highlight-color: transparent;
+    }
+
+    html, body {
+      -webkit-user-select: none;
+      user-select: none;
+    }
+
+    input, textarea, .select-text, .select-text * {
+      -webkit-user-select: text;
+      user-select: text;
+    }
+
+    button, a, [role="button"], .theme-card {
+      transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+
+    button:active:not(:disabled), a:active, .theme-card:active {
+      transform: scale(0.96);
+    }
+
+    .tap-shrink:active { transform: scale(0.98); }
+
+    /* ---------- Smooth Accordion ---------- */
+    .accordion-content {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+    }
+    .accordion-content.open {
+      max-height: 400px;
+      opacity: 1;
+    }
+
+    /* ---------- Custom scrollbars ---------- */
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: rgb(var(--border)) transparent;
+    }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: rgb(var(--border)); border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgb(var(--text-muted)); }
+    
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    /* ---------- CRT scanline background ---------- */
+    .crt-overlay {
+      background-image: repeating-linear-gradient(to bottom,
+          rgba(255, 255, 255, 0.045) 0px, rgba(255, 255, 255, 0.045) 1px,
+          transparent 1px, transparent 3px);
+      mix-blend-mode: overlay;
+      opacity: 0.55;
+    }
+    html[data-theme="day"] .crt-overlay {
+      background-image: repeating-linear-gradient(to bottom,
+          rgba(0, 0, 0, 0.035) 0px, rgba(0, 0, 0, 0.035) 1px,
+          transparent 1px, transparent 3px);
+      mix-blend-mode: multiply;
+      opacity: 0.4;
+    }
+
+    /* ---------- Ripple Effect & Nav ---------- */
+    .ripple-btn { position: relative; overflow: hidden; }
+    .ripple-element {
+      position: absolute; border-radius: 50%; background: currentColor; opacity: 0.2;
+      transform: scale(0); pointer-events: none; animation: rippleAnim 0.5s ease-out;
+    }
+    @keyframes rippleAnim { to { transform: scale(3.5); opacity: 0; } }
+
+    .nav-pill {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 2px; min-width: 56px; padding: 6px 8px; border-radius: 14px; cursor: pointer;
+    }
+    .nav-pill:active { transform: scale(0.93); }
+    .nav-pill-active { background: rgb(var(--primary) / 0.1); color: rgb(var(--primary)); }
+
+    code, .font-data { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+
+    @keyframes slideInLeft { from { opacity: 0.5; transform: translateX(16px); } to { opacity: 1; transform: translateX(0); } }
+    @keyframes slideInRight { from { opacity: 0.5; transform: translateX(-16px); } to { opacity: 1; transform: translateX(0); } }
+    @keyframes floatIn { from { opacity: 0; transform: scale(0.96) translateY(4px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+    .animate-float-in { animation: floatIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
     @layer utilities {
+      .swipe-transition-left { animation: slideInLeft 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+      .swipe-transition-right { animation: slideInRight 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
 
-      .swipe-transition-left {
-        animation: slideInLeft 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      .dd-panel { display: none; position: fixed; z-index: 9998; }
+      .dd-root.open .dd-panel { display: block; }
+      .dd-root.open .dd-chevron { transform: rotate(180deg); }
+
+      .pill-action {
+        @apply inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-border bg-surface text-textMuted text-xs font-medium whitespace-nowrap transition-all active:scale-95 cursor-pointer hover:border-textMuted hover:text-textMain shadow-sm;
       }
-
-      .swipe-transition-right {
-        animation: slideInRight 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      .version-pill {
+        @apply inline-flex items-center gap-1 px-2 py-1 rounded-md bg-border text-textMain text-[11px] font-mono transition-all active:scale-95 relative cursor-pointer select-text;
       }
-
-      .dd-panel {
-        display: none;
-        position: fixed;
-        z-index: 9998;
+      .patch-window {
+        @apply rounded-xl border border-dashed border-lightGray/60 bg-black/30 shadow-inner overflow-hidden;
       }
-
-      .dd-root.open .dd-panel {
-        display: block;
-      }
-
-      .dd-root.open .dd-chevron {
-        transform: rotate(180deg);
-      }
-    }
-
-    @keyframes slideInLeft {
-      from {
-        opacity: 0.5;
-        transform: translateX(16px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-
-    @keyframes slideInRight {
-      from {
-        opacity: 0.5;
-        transform: translateX(-16px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-
-    @keyframes float {
-      0% { transform: translate(0px, 0px) scale(1); }
-      33% { transform: translate(3vw, -4vh) scale(1.05); }
-      66% { transform: translate(-2vw, 3vh) scale(0.95); }
-      100% { transform: translate(0px, 0px) scale(1); }
-    }
-    .animate-float {
-      animation: float 40s ease-in-out infinite;
-    }
-    .animate-float-delayed {
-      animation: float 50s ease-in-out infinite;
-      animation-delay: -7s;
-    }
-
-    @keyframes floatIn {
-      from { opacity: 0; transform: scale(0.95); }
-      to { opacity: 1; transform: scale(1); }
-    }
-    .animate-float-in {
-      animation: floatIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    }
-
-    .sn { position: absolute; top: -5vh; width: 3px; height: 3px; background: white; border-radius: 50%; opacity: 0.5; animation: fall var(--d, 30s) linear infinite; }
-    @keyframes fall { to { transform: translateY(110vh); } }
-    @media (max-width: 639px) {
-      .sn { animation-duration: calc(var(--d, 30s) * 1.8); }
     }
   </style>
 
@@ -135,225 +255,219 @@
   }
   </script>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-80G574QRZ0"></script>
-  <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-80G574QRZ0');</script>
 </head>
 
-<body class="bg-black min-h-screen relative overflow-x-hidden">
+<body class="bg-bg text-textMain min-h-screen relative overflow-x-hidden font-sans">
 
-  <!-- Animated Geometric Background -->
-  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden opacity-50">
-    <div
-      class="absolute top-[10%] left-[5%] w-[40vw] h-[40vw] md:w-[20vw] md:h-[20vw] rounded-full border-[2px] border-blue/30 animate-float">
+  <!-- CRT scanline background -->
+  <div class="fixed inset-0 pointer-events-none z-0 crt-overlay"></div>
+
+  <!-- Side Menu Overlay & Drawer -->
+  <div id="side-menu-overlay" onclick="toggleSideMenu()" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[10001] hidden opacity-0 transition-opacity duration-300"></div>
+  
+  <aside id="side-menu" class="fixed top-0 left-0 bottom-0 w-80 max-w-[85vw] bg-surface border-r border-border z-[10002] transform -translate-x-full transition-transform duration-300 flex flex-col shadow-2xl">
+    <div class="flex items-center justify-between p-4 border-b border-border bg-surface">
+      <h2 class="font-bold text-lg text-textMain flex items-center gap-3">
+        <img src="assets/images/favicon.svg" class="w-6 h-6 object-contain"> Menu
+      </h2>
+      <button onclick="toggleSideMenu()" class="w-8 h-8 flex items-center justify-center rounded-xl bg-bg border border-border text-textMuted hover:text-textMain active:scale-90"><i class="fa-solid fa-xmark"></i></button>
     </div>
-    <div
-      class="absolute top-[60%] left-[-10%] w-[30vw] h-[30vw] md:w-[15vw] md:h-[15vw] rounded-full border-[2px] border-green/30 animate-float-delayed"
-      style="animation-duration: 25s;"></div>
-    <div
-      class="absolute top-[15%] right-[2%] w-[50vw] h-[50vw] md:w-[25vw] md:h-[25vw] rounded-full border-[2px] border-green/20 animate-float-delayed"
-      style="animation-delay: -15s;"></div>
-    <div
-      class="absolute bottom-[5%] right-[10%] w-[35vw] h-[35vw] md:w-[18vw] md:h-[18vw] rounded-full border-[2px] border-blue/20 animate-float"
-      style="animation-duration: 30s;"></div>
-    <div
-      class="absolute top-[-5%] left-[40%] w-[25vw] h-[25vw] md:w-[12vw] md:h-[12vw] rounded-full border-[2px] border-blue/30 animate-float"
-      style="animation-delay: -10s; animation-duration: 22s;"></div>
-    <div class="sn" style="left:2%; --d:22s; animation-delay:-3s;"></div>
-    <div class="sn" style="left:7%; --d:18s; animation-delay:-12s;"></div>
-    <div class="sn" style="left:12%; --d:25s; animation-delay:-7s;"></div>
-    <div class="sn" style="left:17%; --d:19s; animation-delay:-21s;"></div>
-    <div class="sn" style="left:22%; --d:24s; animation-delay:-14s;"></div>
-    <div class="sn" style="left:27%; --d:20s; animation-delay:-5s;"></div>
-    <div class="sn" style="left:32%; --d:23s; animation-delay:-18s;"></div>
-    <div class="sn" style="left:37%; --d:17s; animation-delay:-9s;"></div>
-    <div class="sn" style="left:42%; --d:26s; animation-delay:-2s;"></div>
-    <div class="sn" style="left:47%; --d:21s; animation-delay:-15s;"></div>
-    <div class="sn" style="left:52%; --d:19s; animation-delay:-8s;"></div>
-    <div class="sn" style="left:57%; --d:25s; animation-delay:-22s;"></div>
-    <div class="sn" style="left:62%; --d:18s; animation-delay:-11s;"></div>
-    <div class="sn" style="left:67%; --d:22s; animation-delay:-4s;"></div>
-    <div class="sn" style="left:72%; --d:24s; animation-delay:-19s;"></div>
-    <div class="sn" style="left:77%; --d:20s; animation-delay:-13s;"></div>
-    <div class="sn" style="left:82%; --d:23s; animation-delay:-6s;"></div>
-    <div class="sn" style="left:87%; --d:17s; animation-delay:-20s;"></div>
-    <div class="sn" style="left:92%; --d:26s; animation-delay:-10s;"></div>
-    <div class="sn" style="left:97%; --d:21s; animation-delay:-16s;"></div>
-  </div>
+    
+    <div class="p-4 overflow-y-auto custom-scrollbar flex-1 flex flex-col gap-4 bg-bg">
+      
+      <!-- Theme Section (Collapsible) -->
+      <div class="border border-border rounded-xl bg-surface overflow-hidden shadow-sm">
+         <button onclick="toggleThemesAccordion()" 
+           class="w-full flex items-center justify-between p-4 text-sm font-bold text-textMain hover:bg-surfaceHover transition-colors cursor-pointer outline-none">
+           <span class="flex items-center gap-2"><i class="fa-solid fa-palette text-textMuted"></i> Themes</span>
+           <i id="themes-chevron" class="fa-solid fa-chevron-down text-textMuted transition-transform duration-300 ease-in-out"></i>
+         </button>
+         
+         <!-- Smooth Accordion Content -->
+         <div id="themes-content" class="accordion-content">
+            <div class="p-4 pt-1 grid grid-cols-2 gap-3 border-t border-border">
+              <!-- Day -->
+              <div data-theme-name="day" onclick="setTheme('day')" class="theme-card flex flex-col gap-2 p-2.5 rounded-xl border border-border cursor-pointer transition-colors bg-[#f3f4f6]">
+                 <div class="h-8 rounded-lg bg-[#ffffff] border border-[#d1d5db] flex items-center px-2">
+                   <div class="w-3 h-3 rounded-full bg-[#3b82f6]"></div>
+                 </div>
+                 <span class="text-xs font-bold text-center text-[#111827]">Day</span>
+              </div>
+              <!-- Dark -->
+              <div data-theme-name="dark" onclick="setTheme('dark')" class="theme-card flex flex-col gap-2 p-2.5 rounded-xl border border-border cursor-pointer transition-colors bg-[#1c1c1f]">
+                 <div class="h-8 rounded-lg bg-[#2c2c30] border border-[#3b3b42] flex items-center px-2">
+                   <div class="w-3 h-3 rounded-full bg-[#60a5fa]"></div>
+                 </div>
+                 <span class="text-xs font-bold text-center text-[#e0e0e0]">Dark</span>
+              </div>
+              <!-- Monochrome (AMOLED) -->
+              <div data-theme-name="amoled" onclick="setTheme('amoled')" class="theme-card flex flex-col gap-2 p-2.5 rounded-xl border border-border cursor-pointer transition-colors bg-[#000000]">
+                 <div class="h-8 rounded-lg bg-[#0a0a0a] border border-[#222222] flex items-center px-2">
+                   <div class="w-3 h-3 rounded-full bg-[#ffffff]"></div>
+                 </div>
+                 <span class="text-xs font-bold text-center text-white">Monochrome</span>
+              </div>
+              <!-- Catppuccin -->
+              <div data-theme-name="catppuccin" onclick="setTheme('catppuccin')" class="theme-card flex flex-col gap-2 p-2.5 rounded-xl border border-border cursor-pointer transition-colors bg-[#1e1e2e]">
+                 <div class="h-8 rounded-lg bg-[#181825] border border-[#313244] flex items-center px-2">
+                   <div class="w-3 h-3 rounded-full bg-[#b4befe]"></div>
+                 </div>
+                 <span class="text-xs font-bold text-center text-[#cdd6f4]">Catppuccin</span>
+              </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- Links Section -->
+      <div class="border border-border rounded-xl bg-surface overflow-hidden shadow-sm mt-2">
+        <div class="w-full flex items-center justify-between p-4 text-sm font-bold text-textMain border-b border-border">
+          <span class="flex items-center gap-2"><i class="fa-solid fa-link text-textMuted"></i> External Links</span>
+        </div>
+        <div class="flex flex-col">
+          <a href="https://github.com/nvbangg/awesome-for-morphe" target="_blank" rel="noreferrer" class="flex items-center gap-3 p-4 text-sm font-medium text-textMuted hover:text-textMain hover:bg-surfaceHover transition-colors border-b border-border">
+            <i class="fa-brands fa-github text-lg"></i> GitHub Repository
+          </a>
+          <a href="https://t.me/awesome_for_morphe" target="_blank" rel="noreferrer" class="flex items-center gap-3 p-4 text-sm font-medium text-textMuted hover:text-textMain hover:bg-surfaceHover transition-colors">
+            <i class="fa-brands fa-telegram text-lg"></i> Telegram (Updates)
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </aside>
 
   <div id="app" v-cloak>
     <section class="mt-1 md:mt-4 max-w-4xl mx-auto px-0 sm:px-3 flex flex-col gap-2 md:gap-4" aria-label="Main Content">
-      <div class="p-[1px] bg-gradient-to-r from-blue to-green rounded-2xl shadow-lg relative z-10 mt-0">
-        <div class="bg-gray rounded-[14px] overflow-hidden h-full">
-          <div
-            class="relative flex flex-col items-center justify-center border-b-2 border-blue/10 py-3 lg:py-0 lg:h-12 gap-3 px-3">
-            <h1
-              class="text-2xl lg:text-3xl font-extrabold flex items-center justify-center gap-2 lg:gap-3 text-transparent bg-clip-text bg-gradient-to-r from-blue to-green relative order-1 lg:order-none">
-              <img src="assets/images/favicon.svg" alt="Logo" class="w-6 h-6 lg:w-8 lg:h-8 object-contain">
+      <div class="p-[1px] bg-border rounded-2xl shadow-lg relative z-10 mt-0">
+        <div class="bg-surface rounded-[14px] overflow-hidden h-full">
+
+          <!-- Header -->
+          <div class="grid grid-cols-[44px_1fr_44px] items-center gap-2 py-3 px-3">
+            <button type="button" onclick="toggleSideMenu()" title="Open Menu" aria-label="Open Menu"
+              class="h-[40px] w-[40px] rounded-xl border border-border bg-bg flex items-center justify-center text-textMain active:scale-90 transition-all hover:border-textMuted justify-self-start">
+              <i class="fa-solid fa-bars text-base"></i>
+            </button>
+            <h1 class="text-xl sm:text-2xl lg:text-3xl font-bold flex items-center justify-center gap-2 lg:gap-3 text-textMain text-center leading-tight">
+              <img src="assets/images/favicon.svg" alt="Logo" class="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 object-contain shrink-0">
               <span>Awesome for Morphe</span>
             </h1>
-
-            <div class="flex items-center justify-center gap-2 flex-wrap order-2 lg:order-none lg:contents">
-              <div class="flex items-center gap-2 lg:absolute lg:left-3 lg:top-1/2 lg:-translate-y-1/2">
-                <button v-if="isWhatsNewView" @click="closeWhatsNew" class="badge badge-md text-green">
-                  <i class="fa-solid fa-house icon-center"></i>
-                  <span>Back Home</span>
-                </button>
-                <a v-else href="#whats-new" class="badge badge-md text-yellow">
-                  <i class="fa-solid fa-clock-rotate-left icon-center"></i>
-                  <span>What's New</span>
-                </a>
-              </div>
-
-              <div class="flex items-center gap-2 lg:absolute lg:right-3 lg:top-1/2 lg:-translate-y-1/2">
-                <a href="https://github.com/nvbangg/awesome-for-morphe" target="_blank" rel="noreferrer"
-                  class="badge badge-md bg-black border-lightGray hover:border-white/50 text-white">
-                  <i class="fa-brands fa-github icon-center"></i>
-                  <span>GitHub</span>
-                </a>
-                <a href="https://t.me/awesome_for_morphe" target="_blank" rel="noreferrer"
-                  class="badge badge-md bg-blue border-white/40 hover:opacity-90 text-white">
-                  <i class="fa-brands fa-telegram icon-center"></i>
-                  <span>Telegram</span>
-                </a>
-              </div>
-            </div>
+            <div aria-hidden="true"></div>
           </div>
 
-          <div v-show="!isWhatsNewView" class="flex flex-col gap-2 p-2 md:p-3">
-            <!-- Row 1: Filters -->
-            <div class="flex flex-col md:flex-row gap-2.5">
-              <!-- Reset & Bundle Container -->
-              <div class="flex items-center gap-2 w-full md:w-1/2 min-w-0">
-                <button @click="resetFilters" class="badge badge-md shrink-0 h-[34px]">
-                  <i class="fa-solid fa-arrow-rotate-left"></i>
-                  <span>Reset Filters</span>
-                </button>
+          <div v-show="!isWhatsNewView" class="flex flex-col gap-3 p-3 border-t border-border">
+            
+            <!-- Row 1: Reset + Bundle dropdown + App dropdown -->
+            <div class="flex items-center gap-2 w-full">
+              <button @click="resetFilters" title="Reset Filters" aria-label="Reset Filters"
+                class="h-[38px] w-[38px] shrink-0 flex items-center justify-center rounded-lg border border-border bg-bg text-textMuted hover:border-textMuted hover:text-textMain transition-all active:scale-95 shadow-sm">
+                <i class="fa-solid fa-arrow-rotate-left text-sm"></i>
+              </button>
 
-                <!-- Bundle filter dropdown -->
-                <div class="relative flex-1 min-w-0 dd-root" id="bundle-dd">
-                  <button type="button" onclick="toggleDropdown('bundle-dd')"
-                    class="w-full h-[34px] px-2.5 sm:px-3 bg-black border border-lightGray rounded-md text-sm text-white flex items-center gap-2 sm:gap-3 hover:border-white/50 transition-all cursor-pointer"
-                    aria-label="Patch Bundles filter">
+              <div class="relative flex-1 min-w-0 dd-root" id="bundle-dd">
+                <button type="button" onclick="toggleDropdown('bundle-dd')"
+                  class="w-full h-[38px] px-3 bg-bg border border-border rounded-lg text-sm text-textMain flex items-center justify-between gap-2 hover:border-textMuted transition-all cursor-pointer shadow-sm active:scale-95">
+                  <div class="flex items-center gap-2 min-w-0">
                     <template v-if="bundle">
-                      <img v-if="getBundleIcon(bundle)" :src="getBundleIcon(bundle)"
-                        class="w-4 h-4 rounded-full object-cover shrink-0" alt="" loading="lazy">
-                      <i v-else class="fa-solid fa-cubes text-light text-base shrink-0 -ml-1 sm:ml-0 icon-center"></i>
+                      <img v-if="getBundleIcon(bundle)" :src="getBundleIcon(bundle)" class="w-4 h-4 rounded-md object-cover shrink-0" alt="" loading="lazy">
+                      <i v-else class="fa-solid fa-cubes text-textMuted text-sm shrink-0"></i>
                     </template>
-                    <i v-else class="fa-solid fa-cubes text-light text-base shrink-0 -ml-1 sm:ml-0 icon-center"></i>
-                    <span class="flex-1 truncate text-left">{{ bundle || 'All Bundles' }}</span>
-                    <i
-                      class="fa-solid fa-chevron-down dd-chevron text-light text-xs flex-shrink-0 transition-transform duration-200 -mr-0.5 sm:mr-0"></i>
-                  </button>
-                  <div
-                    class="dd-panel max-h-[400px] overflow-y-auto bg-dark border border-lightGray rounded-md shadow-xl py-1 divide-y divide-white/10">
-                    <div class="sticky top-0 bg-dark px-2 pb-2 pt-1 border-b border-lightGray/30 z-10">
-                      <div class="relative">
-                        <span class="absolute left-2 top-0 h-8 flex items-center text-light pointer-events-none">
-                          <i class="fa-solid fa-magnifying-glass text-[10px] icon-center"></i>
-                        </span>
-                        <input type="search" v-model="localBundleSearch" placeholder="Search bundles..."
-                          class="w-full h-8 pl-6 pr-2 bg-black border border-lightGray rounded-md text-xs text-white focus:border-light focus:ring-1 focus:ring-light/20 outline-none transition-all"
-                          autocomplete="off" @click.stop>
-                      </div>
+                    <i v-else class="fa-solid fa-cubes text-textMuted text-sm shrink-0"></i>
+                    <span class="truncate text-left font-medium">{{ bundle || 'All Bundles' }}</span>
+                  </div>
+                  <i class="fa-solid fa-chevron-down dd-chevron text-textMuted text-[10px] shrink-0 transition-transform"></i>
+                </button>
+                <div class="dd-panel max-h-[400px] overflow-y-auto bg-surface border border-border rounded-xl shadow-2xl py-1 divide-y divide-border/30 z-[60]">
+                  <div class="sticky top-0 bg-surface px-2 pb-2 pt-1 border-b border-border z-10">
+                    <div class="relative">
+                      <span class="absolute left-2 top-0 h-8 flex items-center text-textMuted pointer-events-none">
+                        <i class="fa-solid fa-magnifying-glass text-[10px] icon-center"></i>
+                      </span>
+                      <input type="search" v-model="localBundleSearch" placeholder="Search bundles..."
+                        class="select-text w-full h-8 pl-6 pr-2 bg-bg border border-border rounded-lg text-xs text-textMain focus:border-primary outline-none transition-all"
+                        autocomplete="off" @click.stop>
                     </div>
-                    <div :class="!bundle ? 'text-white bg-white/10 font-medium' : 'text-white hover:bg-white/5'"
-                      :data-selected="!bundle ? 'true' : null"
-                      @click="selectBundleFromDropdown(''); localBundleSearch = ''; $event.target.closest('.dd-root').classList.remove('open')"
-                      class="px-3 py-2 text-sm cursor-pointer transition-colors flex items-center gap-2">
-                      <i class="fa-solid fa-cubes text-light text-base w-4 shrink-0 text-center icon-center"></i>
-                      <span class="leading-tight flex-1">All Bundles</span>
-                    </div>
-                    <div v-for="optionItem in filteredBundleOptions" :key="optionItem.value"
-                      :class="bundle === optionItem.value ? 'text-white bg-white/10 font-medium' : 'text-white hover:bg-white/5'"
-                      :data-selected="bundle === optionItem.value ? 'true' : null"
-                      @click="selectBundleFromDropdown(optionItem.value); localBundleSearch = ''; $event.target.closest('.dd-root').classList.remove('open')"
-                      class="px-3 py-2 text-sm cursor-pointer transition-colors flex items-center gap-2">
-                      <img v-if="optionItem.icon" :src="optionItem.icon"
-                        class="w-4 h-4 rounded-full object-cover shrink-0" alt="" loading="lazy">
-                      <i v-else class="fa-solid fa-cubes text-light text-base w-4 shrink-0 text-center icon-center"></i>
-                      <span class="leading-tight flex-1">{{ optionItem.label }}</span>
-                    </div>
+                  </div>
+                  <div :class="!bundle ? 'text-primary bg-primary/10 font-bold' : 'text-textMuted hover:text-textMain hover:bg-surfaceHover'"
+                    :data-selected="!bundle ? 'true' : null"
+                    @click="selectBundleFromDropdown(''); localBundleSearch = ''; $event.target.closest('.dd-root').classList.remove('open')"
+                    class="px-3 py-2.5 text-sm cursor-pointer transition-colors flex items-center gap-2">
+                    <i class="fa-solid fa-cubes w-4 text-center"></i>
+                    <span class="leading-tight flex-1">All Bundles</span>
+                  </div>
+                  <div v-for="optionItem in filteredBundleOptions" :key="optionItem.value"
+                    :class="bundle === optionItem.value ? 'text-primary bg-primary/10 font-bold' : 'text-textMuted hover:text-textMain hover:bg-surfaceHover'"
+                    :data-selected="bundle === optionItem.value ? 'true' : null"
+                    @click="selectBundleFromDropdown(optionItem.value); localBundleSearch = ''; $event.target.closest('.dd-root').classList.remove('open')"
+                    class="px-3 py-2.5 text-sm cursor-pointer transition-colors flex items-center gap-2">
+                    <img v-if="optionItem.icon" :src="optionItem.icon" class="w-4 h-4 rounded-md object-cover shrink-0" alt="" loading="lazy">
+                    <i v-else class="fa-solid fa-cubes w-4 text-center"></i>
+                    <span class="leading-tight flex-1">{{ optionItem.label }}</span>
                   </div>
                 </div>
               </div>
 
-              <!-- App filter dropdown -->
-              <div class="relative w-full md:w-1/2 min-w-0 dd-root" id="app-dd">
+              <div class="relative flex-1 min-w-0 dd-root" id="app-dd">
                 <button type="button" onclick="toggleDropdown('app-dd')"
-                  class="w-full h-[34px] px-2.5 sm:px-3 bg-black border border-lightGray rounded-md text-sm text-white flex items-center gap-2 sm:gap-3 hover:border-white/50 transition-all cursor-pointer"
-                  aria-label="Apps filter">
-                  <template v-if="app">
-                    <img v-if="getAppIcon(app)" :src="getAppIcon(app)"
-                      class="w-4 h-4 rounded-sm object-contain shrink-0" alt="" loading="lazy">
-                    <i v-else class="fa-brands fa-android text-green text-base shrink-0 -ml-1 sm:ml-0 icon-center"></i>
-                  </template>
-                  <i v-else
-                    class="fa-solid fa-mobile-screen-button text-light text-base shrink-0 -ml-1 sm:ml-0 icon-center"></i>
-                  <span class="flex-1 truncate text-left">{{ getAppName(app) }}</span>
-                  <i
-                    class="fa-solid fa-chevron-down dd-chevron text-light text-xs flex-shrink-0 transition-transform duration-200 -mr-0.5 sm:mr-0"></i>
+                  class="w-full h-[38px] px-3 bg-bg border border-border rounded-lg text-sm text-textMain flex items-center justify-between gap-2 hover:border-textMuted transition-all cursor-pointer shadow-sm active:scale-95">
+                  <div class="flex items-center gap-2 min-w-0">
+                    <template v-if="app">
+                      <img v-if="getAppIcon(app)" :src="getAppIcon(app)" class="w-4 h-4 rounded-md object-contain shrink-0" alt="" loading="lazy">
+                      <i v-else class="fa-brands fa-android text-textMain text-sm shrink-0"></i>
+                    </template>
+                    <i v-else class="fa-solid fa-mobile-screen-button text-textMuted text-sm shrink-0"></i>
+                    <span class="truncate text-left font-medium">{{ getAppName(app) || 'All Apps' }}</span>
+                  </div>
+                  <i class="fa-solid fa-chevron-down dd-chevron text-textMuted text-[10px] shrink-0 transition-transform"></i>
                 </button>
-                <div
-                  class="dd-panel max-h-[400px] overflow-y-auto bg-dark border border-lightGray rounded-md shadow-xl py-1 divide-y divide-white/10">
-                  <div class="sticky top-0 bg-dark px-2 pb-2 pt-1 border-b border-lightGray/30 z-10">
+                <div class="dd-panel max-h-[400px] overflow-y-auto bg-surface border border-border rounded-xl shadow-2xl py-1 divide-y divide-border/30 z-[60]">
+                  <div class="sticky top-0 bg-surface px-2 pb-2 pt-1 border-b border-border z-10">
                     <div class="relative">
-                      <span class="absolute left-2 top-0 h-8 flex items-center text-light pointer-events-none">
+                      <span class="absolute left-2 top-0 h-8 flex items-center text-textMuted pointer-events-none">
                         <i class="fa-solid fa-magnifying-glass text-[10px] icon-center"></i>
                       </span>
                       <input type="search" v-model="localAppSearch" placeholder="Search apps..."
-                        class="w-full h-8 pl-6 pr-2 bg-black border border-lightGray rounded-md text-xs text-white focus:border-light focus:ring-1 focus:ring-light/20 outline-none transition-all"
+                        class="select-text w-full h-8 pl-6 pr-2 bg-bg border border-border rounded-lg text-xs text-textMain focus:border-primary outline-none transition-all"
                         autocomplete="off" @click.stop>
                     </div>
                   </div>
-                  <div :class="!app ? 'text-white bg-white/10 font-medium' : 'text-white hover:bg-white/5'"
+                  <div :class="!app ? 'text-primary bg-primary/10 font-bold' : 'text-textMuted hover:text-textMain hover:bg-surfaceHover'"
                     :data-selected="!app ? 'true' : null"
                     @click="app = ''; localAppSearch = ''; $event.target.closest('.dd-root').classList.remove('open')"
-                    class="px-3 py-2 text-sm cursor-pointer transition-colors flex items-center gap-2">
-                    <i
-                      class="fa-solid fa-mobile-screen-button text-light text-base w-4 shrink-0 text-center icon-center"></i>
+                    class="px-3 py-2.5 text-sm cursor-pointer transition-colors flex items-center gap-2">
+                    <i class="fa-solid fa-mobile-screen-button w-4 text-center"></i>
                     <span class="flex-1">All Apps</span>
                   </div>
                   <div v-for="optionItem in filteredAppOptions" :key="optionItem.value"
-                    :class="app === optionItem.value ? 'text-white bg-white/10 font-medium' : 'text-white hover:bg-white/5'"
+                    :class="app === optionItem.value ? 'text-primary bg-primary/10 font-bold' : 'text-textMuted hover:text-textMain hover:bg-surfaceHover'"
                     :data-selected="app === optionItem.value ? 'true' : null"
                     @click="app = optionItem.value; localAppSearch = ''; $event.target.closest('.dd-root').classList.remove('open')"
-                    class="px-3 py-2 text-sm cursor-pointer transition-colors flex items-center gap-2">
-                    <img v-if="optionItem.icon" :src="optionItem.icon"
-                      class="w-4 h-4 rounded-sm object-contain shrink-0" alt="" loading="lazy">
-                    <i v-else
-                      class="fa-brands fa-android text-green text-base w-4 shrink-0 text-center icon-center"></i>
+                    class="px-3 py-2.5 text-sm cursor-pointer transition-colors flex items-center gap-2">
+                    <img v-if="optionItem.icon" :src="optionItem.icon" class="w-4 h-4 rounded-md object-contain shrink-0" alt="" loading="lazy">
+                    <i v-else class="fa-brands fa-android text-textMain w-4 text-center"></i>
                     <span class="leading-tight flex-1">{{ optionItem.label }}</span>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- Row 2: Search Patches & Stats -->
-            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-y-2 gap-x-4 mt-0 md:mt-1">
-              <!-- Search Patches -->
-              <div class="w-full md:w-1/2 min-w-0">
-                <form @submit.prevent="$event.target.querySelector('input').blur()" class="relative w-full mt-0">
-                  <span class="absolute left-3 top-0 h-[34px] flex items-center text-light pointer-events-none">
-                    <i class="fa-solid fa-magnifying-glass text-xs icon-center"></i>
-                  </span>
-                  <input type="search" v-model="localQuery" autocomplete="off" enterkeyhint="search"
-                    placeholder="Search patches"
-                    class="w-full h-[34px] pl-8 pr-9 bg-black border border-lightGray hover:border-white/50 rounded-md focus:border-light focus:ring-2 focus:ring-light/20 outline-none transition-all text-sm text-white">
-                  <button v-if="localQuery" type="button" @click="localQuery = ''"
-                    class="absolute right-0 top-0 h-[34px] w-9 flex items-center justify-center text-light hover:text-white transition-colors"
-                    title="Clear search">
-                    <i class="fa-solid fa-circle-xmark icon-center"></i>
-                  </button>
-                </form>
-              </div>
+            <!-- Row 2: Search & Stats -->
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mt-1">
+              <form @submit.prevent="$event.target.querySelector('input').blur()" class="relative w-full md:w-1/2">
+                <span class="absolute left-3 top-0 h-[38px] flex items-center text-textMuted pointer-events-none">
+                  <i class="fa-solid fa-magnifying-glass text-xs"></i>
+                </span>
+                <input type="search" v-model="localQuery" autocomplete="off" enterkeyhint="search" placeholder="Search patches..."
+                  class="select-text w-full h-[38px] pl-9 pr-9 bg-bg border border-border hover:border-textMuted rounded-lg focus:border-primary outline-none transition-all text-sm font-medium text-textMain placeholder:text-textMuted placeholder:font-normal shadow-sm">
+                <button v-if="localQuery" type="button" @click="localQuery = ''" class="absolute right-0 top-0 h-[38px] w-10 flex items-center justify-center text-textMuted hover:text-textMain transition-colors">
+                  <i class="fa-solid fa-circle-xmark"></i>
+                </button>
+              </form>
 
-              <!-- Right Group -->
-              <div class="flex flex-wrap items-center justify-center md:justify-end gap-2 text-xs text-light shrink-0"
-                aria-live="polite">
-                <span class="badge"><i class="fa-solid fa-cubes"></i>{{ stats?.bundles || 0 }} bundles</span>
-                <span class="badge"><i class="fa-solid fa-mobile-screen"></i>{{ stats?.apps || 0 }} apps</span>
-                <span class="badge"><i class="fa-solid fa-puzzle-piece"></i>{{ stats?.patches || 0 }} patches</span>
+              <!-- Dynamic Text Colors for Stats -->
+              <div class="flex flex-wrap items-center justify-center md:justify-end gap-2 text-xs font-medium text-textMuted shrink-0">
+                <span class="badge-ui !bg-transparent border-transparent shadow-none"><i class="fa-solid fa-cubes text-textMain"></i>{{ stats?.bundles || 0 }} bundles</span>
+                <span class="badge-ui !bg-transparent border-transparent shadow-none"><i class="fa-solid fa-mobile-screen text-textMain"></i>{{ stats?.apps || 0 }} apps</span>
+                <span class="badge-ui !bg-transparent border-transparent shadow-none"><i class="fa-solid fa-puzzle-piece text-textMain"></i>{{ stats?.patches || 0 }} patches</span>
               </div>
             </div>
           </div>
@@ -361,56 +475,51 @@
       </div>
     </section>
 
-    <main class="max-w-4xl mx-auto px-0 sm:px-3 py-4 pb-16">
-      <div v-if="isWhatsNewView" class="text-white">
+    <main class="max-w-4xl mx-auto px-0 sm:px-3 py-4 pb-28">
+      <div v-if="isWhatsNewView" class="text-textMain">
         <div class="text-center mb-3">
-          <h2 class="text-3xl font-bold mb-1">What's New</h2>
-          <p class="text-light text-sm">Recently added bundles, apps &amp; patches</p>
+          <h2 class="text-3xl font-bold mb-1 text-textMain">What's New</h2>
+          <p class="text-textMuted text-sm">Recently added bundles, apps &amp; patches</p>
         </div>
 
-        <div v-if="isWhatsNewLoading" class="grid min-h-[220px] place-items-center text-light">Loading history...</div>
+        <div v-if="isWhatsNewLoading" class="grid min-h-[220px] place-items-center text-textMuted">Loading history...</div>
         <div v-else class="flex flex-col gap-4">
           <div v-for="day in whatsNewHistory" :key="day.date">
-            <div class="sticky top-0 bg-black z-10 py-2 mb-2 pl-2 md:pl-4">
+            <div class="sticky top-0 bg-bg z-10 py-2 mb-2 pl-2 md:pl-4">
               <div class="flex items-center gap-2">
-                <i class="fa-solid fa-calendar-days text-blue text-sm"></i>
-                <h3 class="text-base font-bold text-blue">{{ day.date }}</h3>
+                <i class="fa-solid fa-calendar-days text-primary text-sm"></i>
+                <h3 class="text-base font-bold text-textMain font-mono">{{ day.date }}</h3>
               </div>
             </div>
 
             <div class="flex flex-col gap-2 pl-2 pr-2 sm:pr-0 md:pl-4">
               <div v-for="(bundleData, bundleKey) in day.bundles" :key="bundleKey"
-                class="bg-gray border border-lightGray rounded-lg p-2.5 md:p-3">
-                <div class="flex items-center gap-2 mb-2 cursor-pointer hover:opacity-80 transition-opacity w-fit"
+                class="bg-surface border border-border rounded-2xl p-2.5 md:p-3">
+                <div class="flex items-center gap-2 mb-2 cursor-pointer hover:opacity-80 transition-opacity w-fit tap-shrink"
                   @click="openBundlePopup(bundleKey, bundleData)">
-                  <i class="fa-solid fa-cubes text-light text-sm"></i>
-                  <h4 class="text-base font-bold text-white leading-snug">{{ bundleKey }}</h4>
-                  <span v-if="bundleData.isNew" class="badge badge-sm text-yellow">✨ New</span>
+                  <i class="fa-solid fa-cubes text-textMuted text-sm"></i>
+                  <h4 class="text-base font-bold text-textMain leading-snug">{{ bundleKey }}</h4>
+                  <span v-if="bundleData.isNew" class="badge badge-sm bg-primary text-primaryInvert border-transparent">✨ New</span>
                 </div>
 
-                <div class="ml-3 md:ml-5 flex flex-col gap-2 border-l-2 border-lightGray/30 pl-2.5 md:pl-3">
+                <div class="ml-3 md:ml-5 flex flex-col gap-2 border-l-2 border-border pl-2.5 md:pl-3">
                   <div v-for="(appData, packageName) in bundleData.apps" :key="packageName">
-                    <div
-                      class="flex items-center gap-1.5 mb-1.5 cursor-pointer hover:opacity-80 transition-opacity w-fit"
+                    <div class="flex items-center gap-1.5 mb-1.5 cursor-pointer hover:opacity-80 transition-opacity w-fit tap-shrink"
                       @click="openAppPopup(bundleKey, packageName, appData)">
                       <img v-if="getWhatsNewAppIcon(packageName)" :src="getWhatsNewAppIcon(packageName)"
-                        class="w-4 h-4 rounded-sm object-contain shrink-0" alt="" loading="lazy">
-                      <i v-else
-                        class="fa-brands fa-android text-green text-sm w-4 text-center icon-center shrink-0"></i>
-                      <h5 class="font-medium text-sm text-white leading-snug">{{ formatWhatsNewAppName(packageName) }}
-                      </h5>
-                      <span v-if="appData.isNew &amp;&amp; !bundleData.isNew" class="badge badge-sm text-yellow">✨
-                        New</span>
+                        class="w-4 h-4 rounded-md object-contain shrink-0" alt="" loading="lazy">
+                      <i v-else class="fa-brands fa-android text-textMain text-sm w-4 text-center icon-center shrink-0"></i>
+                      <h5 class="font-medium text-sm text-textMuted leading-snug">{{ formatWhatsNewAppName(packageName) }}</h5>
+                      <span v-if="appData.isNew &amp;&amp; !bundleData.isNew" class="badge badge-sm bg-primary text-primaryInvert border-transparent">✨ New</span>
                     </div>
 
-                    <div class="ml-2 md:ml-3 border-l-2 border-lightGray/30 pl-2 md:pl-3">
+                    <div class="ml-2 md:ml-3 border-l-2 border-border pl-2 md:pl-3">
                       <div class="flex flex-wrap gap-1.5">
                         <div v-for="patch in appData.patches" :key="patch"
-                          class="badge badge-sm border-lightGray hover:border-white/50 text-light cursor-pointer bg-dark shrink-0"
+                          class="badge badge-sm border-border hover:border-primary text-textMuted cursor-pointer bg-bg shrink-0"
                           @click="openPatchPopup(bundleKey, packageName, patch)">
                           {{ patch }}
-                          <span v-if="!appData.isNew &amp;&amp; !bundleData.isNew" class="badge badge-sm text-yellow">✨
-                            New</span>
+                          <span v-if="!appData.isNew &amp;&amp; !bundleData.isNew" class="badge badge-sm bg-primary text-primaryInvert border-transparent">✨ New</span>
                         </div>
                       </div>
                     </div>
@@ -423,288 +532,245 @@
       </div>
 
       <div v-show="!isWhatsNewView">
-        <div v-if="isLoading" class="grid min-h-[220px] place-items-center text-light">Loading data...
-        </div>
+        <div v-if="isLoading" class="grid min-h-[220px] place-items-center text-textMuted">Loading data...</div>
         <div v-else-if="errorMsg" class="grid min-h-[220px] place-items-center">
-          <div class="text-center p-8 bg-gray/40 border border-lightGray rounded-2xl shadow-sm mx-3 sm:mx-0">
-            <h2 class="text-lg font-bold mb-2">Could not load data</h2>
-            <p class="text-light">{{ errorMsg }}</p>
+          <div class="text-center p-8 bg-surface/40 border border-border rounded-2xl shadow-sm mx-3 sm:mx-0">
+            <h2 class="text-lg font-bold mb-2 text-textMain">Could not load data</h2>
+            <p class="text-textMuted">{{ errorMsg }}</p>
           </div>
         </div>
 
         <div v-else>
           <div v-if="!bundlesGroups.length" class="grid min-h-[220px] place-items-center">
-            <div
-              class="text-center p-8 bg-gray/40 border border-lightGray rounded-2xl max-w-lg w-auto sm:w-full mx-3 sm:mx-0 shadow-sm">
-              <h2 class="text-lg font-bold mb-2">No patch bundles found</h2>
-              <p class="text-light mb-4">Try changing the search or filters.</p>
+            <div class="text-center p-8 bg-surface/40 border border-border rounded-2xl max-w-lg w-auto sm:w-full mx-3 sm:mx-0 shadow-sm">
+              <h2 class="text-lg font-bold text-textMain mb-2">No patch bundles found</h2>
+              <p class="text-textMuted mb-4">Try changing the search or filters.</p>
               <button @click="resetFilters"
-                class="inline-flex items-center gap-2 px-4 py-2 bg-green hover:bg-green/80 text-white rounded-lg text-sm font-medium transition-colors shadow-lg shadow-green/30">
+                class="inline-flex items-center gap-2 px-4 py-2 bg-primary hover:opacity-90 text-primaryInvert rounded-lg text-sm font-medium transition-colors border border-transparent">
                 <i class="fa-solid fa-arrow-rotate-left text-xs"></i> Reset filters
               </button>
             </div>
           </div>
-          <div v-else class="flex flex-col gap-2">
+
+          <div v-else class="flex flex-col gap-3">
             <!-- Results Toolbar -->
             <div class="flex items-center justify-between px-1">
-              <div class="flex items-center gap-2">
-                <button @click="collapseAll" class="badge text-light">
-                  <i class="fa-solid fa-compress icon-center"></i>
-                  <span>Collapse all</span>
+              <div class="flex items-center gap-3">
+                <button @click="collapseAll" class="flex items-center gap-1.5 text-xs font-medium text-textMuted hover:text-textMain transition-colors">
+                  <i class="fa-solid fa-compress icon-center"></i><span>Collapse all</span>
                 </button>
-                <button @click="expandAll" class="badge text-light">
-                  <i class="fa-solid fa-expand icon-center"></i>
-                  <span>Expand all</span>
+                <button @click="expandAll" class="flex items-center gap-1.5 text-xs font-medium text-textMuted hover:text-textMain transition-colors">
+                  <i class="fa-solid fa-expand icon-center"></i><span>Expand all</span>
                 </button>
               </div>
 
-              <div class="flex items-center gap-2">
+              <div class="flex items-center gap-3">
                 <button v-show="bundlesGroups.length > 1" @click="toggleColumns"
-                  class="badge hidden md:inline-flex text-green shrink-0"
+                  class="hidden md:flex items-center gap-1.5 text-xs font-medium text-textMain hover:opacity-80 transition-opacity shrink-0"
                   :title="effectiveTwoColumns ? 'Switch to list view' : 'Switch to grid view'">
                   <i class="fa-solid icon-center" :class="effectiveTwoColumns ? 'fa-list' : 'fa-grip'"></i>
                   <span v-if="!effectiveTwoColumns">Grid view</span><span v-else>List view</span>
                 </button>
 
-                <!-- Sort Dropdown -->
-                <div class="relative w-[115px] shrink-0 flex items-center">
-                  <select v-model="sortOrder"
-                    class="w-full h-6 pl-7 pr-4 appearance-none bg-black border border-lightGray hover:border-white/50 rounded-full text-xs text-white font-semibold focus:border-light outline-none transition-all cursor-pointer">
-                    <option value="stars">Most Stars</option>
-                    <option value="latest">Latest</option>
-                    <option value="apps">Most Apps</option>
-                  </select>
-                  <i
-                    class="fa-solid fa-sort-amount-down absolute left-2 top-1/2 -translate-y-1/2 text-white text-[10px] pointer-events-none icon-center"></i>
-                  <i
-                    class="fa-solid fa-chevron-down absolute right-2 top-1/2 -translate-y-1/2 text-white text-[8px] pointer-events-none icon-center"></i>
+                <!-- Custom Sort Dropdown -->
+                <div class="relative shrink-0 dd-root" id="sort-dd">
+                  <button type="button" onclick="toggleDropdown('sort-dd')"
+                    class="h-7 pl-2.5 pr-2 flex items-center gap-1.5 bg-bg/40 border border-border hover:border-textMuted rounded-md text-xs text-textMain font-medium transition-all cursor-pointer">
+                    <i class="fa-solid fa-sort-amount-down text-textMuted text-[10px] icon-center"></i>
+                    <span>{{ sortOrder === 'stars' ? 'Most Stars' : (sortOrder === 'latest' ? 'Latest' : 'Most Apps') }}</span>
+                    <i class="fa-solid fa-chevron-down dd-chevron text-textMuted text-[8px] icon-center transition-transform duration-200"></i>
+                  </button>
+                  <div class="dd-panel min-w-[130px] bg-surface border border-border rounded-lg shadow-xl py-1 divide-y divide-border/30 z-[70]">
+                    <div @click="sortOrder = 'stars'; $event.target.closest('.dd-root').classList.remove('open')"
+                      :class="sortOrder === 'stars' ? 'text-primary bg-primary/10 font-bold' : 'text-textMuted hover:bg-surfaceHover'"
+                      class="px-3 py-2 text-xs cursor-pointer transition-colors">Most Stars</div>
+                    <div @click="sortOrder = 'latest'; $event.target.closest('.dd-root').classList.remove('open')"
+                      :class="sortOrder === 'latest' ? 'text-primary bg-primary/10 font-bold' : 'text-textMuted hover:bg-surfaceHover'"
+                      class="px-3 py-2 text-xs cursor-pointer transition-colors">Latest</div>
+                    <div @click="sortOrder = 'apps'; $event.target.closest('.dd-root').classList.remove('open')"
+                      :class="sortOrder === 'apps' ? 'text-primary bg-primary/10 font-bold' : 'text-textMuted hover:bg-surfaceHover'"
+                      class="px-3 py-2 text-xs cursor-pointer transition-colors">Most Apps</div>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <!-- Grid Container -->
+            <!-- Bundle Cards Grid -->
             <div class="grid gap-4 items-start" :class="effectiveTwoColumns ? 'md:grid-cols-2' : 'grid-cols-1'">
               <div v-for="group in bundlesGroups" :key="group.key"
-                class="bg-dark border-2 border-lightGray rounded-2xl overflow-hidden group/bundle shadow-sm flex flex-col">
-                <div @click="toggleBundle(group)" class="flex justify-between py-2 px-2 sm:px-3 cursor-pointer"
-                  :class="!effectiveTwoColumns ? 'gap-3 flex-col md:flex-row items-stretch md:items-center' : 'gap-2 flex-col items-stretch'">
+                class="bg-surface border border-border rounded-2xl overflow-hidden shadow-lg hover:border-textMuted/40 transition-colors flex flex-col">
+
+                <!-- Bundle Header -->
+                <div @click="toggleBundle(group)" class="flex justify-between bg-bg/30 py-3 px-3 sm:px-4 cursor-pointer tap-shrink"
+                  :class="!effectiveTwoColumns ? 'gap-3 flex-col md:flex-row items-stretch md:items-center' : 'gap-2.5 flex-col items-stretch'">
+
                   <div class="flex items-center gap-3 min-w-0 flex-1 w-full text-left"
                     :class="!effectiveTwoColumns ? 'justify-center md:justify-start md:w-auto' : 'justify-center'">
                     <img v-if="group.bundle.avatarUrl" :src="group.bundle.avatarUrl" alt="Avatar"
                       @click.stop="openPopupFast(group.key)" title="View this bundle"
-                      class="w-12 h-12 rounded-full bg-lightGray/20 object-cover shrink-0 sm:mt-0.5 cursor-pointer hover:opacity-80 transition-opacity">
+                      class="w-12 h-12 rounded-xl bg-bg object-cover border border-border shadow-md shrink-0 cursor-pointer hover:border-primary/60 transition-colors">
                     <div v-else @click.stop="openPopupFast(group.key)" title="View this bundle"
-                      class="w-12 h-12 rounded-full bg-lightGray/20 flex items-center justify-center shrink-0 sm:mt-0.5 cursor-pointer hover:bg-lightGray/35 transition-colors">
-                      <i class="fa-solid fa-cubes text-light text-xl icon-center"></i>
+                      class="w-12 h-12 rounded-xl bg-bg border border-border shadow-md flex items-center justify-center shrink-0 cursor-pointer hover:border-primary/60 transition-colors">
+                      <i class="fa-solid fa-cubes text-textMuted text-xl icon-center"></i>
                     </div>
-                    <div class="flex flex-col min-w-0 justify-center items-start gap-1 sm:gap-1.5 max-w-full">
-                      <!-- Title Row -->
+
+                    <div class="flex flex-col min-w-0 justify-center items-start gap-1 max-w-full">
                       <div class="flex flex-wrap items-center gap-2 min-w-0 w-full"
                         :class="!effectiveTwoColumns ? 'justify-center md:justify-start' : 'justify-center'">
                         <strong @click.stop="openPopupFast(group.key)" title="View this bundle"
-                          class="font-bold text-lg sm:text-xl text-transparent bg-clip-text bg-gradient-to-r from-blue to-green break-words leading-tight cursor-pointer hover:opacity-80 transition-all">{{
-                          group.key }}</strong>
+                          class="font-bold text-lg sm:text-xl text-textMain break-words leading-tight cursor-pointer hover:text-primary transition-opacity">{{ group.key }}</strong>
+                        <span v-if="group.bundle.stars !== undefined"
+                          class="inline-flex items-center gap-1 text-xs font-medium text-textMain bg-border px-2 py-0.5 rounded-full shrink-0">
+                          <i class="fa-solid fa-star text-yellow text-[10px]"></i>{{ group.bundle.stars }}</span>
                         <span v-if="hasHighlight(group.key) || isNewBundle(group)"
-                          class="badge badge-sm text-yellow shrink-0">✨ New</span>
-                        <span v-if="group.bundle.isPreRelease" class="badge badge-sm text-yellow shrink-0"><i
-                            class="fa-solid fa-flask"></i> Pre-release</span>
-                        <span v-if="group.bundle.stars !== undefined" class="badge badge-sm shrink-0">
-                          <i class="fa-solid fa-star text-yellow"></i>{{ group.bundle.stars }}</span>
+                          class="px-2 py-0.5 text-[10px] font-bold rounded-full bg-primary text-primaryInvert shrink-0">✨ New</span>
+                        <span v-if="group.bundle.isPreRelease"
+                          class="px-2 py-0.5 text-[10px] font-bold rounded-full border border-yellow/50 text-yellow shrink-0"><i class="fa-solid fa-flask"></i> Pre-release</span>
                       </div>
-                      <!-- Repo Row -->
-                      <a v-if="group.bundle.repo" :href="group.bundle.repoUrl" target="_blank" rel="noreferrer"
-                        @click.stop class="badge max-w-full">
-                        <i
-                          :class="group.bundle.source === 'github' ? 'fa-brands fa-github text-white' : group.bundle.source === 'gitlab' ? 'fa-brands fa-gitlab text-orange' : 'fa-solid fa-globe text-light'"></i>
+                      <a v-if="group.bundle.repo" :href="group.bundle.repoUrl" target="_blank" rel="noreferrer" @click.stop
+                        class="select-text text-xs font-medium text-textMuted hover:text-textMain transition-colors truncate flex items-center gap-1.5 max-w-full font-mono">
+                        <i :class="group.bundle.source === 'github' ? 'fa-brands fa-github text-textMain' : group.bundle.source === 'gitlab' ? 'fa-brands fa-gitlab text-orange' : 'fa-solid fa-globe text-textMuted'"></i>
                         <span class="truncate">{{ group.bundle.repo }}</span>
                       </a>
                     </div>
                   </div>
-                  <span class="flex flex-col shrink-0 w-full md:w-auto"
-                    :class="!effectiveTwoColumns ? 'gap-2 items-center md:items-end' : 'gap-1.5 items-center'">
-                    <span class="flex flex-row flex-wrap items-center gap-2 text-xs text-light w-full"
-                      :class="!effectiveTwoColumns ? 'justify-center md:justify-end' : 'justify-center'">
-                      <a v-if="group.bundle.deepLink" :href="group.bundle.deepLink" target="_blank" rel="noreferrer"
-                        @click.stop
-                        class="badge text-white bg-gradient-to-r from-blue to-green border-transparent hover:opacity-85 active:scale-95 cursor-pointer shrink-0 select-none">
-                        <i class="fa-solid fa-plus icon-center"></i>
-                        <span>Add to Morphe</span>
-                      </a>
-                      <a v-if="group.bundle.createdAt"
-                        :href="group.bundle.changelogUrl || (group.bundle.repoUrl ? group.bundle.repoUrl + '/releases' : '#')"
-                        target="_blank" rel="noreferrer" @click.stop class="badge" title="View changelog">
-                        <i class="fa-solid fa-clock-rotate-left text-yellow"></i>
-                        <span>{{ formatDate(group.bundle.createdAt) }}</span>
-                      </a>
-                      <button @click.stop="mainUI.toggleBundleView(group)" class="badge shrink-0 text-green select-none"
-                        :title="mainUI.bundleViews[group.key] ? 'Switch to grid view' : 'Switch to list view'">
-                        <i class="fa-solid icon-center"
-                          :class="mainUI.bundleViews[group.key] ? 'fa-grip' : 'fa-list'"></i>
-                        <span>{{ mainUI.bundleViews[group.key] ? 'Grid view' : 'List view' }}</span>
-                      </button>
-                    </span>
-                  </span>
+
+                  <div class="flex flex-wrap items-center gap-2 shrink-0 w-full md:w-auto text-xs font-medium"
+                    :class="!effectiveTwoColumns ? 'justify-center md:justify-end' : 'justify-center'">
+                    <a v-if="group.bundle.deepLink" :href="group.bundle.deepLink" target="_blank" rel="noreferrer" @click.stop
+                      class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-primaryInvert bg-primary shadow-md hover:opacity-90 active:scale-95 transition-all shrink-0 select-none">
+                      <i class="fa-solid fa-plus icon-center"></i><span>Add to Morphe</span>
+                    </a>
+                    <a v-if="group.bundle.createdAt"
+                      :href="group.bundle.changelogUrl || (group.bundle.repoUrl ? group.bundle.repoUrl + '/releases' : '#')"
+                      target="_blank" rel="noreferrer" @click.stop class="pill-action" title="View changelog">
+                      <i class="fa-solid fa-clock-rotate-left text-yellow"></i><span>{{ formatDate(group.bundle.createdAt) }}</span>
+                    </a>
+                    <button @click.stop="mainUI.toggleBundleView(group); group.appsList.forEach(a => mainUI.expandedOptions.delete('app_' + group.key + '_' + a.id))" class="pill-action"
+                      :title="mainUI.bundleViews[group.key] ? 'Switch to grid view' : 'Switch to list view'">
+                      <i class="fa-solid icon-center text-textMain" :class="mainUI.bundleViews[group.key] ? 'fa-grip' : 'fa-list'"></i>
+                      <span>{{ mainUI.bundleViews[group.key] ? 'Grid view' : 'List view' }}</span>
+                    </button>
+                  </div>
                 </div>
 
-                <div class="border-t-2 border-lightGray bg-dark shadow-inner flex flex-col">
+                <!-- Apps + Patches -->
+                <div class="border-t border-border bg-surface flex flex-col">
                   <template v-for="appsList in [group.appsList]">
-                    <div :ref="(el) => mainUI.setupOverflowObserver(el, group.key)"
-                      v-show="!mainUI.bundleViews[group.key]"
-                      class="flex content-start flex-wrap gap-1.5 py-1.5 px-3 border-b border-lightGray custom-scrollbar relative"
-                      :class="mainUI.expandedAppLists.has(group.key) ? '' : 'overflow-y-auto overflow-x-hidden max-h-[120px]'">
-                      <i v-show="mainUI.overflowingAppLists.has(group.key)"
-                        @click.stop="mainUI.toggleAppList(group.key)"
-                        class="fa-solid shrink-0 text-light cursor-pointer hover:text-white transition-colors flex items-center justify-center px-1"
-                        :class="mainUI.expandedAppLists.has(group.key) ? 'fa-chevron-up' : 'fa-chevron-down'"
-                        title="Toggle Apps"></i>
-                      <button v-for="appItem in appsList" :key="appItem.id" :id="'tab_' + group.key + '_' + appItem.id"
-                        @click.stop="mainUI.selectApp(group.key, appItem, appsList)" class="badge badge-md shrink-0"
-                        :class="mainUI.expandedOptions.has('app_' + group.key + '_' + appItem.id) ? 'text-blue' : 'text-light'">
-                        <img v-if="appItem.appIcon" :src="appItem.appIcon"
-                          class="w-4 h-4 rounded-sm object-contain shrink-0" :alt="appItem.appName" loading="lazy">
-                        <i v-else class="fa-brands fa-android text-green"></i>
-                        <span class="truncate">{{ appItem.appName }}</span>
-                        <span v-if="isAppHighlighted(group.key, appItem)" class="badge badge-sm text-yellow">✨
-                          New</span>
-                        <span v-if="appItem.isAppPreRelease && !group.bundle.isPreRelease"
-                          class="badge badge-sm text-yellow"><i class="fa-solid fa-flask"></i> Pre-release</span>
+
+                    <!-- App pill selector (Horizontal Scroll) -->
+                    <div v-show="!mainUI.bundleViews[group.key]" class="flex items-start justify-between py-3 px-3 sm:px-4 border-b border-border bg-bg/30">
+                      
+                      <!-- Scroll Container -->
+                      <div class="flex-1 min-w-0" :class="mainUI.expandedAppLists.has(group.key) ? '' : 'overflow-x-auto no-scrollbar pb-1'">
+                        <div class="flex gap-2" :class="mainUI.expandedAppLists.has(group.key) ? 'flex-wrap' : 'w-max flex-nowrap'">
+                          <button v-for="appItem in appsList" :key="appItem.id" :id="'tab_' + group.key + '_' + appItem.id"
+                            @click.stop="mainUI.selectApp(group.key, appItem, appsList)"
+                            class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border text-xs font-medium transition-all active:scale-95 shrink-0"
+                            :class="mainUI.expandedOptions.has('app_' + group.key + '_' + appItem.id) ? 'bg-primary border-primary text-primaryInvert shadow-md' : 'bg-surface border-border text-textMuted hover:border-textMuted hover:text-textMain'">
+                            <img v-if="appItem.appIcon" :src="appItem.appIcon" class="w-4 h-4 rounded-md object-contain shrink-0" :alt="appItem.appName" loading="lazy">
+                            <i v-else class="fa-brands fa-android text-textMain"></i>
+                            <span class="truncate">{{ appItem.appName }}</span>
+                            <span v-if="isAppHighlighted(group.key, appItem)" class="text-yellow text-[10px] font-bold">✨</span>
+                          </button>
+                        </div>
+                      </div>
+                      
+                      <!-- Expand Toggle Button -->
+                      <button v-if="appsList.length > 2" @click.stop="mainUI.expandedAppLists.has(group.key) ? mainUI.expandedAppLists.delete(group.key) : mainUI.expandedAppLists.add(group.key)"
+                        class="shrink-0 w-8 h-8 ml-2 flex items-center justify-center rounded-xl bg-surface border border-border text-textMuted hover:text-textMain hover:border-textMuted transition-colors active:scale-95 shadow-sm">
+                        <i class="fa-solid" :class="mainUI.expandedAppLists.has(group.key) ? 'fa-chevron-up' : 'fa-ellipsis'"></i>
                       </button>
                     </div>
 
                     <template v-for="appItem in appsList" :key="'content-'+appItem.id">
-                      <div v-if="mainUI.bundleViews[group.key]"
-                        @click.stop="mainUI.selectApp(group.key, appItem, appsList)"
-                        class="flex items-center gap-2 px-3 sm:px-4 py-2 border-b border-lightGray/50 cursor-pointer hover:bg-white/5 transition-colors"
-                        :class="mainUI.expandedOptions.has('app_' + group.key + '_' + appItem.id) ? 'bg-white/5' : ''">
-                        <img v-if="appItem.appIcon" :src="appItem.appIcon"
-                          class="w-5 h-5 rounded-sm object-contain shrink-0" :alt="appItem.appName" loading="lazy">
-                        <i v-else
-                          class="fa-brands fa-android text-green text-base shrink-0 icon-center -ml-1 sm:ml-0"></i>
-                        <span class="font-medium truncate"
-                          :class="mainUI.expandedOptions.has('app_' + group.key + '_' + appItem.id) ? 'text-blue' : 'text-light'">{{
-                          appItem.appName }}</span>
-                        <span v-if="isAppHighlighted(group.key, appItem)" class="badge badge-sm text-yellow shrink-0">✨
-                          New</span>
-                        <span v-if="appItem.isAppPreRelease && !group.bundle.isPreRelease"
-                          class="badge badge-sm text-yellow shrink-0"><i class="fa-solid fa-flask"></i>
-                          Pre-release</span>
-                        <i class="fa-solid ml-auto text-light transition-transform"
-                          :class="mainUI.expandedOptions.has('app_' + group.key + '_' + appItem.id) ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                      <!-- List view row -->
+                      <div v-if="mainUI.bundleViews[group.key]" @click.stop="mainUI.selectApp(group.key, appItem, appsList)"
+                        class="flex items-center gap-3 px-4 py-3 border-b border-border/50 cursor-pointer transition-colors"
+                        :class="mainUI.expandedOptions.has('app_' + group.key + '_' + appItem.id) ? 'bg-primary/10' : 'hover:bg-bg/50'">
+                        <img v-if="appItem.appIcon" :src="appItem.appIcon" class="w-5 h-5 rounded-md object-contain shrink-0" :alt="appItem.appName" loading="lazy">
+                        <i v-else class="fa-brands fa-android text-textMain text-base shrink-0 icon-center"></i>
+                        <span class="font-medium text-sm truncate" :class="mainUI.expandedOptions.has('app_' + group.key + '_' + appItem.id) ? 'text-textMain' : 'text-textMuted'">{{ appItem.appName }}</span>
+                        <span v-if="isAppHighlighted(group.key, appItem)" class="text-yellow text-xs shrink-0">✨ New</span>
+                        <span v-if="appItem.isAppPreRelease && !group.bundle.isPreRelease" class="text-yellow text-[10px] shrink-0"><i class="fa-solid fa-flask"></i> Pre-release</span>
+                        <i class="fa-solid fa-chevron-down ml-auto text-textMuted transition-transform shrink-0"
+                          :class="mainUI.expandedOptions.has('app_' + group.key + '_' + appItem.id) ? 'rotate-180 text-textMain' : ''"></i>
                       </div>
 
+                      <!-- Patches List Window -->
                       <div v-if="mainUI.expandedOptions.has('app_' + group.key + '_' + appItem.id)"
-                        @touchstart="mainUI.handleTouchStart"
-                        @touchend="mainUI.handleTouchEnd($event, group.key, appItem, appsList)"
-                        class="flex flex-col gap-2 shadow-inner pt-2 pb-3"
-                        :class="(mainUI.activeSwipeGroup === group.key && mainUI.swipeDirection ? 'swipe-transition-' + mainUI.swipeDirection : '') + (mainUI.bundleViews[group.key] ? ' border-b-2 border-lightGray/30' : '')">
-                        <div class="flex flex-wrap items-center gap-2 min-w-0 px-3 sm:px-4">
-                          <template v-if="appItem.packageName && appItem.packageName !== 'universal'">
-                            <button @click.stop="filterByApp(appItem.packageName)" class="badge shrink-0 select-none">
-                              <i class="fa-solid fa-filter"></i>
-                              <span>Filter this app</span>
-                            </button>
-                            <a :href="playUrl(appItem.packageName)" class="badge shrink-0" target="_blank" @click.stop
-                              title="Open on Play Store">
-                              <i class="fa-brands fa-google-play text-green"></i>
-                              <span>Google Play</span>
-                            </a>
-                            <button @click.stop="copyText(appItem.packageName, 'pkg_' + group.key + '_' + appItem.id)"
-                              class="badge text-light shrink-0 relative"
-                              :class="{ 'z-50': copiedStates['pkg_' + group.key + '_' + appItem.id] }"
-                              :title="appItem.packageName">
-                              <i class="fa-solid !my-0"
-                                :class="copiedStates['pkg_' + group.key + '_' + appItem.id] ? 'fa-check text-green' : 'fa-regular fa-copy'"></i>
-                              <span>Package name</span>
-                              <span v-if="copiedStates['pkg_' + group.key + '_' + appItem.id]"
-                                class="absolute top-full right-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-white bg-lightGray rounded shadow-lg whitespace-nowrap z-[60] pointer-events-none animate-float-in">
-                                {{ appItem.packageName }}
-                              </span>
-                            </button>
-                          </template>
-                        </div>
+                        @touchstart="mainUI.handleTouchStart" @touchend="mainUI.handleTouchEnd($event, group.key, appItem, appsList)"
+                        class="pb-3 px-3 sm:px-4"
+                        :class="(mainUI.activeSwipeGroup === group.key && mainUI.swipeDirection ? 'swipe-transition-' + mainUI.swipeDirection : '') + (mainUI.bundleViews[group.key] ? ' border-b border-border/30' : '')">
+                        <div class="patch-window mt-3">
+                          <div class="flex flex-wrap items-center gap-2 p-2.5 border-b border-dashed border-border/50 bg-surface/[0.02]">
+                            <template v-if="appItem.packageName && appItem.packageName !== 'universal'">
+                              <button @click.stop="filterByApp(appItem.packageName)" class="pill-action">
+                                <i class="fa-solid fa-filter"></i><span>Filter this app</span>
+                              </button>
+                              <a :href="playUrl(appItem.packageName)" target="_blank" @click.stop class="pill-action" title="Open on Play Store">
+                                <i class="fa-brands fa-google-play text-green"></i><span>Google Play</span>
+                              </a>
+                              <button @click.stop="copyText(appItem.packageName, 'pkg_' + group.key + '_' + appItem.id)"
+                                class="select-text pill-action relative"
+                                :class="{ 'z-50': copiedStates['pkg_' + group.key + '_' + appItem.id] }" :title="appItem.packageName">
+                                <i class="fa-solid" :class="copiedStates['pkg_' + group.key + '_' + appItem.id] ? 'fa-check text-green' : 'fa-regular fa-copy'"></i>
+                                <span class="font-mono">Package name</span>
+                                <span v-if="copiedStates['pkg_' + group.key + '_' + appItem.id]"
+                                  class="absolute top-full left-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-primaryInvert bg-primary rounded shadow-lg whitespace-nowrap z-[60] pointer-events-none animate-float-in font-mono">{{ appItem.packageName }}</span>
+                              </button>
+                            </template>
+                            <span v-else class="text-xs font-mono text-textMuted px-1">pkg: universal</span>
+                          </div>
 
-                        <div class="pl-6 pr-1 sm:px-4">
-                          <div class="flex flex-col gap-1.5 pr-1.5 sm:pr-0 py-0.5"
-                            :class="!mainUI.bundleViews[group.key] ? 'max-h-[45vh] overflow-y-auto' : ''">
-                            <div
-                              v-for="patchItem in group.patches.filter(patchElement => patchElement.apps.some(appElement => appElement.packageName === appItem.packageName))"
-                              :key="patchItem.id"
-                              @click="patchItem.options.length && mainUI.toggleOptions(patchItem.id)"
-                              class="bg-gray py-1 pl-2.5 pr-1 sm:px-2.5 rounded-xl border border-lightGray shadow-sm flex flex-col shrink-0"
-                              :class="{'cursor-pointer': patchItem.options.length}">
-                              <div class="flex flex-wrap items-center justify-end gap-x-1 gap-y-1 mb-0.5">
-                                <div class="flex items-center gap-2 flex-wrap min-w-0 mr-auto">
-                                  <strong class="font-bold text-white text-sm flex items-center gap-2">
-                                    {{ patchItem.patchName }}
-                                    <span
-                                      v-if="hasHighlight(group.key + ':' + appItem.packageName + ':' + patchItem.patchName)"
-                                      class="badge badge-sm text-yellow">✨ New</span>
-                                    <span
-                                      v-if="patchItem.isPatchPreRelease && !appItem.isAppPreRelease && !group.bundle.isPreRelease"
-                                      class="badge badge-sm text-yellow"><i class="fa-solid fa-flask"></i>
-                                      Pre-release</span>
-                                  </strong>
-                                  <span v-if="!patchItem.enabled" class="badge badge-sm text-yellow cursor-help"
-                                    title="off by default">off</span>
-                                  <button v-if="patchItem.options.length"
-                                    @click.stop="mainUI.toggleOptions(patchItem.id)"
-                                    class="text-light hover:text-white px-1 shrink-0"
-                                    :title="mainUI.expandedOptions.has(patchItem.id) ? 'Hide options' : 'Show options'">
-                                    <i class="fa-solid fa-chevron-down transition-transform"
-                                      :class="{'rotate-180': mainUI.expandedOptions.has(patchItem.id)}"></i>
+                          <div class="flex flex-col divide-y divide-border/20 p-1 bg-surface"
+                            :class="!mainUI.bundleViews[group.key] ? 'max-h-[42vh] overflow-y-auto custom-scrollbar' : ''">
+                            <div v-for="patchItem in group.patches.filter(patchElement => patchElement.apps.some(appElement => appElement.packageName === appItem.packageName))"
+                              :key="patchItem.id" @click="patchItem.options.length && mainUI.toggleOptions(patchItem.id)"
+                              class="px-2.5 py-2.5 flex flex-col transition-colors rounded-lg" :class="{'cursor-pointer hover:bg-bg/40': patchItem.options.length}">
+
+                              <div class="flex flex-wrap items-start justify-between gap-x-2 gap-y-1 mb-1">
+                                <div class="flex items-center gap-1.5 flex-wrap min-w-0">
+                                  <strong class="font-bold text-textMain text-sm">{{ patchItem.patchName }}</strong>
+                                  <span v-if="hasHighlight(group.key + ':' + appItem.packageName + ':' + patchItem.patchName)" class="text-yellow text-[10px] font-bold">✨ New</span>
+                                  <span v-if="patchItem.isPatchPreRelease && !appItem.isAppPreRelease && !group.bundle.isPreRelease" class="text-yellow text-[10px] font-bold"><i class="fa-solid fa-flask"></i> Pre-release</span>
+                                  <span v-if="!patchItem.enabled" class="text-[9px] font-bold border border-border text-textMuted px-1.5 py-0.5 rounded-md uppercase tracking-wide cursor-help" title="off by default">off</span>
+                                  <button v-if="patchItem.options.length" @click.stop="mainUI.toggleOptions(patchItem.id)" class="text-textMuted hover:text-textMain px-1 shrink-0" :title="mainUI.expandedOptions.has(patchItem.id) ? 'Hide options' : 'Show options'">
+                                    <i class="fa-solid fa-chevron-down text-[10px] transition-transform" :class="{'rotate-180': mainUI.expandedOptions.has(patchItem.id)}"></i>
                                   </button>
                                 </div>
-                                <template
-                                  v-for="appElement in patchItem.apps.filter(appElementent => (appElementent.packageName || appElementent.appName || 'any') === (appItem.packageName || appItem.appName || 'any'))"
-                                  :key="appElement.id">
-                                  <template v-if="appElement.versions && appElement.versions.length">
-                                    <template v-if="!mainUI.expandedVersions.has(appElement.id)">
-                                      <button
-                                        @click.stop="copyText(appElement.versions[0].version, 'ver_' + appElement.id + '_last')"
-                                        class="badge badge-sm text-green relative"
-                                        :class="{ 'z-50': copiedStates['ver_' + appElement.id + '_last'] }"
-                                        :title="appElement.versions[0].isExperimental ? 'Copy experimental version' : 'Copy app version'">
-                                        <span v-if="copiedStates['ver_' + appElement.id + '_last']"
-                                          class="absolute top-full right-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-white bg-lightGray rounded shadow-lg whitespace-nowrap z-[60] pointer-events-none animate-float-in">Copied!</span>
-                                        <i v-if="appElement.versions[0].isExperimental"
-                                          class="fa-solid fa-flask text-yellow"></i>
-                                        <span>{{ appElement.versions[0].version }}</span>
-                                      </button>
-                                      <button v-if="appElement.versions.length > 1"
-                                        @click.stop="mainUI.toggleVersions(appElement.id)"
-                                        class="badge badge-sm text-blue">
-                                        <span>+{{ appElement.versions.length - 1 }}</span>
-                                      </button>
+
+                                <div class="flex items-center gap-1 flex-wrap shrink-0">
+                                  <template v-for="appElement in patchItem.apps.filter(appElementent => (appElementent.packageName || appElementent.appName || 'any') === (appItem.packageName || appItem.appName || 'any'))" :key="appElement.id">
+                                    <template v-if="appElement.versions && appElement.versions.length">
+                                      <template v-if="!mainUI.expandedVersions.has(appElement.id)">
+                                        <button @click.stop="copyText(appElement.versions[0].version, 'ver_' + appElement.id + '_last')" class="version-pill hover:bg-border/60" :class="{ 'z-50': copiedStates['ver_' + appElement.id + '_last'] }" :title="appElement.versions[0].isExperimental ? 'Copy experimental version' : 'Copy app version'">
+                                          <span v-if="copiedStates['ver_' + appElement.id + '_last']" class="absolute top-full right-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-primaryInvert bg-primary rounded shadow-lg whitespace-nowrap z-[60] pointer-events-none animate-float-in font-sans">Copied!</span>
+                                          <i v-if="appElement.versions[0].isExperimental" class="fa-solid fa-flask text-yellow text-[9px]"></i>
+                                          <span>{{ appElement.versions[0].version }}</span>
+                                        </button>
+                                        <button v-if="appElement.versions.length > 1" @click.stop="mainUI.toggleVersions(appElement.id)" class="text-[10px] font-mono text-blue hover:text-textMain px-1">+{{ appElement.versions.length - 1 }}</button>
+                                      </template>
+                                      <template v-else>
+                                        <button v-for="versionItem in appElement.versions" :key="versionItem.version" @click.stop="copyText(versionItem.version, 'ver_' + appElement.id + '_' + versionItem.version)" class="version-pill hover:bg-border/60" :class="{ 'z-50': copiedStates['ver_' + appElement.id + '_' + versionItem.version] }" :title="versionItem.isExperimental ? 'Copy experimental version' : 'Copy app version'">
+                                          <span v-if="copiedStates['ver_' + appElement.id + '_' + versionItem.version]" class="absolute top-full right-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-primaryInvert bg-primary rounded shadow-lg whitespace-nowrap z-[60] pointer-events-none animate-float-in font-sans">Copied!</span>
+                                          <i v-if="versionItem.isExperimental" class="fa-solid fa-flask text-yellow text-[9px]"></i>
+                                          <span>{{ versionItem.version }}</span>
+                                        </button>
+                                        <button @click.stop="mainUI.toggleVersions(appElement.id)" class="text-[10px] font-mono text-blue hover:text-textMain px-1">Less</button>
+                                      </template>
                                     </template>
-                                    <template v-else>
-                                      <button v-for="versionItem in appElement.versions" :key="versionItem.version"
-                                        @click.stop="copyText(versionItem.version, 'ver_' + appElement.id + '_' + versionItem.version)"
-                                        class="badge badge-sm text-green relative"
-                                        :class="{ 'z-50': copiedStates['ver_' + appElement.id + '_' + versionItem.version] }"
-                                        :title="versionItem.isExperimental ? 'Copy experimental version' : 'Copy app version'">
-                                        <span v-if="copiedStates['ver_' + appElement.id + '_' + versionItem.version]"
-                                          class="absolute top-full right-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-white bg-lightGray rounded shadow-lg whitespace-nowrap z-[60] pointer-events-none animate-float-in">Copied!</span>
-                                        <i v-if="versionItem.isExperimental" class="fa-solid fa-flask text-yellow"></i>
-                                        <span>{{ versionItem.version }}</span>
-                                      </button>
-                                      <button @click.stop="mainUI.toggleVersions(appElement.id)"
-                                        class="badge badge-sm text-blue">
-                                        <span>Less</span>
-                                      </button>
-                                    </template>
+                                    <span v-else class="text-[11px] font-mono text-green px-1">Any version</span>
                                   </template>
-                                  <span v-else class="badge badge-sm text-green">Any version</span>
-                                </template>
+                                </div>
                               </div>
 
-                              <p class="text-xs text-light">{{ patchItem.description }}</p>
+                              <p class="text-xs text-textMuted leading-relaxed">{{ patchItem.description }}</p>
 
-                              <div v-if="mainUI.expandedOptions.has(patchItem.id)"
-                                class="mt-1.5 py-1 px-2 bg-lightGray border border-lightGray rounded flex flex-col gap-1 shadow-inner">
+                              <div v-if="mainUI.expandedOptions.has(patchItem.id)" class="mt-2 py-2 px-2.5 bg-bg border border-border/50 rounded-lg flex flex-col gap-2 shadow-inner">
                                 <div v-for="optionItem in patchItem.options" :key="optionItem.key">
-                                  <strong class="font-bold text-xs text-white block">{{ optionItem.title ||
-                                    optionItem.key }}</strong>
-                                  <p class="text-[10px] text-light">{{ optionItem.description }}</p>
+                                  <strong class="font-bold text-[11px] text-textMain block font-mono">{{ optionItem.title || optionItem.key }}</strong>
+                                  <p class="text-[10px] text-textMuted mt-0.5">{{ optionItem.description }}</p>
                                 </div>
                               </div>
                             </div>
@@ -721,316 +787,239 @@
       </div>
     </main>
 
-
+    <!-- Fast View Popup -->
     <div v-if="popupBundleKey"
       class="fixed inset-0 z-[10000] flex flex-col items-center justify-start sm:justify-center px-0 pt-2 pb-8 sm:px-4 sm:py-6 bg-black/80 backdrop-blur-sm transition-opacity"
       style="padding-top: max(0.5rem, env(safe-area-inset-top, 0.5rem))" @click.self="closePopup">
       <div class="w-full max-w-4xl px-0 sm:px-3 max-h-full flex flex-col gap-2 overflow-visible animate-float-in">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 w-full shrink-0 pt-2 px-2"
-          v-if="popupGroup" @click.self="closePopup">
-          <!-- Left Group: App Selector + Search Input -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 w-full shrink-0 pt-2 px-2" v-if="popupGroup" @click.self="closePopup">
           <div class="flex items-center gap-2 w-full sm:w-auto flex-1 min-w-0" @click.self="closePopup">
-            <!-- App selection dropdown (popup-app-dd) -->
+            <!-- Popup app selection dropdown -->
             <div class="relative shrink-0 w-[45%] sm:w-[180px] dd-root" id="popup-app-dd" @click.stop>
               <button type="button" onclick="toggleDropdown('popup-app-dd')"
-                class="w-full h-[34px] px-2.5 sm:px-3 bg-black border border-lightGray rounded-md text-sm text-[#bfbfbf] flex items-center justify-between gap-2 hover:border-white/50 transition-all cursor-pointer"
-                aria-label="Popup Apps filter">
+                class="w-full h-[34px] px-2.5 sm:px-3 bg-bg border border-border rounded-md text-sm text-textMuted flex items-center justify-between gap-2 hover:border-textMuted transition-all cursor-pointer">
                 <div class="flex items-center gap-1.5 min-w-0 flex-1">
                   <template v-if="showOptions.length > 1 || (showOptions.length === 1 && showOptions[0].includes('('))">
-                    <i class="fa-solid fa-list text-light text-sm shrink-0 icon-center"></i>
+                    <i class="fa-solid fa-list text-textMuted text-sm shrink-0 icon-center"></i>
                     <span class="truncate text-left flex-1 font-semibold">Custom</span>
                   </template>
                   <template v-else-if="showOptions.length === 1 && showOptions[0].includes(':')">
-                    <img v-if="getAppIcon(showOptions[0].split(':')[1])" :src="getAppIcon(showOptions[0].split(':')[1])"
-                      class="w-4 h-4 rounded-sm object-contain shrink-0" alt="" loading="lazy">
-                    <i v-else class="fa-brands fa-android text-green text-sm shrink-0 icon-center"></i>
-                    <span class="truncate text-left flex-1 font-semibold">{{ getAppName(showOptions[0].split(':')[1])
-                      }}</span>
+                    <img v-if="getAppIcon(showOptions[0].split(':')[1])" :src="getAppIcon(showOptions[0].split(':')[1])" class="w-4 h-4 rounded-md object-contain shrink-0" alt="" loading="lazy">
+                    <i v-else class="fa-brands fa-android text-textMain text-sm shrink-0 icon-center"></i>
+                    <span class="truncate text-left flex-1 font-semibold">{{ getAppName(showOptions[0].split(':')[1]) }}</span>
                   </template>
                   <template v-else>
-                    <i class="fa-solid fa-mobile-screen-button text-light text-sm shrink-0 icon-center"></i>
+                    <i class="fa-solid fa-mobile-screen-button text-textMuted text-sm shrink-0 icon-center"></i>
                     <span class="truncate text-left flex-1 font-semibold">All Apps</span>
                   </template>
                 </div>
-                <i
-                  class="fa-solid fa-chevron-down dd-chevron text-light text-xs shrink-0 transition-transform duration-200"></i>
+                <i class="fa-solid fa-chevron-down dd-chevron text-textMuted text-xs shrink-0 transition-transform duration-200"></i>
               </button>
-              <div
-                class="dd-panel w-max min-w-[200px] left-0 max-h-[300px] overflow-y-auto bg-dark border border-lightGray rounded-md shadow-xl py-1 divide-y divide-white/10 z-[70]">
-                <div class="sticky top-0 bg-dark px-2 pb-2 pt-1 border-b border-lightGray/30 z-10">
+              <div class="dd-panel w-max min-w-[200px] left-0 max-h-[300px] overflow-y-auto bg-surface border border-border rounded-md shadow-xl py-1 divide-y divide-border/30 z-[70]">
+                <div class="sticky top-0 bg-surface px-2 pb-2 pt-1 border-b border-border z-10">
                   <div class="relative">
-                    <span class="absolute left-2 top-0 h-8 flex items-center text-light pointer-events-none">
+                    <span class="absolute left-2 top-0 h-8 flex items-center text-textMuted pointer-events-none">
                       <i class="fa-solid fa-magnifying-glass text-[10px] icon-center"></i>
                     </span>
                     <input type="search" v-model="localPopupAppSearch" placeholder="Search apps..."
-                      class="w-full h-8 pl-6 pr-2 bg-black border border-lightGray rounded-md text-xs text-white focus:border-light focus:ring-1 focus:ring-light/20 outline-none transition-all"
+                      class="select-text w-full h-8 pl-6 pr-2 bg-bg border border-border rounded-md text-xs text-textMain focus:border-primary outline-none transition-all"
                       autocomplete="off" @click.stop>
                   </div>
                 </div>
-                <div
-                  :class="(!showOptions.length || (showOptions.length === 1 && !showOptions[0].includes(':') && !showOptions[0].includes('('))) ? 'text-white bg-white/10 font-medium' : 'text-white hover:bg-white/5'"
+                <div :class="(!showOptions.length || (showOptions.length === 1 && !showOptions[0].includes(':') && !showOptions[0].includes('('))) ? 'text-primary bg-primary/10 font-bold' : 'text-textMuted hover:text-textMain hover:bg-surfaceHover'"
                   @click="selectPopupAppFromDropdown(''); localPopupAppSearch = ''; $event.target.closest('.dd-root')?.classList?.remove('open')"
                   class="px-3 py-2 text-sm cursor-pointer transition-colors flex items-center gap-2">
-                  <i
-                    class="fa-solid fa-mobile-screen-button text-light text-base w-4 shrink-0 text-center icon-center"></i>
+                  <i class="fa-solid fa-mobile-screen-button text-textMuted text-base w-4 shrink-0 text-center icon-center"></i>
                   <span class="flex-1">All Apps</span>
                 </div>
                 <div v-for="optionItem in filteredPopupAllApps" :key="optionItem.value"
-                  :class="(showOptions.length === 1 && showOptions[0] === popupBundleKey + ':' + optionItem.value) ? 'text-white bg-white/10 font-medium' : 'text-white hover:bg-white/5'"
+                  :class="(showOptions.length === 1 && showOptions[0] === popupBundleKey + ':' + optionItem.value) ? 'text-primary bg-primary/10 font-bold' : 'text-textMuted hover:text-textMain hover:bg-surfaceHover'"
                   @click="selectPopupAppFromDropdown(optionItem.value); localPopupAppSearch = ''; $event.target.closest('.dd-root')?.classList?.remove('open')"
                   class="px-3 py-2 text-sm cursor-pointer transition-colors flex items-center gap-2">
-                  <img v-if="optionItem.icon" :src="optionItem.icon" class="w-4 h-4 rounded-sm object-contain shrink-0"
-                    alt="" loading="lazy">
-                  <i v-else class="fa-brands fa-android text-green text-base w-4 shrink-0 text-center icon-center"></i>
+                  <img v-if="optionItem.icon" :src="optionItem.icon" class="w-4 h-4 rounded-md object-contain shrink-0" alt="" loading="lazy">
+                  <i v-else class="fa-brands fa-android text-textMain text-base w-4 shrink-0 text-center icon-center"></i>
                   <span class="leading-tight flex-1 font-normal">{{ optionItem.label }}</span>
                 </div>
               </div>
             </div>
 
             <!-- Patch Search -->
-            <form @submit.prevent="$event.target.querySelector('input').blur()" @click.stop
-              class="relative flex-1 min-w-0 sm:w-[220px] sm:max-w-[220px]">
-              <span class="absolute left-3 top-0 h-[34px] flex items-center text-light pointer-events-none">
+            <form @submit.prevent="$event.target.querySelector('input').blur()" @click.stop class="relative flex-1 min-w-0 sm:w-[220px] sm:max-w-[220px]">
+              <span class="absolute left-3 top-0 h-[34px] flex items-center text-textMuted pointer-events-none">
                 <i class="fa-solid fa-magnifying-glass text-xs icon-center"></i>
               </span>
               <input type="search" v-model="localPopupSearchQuery" autocomplete="off" enterkeyhint="search"
                 placeholder="Search patches"
-                class="w-full h-[34px] pl-8 pr-9 bg-black border border-lightGray hover:border-white/50 rounded-md focus:border-light focus:ring-2 focus:ring-light/20 outline-none transition-all text-sm text-white">
+                class="select-text w-full h-[34px] pl-8 pr-9 bg-bg border border-border hover:border-textMuted rounded-md focus:border-primary outline-none transition-all text-sm text-textMain">
               <button v-if="localPopupSearchQuery" @click="localPopupSearchQuery = ''" type="button"
-                class="absolute right-0 top-0 h-[34px] w-9 flex items-center justify-center text-light hover:text-white transition-colors"
-                title="Clear search">
+                class="absolute right-0 top-0 h-[34px] w-9 flex items-center justify-center text-textMuted hover:text-textMain transition-colors" title="Clear search">
                 <i class="fa-solid fa-circle-xmark icon-center"></i>
               </button>
             </form>
           </div>
 
-          <!-- Right Group: Counts and Close button -->
           <div class="flex flex-wrap items-center justify-end gap-2 shrink-0" @click.self="closePopup">
-            <span class="badge text-light"><i class="fa-solid fa-mobile-screen"></i><span>{{
-                popupGroup?.appsList?.length || 0 }} apps</span></span>
-            <span class="badge text-light"><i class="fa-solid fa-puzzle-piece"></i><span>{{
-                popupGroup?.patches?.length || 0 }} patches</span></span>
-
-            <button @click="closePopup" class="badge text-yellow relative z-[60]">
-              <i class="fa-solid fa-xmark icon-center"></i>
-              <span>Close</span>
+            <span class="badge text-textMuted"><i class="fa-solid fa-mobile-screen text-textMain"></i><span>{{ popupGroup?.appsList?.length || 0 }} apps</span></span>
+            <span class="badge text-textMuted"><i class="fa-solid fa-puzzle-piece text-textMain"></i><span>{{ popupGroup?.patches?.length || 0 }} patches</span></span>
+            <button @click="closePopup" class="pill-action text-yellow hover:text-yellow hover:border-yellow/60 relative z-[60]">
+              <i class="fa-solid fa-xmark icon-center"></i><span>Close</span>
             </button>
           </div>
         </div>
 
-        <div v-if="popupGroup"
-          class="w-full border-2 border-lightGray rounded-2xl shadow-2xl bg-dark flex flex-col shrink min-h-0"
+        <div v-if="popupGroup" class="w-full border border-border rounded-2xl shadow-2xl bg-surface flex flex-col shrink min-h-0"
           :class="(popupGroup && (popupUI.expandedAppLists.has(popupGroup.key) || popupUI.bundleViews[popupGroup.key])) ? 'overflow-y-auto' : 'overflow-hidden'">
-          <div v-for="group in [popupGroup]" :key="group.key" class="bg-dark flex flex-col">
-            <div
-              class="flex justify-between gap-3 py-2 px-3 flex-col md:flex-row items-stretch md:items-center shrink-0 sticky top-0 z-10 bg-dark shadow-sm">
-              <div
-                class="flex items-center gap-3 min-w-0 flex-1 w-full text-left justify-center md:justify-start md:w-auto">
+          <div v-for="group in [popupGroup]" :key="group.key" class="bg-surface flex flex-col">
+            <div class="flex justify-between gap-3 py-3 px-3 sm:px-4 flex-col md:flex-row items-stretch md:items-center shrink-0 sticky top-0 z-10 bg-surface/95 backdrop-blur-sm shadow-sm border-b border-border">
+              <div class="flex items-center gap-3 min-w-0 flex-1 w-full text-left justify-center md:justify-start md:w-auto">
                 <img v-if="group.bundle.avatarUrl" :src="group.bundle.avatarUrl" alt="Avatar"
-                  class="w-12 h-12 rounded-full bg-lightGray/20 object-cover pointer-events-none select-none shrink-0 sm:mt-0.5">
-                <div v-else
-                  class="w-12 h-12 rounded-full bg-lightGray/20 flex items-center justify-center shrink-0 sm:mt-0.5">
-                  <i class="fa-solid fa-cubes text-light text-xl icon-center"></i>
+                  class="w-12 h-12 rounded-xl bg-bg object-cover border border-border shadow-md pointer-events-none select-none shrink-0">
+                <div v-else class="w-12 h-12 rounded-xl bg-bg border border-border shadow-md flex items-center justify-center shrink-0">
+                  <i class="fa-solid fa-cubes text-textMuted text-xl icon-center"></i>
                 </div>
-                <div class="flex flex-col min-w-0 justify-center items-start gap-1 sm:gap-1.5 max-w-full">
-
+                <div class="flex flex-col min-w-0 justify-center items-start gap-1 max-w-full">
                   <div class="flex flex-wrap items-center gap-2 min-w-0 w-full justify-center md:justify-start">
-                    <strong
-                      class="font-bold text-lg sm:text-xl text-transparent bg-clip-text bg-gradient-to-r from-blue to-green break-words leading-tight">{{
-                      group.key }}</strong>
-                    <span v-if="hasHighlight(group.key) || isNewBundle(group)" class="badge badge-sm text-yellow">✨
-                      New</span>
-                    <span v-if="group.bundle.isPreRelease" class="badge badge-sm text-yellow"><i
-                        class="fa-solid fa-flask"></i> Pre-release</span>
-                    <span v-if="group.bundle.stars !== undefined" class="badge badge-sm shrink-0">
-                      <i class="fa-solid fa-star text-yellow"></i>{{ group.bundle.stars }}</span>
+                    <strong class="font-bold text-lg sm:text-xl text-textMain break-words leading-tight">{{ group.key }}</strong>
+                    <span v-if="group.bundle.stars !== undefined"
+                      class="inline-flex items-center gap-1 text-xs font-medium text-textMain bg-border px-2 py-0.5 rounded-full shrink-0">
+                      <i class="fa-solid fa-star text-yellow text-[10px]"></i>{{ group.bundle.stars }}</span>
+                    <span v-if="hasHighlight(group.key) || isNewBundle(group)" class="px-2 py-0.5 text-[10px] font-bold rounded-full bg-primary text-primaryInvert shrink-0">✨ New</span>
+                    <span v-if="group.bundle.isPreRelease" class="px-2 py-0.5 text-[10px] font-bold rounded-full border border-yellow/50 text-yellow shrink-0"><i class="fa-solid fa-flask"></i> Pre-release</span>
                   </div>
-
                   <a v-if="group.bundle.repo" :href="group.bundle.repoUrl" target="_blank" rel="noreferrer" @click.stop
-                    class="badge max-w-full">
-                    <i
-                      :class="group.bundle.source === 'github' ? 'fa-brands fa-github text-white' : group.bundle.source === 'gitlab' ? 'fa-brands fa-gitlab text-orange' : 'fa-solid fa-globe text-light'"></i>
+                    class="select-text text-xs font-medium text-textMuted hover:text-textMain transition-colors truncate flex items-center gap-1.5 max-w-full font-mono">
+                    <i :class="group.bundle.source === 'github' ? 'fa-brands fa-github text-textMain' : group.bundle.source === 'gitlab' ? 'fa-brands fa-gitlab text-orange' : 'fa-solid fa-globe text-textMuted'"></i>
                     <span class="truncate">{{ group.bundle.repo }}</span>
                   </a>
                 </div>
               </div>
-              <span
-                class="flex flex-row flex-wrap items-center gap-2 text-xs text-light shrink-0 w-full md:w-auto justify-center md:justify-end">
-                <a v-if="group.bundle.deepLink" :href="group.bundle.deepLink" target="_blank" rel="noreferrer"
-                  @click.stop
-                  class="badge text-white bg-gradient-to-r from-blue to-green border-transparent hover:opacity-85 active:scale-95 cursor-pointer shrink-0 select-none">
-                  <i class="fa-solid fa-plus icon-center"></i>
-                  <span>Add to Morphe</span>
+              <div class="flex flex-row flex-wrap items-center gap-2 text-xs font-medium shrink-0 w-full md:w-auto justify-center md:justify-end">
+                <a v-if="group.bundle.deepLink" :href="group.bundle.deepLink" target="_blank" rel="noreferrer" @click.stop
+                  class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-primaryInvert bg-primary shadow-md hover:opacity-90 active:scale-95 transition-all shrink-0 select-none">
+                  <i class="fa-solid fa-plus icon-center"></i><span>Add to Morphe</span>
                 </a>
-                <a v-if="group.bundle.createdAt"
-                  :href="group.bundle.changelogUrl || (group.bundle.repoUrl ? group.bundle.repoUrl + '/releases' : '#')"
-                  target="_blank" rel="noreferrer" @click.stop class="badge" title="View changelog">
-                  <i class="fa-solid fa-clock-rotate-left text-yellow"></i>
-                  <span>{{ formatDate(group.bundle.createdAt) }}</span>
+                <a v-if="group.bundle.createdAt" :href="group.bundle.changelogUrl || (group.bundle.repoUrl ? group.bundle.repoUrl + '/releases' : '#')"
+                  target="_blank" rel="noreferrer" @click.stop class="pill-action" title="View changelog">
+                  <i class="fa-solid fa-clock-rotate-left text-yellow"></i><span>{{ formatDate(group.bundle.createdAt) }}</span>
                 </a>
-                <button @click.stop="popupUI.toggleBundleView(group)" class="badge shrink-0 text-green select-none"
+                <button @click.stop="popupUI.toggleBundleView(group)" class="pill-action"
                   :title="popupUI.bundleViews[group.key] ? 'Switch to grid view' : 'Switch to list view'">
-                  <i class="fa-solid icon-center" :class="popupUI.bundleViews[group.key] ? 'fa-grip' : 'fa-list'"></i>
+                  <i class="fa-solid icon-center text-green" :class="popupUI.bundleViews[group.key] ? 'fa-grip' : 'fa-list'"></i>
                   <span>{{ popupUI.bundleViews[group.key] ? 'Grid view' : 'List view' }}</span>
                 </button>
-              </span>
+              </div>
             </div>
 
-            <div class="border-t-2 border-lightGray bg-dark shadow-inner flex flex-col">
+            <div class="bg-bg flex flex-col">
               <template v-for="appsList in [group.appsList]">
-                <div :ref="(el) => popupUI.setupOverflowObserver(el, group.key)"
-                  v-show="!popupUI.bundleViews[group.key]"
-                  class="flex content-start flex-wrap gap-1.5 py-1.5 px-3 border-b border-lightGray shrink-0 custom-scrollbar relative"
-                  :class="popupUI.expandedAppLists.has(group.key) ? '' : 'overflow-y-auto overflow-x-hidden max-h-[120px]'">
-                  <i v-show="popupUI.overflowingAppLists.has(group.key)" @click.stop="popupUI.toggleAppList(group.key)"
-                    class="fa-solid shrink-0 text-light cursor-pointer hover:text-white transition-colors flex items-center justify-center px-1"
-                    :class="popupUI.expandedAppLists.has(group.key) ? 'fa-chevron-up' : 'fa-chevron-down'"
-                    title="Toggle Apps"></i>
-                  <button v-for="appItem in appsList" :key="appItem.id"
-                    :id="'tab_popup_' + group.key + '_' + appItem.id"
-                    @click.stop="popupUI.selectApp(group.key, appItem, appsList)" class="badge badge-md shrink-0"
-                    :class="popupUI.expandedOptions.has('popup_app_' + group.key + '_' + appItem.id) ? 'text-blue' : 'text-light'">
-                    <img v-if="appItem.appIcon" :src="appItem.appIcon"
-                      class="w-4 h-4 rounded-sm object-contain shrink-0" :alt="appItem.appName" loading="lazy">
-                    <i v-else class="fa-brands fa-android text-green"></i>
-                    <span class="truncate">{{ appItem.appName }}</span>
-                    <span v-if="isAppHighlighted(group.key, appItem)" class="badge badge-sm text-yellow">✨ New</span>
-                    <span v-if="appItem.isAppPreRelease && !group.bundle.isPreRelease"
-                      class="badge badge-sm text-yellow"><i class="fa-solid fa-flask"></i> Pre-release</span>
+                <div :ref="(el) => popupUI.setupOverflowObserver(el, group.key)" v-show="!popupUI.bundleViews[group.key]"
+                  class="flex items-start justify-between py-3 px-3 sm:px-4 border-b border-border shrink-0 bg-surface/30">
+                  
+                  <div class="flex-1 min-w-0" :class="popupUI.expandedAppLists.has(group.key) ? '' : 'overflow-x-auto no-scrollbar pb-1'">
+                    <div class="flex gap-2" :class="popupUI.expandedAppLists.has(group.key) ? 'flex-wrap' : 'w-max flex-nowrap'">
+                      <button v-for="appItem in appsList" :key="appItem.id" :id="'tab_popup_' + group.key + '_' + appItem.id"
+                        @click.stop="popupUI.selectApp(group.key, appItem, appsList)"
+                        class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border text-xs font-medium transition-all active:scale-95 shrink-0"
+                        :class="popupUI.expandedOptions.has('popup_app_' + group.key + '_' + appItem.id) ? 'bg-primary border-primary text-primaryInvert shadow-md' : 'bg-surface border-border text-textMuted hover:border-textMuted hover:text-textMain'">
+                        <img v-if="appItem.appIcon" :src="appItem.appIcon" class="w-4 h-4 rounded-md object-contain shrink-0" :alt="appItem.appName" loading="lazy">
+                        <i v-else class="fa-brands fa-android text-textMain"></i>
+                        <span class="truncate">{{ appItem.appName }}</span>
+                        <span v-if="isAppHighlighted(group.key, appItem)" class="text-yellow text-[10px] font-bold">✨</span>
+                      </button>
+                    </div>
+                  </div>
+                  
+                  <button v-if="appsList.length > 2" @click.stop="popupUI.expandedAppLists.has(group.key) ? popupUI.expandedAppLists.delete(group.key) : popupUI.expandedAppLists.add(group.key)"
+                    class="shrink-0 w-8 h-8 ml-2 flex items-center justify-center rounded-xl bg-surface border border-border text-textMuted hover:text-textMain hover:border-textMuted transition-colors active:scale-95 shadow-sm">
+                    <i class="fa-solid" :class="popupUI.expandedAppLists.has(group.key) ? 'fa-chevron-up' : 'fa-ellipsis'"></i>
                   </button>
                 </div>
 
                 <template v-for="appItem in appsList" :key="'content-'+appItem.id">
-                  <div v-if="popupUI.bundleViews[group.key]"
-                    @click.stop="popupUI.selectApp(group.key, appItem, appsList)"
-                    class="flex items-center gap-2 px-4 py-2 border-b border-lightGray/50 cursor-pointer hover:bg-white/5 transition-colors shrink-0"
-                    :class="popupUI.expandedOptions.has('popup_app_' + group.key + '_' + appItem.id) ? 'bg-white/5' : ''">
-                    <img v-if="appItem.appIcon" :src="appItem.appIcon"
-                      class="w-5 h-5 rounded-sm object-contain shrink-0" :alt="appItem.appName" loading="lazy">
-                    <i v-else class="fa-brands fa-android text-green text-base shrink-0 icon-center -ml-1 sm:ml-0"></i>
-                    <span class="font-medium truncate"
-                      :class="popupUI.expandedOptions.has('popup_app_' + group.key + '_' + appItem.id) ? 'text-blue' : 'text-light'">{{
-                      appItem.appName }}</span>
-                    <span v-if="isAppHighlighted(group.key, appItem)" class="badge badge-sm text-yellow shrink-0">✨
-                      New</span>
-                    <span v-if="appItem.isAppPreRelease && !group.bundle.isPreRelease"
-                      class="badge badge-sm text-yellow shrink-0"><i class="fa-solid fa-flask"></i> Pre-release</span>
-                    <i class="fa-solid ml-auto text-light transition-transform"
-                      :class="popupUI.expandedOptions.has('popup_app_' + group.key + '_' + appItem.id) ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                  <div v-if="popupUI.bundleViews[group.key]" @click.stop="popupUI.selectApp(group.key, appItem, appsList)"
+                    class="flex items-center gap-3 px-4 py-3 border-b border-border/50 cursor-pointer transition-colors shrink-0"
+                    :class="popupUI.expandedOptions.has('popup_app_' + group.key + '_' + appItem.id) ? 'bg-primary/10' : 'hover:bg-surface/50'">
+                    <img v-if="appItem.appIcon" :src="appItem.appIcon" class="w-5 h-5 rounded-md object-contain shrink-0" :alt="appItem.appName" loading="lazy">
+                    <i v-else class="fa-brands fa-android text-textMain text-base shrink-0 icon-center"></i>
+                    <span class="font-medium text-sm truncate" :class="popupUI.expandedOptions.has('popup_app_' + group.key + '_' + appItem.id) ? 'text-textMain' : 'text-textMuted'">{{ appItem.appName }}</span>
+                    <span v-if="isAppHighlighted(group.key, appItem)" class="text-yellow text-xs shrink-0">✨ New</span>
+                    <span v-if="appItem.isAppPreRelease && !group.bundle.isPreRelease" class="text-yellow text-[10px] shrink-0"><i class="fa-solid fa-flask"></i> Pre-release</span>
+                    <i class="fa-solid fa-chevron-down ml-auto text-textMuted transition-transform shrink-0"
+                      :class="popupUI.expandedOptions.has('popup_app_' + group.key + '_' + appItem.id) ? 'rotate-180 text-textMain' : ''"></i>
                   </div>
 
                   <div v-if="popupUI.expandedOptions.has('popup_app_' + group.key + '_' + appItem.id)"
-                    @touchstart="popupUI.handleTouchStart"
-                    @touchend="popupUI.handleTouchEnd($event, group.key, appItem, appsList)"
-                    class="flex flex-col gap-2 shadow-inner pt-2 pb-3"
-                    :class="(popupUI.activeSwipeGroup === group.key && popupUI.swipeDirection ? 'swipe-transition-' + popupUI.swipeDirection : '') + (popupUI.bundleViews[group.key] ? ' border-b-2 border-lightGray/30' : '')">
-                    <div class="flex flex-wrap items-center gap-2 min-w-0 px-4 shrink-0">
-                      <template v-if="appItem.packageName">
-                        <button @click.stop="filterByApp(appItem.packageName)" class="badge shrink-0 select-none">
-                          <i class="fa-solid fa-filter"></i>
-                          <span>Filter this app</span>
-                        </button>
-                        <a v-if="appItem.packageName !== 'universal'" :href="playUrl(appItem.packageName)"
-                          class="badge shrink-0" target="_blank" @click.stop title="Open on Play Store">
-                          <i class="fa-brands fa-google-play text-green"></i>
-                          <span>Google Play</span>
-                        </a>
-                        <button v-if="appItem.packageName !== 'universal'"
-                          @click.stop="copyText(appItem.packageName, 'pkg_' + group.key + '_' + appItem.id)"
-                          class="badge text-light shrink-0 relative"
-                          :class="{ 'z-50': copiedStates['pkg_' + group.key + '_' + appItem.id] }"
-                          :title="appItem.packageName">
-                          <i class="fa-solid !my-0"
-                            :class="copiedStates['pkg_' + group.key + '_' + appItem.id] ? 'fa-check text-green' : 'fa-regular fa-copy'"></i>
-                          <span>Package name</span>
-                          <span v-if="copiedStates['pkg_' + group.key + '_' + appItem.id]"
-                            class="absolute top-full right-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-white bg-lightGray rounded shadow-lg whitespace-nowrap z-[60] pointer-events-none animate-float-in">
-                            {{ appItem.packageName }}
-                          </span>
-                        </button>
-                      </template>
-                    </div>
+                    @touchstart="popupUI.handleTouchStart" @touchend="popupUI.handleTouchEnd($event, group.key, appItem, appsList)"
+                    class="pb-3 px-3 sm:px-4"
+                    :class="(popupUI.activeSwipeGroup === group.key && popupUI.swipeDirection ? 'swipe-transition-' + popupUI.swipeDirection : '') + (popupUI.bundleViews[group.key] ? ' border-b border-border/30' : '')">
+                    <div class="patch-window mt-3">
+                      <div class="flex flex-wrap items-center gap-2 p-2.5 border-b border-dashed border-border/50 bg-surface/[0.02]">
+                        <template v-if="appItem.packageName">
+                          <button @click.stop="filterByApp(appItem.packageName)" class="pill-action">
+                            <i class="fa-solid fa-filter"></i><span>Filter this app</span>
+                          </button>
+                          <a v-if="appItem.packageName !== 'universal'" :href="playUrl(appItem.packageName)" target="_blank" @click.stop class="pill-action" title="Open on Play Store">
+                            <i class="fa-brands fa-google-play text-green"></i><span>Google Play</span>
+                          </a>
+                          <button v-if="appItem.packageName !== 'universal'" @click.stop="copyText(appItem.packageName, 'pkg_' + group.key + '_' + appItem.id)"
+                            class="select-text pill-action relative"
+                            :class="{ 'z-50': copiedStates['pkg_' + group.key + '_' + appItem.id] }" :title="appItem.packageName">
+                            <i class="fa-solid" :class="copiedStates['pkg_' + group.key + '_' + appItem.id] ? 'fa-check text-green' : 'fa-regular fa-copy'"></i>
+                            <span class="font-mono">Package name</span>
+                            <span v-if="copiedStates['pkg_' + group.key + '_' + appItem.id]"
+                              class="absolute top-full left-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-primaryInvert bg-primary rounded shadow-lg whitespace-nowrap z-[60] pointer-events-none animate-float-in font-mono">{{ appItem.packageName }}</span>
+                          </button>
+                        </template>
+                      </div>
 
-                    <div class="px-4 flex flex-col">
-                      <div class="flex flex-col gap-1.5 pr-0 py-0.5"
-                        :class="!popupUI.bundleViews[group.key] ? 'h-[55vh] sm:h-[60vh] overflow-y-auto' : ''">
-                        <div
-                          v-for="patchItem in group.patches.filter(patchElement => patchElement.apps.some(appElement => appElement.packageName === appItem.packageName))"
+                      <div class="flex flex-col divide-y divide-border/20 p-1 bg-surface"
+                        :class="!popupUI.bundleViews[group.key] ? 'h-[55vh] sm:h-[60vh] overflow-y-auto custom-scrollbar' : ''">
+                        <div v-for="patchItem in group.patches.filter(patchElement => patchElement.apps.some(appElement => appElement.packageName === appItem.packageName))"
                           :key="patchItem.id" @click="patchItem.options.length && popupUI.toggleOptions(patchItem.id)"
-                          class="bg-gray py-1 pl-2.5 pr-1 sm:px-2.5 rounded-xl border border-lightGray shadow-sm flex flex-col shrink-0"
-                          :class="{'cursor-pointer': patchItem.options.length}">
-                          <div class="flex flex-wrap items-center justify-end gap-x-1 gap-y-1 mb-0.5">
-                            <div class="flex items-center gap-2 flex-wrap min-w-0 mr-auto">
-                              <strong class="font-bold text-white text-sm flex items-center gap-2">
-                                {{ patchItem.patchName }}
-                                <span
-                                  v-if="hasHighlight(group.key + ':' + appItem.packageName + ':' + patchItem.patchName)"
-                                  class="badge badge-sm text-yellow">✨ New</span>
-                                <span
-                                  v-if="patchItem.isPatchPreRelease && !appItem.isAppPreRelease && !group.bundle.isPreRelease"
-                                  class="badge badge-sm text-yellow"><i class="fa-solid fa-flask"></i>
-                                  Pre-release</span>
-                              </strong>
-                              <span v-if="!patchItem.enabled" class="badge badge-sm text-yellow cursor-help"
-                                title="off by default">off</span>
-                              <button v-if="patchItem.options.length" @click.stop="popupUI.toggleOptions(patchItem.id)"
-                                class="text-light hover:text-white px-1 shrink-0"
-                                :title="popupUI.expandedOptions.has(patchItem.id) ? 'Hide options' : 'Show options'">
-                                <i class="fa-solid fa-chevron-down transition-transform"
-                                  :class="{'rotate-180': popupUI.expandedOptions.has(patchItem.id)}"></i>
+                          class="px-2.5 py-2.5 flex flex-col transition-colors rounded-lg" :class="{'cursor-pointer hover:bg-bg/40': patchItem.options.length}">
+
+                          <div class="flex flex-wrap items-start justify-between gap-x-2 gap-y-1 mb-1">
+                            <div class="flex items-center gap-1.5 flex-wrap min-w-0">
+                              <strong class="font-bold text-textMain text-sm">{{ patchItem.patchName }}</strong>
+                              <span v-if="hasHighlight(group.key + ':' + appItem.packageName + ':' + patchItem.patchName)" class="text-yellow text-[10px] font-bold">✨ New</span>
+                              <span v-if="patchItem.isPatchPreRelease && !appItem.isAppPreRelease && !group.bundle.isPreRelease" class="text-yellow text-[10px] font-bold"><i class="fa-solid fa-flask"></i> Pre-release</span>
+                              <span v-if="!patchItem.enabled" class="text-[9px] font-bold border border-border text-textMuted px-1.5 py-0.5 rounded-md uppercase tracking-wide cursor-help" title="off by default">off</span>
+                              <button v-if="patchItem.options.length" @click.stop="popupUI.toggleOptions(patchItem.id)" class="text-textMuted hover:text-textMain px-1 shrink-0" :title="popupUI.expandedOptions.has(patchItem.id) ? 'Hide options' : 'Show options'">
+                                <i class="fa-solid fa-chevron-down text-[10px] transition-transform" :class="{'rotate-180': popupUI.expandedOptions.has(patchItem.id)}"></i>
                               </button>
                             </div>
-                            <template
-                              v-for="appElement in patchItem.apps.filter(appElementent => (appElementent.packageName || appElementent.appName || 'any') === (appItem.packageName || appItem.appName || 'any'))"
-                              :key="appElement.id">
-                              <template v-if="appElement.versions && appElement.versions.length">
-                                <template v-if="!popupUI.expandedVersions.has(appElement.id)">
-                                  <button
-                                    @click.stop="copyText(appElement.versions[0].version, 'ver_' + appElement.id + '_last')"
-                                    class="badge badge-sm text-green relative"
-                                    :class="{ 'z-50': copiedStates['ver_' + appElement.id + '_last'] }"
-                                    :title="appElement.versions[0].isExperimental ? 'Copy experimental version' : 'Copy app version'">
-                                    <span v-if="copiedStates['ver_' + appElement.id + '_last']"
-                                      class="absolute top-full right-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-white bg-lightGray rounded shadow-lg whitespace-nowrap z-[60] pointer-events-none animate-float-in">Copied!</span>
-                                    <i v-if="appElement.versions[0].isExperimental"
-                                      class="fa-solid fa-flask text-yellow"></i>
-                                    <span>{{ appElement.versions[0].version }}</span>
-                                  </button>
-                                  <button v-if="appElement.versions.length > 1"
-                                    @click.stop="popupUI.toggleVersions(appElement.id)"
-                                    class="badge badge-sm text-blue">
-                                    <span>+{{ appElement.versions.length - 1 }}</span>
-                                  </button>
+
+                            <div class="flex items-center gap-1 flex-wrap shrink-0">
+                              <template v-for="appElement in patchItem.apps.filter(appElementent => (appElementent.packageName || appElementent.appName || 'any') === (appItem.packageName || appItem.appName || 'any'))" :key="appElement.id">
+                                <template v-if="appElement.versions && appElement.versions.length">
+                                  <template v-if="!popupUI.expandedVersions.has(appElement.id)">
+                                    <button @click.stop="copyText(appElement.versions[0].version, 'ver_' + appElement.id + '_last')" class="version-pill hover:bg-border/60" :class="{ 'z-50': copiedStates['ver_' + appElement.id + '_last'] }" :title="appElement.versions[0].isExperimental ? 'Copy experimental version' : 'Copy app version'">
+                                      <span v-if="copiedStates['ver_' + appElement.id + '_last']" class="absolute top-full right-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-primaryInvert bg-primary rounded shadow-lg whitespace-nowrap z-[60] pointer-events-none animate-float-in font-sans">Copied!</span>
+                                      <i v-if="appElement.versions[0].isExperimental" class="fa-solid fa-flask text-yellow text-[9px]"></i>
+                                      <span>{{ appElement.versions[0].version }}</span>
+                                    </button>
+                                    <button v-if="appElement.versions.length > 1" @click.stop="popupUI.toggleVersions(appElement.id)" class="text-[10px] font-mono text-blue hover:text-textMain px-1">+{{ appElement.versions.length - 1 }}</button>
+                                  </template>
+                                  <template v-else>
+                                    <button v-for="versionItem in appElement.versions" :key="versionItem.version" @click.stop="copyText(versionItem.version, 'ver_' + appElement.id + '_' + versionItem.version)" class="version-pill hover:bg-border/60" :class="{ 'z-50': copiedStates['ver_' + appElement.id + '_' + versionItem.version] }" :title="versionItem.isExperimental ? 'Copy experimental version' : 'Copy app version'">
+                                      <span v-if="copiedStates['ver_' + appElement.id + '_' + versionItem.version]" class="absolute top-full right-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-primaryInvert bg-primary rounded shadow-lg whitespace-nowrap z-[60] pointer-events-none animate-float-in font-sans">Copied!</span>
+                                      <i v-if="versionItem.isExperimental" class="fa-solid fa-flask text-yellow text-[9px]"></i>
+                                      <span>{{ versionItem.version }}</span>
+                                    </button>
+                                    <button @click.stop="popupUI.toggleVersions(appElement.id)" class="text-[10px] font-mono text-blue hover:text-textMain px-1">Less</button>
+                                  </template>
                                 </template>
-                                <template v-else>
-                                  <button v-for="versionItem in appElement.versions" :key="versionItem.version"
-                                    @click.stop="copyText(versionItem.version, 'ver_' + appElement.id + '_' + versionItem.version)"
-                                    class="badge badge-sm text-green relative"
-                                    :class="{ 'z-50': copiedStates['ver_' + appElement.id + '_' + versionItem.version] }"
-                                    :title="versionItem.isExperimental ? 'Copy experimental version' : 'Copy app version'">
-                                    <span v-if="copiedStates['ver_' + appElement.id + '_' + versionItem.version]"
-                                      class="absolute top-full right-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-white bg-lightGray rounded shadow-lg whitespace-nowrap z-[60] pointer-events-none animate-float-in">Copied!</span>
-                                    <i v-if="versionItem.isExperimental" class="fa-solid fa-flask text-yellow"></i>
-                                    <span>{{ versionItem.version }}</span>
-                                  </button>
-                                  <button @click.stop="popupUI.toggleVersions(appElement.id)"
-                                    class="badge badge-sm text-blue">
-                                    <span>Less</span>
-                                  </button>
-                                </template>
+                                <span v-else class="text-[11px] font-mono text-green px-1">Any version</span>
                               </template>
-                              <span v-else class="badge badge-sm text-green">Any version</span>
-                            </template>
+                            </div>
                           </div>
 
-                          <p class="text-xs text-light">{{ patchItem.description }}</p>
+                          <p class="text-xs text-textMuted leading-relaxed">{{ patchItem.description }}</p>
 
-                          <div v-if="popupUI.expandedOptions.has(patchItem.id)"
-                            class="mt-1.5 py-1 px-2 bg-lightGray border border-lightGray rounded flex flex-col gap-1 shadow-inner">
+                          <div v-if="popupUI.expandedOptions.has(patchItem.id)" class="mt-2 py-2 px-2.5 bg-bg/40 border border-border/50 rounded-lg flex flex-col gap-2 shadow-inner">
                             <div v-for="optionItem in patchItem.options" :key="optionItem.key">
-                              <strong class="font-bold text-xs text-white block">{{ optionItem.title ||
-                                optionItem.key }}</strong>
-                              <p class="text-[10px] text-light">{{ optionItem.description }}</p>
+                              <strong class="font-bold text-[11px] text-textMain block font-mono">{{ optionItem.title || optionItem.key }}</strong>
+                              <p class="text-[10px] text-textMuted mt-0.5">{{ optionItem.description }}</p>
                             </div>
                           </div>
                         </div>
@@ -1045,14 +1034,36 @@
       </div>
     </div>
 
+    <!-- Floating bottom navigation -->
+    <nav aria-label="Primary"
+      class="fixed bottom-3 left-1/2 -translate-x-1/2 z-[9990] flex items-center gap-1 px-2 py-1.5 rounded-[22px] border border-border bg-surface/80 backdrop-blur-xl shadow-2xl">
+      <a href="#" @click.prevent="isWhatsNewView && closeWhatsNew()"
+        class="nav-pill" :class="!isWhatsNewView ? 'nav-pill-active' : 'text-textMuted transition-opacity active:opacity-70'">
+        <i class="fa-solid fa-layer-group text-base"></i>
+        <span class="text-[10px] font-bold">Patches</span>
+      </a>
+
+      <button v-if="isWhatsNewView" @click="closeWhatsNew" class="nav-pill nav-pill-active">
+        <i class="fa-solid fa-clock-rotate-left text-base"></i>
+        <span class="text-[10px] font-bold whitespace-nowrap">What's New</span>
+      </button>
+      <a v-else href="#whats-new" class="nav-pill text-textMuted transition-opacity active:opacity-70">
+        <i class="fa-solid fa-clock-rotate-left text-base"></i>
+        <span class="text-[10px] font-bold whitespace-nowrap">What's New</span>
+      </a>
+
+      <div class="w-[1px] h-6 bg-border mx-1"></div>
+      
+      <!-- Scroll to Top (Icon Only with Ripple) -->
+      <button onclick="window.scrollToTop(event)" class="ripple-btn flex flex-col items-center justify-center h-10 w-12 rounded-2xl text-textMuted active:scale-95 transition-transform" title="Scroll to Top">
+        <i class="fa-solid fa-arrow-up text-base pointer-events-none"></i>
+      </button>
+
+    </nav>
+
   </div>
   <script type="module" src="assets/main.js"></script>
-
-  <!-- Back to Top -->
-  <button id="back-to-top" aria-label="Back to Top"
-    class="fixed bottom-6 right-6 z-[9999] h-11 w-11 hidden items-center justify-center rounded-full bg-gradient-to-r from-blue to-green text-[#fafafa] shadow-lg shadow-green/40 hover:opacity-85 transition-all active:scale-95 border border-transparent">
-    <i class="fa-solid fa-arrow-up"></i>
-  </button>
+  
   <script>
     function closeAllDropdowns() {
       document.querySelectorAll('.dd-root').forEach(function (dropdownElement) {
@@ -1069,25 +1080,26 @@
         rootElement.classList.add('open');
         const panel = rootElement.querySelector('.dd-panel');
         const buttonRect = rootElement.querySelector('button').getBoundingClientRect();
+        
+        panel.style.position = 'fixed';
+        panel.style.margin = '0';
+        panel.style.top = (buttonRect.bottom + 6) + 'px';
+        panel.style.minWidth = buttonRect.width + 'px';
+        panel.style.maxWidth = 'calc(100vw - 20px)';
 
-        panel.style.top = '0px';
-        panel.style.left = '0px';
+        let panelWidth = panel.offsetWidth;
+        let leftPos = buttonRect.left;
+
+        if (leftPos + panelWidth > window.innerWidth - 10) {
+          leftPos = window.innerWidth - panelWidth - 10;
+        }
+        if (leftPos < 10) {
+          leftPos = 10;
+        }
+
+        panel.style.left = leftPos + 'px';
         panel.style.right = 'auto';
         panel.style.bottom = 'auto';
-
-        const offsetRect = panel.getBoundingClientRect();
-        const errorTop = offsetRect.top;
-        const errorLeft = offsetRect.left;
-
-        panel.style.top = (buttonRect.bottom + 4 - errorTop) + 'px';
-        panel.style.minWidth = buttonRect.width + 'px';
-
-        const panelWidth = panel.offsetWidth;
-        if (buttonRect.left + panelWidth > window.innerWidth - 10) {
-          panel.style.left = (buttonRect.right - panelWidth - errorLeft) + 'px';
-        } else {
-          panel.style.left = (buttonRect.left - errorLeft) + 'px';
-        }
 
         requestAnimationFrame(function () {
           const selectedItem = panel.querySelector('[data-selected]');
@@ -1102,20 +1114,100 @@
       }
     }
 
+    // Dropdown close listeners (Click & Scroll/Touch)
     document.addEventListener('click', function (event) {
       if (!event.target.closest('.dd-root')) {
         closeAllDropdowns();
       }
     });
 
-    const backToTopButton = document.getElementById('back-to-top');
-    window.addEventListener('scroll', function () {
-      backToTopButton.style.display = window.scrollY > 300 ? 'flex' : 'none';
+    window.addEventListener('scroll', function (event) {
+      if (event.target && event.target.closest && event.target.closest('.dd-panel')) {
+         return; 
+      }
       closeAllDropdowns();
-    });
+    }, true); 
 
-    backToTopButton.addEventListener('click', function () {
-      window.scrollTo(0, 0);
+    window.addEventListener('touchmove', function (event) {
+      if (event.target && event.target.closest && event.target.closest('.dd-panel')) {
+         return; 
+      }
+      closeAllDropdowns();
+    }, { passive: true });
+
+    // Ripple Effect Logic for Top Button
+    window.scrollToTop = function(e) {
+      const btn = e.currentTarget;
+      const ripple = document.createElement('span');
+      const rect = btn.getBoundingClientRect();
+      const size = Math.max(rect.width, rect.height);
+      
+      const x = e.clientX ? e.clientX - rect.left - size/2 : 0;
+      const y = e.clientY ? e.clientY - rect.top - size/2 : 0;
+      
+      ripple.style.width = ripple.style.height = size + 'px';
+      ripple.style.left = x + 'px';
+      ripple.style.top = y + 'px';
+      ripple.className = 'ripple-element';
+      
+      btn.appendChild(ripple);
+      setTimeout(() => ripple.remove(), 500);
+      
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // ---------- Side Menu & Theme Logic ----------
+    window.toggleThemesAccordion = function() {
+      const content = document.getElementById('themes-content');
+      const chevron = document.getElementById('themes-chevron');
+      chevron.classList.toggle('rotate-180');
+      content.classList.toggle('open');
+    }
+
+    window.toggleSideMenu = function() {
+      const menu = document.getElementById('side-menu');
+      const overlay = document.getElementById('side-menu-overlay');
+      const isOpen = !menu.classList.contains('-translate-x-full');
+      
+      if (isOpen) {
+        menu.classList.add('-translate-x-full');
+        overlay.classList.add('opacity-0');
+        setTimeout(() => {
+          if (menu.classList.contains('-translate-x-full')) {
+            overlay.classList.add('hidden');
+          }
+        }, 300);
+      } else {
+        overlay.classList.remove('hidden');
+        void overlay.offsetWidth; 
+        menu.classList.remove('-translate-x-full');
+        overlay.classList.remove('opacity-0');
+      }
+    }
+
+    window.setTheme = function(themeName) {
+       const html = document.documentElement;
+       const metaTag = document.getElementById('theme-color-meta');
+       const META_COLORS = { amoled: '#000000', dark: '#141417', day: '#f2f2f4', catppuccin: '#1e1e2e' };
+
+       html.setAttribute('data-theme', themeName);
+       try { localStorage.setItem('afm-theme', themeName); } catch (e) { }
+       if (metaTag) metaTag.setAttribute('content', META_COLORS[themeName] || '#000000');
+       
+       document.querySelectorAll('.theme-card').forEach(card => {
+         if (card.dataset.themeName === themeName) {
+            card.classList.add('ring-2', 'ring-primary', 'border-transparent');
+            card.classList.remove('border-border');
+         } else {
+            card.classList.remove('ring-2', 'ring-primary', 'border-transparent');
+            card.classList.add('border-border');
+         }
+       });
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+       const saved = localStorage.getItem('afm-theme') || 'amoled';
+       setTheme(saved);
     });
   </script>
 </body>
