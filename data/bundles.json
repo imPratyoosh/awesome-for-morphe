@@ -652,7 +652,7 @@
     "stars": 0,
     "firstSeen": "2026-07-14T19:19:17",
     "patches": "site/itsthejoker.json",
-    "createdAt": "2026-07-14T17:03:20",
+    "createdAt": "2026-07-14T19:23:12",
     "targetApps": [
       "com.rookery.courier"
     ],
@@ -1137,7 +1137,7 @@
     "stars": 5,
     "firstSeen": "2026-07-08T02:37:25",
     "patches": "site/pinterest-morphed.json",
-    "createdAt": "2026-07-14T17:38:33",
+    "createdAt": "2026-07-14T19:34:53",
     "targetApps": [
       "com.pinterest"
     ],
@@ -1216,15 +1216,14 @@
     "stars": 5,
     "firstSeen": "2026-07-14T05:29:43",
     "patches": "site/proxma.json",
-    "createdAt": "2026-07-13T12:50:54",
+    "createdAt": "2026-07-14T18:30:54",
     "targetApps": [
       "com.blueinklabs.investifystocks.free",
-      "com.daraz.android",
       "com.jazz.jazzworld",
       "com.zong.customercare",
       "cz.mroczis.netmonster"
     ],
-    "appCount": 5
+    "appCount": 4
   },
   "rabilrbl": {
     "source": "github",
@@ -1512,7 +1511,7 @@
     "stars": 1,
     "firstSeen": "2026-07-14T19:19:17",
     "patches": "site/seobject.json",
-    "createdAt": "2026-07-14T14:44:37",
+    "createdAt": "2026-07-14T20:34:40",
     "targetApps": [
       "com.google.android.apps.youtube.music"
     ],

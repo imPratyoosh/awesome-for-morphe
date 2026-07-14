@@ -7,15 +7,28 @@
         "packageName": "com.pinterest",
         "targets": [
           {
-            "version": "14.26.0",
-            "isExperimental": true
+            "version": "14.27.0"
+          },
+          {
+            "version": "14.26.0"
           },
           {
             "version": "14.25.0"
           },
           {
-            "version": "14.24.0",
-            "isExperimental": true
+            "version": "14.24.0"
+          },
+          {
+            "version": "14.23.0"
+          },
+          {
+            "version": "14.22.0"
+          },
+          {
+            "version": "14.21.0"
+          },
+          {
+            "version": "14.20.0"
           }
         ]
       }
@@ -29,15 +42,28 @@
         "packageName": "com.pinterest",
         "targets": [
           {
-            "version": "14.26.0",
-            "isExperimental": true
+            "version": "14.27.0"
+          },
+          {
+            "version": "14.26.0"
           },
           {
             "version": "14.25.0"
           },
           {
-            "version": "14.24.0",
-            "isExperimental": true
+            "version": "14.24.0"
+          },
+          {
+            "version": "14.23.0"
+          },
+          {
+            "version": "14.22.0"
+          },
+          {
+            "version": "14.21.0"
+          },
+          {
+            "version": "14.20.0"
           }
         ]
       }
@@ -51,15 +77,28 @@
         "packageName": "com.pinterest",
         "targets": [
           {
-            "version": "14.26.0",
-            "isExperimental": true
+            "version": "14.27.0"
+          },
+          {
+            "version": "14.26.0"
           },
           {
             "version": "14.25.0"
           },
           {
-            "version": "14.24.0",
-            "isExperimental": true
+            "version": "14.24.0"
+          },
+          {
+            "version": "14.23.0"
+          },
+          {
+            "version": "14.22.0"
+          },
+          {
+            "version": "14.21.0"
+          },
+          {
+            "version": "14.20.0"
           }
         ]
       }
@@ -73,15 +112,28 @@
         "packageName": "com.pinterest",
         "targets": [
           {
-            "version": "14.26.0",
-            "isExperimental": true
+            "version": "14.27.0"
+          },
+          {
+            "version": "14.26.0"
           },
           {
             "version": "14.25.0"
           },
           {
-            "version": "14.24.0",
-            "isExperimental": true
+            "version": "14.24.0"
+          },
+          {
+            "version": "14.23.0"
+          },
+          {
+            "version": "14.22.0"
+          },
+          {
+            "version": "14.21.0"
+          },
+          {
+            "version": "14.20.0"
           }
         ]
       }
@@ -95,15 +147,28 @@
         "packageName": "com.pinterest",
         "targets": [
           {
-            "version": "14.26.0",
-            "isExperimental": true
+            "version": "14.27.0"
+          },
+          {
+            "version": "14.26.0"
           },
           {
             "version": "14.25.0"
           },
           {
-            "version": "14.24.0",
-            "isExperimental": true
+            "version": "14.24.0"
+          },
+          {
+            "version": "14.23.0"
+          },
+          {
+            "version": "14.22.0"
+          },
+          {
+            "version": "14.21.0"
+          },
+          {
+            "version": "14.20.0"
           }
         ]
       }
@@ -117,15 +182,28 @@
         "packageName": "com.pinterest",
         "targets": [
           {
-            "version": "14.26.0",
-            "isExperimental": true
+            "version": "14.27.0"
+          },
+          {
+            "version": "14.26.0"
           },
           {
             "version": "14.25.0"
           },
           {
-            "version": "14.24.0",
-            "isExperimental": true
+            "version": "14.24.0"
+          },
+          {
+            "version": "14.23.0"
+          },
+          {
+            "version": "14.22.0"
+          },
+          {
+            "version": "14.21.0"
+          },
+          {
+            "version": "14.20.0"
           }
         ]
       }
@@ -139,15 +217,28 @@
         "packageName": "com.pinterest",
         "targets": [
           {
-            "version": "14.26.0",
-            "isExperimental": true
+            "version": "14.27.0"
+          },
+          {
+            "version": "14.26.0"
           },
           {
             "version": "14.25.0"
           },
           {
-            "version": "14.24.0",
-            "isExperimental": true
+            "version": "14.24.0"
+          },
+          {
+            "version": "14.23.0"
+          },
+          {
+            "version": "14.22.0"
+          },
+          {
+            "version": "14.21.0"
+          },
+          {
+            "version": "14.20.0"
           }
         ]
       }
@@ -161,15 +252,28 @@
         "packageName": "com.pinterest",
         "targets": [
           {
-            "version": "14.26.0",
-            "isExperimental": true
+            "version": "14.27.0"
+          },
+          {
+            "version": "14.26.0"
           },
           {
             "version": "14.25.0"
           },
           {
-            "version": "14.24.0",
-            "isExperimental": true
+            "version": "14.24.0"
+          },
+          {
+            "version": "14.23.0"
+          },
+          {
+            "version": "14.22.0"
+          },
+          {
+            "version": "14.21.0"
+          },
+          {
+            "version": "14.20.0"
           }
         ]
       }
@@ -183,15 +287,28 @@
         "packageName": "com.pinterest",
         "targets": [
           {
-            "version": "14.26.0",
-            "isExperimental": true
+            "version": "14.27.0"
+          },
+          {
+            "version": "14.26.0"
           },
           {
             "version": "14.25.0"
           },
           {
-            "version": "14.24.0",
-            "isExperimental": true
+            "version": "14.24.0"
+          },
+          {
+            "version": "14.23.0"
+          },
+          {
+            "version": "14.22.0"
+          },
+          {
+            "version": "14.21.0"
+          },
+          {
+            "version": "14.20.0"
           }
         ]
       }
@@ -205,15 +322,28 @@
         "packageName": "com.pinterest",
         "targets": [
           {
-            "version": "14.26.0",
-            "isExperimental": true
+            "version": "14.27.0"
+          },
+          {
+            "version": "14.26.0"
           },
           {
             "version": "14.25.0"
           },
           {
-            "version": "14.24.0",
-            "isExperimental": true
+            "version": "14.24.0"
+          },
+          {
+            "version": "14.23.0"
+          },
+          {
+            "version": "14.22.0"
+          },
+          {
+            "version": "14.21.0"
+          },
+          {
+            "version": "14.20.0"
           }
         ]
       }
@@ -227,15 +357,28 @@
         "packageName": "com.pinterest",
         "targets": [
           {
-            "version": "14.26.0",
-            "isExperimental": true
+            "version": "14.27.0"
+          },
+          {
+            "version": "14.26.0"
           },
           {
             "version": "14.25.0"
           },
           {
-            "version": "14.24.0",
-            "isExperimental": true
+            "version": "14.24.0"
+          },
+          {
+            "version": "14.23.0"
+          },
+          {
+            "version": "14.22.0"
+          },
+          {
+            "version": "14.21.0"
+          },
+          {
+            "version": "14.20.0"
           }
         ]
       }
@@ -249,15 +392,28 @@
         "packageName": "com.pinterest",
         "targets": [
           {
-            "version": "14.26.0",
-            "isExperimental": true
+            "version": "14.27.0"
+          },
+          {
+            "version": "14.26.0"
           },
           {
             "version": "14.25.0"
           },
           {
-            "version": "14.24.0",
-            "isExperimental": true
+            "version": "14.24.0"
+          },
+          {
+            "version": "14.23.0"
+          },
+          {
+            "version": "14.22.0"
+          },
+          {
+            "version": "14.21.0"
+          },
+          {
+            "version": "14.20.0"
           }
         ]
       }

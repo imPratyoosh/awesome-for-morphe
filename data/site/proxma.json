@@ -56,20 +56,6 @@
     ]
   },
   {
-    "name": "Remove analytics & tracking (WIP)",
-    "description": "⚠️ WORK IN PROGRESS — not yet fully verified on-device; use at your own risk. No-ops the analytics/ad/fingerprint egress in Daraz — Alibaba UserTrack clickstream, AUDID/UTDID fingerprint upload, Behavix behavior collection, Meta/Facebook App Events + GAID, Firebase Analytics, Zalo device-tracking, Motu crash/APM, and the UCWeb webview telemetry uploaders — plus manifest auto-collection flags. Login, push (ACCS/FCM), eKYC and the app's own commerce API are left intact. Known gaps: Firebase Analytics runs inside Google Play Services (relies on the manifest flag, not a code stub), residual native UCWeb telemetry needs a DNS/host block, and the split-APK install is still being validated.",
-    "compatiblePackages": [
-      {
-        "packageName": "com.daraz.android",
-        "targets": [
-          {
-            "version": "9.36.2"
-          }
-        ]
-      }
-    ]
-  },
-  {
     "name": "Unlock daily reward (skip ad)",
     "description": "Claim MyZong's daily reward with no 'watch ad' popup and no ad. Forces the reward-bubble tap to take the app's own direct-claim branch (the same claim call the post-ad path makes), upstream of both the popup and the rewarded ad.",
     "compatiblePackages": [

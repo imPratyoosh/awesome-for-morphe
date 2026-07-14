@@ -1,16 +1,26 @@
 [
   {
-    "name": "Pin playlists",
-    "description": "Replaces Speed Dial pinning with persistent Library playlist pinning.",
+    "name": "Pin playlists (dev)",
+    "description": "Experimental YouTube Music 9.24.51, 9.25.50, and 9.26.51 patch that replaces Speed Dial pinning with persistent Library playlist pinning.",
     "compatiblePackages": [
       {
         "packageName": "com.google.android.apps.youtube.music",
         "targets": [
           {
-            "version": "9.15.51"
+            "version": "9.26.51",
+            "isExperimental": true
+          },
+          {
+            "version": "9.25.50",
+            "isExperimental": true
+          },
+          {
+            "version": "9.24.51",
+            "isExperimental": true
           }
         ]
       }
-    ]
+    ],
+    "isPreRelease": true
   }
 ]
