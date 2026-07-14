@@ -32,7 +32,7 @@ jobs:
           if [ "$DAY_OF_MONTH" -eq 1 ] || [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
             python scripts/update.py --all
           else
-            python scripts/update.py --stars
+            python scripts/update.py --daily
           fi
           
           python scripts/whats_new.py
