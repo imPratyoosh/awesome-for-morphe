@@ -132,6 +132,28 @@
     ]
   },
   {
+    "name": "Hide ad views",
+    "description": "Collapses Pinterest's ad-specific views (TextAdView, promoted closeup action bars, board sponsor headers, …) to zero-size on construction, so ad chrome never draws even if the feed adapter tries to render one.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.pinterest",
+        "targets": [
+          {
+            "version": "14.26.0",
+            "isExperimental": true
+          },
+          {
+            "version": "14.25.0"
+          },
+          {
+            "version": "14.24.0",
+            "isExperimental": true
+          }
+        ]
+      }
+    ]
+  },
+  {
     "name": "Hide promoted pins",
     "description": "Neutralises every ad-indicator field on the Pinterest pin/story models (is_promoted, promoted_is_*, is_native, ad_data, ...) so Promoted Pins, shopping-carousel ads, native-content ads and click-out CTAs are never rendered or fired.",
     "compatiblePackages": [

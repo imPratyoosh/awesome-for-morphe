@@ -25,6 +25,19 @@
     ],
     "appCount": 1
   },
+  "abeja": {
+    "source": "github",
+    "repo": "TheRealCrazyfuy/abeja-morphe-patches",
+    "avatarUrl": "https://avatars.githubusercontent.com/TheRealCrazyfuy?s=128",
+    "stars": 1,
+    "firstSeen": "2026-07-14T19:19:17",
+    "patches": "site/abeja.json",
+    "createdAt": "2026-07-14T14:04:50",
+    "targetApps": [
+      "com.android.gallery3d"
+    ],
+    "appCount": 1
+  },
   "abhis1n": {
     "source": "github",
     "repo": "abhis1n/Morphe-Patches",
@@ -45,7 +58,7 @@
     "stars": 186,
     "firstSeen": "2026-02-20T17:59:24",
     "patches": "site/adobo.json",
-    "createdAt": "2026-07-13T13:22:09",
+    "createdAt": "2026-07-14T16:16:49",
     "targetApps": [
       "com.google.android.inputmethod.latin",
       "com.imdb.mobile",
@@ -193,22 +206,6 @@
       "com.google.android.googlequicksearchbox"
     ],
     "appCount": 2
-  },
-  "arunpdl": {
-    "source": "github",
-    "repo": "arunpdl/morphe-patches",
-    "avatarUrl": "https://avatars.githubusercontent.com/arunpdl?s=128",
-    "stars": 1,
-    "firstSeen": "2026-07-03T06:36:05",
-    "patches": "site/arunpdl.json",
-    "createdAt": "2026-07-06T07:08:57",
-    "targetApps": [
-      "com.byairapp.android",
-      "com.bytecaretech.merokarobar",
-      "com.harwin.prismatica",
-      "com.jellywatch.app"
-    ],
-    "appCount": 4
   },
   "babyhuehnchen": {
     "source": "github",
@@ -449,6 +446,19 @@
     ],
     "appCount": 8
   },
+  "gmaps": {
+    "source": "github",
+    "repo": "fangkampanat/gmaps-patches",
+    "avatarUrl": "https://avatars.githubusercontent.com/fangkampanat?s=128",
+    "stars": 1,
+    "firstSeen": "2026-07-14T19:19:17",
+    "patches": "site/gmaps.json",
+    "createdAt": "2026-07-14T15:51:11",
+    "targetApps": [
+      "Google Maps"
+    ],
+    "appCount": 1
+  },
   "gryphous-morphe": {
     "source": "github",
     "repo": "NekoGryphou/gryphous-morphe-patches",
@@ -634,6 +644,19 @@
       "tv.trakt.trakt"
     ],
     "appCount": 2
+  },
+  "itsthejoker": {
+    "source": "github",
+    "repo": "itsthejoker/itsthejoker-patches",
+    "avatarUrl": "https://avatars.githubusercontent.com/itsthejoker?s=128",
+    "stars": 0,
+    "firstSeen": "2026-07-14T19:19:17",
+    "patches": "site/itsthejoker.json",
+    "createdAt": "2026-07-14T17:03:20",
+    "targetApps": [
+      "com.rookery.courier"
+    ],
+    "appCount": 1
   },
   "jasonwu1994": {
     "source": "github",
@@ -1114,7 +1137,7 @@
     "stars": 5,
     "firstSeen": "2026-07-08T02:37:25",
     "patches": "site/pinterest-morphed.json",
-    "createdAt": "2026-07-14T05:11:00",
+    "createdAt": "2026-07-14T17:38:33",
     "targetApps": [
       "com.pinterest"
     ],
@@ -1154,7 +1177,7 @@
     "stars": 39,
     "firstSeen": "2026-06-30T14:24:47",
     "patches": "site/prathxm.json",
-    "createdAt": "2026-07-13T11:03:17",
+    "createdAt": "2026-07-14T16:29:24",
     "targetApps": [
       "com.chess"
     ],
@@ -1482,6 +1505,19 @@
     ],
     "appCount": 1
   },
+  "seobject": {
+    "source": "github",
+    "repo": "Seobject/Seobject-patches",
+    "avatarUrl": "https://avatars.githubusercontent.com/Seobject?s=128",
+    "stars": 1,
+    "firstSeen": "2026-07-14T19:19:17",
+    "patches": "site/seobject.json",
+    "createdAt": "2026-07-14T14:44:37",
+    "targetApps": [
+      "com.google.android.apps.youtube.music"
+    ],
+    "appCount": 1
+  },
   "shaun-sheep": {
     "source": "github",
     "repo": "shaun-the-sheep-patches/morphe-patches",
@@ -1519,19 +1555,6 @@
     "createdAt": "2026-06-28T14:29:36",
     "targetApps": [
       "org.telegram.messenger.web"
-    ],
-    "appCount": 1
-  },
-  "ts-patches": {
-    "source": "github",
-    "repo": "osirisad/ts-patches",
-    "avatarUrl": "https://avatars.githubusercontent.com/osirisad?s=128",
-    "stars": 0,
-    "firstSeen": "2026-06-20T03:02:19",
-    "patches": "site/ts-patches.json",
-    "createdAt": "2026-06-21T02:17:19",
-    "targetApps": [
-      "com.teamsnap.teamsnap"
     ],
     "appCount": 1
   },
