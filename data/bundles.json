@@ -6,7 +6,6 @@
     "stars": 7,
     "firstSeen": "2026-05-28T00:49:33",
     "patches": "site/AlexNaga.json",
-    "version": "v1.30.0",
     "createdAt": "2026-05-05T11:51:41",
     "targetApps": [
       "se.matlistan.free"
@@ -20,7 +19,6 @@
     "stars": 2,
     "firstSeen": "2026-05-15T03:20:18",
     "patches": "site/ImmortalZeus.json",
-    "version": "v1.0.0",
     "createdAt": "2026-05-15T03:33:31",
     "targetApps": [
       "com.example.app"
@@ -34,7 +32,6 @@
     "stars": 15,
     "firstSeen": "2026-04-30T02:13:07",
     "patches": "site/abhis1n.json",
-    "version": "v1.0.1",
     "createdAt": "2026-06-17T06:24:45",
     "targetApps": [
       "com.Splitwise.SplitwiseMobile"
@@ -48,7 +45,6 @@
     "stars": 186,
     "firstSeen": "2026-02-20T17:59:24",
     "patches": "site/adobo.json",
-    "version": "v1.3.0-dev.5",
     "createdAt": "2026-07-13T13:22:09",
     "targetApps": [
       "com.google.android.inputmethod.latin",
@@ -65,7 +61,6 @@
     "stars": 73,
     "firstSeen": "2026-05-25T15:05:44",
     "patches": "site/ajstrick81-androidtv.json",
-    "version": "v1.12.0",
     "createdAt": "2026-07-12T19:54:20",
     "targetApps": [
       "com.amazon.amazonvideo.livingroom",
@@ -88,7 +83,6 @@
     "stars": 13,
     "firstSeen": "2026-01-29T04:31:55",
     "patches": "site/almewty.json",
-    "version": "v1.0.0-dev.1",
     "createdAt": "2026-01-30T07:54:21",
     "targetApps": [
       "com.application.pokecardex",
@@ -104,7 +98,6 @@
     "stars": 16,
     "firstSeen": "2026-05-07T05:03:56",
     "patches": "site/ameen-morphe.json",
-    "version": "v1.1.0",
     "createdAt": "2026-05-07T22:57:11",
     "targetApps": [
       "com.roidapp.photogrid",
@@ -119,7 +112,6 @@
     "stars": 5,
     "firstSeen": "2026-05-04T02:02:43",
     "patches": "site/ameenalasady.json",
-    "version": "v1.0.1",
     "createdAt": "2026-05-04T02:09:19",
     "targetApps": [
       "com.roidapp.photogrid"
@@ -133,7 +125,6 @@
     "stars": 128,
     "firstSeen": "2026-03-29T10:56:47",
     "patches": "site/amplerevanced.json",
-    "version": "v1.2.0-dev.9",
     "createdAt": "2026-07-06T17:38:08",
     "targetApps": [
       "com.dcinside.app.android",
@@ -151,7 +142,6 @@
     "stars": 1787,
     "firstSeen": "2026-06-16T15:37:39",
     "patches": "site/anddea.json",
-    "version": "v4.2.0-dev.4",
     "createdAt": "2026-07-10T18:06:51",
     "targetApps": [
       "com.google.android.apps.youtube.music",
@@ -166,7 +156,6 @@
     "stars": 51,
     "firstSeen": "2026-02-11T15:55:58",
     "patches": "site/anddea-morphed.json",
-    "version": "v3.17.0-dev.2",
     "createdAt": "2026-02-11T15:55:58",
     "targetApps": [
       "com.google.android.apps.youtube.music",
@@ -185,7 +174,6 @@
     "stars": 82,
     "firstSeen": "2026-01-05T16:06:30",
     "patches": "site/andronedev.json",
-    "version": "v2.3.0",
     "createdAt": "2026-04-01T21:23:06",
     "targetApps": [
       "com.thetransitapp.droid"
@@ -199,7 +187,6 @@
     "stars": 14,
     "firstSeen": "2026-04-28T00:47:20",
     "patches": "site/ariecos.json",
-    "version": "v1.1.16",
     "createdAt": "2026-05-16T23:26:44",
     "targetApps": [
       "com.google.android.apps.bard",
@@ -214,7 +201,6 @@
     "stars": 1,
     "firstSeen": "2026-07-03T06:36:05",
     "patches": "site/arunpdl.json",
-    "version": "v1.0.5",
     "createdAt": "2026-07-06T07:08:57",
     "targetApps": [
       "com.byairapp.android",
@@ -231,7 +217,6 @@
     "stars": 1,
     "firstSeen": "2026-07-13T17:12:18",
     "patches": "site/babyhuehnchen.json",
-    "version": "v1.0.2",
     "createdAt": "2026-07-13T13:59:29",
     "targetApps": [
       "at.notrufnoe.edi"
@@ -245,7 +230,6 @@
     "stars": 49,
     "firstSeen": "2026-05-12T07:00:00",
     "patches": "site/bholeykabhakt.json",
-    "version": "v2.12.0",
     "createdAt": "2026-06-22T17:44:41",
     "targetApps": [
       "com.atmfee",
@@ -272,7 +256,6 @@
     "stars": 127,
     "firstSeen": "2026-04-12T21:22:08",
     "patches": "site/binarymend.json",
-    "version": "v1.3.1",
     "createdAt": "2026-04-27T12:49:57",
     "targetApps": [
       "app.symfonik.music.player",
@@ -292,7 +275,6 @@
     "stars": 2,
     "firstSeen": "2026-06-22T21:11:54",
     "patches": "site/braydog2010.json",
-    "version": "v1.1.0-dev.4",
     "createdAt": "2026-06-22T23:17:46",
     "targetApps": [
       "com.dubani.dub"
@@ -306,7 +288,6 @@
     "stars": 281,
     "firstSeen": "2026-03-10T19:56:44",
     "patches": "site/brosssh.json",
-    "version": "v2.8.1-dev.4",
     "createdAt": "2026-06-26T09:54:55",
     "targetApps": [
       "com.instagram.android",
@@ -324,7 +305,6 @@
     "stars": 18,
     "firstSeen": "2026-06-23T16:20:25",
     "patches": "site/browzomje.json",
-    "version": "v1.3.2",
     "createdAt": "2026-07-01T16:43:57",
     "targetApps": [
       "com.pinterest"
@@ -338,7 +318,6 @@
     "stars": 16,
     "firstSeen": "2026-07-06T22:13:39",
     "patches": "site/bufferk.json",
-    "version": "v1.6.15-dev.7",
     "createdAt": "2026-07-10T17:50:44",
     "targetApps": [
       "com.Splitwise.SplitwiseMobile",
@@ -357,7 +336,6 @@
     "stars": 7,
     "firstSeen": "2026-06-11T13:50:03",
     "patches": "site/chiggi.json",
-    "version": "v1.14.3",
     "createdAt": "2026-06-24T01:02:13",
     "targetApps": [
       "com.crazygames.crazygamesapp",
@@ -375,7 +353,6 @@
     "stars": 1,
     "firstSeen": "2026-07-13T02:43:37",
     "patches": "site/cobalt-morphe.json",
-    "version": "v1.8.2",
     "createdAt": "2026-07-14T00:34:52",
     "targetApps": [
       "com.google.android.youtube"
@@ -389,7 +366,6 @@
     "stars": 40,
     "firstSeen": "2026-03-21T15:09:32",
     "patches": "site/docbt.json",
-    "version": "v1.9.0",
     "createdAt": "2026-06-20T03:31:38",
     "targetApps": [
       "com.ebay.kleinanzeigen",
@@ -404,7 +380,6 @@
     "stars": 25,
     "firstSeen": "2026-06-06T16:36:16",
     "patches": "site/edge-morphe.json",
-    "version": "v1.32.0",
     "createdAt": "2026-06-11T08:29:13",
     "targetApps": [
       "com.microsoft.emmx"
@@ -418,7 +393,6 @@
     "stars": 4,
     "firstSeen": "2026-06-20T17:36:44",
     "patches": "site/ee-morphe.json",
-    "version": "v1.5.0-dev.7",
     "createdAt": "2026-07-13T16:24:21",
     "targetApps": [
       "com.byairapp.android",
@@ -436,7 +410,6 @@
     "stars": 7,
     "firstSeen": "2026-05-04T18:26:28",
     "patches": "site/eksi.json",
-    "version": "v0.1.1",
     "createdAt": "2026-05-06T07:04:53",
     "targetApps": [
       "com.eksiteknoloji.eksisozluk"
@@ -450,7 +423,6 @@
     "stars": 23,
     "firstSeen": "2026-03-26T08:55:30",
     "patches": "site/eyalm2000.json",
-    "version": "v1.2.0",
     "createdAt": "2026-03-26T08:55:30",
     "targetApps": [
       "com.aspiro.tidal"
@@ -464,7 +436,6 @@
     "stars": 1,
     "firstSeen": "2026-07-06T22:13:39",
     "patches": "site/franticg33k.json",
-    "version": "v1.2.2",
     "createdAt": "2026-07-13T11:14:39",
     "targetApps": [
       "com.byairapp.android",
@@ -484,7 +455,6 @@
     "stars": 1,
     "firstSeen": "2026-07-06T22:13:39",
     "patches": "site/gryphous-morphe.json",
-    "version": "v1.0.1",
     "createdAt": "2026-07-06T20:32:07",
     "targetApps": [
       "com.crunchyroll.crunchyroid"
@@ -498,7 +468,6 @@
     "stars": 18,
     "firstSeen": "2026-06-21T03:33:17",
     "patches": "site/hk-morphe.json",
-    "version": "v1.6.0",
     "createdAt": "2026-07-08T03:42:18",
     "targetApps": [
       "com.laurencedawson.reddit_sync",
@@ -514,7 +483,6 @@
     "stars": 813,
     "firstSeen": "2026-01-21T03:33:21",
     "patches": "site/hoo-dles.json",
-    "version": "v1.39.0-dev.4",
     "createdAt": "2026-07-12T22:16:14",
     "targetApps": [
       "app.ttmikstories.android",
@@ -579,7 +547,6 @@
     "stars": 84,
     "firstSeen": "2026-06-15T20:58:55",
     "patches": "site/hoomans-morphe.json",
-    "version": "v1.44.0-dev.1",
     "createdAt": "2026-07-12T21:54:44",
     "targetApps": [
       "ak.alizandro.smartaudiobookplayer",
@@ -633,7 +600,6 @@
     "stars": 117,
     "firstSeen": "2026-05-30T22:48:06",
     "patches": "site/icysymmetra-tiktok.json",
-    "version": "v0.3.1",
     "createdAt": "2026-06-17T16:13:14",
     "targetApps": [
       "com.zhiliaoapp.musically"
@@ -647,7 +613,6 @@
     "stars": 4,
     "firstSeen": "2026-06-21T21:50:44",
     "patches": "site/ihealth-morphe.json",
-    "version": "v1.1.0",
     "createdAt": "2026-06-19T03:53:00",
     "targetApps": [
       "com.ihealthlabs.MyVitalsPro",
@@ -662,7 +627,6 @@
     "stars": 18,
     "firstSeen": "2026-05-21T22:30:00",
     "patches": "site/imxeren.json",
-    "version": "v1.4.0",
     "createdAt": "2026-06-26T23:30:02",
     "targetApps": [
       "com.laurencedawson.reddit_sync",
@@ -677,7 +641,6 @@
     "stars": 131,
     "firstSeen": "2026-04-07T13:23:23",
     "patches": "site/jasonwu1994.json",
-    "version": "v1.14.0",
     "createdAt": "2026-06-30T22:42:36",
     "targetApps": [
       "com.google.android.inputmethod.latin"
@@ -691,7 +654,6 @@
     "stars": 11,
     "firstSeen": "2026-04-14T15:21:40",
     "patches": "site/joristdh.json",
-    "version": "v1.2.0-dev.2",
     "createdAt": "2026-06-24T18:29:20",
     "targetApps": [
       "com.laurencedawson.reddit_sync",
@@ -707,7 +669,6 @@
     "stars": 5,
     "firstSeen": "2026-04-30T00:02:56",
     "patches": "site/kareemlukitomo.json",
-    "version": "v26.4.30-8eabfa",
     "createdAt": "2026-04-30T00:02:56",
     "targetApps": [
       "com.instagram.android",
@@ -725,7 +686,6 @@
     "stars": 8,
     "firstSeen": "2026-05-16T07:00:00",
     "patches": "site/kolaron.json",
-    "version": "v1.1.0-dev.1",
     "createdAt": "2026-05-15T06:39:27",
     "targetApps": [
       "cz.mafra.jizdnirady"
@@ -739,7 +699,6 @@
     "stars": 14,
     "firstSeen": "2026-06-11T14:43:14",
     "patches": "site/kondratjev.json",
-    "version": "v1.17.0",
     "createdAt": "2026-07-05T13:34:07",
     "targetApps": [
       "air.com.musclemotion.strength.mobile",
@@ -764,7 +723,6 @@
     "stars": 15,
     "firstSeen": "2026-06-05T15:48:45",
     "patches": "site/lain.json",
-    "version": "v1.4.0-dev.1",
     "createdAt": "2026-07-13T14:13:02",
     "targetApps": [
       "cn.adonet.proxyevery",
@@ -806,7 +764,6 @@
     "stars": 10,
     "firstSeen": "2026-06-11T14:22:48",
     "patches": "site/lakaka.json",
-    "version": "v1.3.1",
     "createdAt": "2026-07-09T05:27:58",
     "targetApps": [
       "com.instapaper.android",
@@ -822,7 +779,6 @@
     "stars": 1,
     "firstSeen": "2026-07-12T05:58:07",
     "patches": "site/letterboxd-stremio.json",
-    "version": "v1.3.1",
     "createdAt": "2026-07-08T23:57:02",
     "targetApps": [
       "com.letterboxd.letterboxd"
@@ -836,7 +792,6 @@
     "stars": 8,
     "firstSeen": "2026-04-28T23:06:10",
     "patches": "site/loskutov.json",
-    "version": "v1.0.2",
     "createdAt": "2026-04-30T21:44:02",
     "targetApps": [
       "com.google.android.apps.youtube.music",
@@ -851,7 +806,6 @@
     "stars": 5,
     "firstSeen": "2026-05-05T14:52:24",
     "patches": "site/lynx6319.json",
-    "version": "v1.0.8",
     "createdAt": "2026-05-05T14:52:24",
     "targetApps": [
       "com.google.android.youtube"
@@ -865,7 +819,6 @@
     "stars": 42,
     "firstSeen": "2026-04-12T04:45:39",
     "patches": "site/meridianfresco.json",
-    "version": "v1.0.0",
     "createdAt": "2026-04-11T21:51:39",
     "targetApps": [
       "com.facebook.katana"
@@ -879,7 +832,6 @@
     "stars": 4,
     "firstSeen": "2026-07-09T04:53:42",
     "patches": "site/miguel.json",
-    "version": "v1.9.10",
     "createdAt": "2026-07-13T23:57:24",
     "targetApps": [
       "air.com.midjiwan.polytopia",
@@ -897,7 +849,6 @@
     "stars": 2,
     "firstSeen": "2026-07-06T22:13:39",
     "patches": "site/modx.json",
-    "version": "v1.4.2",
     "createdAt": "2026-07-13T10:25:35",
     "targetApps": [
       "com.mxtech.videoplayer.ad"
@@ -911,7 +862,6 @@
     "stars": 2829,
     "firstSeen": "2026-06-23T13:04:19",
     "patches": "site/morphe.json",
-    "version": "v1.35.0-dev.3",
     "createdAt": "2026-07-13T14:59:32",
     "targetApps": [
       "com.google.android.apps.youtube.music",
@@ -927,7 +877,6 @@
     "stars": 3,
     "firstSeen": "2026-06-30T13:38:59",
     "patches": "site/morphe-google.json",
-    "version": "v1.1.4",
     "createdAt": "2026-06-30T13:38:59",
     "targetApps": [
       "com.google.android.googlequicksearchbox"
@@ -941,7 +890,6 @@
     "stars": 2,
     "firstSeen": "2026-06-19T20:53:34",
     "patches": "site/morphe-portal.json",
-    "version": "v0.1.0",
     "createdAt": "2026-06-19T20:53:34",
     "targetApps": [
       "com.google.android.apps.youtube.music",
@@ -956,7 +904,6 @@
     "stars": 4,
     "firstSeen": "2026-06-28T11:39:03",
     "patches": "site/morphe-screenshot.json",
-    "version": "v1.0.8",
     "createdAt": "2026-06-28T11:39:03",
     "targetApps": [],
     "appCount": 0
@@ -968,7 +915,6 @@
     "stars": 1,
     "firstSeen": "2026-07-07T19:54:09",
     "patches": "site/movistar-block-ads.json",
-    "version": "v1.0.9",
     "createdAt": "2026-07-04T22:42:19",
     "targetApps": [
       "com.movistarplus.androidtv"
@@ -982,7 +928,6 @@
     "stars": 138,
     "firstSeen": "2026-07-03T02:41:59",
     "patches": "site/nai64.json",
-    "version": "1.13.0",
     "createdAt": "2026-07-05T20:38:55",
     "targetApps": [],
     "appCount": 0
@@ -994,7 +939,6 @@
     "stars": 7,
     "firstSeen": "2026-06-28T09:33:42",
     "patches": "site/npci-bhim.json",
-    "version": "v1.3.0",
     "createdAt": "2026-06-28T09:33:42",
     "targetApps": [
       "in.org.npci.upiapp"
@@ -1008,7 +952,6 @@
     "stars": 4,
     "firstSeen": "2026-07-04T20:11:48",
     "patches": "site/okish-morphe.json",
-    "version": "v1.0.0",
     "createdAt": "2026-07-04T04:17:25",
     "targetApps": [
       "com.generalcomp.truecloud"
@@ -1022,7 +965,6 @@
     "stars": 53,
     "firstSeen": "2026-05-11T07:00:00",
     "patches": "site/paresh-maheshwari.json",
-    "version": "v1.19.0",
     "createdAt": "2026-07-07T17:45:47",
     "targetApps": [
       "app.vinztech.trackit",
@@ -1057,7 +999,6 @@
     "stars": 706,
     "firstSeen": "2026-01-03T08:12:00",
     "patches": "site/patcheddit.json",
-    "version": "v1.4.1-dev.1",
     "createdAt": "2026-04-09T06:59:40",
     "targetApps": [
       "com.andrewshu.android.reddit",
@@ -1088,7 +1029,6 @@
     "stars": 7,
     "firstSeen": "2026-05-14T00:53:02",
     "patches": "site/pepper-morphe.json",
-    "version": "v1.0.1",
     "createdAt": "2026-05-14T00:53:02",
     "targetApps": [
       "Chollometros",
@@ -1111,7 +1051,6 @@
     "stars": 3,
     "firstSeen": "2026-07-12T05:58:07",
     "patches": "site/pichiwa.json",
-    "version": "v0.3.2-dev.20",
     "createdAt": "2026-07-13T19:56:35",
     "targetApps": [
       "com.whatsapp"
@@ -1125,7 +1064,6 @@
     "stars": 4292,
     "firstSeen": "2026-03-10T21:59:56",
     "patches": "site/piko.json",
-    "version": "v3.8.0-dev.4",
     "createdAt": "2026-07-12T13:22:24",
     "targetApps": [
       "com.instagram.android",
@@ -1140,7 +1078,6 @@
     "stars": 5,
     "firstSeen": "2026-07-08T02:37:25",
     "patches": "site/pinterest-morphed.json",
-    "version": "v1.1.0",
     "createdAt": "2026-07-07T23:35:35",
     "targetApps": [
       "com.pinterest"
@@ -1154,7 +1091,6 @@
     "stars": 22,
     "firstSeen": "2026-03-23T15:28:16",
     "patches": "site/pixelpusher247.json",
-    "version": "v1.3.0",
     "createdAt": "2026-03-31T09:28:51",
     "targetApps": [
       "tv.trakt.trakt"
@@ -1168,7 +1104,6 @@
     "stars": 16,
     "firstSeen": "2026-04-13T14:32:14",
     "patches": "site/polka-bear.json",
-    "version": "v1.4.1-dev.1",
     "createdAt": "2026-04-14T10:04:57",
     "targetApps": [
       "com.ipoji.app",
@@ -1183,7 +1118,6 @@
     "stars": 39,
     "firstSeen": "2026-06-30T14:24:47",
     "patches": "site/prathxm.json",
-    "version": "v1.13.1-dev.2",
     "createdAt": "2026-07-13T11:03:17",
     "targetApps": [
       "com.chess"
@@ -1197,7 +1131,6 @@
     "stars": 1,
     "firstSeen": "2026-06-28T15:27:28",
     "patches": "site/prathxm-ytmusic.json",
-    "version": "v1.38.0",
     "createdAt": "2026-06-28T15:27:28",
     "targetApps": [
       "com.google.android.apps.youtube.music"
@@ -1211,7 +1144,6 @@
     "stars": 4,
     "firstSeen": "2026-06-05T01:03:40",
     "patches": "site/proguard.json",
-    "version": "v1.0.3",
     "createdAt": "2026-06-05T01:03:40",
     "targetApps": [
       "com.java.inspector"
@@ -1225,7 +1157,6 @@
     "stars": 22,
     "firstSeen": "2026-03-31T00:06:52",
     "patches": "site/rabilrbl.json",
-    "version": "v1.0.0-dev.19",
     "createdAt": "2026-06-04T10:28:44",
     "targetApps": [
       "droom.sleepIfUCan"
@@ -1239,7 +1170,6 @@
     "stars": 24,
     "firstSeen": "2026-03-29T22:40:41",
     "patches": "site/realcyberwash.json",
-    "version": "v1.1.1",
     "createdAt": "2026-04-06T18:30:55",
     "targetApps": [
       "ru.oneme.app"
@@ -1253,7 +1183,6 @@
     "stars": 1,
     "firstSeen": "2026-06-12T18:29:37",
     "patches": "site/realme-link.json",
-    "version": "v1.0.0",
     "createdAt": "2026-06-12T19:32:24",
     "targetApps": [
       "com.realme.link"
@@ -1267,7 +1196,6 @@
     "stars": 981,
     "firstSeen": "2026-03-02T00:10:09",
     "patches": "site/rookieenough.json",
-    "version": "v1.0.4",
     "createdAt": "2026-05-13T13:27:20",
     "targetApps": [
       "ch.protonmail.android",
@@ -1314,7 +1242,6 @@
     "stars": 60,
     "firstSeen": "2026-06-02T17:21:27",
     "patches": "site/rushiranpise.json",
-    "version": "v1.13.0-dev.1",
     "createdAt": "2026-07-13T05:33:26",
     "targetApps": [
       "ai.topicfinder.podcastdiscovery",
@@ -1470,7 +1397,6 @@
     "stars": 240,
     "firstSeen": "2026-03-05T13:52:42",
     "patches": "site/rvx-morphed.json",
-    "version": "v5.16.4",
     "createdAt": "2026-03-05T14:38:07",
     "targetApps": [
       "com.google.android.apps.youtube.music",
@@ -1485,7 +1411,6 @@
     "stars": 2,
     "firstSeen": "2026-07-12T05:58:07",
     "patches": "site/saiesh.json",
-    "version": "v1.0.4",
     "createdAt": "2026-07-11T10:18:55",
     "targetApps": [
       "com.adobe.lrmobile",
@@ -1500,7 +1425,6 @@
     "stars": 4,
     "firstSeen": "2026-06-24T00:38:59",
     "patches": "site/samsung-morphe.json",
-    "version": "v1.2.1",
     "createdAt": "2026-06-30T13:25:55",
     "targetApps": [
       "com.sec.android.app.shealth"
@@ -1514,7 +1438,6 @@
     "stars": 1,
     "firstSeen": "2026-07-07T03:19:37",
     "patches": "site/shaun-sheep.json",
-    "version": "v1.2.0-dev.1",
     "createdAt": "2026-07-12T08:51:41",
     "targetApps": [
       "com.delphicoder.flud",
@@ -1531,7 +1454,6 @@
     "stars": 27,
     "firstSeen": "2026-06-18T09:18:21",
     "patches": "site/sjshb57-pairip.json",
-    "version": "v1.10.2",
     "createdAt": "2026-07-13T02:42:37",
     "targetApps": [],
     "appCount": 0
@@ -1543,7 +1465,6 @@
     "stars": 4,
     "firstSeen": "2026-06-28T14:29:36",
     "patches": "site/telegram-morphe.json",
-    "version": "v1.20.0",
     "createdAt": "2026-06-28T14:29:36",
     "targetApps": [
       "org.telegram.messenger.web"
@@ -1557,7 +1478,6 @@
     "stars": 0,
     "firstSeen": "2026-06-20T03:02:19",
     "patches": "site/ts-patches.json",
-    "version": "v1.0.0",
     "createdAt": "2026-06-21T02:17:19",
     "targetApps": [
       "com.teamsnap.teamsnap"
@@ -1571,7 +1491,6 @@
     "stars": 2,
     "firstSeen": "2026-06-24T12:35:14",
     "patches": "site/ts2.json",
-    "version": "v1.0.1",
     "createdAt": "2026-06-22T02:56:46",
     "targetApps": [
       "com.teamsnap.teamsnap"
@@ -1585,7 +1504,6 @@
     "stars": 3,
     "firstSeen": "2026-04-20T14:53:42",
     "patches": "site/vladon.json",
-    "version": "v1.0.6",
     "createdAt": "2026-04-20T14:53:42",
     "targetApps": [
       "ru.yandex.yandexnavi"
@@ -1599,7 +1517,6 @@
     "stars": 32,
     "firstSeen": "2026-06-16T14:53:15",
     "patches": "site/x-shim.json",
-    "version": "v1.7.0",
     "createdAt": "2026-07-03T00:31:26",
     "targetApps": [
       "com.twitter.android"
@@ -1613,7 +1530,6 @@
     "stars": 2,
     "firstSeen": "2026-07-04T06:23:58",
     "patches": "site/xhehab.json",
-    "version": "v3.0.15",
     "createdAt": "2026-07-09T20:38:15",
     "targetApps": [
       "app.mhphysique.fitness",
@@ -1637,7 +1553,6 @@
     "stars": 20,
     "firstSeen": "2026-05-08T17:36:45",
     "patches": "site/xob0t.json",
-    "version": "v1.6.1",
     "createdAt": "2026-07-07T11:05:57",
     "targetApps": [
       "com.avito.android",
@@ -1654,7 +1569,6 @@
     "stars": 1,
     "firstSeen": "2026-06-25T14:45:29",
     "patches": "site/ynotzort.json",
-    "version": "v1.0.0-dev.1",
     "createdAt": "2026-06-25T14:51:54",
     "targetApps": [
       "com.targo_prod.bad"
@@ -1668,7 +1582,6 @@
     "stars": 8,
     "firstSeen": "2026-06-17T15:54:42",
     "patches": "site/zpatches.json",
-    "version": "v1.5.1",
     "createdAt": "2026-06-15T17:16:26",
     "targetApps": [
       "com.jcdecaux.vls.lyon",

@@ -517,7 +517,6 @@ def main():
 
         # Update source_entry with the new schema
         source_entry["patches"] = f"site/{base}.json"
-        source_entry["version"] = latest_bundle_json.get("version", "")
         source_entry["createdAt"] = latest_bundle_json.get("created_at", "")
         source_entry["targetApps"] = target_apps
         source_entry["appCount"] = app_count

@@ -388,7 +388,7 @@
                   @click="openBundlePopup(bundleKey, bundleData)">
                   <i class="fa-solid fa-cubes text-light text-sm"></i>
                   <h4 class="text-base font-bold text-white leading-snug">{{ bundleKey }}</h4>
-                  <span v-if="bundleData.isNew" class="badge text-yellow"><span>✨ New</span></span>
+                  <span v-if="bundleData.isNew" class="badge badge-sm text-yellow">✨ New</span>
                 </div>
 
                 <div class="ml-3 md:ml-5 flex flex-col gap-2 border-l-2 border-lightGray/30 pl-2.5 md:pl-3">
@@ -402,8 +402,8 @@
                         class="fa-brands fa-android text-green text-sm w-4 text-center icon-center shrink-0"></i>
                       <h5 class="font-medium text-sm text-white leading-snug">{{ formatWhatsNewAppName(packageName) }}
                       </h5>
-                      <span v-if="appData.isNew &amp;&amp; !bundleData.isNew" class="badge text-yellow"><span>✨
-                          New</span></span>
+                      <span v-if="appData.isNew &amp;&amp; !bundleData.isNew" class="badge badge-sm text-yellow">✨
+                        New</span>
                     </div>
 
                     <div class="ml-2 md:ml-3 border-l-2 border-lightGray/30 pl-2 md:pl-3">
@@ -412,8 +412,8 @@
                           class="badge border-lightGray hover:border-white/50 text-light cursor-pointer bg-dark shrink-0"
                           @click="openPatchPopup(bundleKey, packageName, patch)">
                           <span>{{ patch }}</span>
-                          <span v-if="!appData.isNew &amp;&amp; !bundleData.isNew" class="badge text-yellow"><span>✨
-                              New</span></span>
+                          <span v-if="!appData.isNew &amp;&amp; !bundleData.isNew" class="badge badge-sm text-yellow">✨
+                            New</span>
                         </div>
                       </div>
                     </div>
@@ -505,13 +505,11 @@
                           class="font-bold text-lg sm:text-xl text-transparent bg-clip-text bg-gradient-to-r from-blue to-green break-words leading-tight cursor-pointer hover:opacity-80 transition-all">{{
                           group.key }}</strong>
                         <span v-if="hasHighlight(group.key) || isNewBundle(group)"
-                          class="badge text-yellow shrink-0"><span>✨ New</span></span>
-                        <span v-if="group.bundle.isPreRelease && !(hasHighlight(group.key) || isNewBundle(group))"
-                          class="badge text-yellow shrink-0"><span><i class="fa-solid fa-flask"></i>
-                            Pre-release</span></span>
-                        <span v-if="group.bundle.stars !== undefined" class="badge shrink-0">
-                          <i class="fa-solid fa-star text-yellow"></i><span>{{ group.bundle.stars }}</span>
-                        </span>
+                          class="badge badge-sm text-yellow shrink-0">✨ New</span>
+                        <span v-if="group.bundle.isPreRelease" class="badge badge-sm text-yellow shrink-0"><i
+                            class="fa-solid fa-flask"></i> Pre-release</span>
+                        <span v-if="group.bundle.stars !== undefined" class="badge badge-sm shrink-0">
+                          <i class="fa-solid fa-star text-yellow"></i>{{ group.bundle.stars }}</span>
                       </div>
                       <!-- Repo Row -->
                       <a v-if="group.bundle.repo" :href="group.bundle.repoUrl" target="_blank" rel="noreferrer"
@@ -566,12 +564,10 @@
                           class="w-4 h-4 rounded-sm object-contain shrink-0" :alt="appItem.appName" loading="lazy">
                         <i v-else class="fa-brands fa-android text-green"></i>
                         <span class="truncate">{{ appItem.appName }}</span>
-                        <span v-if="isAppHighlighted(group.key, appItem)" class="badge text-yellow"><span>✨
-                            New</span></span>
-                        <span
-                          v-if="appItem.isAppPreRelease && !group.bundle.isPreRelease && !isAppHighlighted(group.key, appItem)"
-                          class="badge text-yellow"><span><i class="fa-solid fa-flask"></i>
-                            Pre-release</span></span>
+                        <span v-if="isAppHighlighted(group.key, appItem)" class="badge badge-sm text-yellow">✨
+                          New</span>
+                        <span v-if="appItem.isAppPreRelease && !group.bundle.isPreRelease"
+                          class="badge badge-sm text-yellow"><i class="fa-solid fa-flask"></i> Pre-release</span>
                       </button>
                     </div>
 
@@ -587,12 +583,11 @@
                         <span class="font-medium truncate"
                           :class="mainUI.expandedOptions.has('app_' + group.key + '_' + appItem.id) ? 'text-blue' : 'text-light'">{{
                           appItem.appName }}</span>
-                        <span v-if="isAppHighlighted(group.key, appItem)" class="badge text-yellow shrink-0"><span>✨
-                            New</span></span>
-                        <span
-                          v-if="appItem.isAppPreRelease && !group.bundle.isPreRelease && !isAppHighlighted(group.key, appItem)"
-                          class="badge text-yellow shrink-0"><span><i class="fa-solid fa-flask"></i>
-                            Pre-release</span></span>
+                        <span v-if="isAppHighlighted(group.key, appItem)" class="badge badge-sm text-yellow shrink-0">✨
+                          New</span>
+                        <span v-if="appItem.isAppPreRelease && !group.bundle.isPreRelease"
+                          class="badge badge-sm text-yellow shrink-0"><i class="fa-solid fa-flask"></i>
+                          Pre-release</span>
                         <i class="fa-solid ml-auto text-light transition-transform"
                           :class="mainUI.expandedOptions.has('app_' + group.key + '_' + appItem.id) ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
                       </div>
@@ -640,11 +635,11 @@
                                     {{ patchItem.patchName }}
                                     <span
                                       v-if="hasHighlight(group.key + ':' + appItem.packageName + ':' + patchItem.patchName)"
-                                      class="badge text-yellow"><span>✨ New</span></span>
+                                      class="badge badge-sm text-yellow">✨ New</span>
                                     <span
-                                      v-if="patchItem.isPatchPreRelease && !appItem.isAppPreRelease && !group.bundle.isPreRelease && !hasHighlight(group.key + ':' + appItem.packageName + ':' + patchItem.patchName)"
-                                      class="badge text-yellow"><span><i class="fa-solid fa-flask"></i>
-                                        Pre-release</span></span>
+                                      v-if="patchItem.isPatchPreRelease && !appItem.isAppPreRelease && !group.bundle.isPreRelease"
+                                      class="badge badge-sm text-yellow"><i class="fa-solid fa-flask"></i>
+                                      Pre-release</span>
                                   </strong>
                                   <span v-if="!patchItem.enabled" class="badge text-yellow cursor-help"
                                     title="off by default"><span>off</span></span>
@@ -840,13 +835,12 @@
                     <strong
                       class="font-bold text-lg sm:text-xl text-transparent bg-clip-text bg-gradient-to-r from-blue to-green break-words leading-tight">{{
                       group.key }}</strong>
-                    <span v-if="hasHighlight(group.key) || isNewBundle(group)" class="badge text-yellow"><span>✨
-                        New</span></span>
-                    <span v-if="group.bundle.isPreRelease && !(hasHighlight(group.key) || isNewBundle(group))"
-                      class="badge text-yellow"><span><i class="fa-solid fa-flask"></i> Pre-release</span></span>
-                    <span v-if="group.bundle.stars !== undefined" class="badge shrink-0">
-                      <i class="fa-solid fa-star text-yellow"></i><span>{{ group.bundle.stars }}</span>
-                    </span>
+                    <span v-if="hasHighlight(group.key) || isNewBundle(group)" class="badge badge-sm text-yellow">✨
+                      New</span>
+                    <span v-if="group.bundle.isPreRelease" class="badge badge-sm text-yellow"><i
+                        class="fa-solid fa-flask"></i> Pre-release</span>
+                    <span v-if="group.bundle.stars !== undefined" class="badge badge-sm shrink-0">
+                      <i class="fa-solid fa-star text-yellow"></i>{{ group.bundle.stars }}</span>
                   </div>
 
                   <a v-if="group.bundle.repo" :href="group.bundle.repoUrl" target="_blank" rel="noreferrer" @click.stop
@@ -897,11 +891,9 @@
                       class="w-4 h-4 rounded-sm object-contain shrink-0" :alt="appItem.appName" loading="lazy">
                     <i v-else class="fa-brands fa-android text-green"></i>
                     <span class="truncate">{{ appItem.appName }}</span>
-                    <span v-if="isAppHighlighted(group.key, appItem)" class="badge text-yellow"><span>✨
-                        New</span></span>
-                    <span
-                      v-if="appItem.isAppPreRelease && !group.bundle.isPreRelease && !isAppHighlighted(group.key, appItem)"
-                      class="badge text-yellow"><span><i class="fa-solid fa-flask"></i> Pre-release</span></span>
+                    <span v-if="isAppHighlighted(group.key, appItem)" class="badge badge-sm text-yellow">✨ New</span>
+                    <span v-if="appItem.isAppPreRelease && !group.bundle.isPreRelease"
+                      class="badge badge-sm text-yellow"><i class="fa-solid fa-flask"></i> Pre-release</span>
                   </button>
                 </div>
 
@@ -916,12 +908,10 @@
                     <span class="font-medium truncate"
                       :class="popupUI.expandedOptions.has('popup_app_' + group.key + '_' + appItem.id) ? 'text-blue' : 'text-light'">{{
                       appItem.appName }}</span>
-                    <span v-if="isAppHighlighted(group.key, appItem)" class="badge text-yellow shrink-0"><span>✨
-                        New</span></span>
-                    <span
-                      v-if="appItem.isAppPreRelease && !group.bundle.isPreRelease && !isAppHighlighted(group.key, appItem)"
-                      class="badge text-yellow shrink-0"><span><i class="fa-solid fa-flask"></i>
-                        Pre-release</span></span>
+                    <span v-if="isAppHighlighted(group.key, appItem)" class="badge badge-sm text-yellow shrink-0">✨
+                      New</span>
+                    <span v-if="appItem.isAppPreRelease && !group.bundle.isPreRelease"
+                      class="badge badge-sm text-yellow shrink-0"><i class="fa-solid fa-flask"></i> Pre-release</span>
                     <i class="fa-solid ml-auto text-light transition-transform"
                       :class="popupUI.expandedOptions.has('popup_app_' + group.key + '_' + appItem.id) ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
                   </div>
@@ -969,11 +959,11 @@
                                 {{ patchItem.patchName }}
                                 <span
                                   v-if="hasHighlight(group.key + ':' + appItem.packageName + ':' + patchItem.patchName)"
-                                  class="badge text-yellow"><span>✨ New</span></span>
+                                  class="badge badge-sm text-yellow">✨ New</span>
                                 <span
-                                  v-if="patchItem.isPatchPreRelease && !appItem.isAppPreRelease && !group.bundle.isPreRelease && !hasHighlight(group.key + ':' + appItem.packageName + ':' + patchItem.patchName)"
-                                  class="badge text-yellow"><span><i class="fa-solid fa-flask"></i>
-                                    Pre-release</span></span>
+                                  v-if="patchItem.isPatchPreRelease && !appItem.isAppPreRelease && !group.bundle.isPreRelease"
+                                  class="badge badge-sm text-yellow"><i class="fa-solid fa-flask"></i>
+                                  Pre-release</span>
                               </strong>
                               <span v-if="!patchItem.enabled" class="badge text-yellow cursor-help"
                                 title="off by default"><span>off</span></span>
