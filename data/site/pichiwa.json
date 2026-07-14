@@ -161,6 +161,21 @@
     "isPreRelease": true
   },
   {
+    "name": "Hide GMS",
+    "description": "Pretends that Google Play Services is missing to force fallback registration flows.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.whatsapp",
+        "targets": [
+          {
+            "version": "2.26.27.4"
+          }
+        ]
+      }
+    ],
+    "isPreRelease": true
+  },
+  {
     "name": "Hide Read Receipts",
     "description": "Read messages without sending blue ticks.",
     "compatiblePackages": [

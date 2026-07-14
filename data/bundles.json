@@ -700,6 +700,42 @@
     ],
     "appCount": 3
   },
+  "jouss": {
+    "source": "github",
+    "repo": "Joussflls10/Jouss-Patches",
+    "avatarUrl": "https://avatars.githubusercontent.com/Joussflls10?s=128",
+    "stars": 1,
+    "firstSeen": "2026-07-14T05:29:43",
+    "patches": "site/jouss.json",
+    "version": "v1.21.0",
+    "createdAt": "2026-07-13T17:39:19",
+    "targetApps": [
+      "app.vinztech.trackit",
+      "ch.protonvpn.android",
+      "com.arlosoft.macrodroid",
+      "com.bytesong.missionalarm",
+      "com.celestron.skybox",
+      "com.cricbuzz.android",
+      "com.cv.docscanner",
+      "com.eyecon.global",
+      "com.frontrow.vlog",
+      "com.lumina.wallpapers",
+      "com.markOne.ss_app",
+      "com.mxtech.videoplayer.pro",
+      "com.overlook.android.fing",
+      "com.rk.taskmanager",
+      "com.solid.teleprompter",
+      "com.ticktick.task",
+      "com.truecaller",
+      "com.vivredarija",
+      "eu.darken.sdmse",
+      "in.cricketexchange.app.cricketexchange",
+      "in.startv.hotstar",
+      "org.telegram.messenger.web",
+      "org.telegram.plus"
+    ],
+    "appCount": 23
+  },
   "kareemlukitomo": {
     "source": "github",
     "repo": "kareemlukitomo/morphe-patches",
@@ -1111,8 +1147,8 @@
     "stars": 3,
     "firstSeen": "2026-07-12T05:58:07",
     "patches": "site/pichiwa.json",
-    "version": "v0.3.2-dev.20",
-    "createdAt": "2026-07-13T19:56:35",
+    "version": "v0.4.0-dev.1",
+    "createdAt": "2026-07-14T03:03:53",
     "targetApps": [
       "com.whatsapp"
     ],
@@ -1217,6 +1253,24 @@
       "com.java.inspector"
     ],
     "appCount": 1
+  },
+  "proxma": {
+    "source": "github",
+    "repo": "totsiaw/proxma-patches",
+    "avatarUrl": "https://avatars.githubusercontent.com/totsiaw?s=128",
+    "stars": 5,
+    "firstSeen": "2026-07-14T05:29:43",
+    "patches": "site/proxma.json",
+    "version": "1.5.0",
+    "createdAt": "2026-07-13T12:50:54",
+    "targetApps": [
+      "com.blueinklabs.investifystocks.free",
+      "com.daraz.android",
+      "com.jazz.jazzworld",
+      "com.zong.customercare",
+      "cz.mroczis.netmonster"
+    ],
+    "appCount": 5
   },
   "rabilrbl": {
     "source": "github",
