@@ -1086,7 +1086,7 @@
     "stars": 3,
     "firstSeen": "2026-07-12T05:58:07",
     "patches": "site/pichiwa.json",
-    "createdAt": "2026-07-14T05:12:40",
+    "createdAt": "2026-07-14T09:03:50",
     "targetApps": [
       "com.whatsapp"
     ],
@@ -1294,15 +1294,9 @@
     "stars": 60,
     "firstSeen": "2026-06-02T17:21:27",
     "patches": "site/rushiranpise.json",
-    "createdAt": "2026-07-14T04:14:38",
+    "createdAt": "2026-07-14T08:32:45",
     "targetApps": [
       "ai.topicfinder.podcastdiscovery",
-      "air.com.musclemotion.anatomy",
-      "air.com.musclemotion.kyphosis",
-      "air.com.musclemotion.posture",
-      "air.com.musclemotion.strength.mobile",
-      "air.com.musclemotion.workout",
-      "air.com.musclemotion.yoga",
       "alldocumentreader.office.viewer.filereader.pdfviewer",
       "app.ninjavpn.android",
       "app.simple.inure.play",
@@ -1377,6 +1371,7 @@
       "com.nytimes.crossword",
       "com.oasisfeng.greenify",
       "com.onesports.score",
+      "com.parallel.space.pro",
       "com.particlenews.newsbreak",
       "com.piksoft.turboscan.free",
       "com.pixel.al.pixelhabittracker",
@@ -1431,9 +1426,9 @@
       "it.mirko.beta",
       "je.fit",
       "kha.prog.mikrotik",
+      "me.gira.widget.countdown",
       "mega.privacy.android.app",
       "mobi.lockdown.weather",
-      "net.pkge.pkge",
       "no.mobitroll.kahoot.android",
       "org.hola.play",
       "org.zwanoo.android.speedtest",
@@ -1443,7 +1438,7 @@
       "sp0n.citizen",
       "verbosus.pialytic"
     ],
-    "appCount": 146
+    "appCount": 141
   },
   "rvx-morphed": {
     "source": "github",

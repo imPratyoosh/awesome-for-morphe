@@ -1735,20 +1735,6 @@
   },
   {
     "name": "Unlock Premium",
-    "description": "Unlocks all premium content in Anatomy by Muscle Motion.",
-    "compatiblePackages": [
-      {
-        "packageName": "air.com.musclemotion.anatomy",
-        "targets": [
-          {
-            "version": "3.2.1"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Unlock Premium",
     "description": "Unlocks all premium wallpapers.",
     "compatiblePackages": [
       {
@@ -1814,6 +1800,21 @@
             "version": "4.8.4"
           }
         ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks all premium features in Countdown Widget",
+    "compatiblePackages": [
+      {
+        "packageName": "me.gira.widget.countdown",
+        "targets": [
+          {
+            "version": "3.2.0"
+          }
+        ],
+        "isPreRelease": true
       }
     ]
   },
@@ -1965,20 +1966,6 @@
         "targets": [
           {
             "version": "2026.28.2"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Unlock Premium",
-    "description": "Unlocks all premium content.",
-    "compatiblePackages": [
-      {
-        "packageName": "air.com.musclemotion.kyphosis",
-        "targets": [
-          {
-            "version": "1.4.9"
           }
         ]
       }
@@ -2140,20 +2127,6 @@
   },
   {
     "name": "Unlock Premium",
-    "description": "Unlock Premium features in app.",
-    "compatiblePackages": [
-      {
-        "packageName": "net.pkge.pkge",
-        "targets": [
-          {
-            "version": "19.0.13"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Unlock Premium",
     "description": "Unlocks Pocket Prep premium subscription gates.",
     "compatiblePackages": [
       {
@@ -2161,20 +2134,6 @@
         "targets": [
           {
             "version": "3.27.2"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Unlock Premium",
-    "description": "Unlocks all premium content in Posture Correction by Muscle Motion.",
-    "compatiblePackages": [
-      {
-        "packageName": "air.com.musclemotion.posture",
-        "targets": [
-          {
-            "version": "3.2.1"
           }
         ]
       }
@@ -2350,20 +2309,6 @@
   },
   {
     "name": "Unlock Premium",
-    "description": "Unlocks all premium content in Strength Training by Muscle Motion. Note: Create an exercise plan to access all videos",
-    "compatiblePackages": [
-      {
-        "packageName": "air.com.musclemotion.strength.mobile",
-        "targets": [
-          {
-            "version": "3.5.1"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Unlock Premium",
     "description": "Unlocks premium/lifetime featuers in app.",
     "compatiblePackages": [
       {
@@ -2385,7 +2330,7 @@
         "packageName": "com.weather.Weather",
         "targets": [
           {
-            "version": "16.12.0"
+            "version": "16.13.0"
           }
         ]
       }
@@ -2448,7 +2393,7 @@
         "packageName": "com.tradingview.tradingviewapp",
         "targets": [
           {
-            "version": "1.20.77.0.1002295"
+            "version": "1.20.78.0.1002325"
           }
         ]
       }
@@ -2505,34 +2450,6 @@
         "targets": [
           {
             "version": "50.1.1"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Unlock Premium",
-    "description": "Unlocks all premium content.",
-    "compatiblePackages": [
-      {
-        "packageName": "air.com.musclemotion.workout",
-        "targets": [
-          {
-            "version": "1.2.0"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Unlock Premium",
-    "description": "Unlocks all premium content in Yoga by Muscle Motion.",
-    "compatiblePackages": [
-      {
-        "packageName": "air.com.musclemotion.yoga",
-        "targets": [
-          {
-            "version": "3.2.1"
           }
         ]
       }
@@ -2788,6 +2705,21 @@
             "version": "5.18"
           }
         ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Pro",
+    "description": "Unlocks Pro Features in app.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.parallel.space.pro",
+        "targets": [
+          {
+            "version": "4.0.9123"
+          }
+        ],
+        "isPreRelease": true
       }
     ]
   },
@@ -3165,7 +3097,7 @@
         "packageName": "com.anetcapture.mock",
         "targets": [
           {
-            "version": "2.11.1-ad_mob"
+            "version": "2.11.4-ad_mob"
           }
         ]
       }

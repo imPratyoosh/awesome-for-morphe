@@ -1893,5 +1893,13 @@
   "no.mobitroll.kahoot.android": {
     "name": "Kahoot!",
     "iconUrl": "https://play-lh.googleusercontent.com/eIlvMkUf_Sv4k4RVN2MAnxIzojgRbKNop8tgKpU31_LsIWBWr41ZkfGW6c3nABJLUlcWyCn7cfiplXBWQxRnBQ=s64"
+  },
+  "com.parallel.space.pro": {
+    "name": "Parallel Space Pro",
+    "iconUrl": "https://play-lh.googleusercontent.com/nzayXJbDV8oNrDWo_UI46Opb7hdyDpT3rUzAizgPkCd4uRPWVBV7Ef96l3FJZjVJelzDb1H-uFceSdu5RoKY=s64"
+  },
+  "me.gira.widget.countdown": {
+    "name": "Countdown Widget",
+    "iconUrl": "https://play-lh.googleusercontent.com/HokfhECvtC_R0iahgMtOk2fnDgV1rp51CDM-27oorsydZsFdgbGcMddVUladDRs94ceBSacp_rpIXAGrMbuMy7I=s64"
   }
 }

@@ -206,6 +206,21 @@
     "isPreRelease": true
   },
   {
+    "name": "MicroG Support",
+    "description": "Redirects Play Integrity to microG-RE and prompts auto-install if missing.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.whatsapp",
+        "targets": [
+          {
+            "version": "2.26.27.4"
+          }
+        ]
+      }
+    ],
+    "isPreRelease": true
+  },
+  {
     "name": "No Forward Limit",
     "description": "Forward messages to unlimited contacts.",
     "compatiblePackages": [
