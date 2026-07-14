@@ -1,4 +1,11 @@
 {
+  "abeja": {
+    "com.android.gallery3d": [
+      "Disable AI features",
+      "Fix Background Service",
+      "Fix storage permission"
+    ]
+  },
   "abhis1n": {
     "com.Splitwise.SplitwiseMobile": [
       "Enable Features"
@@ -496,24 +503,6 @@
       "Route intents to patched apps"
     ]
   },
-  "arunpdl": {
-    "com.byairapp.android": [
-      "Enable Online Pro",
-      "Enable Pro"
-    ],
-    "com.bytecaretech.merokarobar": [
-      "Unlock Premium"
-    ],
-    "com.harwin.prismatica": [
-      "Remove License Activity",
-      "Remove License Check",
-      "Remove Watermark"
-    ],
-    "com.jellywatch.app": [
-      "Remove License Activity",
-      "Unlock Premium"
-    ]
-  },
   "bholeykabhakt": {
     "com.atmfee": [
       "Hide Location Permission Popup",
@@ -725,6 +714,9 @@
       "Remove License Activity",
       "Remove License Check",
       "Unlock Pro"
+    ],
+    "com.hamropatro": [
+      "Remove Ads"
     ],
     "com.harwin.prismatica": [
       "Remove License Activity",
@@ -1159,6 +1151,16 @@
       "Unlock pro"
     ]
   },
+  "itsthejoker": {
+    "com.rookery.courier": [
+      "10x Bullet Damage",
+      "Beam of Death (10x Fire Rate)",
+      "Bypass Play Store license check",
+      "Redirect Google login to microG",
+      "Skip Play Integrity (fix microG Firebase delay)",
+      "Triple Bullet Size"
+    ]
+  },
   "jasonwu1994": {
     "com.google.android.inputmethod.latin": [
       "AI Writing Tools",
@@ -1409,7 +1411,8 @@
       "Miniplayer previous and next buttons",
       "Navigation bar",
       "Network proxy",
-      "Permanent repeat",
+      "Remember repeat state",
+      "Remember shuffle state",
       "Remove background playback restrictions",
       "Sanitize sharing links",
       "Scrobbling",
@@ -1760,13 +1763,16 @@
       "Ghost Mode",
       "HD Media",
       "Hide Forwarded",
+      "Hide GMS",
       "Hide Read Receipts",
       "Hide Typing",
+      "MicroG Support",
       "No Forward Limit",
       "Remove Communities",
       "Remove Updates",
       "Settings Menu",
-      "Spoof Installer"
+      "Spoof Installer",
+      "Spoof Signature"
     ]
   },
   "piko": {
@@ -1910,9 +1916,11 @@
       "Disable Google Ads SDK",
       "Disable Google Engage integration",
       "Disable Google Engage worker",
+      "Hide ad views",
       "Hide promoted pins",
       "Opt out of Google Analytics",
       "Remove Advertising ID permission",
+      "Sanitize copied links",
       "Sanitize sharing links"
     ]
   },
@@ -2117,24 +2125,6 @@
     "ai.topicfinder.podcastdiscovery": [
       "Unlock Premium"
     ],
-    "air.com.musclemotion.anatomy": [
-      "Unlock Premium"
-    ],
-    "air.com.musclemotion.kyphosis": [
-      "Unlock Premium"
-    ],
-    "air.com.musclemotion.posture": [
-      "Unlock Premium"
-    ],
-    "air.com.musclemotion.strength.mobile": [
-      "Unlock Premium"
-    ],
-    "air.com.musclemotion.workout": [
-      "Unlock Premium"
-    ],
-    "air.com.musclemotion.yoga": [
-      "Unlock Premium"
-    ],
     "alldocumentreader.office.viewer.filereader.pdfviewer": [
       "Unlock Premium"
     ],
@@ -2205,6 +2195,9 @@
     ],
     "com.appostrophe.scrl": [
       "Unlock Premium"
+    ],
+    "com.block.juggle": [
+      "Unlock VIP"
     ],
     "com.blockerhero": [
       "Unlock Lifetime"
@@ -2348,6 +2341,9 @@
     "com.nationaledtech.spinbrowser": [
       "Unlock SPIN Plus"
     ],
+    "com.navitime.inbound.walk": [
+      "Unlock premium"
+    ],
     "com.newsbreak.crimeradar": [
       "Bypass License Check",
       "Bypass Subscription Paywall",
@@ -2367,6 +2363,9 @@
     ],
     "com.onesports.score": [
       "Unlock Premium"
+    ],
+    "com.parallel.space.pro": [
+      "Unlock Pro"
     ],
     "com.particlenews.newsbreak": [
       "Unlock Premium"
@@ -2549,14 +2548,17 @@
     "kha.prog.mikrotik": [
       "Unlock Pro"
     ],
+    "me.gira.widget.countdown": [
+      "Unlock Premium"
+    ],
     "mega.privacy.android.app": [
       "Unlock Pro"
     ],
     "mobi.lockdown.weather": [
       "Unlock Premium"
     ],
-    "net.pkge.pkge": [
-      "Unlock Premium"
+    "no.mobitroll.kahoot.android": [
+      "Unlock Gold"
     ],
     "org.hola.play": [
       "Unlock Premium"
@@ -2755,6 +2757,11 @@
       "Disable Knox integrity checks"
     ]
   },
+  "seobject": {
+    "com.google.android.apps.youtube.music": [
+      "Pin playlists (dev)"
+    ]
+  },
   "shaun-sheep": {
     "com.delphicoder.flud": [
       "Flud Ad-Free & Bypasses"
@@ -2767,11 +2774,6 @@
     ],
     "dev.sasikanth.pinnit": [
       "Unlock Premium"
-    ]
-  },
-  "ts-patches": {
-    "com.teamsnap.teamsnap": [
-      "Disable ads"
     ]
   },
   "ts2": {

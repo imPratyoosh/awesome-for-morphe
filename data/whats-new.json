@@ -1,5 +1,133 @@
 [
   {
+    "date": "July 14, 2026",
+    "bundles": {
+      "abeja": {
+        "isNew": true,
+        "apps": {
+          "com.android.gallery3d": {
+            "isNew": true,
+            "patches": [
+              "Disable AI features",
+              "Fix Background Service",
+              "Fix storage permission"
+            ]
+          }
+        }
+      },
+      "franticg33k": {
+        "isNew": false,
+        "apps": {
+          "com.hamropatro": {
+            "isNew": true,
+            "patches": [
+              "Remove Ads"
+            ]
+          }
+        }
+      },
+      "itsthejoker": {
+        "isNew": true,
+        "apps": {
+          "com.rookery.courier": {
+            "isNew": true,
+            "patches": [
+              "10x Bullet Damage",
+              "Beam of Death (10x Fire Rate)",
+              "Bypass Play Store license check",
+              "Redirect Google login to microG",
+              "Skip Play Integrity (fix microG Firebase delay)",
+              "Triple Bullet Size"
+            ]
+          }
+        }
+      },
+      "morphe": {
+        "isNew": false,
+        "apps": {
+          "com.google.android.apps.youtube.music": {
+            "isNew": false,
+            "patches": [
+              "Remember repeat state",
+              "Remember shuffle state"
+            ]
+          }
+        }
+      },
+      "pichiwa": {
+        "isNew": false,
+        "apps": {
+          "com.whatsapp": {
+            "isNew": false,
+            "patches": [
+              "Hide GMS",
+              "MicroG Support",
+              "Spoof Signature"
+            ]
+          }
+        }
+      },
+      "pinterest-morphed": {
+        "isNew": false,
+        "apps": {
+          "com.pinterest": {
+            "isNew": false,
+            "patches": [
+              "Hide ad views",
+              "Sanitize copied links"
+            ]
+          }
+        }
+      },
+      "rushiranpise": {
+        "isNew": false,
+        "apps": {
+          "com.block.juggle": {
+            "isNew": true,
+            "patches": [
+              "Unlock VIP"
+            ]
+          },
+          "me.gira.widget.countdown": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "no.mobitroll.kahoot.android": {
+            "isNew": true,
+            "patches": [
+              "Unlock Gold"
+            ]
+          },
+          "com.navitime.inbound.walk": {
+            "isNew": true,
+            "patches": [
+              "Unlock premium"
+            ]
+          },
+          "com.parallel.space.pro": {
+            "isNew": true,
+            "patches": [
+              "Unlock Pro"
+            ]
+          }
+        }
+      },
+      "seobject": {
+        "isNew": true,
+        "apps": {
+          "com.google.android.apps.youtube.music": {
+            "isNew": true,
+            "patches": [
+              "Pin playlists (dev)"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
     "date": "July 13, 2026",
     "bundles": {
       "ee-morphe": {
