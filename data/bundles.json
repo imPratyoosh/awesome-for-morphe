@@ -884,7 +884,7 @@
     "stars": 2,
     "firstSeen": "2026-07-06T22:13:39",
     "patches": "site/modx.json",
-    "createdAt": "2026-07-13T10:25:35",
+    "createdAt": "2026-07-14T06:25:28",
     "targetApps": [
       "com.mxtech.videoplayer.ad"
     ],
@@ -1086,7 +1086,7 @@
     "stars": 3,
     "firstSeen": "2026-07-12T05:58:07",
     "patches": "site/pichiwa.json",
-    "createdAt": "2026-07-14T03:03:53",
+    "createdAt": "2026-07-14T05:12:40",
     "targetApps": [
       "com.whatsapp"
     ],
@@ -1113,7 +1113,7 @@
     "stars": 5,
     "firstSeen": "2026-07-08T02:37:25",
     "patches": "site/pinterest-morphed.json",
-    "createdAt": "2026-07-07T23:35:35",
+    "createdAt": "2026-07-14T05:11:00",
     "targetApps": [
       "com.pinterest"
     ],
@@ -1294,7 +1294,7 @@
     "stars": 60,
     "firstSeen": "2026-06-02T17:21:27",
     "patches": "site/rushiranpise.json",
-    "createdAt": "2026-07-13T05:33:26",
+    "createdAt": "2026-07-14T04:14:38",
     "targetApps": [
       "ai.topicfinder.podcastdiscovery",
       "air.com.musclemotion.anatomy",
@@ -1324,6 +1324,7 @@
       "com.apkmirror.helper.prod",
       "com.app.social_gamebox",
       "com.appostrophe.scrl",
+      "com.block.juggle",
       "com.blockerhero",
       "com.blurams.ipc",
       "com.budget.tracker_app",
@@ -1370,6 +1371,7 @@
       "com.mobond.mindicator",
       "com.mtv.sai",
       "com.nationaledtech.spinbrowser",
+      "com.navitime.inbound.walk",
       "com.newsbreak.crimeradar",
       "com.nexstreaming.app.kinemasterfree",
       "com.nytimes.crossword",
@@ -1432,6 +1434,7 @@
       "mega.privacy.android.app",
       "mobi.lockdown.weather",
       "net.pkge.pkge",
+      "no.mobitroll.kahoot.android",
       "org.hola.play",
       "org.zwanoo.android.speedtest",
       "police.scanner.radio.broadcastify.citizen",
@@ -1440,7 +1443,7 @@
       "sp0n.citizen",
       "verbosus.pialytic"
     ],
-    "appCount": 143
+    "appCount": 146
   },
   "rvx-morphed": {
     "source": "github",

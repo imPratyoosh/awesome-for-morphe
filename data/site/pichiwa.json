@@ -278,5 +278,20 @@
       }
     ],
     "isPreRelease": true
+  },
+  {
+    "name": "Spoof Signature",
+    "description": "Forces WhatsApp signature checks to pass by patching the equals method comparison.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.whatsapp",
+        "targets": [
+          {
+            "version": "2.26.27.4"
+          }
+        ]
+      }
+    ],
+    "isPreRelease": true
   }
 ]

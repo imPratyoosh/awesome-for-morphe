@@ -133,7 +133,7 @@
   },
   {
     "name": "Hide promoted pins",
-    "description": "Overrides every `isPromoted` getter on the Pinterest pin/story models to return false, so ad chrome, ad beacons and click-out CTAs are never rendered or fired.",
+    "description": "Neutralises every ad-indicator field on the Pinterest pin/story models (is_promoted, promoted_is_*, is_native, ad_data, ...) so Promoted Pins, shopping-carousel ads, native-content ads and click-out CTAs are never rendered or fired.",
     "compatiblePackages": [
       {
         "packageName": "com.pinterest",
@@ -178,6 +178,28 @@
   {
     "name": "Remove Advertising ID permission",
     "description": "Strips the com.google.android.gms.permission.AD_ID permission so any residual SDK cannot read the device's Google Advertising ID.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.pinterest",
+        "targets": [
+          {
+            "version": "14.26.0",
+            "isExperimental": true
+          },
+          {
+            "version": "14.25.0"
+          },
+          {
+            "version": "14.24.0",
+            "isExperimental": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sanitize copied links",
+    "description": "Resolves Pinterest short URLs (pin.it/…, pinterest.com/url_shortener/…) to their canonical pin URL before they are placed on the system clipboard, so \"Copy link\" no longer produces a fingerprinted short link.",
     "compatiblePackages": [
       {
         "packageName": "com.pinterest",

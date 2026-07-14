@@ -1881,5 +1881,17 @@
   "com.zong.customercare": {
     "name": "MyZong",
     "iconUrl": "https://play-lh.googleusercontent.com/DLt6nmeZ-ibGGaudFHT9dwkMN5IjNO64mdp26Ya4NsgiLlej3vE6jid8K1Ncw_TuyC4ShhTTfqYQgfMoyI1BTQ=s64"
+  },
+  "com.block.juggle": {
+    "name": "Block Blast!",
+    "iconUrl": "https://play-lh.googleusercontent.com/5FLR-EBlfNvoV9ydZkOMDqRF10nV64XcKdZzW_oQzmz2e8Me9PS5Zncnvviki0J3XumjO2a_lg6_IdwOqwnV=s64"
+  },
+  "com.navitime.inbound.walk": {
+    "name": "NAVITIME",
+    "iconUrl": "https://play-lh.googleusercontent.com/EkFWFEcKUvRnEBo2K62JeNPAVPjd1IQMSV4-Ghw6pkpJOrGGyG1n0L7NP_hB9o5YFccK7hDSfxZBW_t1X0Vx4A=s64"
+  },
+  "no.mobitroll.kahoot.android": {
+    "name": "Kahoot!",
+    "iconUrl": "https://play-lh.googleusercontent.com/eIlvMkUf_Sv4k4RVN2MAnxIzojgRbKNop8tgKpU31_LsIWBWr41ZkfGW6c3nABJLUlcWyCn7cfiplXBWQxRnBQ=s64"
   }
 }
