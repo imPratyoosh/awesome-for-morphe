@@ -2,9 +2,9 @@
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  padding: 2px 6px;
+  padding: 2px 4px;
   border-radius: 9999px;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   line-height: 1.4;
   white-space: nowrap;
@@ -15,6 +15,19 @@
 }
 
 .badge i,
+.badge img {
+  width: 1.4em;
+  height: 1.4em;
+  margin-top: -99px;
+  margin-bottom: -99px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  object-fit: contain;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
 .icon-center {
   height: 1.4em;
   display: inline-flex;
@@ -23,12 +36,12 @@
 }
 
 .badge-sm {
-  padding: 1px 4px;
-  font-size: 12px;
+  padding: 0px 3px;
+  font-size: 11px;
 }
 
 .badge-md {
-  padding: 4px 8px;
+  padding: 3px 6px;
   font-size: 14px;
   font-weight: 700;
   gap: 6px;

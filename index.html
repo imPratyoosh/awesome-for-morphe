@@ -351,12 +351,9 @@
               <!-- Right Group -->
               <div class="flex flex-wrap items-center justify-center md:justify-end gap-2 text-xs text-light shrink-0"
                 aria-live="polite">
-                <span class="badge"><i class="fa-solid fa-cubes"></i><span>{{ stats?.bundles || 0 }}
-                    bundles</span></span>
-                <span class="badge"><i class="fa-solid fa-mobile-screen"></i><span>{{ stats?.apps || 0 }}
-                    apps</span></span>
-                <span class="badge"><i class="fa-solid fa-puzzle-piece"></i><span>{{ stats?.patches || 0 }}
-                    patches</span></span>
+                <span class="badge"><i class="fa-solid fa-cubes"></i>{{ stats?.bundles || 0 }} bundles</span>
+                <span class="badge"><i class="fa-solid fa-mobile-screen"></i>{{ stats?.apps || 0 }} apps</span>
+                <span class="badge"><i class="fa-solid fa-puzzle-piece"></i>{{ stats?.patches || 0 }} patches</span>
               </div>
             </div>
           </div>
@@ -409,9 +406,9 @@
                     <div class="ml-2 md:ml-3 border-l-2 border-lightGray/30 pl-2 md:pl-3">
                       <div class="flex flex-wrap gap-1.5">
                         <div v-for="patch in appData.patches" :key="patch"
-                          class="badge border-lightGray hover:border-white/50 text-light cursor-pointer bg-dark shrink-0"
+                          class="badge badge-sm border-lightGray hover:border-white/50 text-light cursor-pointer bg-dark shrink-0"
                           @click="openPatchPopup(bundleKey, packageName, patch)">
-                          <span>{{ patch }}</span>
+                          {{ patch }}
                           <span v-if="!appData.isNew &amp;&amp; !bundleData.isNew" class="badge badge-sm text-yellow">✨
                             New</span>
                         </div>
@@ -450,7 +447,7 @@
           <div v-else class="flex flex-col gap-2">
             <!-- Results Toolbar -->
             <div class="flex items-center justify-between px-1">
-              <div class="flex items-center gap-1">
+              <div class="flex items-center gap-2">
                 <button @click="collapseAll" class="badge text-light">
                   <i class="fa-solid fa-compress icon-center"></i>
                   <span>Collapse all</span>
@@ -459,26 +456,29 @@
                   <i class="fa-solid fa-expand icon-center"></i>
                   <span>Expand all</span>
                 </button>
+              </div>
+
+              <div class="flex items-center gap-2">
                 <button v-show="bundlesGroups.length > 1" @click="toggleColumns"
-                  class="badge hidden md:inline-flex text-green"
+                  class="badge hidden md:inline-flex text-green shrink-0"
                   :title="effectiveTwoColumns ? 'Switch to list view' : 'Switch to grid view'">
                   <i class="fa-solid icon-center" :class="effectiveTwoColumns ? 'fa-list' : 'fa-grip'"></i>
                   <span v-if="!effectiveTwoColumns">Grid view</span><span v-else>List view</span>
                 </button>
-              </div>
 
-              <!-- Sort Dropdown -->
-              <div class="relative w-[115px] shrink-0 flex items-center">
-                <select v-model="sortOrder"
-                  class="w-full h-6 pl-7 pr-4 appearance-none bg-black border border-lightGray hover:border-white/50 rounded-full text-xs text-white font-semibold focus:border-light outline-none transition-all cursor-pointer">
-                  <option value="stars">Most Stars</option>
-                  <option value="latest">Latest</option>
-                  <option value="apps">Most Apps</option>
-                </select>
-                <i
-                  class="fa-solid fa-sort-amount-down absolute left-2 top-1/2 -translate-y-1/2 text-white text-[10px] pointer-events-none icon-center"></i>
-                <i
-                  class="fa-solid fa-chevron-down absolute right-2 top-1/2 -translate-y-1/2 text-white text-[8px] pointer-events-none icon-center"></i>
+                <!-- Sort Dropdown -->
+                <div class="relative w-[115px] shrink-0 flex items-center">
+                  <select v-model="sortOrder"
+                    class="w-full h-6 pl-7 pr-4 appearance-none bg-black border border-lightGray hover:border-white/50 rounded-full text-xs text-white font-semibold focus:border-light outline-none transition-all cursor-pointer">
+                    <option value="stars">Most Stars</option>
+                    <option value="latest">Latest</option>
+                    <option value="apps">Most Apps</option>
+                  </select>
+                  <i
+                    class="fa-solid fa-sort-amount-down absolute left-2 top-1/2 -translate-y-1/2 text-white text-[10px] pointer-events-none icon-center"></i>
+                  <i
+                    class="fa-solid fa-chevron-down absolute right-2 top-1/2 -translate-y-1/2 text-white text-[8px] pointer-events-none icon-center"></i>
+                </div>
               </div>
             </div>
 
@@ -533,7 +533,7 @@
                       <a v-if="group.bundle.createdAt"
                         :href="group.bundle.changelogUrl || (group.bundle.repoUrl ? group.bundle.repoUrl + '/releases' : '#')"
                         target="_blank" rel="noreferrer" @click.stop class="badge" title="View changelog">
-                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        <i class="fa-solid fa-clock-rotate-left text-yellow"></i>
                         <span>{{ formatDate(group.bundle.createdAt) }}</span>
                       </a>
                       <button @click.stop="mainUI.toggleBundleView(group)" class="badge shrink-0 text-green select-none"
@@ -601,21 +601,20 @@
                           <template v-if="appItem.packageName && appItem.packageName !== 'universal'">
                             <button @click.stop="filterByApp(appItem.packageName)" class="badge shrink-0 select-none">
                               <i class="fa-solid fa-filter"></i>
-                              <span>Filter by this app</span>
+                              <span>Filter this app</span>
                             </button>
                             <a :href="playUrl(appItem.packageName)" class="badge shrink-0" target="_blank" @click.stop
                               title="Open on Play Store">
-                              <i class="fa-brands fa-google-play"></i>
-                              <span>{{ appItem.packageName }}</span>
+                              <i class="fa-brands fa-google-play text-green"></i>
+                              <span>Google Play</span>
                             </a>
                             <button @click.stop="copyText(appItem.packageName, 'pkg_' + group.key + '_' + appItem.id)"
                               class="badge text-light shrink-0 relative"
                               :class="{ 'z-50': copiedStates['pkg_' + group.key + '_' + appItem.id] }"
-                              title="Copy package name">
-                              <span v-if="copiedStates['pkg_' + group.key + '_' + appItem.id]"
-                                class="absolute top-full right-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-white bg-lightGray rounded shadow-lg whitespace-nowrap z-[60] pointer-events-none animate-float-in">Copied!</span>
-                              <i class="fa-solid"
+                              :title="appItem.packageName">
+                              <i class="fa-solid !my-0"
                                 :class="copiedStates['pkg_' + group.key + '_' + appItem.id] ? 'fa-check text-green' : 'fa-regular fa-copy'"></i>
+                              <span>Package name</span>
                             </button>
                           </template>
                         </div>
@@ -641,8 +640,8 @@
                                       class="badge badge-sm text-yellow"><i class="fa-solid fa-flask"></i>
                                       Pre-release</span>
                                   </strong>
-                                  <span v-if="!patchItem.enabled" class="badge text-yellow cursor-help"
-                                    title="off by default"><span>off</span></span>
+                                  <span v-if="!patchItem.enabled" class="badge badge-sm text-yellow cursor-help"
+                                    title="off by default">off</span>
                                   <button v-if="patchItem.options.length"
                                     @click.stop="mainUI.toggleOptions(patchItem.id)"
                                     class="text-light hover:text-white px-1 shrink-0"
@@ -862,7 +861,7 @@
                 <a v-if="group.bundle.createdAt"
                   :href="group.bundle.changelogUrl || (group.bundle.repoUrl ? group.bundle.repoUrl + '/releases' : '#')"
                   target="_blank" rel="noreferrer" @click.stop class="badge" title="View changelog">
-                  <i class="fa-solid fa-clock-rotate-left"></i>
+                  <i class="fa-solid fa-clock-rotate-left text-yellow"></i>
                   <span>{{ formatDate(group.bundle.createdAt) }}</span>
                 </a>
                 <button @click.stop="popupUI.toggleBundleView(group)" class="badge shrink-0 text-green select-none"
@@ -925,22 +924,21 @@
                       <template v-if="appItem.packageName">
                         <button @click.stop="filterByApp(appItem.packageName)" class="badge shrink-0 select-none">
                           <i class="fa-solid fa-filter"></i>
-                          <span>Filter by this app</span>
+                          <span>Filter this app</span>
                         </button>
                         <a v-if="appItem.packageName !== 'universal'" :href="playUrl(appItem.packageName)"
                           class="badge shrink-0" target="_blank" @click.stop title="Open on Play Store">
-                          <i class="fa-brands fa-google-play"></i>
-                          <span>{{ appItem.packageName }}</span>
+                          <i class="fa-brands fa-google-play text-green"></i>
+                          <span>Google Play</span>
                         </a>
                         <button v-if="appItem.packageName !== 'universal'"
                           @click.stop="copyText(appItem.packageName, 'pkg_' + group.key + '_' + appItem.id)"
                           class="badge text-light shrink-0 relative"
                           :class="{ 'z-50': copiedStates['pkg_' + group.key + '_' + appItem.id] }"
-                          title="Copy package name">
-                          <span v-if="copiedStates['pkg_' + group.key + '_' + appItem.id]"
-                            class="absolute top-full right-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-white bg-lightGray rounded shadow-lg whitespace-nowrap z-[60] pointer-events-none animate-float-in">Copied!</span>
-                          <i class="fa-solid"
+                          :title="appItem.packageName">
+                          <i class="fa-solid !my-0"
                             :class="copiedStates['pkg_' + group.key + '_' + appItem.id] ? 'fa-check text-green' : 'fa-regular fa-copy'"></i>
+                          <span>Package name</span>
                         </button>
                       </template>
                     </div>
@@ -965,8 +963,8 @@
                                   class="badge badge-sm text-yellow"><i class="fa-solid fa-flask"></i>
                                   Pre-release</span>
                               </strong>
-                              <span v-if="!patchItem.enabled" class="badge text-yellow cursor-help"
-                                title="off by default"><span>off</span></span>
+                              <span v-if="!patchItem.enabled" class="badge badge-sm text-yellow cursor-help"
+                                title="off by default">off</span>
                               <button v-if="patchItem.options.length" @click.stop="popupUI.toggleOptions(patchItem.id)"
                                 class="text-light hover:text-white px-1 shrink-0"
                                 :title="popupUI.expandedOptions.has(patchItem.id) ? 'Hide options' : 'Show options'">
