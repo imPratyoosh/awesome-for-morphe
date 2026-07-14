@@ -975,7 +975,7 @@ const app = createApp({
         .writeText(text)
         .then(() => {
           copiedStates[key] = true;
-          setTimeout(() => (copiedStates[key] = false), 1500);
+          setTimeout(() => (copiedStates[key] = false), 2000);
         })
         .catch(() => {});
 

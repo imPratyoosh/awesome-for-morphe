@@ -615,6 +615,10 @@
                               <i class="fa-solid !my-0"
                                 :class="copiedStates['pkg_' + group.key + '_' + appItem.id] ? 'fa-check text-green' : 'fa-regular fa-copy'"></i>
                               <span>Package name</span>
+                              <span v-if="copiedStates['pkg_' + group.key + '_' + appItem.id]"
+                                class="absolute top-full right-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-white bg-lightGray rounded shadow-lg whitespace-nowrap z-[60] pointer-events-none animate-float-in">
+                                {{ appItem.packageName }}
+                              </span>
                             </button>
                           </template>
                         </div>
@@ -939,6 +943,10 @@
                           <i class="fa-solid !my-0"
                             :class="copiedStates['pkg_' + group.key + '_' + appItem.id] ? 'fa-check text-green' : 'fa-regular fa-copy'"></i>
                           <span>Package name</span>
+                          <span v-if="copiedStates['pkg_' + group.key + '_' + appItem.id]"
+                            class="absolute top-full right-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-white bg-lightGray rounded shadow-lg whitespace-nowrap z-[60] pointer-events-none animate-float-in">
+                            {{ appItem.packageName }}
+                          </span>
                         </button>
                       </template>
                     </div>
