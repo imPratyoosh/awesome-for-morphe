@@ -1901,5 +1901,9 @@
   "me.gira.widget.countdown": {
     "name": "Countdown Widget",
     "iconUrl": "https://play-lh.googleusercontent.com/HokfhECvtC_R0iahgMtOk2fnDgV1rp51CDM-27oorsydZsFdgbGcMddVUladDRs94ceBSacp_rpIXAGrMbuMy7I=s64"
+  },
+  "com.hamropatro": {
+    "name": "Hamropatro",
+    "iconUrl": "https://play-lh.googleusercontent.com/FW2G3tMfU1wF4NF5gE4oX4w7rY3oPVBBWdBew4sMM7vnPFPP-FWPSsFe0HKvfc2wO7ICCqL3K3nCRg5g85t8Lg=s64"
   }
 }
