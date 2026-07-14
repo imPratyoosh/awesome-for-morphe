@@ -32,11 +32,13 @@ Downloads the raw JSON metadata from the remote source.
 
 ### `update.py`
 Parses the downloaded JSON files and compiles the unified `bundles.json`, `apps.json`, and `/site/<bundle>.json` UI data files.
-- `python scripts/update.py`: Compiles JSON files and automatically fetches missing data (stars, avatars, icons).
-- `python scripts/update.py --stars`: Additionally forces an update of stars for **all** bundles.
-- `python scripts/update.py --avatars`: Additionally forces an update of avatars for **all** bundles.
-- `python scripts/update.py --icons`: Additionally forces an update of icons for **all** apps.
-- `python scripts/update.py --all`: Additionally forces an update of all API data for all entries.
+- `python scripts/update.py`: Compiles JSON files. It will automatically fetch data (stars, avatars, app names, icons) for completely new apps/bundles, or if any of these fields are missing (`null`).
+- `python scripts/update.py --stars`: Forces an update of stars for **all** bundles.
+- `python scripts/update.py --avatars`: Forces an update of avatars for **all** bundles.
+- `python scripts/update.py --icons`: Forces an update of icons for **all** apps.
+- `python scripts/update.py --daily`: Runs the daily update. This updates stars for **all** bundles, fetches missing avatars, and fetches missing app icons/names.
+- `python scripts/update.py --all`: Forces an update of all data (stars, avatars, icons) for all bundles and apps, including daily updates.
+
 
 ### `whats_new.py`
 Generates the what's new list by diffing current bundles against the history baseline.
