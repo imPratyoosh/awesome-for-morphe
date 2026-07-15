@@ -14,20 +14,6 @@
     ]
   },
   {
-    "name": "Disable PairIP DRM",
-    "description": "Disables PairIP signature verification, Google Play LVL license check, System.exit kill switch, checksum integrity verification, and MHSDK analytics. Required for the app to launch after re-signing.",
-    "compatiblePackages": [
-      {
-        "packageName": "com.adobe.lrmobile",
-        "targets": [
-          {
-            "version": "11.4.4"
-          }
-        ]
-      }
-    ]
-  },
-  {
     "name": "Fix Firebase after re-signing",
     "description": "Fixes Firebase services (push notifications, Remote Config, Firebase Auth) that break after Morphe re-signs the app with a different certificate.\n\nApply with Original app certificate patch no other config needed.",
     "default": false
@@ -138,13 +124,27 @@
   },
   {
     "name": "Unlock Premium",
-    "description": "Unlocks all premium features by forcing entitlement status to SUBSCRIPTION and making all premium gating checks return true.",
+    "description": "Unlocks all premium features by forcing the pro_version SharedPreferences check to always return true.",
     "compatiblePackages": [
       {
-        "packageName": "com.adobe.lrmobile",
+        "packageName": "com.nicedayapps.iss_free",
         "targets": [
           {
-            "version": "11.4.4"
+            "version": "8.5.3"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks all premium features by bypassing the native library premium check.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.spocky.projengmenu",
+        "targets": [
+          {
+            "version": "4.71"
           }
         ]
       }

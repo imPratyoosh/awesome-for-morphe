@@ -1921,5 +1921,9 @@
   "com.google.android.verifier": {
     "name": "Android Developer Verifier",
     "iconUrl": "https://play-lh.googleusercontent.com/zBtyRmGC0sI5x8aBQuSC7mY8uSGerOnkoJuD2G6yMCbvwT8vtgq4Y1w3Xmo0Sg9_dUi4HuCOGS4sknTjfVO20w=s64"
+  },
+  "com.nicedayapps.iss_free": {
+    "name": "ISS Live Now",
+    "iconUrl": "https://play-lh.googleusercontent.com/bOSkPoR8m9Qc_TPwrID8_Db51EL9oO0rq4UzRPAHKN2Zc1mq7gCq_0tySpBp1h6PkV5h7IOr0IvA1MTBiGyQCw=s64"
   }
 }

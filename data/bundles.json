@@ -58,7 +58,7 @@
     "stars": 187,
     "firstSeen": "2026-02-20T17:59:24",
     "patches": "site/adobo.json",
-    "createdAt": "2026-07-14T16:16:49",
+    "createdAt": "2026-07-15T15:38:52",
     "targetApps": [
       "com.google.android.inputmethod.latin",
       "com.imdb.mobile",
@@ -453,7 +453,7 @@
     "stars": 1,
     "firstSeen": "2026-07-14T19:19:17",
     "patches": "site/gmaps.json",
-    "createdAt": "2026-07-14T15:51:11",
+    "createdAt": "2026-07-15T18:01:59",
     "targetApps": [
       "Google Maps"
     ],
@@ -494,7 +494,7 @@
     "stars": 824,
     "firstSeen": "2026-01-21T03:33:21",
     "patches": "site/hoo-dles.json",
-    "createdAt": "2026-07-12T22:16:14",
+    "createdAt": "2026-07-15T16:13:49",
     "targetApps": [
       "app.ttmikstories.android",
       "bitpit.launcher",
@@ -838,7 +838,7 @@
     "stars": 1,
     "firstSeen": "2026-07-12T05:58:07",
     "patches": "site/letterboxd-stremio.json",
-    "createdAt": "2026-07-08T23:57:02",
+    "createdAt": "2026-07-15T16:53:46",
     "targetApps": [
       "com.letterboxd.letterboxd"
     ],
@@ -1486,12 +1486,13 @@
     "stars": 2,
     "firstSeen": "2026-07-12T05:58:07",
     "patches": "site/saiesh.json",
-    "createdAt": "2026-07-11T10:18:55",
+    "createdAt": "2026-07-15T18:07:09",
     "targetApps": [
-      "com.adobe.lrmobile",
-      "com.overdevs.at4k"
+      "com.nicedayapps.iss_free",
+      "com.overdevs.at4k",
+      "com.spocky.projengmenu"
     ],
-    "appCount": 2
+    "appCount": 3
   },
   "samsung-morphe": {
     "source": "github",

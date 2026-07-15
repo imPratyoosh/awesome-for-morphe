@@ -482,6 +482,33 @@
     ]
   },
   {
+    "name": "Hide community menu badge",
+    "description": "Hides the red notification badge on the community menu (hamburger menu).",
+    "compatiblePackages": [
+      {
+        "packageName": "com.reddit.frontpage",
+        "targets": [
+          {
+            "version": "2026.28.0"
+          },
+          {
+            "version": "2026.27.0"
+          },
+          {
+            "version": "2026.26.0"
+          },
+          {
+            "version": "2026.25.0"
+          },
+          {
+            "version": "2026.14.0"
+          }
+        ]
+      }
+    ],
+    "isPreRelease": true
+  },
+  {
     "name": "Hide post view counts",
     "description": "Removes the \"views\" indicator from the post metadata.",
     "compatiblePackages": [

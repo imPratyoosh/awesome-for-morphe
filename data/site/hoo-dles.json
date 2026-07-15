@@ -205,8 +205,7 @@
           {
             "version": "6.6.3"
           }
-        ],
-        "isPreRelease": true
+        ]
       }
     ]
   },
@@ -267,6 +266,9 @@
         "targets": [
           {
             "version": "1.16.7"
+          },
+          {
+            "version": "1.16.15"
           }
         ]
       }
@@ -814,7 +816,7 @@
     ]
   },
   {
-    "name": "Enable SoundCloud Go+",
+    "name": "Enable SoundCloud Go",
     "description": "Enables app features locked behind the subscription paywall.",
     "compatiblePackages": [
       {
@@ -1008,8 +1010,7 @@
           {
             "version": "6.6.3"
           }
-        ],
-        "isPreRelease": true
+        ]
       }
     ]
   },
