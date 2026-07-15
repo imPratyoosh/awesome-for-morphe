@@ -908,7 +908,7 @@
     "stars": 4,
     "firstSeen": "2026-07-06T22:13:39",
     "patches": "site/modx.json",
-    "createdAt": "2026-07-15T06:49:53",
+    "createdAt": "2026-07-15T12:50:31",
     "targetApps": [
       "com.mxtech.videoplayer.ad"
     ],
@@ -1317,7 +1317,7 @@
     "stars": 60,
     "firstSeen": "2026-06-02T17:21:27",
     "patches": "site/rushiranpise.json",
-    "createdAt": "2026-07-14T08:32:45",
+    "createdAt": "2026-07-15T11:30:54",
     "targetApps": [
       "ai.topicfinder.podcastdiscovery",
       "alldocumentreader.office.viewer.filereader.pdfviewer",
@@ -1350,6 +1350,7 @@
       "com.changayaf.inmigreat",
       "com.citymapper.app.release",
       "com.cloudflare.onedotonedotonedotone",
+      "com.clue.android",
       "com.community.mbox.in",
       "com.community.mbox.tv",
       "com.community.oneroom",
@@ -1365,6 +1366,7 @@
       "com.flightaware.android.liveFlightTracker",
       "com.flightradar24free",
       "com.glority.picturemushroom",
+      "com.google.android.verifier",
       "com.guochao.faceshow",
       "com.inscode.autoclicker",
       "com.intsig.camscanner",
@@ -1461,7 +1463,7 @@
       "sp0n.citizen",
       "verbosus.pialytic"
     ],
-    "appCount": 141
+    "appCount": 143
   },
   "rvx-morphed": {
     "source": "github",

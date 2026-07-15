@@ -1913,5 +1913,13 @@
   "com.rookery.courier": {
     "name": "Roost",
     "iconUrl": "https://play-lh.googleusercontent.com/wb_9H23PJOWrL9aQkjQtGD_YxmDx87M2rp_g-knGRHadVb6WQC_twOLXXb-p2JUia61B1ngUyRy7NPJeecLwP0Y=s64"
+  },
+  "com.clue.android": {
+    "name": "Clue Period & Cycle Tracker",
+    "iconUrl": "https://play-lh.googleusercontent.com/k6vuyDURLVvlHryevs4WdWeG5rqtUMYWqxz4rv-VQdI8Atf6k1xSBG2Vj8_OSqwDf3s8xB7y1dbjFvobP9bxaQ=s64"
+  },
+  "com.google.android.verifier": {
+    "name": "Android Developer Verifier",
+    "iconUrl": "https://play-lh.googleusercontent.com/zBtyRmGC0sI5x8aBQuSC7mY8uSGerOnkoJuD2G6yMCbvwT8vtgq4Y1w3Xmo0Sg9_dUi4HuCOGS4sknTjfVO20w=s64"
   }
 }
