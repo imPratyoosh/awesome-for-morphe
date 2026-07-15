@@ -191,6 +191,21 @@
     "isPreRelease": true
   },
   {
+    "name": "Login Fix",
+    "description": "Bypasses verification bans by spoofing signatures, installers, and faking GMS checks. REQUIRED: You must manually install microG-RE for Play Integrity to pass.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.whatsapp",
+        "targets": [
+          {
+            "version": "2.26.27.4"
+          }
+        ]
+      }
+    ],
+    "isPreRelease": true
+  },
+  {
     "name": "No Forward Limit",
     "description": "Forward messages to unlimited contacts.",
     "compatiblePackages": [
@@ -248,20 +263,5 @@
         ]
       }
     ]
-  },
-  {
-    "name": "SMS Verification Bypass",
-    "description": "Bypasses SMS verification bans by spoofing signatures, installers, and hiding GMS. REQUIRED: You must manually install microG-RE for Play Integrity to pass.",
-    "compatiblePackages": [
-      {
-        "packageName": "com.whatsapp",
-        "targets": [
-          {
-            "version": "2.26.27.4"
-          }
-        ]
-      }
-    ],
-    "isPreRelease": true
   }
 ]
