@@ -891,15 +891,16 @@
     "stars": 4,
     "firstSeen": "2026-07-09T04:53:42",
     "patches": "site/miguel.json",
-    "createdAt": "2026-07-14T21:06:21",
+    "createdAt": "2026-07-15T20:35:45",
     "targetApps": [
       "air.com.midjiwan.polytopia",
+      "com.IvanAF.ClimbAMIYPfree",
       "com.ea.game.pvzfree_row",
       "com.rubygames.assassin",
       "diozz.cubex",
       "jpark.AOS5"
     ],
-    "appCount": 5
+    "appCount": 6
   },
   "modx": {
     "source": "github",
