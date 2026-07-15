@@ -74,7 +74,7 @@
     "stars": 75,
     "firstSeen": "2026-05-25T15:05:44",
     "patches": "site/ajstrick81-androidtv.json",
-    "createdAt": "2026-07-12T19:54:20",
+    "createdAt": "2026-07-15T13:59:06",
     "targetApps": [
       "com.amazon.amazonvideo.livingroom",
       "com.bamnetworks.mobile.android.gameday.atbat",
@@ -138,7 +138,7 @@
     "stars": 128,
     "firstSeen": "2026-03-29T10:56:47",
     "patches": "site/amplerevanced.json",
-    "createdAt": "2026-07-06T17:38:08",
+    "createdAt": "2026-07-15T12:58:12",
     "targetApps": [
       "com.dcinside.app.android",
       "com.flexcil.flexcilnote",
@@ -155,7 +155,7 @@
     "stars": 1788,
     "firstSeen": "2026-06-16T15:37:39",
     "patches": "site/anddea.json",
-    "createdAt": "2026-07-14T09:19:57",
+    "createdAt": "2026-07-15T14:23:22",
     "targetApps": [
       "com.google.android.apps.youtube.music",
       "com.google.android.youtube"
@@ -908,7 +908,7 @@
     "stars": 4,
     "firstSeen": "2026-07-06T22:13:39",
     "patches": "site/modx.json",
-    "createdAt": "2026-07-15T12:50:31",
+    "createdAt": "2026-07-14T05:29:54",
     "targetApps": [
       "com.mxtech.videoplayer.ad"
     ],
