@@ -68,5 +68,19 @@
         ]
       }
     ]
+  },
+  {
+    "name": "Restyle Search/Games tabs to Tools/About",
+    "description": "Renames the native Search/Games tab labels to Tools/About and swaps their bottom-nav icons to match the repurposed extension screens.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.mxtech.videoplayer.ad",
+        "targets": [
+          {
+            "version": "2.14.1"
+          }
+        ]
+      }
+    ]
   }
 ]

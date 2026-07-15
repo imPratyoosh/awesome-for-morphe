@@ -908,7 +908,7 @@
     "stars": 4,
     "firstSeen": "2026-07-06T22:13:39",
     "patches": "site/modx.json",
-    "createdAt": "2026-07-14T14:26:57",
+    "createdAt": "2026-07-15T05:47:45",
     "targetApps": [
       "com.mxtech.videoplayer.ad"
     ],
@@ -921,7 +921,7 @@
     "stars": 2853,
     "firstSeen": "2026-06-23T13:04:19",
     "patches": "site/morphe.json",
-    "createdAt": "2026-07-14T10:14:00",
+    "createdAt": "2026-07-15T05:29:02",
     "targetApps": [
       "com.google.android.apps.youtube.music",
       "com.google.android.youtube",
@@ -1110,7 +1110,7 @@
     "stars": 3,
     "firstSeen": "2026-07-12T05:58:07",
     "patches": "site/pichiwa.json",
-    "createdAt": "2026-07-15T03:59:38",
+    "createdAt": "2026-07-15T06:25:25",
     "targetApps": [
       "com.whatsapp"
     ],
