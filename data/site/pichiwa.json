@@ -161,21 +161,6 @@
     "isPreRelease": true
   },
   {
-    "name": "Hide GMS",
-    "description": "Pretends that Google Play Services is missing to force fallback registration flows.",
-    "compatiblePackages": [
-      {
-        "packageName": "com.whatsapp",
-        "targets": [
-          {
-            "version": "2.26.27.4"
-          }
-        ]
-      }
-    ],
-    "isPreRelease": true
-  },
-  {
     "name": "Hide Read Receipts",
     "description": "Read messages without sending blue ticks.",
     "compatiblePackages": [
@@ -193,21 +178,6 @@
   {
     "name": "Hide Typing",
     "description": "Escribe sin mostrar \"escribiendo...\".",
-    "compatiblePackages": [
-      {
-        "packageName": "com.whatsapp",
-        "targets": [
-          {
-            "version": "2.26.27.4"
-          }
-        ]
-      }
-    ],
-    "isPreRelease": true
-  },
-  {
-    "name": "MicroG Support",
-    "description": "Redirects Play Integrity to microG-RE and prompts auto-install if missing.",
     "compatiblePackages": [
       {
         "packageName": "com.whatsapp",
@@ -280,23 +250,8 @@
     ]
   },
   {
-    "name": "Spoof Installer",
-    "description": "Fake installation from Google Play to avoid restrictions.",
-    "compatiblePackages": [
-      {
-        "packageName": "com.whatsapp",
-        "targets": [
-          {
-            "version": "2.26.27.4"
-          }
-        ]
-      }
-    ],
-    "isPreRelease": true
-  },
-  {
-    "name": "Spoof Signature",
-    "description": "Forces WhatsApp signature checks to pass by patching the equals method comparison.",
+    "name": "SMS Verification Bypass",
+    "description": "Bypasses SMS verification bans by spoofing signatures, installers, and hiding GMS. REQUIRED: You must manually install microG-RE for Play Integrity to pass.",
     "compatiblePackages": [
       {
         "packageName": "com.whatsapp",
