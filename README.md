@@ -83,6 +83,7 @@
 - [Xisrr1/Revancify-Xisr](https://github.com/Xisrr1/Revancify-Xisr)
 - [Graywizard888/Enhancify](https://github.com/Graywizard888/Enhancify)
 - [hoo-dles/jadx-morphe](https://github.com/hoo-dles/jadx-morphe)
+- [Paresh-Maheshwari/morphe-ai](https://github.com/Paresh-Maheshwari/morphe-ai)
 
 ## ⬇️ Pre-patched sources
 
