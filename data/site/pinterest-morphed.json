@@ -105,6 +105,41 @@
     ]
   },
   {
+    "name": "Disable Firebase services",
+    "description": "Adds the officially documented Firebase off-switches (`firebase_analytics_collection_deactivated`, `firebase_crashlytics_collection_enabled=false`, `firebase_performance_collection_deactivated`, `google_analytics_adid_collection_enabled=false`) so the Firebase Analytics, Crashlytics and Performance SDKs go dormant.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.pinterest",
+        "targets": [
+          {
+            "version": "14.27.0"
+          },
+          {
+            "version": "14.26.0"
+          },
+          {
+            "version": "14.25.0"
+          },
+          {
+            "version": "14.24.0"
+          },
+          {
+            "version": "14.23.0"
+          },
+          {
+            "version": "14.22.0"
+          },
+          {
+            "version": "14.21.0"
+          },
+          {
+            "version": "14.20.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "name": "Disable Google Ads SDK",
     "description": "Removes the Google Mobile Ads (AdMob) initialization metadata so the SDK never starts.",
     "compatiblePackages": [

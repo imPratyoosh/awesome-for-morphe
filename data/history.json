@@ -38,6 +38,7 @@
       "Hide Ask button from search bar",
       "Hide awards",
       "Hide community highlights",
+      "Hide community menu badge",
       "Hide post view counts",
       "Hide prominent search bar",
       "Hide share count",
@@ -178,7 +179,6 @@
       "Disable verifying signature",
       "Enable Markdown",
       "Enable reaction mention flag",
-      "Enable recording pause/resume feature",
       "Enable send big text",
       "Force enable debug mode",
       "Force enable emoticon plus feature",
@@ -188,7 +188,6 @@
       "Hook Package Manager",
       "Open profile from open chat feed",
       "Override feature flag",
-      "Play YouTube player in chat room",
       "Register settings activity",
       "Remove BizBoard ads",
       "Remove More tab ad",
@@ -200,6 +199,7 @@
       "Remove shop tab",
       "Show chatroom channel ID",
       "Show deleted, hidden, or edited messages",
+      "Show message read receipts",
       "Spoof App ID",
       "Spoof apk checksums",
       "Spoof signature",
@@ -1763,16 +1763,13 @@
       "Ghost Mode",
       "HD Media",
       "Hide Forwarded",
-      "Hide GMS",
       "Hide Read Receipts",
       "Hide Typing",
-      "MicroG Support",
+      "Login Fix",
       "No Forward Limit",
       "Remove Communities",
       "Remove Updates",
-      "Settings Menu",
-      "Spoof Installer",
-      "Spoof Signature"
+      "Settings Menu"
     ]
   },
   "piko": {
@@ -1913,6 +1910,7 @@
       "Disable Android Privacy Sandbox Ad Services",
       "Disable AppsFlyer tracking",
       "Disable Bugsnag crash tracking",
+      "Disable Firebase services",
       "Disable Google Ads SDK",
       "Disable Google Engage integration",
       "Disable Google Engage worker",
@@ -2224,6 +2222,9 @@
       "Disable Analytics / Telemetry",
       "Spoof WARP+ Unlimited UI"
     ],
+    "com.clue.android": [
+      "Unlock Plus"
+    ],
     "com.community.mbox.in": [
       "Unlock VIP"
     ],
@@ -2270,6 +2271,9 @@
     ],
     "com.glority.picturemushroom": [
       "Unlock Premium"
+    ],
+    "com.google.android.verifier": [
+      "Bypass developer verification"
     ],
     "com.guochao.faceshow": [
       "Unlock SVIP"

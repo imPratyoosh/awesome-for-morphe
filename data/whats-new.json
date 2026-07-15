@@ -1,5 +1,71 @@
 [
   {
+    "date": "July 15, 2026",
+    "bundles": {
+      "adobo": {
+        "isNew": false,
+        "apps": {
+          "com.reddit.frontpage": {
+            "isNew": false,
+            "patches": [
+              "Hide community menu badge"
+            ]
+          }
+        }
+      },
+      "amplerevanced": {
+        "isNew": false,
+        "apps": {
+          "com.kakao.talk": {
+            "isNew": false,
+            "patches": [
+              "Show message read receipts"
+            ]
+          }
+        }
+      },
+      "pichiwa": {
+        "isNew": false,
+        "apps": {
+          "com.whatsapp": {
+            "isNew": false,
+            "patches": [
+              "Login Fix"
+            ]
+          }
+        }
+      },
+      "pinterest-morphed": {
+        "isNew": false,
+        "apps": {
+          "com.pinterest": {
+            "isNew": false,
+            "patches": [
+              "Disable Firebase services"
+            ]
+          }
+        }
+      },
+      "rushiranpise": {
+        "isNew": false,
+        "apps": {
+          "com.google.android.verifier": {
+            "isNew": true,
+            "patches": [
+              "Bypass developer verification"
+            ]
+          },
+          "com.clue.android": {
+            "isNew": true,
+            "patches": [
+              "Unlock Plus"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
     "date": "July 14, 2026",
     "bundles": {
       "abeja": {
