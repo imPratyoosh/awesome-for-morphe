@@ -922,7 +922,7 @@
     "stars": 2865,
     "firstSeen": "2026-06-23T13:04:19",
     "patches": "site/morphe.json",
-    "createdAt": "2026-07-15T05:29:02",
+    "createdAt": "2026-07-16T07:50:53",
     "targetApps": [
       "com.google.android.apps.youtube.music",
       "com.google.android.youtube",
@@ -1267,7 +1267,7 @@
   },
   "rivanced-universal": {
     "source": "github",
-    "repo": "rushiranpise/RIVanced-Universal-Morphe-Patches",
+    "repo": "rushiranpise/RiVanced-Universal-Morphe-Patches",
     "avatarUrl": "https://avatars.githubusercontent.com/rushiranpise?s=128",
     "stars": 1,
     "firstSeen": "2026-07-16T08:12:29",
@@ -1331,7 +1331,7 @@
     "stars": 60,
     "firstSeen": "2026-06-02T17:21:27",
     "patches": "site/rushiranpise.json",
-    "createdAt": "2026-07-16T06:00:40",
+    "createdAt": "2026-07-16T07:15:49",
     "targetApps": [
       "ai.topicfinder.podcastdiscovery",
       "alldocumentreader.office.viewer.filereader.pdfviewer",
