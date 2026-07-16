@@ -1,20 +1,5 @@
 [
   {
-    "name": "Add resource file",
-    "description": "Adds or replaces one raw APK file from text options.",
-    "default": false,
-    "options": [
-      {
-        "key": "universalAddResourcePath",
-        "title": "Target path"
-      },
-      {
-        "key": "universalAddResourceContent",
-        "title": "File content"
-      }
-    ]
-  },
-  {
     "name": "Alert Distances",
     "description": "Configures radar/camera and hazard alert announcement distances.\nCredits: Waze CGE Mod.\n",
     "options": [
@@ -155,21 +140,6 @@
     ]
   },
   {
-    "name": "Change package name",
-    "description": "Changes manifest package and optionally provider/permission authorities.",
-    "default": false,
-    "options": [
-      {
-        "key": "universalNewPackageName",
-        "title": "New package or suffix"
-      },
-      {
-        "key": "universalRewriteAuthorities",
-        "title": "Rewrite authorities"
-      }
-    ]
-  },
-  {
     "name": "Change version code",
     "description": "Changes android:versionCode.",
     "default": false,
@@ -178,17 +148,6 @@
         "key": "universalVersionCode",
         "title": "Version code",
         "description": "Version code to write into AndroidManifest.xml."
-      }
-    ]
-  },
-  {
-    "name": "Custom certificates",
-    "description": "Adds a permissive network security config with system/user certs.",
-    "default": false,
-    "options": [
-      {
-        "key": "universalAllowCleartext",
-        "title": "Allow cleartext"
       }
     ]
   },
@@ -287,11 +246,6 @@
   {
     "name": "Disable clipboard access",
     "description": "Blocks app clipboard reads and writes.",
-    "default": false
-  },
-  {
-    "name": "Disable Play Integrity",
-    "description": "Blocks Play Integrity service binding.",
     "default": false
   },
   {
@@ -496,25 +450,6 @@
         "key": "packageName",
         "title": "Custom package name (optional)",
         "description": "Rename the app to this package name. Leave blank to keep the original. Must be a valid package name (e.g. com.example.myapp)."
-      }
-    ]
-  },
-  {
-    "name": "Hex patch",
-    "description": "Replaces one hex byte pattern inside one APK file.",
-    "default": false,
-    "options": [
-      {
-        "key": "universalHexTargetPath",
-        "title": "Target path"
-      },
-      {
-        "key": "universalHexFrom",
-        "title": "Find hex"
-      },
-      {
-        "key": "universalHexTo",
-        "title": "Replace hex"
       }
     ]
   },
@@ -962,11 +897,6 @@
     ]
   },
   {
-    "name": "Remove audio capture policy",
-    "description": "Forces runtime audio capture policy to ALLOW_CAPTURE_BY_ALL.",
-    "default": false
-  },
-  {
     "name": "Remove Item Limits",
     "description": "Removes all  item limits in-app.",
     "compatiblePackages": [
@@ -979,16 +909,6 @@
         ]
       }
     ]
-  },
-  {
-    "name": "Remove screen capture restriction",
-    "description": "Allows audio playback capture in the manifest.",
-    "default": false
-  },
-  {
-    "name": "Remove screenshot restriction",
-    "description": "Removes FLAG_SECURE and screenshot blocking.",
-    "default": false
   },
   {
     "name": "Remove share targets",

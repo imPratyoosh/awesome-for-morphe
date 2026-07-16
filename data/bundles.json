@@ -909,7 +909,7 @@
     "stars": 5,
     "firstSeen": "2026-07-06T22:13:39",
     "patches": "site/modx.json",
-    "createdAt": "2026-07-14T05:29:54",
+    "createdAt": "2026-07-16T05:38:06",
     "targetApps": [
       "com.mxtech.videoplayer.ad"
     ],
@@ -1111,7 +1111,7 @@
     "stars": 3,
     "firstSeen": "2026-07-12T05:58:07",
     "patches": "site/pichiwa.json",
-    "createdAt": "2026-07-16T03:43:50",
+    "createdAt": "2026-07-16T06:17:06",
     "targetApps": [
       "com.whatsapp"
     ],
@@ -1265,6 +1265,19 @@
     ],
     "appCount": 1
   },
+  "rivanced-universal": {
+    "source": "github",
+    "repo": "rushiranpise/RIVanced-Universal-Morphe-Patches",
+    "avatarUrl": "https://avatars.githubusercontent.com/rushiranpise?s=128",
+    "stars": 1,
+    "firstSeen": "2026-07-16T08:12:29",
+    "patches": "site/rivanced-universal.json",
+    "createdAt": "2026-07-16T06:11:39",
+    "targetApps": [
+      "com.example.app"
+    ],
+    "appCount": 1
+  },
   "rookieenough": {
     "source": "github",
     "repo": "RookieEnough/De-Vanced",
@@ -1318,7 +1331,7 @@
     "stars": 60,
     "firstSeen": "2026-06-02T17:21:27",
     "patches": "site/rushiranpise.json",
-    "createdAt": "2026-07-15T11:30:54",
+    "createdAt": "2026-07-16T06:00:40",
     "targetApps": [
       "ai.topicfinder.podcastdiscovery",
       "alldocumentreader.office.viewer.filereader.pdfviewer",
@@ -1573,6 +1586,21 @@
       "com.teamsnap.teamsnap"
     ],
     "appCount": 1
+  },
+  "variablenine": {
+    "source": "github",
+    "repo": "variablenine/morphe-patches",
+    "avatarUrl": "https://avatars.githubusercontent.com/variablenine?s=128",
+    "stars": 1,
+    "firstSeen": "2026-07-16T08:12:29",
+    "patches": "site/variablenine.json",
+    "createdAt": "2026-07-15T18:13:39",
+    "targetApps": [
+      "com.google.android.apps.youtube.music",
+      "com.google.android.youtube",
+      "com.reddit.frontpage"
+    ],
+    "appCount": 3
   },
   "vladon": {
     "source": "github",
