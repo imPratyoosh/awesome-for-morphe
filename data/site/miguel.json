@@ -171,6 +171,23 @@
     ]
   },
   {
+    "name": "Unlock all",
+    "description": "Unlocks everything, sets all currencies to 999999999, and bypasses PairIP anti-tamper protection (VM bytecode, signature verification, license check, LicenseActivity, and Play Store redirect) that redirects to Play Store.",
+    "compatiblePackages": [
+      {
+        "packageName": "fi.twomenandadog.zombiecatchers",
+        "targets": [
+          {
+            "version": "1.67.15"
+          },
+          {
+            "isExperimental": true
+          }
+        ]
+      }
+    ]
+  },
+  {
     "name": "Unlock all tribes",
     "description": "Unlocks all 20 tribes (Xinxi, Imperius, Bardur, Oumaji, Kickoo, Hoodrick, Luxidoor, Vengir, Zebasi, Aimo, Aquarion, Elyrion, Polaris, Magma, Yadakk, Quetzali, Cymanti, Swamp, Ikarus, Urkaz) and all skins by patching the native IL2CPP library (libil2cpp.so). Makes IsProductUnlocked return true, skips the purchase flow, and suppresses the 'Purchase error' dialog. Pure ARM64 hex patching, no smali, no extension.",
     "compatiblePackages": [

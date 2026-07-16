@@ -155,7 +155,7 @@
     "stars": 1788,
     "firstSeen": "2026-06-16T15:37:39",
     "patches": "site/anddea.json",
-    "createdAt": "2026-07-15T14:23:22",
+    "createdAt": "2026-07-16T16:12:10",
     "targetApps": [
       "com.google.android.apps.youtube.music",
       "com.google.android.youtube"
@@ -891,16 +891,17 @@
     "stars": 5,
     "firstSeen": "2026-07-09T04:53:42",
     "patches": "site/miguel.json",
-    "createdAt": "2026-07-16T13:05:49",
+    "createdAt": "2026-07-16T18:02:46",
     "targetApps": [
       "air.com.midjiwan.polytopia",
       "com.IvanAF.ClimbAMIYPfree",
       "com.ea.game.pvzfree_row",
       "com.rubygames.assassin",
       "diozz.cubex",
+      "fi.twomenandadog.zombiecatchers",
       "jpark.AOS5"
     ],
-    "appCount": 6
+    "appCount": 7
   },
   "modx": {
     "source": "github",
@@ -1526,7 +1527,7 @@
     "stars": 1,
     "firstSeen": "2026-07-14T19:19:17",
     "patches": "site/seobject.json",
-    "createdAt": "2026-07-14T20:54:06",
+    "createdAt": "2026-07-16T17:45:36",
     "targetApps": [
       "com.google.android.apps.youtube.music"
     ],

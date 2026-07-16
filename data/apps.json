@@ -1929,5 +1929,9 @@
   "com.IvanAF.ClimbAMIYPfree": {
     "name": "Climb!",
     "iconUrl": "https://play-lh.googleusercontent.com/VK0AYuzpuiYdeqrDPE0o9PoYCh-pP44Q6rj3pLxsEWwWXCQ26oc6ceFfNESC-VPvYwknfhVGs6l5EtgqkdDuikA=s64"
+  },
+  "fi.twomenandadog.zombiecatchers": {
+    "name": "Zombie Catchers",
+    "iconUrl": "https://play-lh.googleusercontent.com/beX43giXH2zL6EeGg4bgy4fsQcXHPcUS4xOM-oCET1s6opFuS8qkBX0PDq03_3FWvd6DQBjk__in32mXjl9N=s64"
   }
 }
