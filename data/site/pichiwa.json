@@ -192,7 +192,7 @@
   },
   {
     "name": "Login Fix",
-    "description": "Bypasses verification bans by spoofing signatures, installers, and faking GMS checks. REQUIRED: You must manually install microG-RE for Play Integrity to pass.",
+    "description": "Bypasses verification bans by spoofing signatures and faking GMS checks. REQUIRED: You must manually install microG-RE for Play Integrity to pass.",
     "compatiblePackages": [
       {
         "packageName": "com.whatsapp",
