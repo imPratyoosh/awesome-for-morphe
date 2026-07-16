@@ -80,10 +80,10 @@
 - [Jman-Github/Awesome-ReVanced](https://github.com/Jman-Github/Awesome-ReVanced)
 - [Jman-Github/Universal-ReVanced-Manager](https://github.com/Jman-Github/Universal-ReVanced-Manager)
 - [nvbangg/builder-for-morphe](https://github.com/nvbangg/builder-for-morphe)
+- [Paresh-Maheshwari/morphe-ai](https://github.com/Paresh-Maheshwari/morphe-ai)
 - [Xisrr1/Revancify-Xisr](https://github.com/Xisrr1/Revancify-Xisr)
 - [Graywizard888/Enhancify](https://github.com/Graywizard888/Enhancify)
 - [hoo-dles/jadx-morphe](https://github.com/hoo-dles/jadx-morphe)
-- [Paresh-Maheshwari/morphe-ai](https://github.com/Paresh-Maheshwari/morphe-ai)
 
 ## ⬇️ Pre-patched sources
 
