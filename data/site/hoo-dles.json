@@ -2,13 +2,12 @@
   {
     "name": "AMOLED dark theme",
     "description": "Changes the default dark theme to use true blacks for AMOLED screens.",
-    "default": false,
     "compatiblePackages": [
       {
         "packageName": "com.github.android",
         "targets": [
           {
-            "version": "1.255.0"
+            "version": "1.267.0"
           }
         ]
       }

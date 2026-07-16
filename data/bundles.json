@@ -494,7 +494,7 @@
     "stars": 827,
     "firstSeen": "2026-01-21T03:33:21",
     "patches": "site/hoo-dles.json",
-    "createdAt": "2026-07-15T16:13:49",
+    "createdAt": "2026-07-16T18:59:46",
     "targetApps": [
       "app.ttmikstories.android",
       "bitpit.launcher",
@@ -891,7 +891,7 @@
     "stars": 5,
     "firstSeen": "2026-07-09T04:53:42",
     "patches": "site/miguel.json",
-    "createdAt": "2026-07-16T18:02:46",
+    "createdAt": "2026-07-16T19:44:08",
     "targetApps": [
       "air.com.midjiwan.polytopia",
       "com.IvanAF.ClimbAMIYPfree",
@@ -1273,7 +1273,7 @@
     "stars": 1,
     "firstSeen": "2026-07-16T08:12:29",
     "patches": "site/rivanced-universal.json",
-    "createdAt": "2026-07-16T08:56:34",
+    "createdAt": "2026-07-16T21:00:21",
     "targetApps": [],
     "appCount": 0
   },
@@ -1527,7 +1527,7 @@
     "stars": 1,
     "firstSeen": "2026-07-14T19:19:17",
     "patches": "site/seobject.json",
-    "createdAt": "2026-07-16T17:45:36",
+    "createdAt": "2026-07-16T20:17:52",
     "targetApps": [
       "com.google.android.apps.youtube.music"
     ],
@@ -1634,21 +1634,23 @@
     "stars": 2,
     "firstSeen": "2026-07-04T06:23:58",
     "patches": "site/xhehab.json",
-    "createdAt": "2026-07-09T20:38:15",
+    "createdAt": "2026-07-16T19:22:50",
     "targetApps": [
       "app.mhphysique.fitness",
       "com.bpmhealth.boostcamp",
       "com.bws.appv2",
       "com.ganbaru.method",
       "com.influencers.fst7",
+      "com.jtsstrength.juggernautai",
       "com.myoadapt.app.android",
       "com.rp.hypertrophy",
+      "com.skynetcoaching.bromleyapp",
       "com.sysops.thenx",
       "com.trainwiseapp.app",
       "uni.cbum",
       "video.player.videoplayer"
     ],
-    "appCount": 11
+    "appCount": 13
   },
   "xob0t": {
     "source": "github",
