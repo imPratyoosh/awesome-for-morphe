@@ -343,7 +343,7 @@
         "packageName": "de.komoot.android",
         "targets": [
           {
-            "version": "2025.38.2"
+            "version": "2026.26.7"
           }
         ]
       }

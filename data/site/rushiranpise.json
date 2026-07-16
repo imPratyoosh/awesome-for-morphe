@@ -118,7 +118,7 @@
         "packageName": "com.newsbreak.crimeradar",
         "targets": [
           {
-            "version": "26.27.0"
+            "version": "26.28.0"
           }
         ]
       }
@@ -132,7 +132,7 @@
         "packageName": "com.newsbreak.crimeradar",
         "targets": [
           {
-            "version": "26.27.0"
+            "version": "26.28.0"
           }
         ]
       }
@@ -902,7 +902,7 @@
         "packageName": "com.newsbreak.crimeradar",
         "targets": [
           {
-            "version": "26.27.0"
+            "version": "26.28.0"
           }
         ]
       }
@@ -1239,7 +1239,7 @@
         "packageName": "com.newsbreak.crimeradar",
         "targets": [
           {
-            "version": "26.27.0"
+            "version": "26.28.0"
           }
         ]
       }
@@ -1449,7 +1449,7 @@
         "packageName": "com.newsbreak.crimeradar",
         "targets": [
           {
-            "version": "26.27.0"
+            "version": "26.28.0"
           }
         ]
       }
@@ -1575,7 +1575,7 @@
         "packageName": "com.life360.android.safetymapd",
         "targets": [
           {
-            "version": "26.25.0"
+            "version": "26.26.0"
           }
         ]
       }
@@ -1785,7 +1785,7 @@
         "packageName": "com.newsbreak.crimeradar",
         "targets": [
           {
-            "version": "26.27.0"
+            "version": "26.28.0"
           }
         ]
       }
@@ -1827,7 +1827,7 @@
         "packageName": "com.fitbod.fitbod",
         "targets": [
           {
-            "version": "8.24.1-0"
+            "version": "8.25.0-2"
           }
         ]
       }
@@ -2064,7 +2064,7 @@
         "packageName": "cn.danatech.xingseus",
         "targets": [
           {
-            "version": "5.29.0"
+            "version": "5.30.0"
           }
         ]
       }
@@ -2365,7 +2365,7 @@
         "packageName": "com.wavve.boating.gps",
         "targets": [
           {
-            "version": "5.7.0"
+            "version": "5.7.1"
           }
         ]
       }
@@ -2435,7 +2435,7 @@
         "packageName": "com.navitime.inbound.walk",
         "targets": [
           {
-            "version": "12.0.3"
+            "version": "12.0.4"
           }
         ]
       }
@@ -2519,7 +2519,7 @@
         "packageName": "sp0n.citizen",
         "targets": [
           {
-            "version": "0.1300.0"
+            "version": "0.1301.0"
           }
         ]
       }
@@ -2715,7 +2715,7 @@
         "packageName": "com.Splitwise.SplitwiseMobile",
         "targets": [
           {
-            "version": "26.7.1"
+            "version": "26.7.2"
           }
         ]
       }
@@ -3038,7 +3038,7 @@
         "packageName": "com.anetcapture.mock",
         "targets": [
           {
-            "version": "2.11.4-ad_mob"
+            "version": "2.11.7-ad_mob"
           }
         ]
       }

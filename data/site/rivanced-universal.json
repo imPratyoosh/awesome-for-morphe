@@ -102,23 +102,6 @@
     ]
   },
   {
-    "name": "Example Patch",
-    "description": "Example patch to start with.",
-    "compatiblePackages": [
-      {
-        "packageName": "com.example.app",
-        "targets": [
-          {
-            "version": "2.0.0"
-          },
-          {
-            "version": "1.0.2"
-          }
-        ]
-      }
-    ]
-  },
-  {
     "name": "Export all activities",
     "description": "Makes all app activities exportable.",
     "default": false

@@ -74,7 +74,7 @@
     "stars": 75,
     "firstSeen": "2026-05-25T15:05:44",
     "patches": "site/ajstrick81-androidtv.json",
-    "createdAt": "2026-07-15T13:59:06",
+    "createdAt": "2026-07-16T12:45:53",
     "targetApps": [
       "com.amazon.amazonvideo.livingroom",
       "com.bamnetworks.mobile.android.gameday.atbat",
@@ -285,7 +285,7 @@
     "stars": 287,
     "firstSeen": "2026-03-10T19:56:44",
     "patches": "site/brosssh.json",
-    "createdAt": "2026-06-26T09:54:55",
+    "createdAt": "2026-07-16T08:59:03",
     "targetApps": [
       "com.instagram.android",
       "cz.seznam.mapy",
@@ -922,7 +922,7 @@
     "stars": 2865,
     "firstSeen": "2026-06-23T13:04:19",
     "patches": "site/morphe.json",
-    "createdAt": "2026-07-16T07:50:53",
+    "createdAt": "2026-07-16T09:04:26",
     "targetApps": [
       "com.google.android.apps.youtube.music",
       "com.google.android.youtube",
@@ -1267,16 +1267,14 @@
   },
   "rivanced-universal": {
     "source": "github",
-    "repo": "rushiranpise/RiVanced-Universal-Morphe-Patches",
+    "repo": "rushiranpise/Ri-Vanced-Universal-Morphe-Patches",
     "avatarUrl": "https://avatars.githubusercontent.com/rushiranpise?s=128",
     "stars": 1,
     "firstSeen": "2026-07-16T08:12:29",
     "patches": "site/rivanced-universal.json",
-    "createdAt": "2026-07-16T06:11:39",
-    "targetApps": [
-      "com.example.app"
-    ],
-    "appCount": 1
+    "createdAt": "2026-07-16T08:56:34",
+    "targetApps": [],
+    "appCount": 0
   },
   "rookieenough": {
     "source": "github",
@@ -1331,7 +1329,7 @@
     "stars": 60,
     "firstSeen": "2026-06-02T17:21:27",
     "patches": "site/rushiranpise.json",
-    "createdAt": "2026-07-16T07:15:49",
+    "createdAt": "2026-07-16T09:36:16",
     "targetApps": [
       "ai.topicfinder.podcastdiscovery",
       "alldocumentreader.office.viewer.filereader.pdfviewer",

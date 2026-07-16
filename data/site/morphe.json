@@ -825,8 +825,7 @@
           }
         ]
       }
-    ],
-    "isPreRelease": true
+    ]
   },
   {
     "name": "Disable double tap actions",
@@ -3492,8 +3491,7 @@
           }
         ]
       }
-    ],
-    "isPreRelease": true
+    ]
   },
   {
     "name": "Remember shuffle state",
@@ -3525,8 +3523,7 @@
           }
         ]
       }
-    ],
-    "isPreRelease": true
+    ]
   },
   {
     "name": "Remove background playback restrictions",
@@ -4085,8 +4082,7 @@
           }
         ]
       }
-    ],
-    "isPreRelease": true
+    ]
   },
   {
     "name": "Spoof app version",
