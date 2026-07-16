@@ -1,5 +1,69 @@
 [
   {
+    "date": "July 16, 2026",
+    "bundles": {
+      "hoo-dles": {
+        "isNew": false,
+        "apps": {
+          "com.soundcloud.android": {
+            "isNew": false,
+            "patches": [
+              "Enable SoundCloud Go"
+            ]
+          }
+        }
+      },
+      "rivanced-universal": {
+        "isNew": true,
+        "apps": {
+          "universal": {
+            "isNew": true,
+            "patches": [
+              "Change package name",
+              "Change version code",
+              "Custom network security",
+              "Disable PairIP license check",
+              "Disable Play Integrity",
+              "Disable Sentry telemetry",
+              "Enable Android debugging",
+              "Enable ROM signature spoofing",
+              "Export all activities",
+              "Export internal data documents provider",
+              "Hex",
+              "Hide ADB status",
+              "Hide app icon",
+              "Hide mock location",
+              "Override certificate pinning",
+              "Predictive back gesture",
+              "Prevent screenshot detection",
+              "Remove screen capture restriction",
+              "Remove screenshot restriction",
+              "Remove share targets",
+              "Set target SDK version 34",
+              "Spoof Play Age Signals",
+              "Spoof SIM provider",
+              "Spoof Wi-Fi connection",
+              "Spoof build info",
+              "Spoof keystore security level",
+              "Spoof root of trust"
+            ]
+          }
+        }
+      },
+      "seobject": {
+        "isNew": false,
+        "apps": {
+          "com.google.android.apps.youtube.music": {
+            "isNew": false,
+            "patches": [
+              "Pin playlists"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
     "date": "July 15, 2026",
     "bundles": {
       "adobo": {

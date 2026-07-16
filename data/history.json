@@ -888,7 +888,7 @@
     "com.soundcloud.android": [
       "AMOLED dark theme",
       "Disable telemetry",
-      "Enable SoundCloud Go+"
+      "Enable SoundCloud Go"
     ],
     "com.superchinese": [
       "Disable telemetry",
@@ -1954,6 +1954,37 @@
       "Bypass Session Expiry"
     ]
   },
+  "rivanced-universal": {
+    "universal": [
+      "Change package name",
+      "Change version code",
+      "Custom network security",
+      "Disable PairIP license check",
+      "Disable Play Integrity",
+      "Disable Sentry telemetry",
+      "Enable Android debugging",
+      "Enable ROM signature spoofing",
+      "Export all activities",
+      "Export internal data documents provider",
+      "Hex",
+      "Hide ADB status",
+      "Hide app icon",
+      "Hide mock location",
+      "Override certificate pinning",
+      "Predictive back gesture",
+      "Prevent screenshot detection",
+      "Remove screen capture restriction",
+      "Remove screenshot restriction",
+      "Remove share targets",
+      "Set target SDK version 34",
+      "Spoof Play Age Signals",
+      "Spoof SIM provider",
+      "Spoof Wi-Fi connection",
+      "Spoof build info",
+      "Spoof keystore security level",
+      "Spoof root of trust"
+    ]
+  },
   "rookieenough": {
     "ch.protonmail.android": [
       "Remove 'Sent from' signature",
@@ -2585,11 +2616,7 @@
       "Unlock Pro"
     ],
     "universal": [
-      "Add resource file",
-      "Change package name",
       "Change version code",
-      "Custom certificates",
-      "Disable Play Integrity",
       "Disable ad SDK calls",
       "Disable clipboard access",
       "Disable shake ads",
@@ -2601,7 +2628,6 @@
       "Fix Firebase after re-signing",
       "Force dark theme",
       "GmsCore support (MicroG)",
-      "Hex patch",
       "Hide ADB status",
       "Hide VPN and proxy",
       "Hide app icon",
@@ -2610,9 +2636,6 @@
       "Predictive back gesture",
       "Provide Original app certificate",
       "Remove ad manifest entries",
-      "Remove audio capture policy",
-      "Remove screen capture restriction",
-      "Remove screenshot restriction",
       "Remove share targets",
       "Set target SDK 34",
       "Spoof Android ID",
@@ -2763,7 +2786,7 @@
   },
   "seobject": {
     "com.google.android.apps.youtube.music": [
-      "Pin playlists (dev)"
+      "Pin playlists"
     ]
   },
   "shaun-sheep": {
