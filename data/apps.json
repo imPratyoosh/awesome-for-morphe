@@ -1941,5 +1941,17 @@
   "com.skynetcoaching.bromleyapp": {
     "name": "BASE Strength AI",
     "iconUrl": "https://play-lh.googleusercontent.com/Fam031PWqWB22FlCWW8F0GZWOmuIa_ESw-DWfuDEHpFx_zJNsbBO5seJRzkNcHP8GnucHB2o1heQyEsJWE7wkg=s64"
+  },
+  "club.boxbox.android": {
+    "name": "Box Box",
+    "iconUrl": "https://play-lh.googleusercontent.com/kfxcsV5RmByTSzDnSnbwiRIOQ_rq6kUG6Fvmg_zoPtTAjKA9_y9Sy7cMSi39x7UKkosKHe_Ddu_MiVOtlDeRwQ=s64"
+  },
+  "com.monect.portable": {
+    "name": "PC Remote - Desktop & Phone",
+    "iconUrl": "https://play-lh.googleusercontent.com/VkJnnrOeX3e6gG3irUBGWg8ekOPoc7VE8Atz-8Kbsf16s45lMmPCznLY25GKuJ1dO8XO2Xx5_svGABPw2C9H=s64"
+  },
+  "intelligems.torrdroid": {
+    "name": "TorrDroid",
+    "iconUrl": "https://play-lh.googleusercontent.com/FIgM8cMNv39T39kgTxAc6n8Vy3T3iuEw9l9txna8QCH8xWqtSmTRyPyR2UB5SvTXqW7VKHFicc_vY5JWk2szQTU=s64"
   }
 }

@@ -790,6 +790,21 @@
   },
   {
     "name": "Remove Ads",
+    "description": "Removes ads from TorrDroid.",
+    "compatiblePackages": [
+      {
+        "packageName": "intelligems.torrdroid",
+        "targets": [
+          {
+            "version": "2.0.0"
+          }
+        ],
+        "isPreRelease": true
+      }
+    ]
+  },
+  {
+    "name": "Remove Ads",
     "description": "Remove in-app ads.",
     "compatiblePackages": [
       {
@@ -2030,6 +2045,21 @@
   },
   {
     "name": "Unlock Premium",
+    "description": "Unlocks premium features after login.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.monect.portable",
+        "targets": [
+          {
+            "version": "8.3.5"
+          }
+        ],
+        "isPreRelease": true
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
     "description": "Unlocks all Photo Editor premium features",
     "compatiblePackages": [
       {
@@ -2480,6 +2510,21 @@
             "version": "2.1.2"
           }
         ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Pro",
+    "description": "Unlocks Box Box Pro",
+    "compatiblePackages": [
+      {
+        "packageName": "club.boxbox.android",
+        "targets": [
+          {
+            "version": "5.4.13"
+          }
+        ],
+        "isPreRelease": true
       }
     ]
   },
