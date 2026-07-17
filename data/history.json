@@ -642,6 +642,9 @@
     "com.bounce.connect": [
       "Bypass license check"
     ],
+    "com.brave.browser": [
+      "Enable Brave Origin"
+    ],
     "com.medium.reader": [
       "Freedium"
     ],
@@ -1103,6 +1106,18 @@
       "Show deleted messages"
     ]
   },
+  "hxreborn": {
+    "com.michaldrabik.showly2": [
+      "Unlock premium"
+    ],
+    "com.myvitale.forus": [
+      "Unlock premium"
+    ],
+    "com.spocky.projengmenu": [
+      "Disable tracking",
+      "Unlock premium"
+    ]
+  },
   "icysymmetra-tiktok": {
     "com.zhiliaoapp.musically": [
       "Copy comments without username",
@@ -1133,6 +1148,16 @@
     "com.persapps.multitimer": [
       "Bypass DRM",
       "Enable PRO"
+    ]
+  },
+  "ikura": {
+    "com.example.app": [
+      "Example Patch"
+    ],
+    "net.easyconn.carman.wws": [
+      "CarbitLink Customizations",
+      "CarbitLink Login Bypass",
+      "CarbitLink Premium"
     ]
   },
   "ImmortalZeus": {
@@ -1918,6 +1943,7 @@
       "Hide promoted pins",
       "Opt out of Google Analytics",
       "Remove Advertising ID permission",
+      "Restore Google login (microG-RE)",
       "Sanitize copied links",
       "Sanitize sharing links"
     ]
@@ -2172,6 +2198,9 @@
     "ch.protonvpn.android": [
       "Unlock Premium"
     ],
+    "club.boxbox.android": [
+      "Unlock Pro"
+    ],
     "cn.danatech.xingseus": [
       "Unlock Premium"
     ],
@@ -2369,6 +2398,9 @@
     ],
     "com.mobond.mindicator": [
       "Remove Ads"
+    ],
+    "com.monect.portable": [
+      "Unlock Premium"
     ],
     "com.mtv.sai": [
       "Unlock Premium"
@@ -2570,6 +2602,9 @@
       "Price history charts",
       "Remove ads",
       "Sanitize share links"
+    ],
+    "intelligems.torrdroid": [
+      "Remove Ads"
     ],
     "io.goodservice.theweekendest": [
       "Unlock Plus"
