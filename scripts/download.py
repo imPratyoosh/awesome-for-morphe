@@ -31,11 +31,7 @@ def normalize(text):
 
 def is_morphe(bundle_json):
     url = bundle_json.get("download_url", "")
-    return (
-        isinstance(url, str)
-        and url.lower().endswith(".mpp")
-        and len(url.split("/")) >= 8
-    )
+    return isinstance(url, str) and url.lower().endswith(".mpp") and len(url.split("/")) >= 8
 
 
 def fetch_bundle(args):
@@ -80,15 +76,11 @@ def main():
         BUNDLES_DIR.mkdir(parents=True, exist_ok=True)
 
         with ThreadPoolExecutor(max_workers=CONCURRENCY) as pool:
-            morphe_entries = [
-                r for r in pool.map(fetch_bundle, all_pairs) if r is not None
-            ]
+            morphe_entries = [r for r in pool.map(fetch_bundle, all_pairs) if r is not None]
 
         saved = 0
         for base, channel, bundle_text in morphe_entries:
-            (BUNDLES_DIR / f"{base}-{channel}.json").write_text(
-                normalize(bundle_text), encoding="utf8"
-            )
+            (BUNDLES_DIR / f"{base}-{channel}.json").write_text(normalize(bundle_text), encoding="utf8")
             saved += 1
         print(f"Downloaded {saved} Morphe bundles.")
 
@@ -107,18 +99,11 @@ def main():
         PATCHES_DIR.mkdir(parents=True, exist_ok=True)
 
         with ThreadPoolExecutor(max_workers=CONCURRENCY) as pool:
-            list_map = {
-                (base, channel): text
-                for base, channel, text in filter(
-                    None, pool.map(fetch_list, list_pairs)
-                )
-            }
+            list_map = {(base, channel): text for base, channel, text in filter(None, pool.map(fetch_list, list_pairs))}
 
         saved = 0
         for (base, channel), list_text in list_map.items():
-            (PATCHES_DIR / f"{base}-{channel}.json").write_text(
-                normalize(list_text), encoding="utf8"
-            )
+            (PATCHES_DIR / f"{base}-{channel}.json").write_text(normalize(list_text), encoding="utf8")
             saved += 1
         print(f"Downloaded {saved} Morphe patches lists.")
 

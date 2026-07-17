@@ -34,9 +34,7 @@ def read_json(path, default=None):
 
 def write_json(path, data):
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(
-        json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf8"
-    )
+    path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf8")
 
 
 def get_repo_info(bundle_json):
@@ -80,14 +78,10 @@ def fetch_avatar_url(repo_url):
                                     if "s=80" in avatar:
                                         avatar = avatar.replace("s=80", "s=128")
                                     elif "s=" not in avatar:
-                                        avatar += (
-                                            "&" if "?" in avatar else "?"
-                                        ) + "s=128"
+                                        avatar += ("&" if "?" in avatar else "?") + "s=128"
                                 elif "gitlab.com/uploads/" in avatar:
                                     if "width=" not in avatar:
-                                        avatar += (
-                                            "&" if "?" in avatar else "?"
-                                        ) + "width=128"
+                                        avatar += ("&" if "?" in avatar else "?") + "width=128"
                                 return avatar
                 except Exception as exception:
                     print(f"Failed to fetch gitlab avatar for {username}: {exception}")
@@ -116,17 +110,11 @@ def fetch_repo_stars(repo_url):
                 api_url = f"https://api.github.com/repos/{owner}/{name}"
 
                 def fetch(use_token=True):
-                    request = urllib.request.Request(
-                        api_url, headers={"User-Agent": "Awesome-For-Morphe"}
-                    )
+                    request = urllib.request.Request(api_url, headers={"User-Agent": "Awesome-For-Morphe"})
                     if use_token and os.environ.get("GITHUB_TOKEN"):
-                        request.add_header(
-                            "Authorization", f"Bearer {os.environ['GITHUB_TOKEN']}"
-                        )
+                        request.add_header("Authorization", f"Bearer {os.environ['GITHUB_TOKEN']}")
                     with urllib.request.urlopen(request, timeout=10) as response:
-                        return json.loads(response.read().decode()).get(
-                            "stargazers_count", 0
-                        )
+                        return json.loads(response.read().decode()).get("stargazers_count", 0)
 
                 try:
                     time.sleep(0.5)
@@ -137,9 +125,7 @@ def fetch_repo_stars(repo_url):
                             time.sleep(1)
                             return fetch(use_token=False)
                         except Exception as inner_exception:
-                            print(
-                                f"Error fetching stars (no token) for {repo_url}: {inner_exception}"
-                            )
+                            print(f"Error fetching stars (no token) for {repo_url}: {inner_exception}")
                             return None
                     else:
                         print(f"Error fetching stars for {repo_url}: {error}")
@@ -156,9 +142,7 @@ def fetch_repo_stars(repo_url):
             api_url = f"https://gitlab.com/api/v4/projects/{encoded_path}"
             try:
                 time.sleep(0.5)
-                request = urllib.request.Request(
-                    api_url, headers={"User-Agent": "Awesome-For-Morphe"}
-                )
+                request = urllib.request.Request(api_url, headers={"User-Agent": "Awesome-For-Morphe"})
                 with urllib.request.urlopen(request, timeout=10) as response:
                     return json.loads(response.read().decode()).get("star_count", 0)
             except Exception as exception:
@@ -170,9 +154,7 @@ def fetch_repo_stars(repo_url):
 
 def fetch_app_details(package_name):
     if not gplay_app:
-        print(
-            "Warning: google-play-scraper is not installed. Run: pip install google-play-scraper"
-        )
+        print("Warning: google-play-scraper is not installed. Run: pip install google-play-scraper")
         return None, None
     try:
         result = gplay_app(package_name)
@@ -295,16 +277,12 @@ def build_site_json(stable_list, dev_list, latest, discovered_names):
             compatible_packages = patch.get("compatiblePackages")
             package_names = []
             if isinstance(compatible_packages, dict):
-                package_names = [
-                    k for k in compatible_packages.keys() if k != "universal"
-                ]
+                package_names = [k for k in compatible_packages.keys() if k != "universal"]
             elif isinstance(compatible_packages, list):
                 package_names = [
                     package_element.get("packageName")
                     for package_element in compatible_packages
-                    if isinstance(package_element, dict)
-                    and package_element.get("packageName")
-                    and package_element.get("packageName") != "universal"
+                    if isinstance(package_element, dict) and package_element.get("packageName") and package_element.get("packageName") != "universal"
                 ]
 
             if not package_names:
@@ -331,9 +309,7 @@ def build_site_json(stable_list, dev_list, latest, discovered_names):
                     if pkg_name not in stable_apps:
                         package_obj["isPreRelease"] = True
                     else:
-                        if patch_name and patch_name not in stable_app_patches.get(
-                            pkg_name, set()
-                        ):
+                        if patch_name and patch_name not in stable_app_patches.get(pkg_name, set()):
                             patch_is_new_for_some_old_app = True
 
                 if patch_is_new_for_some_old_app:
@@ -342,9 +318,7 @@ def build_site_json(stable_list, dev_list, latest, discovered_names):
                 if "universal" not in stable_apps:
                     stripped["isPreRelease"] = True
                 else:
-                    if patch_name and patch_name not in stable_app_patches.get(
-                        "universal", set()
-                    ):
+                    if patch_name and patch_name not in stable_app_patches.get("universal", set()):
                         stripped["isPreRelease"] = True
 
             out_patches.append(stripped)
@@ -361,23 +335,15 @@ def build_site_json(stable_list, dev_list, latest, discovered_names):
 
 def main():
     parser = argparse.ArgumentParser(description="Update bundles and metadata")
-    parser.add_argument(
-        "--stars", action="store_true", help="Update stars for all bundles"
-    )
-    parser.add_argument(
-        "--avatars", action="store_true", help="Update avatars for all bundles"
-    )
-    parser.add_argument(
-        "--icons", action="store_true", help="Update icons for all apps"
-    )
+    parser.add_argument("--stars", action="store_true", help="Update stars for all bundles")
+    parser.add_argument("--avatars", action="store_true", help="Update avatars for all bundles")
+    parser.add_argument("--icons", action="store_true", help="Update icons for all apps")
     parser.add_argument(
         "--daily",
         action="store_true",
         help="Daily update (stars, missing avatars, missing app icons/names)",
     )
-    parser.add_argument(
-        "--all", action="store_true", help="Update everything (stars, avatars, icons)"
-    )
+    parser.add_argument("--all", action="store_true", help="Update everything (stars, avatars, icons)")
     args = parser.parse_args()
 
     if args.all:
@@ -422,23 +388,13 @@ def main():
         stable_list_path = PATCHES_DIR / f"{base}-stable.json"
         dev_list_path = PATCHES_DIR / f"{base}-dev.json"
 
-        stable_json = (
-            read_json(stable_bundle_path)
-            if stable_bundle_path.exists() and stable_list_path.exists()
-            else None
-        )
-        dev_json = (
-            read_json(dev_bundle_path)
-            if dev_bundle_path.exists() and dev_list_path.exists()
-            else None
-        )
+        stable_json = read_json(stable_bundle_path) if stable_bundle_path.exists() and stable_list_path.exists() else None
+        dev_json = read_json(dev_bundle_path) if dev_bundle_path.exists() and dev_list_path.exists() else None
 
         if not stable_json and not dev_json:
             continue
 
-        source, repo, repo_url = (
-            get_repo_info(stable_json) if stable_json else get_repo_info(dev_json)
-        )
+        source, repo, repo_url = get_repo_info(stable_json) if stable_json else get_repo_info(dev_json)
 
         avatar_url = avatar_cache.get(base, None)
         if repo_url:
@@ -475,23 +431,17 @@ def main():
         if "firstSeen" not in source_entry:
             source_entry["firstSeen"] = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S")
 
-        latest = (
-            "dev" if (dev_date and stable_date and dev_date > stable_date) else "stable"
-        )
+        latest = "dev" if (dev_date and stable_date and dev_date > stable_date) else "stable"
         if not stable_json:
             latest = "dev"
         if not dev_json:
             latest = "stable"
 
-        stable_list_json = (
-            read_json(stable_list_path) if stable_list_path.exists() else None
-        )
+        stable_list_json = read_json(stable_list_path) if stable_list_path.exists() else None
         dev_list_json = read_json(dev_list_path) if dev_list_path.exists() else None
 
         discovered = {}
-        out_patches, is_bundle_prerelease, target_apps, app_count = build_site_json(
-            stable_list_json, dev_list_json, latest, discovered
-        )
+        out_patches, is_bundle_prerelease, target_apps, app_count = build_site_json(stable_list_json, dev_list_json, latest, discovered)
 
         for channel_json in [stable_list_json, dev_list_json]:
             if channel_json:
@@ -502,11 +452,7 @@ def main():
         for package_name in target_apps:
             if package_name not in seen_packages:
                 seen_packages.add(package_name)
-                if (
-                    package_name == "universal"
-                    or " " in package_name
-                    or "." not in package_name
-                ):
+                if package_name == "universal" or " " in package_name or "." not in package_name:
                     continue
 
                 meta = app_metadata.get(package_name)
@@ -532,10 +478,7 @@ def main():
                     should_fetch = True
                 elif is_new_app:
                     should_fetch = True
-                elif args.daily and (
-                    app_metadata[package_name].get("name") is None
-                    or app_metadata[package_name].get("iconUrl") is None
-                ):
+                elif args.daily and (app_metadata[package_name].get("name") is None or app_metadata[package_name].get("iconUrl") is None):
                     should_fetch = True
 
                 if should_fetch:
@@ -561,10 +504,7 @@ def main():
     if avatar_tasks:
         print(f"Fetching avatars for {len(avatar_tasks)} bundles...")
         with concurrent.futures.ThreadPoolExecutor(max_workers=CONCURRENCY) as executor:
-            future_to_base = {
-                executor.submit(fetch_avatar_url, url): base
-                for base, url in avatar_tasks.items()
-            }
+            future_to_base = {executor.submit(fetch_avatar_url, url): base for base, url in avatar_tasks.items()}
             for future in concurrent.futures.as_completed(future_to_base):
                 base = future_to_base[future]
                 try:
@@ -578,13 +518,8 @@ def main():
 
     if stars_tasks:
         print(f"Fetching stars for {len(stars_tasks)} bundles...")
-        with concurrent.futures.ThreadPoolExecutor(
-            max_workers=GITHUB_CONCURRENCY
-        ) as executor:
-            future_to_base = {
-                executor.submit(fetch_repo_stars, url): base
-                for base, url in stars_tasks.items()
-            }
+        with concurrent.futures.ThreadPoolExecutor(max_workers=GITHUB_CONCURRENCY) as executor:
+            future_to_base = {executor.submit(fetch_repo_stars, url): base for base, url in stars_tasks.items()}
             for future in concurrent.futures.as_completed(future_to_base):
                 base = future_to_base[future]
                 try:
@@ -599,32 +534,22 @@ def main():
     if app_tasks:
         print(f"Fetching app details for {len(app_tasks)} apps...")
         with concurrent.futures.ThreadPoolExecutor(max_workers=CONCURRENCY) as executor:
-            future_to_package = {
-                executor.submit(fetch_app_details, package_name): package_name
-                for package_name in app_tasks
-            }
+            future_to_package = {executor.submit(fetch_app_details, package_name): package_name for package_name in app_tasks}
             for future in concurrent.futures.as_completed(future_to_package):
                 package_name = future_to_package[future]
                 try:
                     new_icon, app_name = future.result()
                     if new_icon:
-                        if (
-                            args.icons
-                            or app_metadata[package_name].get("iconUrl") is None
-                        ):
+                        if args.icons or app_metadata[package_name].get("iconUrl") is None:
                             app_metadata[package_name]["iconUrl"] = new_icon
                     if app_name:
                         if package_name not in apps_with_patch_names:
                             if app_metadata[package_name].get("name") is None:
                                 app_metadata[package_name]["name"] = app_name
                     if not new_icon and not app_name:
-                        print(
-                            f"[ERROR] Missing app details for package: {package_name}"
-                        )
+                        print(f"[ERROR] Missing app details for package: {package_name}")
                 except Exception as exception:
-                    print(
-                        f"Failed to fetch app details for {package_name}: {exception}"
-                    )
+                    print(f"Failed to fetch app details for {package_name}: {exception}")
 
     write_json(BUNDLES_JSON_PATH, bundle_sources)
     print(f"Generated bundles.json with {len(bundle_sources)} bundles.")
@@ -636,10 +561,7 @@ def main():
     missing_names = sorted(
         package_name
         for package_name in all_packages
-        if (
-            package_name not in app_metadata
-            or app_metadata[package_name].get("name") is None
-        )
+        if (package_name not in app_metadata or app_metadata[package_name].get("name") is None)
         and package_name != "universal"
         and " " not in package_name
         and "." in package_name
@@ -648,65 +570,45 @@ def main():
     missing_icons = sorted(
         package_name
         for package_name in all_packages
-        if (
-            package_name not in app_metadata
-            or app_metadata[package_name].get("iconUrl") is None
-        )
+        if (package_name not in app_metadata or app_metadata[package_name].get("iconUrl") is None)
         and package_name != "universal"
         and " " not in package_name
         and "." in package_name
     )
 
     missing_avatars = sorted(
-        base
-        for base, info in bundle_sources.items()
-        if info.get("repo")
-        and (info.get("avatarUrl") is None or info.get("avatarUrl") == "")
+        base for base, info in bundle_sources.items() if info.get("repo") and (info.get("avatarUrl") is None or info.get("avatarUrl") == "")
     )
 
-    missing_stars = sorted(
-        base
-        for base, info in bundle_sources.items()
-        if info.get("repo") and info.get("stars") is None
-    )
+    missing_stars = sorted(base for base, info in bundle_sources.items() if info.get("repo") and info.get("stars") is None)
 
     if missing_names:
         print(f"\n[WARNING] Missing app name for {len(missing_names)} packages:")
         for pkg in missing_names:
             print(f"  - {pkg}")
         if "GITHUB_ACTIONS" in os.environ:
-            print(
-                f"::warning::Missing app name for {len(missing_names)} packages: {', '.join(missing_names)}"
-            )
+            print(f"::warning::Missing app name for {len(missing_names)} packages: {', '.join(missing_names)}")
 
     if missing_icons:
         print(f"\n[WARNING] Missing app iconUrl for {len(missing_icons)} packages:")
         for pkg in missing_icons:
             print(f"  - {pkg}")
         if "GITHUB_ACTIONS" in os.environ:
-            print(
-                f"::warning::Missing app iconUrl for {len(missing_icons)} packages: {', '.join(missing_icons)}"
-            )
+            print(f"::warning::Missing app iconUrl for {len(missing_icons)} packages: {', '.join(missing_icons)}")
 
     if missing_avatars:
-        print(
-            f"\n[WARNING] Missing bundle avatarUrl (logo) for {len(missing_avatars)} bundles:"
-        )
+        print(f"\n[WARNING] Missing bundle avatarUrl (logo) for {len(missing_avatars)} bundles:")
         for base in missing_avatars:
             print(f"  - {base}")
         if "GITHUB_ACTIONS" in os.environ:
-            print(
-                f"::warning::Missing bundle avatarUrl for {len(missing_avatars)} bundles: {', '.join(missing_avatars)}"
-            )
+            print(f"::warning::Missing bundle avatarUrl for {len(missing_avatars)} bundles: {', '.join(missing_avatars)}")
 
     if missing_stars:
         print(f"\n[WARNING] Missing bundle stars for {len(missing_stars)} bundles:")
         for base in missing_stars:
             print(f"  - {base}")
         if "GITHUB_ACTIONS" in os.environ:
-            print(
-                f"::warning::Missing bundle stars for {len(missing_stars)} bundles: {', '.join(missing_stars)}"
-            )
+            print(f"::warning::Missing bundle stars for {len(missing_stars)} bundles: {', '.join(missing_stars)}")
 
     if not (missing_names or missing_icons or missing_avatars or missing_stars):
         print("\nEverything is up to date!")
