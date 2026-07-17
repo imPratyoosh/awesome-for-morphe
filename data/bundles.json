@@ -1218,14 +1218,15 @@
     "stars": 5,
     "firstSeen": "2026-07-14T05:29:43",
     "patches": "site/proxma.json",
-    "createdAt": "2026-07-14T18:30:54",
+    "createdAt": "2026-07-17T12:19:34",
     "targetApps": [
       "com.blueinklabs.investifystocks.free",
       "com.jazz.jazzworld",
+      "com.telenor.pakistan.mytelenor",
       "com.zong.customercare",
       "cz.mroczis.netmonster"
     ],
-    "appCount": 4
+    "appCount": 5
   },
   "rabilrbl": {
     "source": "github",

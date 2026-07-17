@@ -1953,5 +1953,9 @@
   "intelligems.torrdroid": {
     "name": "TorrDroid",
     "iconUrl": "https://play-lh.googleusercontent.com/FIgM8cMNv39T39kgTxAc6n8Vy3T3iuEw9l9txna8QCH8xWqtSmTRyPyR2UB5SvTXqW7VKHFicc_vY5JWk2szQTU=s64"
+  },
+  "com.telenor.pakistan.mytelenor": {
+    "name": "My Telenor",
+    "iconUrl": "https://play-lh.googleusercontent.com/qWyKgf6pUPWpefJlcA9OQupoCEpktkwL0BhEWwZso_Dg0qhxlAGFNJ6RmKVUyJXHD4GCoTuNXyFN8wE5-2uy8w=s64"
   }
 }
