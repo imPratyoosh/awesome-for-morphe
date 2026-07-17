@@ -891,7 +891,7 @@
     "stars": 9,
     "firstSeen": "2026-07-09T04:53:42",
     "patches": "site/miguel.json",
-    "createdAt": "2026-07-16T22:21:46",
+    "createdAt": "2026-07-17T01:27:15",
     "targetApps": [
       "air.com.midjiwan.polytopia",
       "com.IvanAF.ClimbAMIYPfree",
@@ -1527,7 +1527,7 @@
     "stars": 1,
     "firstSeen": "2026-07-14T19:19:17",
     "patches": "site/seobject.json",
-    "createdAt": "2026-07-16T22:22:50",
+    "createdAt": "2026-07-17T02:32:22",
     "targetApps": [
       "com.google.android.apps.youtube.music"
     ],

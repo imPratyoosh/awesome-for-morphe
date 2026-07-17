@@ -7,7 +7,16 @@
         "packageName": "com.google.android.apps.youtube.music",
         "targets": [
           {
-            "version": "9.15.51"
+            "version": "9.26.51",
+            "isExperimental": true
+          },
+          {
+            "version": "9.25.50",
+            "isExperimental": true
+          },
+          {
+            "version": "9.24.51",
+            "isExperimental": true
           }
         ]
       }
