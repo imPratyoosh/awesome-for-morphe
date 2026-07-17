@@ -494,7 +494,7 @@
     "stars": 830,
     "firstSeen": "2026-01-21T03:33:21",
     "patches": "site/hoo-dles.json",
-    "createdAt": "2026-07-16T18:59:46",
+    "createdAt": "2026-07-17T03:40:06",
     "targetApps": [
       "app.ttmikstories.android",
       "bitpit.launcher",
@@ -1112,7 +1112,7 @@
     "stars": 3,
     "firstSeen": "2026-07-12T05:58:07",
     "patches": "site/pichiwa.json",
-    "createdAt": "2026-07-16T06:17:06",
+    "createdAt": "2026-07-17T05:56:43",
     "targetApps": [
       "com.whatsapp"
     ],
@@ -1139,7 +1139,7 @@
     "stars": 5,
     "firstSeen": "2026-07-08T02:37:25",
     "patches": "site/pinterest-morphed.json",
-    "createdAt": "2026-07-15T21:51:07",
+    "createdAt": "2026-07-17T04:24:35",
     "targetApps": [
       "com.pinterest"
     ],
@@ -1527,7 +1527,7 @@
     "stars": 1,
     "firstSeen": "2026-07-14T19:19:17",
     "patches": "site/seobject.json",
-    "createdAt": "2026-07-17T02:32:22",
+    "createdAt": "2026-07-17T04:28:14",
     "targetApps": [
       "com.google.android.apps.youtube.music"
     ],

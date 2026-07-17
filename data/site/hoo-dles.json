@@ -484,7 +484,7 @@
         "packageName": "com.sbs.diet",
         "targets": [
           {
-            "version": "5.7.8"
+            "version": "5.7.9"
           }
         ]
       },
