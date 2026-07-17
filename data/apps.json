@@ -1965,5 +1965,9 @@
   "net.easyconn.carman.wws": {
     "name": "CarbitLink",
     "iconUrl": "https://play-lh.googleusercontent.com/EWn6OuOy6gyQ8DG83elQnijJzAW4Whcko0aMV4STxDdShWqwMmRcd-eB3LWWAqeR8779UcVCOp2MFIPgjCiYjvs=s64"
+  },
+  "com.brave.browser": {
+    "name": "Brave Browser",
+    "iconUrl": "https://play-lh.googleusercontent.com/UBrZnuXGb-QACU0uUdF5r_n5nx5oBbdfPyEbtsr0xXv00RN7rpaTVu3GjLeE90aHFmNlbaCmm8vNcmY0eE98U9E=s64"
   }
 }
