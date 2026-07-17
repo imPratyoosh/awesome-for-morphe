@@ -604,6 +604,21 @@
     ],
     "appCount": 41
   },
+  "hxreborn": {
+    "source": "github",
+    "repo": "hxreborn/morphe-patches",
+    "avatarUrl": "https://avatars.githubusercontent.com/hxreborn?s=128",
+    "stars": 2,
+    "firstSeen": "2026-07-17T19:07:01",
+    "patches": "site/hxreborn.json",
+    "createdAt": "2026-07-17T16:12:07",
+    "targetApps": [
+      "com.michaldrabik.showly2",
+      "com.myvitale.forus",
+      "com.spocky.projengmenu"
+    ],
+    "appCount": 3
+  },
   "icysymmetra-tiktok": {
     "source": "github",
     "repo": "icysymmetra/tiktok-patches-for-morphe",
@@ -628,6 +643,20 @@
     "targetApps": [
       "com.ihealthlabs.MyVitalsPro",
       "com.persapps.multitimer"
+    ],
+    "appCount": 2
+  },
+  "ikura": {
+    "source": "github",
+    "repo": "Ikuradachi/ikura-patches",
+    "avatarUrl": "https://avatars.githubusercontent.com/Ikuradachi?s=128",
+    "stars": 1,
+    "firstSeen": "2026-07-17T19:07:01",
+    "patches": "site/ikura.json",
+    "createdAt": "2026-07-17T09:07:41",
+    "targetApps": [
+      "com.example.app",
+      "net.easyconn.carman.wws"
     ],
     "appCount": 2
   },
@@ -891,7 +920,7 @@
     "stars": 9,
     "firstSeen": "2026-07-09T04:53:42",
     "patches": "site/miguel.json",
-    "createdAt": "2026-07-17T01:27:15",
+    "createdAt": "2026-07-17T17:35:48",
     "targetApps": [
       "air.com.midjiwan.polytopia",
       "com.IvanAF.ClimbAMIYPfree",
@@ -1563,6 +1592,19 @@
     "createdAt": "2026-07-13T02:42:37",
     "targetApps": [],
     "appCount": 0
+  },
+  "stylus": {
+    "source": "github",
+    "repo": "ch3thanhs/stylus",
+    "avatarUrl": "https://avatars.githubusercontent.com/ch3thanhs?s=128",
+    "stars": 1,
+    "firstSeen": "2026-07-17T19:07:01",
+    "patches": "site/stylus.json",
+    "createdAt": "2026-07-17T16:26:20",
+    "targetApps": [
+      "com.reddit.frontpage"
+    ],
+    "appCount": 1
   },
   "telegram-morphe": {
     "source": "github",

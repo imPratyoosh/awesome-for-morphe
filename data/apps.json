@@ -1957,5 +1957,13 @@
   "com.telenor.pakistan.mytelenor": {
     "name": "My Telenor",
     "iconUrl": "https://play-lh.googleusercontent.com/qWyKgf6pUPWpefJlcA9OQupoCEpktkwL0BhEWwZso_Dg0qhxlAGFNJ6RmKVUyJXHD4GCoTuNXyFN8wE5-2uy8w=s64"
+  },
+  "com.myvitale.forus": {
+    "name": "ForusApp",
+    "iconUrl": "https://play-lh.googleusercontent.com/HQl7wIZjPOMZHojduQcS9jOnT_vsDIYp3ydapBQzBbuVpAsqtkcaxUP24VXmDAa4CM3q2AaqbG0EGYawBFVf-_M=s64"
+  },
+  "net.easyconn.carman.wws": {
+    "name": "CarbitLink",
+    "iconUrl": "https://play-lh.googleusercontent.com/EWn6OuOy6gyQ8DG83elQnijJzAW4Whcko0aMV4STxDdShWqwMmRcd-eB3LWWAqeR8779UcVCOp2MFIPgjCiYjvs=s64"
   }
 }

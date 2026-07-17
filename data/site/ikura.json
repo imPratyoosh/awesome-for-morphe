@@ -1,0 +1,61 @@
+[
+  {
+    "name": "CarbitLink Customizations",
+    "description": "Enables YouTube, third-party apps, built-in browser, and unlocks all connection profiles/brands.",
+    "compatiblePackages": [
+      {
+        "packageName": "net.easyconn.carman.wws",
+        "targets": [
+          {
+            "version": "6.4.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "CarbitLink Login Bypass",
+    "description": "Bypasses Google account login for Google Maps, Mapbox, and Spotify dashboard cards.",
+    "compatiblePackages": [
+      {
+        "packageName": "net.easyconn.carman.wws",
+        "targets": [
+          {
+            "version": "6.4.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "CarbitLink Premium",
+    "description": "Unlocks Google Maps, Mapbox, Spotify, and Twin Space premium features and shows supported dashboard cards.",
+    "compatiblePackages": [
+      {
+        "packageName": "net.easyconn.carman.wws",
+        "targets": [
+          {
+            "version": "6.4.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Example Patch",
+    "description": "Example patch to start with.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.example.app",
+        "targets": [
+          {
+            "version": "2.0.0"
+          },
+          {
+            "version": "1.0.2"
+          }
+        ]
+      }
+    ]
+  }
+]
