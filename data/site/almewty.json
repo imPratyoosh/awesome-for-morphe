@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Disable scan counter",
+    "description": "Disables the scan counter increment, preventing the scan count from increasing",
+    "compatiblePackages": [
+      {
+        "packageName": "com.application.pokecardex",
+        "targets": [
+          {
+            "version": "8.7.2"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Example Patch",
+    "description": "Example patch to start with.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.example.app",
+        "targets": [
+          {
+            "version": "1.0.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Increase scan limit",
+    "description": "Increases the free scan limit from 30 to 50 scans",
+    "compatiblePackages": [
+      {
+        "packageName": "com.application.pokecardex",
+        "targets": [
+          {
+            "version": "8.7.2"
+          }
+        ]
+      }
+    ]
+  }
+]

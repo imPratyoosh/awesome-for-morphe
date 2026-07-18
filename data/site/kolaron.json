@@ -1,0 +1,11 @@
+[
+  {
+    "name": "Disable ads",
+    "description": "Disables in-app ads in IDOS.",
+    "compatiblePackages": [
+      {
+        "packageName": "cz.mafra.jizdnirady"
+      }
+    ]
+  }
+]

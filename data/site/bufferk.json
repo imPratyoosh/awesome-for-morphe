@@ -1,0 +1,203 @@
+[
+  {
+    "name": "Bypass license check",
+    "description": "Bypasses the Google Play LVL backend license check, allowing full app access without activation.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.bounce.connect",
+        "targets": [
+          {
+            "version": "7.0.7"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Disable analytics",
+    "description": "Suppresses Truecaller's CleverTap behavioural event tracking to prevent user-activity telemetry.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.truecaller",
+        "targets": [
+          {
+            "version": "26.10.6"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enable Brave Origin",
+    "description": "Enables Brave Origin features by default.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.brave.browser",
+        "isPreRelease": true
+      }
+    ]
+  },
+  {
+    "name": "Enable premium features",
+    "description": "Unlocks all client-side premium features by bypassing the feature-availability gate.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.truecaller",
+        "targets": [
+          {
+            "version": "26.10.6"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Flutter Premium Bypass",
+    "description": "Forces premium status inside the JSON payload sent to Flutter",
+    "compatiblePackages": [
+      {
+        "packageName": "com.mygate.user",
+        "targets": [
+          {
+            "version": "7.26.1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Freedium",
+    "description": "Adds a profile setting to choose the Freedium Mirror host, and a floating button on articles that opens the current article using the chosen Freedium Mirror in a webview.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.medium.reader",
+        "targets": [
+          {
+            "version": "4.5.1302097"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hide 'Get Premium' banners",
+    "description": "Dismisses premium upgrade prompts and paywall screens automatically.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.truecaller",
+        "targets": [
+          {
+            "version": "26.10.6"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hide ads",
+    "description": "Removes MyGate in-app ads (pre-approval screen, allow-entries screen, activity feed, and visitor profile masthead).",
+    "compatiblePackages": [
+      {
+        "packageName": "com.mygate.user",
+        "targets": [
+          {
+            "version": "7.26.1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hide ads",
+    "description": "Removes ads from the after-call screen and caller-ID overlay.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.truecaller",
+        "targets": [
+          {
+            "version": "26.10.6"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hide premium upgrade prompts",
+    "description": "Removes 'Get Premium' and 'Switch to Premium' buttons from the nav bar, settings, and profile.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.truecaller",
+        "targets": [
+          {
+            "version": "26.10.6"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mock premium",
+    "description": "Always shows the premium/gold badge and unlocks premium UI features.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.truecaller",
+        "targets": [
+          {
+            "version": "26.10.6"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Remove Premium UI",
+    "description": "Removes the Premium tab from the bottom navigation bar and the Premium row in the profile section.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.truecaller",
+        "targets": [
+          {
+            "version": "26.10.6"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock premium",
+    "description": "Unlocks all AT4K premium features by forcing the premium status to true.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.overdevs.at4k"
+      }
+    ]
+  },
+  {
+    "name": "Unlock premium",
+    "description": "Unlocks all MyGate premium features: spoofs USER_PREMIUM_PLAN status, suppresses upgrade dialogs and paywalls, enables frequent pre-approvals for deliveries, cabs and visiting help, unlocks surprise delivery and the always-approve-entries toggle.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.mygate.user",
+        "targets": [
+          {
+            "version": "7.26.1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Pro",
+    "description": "Spoofs Splitwise Pro subscription status everywhere it is checked — bypasses the server-driven feature gate (charts, receipt scanning, currency conversion, default splits, auto-split, transaction import, itemization), forces Person.isPro() to true for receipt quality and UI gating, and suppresses all in-app upsell ad banners (home-screen, recent activity, post-add-expense). Works entirely client-side with no server interaction.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.Splitwise.SplitwiseMobile",
+        "targets": [
+          {
+            "version": "26.4.4"
+          }
+        ]
+      }
+    ]
+  }
+]

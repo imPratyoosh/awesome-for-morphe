@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Disable ads",
+    "description": "Removes ads by forcing TeamSnap+ Tier 1 subscription status.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.teamsnap.teamsnap",
+        "targets": [
+          {
+            "version": "7.63.0"
+          }
+        ]
+      }
+    ]
+  }
+]

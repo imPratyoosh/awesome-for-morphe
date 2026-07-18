@@ -1,0 +1,1202 @@
+[
+  {
+    "date": "July 17, 2026",
+    "bundles": {
+      "bufferk": {
+        "isNew": false,
+        "apps": {
+          "com.brave.browser": {
+            "isNew": true,
+            "patches": [
+              "Enable Brave Origin"
+            ]
+          }
+        }
+      },
+      "hxreborn": {
+        "isNew": true,
+        "apps": {
+          "com.myvitale.forus": {
+            "isNew": true,
+            "patches": [
+              "Unlock premium"
+            ]
+          },
+          "com.spocky.projengmenu": {
+            "isNew": true,
+            "patches": [
+              "Disable tracking",
+              "Unlock premium"
+            ]
+          },
+          "com.michaldrabik.showly2": {
+            "isNew": true,
+            "patches": [
+              "Unlock premium"
+            ]
+          }
+        }
+      },
+      "ikura": {
+        "isNew": true,
+        "apps": {
+          "net.easyconn.carman.wws": {
+            "isNew": true,
+            "patches": [
+              "CarbitLink Customizations",
+              "CarbitLink Login Bypass",
+              "CarbitLink Premium"
+            ]
+          },
+          "com.example.app": {
+            "isNew": true,
+            "patches": [
+              "Example Patch"
+            ]
+          }
+        }
+      },
+      "pinterest-morphed": {
+        "isNew": false,
+        "apps": {
+          "com.pinterest": {
+            "isNew": false,
+            "patches": [
+              "Restore Google login (microG-RE)"
+            ]
+          }
+        }
+      },
+      "rushiranpise": {
+        "isNew": false,
+        "apps": {
+          "club.boxbox.android": {
+            "isNew": true,
+            "patches": [
+              "Unlock Pro"
+            ]
+          },
+          "com.monect.portable": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "intelligems.torrdroid": {
+            "isNew": true,
+            "patches": [
+              "Remove Ads"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "date": "July 16, 2026",
+    "bundles": {
+      "hoo-dles": {
+        "isNew": false,
+        "apps": {
+          "com.soundcloud.android": {
+            "isNew": false,
+            "patches": [
+              "Enable SoundCloud Go"
+            ]
+          }
+        }
+      },
+      "rivanced-universal": {
+        "isNew": true,
+        "apps": {
+          "universal": {
+            "isNew": true,
+            "patches": [
+              "Change package name",
+              "Change version code",
+              "Custom network security",
+              "Disable PairIP license check",
+              "Disable Play Integrity",
+              "Disable Sentry telemetry",
+              "Enable Android debugging",
+              "Enable ROM signature spoofing",
+              "Export all activities",
+              "Export internal data documents provider",
+              "Hex",
+              "Hide ADB status",
+              "Hide app icon",
+              "Hide mock location",
+              "Override certificate pinning",
+              "Predictive back gesture",
+              "Prevent screenshot detection",
+              "Remove screen capture restriction",
+              "Remove screenshot restriction",
+              "Remove share targets",
+              "Set target SDK version 34",
+              "Spoof Play Age Signals",
+              "Spoof SIM provider",
+              "Spoof Wi-Fi connection",
+              "Spoof build info",
+              "Spoof keystore security level",
+              "Spoof root of trust"
+            ]
+          }
+        }
+      },
+      "seobject": {
+        "isNew": false,
+        "apps": {
+          "com.google.android.apps.youtube.music": {
+            "isNew": false,
+            "patches": [
+              "Pin playlists"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "date": "July 15, 2026",
+    "bundles": {
+      "adobo": {
+        "isNew": false,
+        "apps": {
+          "com.reddit.frontpage": {
+            "isNew": false,
+            "patches": [
+              "Hide community menu badge"
+            ]
+          }
+        }
+      },
+      "amplerevanced": {
+        "isNew": false,
+        "apps": {
+          "com.kakao.talk": {
+            "isNew": false,
+            "patches": [
+              "Show message read receipts"
+            ]
+          }
+        }
+      },
+      "pichiwa": {
+        "isNew": false,
+        "apps": {
+          "com.whatsapp": {
+            "isNew": false,
+            "patches": [
+              "Login Fix"
+            ]
+          }
+        }
+      },
+      "pinterest-morphed": {
+        "isNew": false,
+        "apps": {
+          "com.pinterest": {
+            "isNew": false,
+            "patches": [
+              "Disable Firebase services"
+            ]
+          }
+        }
+      },
+      "rushiranpise": {
+        "isNew": false,
+        "apps": {
+          "com.google.android.verifier": {
+            "isNew": true,
+            "patches": [
+              "Bypass developer verification"
+            ]
+          },
+          "com.clue.android": {
+            "isNew": true,
+            "patches": [
+              "Unlock Plus"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "date": "July 14, 2026",
+    "bundles": {
+      "abeja": {
+        "isNew": true,
+        "apps": {
+          "com.android.gallery3d": {
+            "isNew": true,
+            "patches": [
+              "Disable AI features",
+              "Fix Background Service",
+              "Fix storage permission"
+            ]
+          }
+        }
+      },
+      "franticg33k": {
+        "isNew": false,
+        "apps": {
+          "com.hamropatro": {
+            "isNew": true,
+            "patches": [
+              "Remove Ads"
+            ]
+          }
+        }
+      },
+      "itsthejoker": {
+        "isNew": true,
+        "apps": {
+          "com.rookery.courier": {
+            "isNew": true,
+            "patches": [
+              "10x Bullet Damage",
+              "Beam of Death (10x Fire Rate)",
+              "Bypass Play Store license check",
+              "Redirect Google login to microG",
+              "Skip Play Integrity (fix microG Firebase delay)",
+              "Triple Bullet Size"
+            ]
+          }
+        }
+      },
+      "morphe": {
+        "isNew": false,
+        "apps": {
+          "com.google.android.apps.youtube.music": {
+            "isNew": false,
+            "patches": [
+              "Remember repeat state",
+              "Remember shuffle state"
+            ]
+          }
+        }
+      },
+      "pichiwa": {
+        "isNew": false,
+        "apps": {
+          "com.whatsapp": {
+            "isNew": false,
+            "patches": [
+              "Hide GMS",
+              "MicroG Support",
+              "Spoof Signature"
+            ]
+          }
+        }
+      },
+      "pinterest-morphed": {
+        "isNew": false,
+        "apps": {
+          "com.pinterest": {
+            "isNew": false,
+            "patches": [
+              "Hide ad views",
+              "Sanitize copied links"
+            ]
+          }
+        }
+      },
+      "rushiranpise": {
+        "isNew": false,
+        "apps": {
+          "com.block.juggle": {
+            "isNew": true,
+            "patches": [
+              "Unlock VIP"
+            ]
+          },
+          "me.gira.widget.countdown": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "no.mobitroll.kahoot.android": {
+            "isNew": true,
+            "patches": [
+              "Unlock Gold"
+            ]
+          },
+          "com.navitime.inbound.walk": {
+            "isNew": true,
+            "patches": [
+              "Unlock premium"
+            ]
+          },
+          "com.parallel.space.pro": {
+            "isNew": true,
+            "patches": [
+              "Unlock Pro"
+            ]
+          }
+        }
+      },
+      "seobject": {
+        "isNew": true,
+        "apps": {
+          "com.google.android.apps.youtube.music": {
+            "isNew": true,
+            "patches": [
+              "Pin playlists (dev)"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "date": "July 13, 2026",
+    "bundles": {
+      "ee-morphe": {
+        "isNew": false,
+        "apps": {
+          "com.innologica.inoreader": {
+            "isNew": true,
+            "patches": [
+              "Enable Pro",
+              "Increase Daily Limits"
+            ]
+          }
+        }
+      },
+      "franticg33k": {
+        "isNew": false,
+        "apps": {
+          "com.ensembleai.scoutai": {
+            "isNew": true,
+            "patches": [
+              "Remove License Activity",
+              "Remove License Check",
+              "Unlock Pro"
+            ]
+          }
+        }
+      },
+      "lain": {
+        "isNew": false,
+        "apps": {
+          "com.mixapplications.rufus": {
+            "isNew": true,
+            "patches": [
+              "Enable Premium"
+            ]
+          },
+          "com.mixapplications.ultimateusb": {
+            "isNew": true,
+            "patches": [
+              "Enable Premium"
+            ]
+          },
+          "com.mixapplications.usbtools": {
+            "isNew": true,
+            "patches": [
+              "Enable Premium"
+            ]
+          },
+          "com.mixapplications.ventoy_app": {
+            "isNew": true,
+            "patches": [
+              "Enable Premium"
+            ]
+          }
+        }
+      },
+      "morphe": {
+        "isNew": false,
+        "apps": {
+          "com.google.android.apps.youtube.music": {
+            "isNew": false,
+            "patches": [
+              "Disable dislike redirection"
+            ]
+          }
+        }
+      },
+      "pichiwa": {
+        "isNew": true,
+        "apps": {
+          "com.whatsapp": {
+            "isNew": true,
+            "patches": [
+              "Anti Detector",
+              "Anti Disappearing",
+              "Anti Edit",
+              "Anti Expiration",
+              "Anti Revoke",
+              "Anti View Once",
+              "Copy Statuses",
+              "Freeze Last Seen",
+              "Ghost Mode",
+              "HD Media",
+              "Hide Forwarded",
+              "Hide Read Receipts",
+              "Hide Typing",
+              "No Forward Limit",
+              "Remove Communities",
+              "Remove Updates",
+              "Settings Menu",
+              "Spoof Installer"
+            ]
+          }
+        }
+      },
+      "rushiranpise": {
+        "isNew": false,
+        "apps": {
+          "com.estrongs.android.pop": {
+            "isNew": true,
+            "patches": [
+              "Disable Tracking",
+              "Unlock VIP Lifetime"
+            ]
+          },
+          "com.esuper.file.explorer": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "date": "July 12, 2026",
+    "bundles": {
+      "adobo": {
+        "isNew": false,
+        "apps": {
+          "com.google.android.inputmethod.latin": {
+            "isNew": false,
+            "patches": [
+              "Enable access points menu redesign"
+            ]
+          }
+        }
+      },
+      "lain": {
+        "isNew": false,
+        "apps": {
+          "com.jlindemann.science": {
+            "isNew": true,
+            "patches": [
+              "Enable PRO+"
+            ]
+          },
+          "studio.muggle.chatboost": {
+            "isNew": true,
+            "patches": [
+              "Enable Premium"
+            ]
+          },
+          "net.nemostudio.keymate": {
+            "isNew": true,
+            "patches": [
+              "Enable Premium"
+            ]
+          },
+          "com.PixelStudio": {
+            "isNew": true,
+            "patches": [
+              "Enable Pro"
+            ]
+          }
+        }
+      },
+      "morphe": {
+        "isNew": false,
+        "apps": {
+          "com.google.android.apps.youtube.music": {
+            "isNew": false,
+            "patches": [
+              "Spoof app version"
+            ]
+          }
+        }
+      },
+      "piko": {
+        "isNew": false,
+        "apps": {
+          "com.instagram.android": {
+            "isNew": false,
+            "patches": [
+              "Filter stories",
+              "Mark chat as read manually"
+            ]
+          }
+        }
+      },
+      "rushiranpise": {
+        "isNew": false,
+        "apps": {
+          "com.ace.ex.file.manager": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.jndapp.anime.depth.live.wallpaper": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.guochao.faceshow": {
+            "isNew": true,
+            "patches": [
+              "Unlock SVIP"
+            ]
+          },
+          "com.eterno": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.jndapp.depth.live.wallpaper": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.nexstreaming.app.kinemasterfree": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "de.komoot.android": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.dywx.larkplayer": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "mega.privacy.android.app": {
+            "isNew": true,
+            "patches": [
+              "Unlock Pro"
+            ]
+          },
+          "com.jndapp.minimal.widgets": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.community.oneroom": {
+            "isNew": false,
+            "patches": [
+              "Unlock VIP"
+            ]
+          },
+          "com.community.mbox.in": {
+            "isNew": false,
+            "patches": [
+              "Unlock VIP"
+            ]
+          },
+          "com.community.mbox.tv": {
+            "isNew": false,
+            "patches": [
+              "Unlock VIP"
+            ]
+          },
+          "com.nytimes.crossword": {
+            "isNew": true,
+            "patches": [
+              "Unlock subscription"
+            ]
+          },
+          "com.pixel.al.pixelhabittracker": {
+            "isNew": true,
+            "patches": [
+              "Unlock PRO"
+            ]
+          },
+          "com.playit.videoplayer": {
+            "isNew": true,
+            "patches": [
+              "Unlock VIP"
+            ]
+          },
+          "com.MojoFilterMediaLLC.RPGSoundSystem": {
+            "isNew": true,
+            "patches": [
+              "Unlock premium"
+            ]
+          },
+          "com.rs.explorer.filemanager": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.strava": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.uptodown": {
+            "isNew": true,
+            "patches": [
+              "Unlock Turbo"
+            ]
+          },
+          "universal": {
+            "isNew": false,
+            "patches": [
+              "Add resource file",
+              "Change package name",
+              "Change version code",
+              "Custom certificates",
+              "Disable Play Integrity",
+              "Disable ad SDK calls",
+              "Disable clipboard access",
+              "Disable shake ads",
+              "Enable Android debugging",
+              "Enable ROM signature spoofing",
+              "Enable debug build target",
+              "Export all activities",
+              "Export internal data documents provider",
+              "Force dark theme",
+              "Hex patch",
+              "Hide ADB status",
+              "Hide VPN and proxy",
+              "Hide app icon",
+              "Hide mock location",
+              "Override certificate pinning",
+              "Predictive back gesture",
+              "Remove ad manifest entries",
+              "Remove audio capture policy",
+              "Remove screen capture restriction",
+              "Remove screenshot restriction",
+              "Remove share targets",
+              "Set target SDK 34",
+              "Spoof Android ID",
+              "Spoof Bluetooth identifiers",
+              "Spoof Pixel device",
+              "Spoof Play age signals",
+              "Spoof SIM provider",
+              "Spoof Wi-Fi connection",
+              "Spoof Wi-Fi identifiers",
+              "Spoof build info",
+              "Spoof keystore security level",
+              "Spoof root of trust",
+              "Spoof telephony IDs"
+            ]
+          }
+        }
+      },
+      "shaun-sheep": {
+        "isNew": false,
+        "apps": {
+          "dev.sasikanth.pinnit": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "date": "July 11, 2026",
+    "bundles": {
+      "ee-morphe": {
+        "isNew": false,
+        "apps": {
+          "net.tsapps.appsales": {
+            "isNew": true,
+            "patches": [
+              "Enable Pro"
+            ]
+          },
+          "com.going.mobile": {
+            "isNew": true,
+            "patches": [
+              "Enable Pro"
+            ]
+          }
+        }
+      },
+      "franticg33k": {
+        "isNew": false,
+        "apps": {
+          "com.providelite.epicplay": {
+            "isNew": true,
+            "patches": [
+              "Remove Ads",
+              "Remove License Activity",
+              "Unlock Premium"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "date": "July 9, 2026",
+    "bundles": {
+      "hoo-dles": {
+        "isNew": false,
+        "apps": {
+          "com.superchinese": {
+            "isNew": true,
+            "patches": [
+              "Disable telemetry",
+              "Unlock all lessons"
+            ]
+          }
+        }
+      },
+      "lain": {
+        "isNew": false,
+        "apps": {
+          "com.getepic.Epic": {
+            "isNew": true,
+            "patches": [
+              "Disable Region Lock",
+              "Enable Epic Family"
+            ]
+          },
+          "jp.co.shueisha.mangaplus": {
+            "isNew": true,
+            "patches": [
+              "Bypass Reading Limitation",
+              "Enable Deluxe Plan"
+            ]
+          }
+        }
+      },
+      "morphe": {
+        "isNew": false,
+        "apps": {
+          "com.google.android.apps.youtube.music": {
+            "isNew": false,
+            "patches": [
+              "Hide filter bar",
+              "Hide music action buttons"
+            ]
+          }
+        }
+      },
+      "rushiranpise": {
+        "isNew": false,
+        "apps": {
+          "com.onesports.score": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "in.amazon.mShop.android.shopping": {
+            "isNew": true,
+            "patches": [
+              "Dark mode",
+              "Disable search suggestions tracking",
+              "Disable video autoplay",
+              "Fix Amazon manifest conflicts",
+              "Hide Rufus tab",
+              "Open links in browser",
+              "Price history charts",
+              "Remove ads",
+              "Sanitize share links"
+            ]
+          },
+          "com.amazon.mShop.android.shopping": {
+            "isNew": false,
+            "patches": [
+              "Fix Amazon manifest conflicts"
+            ]
+          },
+          "com.blurams.ipc": {
+            "isNew": true,
+            "patches": [
+              "Unlock Cloud Service"
+            ]
+          },
+          "com.thecarousell.Carousell": {
+            "isNew": true,
+            "patches": [
+              "Remove ads"
+            ]
+          },
+          "com.duolingo": {
+            "isNew": true,
+            "patches": [
+              "Enable Debug Menu",
+              "Unlock Subscription"
+            ]
+          },
+          "com.microsoft.office.excel": {
+            "isNew": true,
+            "patches": [
+              "Unlock Excel"
+            ]
+          },
+          "com.flightaware.android.liveFlightTracker": {
+            "isNew": true,
+            "patches": [
+              "Unlock Ad-Free"
+            ]
+          },
+          "com.live.flight.tracker": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.alexandrucene.dayhistory": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "je.fit": {
+            "isNew": true,
+            "patches": [
+              "Unlock Elite"
+            ]
+          },
+          "com.life360.android.safetymapd": {
+            "isNew": true,
+            "patches": [
+              "Unlock Platinum"
+            ]
+          },
+          "com.livescore": {
+            "isNew": true,
+            "patches": [
+              "Remove ads"
+            ]
+          },
+          "com.community.oneroom": {
+            "isNew": false,
+            "patches": [
+              "Spoof member brief info",
+              "Spoof member info",
+              "Unlock download member requirement"
+            ]
+          },
+          "com.community.mbox.in": {
+            "isNew": true,
+            "patches": [
+              "Bypass member rights check",
+              "Clear VIP resolution tip",
+              "Spoof member brief info",
+              "Spoof member info",
+              "Spoof member provider flags",
+              "Suppress newbie bonus dialog",
+              "Unlock download member requirement",
+              "Unlock member resolution"
+            ]
+          },
+          "com.community.mbox.tv": {
+            "isNew": true,
+            "patches": [
+              "Bypass TV episode VIP gate",
+              "Clear VIP resolution tip",
+              "Spoof TV account VIP status",
+              "Unlock member resolution"
+            ]
+          },
+          "com.acmeaom.android.myradar": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.pocketprep.android.itcybersecurity": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.recipebro.cookingbuddy": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.appostrophe.scrl": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.snowcorp.stickerly.android": {
+            "isNew": true,
+            "patches": [
+              "Unlock Plus"
+            ]
+          },
+          "mobi.lockdown.weather": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.tradingview.tradingviewapp": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "eu.toneiv.ubktouch": {
+            "isNew": true,
+            "patches": [
+              "Unlock Pro"
+            ]
+          },
+          "com.wolfram.android.alphapro": {
+            "isNew": true,
+            "patches": [
+              "Unlock Professional"
+            ]
+          },
+          "com.microsoft.office.word": {
+            "isNew": true,
+            "patches": [
+              "Unlock Word"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "date": "July 8, 2026",
+    "bundles": {
+      "ee-morphe": {
+        "isNew": false,
+        "apps": {
+          "com.arlosoft.macrodroid": {
+            "isNew": true,
+            "patches": [
+              "Dog Patch"
+            ]
+          }
+        }
+      },
+      "franticg33k": {
+        "isNew": false,
+        "apps": {
+          "com.ideapreneurnepal.moneymitra": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          }
+        }
+      },
+      "hk-morphe": {
+        "isNew": false,
+        "apps": {
+          "com.laurencedawson.reddit_sync": {
+            "isNew": false,
+            "patches": [
+              "Fix Reddit Video Links"
+            ]
+          },
+          "com.laurencedawson.reddit_sync.dev": {
+            "isNew": false,
+            "patches": [
+              "Fix Reddit Video Links"
+            ]
+          },
+          "com.laurencedawson.reddit_sync.pro": {
+            "isNew": false,
+            "patches": [
+              "Fix Reddit Video Links"
+            ]
+          }
+        }
+      },
+      "lakaka": {
+        "isNew": false,
+        "apps": {
+          "com.instapaper.android": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.soundbrenner.pulse": {
+            "isNew": true,
+            "patches": [
+              "Unlock Plus"
+            ]
+          }
+        }
+      },
+      "morphe": {
+        "isNew": false,
+        "apps": {
+          "com.google.android.apps.youtube.music": {
+            "isNew": false,
+            "patches": [
+              "Hide flyout menu components",
+              "Hide layout components"
+            ]
+          }
+        }
+      },
+      "paresh-maheshwari": {
+        "isNew": false,
+        "apps": {
+          "com.mxtech.videoplayer.pro": {
+            "isNew": true,
+            "patches": [
+              "MX Player Pro License"
+            ]
+          },
+          "com.rk.taskmanager": {
+            "isNew": true,
+            "patches": [
+              "Unlock Pro"
+            ]
+          }
+        }
+      },
+      "prathxm": {
+        "isNew": false,
+        "apps": {
+          "com.chess": {
+            "isNew": false,
+            "patches": [
+              "Ad-Free",
+              "Local Stockfish Analysis"
+            ]
+          }
+        }
+      },
+      "rushiranpise": {
+        "isNew": false,
+        "apps": {
+          "com.amazon.mShop.android.shopping": {
+            "isNew": true,
+            "patches": [
+              "Dark mode",
+              "Disable search suggestions tracking",
+              "Disable video autoplay",
+              "Hide Rufus tab",
+              "Open links in browser",
+              "Price history charts",
+              "Remove ads",
+              "Sanitize share links"
+            ]
+          },
+          "com.androholic.amoledpix": {
+            "isNew": true,
+            "patches": [
+              "Unlock premium"
+            ]
+          },
+          "com.apkmirror.helper.prod": {
+            "isNew": true,
+            "patches": [
+              "Unlock Ultimate"
+            ]
+          },
+          "game.puzzle.blockpuzzle": {
+            "isNew": true,
+            "patches": [
+              "Remove ads"
+            ]
+          },
+          "com.socialnmobile.dictapps.notepad.color.note": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.fitbod.fitbod": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "com.glority.picturemushroom": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "cn.danatech.xingseus": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "au.com.shiftyjelly.pocketcasts": {
+            "isNew": true,
+            "patches": [
+              "Unlock Patron"
+            ]
+          },
+          "com.marsvard.stickermakerforwhatsapp": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          },
+          "io.goodservice.theweekendest": {
+            "isNew": true,
+            "patches": [
+              "Unlock Plus"
+            ]
+          },
+          "com.toomics.global.google": {
+            "isNew": true,
+            "patches": [
+              "Remove ADS"
+            ]
+          },
+          "com.metalsoft.trackchecker_mobile": {
+            "isNew": true,
+            "patches": [
+              "Unlock Pro / No Ads"
+            ]
+          },
+          "com.vizmanga.android": {
+            "isNew": true,
+            "patches": [
+              "Remove Ads"
+            ]
+          }
+        }
+      },
+      "shaun-sheep": {
+        "isNew": false,
+        "apps": {
+          "com.delphicoder.flud": {
+            "isNew": true,
+            "patches": [
+              "Flud Ad-Free & Bypasses"
+            ]
+          },
+          "com.vanniktech.rssreader": {
+            "isNew": true,
+            "patches": [
+              "RSS Reader Premium"
+            ]
+          }
+        }
+      }
+    }
+  }
+]

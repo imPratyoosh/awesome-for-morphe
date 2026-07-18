@@ -1,0 +1,542 @@
+{
+  "arhcos": {
+    "source": "github",
+    "repo": "ARHCOS/arhcos-patches",
+    "name": "Arhcos"
+  },
+  "alexnaga": {
+    "source": "github",
+    "repo": "AlexNaga/android-patches",
+    "name": "AlexNaga"
+  },
+  "almewty": {
+    "source": "github",
+    "repo": "Almewty/my-morphe-patches",
+    "name": "Almewty"
+  },
+  "amplerevanced": {
+    "source": "github",
+    "repo": "AmpleReVanced/revanced-patches",
+    "name": "Ample"
+  },
+  "bholeykabhakt": {
+    "source": "github",
+    "repo": "BholeyKaBhakt/android-patches-xtra",
+    "name": "Xtra"
+  },
+  "braydog2010": {
+    "source": "github",
+    "repo": "BrayDog2010/morphe-patches",
+    "name": "Braydog2010"
+  },
+  "hellveticastandard": {
+    "source": "github",
+    "repo": "HellveticaStandard/HellveticaPatches",
+    "name": "HellveticaStandard"
+  },
+  "hvq": {
+    "source": "github",
+    "repo": "HvQ/eksi-morphe",
+    "name": "Ekşi"
+  },
+  "imxeren": {
+    "source": "github",
+    "repo": "IMXEren/mix-patches",
+    "name": "Mix"
+  },
+  "ikuradachi": {
+    "source": "github",
+    "repo": "Ikuradachi/ikura-patches",
+    "name": "Ikura"
+  },
+  "immortalzeus": {
+    "source": "github",
+    "repo": "ImmortalZeus/ImmortalZeus-Morphe-Patches",
+    "name": "Immortalzeus"
+  },
+  "joristdh": {
+    "source": "github",
+    "repo": "Joristdh/Platypatch",
+    "name": "Platypatch"
+  },
+  "joussflls10": {
+    "source": "github",
+    "repo": "Joussflls10/Jouss-Patches",
+    "name": "Jouss"
+  },
+  "lakakareal": {
+    "source": "github",
+    "repo": "LaKakaReal/LaKakaShitPatches",
+    "name": "LaKaka"
+  },
+  "lynx6319": {
+    "source": "github",
+    "repo": "Lynx6319/patch-youtube-scroll-block",
+    "name": "Patch Youtube Scroll Block"
+  },
+  "miguelninja19": {
+    "source": "github",
+    "repo": "MiguelNinja19/miguel-morphe-patches",
+    "name": "Miguel"
+  },
+  "moonshadowkeeper": {
+    "source": "github",
+    "repo": "MoonShadowKeeper/Telegram-patchesMorphe",
+    "name": "Telegram Patchesmorphe"
+  },
+  "morpheapp": {
+    "source": "github",
+    "repo": "MorpheApp/morphe-patches",
+    "name": "Morpheapp"
+  },
+  "nai64": {
+    "source": "github",
+    "repo": "Nai64/Nai64Patches",
+    "name": "Nai"
+  },
+  "nekogryphou": {
+    "source": "github",
+    "repo": "NekoGryphou/gryphous-morphe-patches",
+    "name": "Gryphou"
+  },
+  "pa-kon": {
+    "source": "github",
+    "repo": "Pa-kon/morphe-screenshot-patches",
+    "name": "Morphe Screenshot"
+  },
+  "pawix25": {
+    "source": "github",
+    "repo": "PawiX25/pepper-morphe-patches",
+    "name": "Pepper"
+  },
+  "pixelpusher247": {
+    "source": "github",
+    "repo": "PixelPusher247/morphe-patches",
+    "name": "Trakt"
+  },
+  "prathxmop": {
+    "source": "github",
+    "repo": "PrathxmOp/Prathxm-Patches",
+    "name": "Prathxm"
+  },
+  "prathxmop-ytmusic": {
+    "source": "github",
+    "repo": "PrathxmOp/ytmusic-patches",
+    "name": "Ytmusic"
+  },
+  "quantro100": {
+    "source": "github",
+    "repo": "Quantro100/Morphe-patches",
+    "name": "AliExpress"
+  },
+  "realcyberwash": {
+    "source": "github",
+    "repo": "RealCyberwash/max-patches",
+    "name": "Chmax"
+  },
+  "ripthulhu": {
+    "source": "github",
+    "repo": "Ripthulhu/morphe-google-patches",
+    "name": "Morphe Google"
+  },
+  "rookieenough": {
+    "source": "github",
+    "repo": "RookieEnough/De-Vanced",
+    "name": "De-Vanced"
+  },
+  "seobject": {
+    "source": "github",
+    "repo": "Seobject/Seobject-patches",
+    "name": "Seobject"
+  },
+  "soubryan": {
+    "source": "github",
+    "repo": "SouBryan/pinterest-morphed",
+    "name": "Pinterest"
+  },
+  "therealcrazyfuy": {
+    "source": "github",
+    "repo": "TheRealCrazyfuy/abeja-morphe-patches",
+    "name": "Abeja"
+  },
+  "tornillo2": {
+    "source": "github",
+    "repo": "Tornillo2/movistar-block-ads-morphe",
+    "name": "Movistar"
+  },
+  "trimpsuz": {
+    "source": "github",
+    "repo": "Trimpsuz/morphe-busuu",
+    "name": "Morphe Busuu"
+  },
+  "utsavrajputt": {
+    "source": "github",
+    "repo": "Utsavrajputt/Modx-patches",
+    "name": "Modx"
+  },
+  "xhehab": {
+    "source": "github",
+    "repo": "Xhehab/Xhehab-Patches",
+    "name": "Xhehab"
+  },
+  "abhis1n": {
+    "source": "github",
+    "repo": "abhis1n/Morphe-Patches",
+    "name": "Splitwise"
+  },
+  "ajstrick81": {
+    "source": "github",
+    "repo": "ajstrick81/morphe-androidtv-patches",
+    "name": "Android TV"
+  },
+  "alejandrobellver": {
+    "source": "github",
+    "repo": "alejandrobellver/pichiwa-patches",
+    "name": "Pichiwa"
+  },
+  "ameenalasady": {
+    "source": "github",
+    "repo": "ameenalasady/ameen-morphe",
+    "name": "Ameen"
+  },
+  "ameenalasady-photogrid": {
+    "source": "github",
+    "repo": "ameenalasady/photogrid-morphe",
+    "name": "Photogrid"
+  },
+  "anddea": {
+    "source": "github",
+    "repo": "anddea/revanced-patches",
+    "name": "Anddea"
+  },
+  "andronedev": {
+    "source": "github",
+    "repo": "andronedev/morphe-patches",
+    "name": "Transit"
+  },
+  "andronedev-morphe-portal-patch": {
+    "source": "github",
+    "repo": "andronedev/morphe-portal-patch",
+    "name": "Morphe Portal Patch"
+  },
+  "arandomhooman": {
+    "source": "github",
+    "repo": "arandomhooman/hoomans-morphe-patches",
+    "name": "Hooman"
+  },
+  "ariecos": {
+    "source": "github",
+    "repo": "ariecos/gemini-patches",
+    "name": "Gemini"
+  },
+  "babyhuehnchen": {
+    "source": "github",
+    "repo": "babyhuehnchen/morphe-patches",
+    "name": "Babyhuehnchen"
+  },
+  "bdgerszewski": {
+    "source": "github",
+    "repo": "bdgerszewski/morphe-patches-ihealth",
+    "name": "iHealth"
+  },
+  "bernardo7894": {
+    "source": "github",
+    "repo": "bernardo7894/remove-permaban-banner-patch",
+    "name": "Remove Permaban Banner Patch"
+  },
+  "bigyank": {
+    "source": "github",
+    "repo": "bigyank/morphe-patches-samsung",
+    "name": "Samsung Health"
+  },
+  "binarymend": {
+    "source": "github",
+    "repo": "binarymend/morphe-patches",
+    "name": "Binarymend"
+  },
+  "brealorg": {
+    "source": "github",
+    "repo": "brealorg/breal-morphe-patches",
+    "name": "Breal"
+  },
+  "brosssh": {
+    "source": "github",
+    "repo": "brosssh/morphe-patches",
+    "name": "Brosssh"
+  },
+  "browzomje": {
+    "source": "github",
+    "repo": "browzomje/browzomje-patches",
+    "name": "Browzomje"
+  },
+  "bufferk": {
+    "source": "github",
+    "repo": "bufferk/morphe-patches",
+    "name": "Bufferk"
+  },
+  "byehi98": {
+    "source": "github",
+    "repo": "byehi98/okish-morphe-patches",
+    "name": "byehi98"
+  },
+  "cesbar": {
+    "source": "github",
+    "repo": "cesbar/zpatches",
+    "name": "zPatches"
+  },
+  "ch3thanhs": {
+    "source": "github",
+    "repo": "ch3thanhs/stylus",
+    "name": "Stylus"
+  },
+  "chirag127": {
+    "source": "github",
+    "repo": "chirag127/morphe-patches",
+    "name": "Chirag127"
+  },
+  "crimera": {
+    "source": "github",
+    "repo": "crimera/piko",
+    "name": "Piko"
+  },
+  "docbt": {
+    "source": "github",
+    "repo": "docbt/patched-up",
+    "name": "Patched Up"
+  },
+  "drosocode": {
+    "source": "github",
+    "repo": "drosoCode/morphe-patches",
+    "name": "Drosocode"
+  },
+  "dumb-software": {
+    "source": "github",
+    "repo": "dumb-software/T2C-App-Patch-Morphe",
+    "name": "T2C App Patch"
+  },
+  "durgesh0505": {
+    "source": "github",
+    "repo": "durgesh0505/chiggi_morphe_patches",
+    "name": "Chiggi"
+  },
+  "ethanm6": {
+    "source": "github",
+    "repo": "ethanm6/letterboxd-stremio-morphe-patch",
+    "name": "Letterboxd"
+  },
+  "eyalm2000": {
+    "source": "github",
+    "repo": "eyalm2000/tidal-debug-menu",
+    "name": "Tidal Debug Menu"
+  },
+  "fangkampanat": {
+    "source": "github",
+    "repo": "fangkampanat/gmaps-patches",
+    "name": "Gmaps"
+  },
+  "franticg33k": {
+    "source": "github",
+    "repo": "franticg33k/morphe-patches",
+    "name": "Franticg33k"
+  },
+  "hackingguy": {
+    "source": "github",
+    "repo": "hackingguy/morphe-patches",
+    "name": "Hackingguy"
+  },
+  "hoo-dles": {
+    "source": "github",
+    "repo": "hoo-dles/morphe-patches",
+    "name": "Hoodles"
+  },
+  "humzakh": {
+    "source": "github",
+    "repo": "humzakh/HK-Morphe-Patches",
+    "name": "Hk"
+  },
+  "hxreborn": {
+    "source": "github",
+    "repo": "hxreborn/morphe-patches",
+    "name": "Hxreborn"
+  },
+  "icysymmetra": {
+    "source": "github",
+    "repo": "icysymmetra/tiktok-patches-for-morphe",
+    "name": "TikTok"
+  },
+  "isuruhg": {
+    "source": "github",
+    "repo": "isuruhg/fin-tweaks",
+    "name": "Fin Tweaks"
+  },
+  "itsthejoker": {
+    "source": "github",
+    "repo": "itsthejoker/itsthejoker-patches",
+    "name": "Itsthejoker"
+  },
+  "jasonwu1994": {
+    "source": "github",
+    "repo": "jasonwu1994/Gboard-patches",
+    "name": "Gboard"
+  },
+  "jkennethcarino": {
+    "source": "github",
+    "repo": "jkennethcarino/adobo",
+    "name": "Adobo"
+  },
+  "kareemlukitomo": {
+    "source": "github",
+    "repo": "kareemlukitomo/morphe-patches",
+    "name": "Kareemlukitomo"
+  },
+  "kiraio-moe": {
+    "source": "github",
+    "repo": "kiraio-moe/Lain-Patches",
+    "name": "Lain"
+  },
+  "kolaron": {
+    "source": "github",
+    "repo": "kolaron/morphe-patches",
+    "name": "Kolaron"
+  },
+  "kondratjev": {
+    "source": "github",
+    "repo": "kondratjev/morphe-patches",
+    "name": "Kondratjev"
+  },
+  "kontsevoye": {
+    "source": "github",
+    "repo": "kontsevoye/emorphe-patches",
+    "name": "Emorphe"
+  },
+  "kun-codes": {
+    "source": "github",
+    "repo": "kun-codes/npci-bhim-morphe-patches",
+    "name": "Npci Bhim"
+  },
+  "loskutov": {
+    "source": "github",
+    "repo": "loskutov/youtube-domain-fronting-patch",
+    "name": "Youtube Domain Fronting Patch"
+  },
+  "lyyako": {
+    "source": "github",
+    "repo": "lyyako/realme-link-patches",
+    "name": "Realme Link"
+  },
+  "meridianfresco": {
+    "source": "github",
+    "repo": "meridianfresco/morphe-meta-patches",
+    "name": "Meta"
+  },
+  "osirisad": {
+    "source": "github",
+    "repo": "osirisad/teamsnap-patches",
+    "name": "TeamSnap"
+  },
+  "polka-bear": {
+    "source": "github",
+    "repo": "polka-bear/morphe-patches",
+    "name": "Polka-Bear"
+  },
+  "quantavil": {
+    "source": "github",
+    "repo": "quantavil/edge-morphe-patches",
+    "name": "Edge"
+  },
+  "rabilrbl": {
+    "source": "github",
+    "repo": "rabilrbl/fluffy-patches",
+    "name": "Fluffy"
+  },
+  "rushiranpise": {
+    "source": "github",
+    "repo": "rushiranpise/Ri-Vanced-Universal-Morphe-Patches",
+    "name": "Ri-Vanced"
+  },
+  "rushiranpise-github": {
+    "source": "github",
+    "repo": "rushiranpise/morphe-patches",
+    "name": "Rushi"
+  },
+  "saieshshirodkar": {
+    "source": "github",
+    "repo": "saieshshirodkar/saiesh-morphe-patches",
+    "name": "Saiesh"
+  },
+  "shaun-the-sheep-patches": {
+    "source": "github",
+    "repo": "shaun-the-sheep-patches/morphe-patches",
+    "name": "Shaun"
+  },
+  "sjshb57": {
+    "source": "github",
+    "repo": "sjshb57/Pairip-Patches",
+    "name": "Pairip"
+  },
+  "skulldogged": {
+    "source": "github",
+    "repo": "skulldogged/cobalt-morphe",
+    "name": "Cobalt"
+  },
+  "totsiaw": {
+    "source": "github",
+    "repo": "totsiaw/proxma-patches",
+    "name": "Proxma"
+  },
+  "variablenine": {
+    "source": "github",
+    "repo": "variablenine/morphe-patches",
+    "name": "Variablenine"
+  },
+  "vladon": {
+    "source": "github",
+    "repo": "vladon/morphe-patches-navi",
+    "name": "Morphe Patches Navi"
+  },
+  "wchill": {
+    "source": "github",
+    "repo": "wchill/anddea-rvx-morphed",
+    "name": "Anddea Rvx Morphed"
+  },
+  "wchill-patcheddit": {
+    "source": "github",
+    "repo": "wchill/patcheddit",
+    "name": "Patcheddit"
+  },
+  "wchill-rvx-morphed": {
+    "source": "github",
+    "repo": "wchill/rvx-morphed",
+    "name": "Rvx Morphed"
+  },
+  "xob0t": {
+    "source": "github",
+    "repo": "xob0t/morphe-patches",
+    "name": "xob0t"
+  },
+  "ynotzort": {
+    "source": "github",
+    "repo": "ynotzort/morphe-patches",
+    "name": "Ynotzort"
+  },
+  "paresh-maheshwari": {
+    "source": "gitlab",
+    "repo": "Paresh-Maheshwari/paresh-patches",
+    "name": "Paresh"
+  },
+  "early.egg3707": {
+    "source": "gitlab",
+    "repo": "early.egg3707/ee-morphe-patches",
+    "name": "EE Morphe"
+  },
+  "inotia00": {
+    "source": "gitlab",
+    "repo": "inotia00/proguard-patches",
+    "name": "Proguard"
+  },
+  "inotia00-x-shim": {
+    "source": "gitlab",
+    "repo": "inotia00/x-shim",
+    "name": "X Shim"
+  }
+}

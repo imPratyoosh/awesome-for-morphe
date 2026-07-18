@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Enable Picture-in-Picture",
+    "description": "Enables automatic Android Picture-in-Picture when leaving Crunchyroll playback.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.crunchyroll.crunchyroid",
+        "targets": [
+          {
+            "version": "3.112.2"
+          }
+        ]
+      }
+    ]
+  }
+]

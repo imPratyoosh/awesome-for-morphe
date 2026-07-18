@@ -1,0 +1,7 @@
+{
+  "created_at": "2026-07-07T11:04:59",
+  "description": "## [1.6.0-dev.3](https://github.com/xob0t/morphe-patches/compare/v1.6.0-dev.2...v1.6.0-dev.3) (2026-07-07)\n\n### \ud83d\udc1b Bug Fixes\n\n* **avito:** hide profile prize portal junk ([73a6a30](https://github.com/xob0t/morphe-patches/commit/73a6a305a96abddf63ba556696f0ffea12436242))\n",
+  "download_url": "https://github.com/xob0t/morphe-patches/releases/download/v1.6.0-dev.3/patches-1.6.0-dev.3.mpp",
+  "signature_download_url": "N/A",
+  "version": "v1.6.0-dev.3"
+}

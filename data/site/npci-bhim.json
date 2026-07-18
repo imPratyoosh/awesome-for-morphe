@@ -1,0 +1,86 @@
+[
+  {
+    "name": "Bypass License Activity",
+    "description": "Neutralizes LicenseActivity.onStart to prevent the paywall and error dialog from being displayed, acting as a catch-all guard if LicenseActivity is ever started.",
+    "compatiblePackages": [
+      {
+        "packageName": "in.org.npci.upiapp",
+        "targets": [
+          {
+            "version": "4.0.24"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Bypass License Check",
+    "description": "Bypasses Google Play Store license verification in com.pairip.licensecheck.LicenseClient to prevent System.exit(0) on non-Play Store installs.",
+    "compatiblePackages": [
+      {
+        "packageName": "in.org.npci.upiapp",
+        "targets": [
+          {
+            "version": "4.0.24"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Bypass License Paywall",
+    "description": "Neutralizes the license paywall and error dialog at the source by patching LicenseClient.processResponse, startPaywallActivity, and handleError to return immediately.",
+    "compatiblePackages": [
+      {
+        "packageName": "in.org.npci.upiapp",
+        "targets": [
+          {
+            "version": "4.0.24"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Bypass Signature Verification",
+    "description": "Bypasses APK signature verification in com.pairip.SignatureCheck to prevent SignatureTamperedException on modified APKs.",
+    "compatiblePackages": [
+      {
+        "packageName": "in.org.npci.upiapp",
+        "targets": [
+          {
+            "version": "4.0.24"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Disable Blacklisting",
+    "description": "Disables the blacklisting check in the affirmation flow to prevent the app from blocking rooted devices server-side.",
+    "compatiblePackages": [
+      {
+        "packageName": "in.org.npci.upiapp",
+        "targets": [
+          {
+            "version": "4.0.24"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Force Safe Root Status",
+    "description": "Forces the root status to 'safe' in device details and skips root status comparison logic to bypass root detection on the client side.",
+    "compatiblePackages": [
+      {
+        "packageName": "in.org.npci.upiapp",
+        "targets": [
+          {
+            "version": "4.0.24"
+          }
+        ]
+      }
+    ]
+  }
+]

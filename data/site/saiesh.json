@@ -1,0 +1,153 @@
+[
+  {
+    "name": "Disable PairIP DRM",
+    "description": "Disables PairIP signature verification and Google Play LVL license check. Required for the app to launch after re-signing.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.overdevs.at4k",
+        "targets": [
+          {
+            "version": "0.99"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Fix Firebase after re-signing",
+    "description": "Fixes Firebase services (push notifications, Remote Config, Firebase Auth) that break after Morphe re-signs the app with a different certificate.\n\nApply with Original app certificate patch no other config needed.",
+    "default": false
+  },
+  {
+    "name": "GmsCore support (MicroG)",
+    "description": "Routes Google Play Services calls through MicroG instead of real GPS.\n\nWorks for: Google apps (YouTube, Maps, News, Photos) and third-party apps using classic Google Sign-In (Android 13 and below).\n\nDoes not work for: Android 14+ Credential Manager sign-in (most modern third-party apps), Play Integrity / SafetyNet checks, or apps with custom auth.\n\nRequires MicroG RE installed. Apply with Original app certificate patch.",
+    "default": false,
+    "options": [
+      {
+        "key": "gmsCoreVendor",
+        "title": "MicroG package name",
+        "description": "Which MicroG / GmsCore app is installed on your device. Check your device's app list for \"MicroG\" or \"GmsCore\" if unsure — most users should leave this as the default."
+      },
+      {
+        "key": "mainActivityName",
+        "title": "Main activity class (optional)",
+        "description": "The app's main Activity class name ending with a semicolon, e.g. /MainActivity; Used to inject the MicroG check at startup. Leave blank for auto-detection."
+      },
+      {
+        "key": "packageName",
+        "title": "Custom package name (optional)",
+        "description": "Rename the app to this package name. Leave blank to keep the original. Must be a valid package name (e.g. com.example.myapp)."
+      }
+    ]
+  },
+  {
+    "name": "Provide Original app certificate",
+    "description": "By Default it Reads the signing certificate from the original app installed. Required for GmsCore, Firebase, and Signature spoof patches. Only fill options below if the original is uninstalled.",
+    "default": false,
+    "options": [
+      {
+        "key": "originalApkPath",
+        "title": "Path to original APK (if uninstalled)",
+        "description": "Full path to the original APK or .apks bundle. Example: /sdcard/Download/Waze.apks"
+      },
+      {
+        "key": "manualCertSha1",
+        "title": "Certificate SHA-1 (manual)",
+        "description": "40-char hex. Found on APKMirror under app signature info."
+      },
+      {
+        "key": "manualCertSha256",
+        "title": "Certificate SHA-256 (manual)",
+        "description": "64-char hex. Optional companion to SHA-1."
+      },
+      {
+        "key": "manualCertBase64",
+        "title": "Certificate Base64 DER (manual)",
+        "description": "Needed only for Signature spoof patch. Get it with: apksigner verify --print-certs original.apk"
+      }
+    ]
+  },
+  {
+    "name": "Spoof app signature",
+    "description": "Makes the app think its signing certificate is unchanged after Morphe re-signs it.\n\nUseful when an app crashes or shows a tamper warning because it checks its own certificate.\n\nDoes not bypass Play Integrity / SafetyNet hardware attestation.\n\nApply with Original app certificate patch.",
+    "default": false,
+    "options": [
+      {
+        "key": "packageName",
+        "title": "Package name override (optional)",
+        "description": "Leave blank — read automatically from the app. Only set this if you changed the app's package name and the patch is using the wrong one."
+      }
+    ]
+  },
+  {
+    "name": "Spoof install source",
+    "description": "Makes the app think it was installed from a specific store (default: Google Play).\n\nUseful when an app blocks features or shows errors because it detects it was not installed from the Play Store.\n\nOnly affects what the app itself sees - does not change the real system install record.",
+    "default": false,
+    "options": [
+      {
+        "key": "installerPackageName",
+        "title": "Store to impersonate",
+        "description": "Most apps only check for the Google Play Store, so the default is usually correct. Pick from the list, or type any package name directly if your app checks for a different store."
+      }
+    ]
+  },
+  {
+    "name": "Spoof Widevine / DRM level",
+    "description": "Reports Widevine L1 (hardware DRM) to apps that check DRM level locally.\n\nUseful for apps that refuse to play HD/4K content on L3 devices or after re-signing.\n\nDoes not bypass server-side DRM - Netflix, Disney+ and similar are not affected.",
+    "default": false,
+    "options": [
+      {
+        "key": "securityLevel",
+        "title": "Widevine security level to report",
+        "description": "L1 = hardware DRM (highest quality). L3 = software only. Default L1."
+      },
+      {
+        "key": "hdcpLevel",
+        "title": "HDCP level to report",
+        "description": "HDCP_V2_2 is required for 4K content on most streaming apps."
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks all premium features by forcing the premium state to true in the purchase manager.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.overdevs.at4k",
+        "targets": [
+          {
+            "version": "0.99"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks all premium features by forcing the pro_version SharedPreferences check to always return true.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.nicedayapps.iss_free",
+        "targets": [
+          {
+            "version": "8.5.3"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks all premium features by bypassing the native library premium check.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.spocky.projengmenu",
+        "targets": [
+          {
+            "version": "4.71"
+          }
+        ]
+      }
+    ]
+  }
+]

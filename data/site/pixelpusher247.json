@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Hide VIP banner",
+    "description": "Removes the Upgrade to VIP upsell banner from the home screen.",
+    "compatiblePackages": [
+      {
+        "packageName": "tv.trakt.trakt",
+        "targets": []
+      }
+    ]
+  }
+]

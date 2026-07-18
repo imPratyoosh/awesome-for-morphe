@@ -1,0 +1,222 @@
+[
+  {
+    "name": "Disable PairIP license check",
+    "description": "Disable the PairIP client-side license check",
+    "compatiblePackages": [
+      {
+        "packageName": "com.trainwiseapp.app",
+        "targets": [
+          {
+            "version": "1.4.10"
+          }
+        ]
+      },
+      {
+        "packageName": "app.mhphysique.fitness",
+        "targets": [
+          {
+            "version": "1.28.2"
+          }
+        ]
+      },
+      {
+        "packageName": "com.rp.hypertrophy",
+        "targets": [
+          {
+            "version": "1.2.0"
+          }
+        ]
+      },
+      {
+        "packageName": "com.sysops.thenx",
+        "targets": [
+          {
+            "version": "6.7.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock BASE Strength Premium",
+    "description": "Unlock all Paid features",
+    "compatiblePackages": [
+      {
+        "packageName": "com.skynetcoaching.bromleyapp",
+        "targets": [
+          {
+            "version": "2.0.82"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Boostcamp Premium",
+    "description": "Unlock all Paid features",
+    "compatiblePackages": [
+      {
+        "packageName": "com.bpmhealth.boostcamp",
+        "targets": [
+          {
+            "version": "262"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Built With Science Premium",
+    "description": "Unlock all Paid features",
+    "compatiblePackages": [
+      {
+        "packageName": "com.bws.appv2",
+        "targets": [
+          {
+            "version": "3.18.4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock FST-7 Subscription",
+    "description": "Unlock all Paid features",
+    "compatiblePackages": [
+      {
+        "packageName": "com.influencers.fst7",
+        "targets": [
+          {
+            "version": "4.0.1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Ganbaru Method Premium",
+    "description": "Unlock all Paid features",
+    "compatiblePackages": [
+      {
+        "packageName": "com.ganbaru.method",
+        "targets": [
+          {
+            "version": "4.46.2"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock JuggernautAI Premium",
+    "description": "Unlock all Paid features",
+    "compatiblePackages": [
+      {
+        "packageName": "com.jtsstrength.juggernautai",
+        "targets": [
+          {
+            "version": "2.6.6"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock MH Physique Premium",
+    "description": "Unlock all Paid features",
+    "compatiblePackages": [
+      {
+        "packageName": "app.mhphysique.fitness",
+        "targets": [
+          {
+            "version": "1.28.2"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock MyoAdapt Premium",
+    "description": "Unlock all Paid features",
+    "compatiblePackages": [
+      {
+        "packageName": "com.myoadapt.app.android",
+        "targets": [
+          {
+            "version": "1.5.1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlock all Paid features",
+    "compatiblePackages": [
+      {
+        "packageName": "com.trainwiseapp.app",
+        "targets": [
+          {
+            "version": "1.4.10"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock RP Hypertrophy Premium",
+    "description": "Unlock all Paid features",
+    "compatiblePackages": [
+      {
+        "packageName": "com.rp.hypertrophy",
+        "targets": [
+          {
+            "version": "1.2.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock STNDRD Premium",
+    "description": "Unlock all Paid features",
+    "compatiblePackages": [
+      {
+        "packageName": "uni.cbum",
+        "targets": [
+          {
+            "version": "4.1.44"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock THENX Premium",
+    "description": "Unlock all Paid features",
+    "compatiblePackages": [
+      {
+        "packageName": "com.sysops.thenx",
+        "targets": [
+          {
+            "version": "6.7.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Video Player Premium",
+    "description": "Unlock all Paid features",
+    "compatiblePackages": [
+      {
+        "packageName": "video.player.videoplayer",
+        "targets": [
+          {
+            "version": "2.7.3"
+          }
+        ]
+      }
+    ]
+  }
+]

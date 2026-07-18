@@ -1,0 +1,1072 @@
+[
+  {
+    "name": "AMOLED dark theme",
+    "description": "Changes the default dark theme to use true blacks for AMOLED screens.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.github.android",
+        "targets": [
+          {
+            "version": "1.267.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "AMOLED dark theme",
+    "description": "Changes the default dark theme to use true blacks for AMOLED screens.",
+    "default": false,
+    "compatiblePackages": [
+      {
+        "packageName": "com.soundcloud.android",
+        "targets": [
+          {
+            "version": "2026.04.27-release"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Block Permissions Request",
+    "description": "Blocks the request of notification permissions on load of app.",
+    "compatiblePackages": [
+      {
+        "packageName": "org.languageapp.lingory",
+        "targets": [
+          {
+            "version": "1.2.75"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Change package name",
+    "description": "Appends \".morphe\" to the package name by default. Changing the package name of the app can lead to unexpected issues.",
+    "default": false,
+    "options": [
+      {
+        "key": "packageName",
+        "title": "Package name",
+        "description": "The name of the package to rename the app to."
+      },
+      {
+        "key": "updatePermissions",
+        "title": "Update permissions",
+        "description": "Update compatibility receiver permissions. Enabling this can fix installation errors, but this can also break features in certain apps."
+      },
+      {
+        "key": "updateProviders",
+        "title": "Update providers",
+        "description": "Update provider names declared by the app. Enabling this can fix installation errors, but this can also break features in certain apps."
+      }
+    ]
+  },
+  {
+    "name": "Disable ads",
+    "description": "Disables all ads contained within the UI.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.goodreads",
+        "targets": [
+          {
+            "version": "2.75.0 Build 3"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Disable ads",
+    "description": "Disables ads during audio streaming.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.pandora.android"
+      }
+    ]
+  },
+  {
+    "name": "Disable ads",
+    "description": "Disables all ads contained within the UI.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.sofascore.results",
+        "targets": [
+          {
+            "version": "25.12.17"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Disable anti-tamper",
+    "description": "Disables various anti-tamper checks that causes the app to force-close.",
+    "compatiblePackages": [
+      {
+        "packageName": "cn.wps.moffice_eng",
+        "targets": [
+          {
+            "version": "18.24"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Disable dynamic app icon",
+    "description": "Prevents Duolingo from changing the app icon. Only the default icon will be available.",
+    "default": false,
+    "compatiblePackages": [
+      {
+        "packageName": "com.duolingo",
+        "targets": [
+          {
+            "version": "6.86.5"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Disable Pairip license check",
+    "description": "Disables Play Integrity API (pairip) client-side license check. This patch does not bypass Play Integrity attestation or pairipcore virtualization.",
+    "default": false
+  },
+  {
+    "name": "Disable signature check",
+    "description": "Removes the anti-tamper protection, which verifies apk signature, causing the app to force close.",
+    "compatiblePackages": [
+      {
+        "packageName": "ginlemon.flowerfree",
+        "targets": [
+          {
+            "version": "6.6 build 002"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Disable telemetry",
+    "description": "Disables CamScanner's custom telemetry system.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.intsig.camscanner",
+        "targets": [
+          {
+            "version": "7.20.0.2606230000"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Disable telemetry",
+    "description": "Disables event logging sent to the app's custom endpoint.",
+    "compatiblePackages": [
+      {
+        "packageName": "nom.vrd",
+        "targets": [
+          {
+            "version": "1.9.3-GooglePlay"
+          },
+          {
+            "version": "1.9.3-storage"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Disable telemetry",
+    "description": "Disables SoundCloud's telemetry system.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.soundcloud.android",
+        "targets": [
+          {
+            "version": "2026.04.27-release"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Disable telemetry",
+    "description": "Blocks SuperChinese's custom telemetry reporting.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.superchinese",
+        "targets": [
+          {
+            "version": "6.6.3"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enable custom tabs",
+    "description": "Open articles using your default browser.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.google.android.apps.magazines",
+        "targets": [
+          {
+            "version": "5.161.0.931240252"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enable debug",
+    "description": "Enables debugging on the app by setting android:debuggable=\"true\".",
+    "default": false
+  },
+  {
+    "name": "Enable debug mode",
+    "description": "Enables hidden debug menu in settings.",
+    "default": false,
+    "compatiblePackages": [
+      {
+        "packageName": "com.duolingo",
+        "targets": [
+          {
+            "version": "6.86.5"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enable FotMob+",
+    "description": "Enables app features locked behind the subscription paywall.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.mobilefootie.wc2010",
+        "targets": [
+          {
+            "version": "226.16092.20260302"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enable Niagara Pro",
+    "description": "Enables app features locked behind the subscription paywall.",
+    "compatiblePackages": [
+      {
+        "packageName": "bitpit.launcher",
+        "targets": [
+          {
+            "version": "1.16.7"
+          },
+          {
+            "version": "1.16.15"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enable Peak membership",
+    "description": "Enables some app features locked behind the subscription paywall. Not all premium functionality is available.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.alltrails.alltrails",
+        "targets": [
+          {
+            "version": "26.3.20"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enable Plus",
+    "description": "Enable Plus membership (not all features are available). There is a strict version requirement for this patch.",
+    "compatiblePackages": [
+      {
+        "packageName": "me.mycake",
+        "targets": [
+          {
+            "version": "6.4.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enable Premium",
+    "description": "Enables app features locked behind the subscription paywall.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.adguard.android",
+        "targets": [
+          {
+            "version": "4.12.81"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enable Premium",
+    "description": "Enables app features locked behind the subscription paywall.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.avocards",
+        "targets": [
+          {
+            "version": "3.0.18"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enable Premium",
+    "description": "Enables app features locked behind the subscription paywall.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.busuu.android.enc",
+        "targets": [
+          {
+            "version": "32.30.0(1575420)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enable Premium",
+    "description": "Enables some app features locked behind the subscription paywall. Certain server-side functionality may be unavailable.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.intsig.camscanner",
+        "targets": [
+          {
+            "version": "7.20.0.2606230000"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enable Premium",
+    "description": "Enables app features locked behind the subscription paywall.",
+    "compatiblePackages": [
+      {
+        "packageName": "kr.co.yjteam.dailypay",
+        "targets": [
+          {
+            "version": "6.0.7"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enable Premium",
+    "description": "Enables app features locked behind the subscription paywall.",
+    "options": [
+      {
+        "key": "premiumVariant",
+        "title": "Type",
+        "description": "Choose which type of premium Duolingo subscription to enable."
+      }
+    ],
+    "compatiblePackages": [
+      {
+        "packageName": "com.duolingo",
+        "targets": [
+          {
+            "version": "6.86.5"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enable Premium",
+    "description": "Enables app features locked behind the subscription paywall.",
+    "compatiblePackages": [
+      {
+        "packageName": "kr.eggbun.eggconvo",
+        "targets": [
+          {
+            "version": "4.12.19"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enable Premium",
+    "description": "Enables app features locked behind the subscription paywall.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.qbis.guessthecountry",
+        "targets": [
+          {
+            "version": "3.34.2"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enable Premium",
+    "description": "Enables app features locked behind the subscription paywall.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.hellochinese",
+        "targets": [
+          {
+            "version": "7.10.20"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enable Premium",
+    "description": "Enables app features locked behind the subscription paywall.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.rp.hypertrophy",
+        "targets": [
+          {
+            "version": "1.1.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enable Premium",
+    "description": "Enables app features locked behind the subscription paywall. There is a strict version requirement for this patch and only arm64-v8a devices are supported.",
+    "compatiblePackages": [
+      {
+        "packageName": "org.languageapp.lingory",
+        "targets": [
+          {
+            "version": "1.2.75"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enable Premium",
+    "description": "Enables app features locked behind the subscription paywall.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.lyfta",
+        "targets": [
+          {
+            "version": "1.551"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enable Premium",
+    "description": "REQUIRES ROOT MOUNT INSTALL! Enables app features locked behind the subscription paywall.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.sbs.diet",
+        "targets": [
+          {
+            "version": "5.7.9"
+          }
+        ]
+      },
+      {
+        "packageName": "com.sbs.train",
+        "targets": [
+          {
+            "version": "1.2.1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enable Premium",
+    "description": "Enables app features locked behind the subscription paywall.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.bambuna.podcastaddict",
+        "targets": [
+          {
+            "version": "2026.4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enable Premium",
+    "description": "Enables app features locked behind the subscription paywall.",
+    "compatiblePackages": [
+      {
+        "packageName": "ru.iiec.pydroid3",
+        "targets": [
+          {
+            "version": "8.3_arm64"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enable Premium",
+    "description": "Enables app features locked behind the subscription paywall.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.michaldrabik.showly2",
+        "targets": [
+          {
+            "version": "3.70.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enable Premium",
+    "description": "Enables app features locked behind the subscription paywall.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.urbandroid.sleep",
+        "targets": [
+          {
+            "version": "20260526"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enable Premium",
+    "description": "Enables app features locked behind the subscription paywall.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.snorelab.app",
+        "targets": [
+          {
+            "version": "2.27.3.6291"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enable Premium",
+    "description": "Enables app features locked behind the subscription paywall.",
+    "compatiblePackages": [
+      {
+        "packageName": "net.teuida.teuida",
+        "targets": [
+          {
+            "version": "1.21.16"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enable Premium",
+    "description": "Enables app features locked behind the subscription paywall. There is a strict version requirement for this patch.",
+    "compatiblePackages": [
+      {
+        "packageName": "app.ttmikstories.android",
+        "targets": [
+          {
+            "version": "1.16.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enable Premium",
+    "description": "Enables app features locked behind the subscription paywall.",
+    "compatiblePackages": [
+      {
+        "packageName": "cz.ackee.ventusky",
+        "targets": [
+          {
+            "version": "53.1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enable Premium",
+    "description": "Enables app features locked behind the subscription paywall.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.wallpaperscraft.wallpaper",
+        "targets": [
+          {
+            "version": "3.61.01"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enable Premium",
+    "description": "Enables app features locked behind the subscription paywall.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.merriamwebster"
+      }
+    ]
+  },
+  {
+    "name": "Enable Premium",
+    "description": "Enables some app features locked behind the subscription paywall. Not all premium functionality is available.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.windyty.android",
+        "targets": [
+          {
+            "version": "50.1.1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enable Premium+",
+    "description": "Enables app features locked behind the subscription paywall.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.myfitnesspal.android",
+        "targets": [
+          {
+            "version": "26.21.1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enable Prime",
+    "description": "Enable Nova Launcher Prime and app locked behind the subscription paywall.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.teslacoilsw.launcher",
+        "targets": [
+          {
+            "version": "81042 (8.5.1)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enable Prime membership",
+    "description": "Enables app features locked behind the subscription paywall.",
+    "compatiblePackages": [
+      {
+        "packageName": "jp.ne.ibis.ibispaintx.app",
+        "targets": [
+          {
+            "version": "14.0.6"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enable Pro",
+    "description": "Enables app features locked behind the subscription paywall.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.zombodroid.MemeGenerator",
+        "targets": [
+          {
+            "version": "4.6826"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enable Pro",
+    "description": "Enables app features locked behind the subscription paywall.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.getmimo",
+        "targets": [
+          {
+            "version": "9.11"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enable Pro",
+    "description": "Enables app features locked behind the subscription paywall.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.mirinae.mirinae",
+        "targets": [
+          {
+            "version": "2.2.2"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enable Pro",
+    "description": "Enables app features locked behind the subscription paywall.",
+    "compatiblePackages": [
+      {
+        "packageName": "org.totschnig.myexpenses",
+        "targets": [
+          {
+            "version": "3.9.8"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enable Pro",
+    "description": "Enables app features locked behind the subscription paywall.",
+    "compatiblePackages": [
+      {
+        "packageName": "ginlemon.flowerfree",
+        "targets": [
+          {
+            "version": "6.6 build 002"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enable Pro",
+    "description": "Enables app features locked behind the subscription paywall.",
+    "compatiblePackages": [
+      {
+        "packageName": "pl.solidexplorer2",
+        "targets": [
+          {
+            "version": "3.4.1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enable Pro",
+    "description": "Enables app features locked behind the subscription paywall. Login is required and AI functionality is unavailable.",
+    "compatiblePackages": [
+      {
+        "packageName": "cn.wps.moffice_eng",
+        "targets": [
+          {
+            "version": "18.24"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enable Pro",
+    "description": "Enables app features locked behind the subscription paywall.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.xodo.pdf.reader",
+        "targets": [
+          {
+            "version": "10.15.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enable Pro",
+    "compatiblePackages": [
+      {
+        "packageName": "videoeditor.videorecorder.screenrecorder",
+        "targets": [
+          {
+            "version": "2.5.1.1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enable SoundCloud Go",
+    "description": "Enables app features locked behind the subscription paywall.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.soundcloud.android",
+        "targets": [
+          {
+            "version": "2026.04.27-release"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enable speed control",
+    "description": "Enables experimental speed control to the video player.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.amazon.avod.thirdpartyclient",
+        "targets": [
+          {
+            "version": "3.0.452.1047"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Force Native Keyboard",
+    "description": "When typing in normal lessons, Eggbun forces you to use their own on-screen keyboard. This patches forces the use of the default OS keyboard.",
+    "compatiblePackages": [
+      {
+        "packageName": "kr.eggbun.eggconvo",
+        "targets": [
+          {
+            "version": "4.12.19"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hide app icon",
+    "description": "Hides the app icon from the Android launcher.",
+    "default": false
+  },
+  {
+    "name": "MicroG integration",
+    "description": "Allows the app to work without root by using MicroG instead of Google Play Services.",
+    "compatiblePackages": [
+      {
+        "packageName": "kr.co.yjteam.dailypay",
+        "targets": [
+          {
+            "version": "6.0.7"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "MicroG integration",
+    "description": "Allows the app to work without root by using MicroG instead of Google Play Services.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.google.android.apps.magazines",
+        "targets": [
+          {
+            "version": "5.161.0.931240252"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "MicroG integration",
+    "description": "Allows the app to work without root by using MicroG instead of Google Play Services.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.bambuna.podcastaddict",
+        "targets": [
+          {
+            "version": "2026.4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "MicroG integration",
+    "description": "Allows the app to work without root by using MicroG instead of Google Play Services.",
+    "compatiblePackages": [
+      {
+        "packageName": "pl.solidexplorer2",
+        "targets": [
+          {
+            "version": "3.4.1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "MicroG integration",
+    "description": "Allows the app to work without root by using MicroG instead of Google Play Services.",
+    "compatiblePackages": [
+      {
+        "packageName": "net.teuida.teuida",
+        "targets": [
+          {
+            "version": "1.21.16"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Remove delay",
+    "description": "Removes the imposed delay when changing VPN servers.",
+    "compatiblePackages": [
+      {
+        "packageName": "ch.protonvpn.android",
+        "targets": [
+          {
+            "version": "5.17.72.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Remove trial limit",
+    "description": "Removes the imposed 6-hour trial usage limit.",
+    "compatiblePackages": [
+      {
+        "packageName": "nom.vrd",
+        "targets": [
+          {
+            "version": "1.9.3-GooglePlay"
+          },
+          {
+            "version": "1.9.3-storage"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Rename shared permissions",
+    "description": "Rename certain permissions shared across Amazon apps. Applying this patch can fix installation errors, but can also break features in certain apps.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.amazon.avod.thirdpartyclient",
+        "targets": [
+          {
+            "version": "3.0.452.1047"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Skip ads",
+    "description": "Automatically skips ads baked into the video stream.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.amazon.avod.thirdpartyclient",
+        "targets": [
+          {
+            "version": "3.0.452.1047"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlimited skips",
+    "description": "Disables the limit for skipping songs during playback.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.pandora.android"
+      }
+    ]
+  },
+  {
+    "name": "Unlock all lessons",
+    "description": "Only unlocks lessons on the client UI! This is useful for pre-downloading content during free trial periods.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.superchinese",
+        "targets": [
+          {
+            "version": "6.6.3"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock custom DNS",
+    "description": "Enables the custom DNS feature usually locked behind the Proton Plus paywall.",
+    "compatiblePackages": [
+      {
+        "packageName": "ch.protonvpn.android",
+        "targets": [
+          {
+            "version": "5.17.72.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock LAN connections",
+    "description": "Enables the LAN connections feature usually locked behind the Proton Plus paywall.",
+    "compatiblePackages": [
+      {
+        "packageName": "ch.protonvpn.android",
+        "targets": [
+          {
+            "version": "5.17.72.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock premium features",
+    "description": "Enables app features locked behind the subscription paywall. Some UI elements may not show an active membership, but this does not effect functionality.",
+    "compatiblePackages": [
+      {
+        "packageName": "cn.ommiao.iconpacker",
+        "targets": [
+          {
+            "version": "1.21.0-release"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock split tunneling",
+    "description": "Enables the split tunneling feature usually locked behind the Proton Plus paywall.",
+    "compatiblePackages": [
+      {
+        "packageName": "ch.protonvpn.android",
+        "targets": [
+          {
+            "version": "5.17.72.0"
+          }
+        ]
+      }
+    ]
+  }
+]

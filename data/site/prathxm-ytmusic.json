@@ -1,0 +1,93 @@
+[
+  {
+    "name": "Change package name",
+    "description": "Appends \".morphe\" to the package name by default. Changing the package name of the app can lead to unexpected issues.",
+    "default": false,
+    "options": [
+      {
+        "key": "packageName",
+        "title": "Package name",
+        "description": "The name of the package to rename the app to."
+      },
+      {
+        "key": "updatePermissions",
+        "title": "Update permissions",
+        "description": "Update compatibility receiver permissions. Enabling this can fix installation errors, but this can also break features in certain apps."
+      },
+      {
+        "key": "updateProviders",
+        "title": "Update providers",
+        "description": "Update provider names declared by the app. Enabling this can fix installation errors, but this can also break features in certain apps."
+      },
+      {
+        "key": "updateProvidersStrings",
+        "title": "Update providers strings",
+        "description": "Update additional provider names declared by the app in the strings.xml file. Enabling this can fix installation errors, but this can also break features in certain apps."
+      }
+    ]
+  },
+  {
+    "name": "Discord Rich Presence",
+    "description": "Displays the currently playing track on your Discord profile.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.google.android.apps.youtube.music",
+        "targets": [
+          {
+            "version": "9.24.51",
+            "isExperimental": true
+          },
+          {
+            "version": "9.23.52",
+            "isExperimental": true
+          },
+          {
+            "version": "9.22.53",
+            "isExperimental": true
+          },
+          {
+            "version": "9.15.51"
+          },
+          {
+            "version": "8.51.51"
+          },
+          {
+            "version": "7.29.52"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Scrobbling",
+    "description": "Adds options to add played tracks to Last.fm and ListenBrainz.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.google.android.apps.youtube.music",
+        "targets": [
+          {
+            "version": "9.24.51",
+            "isExperimental": true
+          },
+          {
+            "version": "9.23.52",
+            "isExperimental": true
+          },
+          {
+            "version": "9.22.53",
+            "isExperimental": true
+          },
+          {
+            "version": "9.15.51"
+          },
+          {
+            "version": "8.51.51"
+          },
+          {
+            "version": "7.29.52"
+          }
+        ]
+      }
+    ]
+  }
+]

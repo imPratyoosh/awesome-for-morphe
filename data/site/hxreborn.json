@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Disable tracking",
+    "description": "Disables analytics and crash reporting.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.spocky.projengmenu"
+      }
+    ]
+  },
+  {
+    "name": "Unlock premium",
+    "description": "Unlocks premium features.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.myvitale.forus"
+      }
+    ]
+  },
+  {
+    "name": "Unlock premium",
+    "description": "Unlocks premium features.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.spocky.projengmenu"
+      }
+    ]
+  },
+  {
+    "name": "Unlock premium",
+    "description": "Unlocks ad removal, light theme, custom images, list view types, quick ratings, and transparent widgets.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.michaldrabik.showly2"
+      }
+    ]
+  }
+]

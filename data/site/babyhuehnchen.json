@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Force dark mode",
+    "description": "Enables hidden dark mode setting",
+    "default": false,
+    "compatiblePackages": [
+      {
+        "packageName": "at.notrufnoe.edi"
+      }
+    ]
+  }
+]

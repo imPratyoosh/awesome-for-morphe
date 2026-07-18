@@ -1,0 +1,76 @@
+[
+  {
+    "name": "Custom font",
+    "description": "Applies a custom font selected while patching, replacing Reddit Sans / Roboto. A variable font is recommended so heading and body text keep their different weights. Do not enable \"Force system font\" at the same time.",
+    "default": false,
+    "options": [
+      {
+        "key": "customFontFile",
+        "title": "Custom font",
+        "description": "The file path to your font file. Tap the file picker and select it. The font file must be in TTF or OTF format. A variable font is recommended so heading and body text keep their different weights."
+      }
+    ],
+    "compatiblePackages": [
+      {
+        "packageName": "com.reddit.frontpage",
+        "targets": [
+          {
+            "version": "2026.27.0",
+            "isExperimental": true
+          },
+          {
+            "version": "2026.26.0",
+            "isExperimental": true
+          },
+          {
+            "version": "2026.25.0",
+            "isExperimental": true
+          },
+          {
+            "version": "2026.24.0",
+            "isExperimental": true
+          },
+          {
+            "version": "2026.14.0"
+          },
+          {
+            "version": "2026.04.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Force system font",
+    "description": "Renders the app using the device's system font instead of Reddit Sans / Roboto.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.reddit.frontpage",
+        "targets": [
+          {
+            "version": "2026.27.0",
+            "isExperimental": true
+          },
+          {
+            "version": "2026.26.0",
+            "isExperimental": true
+          },
+          {
+            "version": "2026.25.0",
+            "isExperimental": true
+          },
+          {
+            "version": "2026.24.0",
+            "isExperimental": true
+          },
+          {
+            "version": "2026.14.0"
+          },
+          {
+            "version": "2026.04.0"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "name": "Bypass Integrity Protection",
+    "description": "Disables PairIP signature verification and startup VM checks that crash re-signed APKs.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.ipoji.app",
+        "targets": []
+      }
+    ],
+    "isPreRelease": true
+  },
+  {
+    "name": "Remove Ads",
+    "description": "Disables all ad purchase checks to hide ads globally.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.vladlee.easyblacklist",
+        "targets": [
+          {
+            "version": "4.8.20"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks all premium features.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.vladlee.easyblacklist",
+        "targets": [
+          {
+            "version": "4.8.20"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks all premium features by forcing all RevenueCat entitlements to active.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.ipoji.app",
+        "targets": []
+      }
+    ]
+  }
+]
