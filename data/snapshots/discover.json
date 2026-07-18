@@ -1,5 +1,5 @@
 {
-  "jman_tree_sha": "4dcb40aa62c9cd0ea872a92e96a8629e114a2bd5",
+  "jman_tree_sha": "4db8e21e4febfcb8dd9740e95182b90eeea9ffe1",
   "jman_bundles": {
     "1fexd": {
       "sha": "4428619fe1755f86c0bd9d8fb5762fcc8c17b43a",
@@ -166,7 +166,7 @@
       "key": "github:quantavil/edge-morphe-patches"
     },
     "ee-morphe": {
-      "sha": "cb72c529916a0b45c0d457df33c45f3e9de644d4",
+      "sha": "e2dd6ecd493f66b6829cc65e2796934c5e17eb56",
       "key": "gitlab:early.egg3707/ee-morphe-patches"
     },
     "eksi": {
@@ -338,7 +338,7 @@
       "key": "github:meridianfresco/morphe-meta-patches"
     },
     "miguel": {
-      "sha": "9587a39a8be299cbbfde6770d54237f2df110f8d",
+      "sha": "1ca6490eb6a5f50f0a214c6b5ddc234de71a6a74",
       "key": "github:MiguelNinja19/miguel-morphe-patches"
     },
     "modx": {

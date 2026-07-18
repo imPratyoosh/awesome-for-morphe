@@ -79,6 +79,24 @@
   },
   {
     "name": "Free in-app purchases",
+    "description": "Makes every IAP purchase succeed instantly without contacting Google Play Billing. When the user taps 'Buy' on any in-app product, the game credits the purchase immediately and skips the Play Store dialog. For Oddmar 0.111 the only IAP product is 'unlock_all_levels', so this patch gives a free full-game unlock on demand. Note: literal 'unlimited coins' (the in-game currency counter) requires native libil2cpp.so patching and is NOT covered by this Java patch.",
+    "default": false,
+    "compatiblePackages": [
+      {
+        "packageName": "com.mobge.Oddmar",
+        "targets": [
+          {
+            "version": "0.111"
+          },
+          {
+            "isExperimental": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Free in-app purchases",
     "description": "Skips Google Play Billing and credits IAP items (gem packs, coin packs, starter packs) directly. Lets the original failure path run after crediting to close the Contacting screen naturally. Also disables the startup purchase-restore flow.",
     "compatiblePackages": [
       {
@@ -206,7 +224,7 @@
   },
   {
     "name": "Unlock full game",
-    "description": "Unlocks all levels by making the game think the 'unlock_all_levels' IAP product was purchased. Patches HasProductBeenPurchasedCall to always report success.",
+    "description": "Unlocks the full game (all levels, all worlds) by intercepting the IAP 'has product been purchased' check. Oddmar's only IAP product is 'unlock_all_levels' — this patch makes the game think it has already been purchased, so every level is unlocked from the start. No Google Play Billing connection is required. Also disables the startup 'acknowledge all purchases' query so the patch doesn't try to reach Google Play at boot.",
     "compatiblePackages": [
       {
         "packageName": "com.mobge.Oddmar",

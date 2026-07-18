@@ -30,6 +30,7 @@
     ],
     "com.reddit.frontpage": [
       "Colorize comment indent lines",
+      "Disable bottom navigation bar auto-hide",
       "Disable home feed auto-refresh",
       "Disable home feed swipe",
       "Disable home screen redirect",
@@ -643,15 +644,13 @@
       "Bypass license check"
     ],
     "com.brave.browser": [
-      "Enable Brave Origin"
+      "Brave Origin"
     ],
     "com.medium.reader": [
       "Freedium"
     ],
     "com.mygate.user": [
-      "Flutter Premium Bypass",
-      "Hide ads",
-      "Unlock premium"
+      "MyGate"
     ],
     "com.overdevs.at4k": [
       "Unlock premium"
@@ -1369,8 +1368,14 @@
     "com.scheler.superproxy": [
       "Unlock Pro"
     ],
+    "com.sensemobile.action": [
+      "Enable Kapi Pro"
+    ],
     "com.surmin.photofancie.lite": [
       "Unlock Pro"
+    ],
+    "io.github.sds100.keymapper": [
+      "Unlock Premium"
     ],
     "jp.co.shueisha.mangaplus": [
       "Bypass Reading Limitation",
@@ -1416,6 +1421,7 @@
       "Change miniplayer color",
       "Change start page",
       "Check watch history domain name resolution",
+      "Crossfade",
       "Custom branding",
       "Disable DRC audio",
       "Disable QUIC protocol",
@@ -1439,13 +1445,13 @@
       "Remember repeat state",
       "Remember shuffle state",
       "Remove background playback restrictions",
+      "Return YouTube Dislike",
       "Sanitize sharing links",
       "Scrobbling",
       "SponsorBlock",
       "Spoof app version",
       "Spoof video streams",
-      "Theme",
-      "Track crossfade"
+      "Theme"
     ],
     "com.google.android.youtube": [
       "Add to queue",
@@ -2297,6 +2303,9 @@
     "com.cpuid.cpu_z": [
       "Unlock Premium"
     ],
+    "com.delphicoder.flud": [
+      "Remove Ads"
+    ],
     "com.dubox.drive": [
       "Unlock VIP"
     ],
@@ -2569,6 +2578,9 @@
       "Unlock VIP"
     ],
     "cz.mroczis.netmonster": [
+      "Unlock Premium"
+    ],
+    "cz.seznam.mapy": [
       "Unlock Premium"
     ],
     "de.komoot.android": [
