@@ -1,5 +1,5 @@
 {
-  "jman_tree_sha": "59a4af822db4860ae65f84df2893b543f338e35f",
+  "jman_tree_sha": "f52c1ae56845be2803e9cbe2b5a50216b0843a2f",
   "jman_bundles": {
     "1fexd": {
       "sha": "4428619fe1755f86c0bd9d8fb5762fcc8c17b43a",
@@ -18,7 +18,7 @@
       "key": "github:abhis1n/Morphe-Patches"
     },
     "adobo": {
-      "sha": "0094267f449e73f579dc3c5b1e91dbf5afe6d6b0",
+      "sha": "633822666e468d7be5cd7533b9a7dc55142d916b",
       "key": "github:jkennethcarino/adobo"
     },
     "ajstrick81-androidtv": {
@@ -134,7 +134,7 @@
       "key": null
     },
     "chiggi": {
-      "sha": "b021f26134a06099cfb2e768dc3d04139e92795b",
+      "sha": "4ae87b350b97cad1595194bf6696edd1c9bcf11d",
       "key": "github:durgesh0505/chiggi_morphe_patches"
     },
     "cobalt-morphe": {

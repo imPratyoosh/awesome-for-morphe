@@ -1981,5 +1981,13 @@
   "com.mobge.Oddmar": {
     "name": "Oddmar",
     "iconUrl": "https://play-lh.googleusercontent.com/b9_EyCfljqMQpodvUGUHVni68pG3irH4M_a167nO0FMCY7EKJXrEUX64xXwPPIo3eJEqhN3hh4hrAiUWD8ihdQ=s64"
+  },
+  "com.jio.media.jiotvplus": {
+    "name": "Jiotv+: LiveTV & OTT",
+    "iconUrl": "https://play-lh.googleusercontent.com/YzCDPantLFE3sw1tmkOcxSKORt_uACVBpfSprVjyx0FR4arX3O3EUbrSJ0t_7MukyOQMylBxu1W8kD2doyDh=s64"
+  },
+  "com.vimtv": {
+    "name": "Vi Movies and TV",
+    "iconUrl": "https://play-lh.googleusercontent.com/mgGhCved1RThSXji0vvbgiyHkY6fgyD20RWFLtkVbZ5UxmN8gYoWBGY9HkYe91hOv50_Qn_Yk1yrwJPXu--ZGBA=s64"
   }
 }
