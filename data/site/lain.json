@@ -198,6 +198,21 @@
     ]
   },
   {
+    "name": "Enable Kapi Pro",
+    "description": "Unlock all features of Kapi Pro lifetime membership.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.sensemobile.action",
+        "targets": [
+          {
+            "version": "4.32.1"
+          }
+        ],
+        "isPreRelease": true
+      }
+    ]
+  },
+  {
     "name": "Enable Premium",
     "description": "Unlock all premium benefits.",
     "compatiblePackages": [
@@ -528,6 +543,21 @@
             "version": "7.34"
           }
         ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Enable Floating Buttons and Assistant Trigger features.",
+    "compatiblePackages": [
+      {
+        "packageName": "io.github.sds100.keymapper",
+        "targets": [
+          {
+            "version": "4.2.1"
+          }
+        ],
+        "isPreRelease": true
       }
     ]
   },

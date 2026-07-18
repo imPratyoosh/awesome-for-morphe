@@ -172,7 +172,7 @@
   },
   {
     "name": "Unlock all",
-    "description": "Removes PairIP from manifest, hex patches libcocos2dcpp.so for unlimited currencies (plutonium, coins, squeezer parts) and blocks Play Store redirect. Based on working mod analysis.",
+    "description": "Removes PairIP from manifest and hex patches libcocos2dcpp.so for unlimited currencies and Play Store bypass.",
     "compatiblePackages": [
       {
         "packageName": "fi.twomenandadog.zombiecatchers",

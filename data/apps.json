@@ -1969,5 +1969,13 @@
   "com.brave.browser": {
     "name": "Brave Browser",
     "iconUrl": "https://play-lh.googleusercontent.com/UBrZnuXGb-QACU0uUdF5r_n5nx5oBbdfPyEbtsr0xXv00RN7rpaTVu3GjLeE90aHFmNlbaCmm8vNcmY0eE98U9E=s64"
+  },
+  "com.sensemobile.action": {
+    "name": "Kapi Cam",
+    "iconUrl": "https://play-lh.googleusercontent.com/b2iP-qxeP8gRBBkbC2WU7bJ7sLta7lgTeYhKL4lVMvi55pyT_vDYRz_1zLBrdJEszD1TBygo3g75Zs6n85KdMQ=s64"
+  },
+  "io.github.sds100.keymapper": {
+    "name": "Key Mapper",
+    "iconUrl": "https://play-lh.googleusercontent.com/2fxrXQ0nijQGn1wQvEhzmbEvG95fCaq-Dsfs21YdElspco-IONaSHP04BDgA6Z5nLRGaL1WCJ96dhD5QigrjIQ=s64"
   }
 }

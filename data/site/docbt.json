@@ -28,7 +28,7 @@
         "packageName": "com.google.android.apps.magazines",
         "targets": [
           {
-            "version": "5.161.0.931240252"
+            "version": "5.163.0.947799485"
           }
         ]
       }
@@ -41,6 +41,9 @@
       {
         "packageName": "com.google.android.apps.magazines",
         "targets": [
+          {
+            "version": "5.163.0.947799485"
+          },
           {
             "version": "5.161.0.931240252"
           },

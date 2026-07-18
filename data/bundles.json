@@ -364,7 +364,7 @@
     "stars": 40,
     "firstSeen": "2026-03-21T15:09:32",
     "patches": "site/docbt.json",
-    "createdAt": "2026-06-20T03:31:38",
+    "createdAt": "2026-07-18T01:55:19",
     "targetApps": [
       "com.ebay.kleinanzeigen",
       "com.google.android.apps.magazines"
@@ -812,7 +812,7 @@
     "stars": 21,
     "firstSeen": "2026-06-05T15:48:45",
     "patches": "site/lain.json",
-    "createdAt": "2026-07-13T14:13:02",
+    "createdAt": "2026-07-18T01:49:32",
     "targetApps": [
       "cn.adonet.proxyevery",
       "com.PixelStudio",
@@ -839,12 +839,14 @@
       "com.mixapplications.ventoy_app",
       "com.regasoftware.udisc",
       "com.scheler.superproxy",
+      "com.sensemobile.action",
       "com.surmin.photofancie.lite",
+      "io.github.sds100.keymapper",
       "jp.co.shueisha.mangaplus",
       "net.nemostudio.keymate",
       "studio.muggle.chatboost"
     ],
-    "appCount": 29
+    "appCount": 31
   },
   "lakaka": {
     "source": "github",
@@ -921,7 +923,7 @@
     "stars": 10,
     "firstSeen": "2026-07-09T04:53:42",
     "patches": "site/miguel.json",
-    "createdAt": "2026-07-17T17:35:48",
+    "createdAt": "2026-07-18T01:13:58",
     "targetApps": [
       "air.com.midjiwan.polytopia",
       "com.IvanAF.ClimbAMIYPfree",
