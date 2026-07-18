@@ -1,5 +1,5 @@
 {
-  "jman_tree_sha": "f52c1ae56845be2803e9cbe2b5a50216b0843a2f",
+  "jman_tree_sha": "4dcb40aa62c9cd0ea872a92e96a8629e114a2bd5",
   "jman_bundles": {
     "1fexd": {
       "sha": "4428619fe1755f86c0bd9d8fb5762fcc8c17b43a",
@@ -126,7 +126,7 @@
       "key": "github:browzomje/browzomje-patches"
     },
     "bufferk": {
-      "sha": "feee7b700cec30499c7538bd361ba2d38ad79b90",
+      "sha": "84d9e45b1b275dc483e283bd41f834af3794dd65",
       "key": "github:bufferk/morphe-patches"
     },
     "burgers1312": {

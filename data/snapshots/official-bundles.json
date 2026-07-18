@@ -12326,7 +12326,7 @@
           "compatiblePackagesKey": 538
         }
       ],
-      "changelog": "## 1.0.0 (2026-07-15)\n\n### 🐛 Bug Fixes\n\n* restore patches_end tag ([d66e55a](https://github.com/drosoCode/morphe-patches/commit/d66e55a7fd3b91a2e4f86bf0ef0111656be01a1f))\n\n### ✨ New Features\n\n* imperihome patch ([7f20aae](https://github.com/drosoCode/morphe-patches/commit/7f20aae53c13ecf30c2f72cd538c1f8d70e9ff40))\n\n## 1.0.1 (2026-07-15)\n\n### 🐛 Bug Fixes\n\n* restore patches_end tag ([d66e55a](https://github.com/drosoCode/morphe-patches/commit/d66e55a7fd3b91a2e4f86bf0ef0111656be01a1f))\n\n### ✨ New Features\n\n* imperihome patch ([7f20aae](https://github.com/drosoCode/morphe-patches/commit/7f20aae53c13ecf30c2f72cd538c1f8d70e9ff40))",
+      "changelog": "## 1.0.0 (2026-07-18)\n\n### 🐛 Bug Fixes\n\n* restore patches_end tag ([d66e55a](https://github.com/drosoCode/morphe-patches/commit/d66e55a7fd3b91a2e4f86bf0ef0111656be01a1f))\n\n### ✨ New Features\n\n* imperihome patch ([7f20aae](https://github.com/drosoCode/morphe-patches/commit/7f20aae53c13ecf30c2f72cd538c1f8d70e9ff40))",
       "fullChangelogUrl": null,
       "repoDescription": null,
       "avatarUrl": "https://avatars.githubusercontent.com/u/44530920?v=4&size=168",
@@ -15910,7 +15910,7 @@
       "description": "Tap away arrows to escape the maze. Train your brain with smart puzzle games!"
     },
     "com.jio.media.jiotvplus": {
-      "name": "Jiotv+: LiveTV & OTT",
+      "name": "Jiotv+",
       "iconUrl": "https://play-lh.googleusercontent.com/YzCDPantLFE3sw1tmkOcxSKORt_uACVBpfSprVjyx0FR4arX3O3EUbrSJ0t_7MukyOQMylBxu1W8kD2doyDh",
       "description": "Your one-stop destination for 1000+ live channels and premium OTT entertainment"
     },
