@@ -1,74 +1,107 @@
 ### [nvbangg/awesome-for-morphe](https://github.com/nvbangg/awesome-for-morphe)
 
-## Submitting a Bundle Request
+> [!NOTE]
+> This document contains contribution guidelines, project structure details, and automation workflows for the [Awesome for Morphe Website](https://nvbangg.github.io/awesome-for-morphe/).
 
-To add, remove, or customize a bundle source, please submit a [Bundle Request](https://github.com/nvbangg/awesome-for-morphe/issues/new?template=bundle-request.yml).
+## 📬 Contributing
 
-## Data
+- To add, remove, or customize a bundle source, please submit a [Bundle Request](https://github.com/nvbangg/awesome-for-morphe/issues/new?template=bundle-request.yml).
+- For any other issues, suggestions, or questions, feel free to [open a new issue](https://github.com/nvbangg/awesome-for-morphe/issues/new).
 
-The `/data` directory is used as a Morphe patch database, sourced from [ReVanced Patch Bundles](https://github.com/Jman-Github/ReVanced-Patch-Bundles) by Jman:
+## 📂 Project Structure & Data
 
-- [`bundles.json`](data/bundles.json) — central index of all bundles
-- [`apps.json`](data/apps.json) — metadata for target apps
-- `/bundles/<bundle>-<channel>.json` — patches-bundle.json
-- `/patches/<bundle>-<channel>.json` — patches-list.json
-- `/site/<bundle>.json` — optimized list of patches for UI rendering
-- [`whats-new.json`](data/whats-new.json) — rolling what's new history
-- [`history.json`](data/history.json) — baseline tracking for what's new diffs
-- [`repos.json`](data/repos.json) — list of all discovered repositories (experimental and incomplete)
+```text
+├── .github/
+│   ├── ISSUE_TEMPLATE/
+│   │   └── bundle-request.yml           # Issue template to add, remove, or customize a bundle source
+│   └── workflows/
+│       ├── ci.yml                       # Sync workflow (every 3 hours)
+│       └── release.yml                  # Daily release workflow (23:00 UTC)
+├── data/
+│   ├── bundles/                         # Raw patch bundles from upstream
+│   ├── patches/                         # Raw patch lists from upstream
+│   ├── repos/
+│   │   ├── custom.json                  # Custom entries to add, remove, or customize the name/key of bundles
+│   │   ├── jman.json                    # Bundles discovered from Jman
+│   │   ├── morphe-archive.json          # Bundles discovered from Morphe Archive
+│   │   └── official.json                # Bundles discovered from the Official Website
+│   ├── snapshots/
+│   │   ├── discover.json                # Snapshots of discovered providers
+│   │   └── official-bundles.json        # Snapshots of official bundles
+│   ├── history.json                     # Baseline sync state for tracking patch updates
+│   └── repos.json                       # Compiled database of all discovered bundles
+├── docs/
+│   ├── patches/                         # Compiled patch lists of each bundle for the website
+│   ├── assets/
+│   │   ├── images/                      # Website image assets
+│   │   ├── data.js                      # Core data formatting and filtering logic
+│   │   ├── main.js                      # Vue frontend logic and UI state
+│   │   ├── skip-words.json              # Package name parsing skip lists
+│   │   └── style.css                    # Custom vanilla CSS styling
+│   ├── apps.json                        # Metadata containing target app names/icons
+│   ├── bundles.json                     # Central compiled index of all active bundles
+│   ├── index.html                       # Frontend main webpage interface
+│   └── whats-new.json                   # Rolling changelog JSON of last 15 releases
+├── scripts/
+│   ├── providers/                       # Scraper providers for discovery
+│   │   ├── jman.py                      # Jman repository parser
+│   │   ├── morphe_archive.py            # Morphe Archive parser
+│   │   ├── official.py                  # Official Website parser
+│   │   └── utils.py                     # Provider shared utils
+│   ├── discover.py                      # Scans community patch repositories
+│   ├── download.py                      # Downloads raw bundle and patch list database metadata
+│   ├── telegram.py                      # Sends Telegram notifications
+│   ├── update.py                        # Processes raw databases into optimized web formats
+│   └── whats_new.py                     # Diffs updates and compiles rolling release logs
+├── CONTRIBUTING.md
+├── LICENSE
+└── README.md
+```
 
-## Automation
+## 🤖 Automation
 
-| Workflow | Schedule | What it does |
-| :----| :---- | :----|
-| [**Sync Bundles**](.github/workflows/ci.yml)          | Every 3 hours     | Sync `/bundles` and update `/patches`, `bundles.json`, `apps.json` if changed |
-| [**Generate Release**](.github/workflows/release.yml) | Daily at 1:00 UTC | Release what's new + Telegram notification                                    |
+This project uses GitHub Actions to automate data synchronization and release cycles:
 
-## Usage / Scripts
+### 1. Sync Workflow (`ci.yml` - Every 3 hours)
 
-All core logic is contained inside the `scripts/` directory.
+Checks for upstream bundle changes and updates the compiled website database:
 
-### `download.py`
+1. Download raw bundle metadata: `python scripts/download.py --bundles`
+2. If raw bundles changed:
+   - Download corresponding patch lists: `python scripts/download.py`
+   - Compile optimized web assets: `python scripts/update.py`
+   - Commit and push changes directly to `main` branch.
 
-Downloads the raw JSON metadata from the remote source.
+### 2. Release Workflow (`release.yml` - Daily at 23:00 UTC)
 
-- `python scripts/download.py --bundles`: Downloads the `*-patches-bundle.json` files and saves them to `/data/bundles/`. (Requires wiping out old bundles).
-- `python scripts/download.py`: (Run without flags) Reads the downloaded bundles and fetches the `*-patches-list.json` data, saving them directly to `/data/patches/`.
+Runs daily maintenance, builds release notes, and notifies subscribers:
 
-### `update.py`
+1. Check upstream updates: `python scripts/download.py --bundles` (and `python scripts/download.py` if changed).
+2. Compile data: `python scripts/update.py --all` (on the 1st of the month) or `python scripts/update.py --daily` (other days).
+3. Generate release changelog: `python scripts/whats_new.py`
+4. Commit and push updates, then create a new GitHub Release
+5. Send notification to Telegram channel: `python scripts/telegram.py`
 
-Parses the downloaded JSON files and compiles the unified `bundles.json`, `apps.json`, and `/site/<bundle>.json` UI data files.
+## 🛠️ Usage / Scripts
 
-- `python scripts/update.py`: Compiles JSON files. It will automatically fetch data (stars, avatars, app names, icons) for completely new apps/bundles, or if any of these fields are missing (`null`).
-- `python scripts/update.py --stars`: Forces an update of stars for **all** bundles.
-- `python scripts/update.py --avatars`: Forces an update of avatars for **all** bundles.
-- `python scripts/update.py --icons`: Forces an update of icons for **all** apps.
-- `python scripts/update.py --daily`: Runs the daily update. This updates stars for **all** bundles, fetches missing avatars, and fetches missing app icons/names.
-- `python scripts/update.py --all`: Forces an update of all data (stars, avatars, icons) for all bundles and apps, including daily updates.
+All core automation logic is written in Python inside the `scripts/` directory.
 
-### `whats_new.py`
+### `discover.py`
 
-Generates the what's new list by diffing current bundles against the history baseline.
-
-- `python scripts/whats_new.py`: Generates `whats-new.md` with hierarchical tree notes, adds the new released entry to `whats-new.json` (keeping max 15 items), and updates the `history.json` baseline.
-
-### `discover.py` (experimental and incomplete)
-
-Scans patch repositories from remote sources and my custom sources.
+Scans community patch repositories and compiles them to `data/repos.json`.
 
 - `python scripts/discover.py`
 
-Supported remote sources:
+#### Discovered Sources
 
-- [(Official) Morphe Community Patches](https://morphe-patches.software)
-- [ReVanced Patch Bundles](https://github.com/Jman-Github/ReVanced-Patch-Bundles)
+- [Official Morphe Community Patches](https://morphe-patches.software)
+- [Jman's ReVanced Patch Bundles](https://github.com/Jman-Github/ReVanced-Patch-Bundles)
 - [Morphe Archive](https://github.com/rushiforai/morphe-archive)
-
-Outputs the consolidated database to [`/data/repos.json`](data/repos.json).
+- My custom sources defined in [`custom.json`](data/repos/custom.json)
 
 #### Customization
 
-Define entries in [`/data/repos/custom.json`](data/repos/custom.json) to add, modify, or exclude repositories:
+Customize target repositories in [`custom.json`](data/repos/custom.json) to add, remove, or customize the name/key of bundles:
 
 ```json
 {
@@ -82,10 +115,39 @@ Define entries in [`/data/repos/custom.json`](data/repos/custom.json) to add, mo
 }
 ```
 
+### `download.py`
+
+Downloads raw patch and bundle metadata from remote sources.
+
+- `python scripts/download.py --bundles`: Downloads raw bundles to `data/bundles/`.
+- `python scripts/download.py`: Fetches corresponding patch lists to `data/patches/`.
+
+### `update.py`
+
+Parses raw JSON files and compiles optimized web assets inside `docs/` for UI rendering.
+
+- `python scripts/update.py`: Compiles database index files.
+- Optional flags:
+  - `--stars`: Updates GitHub/GitLab stars for all bundles.
+  - `--avatars`: Forces updates of avatars for all bundles.
+  - `--icons`: Forces updates of app icons/names for all apps.
+  - `--daily`: Runs daily maintenance (updates stars for all bundles, fetches missing avatars, and fetches missing app icons/names).
+  - `--all`: Forces a full update of all data (stars, avatars, and app icons/names for everything).
+
+### `whats_new.py`
+
+Generates the "What's New" changelog by diffing current patch data against the baseline.
+
+- `python scripts/whats_new.py`
+
 ### `telegram.py`
 
-Sends a notification to a Telegram channel.
+Sends release updates from `whats-new.md` to a Telegram channel.
 
-- `python scripts/telegram.py`: Sends the content of `whats-new.md` using an automatically generated title (e.g. `🔔 What's New (July 06)`).
-- `python scripts/telegram.py "Custom Title"`: Sends the content of `whats-new.md` with the specified title.
-- `python scripts/telegram.py "Custom Title" "path/to/file.md"`: Sends the content of a specific file with a specific title.
+- `python scripts/telegram.py` (accepts optional `"Title"` and `"file.md"` arguments)
+
+---
+
+<p align="center">⭐ Star <a href="https://github.com/nvbangg/awesome-for-morphe">this repo</a> if useful</p>
+
+<p align="center"><i>Maintained with ❤️ by <a href="https://github.com/nvbangg">nvbangg</a></i></p>

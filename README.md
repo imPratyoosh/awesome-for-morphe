@@ -5,7 +5,8 @@
 > [!NOTE]
 > 🌐 A curated list of all Morphe resources and projects.  
 > 🔍 Explore [all supported apps and patches](https://nvbangg.github.io/awesome-for-morphe), automatically updated.  
-> 🔔 Get [daily notifications](https://github.com/nvbangg/awesome-for-morphe/releases) when there are new updates. [![Telegram Channel](https://img.shields.io/badge/Telegram_Channel-blue?style=social&logo=telegram)](https://t.me/awesome_for_morphe)
+> 🔔 Get [daily notifications](https://github.com/nvbangg/awesome-for-morphe/releases) when there are new updates. [![Telegram Channel](https://img.shields.io/badge/Telegram_Channel-blue?style=social&logo=telegram)](https://t.me/awesome_for_morphe)  
+> 📂 For contribution guidelines and documentation, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ### 🔗 Jump to:
 
