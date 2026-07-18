@@ -103,9 +103,15 @@ function useListUI(namespace = "") {
   const checkOverflow = (element, key) => {
     if (!element) return;
     const wasExpanded = expandedAppLists.has(key);
-    if (wasExpanded) element.classList.add("max-h-[120px]", "overflow-y-auto", "overflow-x-hidden");
-    const isOverflowing = element.scrollHeight > Math.ceil(element.clientHeight) + 2;
-    if (wasExpanded) element.classList.remove("max-h-[120px]", "overflow-y-auto", "overflow-x-hidden");
+    if (wasExpanded) {
+      element.classList.add("flex-nowrap", "overflow-x-auto");
+      element.classList.remove("flex-wrap");
+    }
+    const isOverflowing = element.scrollWidth > Math.ceil(element.clientWidth) + 2;
+    if (wasExpanded) {
+      element.classList.remove("flex-nowrap", "overflow-x-auto");
+      element.classList.add("flex-wrap");
+    }
 
     if (isOverflowing) {
       overflowingAppLists.add(key);
@@ -187,8 +193,9 @@ function useListUI(namespace = "") {
           const buttonElement = document.getElementById(`tab_${namespace}${groupKey}_${clickedApp.id}`);
           if (buttonElement?.parentElement) {
             const container = buttonElement.parentElement;
+            if (expandedAppLists.has(groupKey)) return;
             container.scrollTo({
-              top: buttonElement.offsetTop - container.clientHeight / 2 + buttonElement.clientHeight / 2,
+              left: buttonElement.offsetLeft - container.clientWidth / 2 + buttonElement.offsetWidth / 2,
               behavior: "smooth",
             });
           }

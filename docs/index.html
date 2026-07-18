@@ -50,6 +50,13 @@
     }
 
     @layer utilities {
+      .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
 
       .swipe-transition-left {
         animation: slideInLeft 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -96,32 +103,12 @@
       }
     }
 
-    @keyframes float {
-      0% { transform: translate(0px, 0px) scale(1); }
-      33% { transform: translate(3vw, -4vh) scale(1.05); }
-      66% { transform: translate(-2vw, 3vh) scale(0.95); }
-      100% { transform: translate(0px, 0px) scale(1); }
-    }
-    .animate-float {
-      animation: float 40s ease-in-out infinite;
-    }
-    .animate-float-delayed {
-      animation: float 50s ease-in-out infinite;
-      animation-delay: -7s;
-    }
-
     @keyframes floatIn {
       from { opacity: 0; transform: scale(0.95); }
       to { opacity: 1; transform: scale(1); }
     }
     .animate-float-in {
       animation: floatIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    }
-
-    .sn { position: absolute; top: -5vh; width: 3px; height: 3px; background: white; border-radius: 50%; opacity: 0.5; animation: fall var(--d, 30s) linear infinite; }
-    @keyframes fall { to { transform: translateY(110vh); } }
-    @media (max-width: 639px) {
-      .sn { animation-duration: calc(var(--d, 30s) * 1.8); }
     }
   </style>
 
@@ -142,44 +129,6 @@
 
 <body class="bg-black min-h-screen relative overflow-x-hidden">
 
-  <!-- Animated Geometric Background -->
-  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden opacity-50">
-    <div
-      class="absolute top-[10%] left-[5%] w-[40vw] h-[40vw] md:w-[20vw] md:h-[20vw] rounded-full border-[2px] border-blue/30 animate-float">
-    </div>
-    <div
-      class="absolute top-[60%] left-[-10%] w-[30vw] h-[30vw] md:w-[15vw] md:h-[15vw] rounded-full border-[2px] border-green/30 animate-float-delayed"
-      style="animation-duration: 25s;"></div>
-    <div
-      class="absolute top-[15%] right-[2%] w-[50vw] h-[50vw] md:w-[25vw] md:h-[25vw] rounded-full border-[2px] border-green/20 animate-float-delayed"
-      style="animation-delay: -15s;"></div>
-    <div
-      class="absolute bottom-[5%] right-[10%] w-[35vw] h-[35vw] md:w-[18vw] md:h-[18vw] rounded-full border-[2px] border-blue/20 animate-float"
-      style="animation-duration: 30s;"></div>
-    <div
-      class="absolute top-[-5%] left-[40%] w-[25vw] h-[25vw] md:w-[12vw] md:h-[12vw] rounded-full border-[2px] border-blue/30 animate-float"
-      style="animation-delay: -10s; animation-duration: 22s;"></div>
-    <div class="sn" style="left:2%; --d:22s; animation-delay:-3s;"></div>
-    <div class="sn" style="left:7%; --d:18s; animation-delay:-12s;"></div>
-    <div class="sn" style="left:12%; --d:25s; animation-delay:-7s;"></div>
-    <div class="sn" style="left:17%; --d:19s; animation-delay:-21s;"></div>
-    <div class="sn" style="left:22%; --d:24s; animation-delay:-14s;"></div>
-    <div class="sn" style="left:27%; --d:20s; animation-delay:-5s;"></div>
-    <div class="sn" style="left:32%; --d:23s; animation-delay:-18s;"></div>
-    <div class="sn" style="left:37%; --d:17s; animation-delay:-9s;"></div>
-    <div class="sn" style="left:42%; --d:26s; animation-delay:-2s;"></div>
-    <div class="sn" style="left:47%; --d:21s; animation-delay:-15s;"></div>
-    <div class="sn" style="left:52%; --d:19s; animation-delay:-8s;"></div>
-    <div class="sn" style="left:57%; --d:25s; animation-delay:-22s;"></div>
-    <div class="sn" style="left:62%; --d:18s; animation-delay:-11s;"></div>
-    <div class="sn" style="left:67%; --d:22s; animation-delay:-4s;"></div>
-    <div class="sn" style="left:72%; --d:24s; animation-delay:-19s;"></div>
-    <div class="sn" style="left:77%; --d:20s; animation-delay:-13s;"></div>
-    <div class="sn" style="left:82%; --d:23s; animation-delay:-6s;"></div>
-    <div class="sn" style="left:87%; --d:17s; animation-delay:-20s;"></div>
-    <div class="sn" style="left:92%; --d:26s; animation-delay:-10s;"></div>
-    <div class="sn" style="left:97%; --d:21s; animation-delay:-16s;"></div>
-  </div>
 
   <div id="app" v-cloak>
     <section class="mt-1 md:mt-4 max-w-4xl mx-auto px-0 sm:px-3 flex flex-col gap-2 md:gap-4" aria-label="Main Content">
@@ -448,11 +397,11 @@
             <!-- Results Toolbar -->
             <div class="flex items-center justify-between px-1">
               <div class="flex items-center gap-2">
-                <button @click="collapseAll" class="badge text-light">
+                <button @click="collapseAll" class="badge badge-ghost text-light">
                   <i class="fa-solid fa-compress icon-center"></i>
                   <span>Collapse all</span>
                 </button>
-                <button @click="expandAll" class="badge text-light">
+                <button @click="expandAll" class="badge badge-ghost text-light">
                   <i class="fa-solid fa-expand icon-center"></i>
                   <span>Expand all</span>
                 </button>
@@ -460,7 +409,7 @@
 
               <div class="flex items-center gap-2">
                 <button v-show="bundlesGroups.length > 1" @click="toggleColumns"
-                  class="badge hidden md:inline-flex text-green shrink-0"
+                  class="badge hidden md:inline-flex text-light shrink-0"
                   :title="effectiveTwoColumns ? 'Switch to list view' : 'Switch to grid view'">
                   <i class="fa-solid icon-center" :class="effectiveTwoColumns ? 'fa-list' : 'fa-grip'"></i>
                   <span v-if="!effectiveTwoColumns">Grid view</span><span v-else>List view</span>
@@ -492,9 +441,9 @@
                     :class="!effectiveTwoColumns ? 'justify-center md:justify-start md:w-auto' : 'justify-center'">
                     <img v-if="group.bundle.avatarUrl" :src="group.bundle.avatarUrl" alt="Avatar"
                       @click.stop="openPopupFast(group.key)" title="View this bundle"
-                      class="w-12 h-12 rounded-full bg-lightGray/20 object-cover shrink-0 sm:mt-0.5 cursor-pointer hover:opacity-80 transition-opacity">
+                      class="w-12 h-12 rounded-lg bg-lightGray/20 object-cover shrink-0 sm:mt-0.5 cursor-pointer hover:opacity-80 transition-opacity">
                     <div v-else @click.stop="openPopupFast(group.key)" title="View this bundle"
-                      class="w-12 h-12 rounded-full bg-lightGray/20 flex items-center justify-center shrink-0 sm:mt-0.5 cursor-pointer hover:bg-lightGray/35 transition-colors">
+                      class="w-12 h-12 rounded-lg bg-lightGray/20 flex items-center justify-center shrink-0 sm:mt-0.5 cursor-pointer hover:bg-lightGray/35 transition-colors">
                       <i class="fa-solid fa-cubes text-light text-xl icon-center"></i>
                     </div>
                     <div class="flex flex-col min-w-0 justify-center items-start gap-1 sm:gap-1.5 max-w-full">
@@ -502,7 +451,7 @@
                       <div class="flex flex-wrap items-center gap-2 min-w-0 w-full"
                         :class="!effectiveTwoColumns ? 'justify-center md:justify-start' : 'justify-center'">
                         <strong @click.stop="openPopupFast(group.key)" title="View this bundle"
-                          class="font-bold text-lg sm:text-xl text-transparent bg-clip-text bg-gradient-to-r from-blue to-green break-words leading-tight cursor-pointer hover:opacity-80 transition-all">{{
+                          class="font-bold text-lg sm:text-xl text-white break-words leading-tight cursor-pointer hover:opacity-80 transition-all">{{
                           group.key }}</strong>
                         <span v-if="hasHighlight(group.key) || isNewBundle(group)"
                           class="badge badge-sm text-yellow shrink-0">✨ New</span>
@@ -513,10 +462,10 @@
                       </div>
                       <!-- Repo Row -->
                       <a v-if="group.bundle.repo" :href="group.bundle.repoUrl" target="_blank" rel="noreferrer"
-                        @click.stop class="badge max-w-full">
-                        <i
+                        @click.stop class="badge badge-ghost max-w-full whitespace-normal h-auto items-start">
+                        <i class="mt-[2px]"
                           :class="group.bundle.source === 'github' ? 'fa-brands fa-github text-white' : group.bundle.source === 'gitlab' ? 'fa-brands fa-gitlab text-orange' : 'fa-solid fa-globe text-light'"></i>
-                        <span class="truncate">{{ group.bundle.repo }}</span>
+                        <span class="break-all text-left">{{ group.bundle.repo }}</span>
                       </a>
                     </div>
                   </div>
@@ -532,11 +481,14 @@
                       </a>
                       <a v-if="group.bundle.createdAt"
                         :href="group.bundle.changelogUrl || (group.bundle.repoUrl ? group.bundle.repoUrl + '/releases' : '#')"
-                        target="_blank" rel="noreferrer" @click.stop class="badge" title="View changelog">
-                        <i class="fa-solid fa-clock-rotate-left text-yellow"></i>
-                        <span>{{ formatDate(group.bundle.createdAt) }}</span>
+                        target="_blank" rel="noreferrer" @click.stop
+                        class="badge text-light bg-light/10 border-light/20 hover:scale-105 active:scale-95 transition-all group"
+                        title="View changelog">
+                        <i class="fa-solid fa-clock-rotate-left group-hover:text-blue transition-colors"></i>
+                        <span class="group-hover:text-blue transition-colors">{{ formatDate(group.bundle.createdAt)
+                          }}</span>
                       </a>
-                      <button @click.stop="mainUI.toggleBundleView(group)" class="badge shrink-0 text-green select-none"
+                      <button @click.stop="mainUI.toggleBundleView(group)" class="badge shrink-0 text-light select-none"
                         :title="mainUI.bundleViews[group.key] ? 'Switch to grid view' : 'Switch to list view'">
                         <i class="fa-solid icon-center"
                           :class="mainUI.bundleViews[group.key] ? 'fa-grip' : 'fa-list'"></i>
@@ -548,26 +500,30 @@
 
                 <div class="border-t-2 border-lightGray bg-dark shadow-inner flex flex-col">
                   <template v-for="appsList in [group.appsList]">
-                    <div :ref="(el) => mainUI.setupOverflowObserver(el, group.key)"
-                      v-show="!mainUI.bundleViews[group.key]"
-                      class="flex content-start flex-wrap gap-1.5 py-1.5 px-3 border-b border-lightGray custom-scrollbar relative"
-                      :class="mainUI.expandedAppLists.has(group.key) ? '' : 'overflow-y-auto overflow-x-hidden max-h-[120px]'">
-                      <i v-show="mainUI.overflowingAppLists.has(group.key)"
+                    <div class="relative" v-show="!mainUI.bundleViews[group.key]">
+                      <div :ref="(el) => mainUI.setupOverflowObserver(el, group.key)"
+                        class="flex gap-1.5 py-1.5 px-3 border-b border-lightGray relative"
+                        :class="[mainUI.expandedAppLists.has(group.key) ? 'flex-wrap content-start' : 'flex-nowrap overflow-x-auto hide-scrollbar', mainUI.overflowingAppLists.has(group.key) ? 'pr-10' : '']">
+                        <button v-for="appItem in appsList" :key="appItem.id"
+                          :id="'tab_' + group.key + '_' + appItem.id"
+                          @click.stop="mainUI.selectApp(group.key, appItem, appsList)" class="badge badge-md shrink-0"
+                          :class="mainUI.expandedOptions.has('app_' + group.key + '_' + appItem.id) ? 'text-blue' : 'text-light'">
+                          <img v-if="appItem.appIcon" :src="appItem.appIcon"
+                            class="w-4 h-4 rounded-sm object-contain shrink-0" :alt="appItem.appName" loading="lazy">
+                          <i v-else class="fa-brands fa-android text-green"></i>
+                          <span class="truncate">{{ appItem.appName }}</span>
+                          <span v-if="isAppHighlighted(group.key, appItem)" class="badge badge-sm text-yellow">✨
+                            New</span>
+                          <span v-if="appItem.isAppPreRelease && !group.bundle.isPreRelease"
+                            class="badge badge-sm text-yellow"><i class="fa-solid fa-flask"></i> Pre-release</span>
+                        </button>
+                      </div>
+                      <button v-show="mainUI.overflowingAppLists.has(group.key)"
                         @click.stop="mainUI.toggleAppList(group.key)"
-                        class="fa-solid shrink-0 text-light cursor-pointer hover:text-white transition-colors flex items-center justify-center px-1"
-                        :class="mainUI.expandedAppLists.has(group.key) ? 'fa-chevron-up' : 'fa-chevron-down'"
-                        title="Toggle Apps"></i>
-                      <button v-for="appItem in appsList" :key="appItem.id" :id="'tab_' + group.key + '_' + appItem.id"
-                        @click.stop="mainUI.selectApp(group.key, appItem, appsList)" class="badge badge-md shrink-0"
-                        :class="mainUI.expandedOptions.has('app_' + group.key + '_' + appItem.id) ? 'text-blue' : 'text-light'">
-                        <img v-if="appItem.appIcon" :src="appItem.appIcon"
-                          class="w-4 h-4 rounded-sm object-contain shrink-0" :alt="appItem.appName" loading="lazy">
-                        <i v-else class="fa-brands fa-android text-green"></i>
-                        <span class="truncate">{{ appItem.appName }}</span>
-                        <span v-if="isAppHighlighted(group.key, appItem)" class="badge badge-sm text-yellow">✨
-                          New</span>
-                        <span v-if="appItem.isAppPreRelease && !group.bundle.isPreRelease"
-                          class="badge badge-sm text-yellow"><i class="fa-solid fa-flask"></i> Pre-release</span>
+                        class="absolute right-1 top-[5px] z-10 w-7 h-7 flex items-center justify-center rounded-full bg-white border border-light text-dark hover:bg-light transition-all cursor-pointer shadow-md"
+                        :title="mainUI.expandedAppLists.has(group.key) ? 'Collapse apps' : 'Expand apps'">
+                        <i class="fa-solid text-xs"
+                          :class="mainUI.expandedAppLists.has(group.key) ? 'fa-compress' : 'fa-expand'"></i>
                       </button>
                     </div>
 
@@ -597,30 +553,30 @@
                         @touchend="mainUI.handleTouchEnd($event, group.key, appItem, appsList)"
                         class="flex flex-col gap-2 shadow-inner pt-2 pb-3"
                         :class="(mainUI.activeSwipeGroup === group.key && mainUI.swipeDirection ? 'swipe-transition-' + mainUI.swipeDirection : '') + (mainUI.bundleViews[group.key] ? ' border-b-2 border-lightGray/30' : '')">
-                        <div class="flex flex-wrap items-center gap-2 min-w-0 px-3 sm:px-4">
-                          <template v-if="appItem.packageName && appItem.packageName !== 'universal'">
-                            <button @click.stop="filterByApp(appItem.packageName)" class="badge shrink-0 select-none">
-                              <i class="fa-solid fa-filter"></i>
-                              <span>Filter this app</span>
-                            </button>
-                            <a :href="playUrl(appItem.packageName)" class="badge shrink-0" target="_blank" @click.stop
-                              title="Open on Play Store">
-                              <i class="fa-brands fa-google-play text-green"></i>
-                              <span>Google Play</span>
-                            </a>
-                            <button @click.stop="copyText(appItem.packageName, 'pkg_' + group.key + '_' + appItem.id)"
-                              class="badge text-light shrink-0 relative"
-                              :class="{ 'z-50': copiedStates['pkg_' + group.key + '_' + appItem.id] }"
-                              :title="appItem.packageName">
-                              <i class="fa-solid !my-0"
-                                :class="copiedStates['pkg_' + group.key + '_' + appItem.id] ? 'fa-check text-green' : 'fa-regular fa-copy'"></i>
-                              <span>Package name</span>
-                              <span v-if="copiedStates['pkg_' + group.key + '_' + appItem.id]"
-                                class="absolute top-full right-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-white bg-lightGray rounded shadow-lg whitespace-nowrap z-[60] pointer-events-none animate-float-in">
-                                {{ appItem.packageName }}
-                              </span>
-                            </button>
-                          </template>
+                        <div v-if="appItem.packageName && appItem.packageName !== 'universal'"
+                          class="flex flex-wrap items-center gap-2 min-w-0 px-3 sm:px-4">
+                          <button @click.stop="filterByApp(appItem.packageName)" class="badge shrink-0 select-none">
+                            <i class="fa-solid fa-filter"></i>
+                            <span>Filter this app</span>
+                          </button>
+                          <a :href="playUrl(appItem.packageName)"
+                            class="badge shrink-0 text-light bg-light/10 border-light/20 hover:scale-105 active:scale-95 transition-all group"
+                            target="_blank" @click.stop title="Open on Play Store">
+                            <i class="fa-brands fa-google-play group-hover:text-blue transition-colors"></i>
+                            <span class="group-hover:text-blue transition-colors">Google Play</span>
+                          </a>
+                          <button @click.stop="copyText(appItem.packageName, 'pkg_' + group.key + '_' + appItem.id)"
+                            class="badge text-light shrink-0 relative"
+                            :class="{ 'z-50': copiedStates['pkg_' + group.key + '_' + appItem.id] }"
+                            :title="appItem.packageName">
+                            <i class="fa-solid !my-0"
+                              :class="copiedStates['pkg_' + group.key + '_' + appItem.id] ? 'fa-check text-green' : 'fa-regular fa-copy'"></i>
+                            <span>Package name</span>
+                            <span v-if="copiedStates['pkg_' + group.key + '_' + appItem.id]"
+                              class="absolute top-full right-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-white bg-lightGray rounded shadow-lg whitespace-nowrap z-[60] pointer-events-none animate-float-in">
+                              {{ appItem.packageName }}
+                            </span>
+                          </button>
                         </div>
 
                         <div class="pl-6 pr-1 sm:px-4">
@@ -661,8 +617,8 @@
                                     <template v-if="!mainUI.expandedVersions.has(appElement.id)">
                                       <button
                                         @click.stop="copyText(appElement.versions[0].version, 'ver_' + appElement.id + '_last')"
-                                        class="badge badge-sm text-green relative"
-                                        :class="{ 'z-50': copiedStates['ver_' + appElement.id + '_last'] }"
+                                        class="badge badge-sm relative"
+                                        :class="[{ 'z-50': copiedStates['ver_' + appElement.id + '_last'] }, appElement.versions[0].version === 'Any version' ? 'text-light' : 'text-green']"
                                         :title="appElement.versions[0].isExperimental ? 'Copy experimental version' : 'Copy app version'">
                                         <span v-if="copiedStates['ver_' + appElement.id + '_last']"
                                           class="absolute top-full right-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-white bg-lightGray rounded shadow-lg whitespace-nowrap z-[60] pointer-events-none animate-float-in">Copied!</span>
@@ -679,8 +635,8 @@
                                     <template v-else>
                                       <button v-for="versionItem in appElement.versions" :key="versionItem.version"
                                         @click.stop="copyText(versionItem.version, 'ver_' + appElement.id + '_' + versionItem.version)"
-                                        class="badge badge-sm text-green relative"
-                                        :class="{ 'z-50': copiedStates['ver_' + appElement.id + '_' + versionItem.version] }"
+                                        class="badge badge-sm relative"
+                                        :class="[{ 'z-50': copiedStates['ver_' + appElement.id + '_' + versionItem.version] }, versionItem.version === 'Any version' ? 'text-light' : 'text-green']"
                                         :title="versionItem.isExperimental ? 'Copy experimental version' : 'Copy app version'">
                                         <span v-if="copiedStates['ver_' + appElement.id + '_' + versionItem.version]"
                                           class="absolute top-full right-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-white bg-lightGray rounded shadow-lg whitespace-nowrap z-[60] pointer-events-none animate-float-in">Copied!</span>
@@ -693,7 +649,7 @@
                                       </button>
                                     </template>
                                   </template>
-                                  <span v-else class="badge badge-sm text-green">Any version</span>
+                                  <span v-else class="badge badge-sm text-light">Any version</span>
                                 </template>
                               </div>
 
@@ -827,16 +783,15 @@
               <div
                 class="flex items-center gap-3 min-w-0 flex-1 w-full text-left justify-center md:justify-start md:w-auto">
                 <img v-if="group.bundle.avatarUrl" :src="group.bundle.avatarUrl" alt="Avatar"
-                  class="w-12 h-12 rounded-full bg-lightGray/20 object-cover pointer-events-none select-none shrink-0 sm:mt-0.5">
+                  class="w-12 h-12 rounded-lg bg-lightGray/20 object-cover pointer-events-none select-none shrink-0 sm:mt-0.5">
                 <div v-else
-                  class="w-12 h-12 rounded-full bg-lightGray/20 flex items-center justify-center shrink-0 sm:mt-0.5">
+                  class="w-12 h-12 rounded-lg bg-lightGray/20 flex items-center justify-center shrink-0 sm:mt-0.5">
                   <i class="fa-solid fa-cubes text-light text-xl icon-center"></i>
                 </div>
                 <div class="flex flex-col min-w-0 justify-center items-start gap-1 sm:gap-1.5 max-w-full">
 
                   <div class="flex flex-wrap items-center gap-2 min-w-0 w-full justify-center md:justify-start">
-                    <strong
-                      class="font-bold text-lg sm:text-xl text-transparent bg-clip-text bg-gradient-to-r from-blue to-green break-words leading-tight">{{
+                    <strong class="font-bold text-lg sm:text-xl text-white break-words leading-tight">{{
                       group.key }}</strong>
                     <span v-if="hasHighlight(group.key) || isNewBundle(group)" class="badge badge-sm text-yellow">✨
                       New</span>
@@ -847,10 +802,10 @@
                   </div>
 
                   <a v-if="group.bundle.repo" :href="group.bundle.repoUrl" target="_blank" rel="noreferrer" @click.stop
-                    class="badge max-w-full">
-                    <i
+                    class="badge badge-ghost max-w-full whitespace-normal h-auto items-start">
+                    <i class="mt-[2px]"
                       :class="group.bundle.source === 'github' ? 'fa-brands fa-github text-white' : group.bundle.source === 'gitlab' ? 'fa-brands fa-gitlab text-orange' : 'fa-solid fa-globe text-light'"></i>
-                    <span class="truncate">{{ group.bundle.repo }}</span>
+                    <span class="break-all text-left">{{ group.bundle.repo }}</span>
                   </a>
                 </div>
               </div>
@@ -864,11 +819,13 @@
                 </a>
                 <a v-if="group.bundle.createdAt"
                   :href="group.bundle.changelogUrl || (group.bundle.repoUrl ? group.bundle.repoUrl + '/releases' : '#')"
-                  target="_blank" rel="noreferrer" @click.stop class="badge" title="View changelog">
-                  <i class="fa-solid fa-clock-rotate-left text-yellow"></i>
-                  <span>{{ formatDate(group.bundle.createdAt) }}</span>
+                  target="_blank" rel="noreferrer" @click.stop
+                  class="badge text-light bg-light/10 border-light/20 hover:scale-105 active:scale-95 transition-all group"
+                  title="View changelog">
+                  <i class="fa-solid fa-clock-rotate-left group-hover:text-blue transition-colors"></i>
+                  <span class="group-hover:text-blue transition-colors">{{ formatDate(group.bundle.createdAt) }}</span>
                 </a>
-                <button @click.stop="popupUI.toggleBundleView(group)" class="badge shrink-0 text-green select-none"
+                <button @click.stop="popupUI.toggleBundleView(group)" class="badge shrink-0 text-light select-none"
                   :title="popupUI.bundleViews[group.key] ? 'Switch to grid view' : 'Switch to list view'">
                   <i class="fa-solid icon-center" :class="popupUI.bundleViews[group.key] ? 'fa-grip' : 'fa-list'"></i>
                   <span>{{ popupUI.bundleViews[group.key] ? 'Grid view' : 'List view' }}</span>
@@ -878,25 +835,29 @@
 
             <div class="border-t-2 border-lightGray bg-dark shadow-inner flex flex-col">
               <template v-for="appsList in [group.appsList]">
-                <div :ref="(el) => popupUI.setupOverflowObserver(el, group.key)"
-                  v-show="!popupUI.bundleViews[group.key]"
-                  class="flex content-start flex-wrap gap-1.5 py-1.5 px-3 border-b border-lightGray shrink-0 custom-scrollbar relative"
-                  :class="popupUI.expandedAppLists.has(group.key) ? '' : 'overflow-y-auto overflow-x-hidden max-h-[120px]'">
-                  <i v-show="popupUI.overflowingAppLists.has(group.key)" @click.stop="popupUI.toggleAppList(group.key)"
-                    class="fa-solid shrink-0 text-light cursor-pointer hover:text-white transition-colors flex items-center justify-center px-1"
-                    :class="popupUI.expandedAppLists.has(group.key) ? 'fa-chevron-up' : 'fa-chevron-down'"
-                    title="Toggle Apps"></i>
-                  <button v-for="appItem in appsList" :key="appItem.id"
-                    :id="'tab_popup_' + group.key + '_' + appItem.id"
-                    @click.stop="popupUI.selectApp(group.key, appItem, appsList)" class="badge badge-md shrink-0"
-                    :class="popupUI.expandedOptions.has('popup_app_' + group.key + '_' + appItem.id) ? 'text-blue' : 'text-light'">
-                    <img v-if="appItem.appIcon" :src="appItem.appIcon"
-                      class="w-4 h-4 rounded-sm object-contain shrink-0" :alt="appItem.appName" loading="lazy">
-                    <i v-else class="fa-brands fa-android text-green"></i>
-                    <span class="truncate">{{ appItem.appName }}</span>
-                    <span v-if="isAppHighlighted(group.key, appItem)" class="badge badge-sm text-yellow">✨ New</span>
-                    <span v-if="appItem.isAppPreRelease && !group.bundle.isPreRelease"
-                      class="badge badge-sm text-yellow"><i class="fa-solid fa-flask"></i> Pre-release</span>
+                <div class="relative" v-show="!popupUI.bundleViews[group.key]">
+                  <div :ref="(el) => popupUI.setupOverflowObserver(el, group.key)"
+                    class="flex gap-1.5 py-1.5 px-3 border-b border-lightGray shrink-0 relative"
+                    :class="[popupUI.expandedAppLists.has(group.key) ? 'flex-wrap content-start' : 'flex-nowrap overflow-x-auto hide-scrollbar', popupUI.overflowingAppLists.has(group.key) ? 'pr-10' : '']">
+                    <button v-for="appItem in appsList" :key="appItem.id"
+                      :id="'tab_popup_' + group.key + '_' + appItem.id"
+                      @click.stop="popupUI.selectApp(group.key, appItem, appsList)" class="badge badge-md shrink-0"
+                      :class="popupUI.expandedOptions.has('popup_app_' + group.key + '_' + appItem.id) ? 'text-blue' : 'text-light'">
+                      <img v-if="appItem.appIcon" :src="appItem.appIcon"
+                        class="w-4 h-4 rounded-sm object-contain shrink-0" :alt="appItem.appName" loading="lazy">
+                      <i v-else class="fa-brands fa-android text-green"></i>
+                      <span class="truncate">{{ appItem.appName }}</span>
+                      <span v-if="isAppHighlighted(group.key, appItem)" class="badge badge-sm text-yellow">✨ New</span>
+                      <span v-if="appItem.isAppPreRelease && !group.bundle.isPreRelease"
+                        class="badge badge-sm text-yellow"><i class="fa-solid fa-flask"></i> Pre-release</span>
+                    </button>
+                  </div>
+                  <button v-show="popupUI.overflowingAppLists.has(group.key)"
+                    @click.stop="popupUI.toggleAppList(group.key)"
+                    class="absolute right-1 top-[5px] z-10 w-7 h-7 flex items-center justify-center rounded-full bg-white border border-light text-dark hover:bg-light transition-all cursor-pointer shadow-md"
+                    :title="popupUI.expandedAppLists.has(group.key) ? 'Collapse apps' : 'Expand apps'">
+                    <i class="fa-solid text-xs"
+                      :class="popupUI.expandedAppLists.has(group.key) ? 'fa-compress' : 'fa-expand'"></i>
                   </button>
                 </div>
 
@@ -924,31 +885,30 @@
                     @touchend="popupUI.handleTouchEnd($event, group.key, appItem, appsList)"
                     class="flex flex-col gap-2 shadow-inner pt-2 pb-3"
                     :class="(popupUI.activeSwipeGroup === group.key && popupUI.swipeDirection ? 'swipe-transition-' + popupUI.swipeDirection : '') + (popupUI.bundleViews[group.key] ? ' border-b-2 border-lightGray/30' : '')">
-                    <div class="flex flex-wrap items-center gap-2 min-w-0 px-4 shrink-0">
-                      <template v-if="appItem.packageName">
-                        <button @click.stop="filterByApp(appItem.packageName)" class="badge shrink-0 select-none">
-                          <i class="fa-solid fa-filter"></i>
-                          <span>Filter this app</span>
-                        </button>
-                        <a v-if="appItem.packageName !== 'universal'" :href="playUrl(appItem.packageName)"
-                          class="badge shrink-0" target="_blank" @click.stop title="Open on Play Store">
-                          <i class="fa-brands fa-google-play text-green"></i>
-                          <span>Google Play</span>
-                        </a>
-                        <button v-if="appItem.packageName !== 'universal'"
-                          @click.stop="copyText(appItem.packageName, 'pkg_' + group.key + '_' + appItem.id)"
-                          class="badge text-light shrink-0 relative"
-                          :class="{ 'z-50': copiedStates['pkg_' + group.key + '_' + appItem.id] }"
-                          :title="appItem.packageName">
-                          <i class="fa-solid !my-0"
-                            :class="copiedStates['pkg_' + group.key + '_' + appItem.id] ? 'fa-check text-green' : 'fa-regular fa-copy'"></i>
-                          <span>Package name</span>
-                          <span v-if="copiedStates['pkg_' + group.key + '_' + appItem.id]"
-                            class="absolute top-full right-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-white bg-lightGray rounded shadow-lg whitespace-nowrap z-[60] pointer-events-none animate-float-in">
-                            {{ appItem.packageName }}
-                          </span>
-                        </button>
-                      </template>
+                    <div v-if="appItem.packageName && appItem.packageName !== 'universal'"
+                      class="flex flex-wrap items-center gap-2 min-w-0 px-4 shrink-0">
+                      <button @click.stop="filterByApp(appItem.packageName)" class="badge shrink-0 select-none">
+                        <i class="fa-solid fa-filter"></i>
+                        <span>Filter this app</span>
+                      </button>
+                      <a :href="playUrl(appItem.packageName)"
+                        class="badge shrink-0 text-light bg-light/10 border-light/20 hover:scale-105 active:scale-95 transition-all group"
+                        target="_blank" @click.stop title="Open on Play Store">
+                        <i class="fa-brands fa-google-play group-hover:text-blue transition-colors"></i>
+                        <span class="group-hover:text-blue transition-colors">Google Play</span>
+                      </a>
+                      <button @click.stop="copyText(appItem.packageName, 'pkg_' + group.key + '_' + appItem.id)"
+                        class="badge text-light shrink-0 relative"
+                        :class="{ 'z-50': copiedStates['pkg_' + group.key + '_' + appItem.id] }"
+                        :title="appItem.packageName">
+                        <i class="fa-solid !my-0"
+                          :class="copiedStates['pkg_' + group.key + '_' + appItem.id] ? 'fa-check text-green' : 'fa-regular fa-copy'"></i>
+                        <span>Package name</span>
+                        <span v-if="copiedStates['pkg_' + group.key + '_' + appItem.id]"
+                          class="absolute top-full right-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-white bg-lightGray rounded shadow-lg whitespace-nowrap z-[60] pointer-events-none animate-float-in">
+                          {{ appItem.packageName }}
+                        </span>
+                      </button>
                     </div>
 
                     <div class="px-4 flex flex-col">
@@ -987,8 +947,8 @@
                                 <template v-if="!popupUI.expandedVersions.has(appElement.id)">
                                   <button
                                     @click.stop="copyText(appElement.versions[0].version, 'ver_' + appElement.id + '_last')"
-                                    class="badge badge-sm text-green relative"
-                                    :class="{ 'z-50': copiedStates['ver_' + appElement.id + '_last'] }"
+                                    class="badge badge-sm relative"
+                                    :class="[{ 'z-50': copiedStates['ver_' + appElement.id + '_last'] }, appElement.versions[0].version === 'Any version' ? 'text-light' : 'text-green']"
                                     :title="appElement.versions[0].isExperimental ? 'Copy experimental version' : 'Copy app version'">
                                     <span v-if="copiedStates['ver_' + appElement.id + '_last']"
                                       class="absolute top-full right-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-white bg-lightGray rounded shadow-lg whitespace-nowrap z-[60] pointer-events-none animate-float-in">Copied!</span>
@@ -1005,8 +965,8 @@
                                 <template v-else>
                                   <button v-for="versionItem in appElement.versions" :key="versionItem.version"
                                     @click.stop="copyText(versionItem.version, 'ver_' + appElement.id + '_' + versionItem.version)"
-                                    class="badge badge-sm text-green relative"
-                                    :class="{ 'z-50': copiedStates['ver_' + appElement.id + '_' + versionItem.version] }"
+                                    class="badge badge-sm relative"
+                                    :class="[{ 'z-50': copiedStates['ver_' + appElement.id + '_' + versionItem.version] }, versionItem.version === 'Any version' ? 'text-light' : 'text-green']"
                                     :title="versionItem.isExperimental ? 'Copy experimental version' : 'Copy app version'">
                                     <span v-if="copiedStates['ver_' + appElement.id + '_' + versionItem.version]"
                                       class="absolute top-full right-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-white bg-lightGray rounded shadow-lg whitespace-nowrap z-[60] pointer-events-none animate-float-in">Copied!</span>
@@ -1019,7 +979,7 @@
                                   </button>
                                 </template>
                               </template>
-                              <span v-else class="badge badge-sm text-green">Any version</span>
+                              <span v-else class="badge badge-sm text-light">Any version</span>
                             </template>
                           </div>
 

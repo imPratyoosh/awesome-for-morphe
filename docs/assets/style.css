@@ -47,6 +47,23 @@
   gap: 6px;
 }
 
+.badge-ghost {
+  border-color: transparent !important;
+  background: transparent !important;
+}
+.badge-ghost i,
+.badge-ghost img {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+a.badge.badge-ghost:hover,
+button.badge.badge-ghost:hover {
+  background: transparent !important;
+  border-color: transparent !important;
+  opacity: 1;
+  filter: brightness(1.25);
+}
+
 a.badge {
   cursor: pointer;
 }
