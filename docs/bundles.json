@@ -1,31 +1,4 @@
 {
-  "AlexNaga": {
-    "source": "github",
-    "repo": "AlexNaga/android-patches",
-    "avatarUrl": "https://avatars.githubusercontent.com/AlexNaga?s=128",
-    "stars": 7,
-    "firstSeen": "2026-05-28T00:49:33",
-    "patches": "patches/AlexNaga.json",
-    "createdAt": "2026-05-05T11:51:41",
-    "targetApps": [
-      "se.matlistan.free"
-    ],
-    "appCount": 1
-  },
-  "ImmortalZeus": {
-    "source": "github",
-    "repo": "ImmortalZeus/ImmortalZeus-Morphe-Patches",
-    "avatarUrl": "https://avatars.githubusercontent.com/ImmortalZeus?s=128",
-    "stars": 2,
-    "firstSeen": "2026-05-15T03:20:18",
-    "patches": "patches/ImmortalZeus.json",
-    "createdAt": "2026-05-15T03:33:31",
-    "targetApps": [
-      "com.example.app",
-      "universal"
-    ],
-    "appCount": 1
-  },
   "abeja": {
     "source": "github",
     "repo": "TheRealCrazyfuy/abeja-morphe-patches",
@@ -90,6 +63,19 @@
       "tv.pluto.android"
     ],
     "appCount": 10
+  },
+  "AlexNaga": {
+    "source": "github",
+    "repo": "AlexNaga/android-patches",
+    "avatarUrl": "https://avatars.githubusercontent.com/AlexNaga?s=128",
+    "stars": 7,
+    "firstSeen": "2026-05-28T00:49:33",
+    "patches": "patches/AlexNaga.json",
+    "createdAt": "2026-05-05T11:51:41",
+    "targetApps": [
+      "se.matlistan.free"
+    ],
+    "appCount": 1
   },
   "almewty": {
     "source": "github",
@@ -670,6 +656,20 @@
       "net.easyconn.carman.wws"
     ],
     "appCount": 2
+  },
+  "ImmortalZeus": {
+    "source": "github",
+    "repo": "ImmortalZeus/ImmortalZeus-Morphe-Patches",
+    "avatarUrl": "https://avatars.githubusercontent.com/ImmortalZeus?s=128",
+    "stars": 2,
+    "firstSeen": "2026-05-15T03:20:18",
+    "patches": "patches/ImmortalZeus.json",
+    "createdAt": "2026-05-15T03:33:31",
+    "targetApps": [
+      "com.example.app",
+      "universal"
+    ],
+    "appCount": 1
   },
   "imxeren": {
     "source": "github",

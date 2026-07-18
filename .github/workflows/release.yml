@@ -22,11 +22,12 @@ jobs:
 
       - name: Download and process data
         run: |
+          python scripts/discover.py
           python scripts/download.py --bundles
           if [ -n "$(git status --porcelain)" ]; then
             python scripts/download.py
           fi
-          
+
           pip install google-play-scraper
           DAY_OF_MONTH=$(date +%d)
           if [ "$DAY_OF_MONTH" -eq 1 ] || [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
@@ -34,7 +35,7 @@ jobs:
           else
             python scripts/update.py --daily
           fi
-          
+
           python scripts/whats_new.py
 
       - name: Commit and push changes

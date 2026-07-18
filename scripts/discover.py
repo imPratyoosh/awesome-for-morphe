@@ -143,7 +143,7 @@ def main():
     merged = _merge(provider_files)
     print(f"\nMerged {len(merged)} unique sources")
 
-    repos = _build_output(merged)
+    repos = dict(sorted(_build_output(merged).items(), key=lambda item: item[0].lower()))
     print(f"Generated {len(repos)} repos")
 
     save_json(OUTPUT_PATH, repos)

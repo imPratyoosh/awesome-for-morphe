@@ -66,8 +66,9 @@ This project uses GitHub Actions to automate data synchronization and release cy
 
 Checks for upstream bundle changes and updates the compiled website database:
 
-1. Download raw bundle metadata: `python scripts/download.py --bundles`
-2. If raw bundles changed:
+1. Discover patch repositories: `python scripts/discover.py`
+2. Download raw bundle metadata: `python scripts/download.py --bundles`
+3. If changes are detected:
    - Download corresponding patch lists: `python scripts/download.py`
    - Compile optimized web assets: `python scripts/update.py`
    - Commit and push changes directly to `main` branch.
@@ -76,11 +77,12 @@ Checks for upstream bundle changes and updates the compiled website database:
 
 Runs daily maintenance, builds release notes, and notifies subscribers:
 
-1. Check upstream updates: `python scripts/download.py --bundles` (and `python scripts/download.py` if changed).
-2. Compile data: `python scripts/update.py --all` (on the 1st of the month) or `python scripts/update.py --daily` (other days).
-3. Generate release changelog: `python scripts/whats_new.py`
-4. Commit and push updates, then create a new GitHub Release
-5. Send notification to Telegram channel: `python scripts/telegram.py`
+1. Discover patch repositories: `python scripts/discover.py`
+2. Check upstream updates: `python scripts/download.py --bundles` (and `python scripts/download.py` if changed).
+3. Compile data: `python scripts/update.py --all` (on the 1st of the month) or `python scripts/update.py --daily` (other days).
+4. Generate release changelog: `python scripts/whats_new.py`
+5. Commit and push updates, then create a new GitHub Release
+6. Send notification to Telegram channel: `python scripts/telegram.py`
 
 ## 🛠️ Usage / Scripts
 

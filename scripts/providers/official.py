@@ -45,7 +45,7 @@ def discover():
     if not discovered:
         print("  [official] Warning: empty result, keeping existing file")
         return {}
-    save_json(OUTPUT_PATH, discovered)
+    save_json(OUTPUT_PATH, dict(sorted(discovered.items(), key=lambda item: item[0].lower())))
     return discovered
 
 

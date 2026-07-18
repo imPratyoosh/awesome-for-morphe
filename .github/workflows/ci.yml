@@ -23,6 +23,7 @@ jobs:
       - name: Download and update bundles
         id: update
         run: |
+          python scripts/discover.py
           python scripts/download.py --bundles
           if [ -n "$(git status --porcelain)" ]; then
             python scripts/download.py

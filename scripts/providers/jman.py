@@ -97,14 +97,14 @@ def discover():
                 discovered[canonical_key] = {}
 
     snapshot["jman_tree_sha"] = tree_sha
-    snapshot["jman_bundles"] = new_bundles
+    snapshot["jman_bundles"] = dict(sorted(new_bundles.items(), key=lambda item: item[0].lower()))
     save_json(SNAPSHOT_PATH, snapshot)
 
     print(f"  [jman] Discovered {len(discovered)} repos with .mpp bundles")
     if not discovered:
         print("  [jman] Warning: empty result, keeping existing file")
         return {}
-    save_json(OUTPUT_PATH, discovered)
+    save_json(OUTPUT_PATH, dict(sorted(discovered.items(), key=lambda item: item[0].lower())))
     return discovered
 
 

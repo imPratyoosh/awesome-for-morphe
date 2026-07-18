@@ -560,6 +560,7 @@ def main():
                 except Exception as exception:
                     print(f"Failed to fetch app details for {package_name}: {exception}")
 
+    bundle_sources = dict(sorted(bundle_sources.items(), key=lambda item: item[0].lower()))
     write_json(BUNDLES_JSON_PATH, bundle_sources)
     print(f"Generated bundles.json with {len(bundle_sources)} bundles.")
 
