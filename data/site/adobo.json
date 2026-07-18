@@ -136,6 +136,34 @@
     "default": false
   },
   {
+    "name": "Disable bottom navigation bar auto-hide",
+    "description": "Prevents the bottom navigation bar from hiding when scrolling down.",
+    "default": false,
+    "compatiblePackages": [
+      {
+        "packageName": "com.reddit.frontpage",
+        "targets": [
+          {
+            "version": "2026.29.0"
+          },
+          {
+            "version": "2026.28.0"
+          },
+          {
+            "version": "2026.27.0"
+          },
+          {
+            "version": "2026.24.0"
+          },
+          {
+            "version": "2026.14.0"
+          }
+        ]
+      }
+    ],
+    "isPreRelease": true
+  },
+  {
     "name": "Disable Google Safe Browsing in WebView",
     "description": "Disables the Google Safe Browsing checks in WebView. This doesn't apply to WebView within the SDK Runtime.",
     "default": false
