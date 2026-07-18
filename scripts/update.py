@@ -18,9 +18,9 @@ ROOT = Path.cwd()
 DATA_DIR = ROOT / "data"
 BUNDLES_DIR = DATA_DIR / "bundles"
 PATCHES_DIR = DATA_DIR / "patches"
-SITE_DIR = DATA_DIR / "site"
-BUNDLES_JSON_PATH = DATA_DIR / "bundles.json"
-APPS_JSON_PATH = DATA_DIR / "apps.json"
+SITE_DIR = ROOT / "docs" / "patches"
+BUNDLES_JSON_PATH = ROOT / "docs" / "bundles.json"
+APPS_JSON_PATH = ROOT / "docs" / "apps.json"
 CONCURRENCY = 8
 GITHUB_CONCURRENCY = 3
 
@@ -483,14 +483,14 @@ def main():
 
                 if should_fetch:
                     app_tasks.add(package_name)
-        # Write to site/base.json
+        # Write to patches/base.json
         site_file_path = SITE_DIR / f"{base}.json"
         write_json(site_file_path, out_patches)
 
         latest_bundle_json = dev_json if latest == "dev" else stable_json
 
         # Update source_entry with the new schema
-        source_entry["patches"] = f"site/{base}.json"
+        source_entry["patches"] = f"patches/{base}.json"
         source_entry["createdAt"] = latest_bundle_json.get("created_at", "")
         source_entry["targetApps"] = target_apps
         source_entry["appCount"] = app_count

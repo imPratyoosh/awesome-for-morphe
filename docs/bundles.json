@@ -5,7 +5,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/AlexNaga?s=128",
     "stars": 7,
     "firstSeen": "2026-05-28T00:49:33",
-    "patches": "site/AlexNaga.json",
+    "patches": "patches/AlexNaga.json",
     "createdAt": "2026-05-05T11:51:41",
     "targetApps": [
       "se.matlistan.free"
@@ -18,7 +18,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/ImmortalZeus?s=128",
     "stars": 2,
     "firstSeen": "2026-05-15T03:20:18",
-    "patches": "site/ImmortalZeus.json",
+    "patches": "patches/ImmortalZeus.json",
     "createdAt": "2026-05-15T03:33:31",
     "targetApps": [
       "com.example.app"
@@ -31,7 +31,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/TheRealCrazyfuy?s=128",
     "stars": 3,
     "firstSeen": "2026-07-14T19:19:17",
-    "patches": "site/abeja.json",
+    "patches": "patches/abeja.json",
     "createdAt": "2026-07-14T14:04:50",
     "targetApps": [
       "com.android.gallery3d"
@@ -44,7 +44,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/abhis1n?s=128",
     "stars": 15,
     "firstSeen": "2026-04-30T02:13:07",
-    "patches": "site/abhis1n.json",
+    "patches": "patches/abhis1n.json",
     "createdAt": "2026-06-17T06:24:45",
     "targetApps": [
       "com.Splitwise.SplitwiseMobile"
@@ -57,7 +57,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/jkennethcarino?s=128",
     "stars": 190,
     "firstSeen": "2026-02-20T17:59:24",
-    "patches": "site/adobo.json",
+    "patches": "patches/adobo.json",
     "createdAt": "2026-07-15T15:38:52",
     "targetApps": [
       "com.google.android.inputmethod.latin",
@@ -73,7 +73,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/ajstrick81?s=128",
     "stars": 84,
     "firstSeen": "2026-05-25T15:05:44",
-    "patches": "site/ajstrick81-androidtv.json",
+    "patches": "patches/ajstrick81-androidtv.json",
     "createdAt": "2026-07-16T12:45:53",
     "targetApps": [
       "com.amazon.amazonvideo.livingroom",
@@ -95,7 +95,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/Almewty?s=128",
     "stars": 13,
     "firstSeen": "2026-01-29T04:31:55",
-    "patches": "site/almewty.json",
+    "patches": "patches/almewty.json",
     "createdAt": "2026-01-30T07:54:21",
     "targetApps": [
       "com.application.pokecardex",
@@ -110,7 +110,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/ameenalasady?s=128",
     "stars": 16,
     "firstSeen": "2026-05-07T05:03:56",
-    "patches": "site/ameen-morphe.json",
+    "patches": "patches/ameen-morphe.json",
     "createdAt": "2026-05-07T22:57:11",
     "targetApps": [
       "com.roidapp.photogrid",
@@ -124,7 +124,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/ameenalasady?s=128",
     "stars": 5,
     "firstSeen": "2026-05-04T02:02:43",
-    "patches": "site/ameenalasady.json",
+    "patches": "patches/ameenalasady.json",
     "createdAt": "2026-05-04T02:09:19",
     "targetApps": [
       "com.roidapp.photogrid"
@@ -137,7 +137,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/AmpleReVanced?s=128",
     "stars": 129,
     "firstSeen": "2026-03-29T10:56:47",
-    "patches": "site/amplerevanced.json",
+    "patches": "patches/amplerevanced.json",
     "createdAt": "2026-07-15T12:58:12",
     "targetApps": [
       "com.dcinside.app.android",
@@ -154,7 +154,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/anddea?s=128",
     "stars": 1789,
     "firstSeen": "2026-06-16T15:37:39",
-    "patches": "site/anddea.json",
+    "patches": "patches/anddea.json",
     "createdAt": "2026-07-16T16:12:10",
     "targetApps": [
       "com.google.android.apps.youtube.music",
@@ -168,7 +168,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/wchill?s=128",
     "stars": 51,
     "firstSeen": "2026-02-11T15:55:58",
-    "patches": "site/anddea-morphed.json",
+    "patches": "patches/anddea-morphed.json",
     "createdAt": "2026-02-11T15:55:58",
     "targetApps": [
       "com.google.android.apps.youtube.music",
@@ -186,7 +186,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/andronedev?s=128",
     "stars": 82,
     "firstSeen": "2026-01-05T16:06:30",
-    "patches": "site/andronedev.json",
+    "patches": "patches/andronedev.json",
     "createdAt": "2026-04-01T21:23:06",
     "targetApps": [
       "com.thetransitapp.droid"
@@ -199,7 +199,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/ariecos?s=128",
     "stars": 14,
     "firstSeen": "2026-04-28T00:47:20",
-    "patches": "site/ariecos.json",
+    "patches": "patches/ariecos.json",
     "createdAt": "2026-05-16T23:26:44",
     "targetApps": [
       "com.google.android.apps.bard",
@@ -213,7 +213,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/babyhuehnchen?s=128",
     "stars": 2,
     "firstSeen": "2026-07-13T17:12:18",
-    "patches": "site/babyhuehnchen.json",
+    "patches": "patches/babyhuehnchen.json",
     "createdAt": "2026-07-13T13:59:29",
     "targetApps": [
       "at.notrufnoe.edi"
@@ -226,7 +226,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/BholeyKaBhakt?s=128",
     "stars": 53,
     "firstSeen": "2026-05-12T07:00:00",
-    "patches": "site/bholeykabhakt.json",
+    "patches": "patches/bholeykabhakt.json",
     "createdAt": "2026-06-22T17:44:41",
     "targetApps": [
       "com.atmfee",
@@ -252,7 +252,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/binarymend?s=128",
     "stars": 129,
     "firstSeen": "2026-04-12T21:22:08",
-    "patches": "site/binarymend.json",
+    "patches": "patches/binarymend.json",
     "createdAt": "2026-04-27T12:49:57",
     "targetApps": [
       "app.symfonik.music.player",
@@ -271,7 +271,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/BrayDog2010?s=128",
     "stars": 3,
     "firstSeen": "2026-06-22T21:11:54",
-    "patches": "site/braydog2010.json",
+    "patches": "patches/braydog2010.json",
     "createdAt": "2026-06-22T23:17:46",
     "targetApps": [
       "com.dubani.dub"
@@ -284,7 +284,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/brosssh?s=128",
     "stars": 290,
     "firstSeen": "2026-03-10T19:56:44",
-    "patches": "site/brosssh.json",
+    "patches": "patches/brosssh.json",
     "createdAt": "2026-07-16T08:59:03",
     "targetApps": [
       "com.instagram.android",
@@ -301,7 +301,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/browzomje?s=128",
     "stars": 20,
     "firstSeen": "2026-06-23T16:20:25",
-    "patches": "site/browzomje.json",
+    "patches": "patches/browzomje.json",
     "createdAt": "2026-07-01T16:43:57",
     "targetApps": [
       "com.pinterest"
@@ -314,7 +314,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/bufferk?s=128",
     "stars": 19,
     "firstSeen": "2026-07-06T22:13:39",
-    "patches": "site/bufferk.json",
+    "patches": "patches/bufferk.json",
     "createdAt": "2026-07-17T20:43:55",
     "targetApps": [
       "com.Splitwise.SplitwiseMobile",
@@ -333,7 +333,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/durgesh0505?s=128",
     "stars": 8,
     "firstSeen": "2026-06-11T13:50:03",
-    "patches": "site/chiggi.json",
+    "patches": "patches/chiggi.json",
     "createdAt": "2026-06-24T01:02:13",
     "targetApps": [
       "com.crazygames.crazygamesapp",
@@ -350,7 +350,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/skulldogged?s=128",
     "stars": 2,
     "firstSeen": "2026-07-13T02:43:37",
-    "patches": "site/cobalt-morphe.json",
+    "patches": "patches/cobalt-morphe.json",
     "createdAt": "2026-07-14T00:34:52",
     "targetApps": [
       "com.google.android.youtube"
@@ -363,7 +363,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/docbt?s=128",
     "stars": 40,
     "firstSeen": "2026-03-21T15:09:32",
-    "patches": "site/docbt.json",
+    "patches": "patches/docbt.json",
     "createdAt": "2026-07-18T01:55:19",
     "targetApps": [
       "com.ebay.kleinanzeigen",
@@ -377,7 +377,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/quantavil?s=128",
     "stars": 27,
     "firstSeen": "2026-06-06T16:36:16",
-    "patches": "site/edge-morphe.json",
+    "patches": "patches/edge-morphe.json",
     "createdAt": "2026-06-11T08:29:13",
     "targetApps": [
       "com.microsoft.emmx"
@@ -390,7 +390,7 @@
     "avatarUrl": "https://secure.gravatar.com/avatar/d9da00cc6aa8cd8456262a7e9fff1dca8d39dbf321f0c74adbc3c5fb819ff288?s=128&d=identicon",
     "stars": 4,
     "firstSeen": "2026-06-20T17:36:44",
-    "patches": "site/ee-morphe.json",
+    "patches": "patches/ee-morphe.json",
     "createdAt": "2026-07-13T16:24:21",
     "targetApps": [
       "com.byairapp.android",
@@ -407,7 +407,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/HvQ?s=128",
     "stars": 7,
     "firstSeen": "2026-05-04T18:26:28",
-    "patches": "site/eksi.json",
+    "patches": "patches/eksi.json",
     "createdAt": "2026-05-06T07:04:53",
     "targetApps": [
       "com.eksiteknoloji.eksisozluk"
@@ -420,7 +420,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/eyalm2000?s=128",
     "stars": 23,
     "firstSeen": "2026-03-26T08:55:30",
-    "patches": "site/eyalm2000.json",
+    "patches": "patches/eyalm2000.json",
     "createdAt": "2026-03-26T08:55:30",
     "targetApps": [
       "com.aspiro.tidal"
@@ -433,7 +433,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/franticg33k?s=128",
     "stars": 6,
     "firstSeen": "2026-07-06T22:13:39",
-    "patches": "site/franticg33k.json",
+    "patches": "patches/franticg33k.json",
     "createdAt": "2026-07-14T10:01:16",
     "targetApps": [
       "com.byairapp.android",
@@ -453,7 +453,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/fangkampanat?s=128",
     "stars": 2,
     "firstSeen": "2026-07-14T19:19:17",
-    "patches": "site/gmaps.json",
+    "patches": "patches/gmaps.json",
     "createdAt": "2026-07-15T18:01:59",
     "targetApps": [
       "Google Maps"
@@ -466,7 +466,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/NekoGryphou?s=128",
     "stars": 4,
     "firstSeen": "2026-07-06T22:13:39",
-    "patches": "site/gryphous-morphe.json",
+    "patches": "patches/gryphous-morphe.json",
     "createdAt": "2026-07-06T20:32:07",
     "targetApps": [
       "com.crunchyroll.crunchyroid"
@@ -479,7 +479,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/humzakh?s=128",
     "stars": 19,
     "firstSeen": "2026-06-21T03:33:17",
-    "patches": "site/hk-morphe.json",
+    "patches": "patches/hk-morphe.json",
     "createdAt": "2026-07-08T03:42:18",
     "targetApps": [
       "com.laurencedawson.reddit_sync",
@@ -494,7 +494,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/hoo-dles?s=128",
     "stars": 833,
     "firstSeen": "2026-01-21T03:33:21",
-    "patches": "site/hoo-dles.json",
+    "patches": "patches/hoo-dles.json",
     "createdAt": "2026-07-17T03:40:06",
     "targetApps": [
       "app.ttmikstories.android",
@@ -558,7 +558,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/arandomhooman?s=128",
     "stars": 94,
     "firstSeen": "2026-06-15T20:58:55",
-    "patches": "site/hoomans-morphe.json",
+    "patches": "patches/hoomans-morphe.json",
     "createdAt": "2026-07-12T21:54:44",
     "targetApps": [
       "ak.alizandro.smartaudiobookplayer",
@@ -611,7 +611,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/hxreborn?s=128",
     "stars": 2,
     "firstSeen": "2026-07-17T19:07:01",
-    "patches": "site/hxreborn.json",
+    "patches": "patches/hxreborn.json",
     "createdAt": "2026-07-17T18:43:34",
     "targetApps": [
       "com.michaldrabik.showly2",
@@ -626,7 +626,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/icysymmetra?s=128",
     "stars": 131,
     "firstSeen": "2026-05-30T22:48:06",
-    "patches": "site/icysymmetra-tiktok.json",
+    "patches": "patches/icysymmetra-tiktok.json",
     "createdAt": "2026-06-17T16:13:14",
     "targetApps": [
       "com.zhiliaoapp.musically"
@@ -639,7 +639,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/bdgerszewski?s=128",
     "stars": 5,
     "firstSeen": "2026-06-21T21:50:44",
-    "patches": "site/ihealth-morphe.json",
+    "patches": "patches/ihealth-morphe.json",
     "createdAt": "2026-06-19T03:53:00",
     "targetApps": [
       "com.ihealthlabs.MyVitalsPro",
@@ -653,7 +653,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/Ikuradachi?s=128",
     "stars": 1,
     "firstSeen": "2026-07-17T19:07:01",
-    "patches": "site/ikura.json",
+    "patches": "patches/ikura.json",
     "createdAt": "2026-07-17T09:07:41",
     "targetApps": [
       "com.example.app",
@@ -667,7 +667,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/IMXEren?s=128",
     "stars": 18,
     "firstSeen": "2026-05-21T22:30:00",
-    "patches": "site/imxeren.json",
+    "patches": "patches/imxeren.json",
     "createdAt": "2026-06-26T23:30:02",
     "targetApps": [
       "com.laurencedawson.reddit_sync",
@@ -681,7 +681,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/itsthejoker?s=128",
     "stars": 1,
     "firstSeen": "2026-07-14T19:19:17",
-    "patches": "site/itsthejoker.json",
+    "patches": "patches/itsthejoker.json",
     "createdAt": "2026-07-14T19:23:12",
     "targetApps": [
       "com.rookery.courier"
@@ -694,7 +694,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/jasonwu1994?s=128",
     "stars": 135,
     "firstSeen": "2026-04-07T13:23:23",
-    "patches": "site/jasonwu1994.json",
+    "patches": "patches/jasonwu1994.json",
     "createdAt": "2026-06-30T22:42:36",
     "targetApps": [
       "com.google.android.inputmethod.latin"
@@ -707,7 +707,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/Joristdh?s=128",
     "stars": 11,
     "firstSeen": "2026-04-14T15:21:40",
-    "patches": "site/joristdh.json",
+    "patches": "patches/joristdh.json",
     "createdAt": "2026-06-24T18:29:20",
     "targetApps": [
       "com.laurencedawson.reddit_sync",
@@ -722,7 +722,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/Joussflls10?s=128",
     "stars": 2,
     "firstSeen": "2026-07-14T05:29:43",
-    "patches": "site/jouss.json",
+    "patches": "patches/jouss.json",
     "createdAt": "2026-07-13T17:39:19",
     "targetApps": [
       "app.vinztech.trackit",
@@ -757,7 +757,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/kareemlukitomo?s=128",
     "stars": 5,
     "firstSeen": "2026-04-30T00:02:56",
-    "patches": "site/kareemlukitomo.json",
+    "patches": "patches/kareemlukitomo.json",
     "createdAt": "2026-04-30T00:02:56",
     "targetApps": [
       "com.instagram.android",
@@ -774,7 +774,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/kolaron?s=128",
     "stars": 9,
     "firstSeen": "2026-05-16T07:00:00",
-    "patches": "site/kolaron.json",
+    "patches": "patches/kolaron.json",
     "createdAt": "2026-05-15T06:39:27",
     "targetApps": [
       "cz.mafra.jizdnirady"
@@ -787,7 +787,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/kondratjev?s=128",
     "stars": 16,
     "firstSeen": "2026-06-11T14:43:14",
-    "patches": "site/kondratjev.json",
+    "patches": "patches/kondratjev.json",
     "createdAt": "2026-07-05T13:34:07",
     "targetApps": [
       "air.com.musclemotion.strength.mobile",
@@ -811,7 +811,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/kiraio-moe?s=128",
     "stars": 21,
     "firstSeen": "2026-06-05T15:48:45",
-    "patches": "site/lain.json",
+    "patches": "patches/lain.json",
     "createdAt": "2026-07-18T01:49:32",
     "targetApps": [
       "cn.adonet.proxyevery",
@@ -854,7 +854,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/LaKakaReal?s=128",
     "stars": 12,
     "firstSeen": "2026-06-11T14:22:48",
-    "patches": "site/lakaka.json",
+    "patches": "patches/lakaka.json",
     "createdAt": "2026-07-09T05:27:58",
     "targetApps": [
       "com.instapaper.android",
@@ -869,7 +869,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/ethanm6?s=128",
     "stars": 1,
     "firstSeen": "2026-07-12T05:58:07",
-    "patches": "site/letterboxd-stremio.json",
+    "patches": "patches/letterboxd-stremio.json",
     "createdAt": "2026-07-15T16:53:46",
     "targetApps": [
       "com.letterboxd.letterboxd"
@@ -882,7 +882,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/loskutov?s=128",
     "stars": 9,
     "firstSeen": "2026-04-28T23:06:10",
-    "patches": "site/loskutov.json",
+    "patches": "patches/loskutov.json",
     "createdAt": "2026-04-30T21:44:02",
     "targetApps": [
       "com.google.android.apps.youtube.music",
@@ -896,7 +896,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/Lynx6319?s=128",
     "stars": 5,
     "firstSeen": "2026-05-05T14:52:24",
-    "patches": "site/lynx6319.json",
+    "patches": "patches/lynx6319.json",
     "createdAt": "2026-05-05T14:52:24",
     "targetApps": [
       "com.google.android.youtube"
@@ -909,7 +909,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/meridianfresco?s=128",
     "stars": 46,
     "firstSeen": "2026-04-12T04:45:39",
-    "patches": "site/meridianfresco.json",
+    "patches": "patches/meridianfresco.json",
     "createdAt": "2026-04-11T21:51:39",
     "targetApps": [
       "com.facebook.katana"
@@ -922,7 +922,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/MiguelNinja19?s=128",
     "stars": 10,
     "firstSeen": "2026-07-09T04:53:42",
-    "patches": "site/miguel.json",
+    "patches": "patches/miguel.json",
     "createdAt": "2026-07-18T01:13:58",
     "targetApps": [
       "air.com.midjiwan.polytopia",
@@ -941,7 +941,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/Utsavrajputt?s=128",
     "stars": 5,
     "firstSeen": "2026-07-06T22:13:39",
-    "patches": "site/modx.json",
+    "patches": "patches/modx.json",
     "createdAt": "2026-07-16T05:38:06",
     "targetApps": [
       "com.mxtech.videoplayer.ad"
@@ -954,7 +954,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/MorpheApp?s=128",
     "stars": 2889,
     "firstSeen": "2026-06-23T13:04:19",
-    "patches": "site/morphe.json",
+    "patches": "patches/morphe.json",
     "createdAt": "2026-07-16T09:04:26",
     "targetApps": [
       "com.google.android.apps.youtube.music",
@@ -969,7 +969,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/Ripthulhu?s=128",
     "stars": 3,
     "firstSeen": "2026-06-30T13:38:59",
-    "patches": "site/morphe-google.json",
+    "patches": "patches/morphe-google.json",
     "createdAt": "2026-06-30T13:38:59",
     "targetApps": [
       "com.google.android.googlequicksearchbox"
@@ -982,7 +982,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/andronedev?s=128",
     "stars": 3,
     "firstSeen": "2026-06-19T20:53:34",
-    "patches": "site/morphe-portal.json",
+    "patches": "patches/morphe-portal.json",
     "createdAt": "2026-06-19T20:53:34",
     "targetApps": [
       "com.google.android.apps.youtube.music",
@@ -996,7 +996,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/Pa-kon?s=128",
     "stars": 5,
     "firstSeen": "2026-06-28T11:39:03",
-    "patches": "site/morphe-screenshot.json",
+    "patches": "patches/morphe-screenshot.json",
     "createdAt": "2026-06-28T11:39:03",
     "targetApps": [],
     "appCount": 0
@@ -1007,7 +1007,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/Tornillo2?s=128",
     "stars": 1,
     "firstSeen": "2026-07-07T19:54:09",
-    "patches": "site/movistar-block-ads.json",
+    "patches": "patches/movistar-block-ads.json",
     "createdAt": "2026-07-04T22:42:19",
     "targetApps": [
       "com.movistarplus.androidtv"
@@ -1020,7 +1020,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/Nai64?s=128",
     "stars": 177,
     "firstSeen": "2026-07-03T02:41:59",
-    "patches": "site/nai64.json",
+    "patches": "patches/nai64.json",
     "createdAt": "2026-07-05T20:38:55",
     "targetApps": [],
     "appCount": 0
@@ -1031,7 +1031,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/kun-codes?s=128",
     "stars": 7,
     "firstSeen": "2026-06-28T09:33:42",
-    "patches": "site/npci-bhim.json",
+    "patches": "patches/npci-bhim.json",
     "createdAt": "2026-06-28T09:33:42",
     "targetApps": [
       "in.org.npci.upiapp"
@@ -1044,7 +1044,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/byehi98?s=128",
     "stars": 5,
     "firstSeen": "2026-07-04T20:11:48",
-    "patches": "site/okish-morphe.json",
+    "patches": "patches/okish-morphe.json",
     "createdAt": "2026-07-04T04:17:25",
     "targetApps": [
       "com.generalcomp.truecloud"
@@ -1057,7 +1057,7 @@
     "avatarUrl": "https://gitlab.com/uploads/-/system/user/avatar/10208861/avatar.png?width=128",
     "stars": 55,
     "firstSeen": "2026-05-11T07:00:00",
-    "patches": "site/paresh-maheshwari.json",
+    "patches": "patches/paresh-maheshwari.json",
     "createdAt": "2026-07-07T17:45:47",
     "targetApps": [
       "app.vinztech.trackit",
@@ -1091,7 +1091,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/wchill?s=128",
     "stars": 711,
     "firstSeen": "2026-01-03T08:12:00",
-    "patches": "site/patcheddit.json",
+    "patches": "patches/patcheddit.json",
     "createdAt": "2026-04-09T06:59:40",
     "targetApps": [
       "com.andrewshu.android.reddit",
@@ -1121,7 +1121,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/PawiX25?s=128",
     "stars": 7,
     "firstSeen": "2026-05-14T00:53:02",
-    "patches": "site/pepper-morphe.json",
+    "patches": "patches/pepper-morphe.json",
     "createdAt": "2026-05-14T00:53:02",
     "targetApps": [
       "Chollometros",
@@ -1143,7 +1143,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/alejandrobellver?s=128",
     "stars": 3,
     "firstSeen": "2026-07-12T05:58:07",
-    "patches": "site/pichiwa.json",
+    "patches": "patches/pichiwa.json",
     "createdAt": "2026-07-17T06:59:16",
     "targetApps": [
       "com.whatsapp"
@@ -1156,7 +1156,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/crimera?s=128",
     "stars": 4292,
     "firstSeen": "2026-03-10T21:59:56",
-    "patches": "site/piko.json",
+    "patches": "patches/piko.json",
     "createdAt": "2026-07-12T13:22:24",
     "targetApps": [
       "com.instagram.android",
@@ -1170,7 +1170,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/SouBryan?s=128",
     "stars": 5,
     "firstSeen": "2026-07-08T02:37:25",
-    "patches": "site/pinterest-morphed.json",
+    "patches": "patches/pinterest-morphed.json",
     "createdAt": "2026-07-17T04:24:35",
     "targetApps": [
       "com.pinterest"
@@ -1183,7 +1183,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/PixelPusher247?s=128",
     "stars": 22,
     "firstSeen": "2026-03-23T15:28:16",
-    "patches": "site/pixelpusher247.json",
+    "patches": "patches/pixelpusher247.json",
     "createdAt": "2026-03-31T09:28:51",
     "targetApps": [
       "tv.trakt.trakt"
@@ -1196,7 +1196,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/polka-bear?s=128",
     "stars": 16,
     "firstSeen": "2026-04-13T14:32:14",
-    "patches": "site/polka-bear.json",
+    "patches": "patches/polka-bear.json",
     "createdAt": "2026-04-14T10:04:57",
     "targetApps": [
       "com.ipoji.app",
@@ -1210,7 +1210,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/PrathxmOp?s=128",
     "stars": 39,
     "firstSeen": "2026-06-30T14:24:47",
-    "patches": "site/prathxm.json",
+    "patches": "patches/prathxm.json",
     "createdAt": "2026-07-14T16:29:24",
     "targetApps": [
       "com.chess"
@@ -1223,7 +1223,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/PrathxmOp?s=128",
     "stars": 1,
     "firstSeen": "2026-06-28T15:27:28",
-    "patches": "site/prathxm-ytmusic.json",
+    "patches": "patches/prathxm-ytmusic.json",
     "createdAt": "2026-06-28T15:27:28",
     "targetApps": [
       "com.google.android.apps.youtube.music"
@@ -1236,7 +1236,7 @@
     "avatarUrl": "https://secure.gravatar.com/avatar/8569f3472548f272a1313275aa2ad623ea5756631f222e4f045abc3b7ae3949d?s=128&d=identicon",
     "stars": 4,
     "firstSeen": "2026-06-05T01:03:40",
-    "patches": "site/proguard.json",
+    "patches": "patches/proguard.json",
     "createdAt": "2026-06-05T01:03:40",
     "targetApps": [
       "com.java.inspector"
@@ -1249,7 +1249,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/totsiaw?s=128",
     "stars": 5,
     "firstSeen": "2026-07-14T05:29:43",
-    "patches": "site/proxma.json",
+    "patches": "patches/proxma.json",
     "createdAt": "2026-07-17T12:19:34",
     "targetApps": [
       "com.blueinklabs.investifystocks.free",
@@ -1266,7 +1266,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/rabilrbl?s=128",
     "stars": 22,
     "firstSeen": "2026-03-31T00:06:52",
-    "patches": "site/rabilrbl.json",
+    "patches": "patches/rabilrbl.json",
     "createdAt": "2026-06-04T10:28:44",
     "targetApps": [
       "droom.sleepIfUCan"
@@ -1279,7 +1279,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/RealCyberwash?s=128",
     "stars": 24,
     "firstSeen": "2026-03-29T22:40:41",
-    "patches": "site/realcyberwash.json",
+    "patches": "patches/realcyberwash.json",
     "createdAt": "2026-04-06T18:30:55",
     "targetApps": [
       "ru.oneme.app"
@@ -1292,7 +1292,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/lyyako?s=128",
     "stars": 1,
     "firstSeen": "2026-06-12T18:29:37",
-    "patches": "site/realme-link.json",
+    "patches": "patches/realme-link.json",
     "createdAt": "2026-06-12T19:32:24",
     "targetApps": [
       "com.realme.link"
@@ -1305,7 +1305,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/rushiranpise?s=128",
     "stars": 1,
     "firstSeen": "2026-07-16T08:12:29",
-    "patches": "site/rivanced-universal.json",
+    "patches": "patches/rivanced-universal.json",
     "createdAt": "2026-07-17T09:02:17",
     "targetApps": [],
     "appCount": 0
@@ -1316,7 +1316,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/RookieEnough?s=128",
     "stars": 981,
     "firstSeen": "2026-03-02T00:10:09",
-    "patches": "site/rookieenough.json",
+    "patches": "patches/rookieenough.json",
     "createdAt": "2026-05-13T13:27:20",
     "targetApps": [
       "ch.protonmail.android",
@@ -1362,7 +1362,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/rushiranpise?s=128",
     "stars": 60,
     "firstSeen": "2026-06-02T17:21:27",
-    "patches": "site/rushiranpise.json",
+    "patches": "patches/rushiranpise.json",
     "createdAt": "2026-07-17T07:16:34",
     "targetApps": [
       "ai.topicfinder.podcastdiscovery",
@@ -1520,7 +1520,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/wchill?s=128",
     "stars": 240,
     "firstSeen": "2026-03-05T13:52:42",
-    "patches": "site/rvx-morphed.json",
+    "patches": "patches/rvx-morphed.json",
     "createdAt": "2026-03-05T14:38:07",
     "targetApps": [
       "com.google.android.apps.youtube.music",
@@ -1534,7 +1534,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/saieshshirodkar?s=128",
     "stars": 2,
     "firstSeen": "2026-07-12T05:58:07",
-    "patches": "site/saiesh.json",
+    "patches": "patches/saiesh.json",
     "createdAt": "2026-07-15T18:07:09",
     "targetApps": [
       "com.nicedayapps.iss_free",
@@ -1549,7 +1549,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/bigyank?s=128",
     "stars": 4,
     "firstSeen": "2026-06-24T00:38:59",
-    "patches": "site/samsung-morphe.json",
+    "patches": "patches/samsung-morphe.json",
     "createdAt": "2026-06-30T13:25:55",
     "targetApps": [
       "com.sec.android.app.shealth"
@@ -1562,7 +1562,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/Seobject?s=128",
     "stars": 1,
     "firstSeen": "2026-07-14T19:19:17",
-    "patches": "site/seobject.json",
+    "patches": "patches/seobject.json",
     "createdAt": "2026-07-17T04:28:14",
     "targetApps": [
       "com.google.android.apps.youtube.music"
@@ -1575,7 +1575,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/shaun-the-sheep-patches?s=128",
     "stars": 1,
     "firstSeen": "2026-07-07T03:19:37",
-    "patches": "site/shaun-sheep.json",
+    "patches": "patches/shaun-sheep.json",
     "createdAt": "2026-07-12T08:51:41",
     "targetApps": [
       "com.delphicoder.flud",
@@ -1591,7 +1591,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/sjshb57?s=128",
     "stars": 27,
     "firstSeen": "2026-06-18T09:18:21",
-    "patches": "site/sjshb57-pairip.json",
+    "patches": "patches/sjshb57-pairip.json",
     "createdAt": "2026-07-13T02:42:37",
     "targetApps": [],
     "appCount": 0
@@ -1602,7 +1602,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/ch3thanhs?s=128",
     "stars": 1,
     "firstSeen": "2026-07-17T19:07:01",
-    "patches": "site/stylus.json",
+    "patches": "patches/stylus.json",
     "createdAt": "2026-07-17T16:26:20",
     "targetApps": [
       "com.reddit.frontpage"
@@ -1615,7 +1615,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/MoonShadowKeeper?s=128",
     "stars": 4,
     "firstSeen": "2026-06-28T14:29:36",
-    "patches": "site/telegram-morphe.json",
+    "patches": "patches/telegram-morphe.json",
     "createdAt": "2026-06-28T14:29:36",
     "targetApps": [
       "org.telegram.messenger.web"
@@ -1628,7 +1628,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/osirisad?s=128",
     "stars": 2,
     "firstSeen": "2026-06-24T12:35:14",
-    "patches": "site/ts2.json",
+    "patches": "patches/ts2.json",
     "createdAt": "2026-06-22T02:56:46",
     "targetApps": [
       "com.teamsnap.teamsnap"
@@ -1641,7 +1641,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/variablenine?s=128",
     "stars": 1,
     "firstSeen": "2026-07-16T08:12:29",
-    "patches": "site/variablenine.json",
+    "patches": "patches/variablenine.json",
     "createdAt": "2026-07-17T23:58:21",
     "targetApps": [
       "com.google.android.apps.youtube.music",
@@ -1656,7 +1656,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/vladon?s=128",
     "stars": 3,
     "firstSeen": "2026-04-20T14:53:42",
-    "patches": "site/vladon.json",
+    "patches": "patches/vladon.json",
     "createdAt": "2026-04-20T14:53:42",
     "targetApps": [
       "ru.yandex.yandexnavi"
@@ -1669,7 +1669,7 @@
     "avatarUrl": "https://secure.gravatar.com/avatar/8569f3472548f272a1313275aa2ad623ea5756631f222e4f045abc3b7ae3949d?s=128&d=identicon",
     "stars": 34,
     "firstSeen": "2026-06-16T14:53:15",
-    "patches": "site/x-shim.json",
+    "patches": "patches/x-shim.json",
     "createdAt": "2026-07-03T00:31:26",
     "targetApps": [
       "com.twitter.android"
@@ -1682,7 +1682,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/Xhehab?s=128",
     "stars": 2,
     "firstSeen": "2026-07-04T06:23:58",
-    "patches": "site/xhehab.json",
+    "patches": "patches/xhehab.json",
     "createdAt": "2026-07-16T19:22:50",
     "targetApps": [
       "app.mhphysique.fitness",
@@ -1707,7 +1707,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/xob0t?s=128",
     "stars": 20,
     "firstSeen": "2026-05-08T17:36:45",
-    "patches": "site/xob0t.json",
+    "patches": "patches/xob0t.json",
     "createdAt": "2026-07-07T11:05:57",
     "targetApps": [
       "com.avito.android",
@@ -1723,7 +1723,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/ynotzort?s=128",
     "stars": 1,
     "firstSeen": "2026-06-25T14:45:29",
-    "patches": "site/ynotzort.json",
+    "patches": "patches/ynotzort.json",
     "createdAt": "2026-06-25T14:51:54",
     "targetApps": [
       "com.targo_prod.bad"
@@ -1736,7 +1736,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/cesbar?s=128",
     "stars": 8,
     "firstSeen": "2026-06-17T15:54:42",
-    "patches": "site/zpatches.json",
+    "patches": "patches/zpatches.json",
     "createdAt": "2026-06-15T17:16:26",
     "targetApps": [
       "com.jcdecaux.vls.lyon",

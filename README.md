@@ -1,6 +1,6 @@
 ### [nvbangg/awesome-for-morphe](https://github.com/nvbangg/awesome-for-morphe)
 
-🔍 [Awesome for Morphe Website](https://nvbangg.github.io/awesome-for-morphe) [![Source](https://img.shields.io/badge/Source-gray?logo=github)](https://github.com/nvbangg/awesome-for-morphe/tree/gh-pages)
+🔍 [Awesome for Morphe Website](https://nvbangg.github.io/awesome-for-morphe)
 
 > [!NOTE]
 > 🌐 A curated list of all Morphe resources and projects.  

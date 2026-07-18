@@ -10,10 +10,10 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data"
 PATCHES_DIR = DATA_DIR / "patches"
 HISTORY_PATH = DATA_DIR / "history.json"
-APPS_JSON_PATH = DATA_DIR / "apps.json"
-SKIP_WORDS_PATH = ROOT / "assets" / "skip-words.json"
+APPS_JSON_PATH = ROOT / "docs" / "apps.json"
+SKIP_WORDS_PATH = ROOT / "docs" / "assets" / "skip-words.json"
 WHATS_NEW_PATH = ROOT / "whats-new.md"
-WHATS_NEW_JSON_PATH = DATA_DIR / "whats-new.json"
+WHATS_NEW_JSON_PATH = ROOT / "docs" / "whats-new.json"
 
 
 def read_json(path, default=None):

@@ -586,8 +586,8 @@ const app = createApp({
       isWhatsNewLoading.value = true;
       try {
         const [history, apps] = await Promise.all([
-          fetchJson(new URL("../data/whats-new.json", import.meta.url)),
-          fetchJson(new URL("../data/apps.json", import.meta.url)),
+          fetchJson(new URL("../whats-new.json", import.meta.url)),
+          fetchJson(new URL("../apps.json", import.meta.url)),
         ]);
         whatsNewHistory.value = history || [];
         whatsNewAppsData.value = apps || {};

@@ -98,7 +98,7 @@ function packages(patch) {
 
 async function loadSource(bundleKey, bundleObj, namesMap, skipSet) {
   if (!bundleObj.patches) return [];
-  const listUrl = new URL(`../data/${bundleObj.patches}`, import.meta.url);
+  const listUrl = new URL(`../${bundleObj.patches}`, import.meta.url);
   const list = await fetchJson(listUrl).catch(() => null);
 
   const repo = bundleObj.repo || "";
@@ -155,8 +155,8 @@ export async function loadInitialData(priorityKeys = [], onPatchLoaded) {
   dataCache.set("latest", cachePromise);
 
   const [namesMap, sources, skipWordsArray] = await Promise.all([
-    fetchJson(new URL("../data/apps.json", import.meta.url)).catch(() => ({})),
-    fetchJson(new URL(`../data/bundles.json`, import.meta.url)).catch(() => ({})),
+    fetchJson(new URL("../apps.json", import.meta.url)).catch(() => ({})),
+    fetchJson(new URL(`../bundles.json`, import.meta.url)).catch(() => ({})),
     fetchJson(new URL("./skip-words.json", import.meta.url)).catch(() => []),
   ]);
 

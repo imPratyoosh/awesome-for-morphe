@@ -18,7 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
         with:
-          ref: gh-pages
+          ref: main
 
       - name: Download and process data
         run: |
@@ -47,9 +47,9 @@ jobs:
             TAG=$(date +'%Y.%m.%d')
             DAY=$(date +'%B %-d')
 
-            git add data/
+            git add data/ docs/
             git commit -m "Update release history (${TAG})"
-            git push origin HEAD:gh-pages
+            git push origin HEAD:main
 
             echo "changed=true" >> $GITHUB_OUTPUT
             echo "TAG=${TAG}" >> $GITHUB_ENV
