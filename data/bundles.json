@@ -1363,7 +1363,7 @@
     "stars": 60,
     "firstSeen": "2026-06-02T17:21:27",
     "patches": "site/rushiranpise.json",
-    "createdAt": "2026-07-17T07:16:34",
+    "createdAt": "2026-07-18T05:26:03",
     "targetApps": [
       "ai.topicfinder.podcastdiscovery",
       "alldocumentreader.office.viewer.filereader.pdfviewer",
@@ -1402,6 +1402,7 @@
       "com.community.mbox.tv",
       "com.community.oneroom",
       "com.cpuid.cpu_z",
+      "com.delphicoder.flud",
       "com.dubox.drive",
       "com.duolingo",
       "com.dywx.larkplayer",
@@ -1487,6 +1488,7 @@
       "com.wolfram.android.alphapro",
       "com.yatrirailways.yatri",
       "cz.mroczis.netmonster",
+      "cz.seznam.mapy",
       "de.komoot.android",
       "eu.darken.myperm",
       "eu.duong.imagedatefixer",
@@ -1512,7 +1514,7 @@
       "sp0n.citizen",
       "verbosus.pialytic"
     ],
-    "appCount": 146
+    "appCount": 148
   },
   "rvx-morphed": {
     "source": "github",
@@ -1642,7 +1644,7 @@
     "stars": 1,
     "firstSeen": "2026-07-16T08:12:29",
     "patches": "site/variablenine.json",
-    "createdAt": "2026-07-17T23:58:21",
+    "createdAt": "2026-07-18T06:22:34",
     "targetApps": [
       "com.google.android.apps.youtube.music",
       "com.google.android.youtube",
