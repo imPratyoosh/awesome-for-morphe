@@ -58,7 +58,7 @@
     "stars": 191,
     "firstSeen": "2026-02-20T17:59:24",
     "patches": "site/adobo.json",
-    "createdAt": "2026-07-15T15:38:52",
+    "createdAt": "2026-07-18T14:37:37",
     "targetApps": [
       "com.google.android.inputmethod.latin",
       "com.imdb.mobile",
@@ -74,7 +74,7 @@
     "stars": 84,
     "firstSeen": "2026-05-25T15:05:44",
     "patches": "site/ajstrick81-androidtv.json",
-    "createdAt": "2026-07-16T12:45:53",
+    "createdAt": "2026-07-18T14:31:30",
     "targetApps": [
       "com.amazon.amazonvideo.livingroom",
       "com.bamnetworks.mobile.android.gameday.atbat",
@@ -923,17 +923,18 @@
     "stars": 12,
     "firstSeen": "2026-07-09T04:53:42",
     "patches": "site/miguel.json",
-    "createdAt": "2026-07-18T01:13:58",
+    "createdAt": "2026-07-18T14:51:21",
     "targetApps": [
       "air.com.midjiwan.polytopia",
       "com.IvanAF.ClimbAMIYPfree",
       "com.ea.game.pvzfree_row",
+      "com.mobge.Oddmar",
       "com.rubygames.assassin",
       "diozz.cubex",
       "fi.twomenandadog.zombiecatchers",
       "jpark.AOS5"
     ],
-    "appCount": 7
+    "appCount": 8
   },
   "modx": {
     "source": "github",

@@ -1977,5 +1977,9 @@
   "io.github.sds100.keymapper": {
     "name": "Key Mapper",
     "iconUrl": "https://play-lh.googleusercontent.com/2fxrXQ0nijQGn1wQvEhzmbEvG95fCaq-Dsfs21YdElspco-IONaSHP04BDgA6Z5nLRGaL1WCJ96dhD5QigrjIQ=s64"
+  },
+  "com.mobge.Oddmar": {
+    "name": "Oddmar",
+    "iconUrl": "https://play-lh.googleusercontent.com/b9_EyCfljqMQpodvUGUHVni68pG3irH4M_a167nO0FMCY7EKJXrEUX64xXwPPIo3eJEqhN3hh4hrAiUWD8ihdQ=s64"
   }
 }
