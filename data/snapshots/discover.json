@@ -1,5 +1,5 @@
 {
-  "jman_tree_sha": "a6c67ad5d8f373f2afda3b05d278c294bffea06d",
+  "jman_tree_sha": "59a4af822db4860ae65f84df2893b543f338e35f",
   "jman_bundles": {
     "1fexd": {
       "sha": "4428619fe1755f86c0bd9d8fb5762fcc8c17b43a",
@@ -18,11 +18,11 @@
       "key": "github:abhis1n/Morphe-Patches"
     },
     "adobo": {
-      "sha": "ea7054895078d91530990d913ed47e5f912fe6cb",
+      "sha": "0094267f449e73f579dc3c5b1e91dbf5afe6d6b0",
       "key": "github:jkennethcarino/adobo"
     },
     "ajstrick81-androidtv": {
-      "sha": "6802a8e0fa36652a8d1c850bd2ae089d5aecc8fe",
+      "sha": "8960d9ed6046a897c05d73f1055806e9207ec99a",
       "key": "github:ajstrick81/morphe-androidtv-patches"
     },
     "AlexNaga": {
@@ -338,7 +338,7 @@
       "key": "github:meridianfresco/morphe-meta-patches"
     },
     "miguel": {
-      "sha": "749376b49ef3fd27c39a31caaa37465f7b1b8fc6",
+      "sha": "9587a39a8be299cbbfde6770d54237f2df110f8d",
       "key": "github:MiguelNinja19/miguel-morphe-patches"
     },
     "modx": {

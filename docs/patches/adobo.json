@@ -107,16 +107,16 @@
         "packageName": "com.reddit.frontpage",
         "targets": [
           {
+            "version": "2026.29.0"
+          },
+          {
             "version": "2026.28.0"
           },
           {
             "version": "2026.27.0"
           },
           {
-            "version": "2026.26.0"
-          },
-          {
-            "version": "2026.25.0"
+            "version": "2026.24.0"
           },
           {
             "version": "2026.14.0"
@@ -149,16 +149,16 @@
         "packageName": "com.reddit.frontpage",
         "targets": [
           {
+            "version": "2026.29.0"
+          },
+          {
             "version": "2026.28.0"
           },
           {
             "version": "2026.27.0"
           },
           {
-            "version": "2026.26.0"
-          },
-          {
-            "version": "2026.25.0"
+            "version": "2026.24.0"
           },
           {
             "version": "2026.14.0"
@@ -177,16 +177,16 @@
         "packageName": "com.reddit.frontpage",
         "targets": [
           {
+            "version": "2026.29.0"
+          },
+          {
             "version": "2026.28.0"
           },
           {
             "version": "2026.27.0"
           },
           {
-            "version": "2026.26.0"
-          },
-          {
-            "version": "2026.25.0"
+            "version": "2026.24.0"
           },
           {
             "version": "2026.14.0"
@@ -203,16 +203,16 @@
         "packageName": "com.reddit.frontpage",
         "targets": [
           {
+            "version": "2026.29.0"
+          },
+          {
             "version": "2026.28.0"
           },
           {
             "version": "2026.27.0"
           },
           {
-            "version": "2026.26.0"
-          },
-          {
-            "version": "2026.25.0"
+            "version": "2026.24.0"
           },
           {
             "version": "2026.14.0"
@@ -297,16 +297,16 @@
         "packageName": "com.reddit.frontpage",
         "targets": [
           {
+            "version": "2026.29.0"
+          },
+          {
             "version": "2026.28.0"
           },
           {
             "version": "2026.27.0"
           },
           {
-            "version": "2026.26.0"
-          },
-          {
-            "version": "2026.25.0"
+            "version": "2026.24.0"
           },
           {
             "version": "2026.14.0"
@@ -323,16 +323,16 @@
         "packageName": "com.reddit.frontpage",
         "targets": [
           {
+            "version": "2026.29.0"
+          },
+          {
             "version": "2026.28.0"
           },
           {
             "version": "2026.27.0"
           },
           {
-            "version": "2026.26.0"
-          },
-          {
-            "version": "2026.25.0"
+            "version": "2026.24.0"
           },
           {
             "version": "2026.14.0"
@@ -409,16 +409,16 @@
         "packageName": "com.reddit.frontpage",
         "targets": [
           {
+            "version": "2026.29.0"
+          },
+          {
             "version": "2026.28.0"
           },
           {
             "version": "2026.27.0"
           },
           {
-            "version": "2026.26.0"
-          },
-          {
-            "version": "2026.25.0"
+            "version": "2026.24.0"
           },
           {
             "version": "2026.14.0"
@@ -436,16 +436,16 @@
         "packageName": "com.reddit.frontpage",
         "targets": [
           {
+            "version": "2026.29.0"
+          },
+          {
             "version": "2026.28.0"
           },
           {
             "version": "2026.27.0"
           },
           {
-            "version": "2026.26.0"
-          },
-          {
-            "version": "2026.25.0"
+            "version": "2026.24.0"
           },
           {
             "version": "2026.14.0"
@@ -463,16 +463,16 @@
         "packageName": "com.reddit.frontpage",
         "targets": [
           {
+            "version": "2026.29.0"
+          },
+          {
             "version": "2026.28.0"
           },
           {
             "version": "2026.27.0"
           },
           {
-            "version": "2026.26.0"
-          },
-          {
-            "version": "2026.25.0"
+            "version": "2026.24.0"
           },
           {
             "version": "2026.14.0"
@@ -489,16 +489,16 @@
         "packageName": "com.reddit.frontpage",
         "targets": [
           {
+            "version": "2026.29.0"
+          },
+          {
             "version": "2026.28.0"
           },
           {
             "version": "2026.27.0"
           },
           {
-            "version": "2026.26.0"
-          },
-          {
-            "version": "2026.25.0"
+            "version": "2026.24.0"
           },
           {
             "version": "2026.14.0"
@@ -516,16 +516,16 @@
         "packageName": "com.reddit.frontpage",
         "targets": [
           {
+            "version": "2026.29.0"
+          },
+          {
             "version": "2026.28.0"
           },
           {
             "version": "2026.27.0"
           },
           {
-            "version": "2026.26.0"
-          },
-          {
-            "version": "2026.25.0"
+            "version": "2026.24.0"
           },
           {
             "version": "2026.14.0"
@@ -543,16 +543,16 @@
         "packageName": "com.reddit.frontpage",
         "targets": [
           {
+            "version": "2026.29.0"
+          },
+          {
             "version": "2026.28.0"
           },
           {
             "version": "2026.27.0"
           },
           {
-            "version": "2026.26.0"
-          },
-          {
-            "version": "2026.25.0"
+            "version": "2026.24.0"
           },
           {
             "version": "2026.14.0"
@@ -570,16 +570,16 @@
         "packageName": "com.reddit.frontpage",
         "targets": [
           {
+            "version": "2026.29.0"
+          },
+          {
             "version": "2026.28.0"
           },
           {
             "version": "2026.27.0"
           },
           {
-            "version": "2026.26.0"
-          },
-          {
-            "version": "2026.25.0"
+            "version": "2026.24.0"
           },
           {
             "version": "2026.14.0"
@@ -609,16 +609,16 @@
         "packageName": "com.reddit.frontpage",
         "targets": [
           {
+            "version": "2026.29.0"
+          },
+          {
             "version": "2026.28.0"
           },
           {
             "version": "2026.27.0"
           },
           {
-            "version": "2026.26.0"
-          },
-          {
-            "version": "2026.25.0"
+            "version": "2026.24.0"
           },
           {
             "version": "2026.14.0"
@@ -636,16 +636,16 @@
         "packageName": "com.reddit.frontpage",
         "targets": [
           {
+            "version": "2026.29.0"
+          },
+          {
             "version": "2026.28.0"
           },
           {
             "version": "2026.27.0"
           },
           {
-            "version": "2026.26.0"
-          },
-          {
-            "version": "2026.25.0"
+            "version": "2026.24.0"
           },
           {
             "version": "2026.14.0"
@@ -663,16 +663,16 @@
         "packageName": "com.reddit.frontpage",
         "targets": [
           {
+            "version": "2026.29.0"
+          },
+          {
             "version": "2026.28.0"
           },
           {
             "version": "2026.27.0"
           },
           {
-            "version": "2026.26.0"
-          },
-          {
-            "version": "2026.25.0"
+            "version": "2026.24.0"
           },
           {
             "version": "2026.14.0"
@@ -689,16 +689,16 @@
         "packageName": "com.reddit.frontpage",
         "targets": [
           {
+            "version": "2026.29.0"
+          },
+          {
             "version": "2026.28.0"
           },
           {
             "version": "2026.27.0"
           },
           {
-            "version": "2026.26.0"
-          },
-          {
-            "version": "2026.25.0"
+            "version": "2026.24.0"
           },
           {
             "version": "2026.14.0"
@@ -732,16 +732,16 @@
         "packageName": "com.reddit.frontpage",
         "targets": [
           {
+            "version": "2026.29.0"
+          },
+          {
             "version": "2026.28.0"
           },
           {
             "version": "2026.27.0"
           },
           {
-            "version": "2026.26.0"
-          },
-          {
-            "version": "2026.25.0"
+            "version": "2026.24.0"
           },
           {
             "version": "2026.14.0"
@@ -785,16 +785,16 @@
         "packageName": "com.reddit.frontpage",
         "targets": [
           {
+            "version": "2026.29.0"
+          },
+          {
             "version": "2026.28.0"
           },
           {
             "version": "2026.27.0"
           },
           {
-            "version": "2026.26.0"
-          },
-          {
-            "version": "2026.25.0"
+            "version": "2026.24.0"
           },
           {
             "version": "2026.14.0"
