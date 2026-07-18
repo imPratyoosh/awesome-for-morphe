@@ -38,6 +38,20 @@
     ]
   },
   {
+    "name": "Unlock BASE Strength Premium",
+    "description": "Unlock all Paid features",
+    "compatiblePackages": [
+      {
+        "packageName": "com.skynetcoaching.bromleyapp",
+        "targets": [
+          {
+            "version": "2.0.82"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "name": "Unlock Boostcamp Premium",
     "description": "Unlock all Paid features",
     "compatiblePackages": [
@@ -88,6 +102,20 @@
         "targets": [
           {
             "version": "4.46.2"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock JuggernautAI Premium",
+    "description": "Unlock all Paid features",
+    "compatiblePackages": [
+      {
+        "packageName": "com.jtsstrength.juggernautai",
+        "targets": [
+          {
+            "version": "2.6.6"
           }
         ]
       }
@@ -185,7 +213,7 @@
         "packageName": "video.player.videoplayer",
         "targets": [
           {
-            "version": "2.6.2"
+            "version": "2.7.3"
           }
         ]
       }

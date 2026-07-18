@@ -1,20 +1,5 @@
 [
   {
-    "name": "Add resource file",
-    "description": "Adds or replaces one raw APK file from text options.",
-    "default": false,
-    "options": [
-      {
-        "key": "universalAddResourcePath",
-        "title": "Target path"
-      },
-      {
-        "key": "universalAddResourceContent",
-        "title": "File content"
-      }
-    ]
-  },
-  {
     "name": "Alert Distances",
     "description": "Configures radar/camera and hazard alert announcement distances.\nCredits: Waze CGE Mod.\n",
     "options": [
@@ -112,6 +97,20 @@
     ]
   },
   {
+    "name": "Bypass developer verification",
+    "description": "Forces all APK install verification sessions to be bypassed, preventing the verifier from blocking sideloaded or unsigned apps on Android 16+ devices.Important: Requires pushing the patched APK as a system app replacement (e.g. via Magisk module or ADB with root)since the original holds DEVELOPER_VERIFICATION_AGENT permission. ADB installs are exempt from verification regardless.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.google.android.verifier",
+        "targets": [
+          {
+            "version": "1.0.940985764"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "name": "Bypass License Check",
     "description": "Bypasses PairIP DRM license verification to prevent forced app shutdown on non-Play-licensed installs.",
     "compatiblePackages": [
@@ -119,7 +118,7 @@
         "packageName": "com.newsbreak.crimeradar",
         "targets": [
           {
-            "version": "26.23.2"
+            "version": "26.28.0"
           }
         ]
       }
@@ -133,24 +132,9 @@
         "packageName": "com.newsbreak.crimeradar",
         "targets": [
           {
-            "version": "26.23.2"
+            "version": "26.28.0"
           }
         ]
-      }
-    ]
-  },
-  {
-    "name": "Change package name",
-    "description": "Changes manifest package and optionally provider/permission authorities.",
-    "default": false,
-    "options": [
-      {
-        "key": "universalNewPackageName",
-        "title": "New package or suffix"
-      },
-      {
-        "key": "universalRewriteAuthorities",
-        "title": "Rewrite authorities"
       }
     ]
   },
@@ -163,17 +147,6 @@
         "key": "universalVersionCode",
         "title": "Version code",
         "description": "Version code to write into AndroidManifest.xml."
-      }
-    ]
-  },
-  {
-    "name": "Custom certificates",
-    "description": "Adds a permissive network security config with system/user certs.",
-    "default": false,
-    "options": [
-      {
-        "key": "universalAllowCleartext",
-        "title": "Allow cleartext"
       }
     ]
   },
@@ -193,7 +166,7 @@
         "packageName": "com.amazon.mShop.android.shopping",
         "targets": [
           {
-            "version": "32.12.4.100"
+            "version": "32.13.0.100"
           }
         ]
       },
@@ -263,7 +236,7 @@
         "packageName": "com.cloudflare.onedotonedotonedotone",
         "targets": [
           {
-            "version": "6.38.7"
+            "version": "6.38.8"
           }
         ]
       }
@@ -275,11 +248,6 @@
     "default": false
   },
   {
-    "name": "Disable Play Integrity",
-    "description": "Blocks Play Integrity service binding.",
-    "default": false
-  },
-  {
     "name": "Disable search suggestions tracking",
     "description": "Prevents search keypress and focus events from being sent with suggestion requests.",
     "compatiblePackages": [
@@ -287,7 +255,7 @@
         "packageName": "com.amazon.mShop.android.shopping",
         "targets": [
           {
-            "version": "32.12.4.100"
+            "version": "32.13.0.100"
           }
         ]
       },
@@ -330,8 +298,7 @@
           {
             "version": "4.4.3.7"
           }
-        ],
-        "isPreRelease": true
+        ]
       }
     ]
   },
@@ -343,7 +310,7 @@
         "packageName": "com.amazon.mShop.android.shopping",
         "targets": [
           {
-            "version": "32.12.4.100"
+            "version": "32.13.0.100"
           }
         ]
       },
@@ -438,7 +405,7 @@
         "packageName": "com.amazon.mShop.android.shopping",
         "targets": [
           {
-            "version": "32.12.4.100"
+            "version": "32.13.0.100"
           }
         ]
       },
@@ -485,25 +452,6 @@
     ]
   },
   {
-    "name": "Hex patch",
-    "description": "Replaces one hex byte pattern inside one APK file.",
-    "default": false,
-    "options": [
-      {
-        "key": "universalHexTargetPath",
-        "title": "Target path"
-      },
-      {
-        "key": "universalHexFrom",
-        "title": "Find hex"
-      },
-      {
-        "key": "universalHexTo",
-        "title": "Replace hex"
-      }
-    ]
-  },
-  {
     "name": "Hide ADB status",
     "description": "Hides adb_enabled and development_settings_enabled.",
     "default": false
@@ -543,7 +491,7 @@
         "packageName": "com.amazon.mShop.android.shopping",
         "targets": [
           {
-            "version": "32.12.4.100"
+            "version": "32.13.0.100"
           }
         ]
       },
@@ -678,7 +626,7 @@
         "packageName": "com.amazon.mShop.android.shopping",
         "targets": [
           {
-            "version": "32.12.4.100"
+            "version": "32.13.0.100"
           }
         ]
       },
@@ -752,7 +700,7 @@
         "packageName": "com.amazon.mShop.android.shopping",
         "targets": [
           {
-            "version": "32.12.4.100"
+            "version": "32.13.0.100"
           }
         ]
       },
@@ -842,6 +790,21 @@
   },
   {
     "name": "Remove Ads",
+    "description": "Removes ads from TorrDroid.",
+    "compatiblePackages": [
+      {
+        "packageName": "intelligems.torrdroid",
+        "targets": [
+          {
+            "version": "2.0.0"
+          }
+        ],
+        "isPreRelease": true
+      }
+    ]
+  },
+  {
+    "name": "Remove Ads",
     "description": "Remove in-app ads.",
     "compatiblePackages": [
       {
@@ -876,7 +839,7 @@
         "packageName": "com.amazon.mShop.android.shopping",
         "targets": [
           {
-            "version": "32.12.4.100"
+            "version": "32.13.0.100"
           }
         ]
       },
@@ -926,7 +889,7 @@
         "packageName": "com.livescore",
         "targets": [
           {
-            "version": "9.7.1"
+            "version": "9.8"
           }
         ]
       }
@@ -947,11 +910,6 @@
     ]
   },
   {
-    "name": "Remove audio capture policy",
-    "description": "Forces runtime audio capture policy to ALLOW_CAPTURE_BY_ALL.",
-    "default": false
-  },
-  {
     "name": "Remove Item Limits",
     "description": "Removes all  item limits in-app.",
     "compatiblePackages": [
@@ -959,21 +917,11 @@
         "packageName": "com.newsbreak.crimeradar",
         "targets": [
           {
-            "version": "26.23.2"
+            "version": "26.28.0"
           }
         ]
       }
     ]
-  },
-  {
-    "name": "Remove screen capture restriction",
-    "description": "Allows audio playback capture in the manifest.",
-    "default": false
-  },
-  {
-    "name": "Remove screenshot restriction",
-    "description": "Removes FLAG_SECURE and screenshot blocking.",
-    "default": false
   },
   {
     "name": "Remove share targets",
@@ -1016,7 +964,7 @@
         "packageName": "com.amazon.mShop.android.shopping",
         "targets": [
           {
-            "version": "32.12.4.100"
+            "version": "32.13.0.100"
           }
         ]
       },
@@ -1237,7 +1185,7 @@
         "packageName": "com.cloudflare.onedotonedotonedotone",
         "targets": [
           {
-            "version": "6.38.7"
+            "version": "6.38.8"
           }
         ]
       }
@@ -1306,7 +1254,7 @@
         "packageName": "com.newsbreak.crimeradar",
         "targets": [
           {
-            "version": "26.23.2"
+            "version": "26.28.0"
           }
         ]
       }
@@ -1334,7 +1282,7 @@
         "packageName": "com.flightaware.android.liveFlightTracker",
         "targets": [
           {
-            "version": "5.15.4"
+            "version": "5.15.5"
           }
         ]
       }
@@ -1418,7 +1366,7 @@
         "packageName": "com.citymapper.app.release",
         "targets": [
           {
-            "version": "11.55.1"
+            "version": "11.55.2"
           }
         ]
       }
@@ -1460,7 +1408,7 @@
         "packageName": "com.localaiapp.scoops",
         "targets": [
           {
-            "version": "3.28.0"
+            "version": "3.29.0"
           }
         ]
       }
@@ -1488,7 +1436,7 @@
         "packageName": "com.tecso.MigraConnect",
         "targets": [
           {
-            "version": "2.8.1"
+            "version": "2.8.2"
           }
         ]
       }
@@ -1516,7 +1464,7 @@
         "packageName": "com.newsbreak.crimeradar",
         "targets": [
           {
-            "version": "26.23.2"
+            "version": "26.28.0"
           }
         ]
       }
@@ -1546,8 +1494,7 @@
           {
             "version": "6.6.7"
           }
-        ],
-        "isPreRelease": true
+        ]
       }
     ]
   },
@@ -1643,7 +1590,21 @@
         "packageName": "com.life360.android.safetymapd",
         "targets": [
           {
-            "version": "26.25.0"
+            "version": "26.26.0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Plus",
+    "description": "Forces Clue Plus subscription active, unlocking all premium features.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.clue.android",
+        "targets": [
+          {
+            "version": "261.0"
           }
         ]
       }
@@ -1797,7 +1758,7 @@
         "packageName": "com.socialnmobile.dictapps.notepad.color.note",
         "targets": [
           {
-            "version": "4.8.4"
+            "version": "4.8.6"
           }
         ]
       }
@@ -1813,8 +1774,7 @@
           {
             "version": "3.2.0"
           }
-        ],
-        "isPreRelease": true
+        ]
       }
     ]
   },
@@ -1840,7 +1800,7 @@
         "packageName": "com.newsbreak.crimeradar",
         "targets": [
           {
-            "version": "26.23.2"
+            "version": "26.28.0"
           }
         ]
       }
@@ -1882,7 +1842,7 @@
         "packageName": "com.fitbod.fitbod",
         "targets": [
           {
-            "version": "8.24.1-0"
+            "version": "8.25.0-2"
           }
         ]
       }
@@ -2085,6 +2045,21 @@
   },
   {
     "name": "Unlock Premium",
+    "description": "Unlocks premium features after login.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.monect.portable",
+        "targets": [
+          {
+            "version": "8.3.5"
+          }
+        ],
+        "isPreRelease": true
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
     "description": "Unlocks all Photo Editor premium features",
     "compatiblePackages": [
       {
@@ -2119,7 +2094,7 @@
         "packageName": "cn.danatech.xingseus",
         "targets": [
           {
-            "version": "5.29.0"
+            "version": "5.30.0"
           }
         ]
       }
@@ -2147,7 +2122,7 @@
         "packageName": "ch.protonvpn.android",
         "targets": [
           {
-            "version": "5.19.16.0"
+            "version": "5.19.43.0"
           }
         ]
       }
@@ -2317,8 +2292,7 @@
           {
             "version": "1.5.6.3"
           }
-        ],
-        "isPreRelease": true
+        ]
       }
     ]
   },
@@ -2393,7 +2367,7 @@
         "packageName": "com.tradingview.tradingviewapp",
         "targets": [
           {
-            "version": "1.20.78.0.1002325"
+            "version": "1.20.78.1.1002330"
           }
         ]
       }
@@ -2421,7 +2395,7 @@
         "packageName": "com.wavve.boating.gps",
         "targets": [
           {
-            "version": "5.6.9"
+            "version": "5.7.1"
           }
         ]
       }
@@ -2491,10 +2465,9 @@
         "packageName": "com.navitime.inbound.walk",
         "targets": [
           {
-            "version": "12.0.1"
+            "version": "12.0.4"
           }
-        ],
-        "isPreRelease": true
+        ]
       }
     ]
   },
@@ -2534,9 +2507,24 @@
         "packageName": "com.pixel.al.pixelhabittracker",
         "targets": [
           {
-            "version": "2.1.1"
+            "version": "2.1.2"
           }
         ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Pro",
+    "description": "Unlocks Box Box Pro",
+    "compatiblePackages": [
+      {
+        "packageName": "club.boxbox.android",
+        "targets": [
+          {
+            "version": "5.4.13"
+          }
+        ],
+        "isPreRelease": true
       }
     ]
   },
@@ -2576,7 +2564,7 @@
         "packageName": "sp0n.citizen",
         "targets": [
           {
-            "version": "0.1300.0"
+            "version": "0.1301.0"
           }
         ]
       }
@@ -2660,7 +2648,7 @@
         "packageName": "eu.darken.myperm",
         "targets": [
           {
-            "version": "2.1.1-rc0"
+            "version": "2.2.0-rc0"
           }
         ]
       }
@@ -2718,8 +2706,7 @@
           {
             "version": "4.0.9123"
           }
-        ],
-        "isPreRelease": true
+        ]
       }
     ]
   },
@@ -2773,7 +2760,7 @@
         "packageName": "com.Splitwise.SplitwiseMobile",
         "targets": [
           {
-            "version": "26.7.1"
+            "version": "26.7.2"
           }
         ]
       }
@@ -2934,7 +2921,7 @@
         "packageName": "com.nytimes.crossword",
         "targets": [
           {
-            "version": "6.33.1"
+            "version": "6.34.0"
           }
         ]
       }
@@ -3006,8 +2993,7 @@
           {
             "version": "10.3.5"
           }
-        ],
-        "isPreRelease": true
+        ]
       }
     ]
   },
@@ -3055,7 +3041,7 @@
         "packageName": "com.community.mbox.tv",
         "targets": [
           {
-            "version": "1.1.4.0710.03"
+            "version": "1.1.5.0711.03"
           }
         ]
       }
@@ -3083,7 +3069,7 @@
         "packageName": "com.yatrirailways.yatri",
         "targets": [
           {
-            "version": "5.0.4"
+            "version": "5.0.5"
           }
         ]
       }
@@ -3097,7 +3083,7 @@
         "packageName": "com.anetcapture.mock",
         "targets": [
           {
-            "version": "2.11.4-ad_mob"
+            "version": "2.11.7-ad_mob"
           }
         ]
       }
@@ -3113,8 +3099,7 @@
           {
             "version": "4.4.3.7"
           }
-        ],
-        "isPreRelease": true
+        ]
       }
     ]
   },

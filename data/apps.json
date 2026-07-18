@@ -1905,5 +1905,77 @@
   "com.hamropatro": {
     "name": "Hamropatro",
     "iconUrl": "https://play-lh.googleusercontent.com/FW2G3tMfU1wF4NF5gE4oX4w7rY3oPVBBWdBew4sMM7vnPFPP-FWPSsFe0HKvfc2wO7ICCqL3K3nCRg5g85t8Lg=s64"
+  },
+  "com.android.gallery3d": {
+    "name": "ZTE Gallery",
+    "iconUrl": null
+  },
+  "com.rookery.courier": {
+    "name": "Roost",
+    "iconUrl": "https://play-lh.googleusercontent.com/wb_9H23PJOWrL9aQkjQtGD_YxmDx87M2rp_g-knGRHadVb6WQC_twOLXXb-p2JUia61B1ngUyRy7NPJeecLwP0Y=s64"
+  },
+  "com.clue.android": {
+    "name": "Clue Period & Cycle Tracker",
+    "iconUrl": "https://play-lh.googleusercontent.com/k6vuyDURLVvlHryevs4WdWeG5rqtUMYWqxz4rv-VQdI8Atf6k1xSBG2Vj8_OSqwDf3s8xB7y1dbjFvobP9bxaQ=s64"
+  },
+  "com.google.android.verifier": {
+    "name": "Android Developer Verifier",
+    "iconUrl": "https://play-lh.googleusercontent.com/zBtyRmGC0sI5x8aBQuSC7mY8uSGerOnkoJuD2G6yMCbvwT8vtgq4Y1w3Xmo0Sg9_dUi4HuCOGS4sknTjfVO20w=s64"
+  },
+  "com.nicedayapps.iss_free": {
+    "name": "ISS Live Now",
+    "iconUrl": "https://play-lh.googleusercontent.com/bOSkPoR8m9Qc_TPwrID8_Db51EL9oO0rq4UzRPAHKN2Zc1mq7gCq_0tySpBp1h6PkV5h7IOr0IvA1MTBiGyQCw=s64"
+  },
+  "com.IvanAF.ClimbAMIYPfree": {
+    "name": "Climb!",
+    "iconUrl": "https://play-lh.googleusercontent.com/VK0AYuzpuiYdeqrDPE0o9PoYCh-pP44Q6rj3pLxsEWwWXCQ26oc6ceFfNESC-VPvYwknfhVGs6l5EtgqkdDuikA=s64"
+  },
+  "fi.twomenandadog.zombiecatchers": {
+    "name": "Zombie Catchers",
+    "iconUrl": "https://play-lh.googleusercontent.com/beX43giXH2zL6EeGg4bgy4fsQcXHPcUS4xOM-oCET1s6opFuS8qkBX0PDq03_3FWvd6DQBjk__in32mXjl9N=s64"
+  },
+  "com.jtsstrength.juggernautai": {
+    "name": "JuggernautAI",
+    "iconUrl": "https://play-lh.googleusercontent.com/W6Uj8gCULu_8vIkZ3hDFg1gPddshMJqdsSf0U1hA3j2rXxKjSUYCPDS-GZkvVDPzo50JgfFzYhMb_PnUtDPgTw=s64"
+  },
+  "com.skynetcoaching.bromleyapp": {
+    "name": "BASE Strength AI",
+    "iconUrl": "https://play-lh.googleusercontent.com/Fam031PWqWB22FlCWW8F0GZWOmuIa_ESw-DWfuDEHpFx_zJNsbBO5seJRzkNcHP8GnucHB2o1heQyEsJWE7wkg=s64"
+  },
+  "club.boxbox.android": {
+    "name": "Box Box",
+    "iconUrl": "https://play-lh.googleusercontent.com/kfxcsV5RmByTSzDnSnbwiRIOQ_rq6kUG6Fvmg_zoPtTAjKA9_y9Sy7cMSi39x7UKkosKHe_Ddu_MiVOtlDeRwQ=s64"
+  },
+  "com.monect.portable": {
+    "name": "PC Remote - Desktop & Phone",
+    "iconUrl": "https://play-lh.googleusercontent.com/VkJnnrOeX3e6gG3irUBGWg8ekOPoc7VE8Atz-8Kbsf16s45lMmPCznLY25GKuJ1dO8XO2Xx5_svGABPw2C9H=s64"
+  },
+  "intelligems.torrdroid": {
+    "name": "TorrDroid",
+    "iconUrl": "https://play-lh.googleusercontent.com/FIgM8cMNv39T39kgTxAc6n8Vy3T3iuEw9l9txna8QCH8xWqtSmTRyPyR2UB5SvTXqW7VKHFicc_vY5JWk2szQTU=s64"
+  },
+  "com.telenor.pakistan.mytelenor": {
+    "name": "My Telenor",
+    "iconUrl": "https://play-lh.googleusercontent.com/qWyKgf6pUPWpefJlcA9OQupoCEpktkwL0BhEWwZso_Dg0qhxlAGFNJ6RmKVUyJXHD4GCoTuNXyFN8wE5-2uy8w=s64"
+  },
+  "com.myvitale.forus": {
+    "name": "ForusApp",
+    "iconUrl": "https://play-lh.googleusercontent.com/HQl7wIZjPOMZHojduQcS9jOnT_vsDIYp3ydapBQzBbuVpAsqtkcaxUP24VXmDAa4CM3q2AaqbG0EGYawBFVf-_M=s64"
+  },
+  "net.easyconn.carman.wws": {
+    "name": "CarbitLink",
+    "iconUrl": "https://play-lh.googleusercontent.com/EWn6OuOy6gyQ8DG83elQnijJzAW4Whcko0aMV4STxDdShWqwMmRcd-eB3LWWAqeR8779UcVCOp2MFIPgjCiYjvs=s64"
+  },
+  "com.brave.browser": {
+    "name": "Brave Browser",
+    "iconUrl": "https://play-lh.googleusercontent.com/UBrZnuXGb-QACU0uUdF5r_n5nx5oBbdfPyEbtsr0xXv00RN7rpaTVu3GjLeE90aHFmNlbaCmm8vNcmY0eE98U9E=s64"
+  },
+  "com.sensemobile.action": {
+    "name": "Kapi Cam",
+    "iconUrl": "https://play-lh.googleusercontent.com/b2iP-qxeP8gRBBkbC2WU7bJ7sLta7lgTeYhKL4lVMvi55pyT_vDYRz_1zLBrdJEszD1TBygo3g75Zs6n85KdMQ=s64"
+  },
+  "io.github.sds100.keymapper": {
+    "name": "Key Mapper",
+    "iconUrl": "https://play-lh.googleusercontent.com/2fxrXQ0nijQGn1wQvEhzmbEvG95fCaq-Dsfs21YdElspco-IONaSHP04BDgA6Z5nLRGaL1WCJ96dhD5QigrjIQ=s64"
   }
 }

@@ -28,6 +28,16 @@
     ]
   },
   {
+    "name": "Enable Brave Origin",
+    "description": "Enables Brave Origin features by default.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.brave.browser",
+        "isPreRelease": true
+      }
+    ]
+  },
+  {
     "name": "Enable premium features",
     "description": "Unlocks all client-side premium features by bypassing the feature-availability gate.",
     "compatiblePackages": [

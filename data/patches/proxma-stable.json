@@ -1,6 +1,52 @@
 {
-    "version": "1.5.0",
+    "version": "1.6.0",
     "patches": [
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": "APK_REQUIRED",
+                    "appIconColor": "#00A8E0",
+                    "name": "My Telenor",
+                    "packageName": "com.telenor.pakistan.mytelenor",
+                    "signatures": [],
+                    "targets": [
+                        {
+                            "isExperimental": false,
+                            "minSdk": 24,
+                            "version": "4.2.62"
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [],
+            "description": "Stops the Insider, TikTok Business SDK and Mixpanel Session Replay trackers from initializing (event/attribution/session-replay tracking never starts). Leaves AWS Amplify, Firebase core/RemoteConfig/FCM and Google Ads init untouched so app data, push and the remote ad-config the ads patch relies on keep working.",
+            "name": "Block trackers",
+            "options": []
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": "APK_REQUIRED",
+                    "appIconColor": "#00A8E0",
+                    "name": "My Telenor",
+                    "packageName": "com.telenor.pakistan.mytelenor",
+                    "signatures": [],
+                    "targets": [
+                        {
+                            "isExperimental": false,
+                            "minSdk": 24,
+                            "version": "4.2.62"
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [],
+            "description": "Disables Firebase Analytics + Google advertiser-id auto-collection and the Facebook SDK's auto app-events / advertiser-id / auto-init via AndroidManifest <meta-data> flags — the SDK-side auto-collection that no bytecode init-stub can reach. Leaves Firebase core (FCM push, RemoteConfig) and the Facebook ContentProvider intact. Separate from the bytecode Block trackers patch so you can pick either or both.",
+            "name": "Block trackers (manifest flags)",
+            "options": []
+        },
         {
             "compatiblePackages": [
                 {
@@ -51,6 +97,29 @@
             "compatiblePackages": [
                 {
                     "apkFileType": "APK_REQUIRED",
+                    "appIconColor": "#00A8E0",
+                    "name": "My Telenor",
+                    "packageName": "com.telenor.pakistan.mytelenor",
+                    "signatures": [],
+                    "targets": [
+                        {
+                            "isExperimental": false,
+                            "minSdk": 24,
+                            "version": "4.2.62"
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [],
+            "description": "Removes every Google Ad Manager ad (banners + interstitials) across Daily Rewards, Home, Test Your Skills and Explore by nulling the remote ad-config chokepoint, so each surface renders its no-ads layout and never requests an interstitial.",
+            "name": "Remove ads",
+            "options": []
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": "APK_REQUIRED",
                     "appIconColor": "#00A94F",
                     "name": "MyZong",
                     "packageName": "com.zong.customercare",
@@ -95,31 +164,6 @@
             ],
             "description": "Removes every ad (interstitial, banner, daily-reward) and every tracker (Mixpanel, Firebase, Facebook, AppsFlyer) — app events, network sends, ad-SDK requests (Google Ads / AppLovin / AnyMind / Prebid), SDK auto-collection, and the ipify IP leak. The app then phones home only to its own Jazz API.",
             "name": "Remove ads & tracking",
-            "options": []
-        },
-        {
-            "compatiblePackages": [
-                {
-                    "apkFileType": "APK_REQUIRED",
-                    "appIconColor": "#F85606",
-                    "name": "Daraz",
-                    "packageName": "com.daraz.android",
-                    "signatures": [],
-                    "targets": [
-                        {
-                            "isExperimental": false,
-                            "minSdk": 21,
-                            "version": "9.36.2"
-                        }
-                    ]
-                }
-            ],
-            "default": true,
-            "dependencies": [
-                "ResourcePatch"
-            ],
-            "description": "⚠️ WORK IN PROGRESS — not yet fully verified on-device; use at your own risk. No-ops the analytics/ad/fingerprint egress in Daraz — Alibaba UserTrack clickstream, AUDID/UTDID fingerprint upload, Behavix behavior collection, Meta/Facebook App Events + GAID, Firebase Analytics, Zalo device-tracking, Motu crash/APM, and the UCWeb webview telemetry uploaders — plus manifest auto-collection flags. Login, push (ACCS/FCM), eKYC and the app's own commerce API are left intact. Known gaps: Firebase Analytics runs inside Google Play Services (relies on the manifest flag, not a code stub), residual native UCWeb telemetry needs a DNS/host block, and the split-APK install is still being validated.",
-            "name": "Remove analytics & tracking (WIP)",
             "options": []
         },
         {

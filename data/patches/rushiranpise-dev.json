@@ -1,33 +1,6 @@
 {
-    "version": "v1.13.0-dev.3",
+    "version": "v1.14.0-dev.1",
     "patches": [
-        {
-            "compatiblePackages": null,
-            "default": false,
-            "dependencies": [],
-            "description": "Adds or replaces one raw APK file from text options.",
-            "name": "Add resource file",
-            "options": [
-                {
-                    "default": "res/values/morphe_added.xml",
-                    "description": null,
-                    "key": "universalAddResourcePath",
-                    "required": true,
-                    "title": "Target path",
-                    "type": "kotlin.String",
-                    "values": null
-                },
-                {
-                    "default": "",
-                    "description": null,
-                    "key": "universalAddResourceContent",
-                    "required": false,
-                    "title": "File content",
-                    "type": "kotlin.String",
-                    "values": null
-                }
-            ]
-        },
         {
             "compatiblePackages": [
                 {
@@ -190,13 +163,35 @@
         {
             "compatiblePackages": [
                 {
+                    "apkFileType": "APKM",
+                    "appIconColor": "#4285F4",
+                    "name": "Android Developer Verifier",
+                    "packageName": "com.google.android.verifier",
+                    "targets": [
+                        {
+                            "isExperimental": false,
+                            "version": "1.0.940985764"
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [],
+            "description": "Forces all APK install verification sessions to be bypassed, preventing the verifier from blocking sideloaded or unsigned apps on Android 16+ devices.Important: Requires pushing the patched APK as a system app replacement (e.g. via Magisk module or ADB with root)since the original holds DEVELOPER_VERIFICATION_AGENT permission. ADB installs are exempt from verification regardless.",
+            "name": "Bypass developer verification",
+            "options": []
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": "XAPK",
                     "appIconColor": "#E53935",
                     "name": "Crime Radar",
                     "packageName": "com.newsbreak.crimeradar",
                     "targets": [
                         {
                             "isExperimental": false,
-                            "version": "26.23.2"
+                            "version": "26.28.0"
                         }
                     ]
                 }
@@ -210,13 +205,14 @@
         {
             "compatiblePackages": [
                 {
+                    "apkFileType": "XAPK",
                     "appIconColor": "#E53935",
                     "name": "Crime Radar",
                     "packageName": "com.newsbreak.crimeradar",
                     "targets": [
                         {
                             "isExperimental": false,
-                            "version": "26.23.2"
+                            "version": "26.28.0"
                         }
                     ]
                 }
@@ -226,33 +222,6 @@
             "description": "Bypasses the subscription paywall in-app.",
             "name": "Bypass Subscription Paywall",
             "options": []
-        },
-        {
-            "compatiblePackages": null,
-            "default": false,
-            "dependencies": [],
-            "description": "Changes manifest package and optionally provider/permission authorities.",
-            "name": "Change package name",
-            "options": [
-                {
-                    "default": "append.morphe",
-                    "description": null,
-                    "key": "universalNewPackageName",
-                    "required": true,
-                    "title": "New package or suffix",
-                    "type": "kotlin.String",
-                    "values": null
-                },
-                {
-                    "default": "true",
-                    "description": null,
-                    "key": "universalRewriteAuthorities",
-                    "required": true,
-                    "title": "Rewrite authorities",
-                    "type": "kotlin.String",
-                    "values": null
-                }
-            ]
         },
         {
             "compatiblePackages": null,
@@ -273,33 +242,16 @@
             ]
         },
         {
-            "compatiblePackages": null,
-            "default": false,
-            "dependencies": [],
-            "description": "Adds a permissive network security config with system/user certs.",
-            "name": "Custom certificates",
-            "options": [
-                {
-                    "default": "true",
-                    "description": null,
-                    "key": "universalAllowCleartext",
-                    "required": true,
-                    "title": "Allow cleartext",
-                    "type": "kotlin.String",
-                    "values": null
-                }
-            ]
-        },
-        {
             "compatiblePackages": [
                 {
+                    "apkFileType": "XAPK",
                     "appIconColor": "#FF9900",
                     "name": "Amazon Shopping",
                     "packageName": "com.amazon.mShop.android.shopping",
                     "targets": [
                         {
                             "isExperimental": false,
-                            "version": "32.12.4.100"
+                            "version": "32.13.0.100"
                         }
                     ]
                 },
@@ -408,13 +360,14 @@
         {
             "compatiblePackages": [
                 {
+                    "apkFileType": "XAPK",
                     "appIconColor": "#F48120",
                     "name": "1.1.1.1",
                     "packageName": "com.cloudflare.onedotonedotonedotone",
                     "targets": [
                         {
                             "isExperimental": false,
-                            "version": "6.38.7"
+                            "version": "6.38.8"
                         }
                     ]
                 }
@@ -434,23 +387,16 @@
             "options": []
         },
         {
-            "compatiblePackages": null,
-            "default": false,
-            "dependencies": [],
-            "description": "Blocks Play Integrity service binding.",
-            "name": "Disable Play Integrity",
-            "options": []
-        },
-        {
             "compatiblePackages": [
                 {
+                    "apkFileType": "XAPK",
                     "appIconColor": "#FF9900",
                     "name": "Amazon Shopping",
                     "packageName": "com.amazon.mShop.android.shopping",
                     "targets": [
                         {
                             "isExperimental": false,
-                            "version": "32.12.4.100"
+                            "version": "32.13.0.100"
                         }
                     ]
                 },
@@ -525,13 +471,14 @@
         {
             "compatiblePackages": [
                 {
+                    "apkFileType": "XAPK",
                     "appIconColor": "#FF9900",
                     "name": "Amazon Shopping",
                     "packageName": "com.amazon.mShop.android.shopping",
                     "targets": [
                         {
                             "isExperimental": false,
-                            "version": "32.12.4.100"
+                            "version": "32.13.0.100"
                         }
                     ]
                 },
@@ -668,13 +615,14 @@
         {
             "compatiblePackages": [
                 {
+                    "apkFileType": "XAPK",
                     "appIconColor": "#FF9900",
                     "name": "Amazon Shopping",
                     "packageName": "com.amazon.mShop.android.shopping",
                     "targets": [
                         {
                             "isExperimental": false,
-                            "version": "32.12.4.100"
+                            "version": "32.13.0.100"
                         }
                     ]
                 },
@@ -767,42 +715,6 @@
             "compatiblePackages": null,
             "default": false,
             "dependencies": [],
-            "description": "Replaces one hex byte pattern inside one APK file.",
-            "name": "Hex patch",
-            "options": [
-                {
-                    "default": "classes.dex",
-                    "description": null,
-                    "key": "universalHexTargetPath",
-                    "required": true,
-                    "title": "Target path",
-                    "type": "kotlin.String",
-                    "values": null
-                },
-                {
-                    "default": "",
-                    "description": null,
-                    "key": "universalHexFrom",
-                    "required": true,
-                    "title": "Find hex",
-                    "type": "kotlin.String",
-                    "values": null
-                },
-                {
-                    "default": "",
-                    "description": null,
-                    "key": "universalHexTo",
-                    "required": true,
-                    "title": "Replace hex",
-                    "type": "kotlin.String",
-                    "values": null
-                }
-            ]
-        },
-        {
-            "compatiblePackages": null,
-            "default": false,
-            "dependencies": [],
             "description": "Hides adb_enabled and development_settings_enabled.",
             "name": "Hide ADB status",
             "options": []
@@ -867,13 +779,14 @@
         {
             "compatiblePackages": [
                 {
+                    "apkFileType": "XAPK",
                     "appIconColor": "#FF9900",
                     "name": "Amazon Shopping",
                     "packageName": "com.amazon.mShop.android.shopping",
                     "targets": [
                         {
                             "isExperimental": false,
-                            "version": "32.12.4.100"
+                            "version": "32.13.0.100"
                         }
                     ]
                 },
@@ -1095,13 +1008,14 @@
         {
             "compatiblePackages": [
                 {
+                    "apkFileType": "XAPK",
                     "appIconColor": "#FF9900",
                     "name": "Amazon Shopping",
                     "packageName": "com.amazon.mShop.android.shopping",
                     "targets": [
                         {
                             "isExperimental": false,
-                            "version": "32.12.4.100"
+                            "version": "32.13.0.100"
                         }
                     ]
                 },
@@ -1208,13 +1122,14 @@
         {
             "compatiblePackages": [
                 {
+                    "apkFileType": "XAPK",
                     "appIconColor": "#FF9900",
                     "name": "Amazon Shopping",
                     "packageName": "com.amazon.mShop.android.shopping",
                     "targets": [
                         {
                             "isExperimental": false,
-                            "version": "32.12.4.100"
+                            "version": "32.13.0.100"
                         }
                     ]
                 },
@@ -1352,6 +1267,27 @@
         {
             "compatiblePackages": [
                 {
+                    "apkFileType": "APKS",
+                    "appIconColor": "#1976D2",
+                    "name": "TorrDroid",
+                    "packageName": "intelligems.torrdroid",
+                    "targets": [
+                        {
+                            "isExperimental": false,
+                            "version": "2.0.0"
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [],
+            "description": "Removes ads from TorrDroid.",
+            "name": "Remove Ads",
+            "options": []
+        },
+        {
+            "compatiblePackages": [
+                {
                     "appIconColor": "#E53935",
                     "name": "VIZ Manga",
                     "packageName": "com.vizmanga.android",
@@ -1392,13 +1328,14 @@
         {
             "compatiblePackages": [
                 {
+                    "apkFileType": "XAPK",
                     "appIconColor": "#FF9900",
                     "name": "Amazon Shopping",
                     "packageName": "com.amazon.mShop.android.shopping",
                     "targets": [
                         {
                             "isExperimental": false,
-                            "version": "32.12.4.100"
+                            "version": "32.13.0.100"
                         }
                     ]
                 },
@@ -1467,13 +1404,14 @@
         {
             "compatiblePackages": [
                 {
+                    "apkFileType": "APK",
                     "appIconColor": "#E30613",
                     "name": "LiveScore",
                     "packageName": "com.livescore",
                     "targets": [
                         {
                             "isExperimental": false,
-                            "version": "9.7.1"
+                            "version": "9.8"
                         }
                     ]
                 }
@@ -1505,23 +1443,16 @@
             "options": []
         },
         {
-            "compatiblePackages": null,
-            "default": false,
-            "dependencies": [],
-            "description": "Forces runtime audio capture policy to ALLOW_CAPTURE_BY_ALL.",
-            "name": "Remove audio capture policy",
-            "options": []
-        },
-        {
             "compatiblePackages": [
                 {
+                    "apkFileType": "XAPK",
                     "appIconColor": "#E53935",
                     "name": "Crime Radar",
                     "packageName": "com.newsbreak.crimeradar",
                     "targets": [
                         {
                             "isExperimental": false,
-                            "version": "26.23.2"
+                            "version": "26.28.0"
                         }
                     ]
                 }
@@ -1530,22 +1461,6 @@
             "dependencies": [],
             "description": "Removes all  item limits in-app.",
             "name": "Remove Item Limits",
-            "options": []
-        },
-        {
-            "compatiblePackages": null,
-            "default": false,
-            "dependencies": [],
-            "description": "Allows audio playback capture in the manifest.",
-            "name": "Remove screen capture restriction",
-            "options": []
-        },
-        {
-            "compatiblePackages": null,
-            "default": false,
-            "dependencies": [],
-            "description": "Removes FLAG_SECURE and screenshot blocking.",
-            "name": "Remove screenshot restriction",
             "options": []
         },
         {
@@ -1599,13 +1514,14 @@
         {
             "compatiblePackages": [
                 {
+                    "apkFileType": "XAPK",
                     "appIconColor": "#FF9900",
                     "name": "Amazon Shopping",
                     "packageName": "com.amazon.mShop.android.shopping",
                     "targets": [
                         {
                             "isExperimental": false,
-                            "version": "32.12.4.100"
+                            "version": "32.13.0.100"
                         }
                     ]
                 },
@@ -2005,13 +1921,14 @@
         {
             "compatiblePackages": [
                 {
+                    "apkFileType": "XAPK",
                     "appIconColor": "#F48120",
                     "name": "1.1.1.1",
                     "packageName": "com.cloudflare.onedotonedotonedotone",
                     "targets": [
                         {
                             "isExperimental": false,
-                            "version": "6.38.7"
+                            "version": "6.38.8"
                         }
                     ]
                 }
@@ -2125,13 +2042,14 @@
         {
             "compatiblePackages": [
                 {
+                    "apkFileType": "XAPK",
                     "appIconColor": "#E53935",
                     "name": "Crime Radar",
                     "packageName": "com.newsbreak.crimeradar",
                     "targets": [
                         {
                             "isExperimental": false,
-                            "version": "26.23.2"
+                            "version": "26.28.0"
                         }
                     ]
                 }
@@ -2165,13 +2083,14 @@
         {
             "compatiblePackages": [
                 {
+                    "apkFileType": "APK",
                     "appIconColor": "#1565C0",
                     "name": "FlightAware",
                     "packageName": "com.flightaware.android.liveFlightTracker",
                     "targets": [
                         {
                             "isExperimental": false,
-                            "version": "5.15.4"
+                            "version": "5.15.5"
                         }
                     ]
                 }
@@ -2287,13 +2206,14 @@
         {
             "compatiblePackages": [
                 {
+                    "apkFileType": "APKM",
                     "appIconColor": "#00A862",
                     "name": "Citymapper",
                     "packageName": "com.citymapper.app.release",
                     "targets": [
                         {
                             "isExperimental": false,
-                            "version": "11.55.1"
+                            "version": "11.55.2"
                         }
                     ]
                 }
@@ -2347,13 +2267,14 @@
         {
             "compatiblePackages": [
                 {
+                    "apkFileType": "APKM",
                     "appIconColor": "#E53935",
                     "name": "Scoopz",
                     "packageName": "com.localaiapp.scoops",
                     "targets": [
                         {
                             "isExperimental": false,
-                            "version": "3.28.0"
+                            "version": "3.29.0"
                         }
                     ]
                 }
@@ -2388,13 +2309,14 @@
         {
             "compatiblePackages": [
                 {
+                    "apkFileType": "XAPK",
                     "appIconColor": "#2563EB",
                     "name": "MigraConnect",
                     "packageName": "com.tecso.MigraConnect",
                     "targets": [
                         {
                             "isExperimental": false,
-                            "version": "2.8.1"
+                            "version": "2.8.2"
                         }
                     ]
                 }
@@ -2435,13 +2357,14 @@
         {
             "compatiblePackages": [
                 {
+                    "apkFileType": "XAPK",
                     "appIconColor": "#E53935",
                     "name": "Crime Radar",
                     "packageName": "com.newsbreak.crimeradar",
                     "targets": [
                         {
                             "isExperimental": false,
-                            "version": "26.23.2"
+                            "version": "26.28.0"
                         }
                     ]
                 }
@@ -2619,14 +2542,14 @@
         {
             "compatiblePackages": [
                 {
-                    "apkFileType": "APKS",
+                    "apkFileType": "XAPK",
                     "appIconColor": "#5D2DE6",
                     "name": "Life360",
                     "packageName": "com.life360.android.safetymapd",
                     "targets": [
                         {
                             "isExperimental": false,
-                            "version": "26.25.0"
+                            "version": "26.26.0"
                         }
                     ]
                 }
@@ -2640,6 +2563,27 @@
             ],
             "description": "Unlocks Life360 Platinum feature in app.",
             "name": "Unlock Platinum",
+            "options": []
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": "APKS",
+                    "appIconColor": "#E91E63",
+                    "name": "Clue Period & Cycle Tracker",
+                    "packageName": "com.clue.android",
+                    "targets": [
+                        {
+                            "isExperimental": false,
+                            "version": "261.0"
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [],
+            "description": "Forces Clue Plus subscription active, unlocking all premium features.",
+            "name": "Unlock Plus",
             "options": []
         },
         {
@@ -2854,13 +2798,14 @@
         {
             "compatiblePackages": [
                 {
+                    "apkFileType": "APK",
                     "appIconColor": "#F2C200",
                     "name": "ColorNote",
                     "packageName": "com.socialnmobile.dictapps.notepad.color.note",
                     "targets": [
                         {
                             "isExperimental": false,
-                            "version": "4.8.4"
+                            "version": "4.8.6"
                         }
                     ]
                 }
@@ -2917,13 +2862,14 @@
         {
             "compatiblePackages": [
                 {
+                    "apkFileType": "XAPK",
                     "appIconColor": "#E53935",
                     "name": "Crime Radar",
                     "packageName": "com.newsbreak.crimeradar",
                     "targets": [
                         {
                             "isExperimental": false,
-                            "version": "26.23.2"
+                            "version": "26.28.0"
                         }
                     ]
                 }
@@ -2979,13 +2925,14 @@
         {
             "compatiblePackages": [
                 {
+                    "apkFileType": "XAPK",
                     "appIconColor": "#FF3D00",
                     "name": "Fitbod",
                     "packageName": "com.fitbod.fitbod",
                     "targets": [
                         {
                             "isExperimental": false,
-                            "version": "8.24.1-0"
+                            "version": "8.25.0-2"
                         }
                     ]
                 }
@@ -3289,6 +3236,27 @@
         {
             "compatiblePackages": [
                 {
+                    "apkFileType": "APKS",
+                    "appIconColor": "#1565C0",
+                    "name": "PC Remote - Desktop & Phone",
+                    "packageName": "com.monect.portable",
+                    "targets": [
+                        {
+                            "isExperimental": false,
+                            "version": "8.3.5"
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [],
+            "description": "Unlocks premium features after login.",
+            "name": "Unlock Premium",
+            "options": []
+        },
+        {
+            "compatiblePackages": [
+                {
                     "appIconColor": "#FF6B9D",
                     "name": "Photo Editor",
                     "packageName": "com.iudesk.android.photo.editor",
@@ -3334,13 +3302,14 @@
         {
             "compatiblePackages": [
                 {
+                    "apkFileType": "XAPK",
                     "appIconColor": "#4CAF50",
                     "name": "PictureThis - Plant Identifier",
                     "packageName": "cn.danatech.xingseus",
                     "targets": [
                         {
                             "isExperimental": false,
-                            "version": "5.29.0"
+                            "version": "5.30.0"
                         }
                     ]
                 }
@@ -3380,13 +3349,14 @@
         {
             "compatiblePackages": [
                 {
+                    "apkFileType": "APKM",
                     "appIconColor": "#6D4AFF",
                     "name": "Proton VPN",
                     "packageName": "ch.protonvpn.android",
                     "targets": [
                         {
                             "isExperimental": false,
-                            "version": "5.19.16.0"
+                            "version": "5.19.43.0"
                         }
                     ]
                 }
@@ -3740,14 +3710,14 @@
         {
             "compatiblePackages": [
                 {
-                    "apkFileType": "APKS",
+                    "apkFileType": "XAPK",
                     "appIconColor": "#2962FF",
                     "name": "TradingView",
                     "packageName": "com.tradingview.tradingviewapp",
                     "targets": [
                         {
                             "isExperimental": false,
-                            "version": "1.20.78.0.1002325"
+                            "version": "1.20.78.1.1002330"
                         }
                     ]
                 }
@@ -3781,13 +3751,14 @@
         {
             "compatiblePackages": [
                 {
+                    "apkFileType": "XAPK",
                     "appIconColor": "#0077CC",
                     "name": "Wavve Boating",
                     "packageName": "com.wavve.boating.gps",
                     "targets": [
                         {
                             "isExperimental": false,
-                            "version": "5.6.9"
+                            "version": "5.7.1"
                         }
                     ]
                 }
@@ -3884,14 +3855,14 @@
         {
             "compatiblePackages": [
                 {
-                    "apkFileType": "APKS",
+                    "apkFileType": "XAPK",
                     "appIconColor": "#003087",
                     "name": "NAVITIME",
                     "packageName": "com.navitime.inbound.walk",
                     "targets": [
                         {
                             "isExperimental": false,
-                            "version": "12.0.1"
+                            "version": "12.0.4"
                         }
                     ]
                 }
@@ -3946,14 +3917,14 @@
         {
             "compatiblePackages": [
                 {
-                    "apkFileType": "APKS",
+                    "apkFileType": "XAPK",
                     "appIconColor": "#FF6B35",
                     "name": "Pixel Habit Tracker",
                     "packageName": "com.pixel.al.pixelhabittracker",
                     "targets": [
                         {
                             "isExperimental": false,
-                            "version": "2.1.1"
+                            "version": "2.1.2"
                         }
                     ]
                 }
@@ -3962,6 +3933,27 @@
             "dependencies": [],
             "description": "Unlocks all PRO features in app",
             "name": "Unlock PRO",
+            "options": []
+        },
+        {
+            "compatiblePackages": [
+                {
+                    "apkFileType": "APKS",
+                    "appIconColor": "#E10600",
+                    "name": "Box Box",
+                    "packageName": "club.boxbox.android",
+                    "targets": [
+                        {
+                            "isExperimental": false,
+                            "version": "5.4.13"
+                        }
+                    ]
+                }
+            ],
+            "default": true,
+            "dependencies": [],
+            "description": "Unlocks Box Box Pro",
+            "name": "Unlock Pro",
             "options": []
         },
         {
@@ -4007,13 +3999,14 @@
         {
             "compatiblePackages": [
                 {
+                    "apkFileType": "APKS",
                     "appIconColor": "#0066FF",
                     "name": "Citizen",
                     "packageName": "sp0n.citizen",
                     "targets": [
                         {
                             "isExperimental": false,
-                            "version": "0.1300.0"
+                            "version": "0.1301.0"
                         }
                     ]
                 }
@@ -4130,13 +4123,14 @@
         {
             "compatiblePackages": [
                 {
+                    "apkFileType": "APKM",
                     "appIconColor": "#4CAF50",
                     "name": "Permission Pilot",
                     "packageName": "eu.darken.myperm",
                     "targets": [
                         {
                             "isExperimental": false,
-                            "version": "2.1.1-rc0"
+                            "version": "2.2.0-rc0"
                         }
                     ]
                 }
@@ -4294,13 +4288,14 @@
         {
             "compatiblePackages": [
                 {
+                    "apkFileType": "APK",
                     "appIconColor": "#1CC29F",
                     "name": "Splitwise",
                     "packageName": "com.Splitwise.SplitwiseMobile",
                     "targets": [
                         {
                             "isExperimental": false,
-                            "version": "26.7.1"
+                            "version": "26.7.2"
                         }
                     ]
                 }
@@ -4536,14 +4531,14 @@
         {
             "compatiblePackages": [
                 {
-                    "apkFileType": "APKS",
+                    "apkFileType": "XAPK",
                     "appIconColor": "#000000",
                     "name": "NYT Games",
                     "packageName": "com.nytimes.crossword",
                     "targets": [
                         {
                             "isExperimental": false,
-                            "version": "6.33.1"
+                            "version": "6.34.0"
                         }
                     ]
                 }
@@ -4714,13 +4709,14 @@
         {
             "compatiblePackages": [
                 {
+                    "apkFileType": "APK",
                     "appIconColor": "#E53935",
                     "name": "MovieBox TV",
                     "packageName": "com.community.mbox.tv",
                     "targets": [
                         {
                             "isExperimental": false,
-                            "version": "1.1.4.0710.03"
+                            "version": "1.1.5.0711.03"
                         }
                     ]
                 }
@@ -4755,13 +4751,14 @@
         {
             "compatiblePackages": [
                 {
+                    "apkFileType": "XAPK",
                     "appIconColor": "#FF6B00",
                     "name": "Yatri",
                     "packageName": "com.yatrirailways.yatri",
                     "targets": [
                         {
                             "isExperimental": false,
-                            "version": "5.0.4"
+                            "version": "5.0.5"
                         }
                     ]
                 }
@@ -4775,13 +4772,14 @@
         {
             "compatiblePackages": [
                 {
+                    "apkFileType": "XAPK",
                     "appIconColor": "#2196F3",
                     "name": "HTTP Sniffer",
                     "packageName": "com.anetcapture.mock",
                     "targets": [
                         {
                             "isExperimental": false,
-                            "version": "2.11.4-ad_mob"
+                            "version": "2.11.7-ad_mob"
                         }
                     ]
                 }

@@ -50,10 +50,7 @@ def collect_apps(list_json):
         for package_name in package_names or {"universal"}:
             patches_dict.setdefault(package_name, set()).add(patch_name)
 
-    return {
-        package_name: sorted(list(patches_dict[package_name]))
-        for package_name in sorted(patches_dict)
-    }
+    return {package_name: sorted(list(patches_dict[package_name])) for package_name in sorted(patches_dict)}
 
 
 def build_current_bundles():
@@ -74,11 +71,7 @@ def build_current_bundles():
 
 # Inspired by code from Paresh Maheshwari
 def derive_name(package_name, skip_words):
-    parts = [
-        part
-        for part in package_name.split(".")
-        if part not in skip_words and len(part) > 1
-    ]
+    parts = [part for part in package_name.split(".") if part not in skip_words and len(part) > 1]
     name = parts[-1] if parts else package_name.split(".")[-1]
     return name.replace("-", " ").replace("_", " ").title()
 
@@ -142,9 +135,7 @@ def make_url(bundle, app=None, patches=None):
 
 
 def is_valid_pkg(package_name):
-    return (
-        "." in package_name and " " not in package_name
-    ) or package_name == "universal"
+    return ("." in package_name and " " not in package_name) or package_name == "universal"
 
 
 def build_json_diff(old_bundles, new_bundles, app_metadata, skip_words):
@@ -158,9 +149,7 @@ def build_json_diff(old_bundles, new_bundles, app_metadata, skip_words):
 
     for key in sorted(new_bundles, key=lambda x: x.lower()):
         patches_dict = new_bundles[key]
-        new_package_names = {
-            package_name for package_name in patches_dict if is_valid_pkg(package_name)
-        }
+        new_package_names = {package_name for package_name in patches_dict if is_valid_pkg(package_name)}
 
         if key not in old_bundles:
             json_diff[key] = {
@@ -175,20 +164,14 @@ def build_json_diff(old_bundles, new_bundles, app_metadata, skip_words):
             }
         else:
             old_patches_dict = old_bundles[key]
-            old_package_names = {
-                package_name
-                for package_name in old_patches_dict
-                if is_valid_pkg(package_name)
-            }
+            old_package_names = {package_name for package_name in old_patches_dict if is_valid_pkg(package_name)}
 
             added_package_names = new_package_names - old_package_names
 
             has_changes = False
             apps_dict = {}
             for package_name in sorted(old_package_names & new_package_names):
-                added_patches = set(patches_dict.get(package_name, [])) - set(
-                    old_patches_dict.get(package_name, [])
-                )
+                added_patches = set(patches_dict.get(package_name, [])) - set(old_patches_dict.get(package_name, []))
                 if added_patches:
                     has_changes = True
                     apps_dict[package_name] = {
@@ -205,10 +188,7 @@ def build_json_diff(old_bundles, new_bundles, app_metadata, skip_words):
                     }
 
             if has_changes:
-                sorted_apps_dict = {
-                    pkg: apps_dict[pkg]
-                    for pkg in sorted(apps_dict.keys(), key=app_sort_key)
-                }
+                sorted_apps_dict = {pkg: apps_dict[pkg] for pkg in sorted(apps_dict.keys(), key=app_sort_key)}
                 json_diff[key] = {"isNew": False, "apps": sorted_apps_dict}
     return json_diff
 
@@ -224,16 +204,8 @@ def generate_markdown(json_diff, app_metadata, skip_words):
         if is_new_bundle:
             all_changes[bundle_key] = {}
         else:
-            added_package_names = [
-                package_name
-                for package_name, data in apps_data.items()
-                if data.get("isNew", False)
-            ]
-            patched_package_names = [
-                package_name
-                for package_name, data in apps_data.items()
-                if not data.get("isNew", False)
-            ]
+            added_package_names = [package_name for package_name, data in apps_data.items() if data.get("isNew", False)]
+            patched_package_names = [package_name for package_name, data in apps_data.items() if not data.get("isNew", False)]
 
             if added_package_names:
                 if bundle_key not in all_changes:
@@ -247,9 +219,7 @@ def generate_markdown(json_diff, app_metadata, skip_words):
                 for package_name in patched_package_names:
                     if package_name not in all_changes[bundle_key]:
                         all_changes[bundle_key][package_name] = []
-                    all_changes[bundle_key][package_name].extend(
-                        apps_data[package_name].get("patches", [])
-                    )
+                    all_changes[bundle_key][package_name].extend(apps_data[package_name].get("patches", []))
 
         if is_new_bundle:
             url = make_url(bundle_key)
@@ -301,9 +271,7 @@ def generate_markdown(json_diff, app_metadata, skip_words):
     if not sections:
         return ""
 
-    sections.insert(
-        0, "📢 _Telegram: [@awesome_for_morphe](https://t.me/awesome_for_morphe)_"
-    )
+    sections.insert(0, "📢 _Telegram: [@awesome_for_morphe](https://t.me/awesome_for_morphe)_")
     return "\n\n".join(sections)
 
 

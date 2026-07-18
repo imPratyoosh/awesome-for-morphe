@@ -2,13 +2,12 @@
   {
     "name": "AMOLED dark theme",
     "description": "Changes the default dark theme to use true blacks for AMOLED screens.",
-    "default": false,
     "compatiblePackages": [
       {
         "packageName": "com.github.android",
         "targets": [
           {
-            "version": "1.255.0"
+            "version": "1.267.0"
           }
         ]
       }
@@ -205,8 +204,7 @@
           {
             "version": "6.6.3"
           }
-        ],
-        "isPreRelease": true
+        ]
       }
     ]
   },
@@ -267,6 +265,9 @@
         "targets": [
           {
             "version": "1.16.7"
+          },
+          {
+            "version": "1.16.15"
           }
         ]
       }
@@ -483,7 +484,7 @@
         "packageName": "com.sbs.diet",
         "targets": [
           {
-            "version": "5.7.8"
+            "version": "5.7.9"
           }
         ]
       },
@@ -814,7 +815,7 @@
     ]
   },
   {
-    "name": "Enable SoundCloud Go+",
+    "name": "Enable SoundCloud Go",
     "description": "Enables app features locked behind the subscription paywall.",
     "compatiblePackages": [
       {
@@ -1008,8 +1009,7 @@
           {
             "version": "6.6.3"
           }
-        ],
-        "isPreRelease": true
+        ]
       }
     ]
   },

@@ -13,6 +13,7 @@ The `/data` directory is used as a Morphe patch database, sourced from [ReVanced
 - `/site/<bundle>.json` — optimized list of patches for UI rendering
 - [`whats-new.json`](data/whats-new.json) — rolling what's new history
 - [`history.json`](data/history.json) — baseline tracking for what's new diffs
+- [`repos.json`](data/repos.json) — list of all discovered repositories (experimental and incomplete)
 
 ## Automation
 
@@ -43,6 +44,31 @@ Parses the downloaded JSON files and compiles the unified `bundles.json`, `apps.
 ### `whats_new.py`
 Generates the what's new list by diffing current bundles against the history baseline.
 - `python scripts/whats_new.py`: Generates `whats-new.md` with hierarchical tree notes, adds the new released entry to `whats-new.json` (keeping max 15 items), and updates the `history.json` baseline.
+
+### `discover.py` (experimental and incomplete)
+Scans patch repositories from remote sources and my custom sources.
+- `python scripts/discover.py`
+
+Supported remote sources:
+- [(Official) Morphe Community Patches](https://morphe-patches.software)
+- [ReVanced Patch Bundles](https://github.com/Jman-Github/ReVanced-Patch-Bundles)
+- [Morphe Archive](https://github.com/rushiforai/morphe-archive)
+
+Outputs the consolidated database to [`/data/repos.json`](data/repos.json).
+
+#### Customization
+Define entries in [`/data/repos/custom.json`](data/repos/custom.json) to add, modify, or exclude repositories:
+```json
+{
+  "github:owner/repo": {
+    "key": "custom-key",
+    "name": "Custom Name"
+  },
+  "gitlab:owner/repo-to-exclude": {
+    "enabled": false
+  }
+}
+```
 
 ### `telegram.py`
 Sends a notification to a Telegram channel.

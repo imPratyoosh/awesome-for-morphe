@@ -68,5 +68,33 @@
         ]
       }
     ]
+  },
+  {
+    "name": "Restyle Search/Games tab icons to Tools/About",
+    "description": "Overrides the native Search/Games bottom-nav icons with the Modx Tools/About artwork.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.mxtech.videoplayer.ad",
+        "targets": [
+          {
+            "version": "2.14.1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Restyle Search/Games tab labels to Tools/About",
+    "description": "Renames the native Search/Games tab labels to Tools/About.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.mxtech.videoplayer.ad",
+        "targets": [
+          {
+            "version": "2.14.1"
+          }
+        ]
+      }
+    ]
   }
 ]

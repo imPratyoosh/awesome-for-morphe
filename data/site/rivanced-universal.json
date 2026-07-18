@@ -1,0 +1,363 @@
+[
+  {
+    "name": "Change package name",
+    "description": "Appends \".rivanced\" to the package name by default. Changing the package name of the app can lead to unexpected issues.",
+    "default": false,
+    "options": [
+      {
+        "key": "Package name",
+        "description": "The name of the package to rename the app to."
+      },
+      {
+        "key": "Update permissions",
+        "description": "Update compatibility receiver permissions. Enabling this can fix installation errors, but this can also break features in certain apps."
+      },
+      {
+        "key": "Update providers",
+        "description": "Update provider names declared by the app. Enabling this can fix installation errors, but this can also break features in certain apps."
+      }
+    ]
+  },
+  {
+    "name": "Change version code",
+    "description": "Changes the version code of the app. This will turn off app store updates and allows downgrading an existing app install to an older app version.",
+    "default": false,
+    "options": [
+      {
+        "key": "Version code",
+        "description": "The version code to use. Using the highest value turns off app store updates and allows downgrading an existing app install to an older app version."
+      }
+    ]
+  },
+  {
+    "name": "Custom network security",
+    "description": "Allows trusting custom certificate authorities for a specific domain.",
+    "default": false,
+    "options": [
+      {
+        "key": "Target domains",
+        "description": "List of domains to which the custom trust configuration will be applied (one domain per entry)."
+      },
+      {
+        "key": "Include subdomains",
+        "description": "Applies the configuration to all subdomains of the target domains."
+      },
+      {
+        "key": "Custom CA file paths",
+        "description": "List of paths to files in PEM or DER format (one file path per entry).\n\nMakes an app trust the provided custom certificate authorities (CAs),\nfor the specified domains, and if the option \"Include Subdomains\" is enabled then also the subdomains.\n\n\nCA files will be bundled in res/raw/ of resulting APK"
+      },
+      {
+        "key": "Trust user added CAs",
+        "description": "Makes an app trust certificates from the Android user store for the specified domains, and if the option \"Include Subdomains\" is enabled then also the subdomains."
+      },
+      {
+        "key": "Trust system CAs",
+        "description": "Makes an app trust certificates from the Android system store for the specified domains, and and if the option \"Include Subdomains\" is enabled then also the subdomains."
+      },
+      {
+        "key": "Allow cleartext traffic (HTTP)",
+        "description": "Allows unencrypted HTTP traffic for the specified domains, and if \"Include Subdomains\" is enabled then also the subdomains."
+      },
+      {
+        "key": "Override certificate pinning",
+        "description": "Overrides certificate pinning for the specified domains and their subdomains if the option \"Include Subdomains\" is enabled to allow inspecting app traffic via a proxy."
+      }
+    ]
+  },
+  {
+    "name": "Disable PairIP license check",
+    "description": "Disable PairIP license and VM checks.",
+    "default": false,
+    "options": [
+      {
+        "key": "Enable VM logging",
+        "description": "Enables detailed native library and VM logging for debugging PairIP."
+      }
+    ]
+  },
+  {
+    "name": "Disable Play Integrity",
+    "description": "Prevents apps from using Play Integrity by pretending it is not available.",
+    "default": false
+  },
+  {
+    "name": "Disable Sentry telemetry",
+    "description": "Disables Sentry telemetry. See https://sentry.io/for/android/ for more information.",
+    "default": false
+  },
+  {
+    "name": "Enable Android debugging",
+    "description": "Enables Android debugging capabilities. This can slow down the app.",
+    "default": false
+  },
+  {
+    "name": "Enable ROM signature spoofing",
+    "description": "Spoofs the signature via the manifest meta-data \"fake-signature\". This patch only works with ROMs that support signature spoofing.",
+    "default": false,
+    "options": [
+      {
+        "key": "Signature or APK file path",
+        "description": "The hex-encoded signature or path to an APK file with the desired signature."
+      }
+    ]
+  },
+  {
+    "name": "Export all activities",
+    "description": "Makes all app activities exportable.",
+    "default": false
+  },
+  {
+    "name": "Export internal data documents provider",
+    "description": "Exports a documents provider that grants access to the internal data directory of this app to file managers and other apps that support the Storage Access Framework.",
+    "default": false
+  },
+  {
+    "name": "Hex",
+    "description": "Replaces a hexadecimal patterns of bytes of files in an APK.",
+    "default": false,
+    "options": [
+      {
+        "key": "Replacements",
+        "description": "Hexadecimal patterns to search for and replace with another in a target file.\n\nA pattern is a sequence of case insensitive strings, each representing hexadecimal bytes, separated by spaces.\nAn example pattern is 'aa 01 02 FF'.\n\nEvery pattern must be followed by a pipe ('|'), the replacement pattern,\nanother pipe ('|'), and the path to the file to make the changes in relative to the APK root. \nThe replacement pattern must be shorter or equal in length to the pattern.\n\nFull example of a valid replacement:\n'01 02 aa FF|03 04|path/to/file'"
+      }
+    ]
+  },
+  {
+    "name": "Hide ADB status",
+    "description": "Hides enabled development settings and/or ADB.",
+    "default": false
+  },
+  {
+    "name": "Hide app icon",
+    "description": "Hides the app icon from the Android launcher.",
+    "default": false
+  },
+  {
+    "name": "Hide mock location",
+    "description": "Prevents the app from knowing the device location is being mocked by a third party app.",
+    "default": false
+  },
+  {
+    "name": "Override certificate pinning",
+    "description": "Overrides certificate pinning, allowing to inspect traffic via a proxy.",
+    "default": false
+  },
+  {
+    "name": "Predictive back gesture",
+    "description": "Enables the predictive back gesture introduced on Android 13.",
+    "default": false
+  },
+  {
+    "name": "Prevent screenshot detection",
+    "description": "Removes the registration of all screen capture callbacks. This prevents the app from detecting screenshots.",
+    "default": false
+  },
+  {
+    "name": "Remove screen capture restriction",
+    "description": "Removes the restriction of capturing audio from apps that normally wouldn't allow it.",
+    "default": false
+  },
+  {
+    "name": "Remove screenshot restriction",
+    "description": "Removes the restriction of taking screenshots in apps that normally wouldn't allow it.",
+    "default": false
+  },
+  {
+    "name": "Remove share targets",
+    "description": "Removes share targets like directly sharing to a frequent contact.",
+    "default": false
+  },
+  {
+    "name": "Set target SDK version 34",
+    "description": "Changes the target SDK to version 34 (Android 14). For devices running Android 15+, this will disable edge-to-edge display.",
+    "default": false
+  },
+  {
+    "name": "Spoof build info",
+    "description": "Spoofs the information about the current build.",
+    "default": false,
+    "options": [
+      {
+        "key": "Board",
+        "description": "The name of the underlying board, like \"goldfish\"."
+      },
+      {
+        "key": "Bootloader",
+        "description": "The system bootloader version number."
+      },
+      {
+        "key": "Brand",
+        "description": "The consumer-visible brand with which the product/hardware will be associated, if any."
+      },
+      {
+        "key": "CPU ABI",
+        "description": "This field was deprecated in API level 21. Use SUPPORTED_ABIS instead."
+      },
+      {
+        "key": "CPU ABI 2",
+        "description": "This field was deprecated in API level 21. Use SUPPORTED_ABIS instead."
+      },
+      {
+        "key": "Device",
+        "description": "The name of the industrial design."
+      },
+      {
+        "key": "Display",
+        "description": "A build ID string meant for displaying to the user."
+      },
+      {
+        "key": "Fingerprint",
+        "description": "A string that uniquely identifies this build."
+      },
+      {
+        "key": "Hardware",
+        "description": "The name of the hardware (from the kernel command line or /proc)."
+      },
+      {
+        "key": "Host",
+        "description": "The host."
+      },
+      {
+        "key": "ID",
+        "description": "Either a changelist number, or a label like \"M4-rc20\"."
+      },
+      {
+        "key": "Manufacturer",
+        "description": "The manufacturer of the product/hardware."
+      },
+      {
+        "key": "Model",
+        "description": "The end-user-visible name for the end product."
+      },
+      {
+        "key": "ODM SKU",
+        "description": "The SKU of the device as set by the original design manufacturer (ODM)."
+      },
+      {
+        "key": "Product",
+        "description": "The name of the overall product."
+      },
+      {
+        "key": "Radio",
+        "description": "This field was deprecated in API level 15. The radio firmware version is frequently not available when this class is initialized, leading to a blank or \"unknown\" value for this string. Use getRadioVersion() instead."
+      },
+      {
+        "key": "Serial",
+        "description": "This field was deprecated in API level 26. Use getSerial() instead."
+      },
+      {
+        "key": "SKU",
+        "description": "The SKU of the hardware (from the kernel command line)."
+      },
+      {
+        "key": "SOC manufacturer",
+        "description": "The manufacturer of the device's primary system-on-chip."
+      },
+      {
+        "key": "SOC model",
+        "description": "The model name of the device's primary system-on-chip."
+      },
+      {
+        "key": "Tags",
+        "description": "Comma-separated tags describing the build, like \"unsigned,debug\"."
+      },
+      {
+        "key": "Time",
+        "description": "The time at which the build was produced, given in milliseconds since the UNIX epoch."
+      },
+      {
+        "key": "Type",
+        "description": "The type of build, like \"user\" or \"eng\"."
+      },
+      {
+        "key": "User",
+        "description": "The user."
+      }
+    ]
+  },
+  {
+    "name": "Spoof keystore security level",
+    "description": "Forces apps to see Keymaster and Attestation security levels as 'StrongBox' (Level 2).",
+    "default": false
+  },
+  {
+    "name": "Spoof Play Age Signals",
+    "description": "Spoofs Google Play data about the user's age and verification status.",
+    "default": false,
+    "options": [
+      {
+        "key": "Lower age bound",
+        "description": "A positive integer."
+      },
+      {
+        "key": "Upper age bound",
+        "description": "A positive integer. Must be greater than the lower age bound."
+      },
+      {
+        "key": "User status",
+        "description": "An integer representing the user status."
+      }
+    ]
+  },
+  {
+    "name": "Spoof root of trust",
+    "description": "Spoofs device integrity states (Locked Bootloader, Verified OS) for apps that perform local certificate attestation.",
+    "default": false
+  },
+  {
+    "name": "Spoof SIM provider",
+    "description": "Spoofs information about the SIM card provider.",
+    "default": false,
+    "options": [
+      {
+        "key": "Network ISO country code",
+        "title": "ISO-3166-1 alpha-2 country code equivalent for the SIM provider's country code."
+      },
+      {
+        "key": "MCC+MNC network operator code",
+        "description": "The 5 or 6 digits MCC+MNC (Mobile Country Code + Mobile Network Code) of the network operator."
+      },
+      {
+        "key": "Network operator name",
+        "description": "The full name of the network operator."
+      },
+      {
+        "key": "SIM ISO country code",
+        "title": "ISO-3166-1 alpha-2 country code equivalent for the SIM provider's country code."
+      },
+      {
+        "key": "MCC+MNC SIM operator code",
+        "description": "The 5 or 6 digits MCC+MNC (Mobile Country Code + Mobile Network Code) of the SIM operator."
+      },
+      {
+        "key": "SIM operator name",
+        "description": "The full name of the SIM operator."
+      },
+      {
+        "key": "IMEI value",
+        "description": "15-digit IMEI to spoof, blank to skip, or 'random'."
+      },
+      {
+        "key": "MEID value",
+        "description": "14-char hex MEID to spoof, blank to skip, or 'random'."
+      },
+      {
+        "key": "IMSI (Subscriber ID)",
+        "description": "15-digit IMSI to spoof, blank to skip, or 'random'."
+      },
+      {
+        "key": "ICCID (SIM Serial)",
+        "description": "19-digit ICCID to spoof, blank to skip, or 'random'."
+      },
+      {
+        "key": "Phone number",
+        "description": "Phone number to spoof, blank to skip, or 'random'."
+      }
+    ]
+  },
+  {
+    "name": "Spoof Wi-Fi connection",
+    "description": "Spoofs an existing Wi-Fi connection.",
+    "default": false
+  }
+]
