@@ -67,9 +67,7 @@ function extractVersions(value) {
 
   if (!versionList.length) return [];
 
-  versionList.sort((versionA, versionB) =>
-    versionB.version.localeCompare(versionA.version, undefined, { numeric: true, sensitivity: "base" }),
-  );
+  versionList.sort((versionA, versionB) => versionB.version.localeCompare(versionA.version, undefined, { numeric: true, sensitivity: "base" }));
 
   return versionList;
 }
@@ -249,10 +247,7 @@ export function filterRows(data, filters) {
         if (showFilter.bundle && row.bundleKey !== showFilter.bundle) return false;
 
         if (showFilter.app) {
-          const appMatch =
-            showFilter.app === "universal"
-              ? !row.packageName || row.packageName === "universal"
-              : row.packageName === showFilter.app;
+          const appMatch = showFilter.app === "universal" ? !row.packageName || row.packageName === "universal" : row.packageName === showFilter.app;
           if (!appMatch) return false;
         }
 
@@ -317,4 +312,46 @@ export function summarizeRows(rows) {
     if (row.packageName && row.packageName !== "universal") apps.add(row.packageName);
   }
   return { bundles: bundles.size, patches: patches.size, apps: apps.size };
+}
+
+export function getFilterOptionsFromBundles(bundles, namesMap = {}, skipSet = new Set()) {
+  const appMap = new Map();
+  const bundleSet = new Set();
+  let hasUniversal = false;
+
+  for (const bundle of bundles) {
+    bundleSet.add(bundle.key);
+    if (bundle.targetApps) {
+      for (const packageName of bundle.targetApps) {
+        if (packageName !== "universal") {
+          if (!appMap.has(packageName)) {
+            appMap.set(packageName, {
+              label: appName(packageName, namesMap, skipSet),
+              icon: namesMap[packageName]?.iconUrl || "",
+            });
+          }
+        } else {
+          hasUniversal = true;
+        }
+      }
+    }
+  }
+
+  const appOptions = Array.from(appMap.entries())
+    .map(([value, { label, icon }]) => ({ value, label, icon }))
+    .sort((appA, appB) => appA.label.localeCompare(appB.label) || appA.value.localeCompare(appB.value));
+
+  if (hasUniversal) {
+    appOptions.unshift({
+      value: "universal",
+      label: namesMap["universal"]?.name || "universal",
+    });
+  }
+
+  return {
+    bundleOptions: Array.from(bundleSet)
+      .sort((firstItem, secondItem) => firstItem.localeCompare(secondItem))
+      .map((value) => ({ value, label: value })),
+    appOptions,
+  };
 }

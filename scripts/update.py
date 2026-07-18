@@ -259,15 +259,23 @@ def build_site_json(stable_list, dev_list, latest, discovered_names):
         for patch in stable_patches_raw:
             stripped = strip_patch(patch, discovered_names)
             out_patches.append(stripped)
-            for package_name in stripped.get("compatiblePackages", []):
-                target_apps.add(package_name["packageName"])
+            comp_packages = stripped.get("compatiblePackages")
+            if comp_packages:
+                for package_name in comp_packages:
+                    target_apps.add(package_name["packageName"])
+            else:
+                target_apps.add("universal")
     elif not stable_list:
         is_bundle_prerelease = True
         for patch in dev_patches_raw:
             stripped = strip_patch(patch, discovered_names)
             out_patches.append(stripped)
-            for package_name in stripped.get("compatiblePackages", []):
-                target_apps.add(package_name["packageName"])
+            comp_packages = stripped.get("compatiblePackages")
+            if comp_packages:
+                for package_name in comp_packages:
+                    target_apps.add(package_name["packageName"])
+            else:
+                target_apps.add("universal")
     else:
         stable_apps = set()
         stable_app_patches = {}
@@ -315,6 +323,7 @@ def build_site_json(stable_list, dev_list, latest, discovered_names):
                 if patch_is_new_for_some_old_app:
                     stripped["isPreRelease"] = True
             else:
+                target_apps.add("universal")
                 if "universal" not in stable_apps:
                     stripped["isPreRelease"] = True
                 else:

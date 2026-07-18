@@ -21,7 +21,8 @@
     "patches": "patches/ImmortalZeus.json",
     "createdAt": "2026-05-15T03:33:31",
     "targetApps": [
-      "com.example.app"
+      "com.example.app",
+      "universal"
     ],
     "appCount": 1
   },
@@ -63,7 +64,8 @@
       "com.google.android.inputmethod.latin",
       "com.imdb.mobile",
       "com.ninegag.android.app",
-      "com.reddit.frontpage"
+      "com.reddit.frontpage",
+      "universal"
     ],
     "appCount": 4
   },
@@ -144,7 +146,8 @@
       "com.flexcil.flexcilnote",
       "com.kakao.talk",
       "com.navercorp.game.android.community",
-      "kr.co.nowcom.mobile.afreeca"
+      "kr.co.nowcom.mobile.afreeca",
+      "universal"
     ],
     "appCount": 5
   },
@@ -158,7 +161,8 @@
     "createdAt": "2026-07-16T16:12:10",
     "targetApps": [
       "com.google.android.apps.youtube.music",
-      "com.google.android.youtube"
+      "com.google.android.youtube",
+      "universal"
     ],
     "appCount": 2
   },
@@ -175,7 +179,8 @@
       "com.google.android.youtube",
       "com.reddit.frontpage",
       "com.spotify.music",
-      "com.ysy.app.firewall"
+      "com.ysy.app.firewall",
+      "universal"
     ],
     "appCount": 5,
     "isPreRelease": true
@@ -242,7 +247,8 @@
       "com.vpn.free.hotspot.secure.vpnify",
       "io.funswitch.blocker",
       "org.zwanoo.android.speedtest",
-      "pl.solidexplorer2"
+      "pl.solidexplorer2",
+      "universal"
     ],
     "appCount": 14
   },
@@ -367,7 +373,8 @@
     "createdAt": "2026-07-18T01:55:19",
     "targetApps": [
       "com.ebay.kleinanzeigen",
-      "com.google.android.apps.magazines"
+      "com.google.android.apps.magazines",
+      "universal"
     ],
     "appCount": 2
   },
@@ -397,7 +404,8 @@
       "com.going.mobile",
       "com.innologica.inoreader",
       "epixler.de.hypnobox_android",
-      "net.tsapps.appsales"
+      "net.tsapps.appsales",
+      "universal"
     ],
     "appCount": 5
   },
@@ -484,7 +492,8 @@
     "targetApps": [
       "com.laurencedawson.reddit_sync",
       "com.laurencedawson.reddit_sync.dev",
-      "com.laurencedawson.reddit_sync.pro"
+      "com.laurencedawson.reddit_sync.pro",
+      "universal"
     ],
     "appCount": 3
   },
@@ -548,6 +557,7 @@
       "org.totschnig.myexpenses",
       "pl.solidexplorer2",
       "ru.iiec.pydroid3",
+      "universal",
       "videoeditor.videorecorder.screenrecorder"
     ],
     "appCount": 52
@@ -712,7 +722,8 @@
     "targetApps": [
       "com.laurencedawson.reddit_sync",
       "com.laurencedawson.reddit_sync.dev",
-      "com.laurencedawson.reddit_sync.pro"
+      "com.laurencedawson.reddit_sync.pro",
+      "universal"
     ],
     "appCount": 3
   },
@@ -801,6 +812,7 @@
       "com.soundcloud.android",
       "com.yazio.android",
       "ru.vk.store",
+      "universal",
       "xyz.rtrvr.pillo"
     ],
     "appCount": 12
@@ -844,7 +856,8 @@
       "io.github.sds100.keymapper",
       "jp.co.shueisha.mangaplus",
       "net.nemostudio.keymate",
-      "studio.muggle.chatboost"
+      "studio.muggle.chatboost",
+      "universal"
     ],
     "appCount": 31
   },
@@ -931,7 +944,8 @@
       "com.rubygames.assassin",
       "diozz.cubex",
       "fi.twomenandadog.zombiecatchers",
-      "jpark.AOS5"
+      "jpark.AOS5",
+      "universal"
     ],
     "appCount": 7
   },
@@ -959,7 +973,8 @@
     "targetApps": [
       "com.google.android.apps.youtube.music",
       "com.google.android.youtube",
-      "com.reddit.frontpage"
+      "com.reddit.frontpage",
+      "universal"
     ],
     "appCount": 3
   },
@@ -998,7 +1013,9 @@
     "firstSeen": "2026-06-28T11:39:03",
     "patches": "patches/morphe-screenshot.json",
     "createdAt": "2026-06-28T11:39:03",
-    "targetApps": [],
+    "targetApps": [
+      "universal"
+    ],
     "appCount": 0
   },
   "movistar-block-ads": {
@@ -1022,7 +1039,9 @@
     "firstSeen": "2026-07-03T02:41:59",
     "patches": "patches/nai64.json",
     "createdAt": "2026-07-05T20:38:55",
-    "targetApps": [],
+    "targetApps": [
+      "universal"
+    ],
     "appCount": 0
   },
   "npci-bhim": {
@@ -1111,7 +1130,8 @@
       "o.o.joey.dev",
       "o.o.joey.pro",
       "org.cygnusx1.continuum",
-      "reddit.news"
+      "reddit.news",
+      "universal"
     ],
     "appCount": 18
   },
@@ -1226,7 +1246,8 @@
     "patches": "patches/prathxm-ytmusic.json",
     "createdAt": "2026-06-28T15:27:28",
     "targetApps": [
-      "com.google.android.apps.youtube.music"
+      "com.google.android.apps.youtube.music",
+      "universal"
     ],
     "appCount": 1
   },
@@ -1239,7 +1260,8 @@
     "patches": "patches/proguard.json",
     "createdAt": "2026-06-05T01:03:40",
     "targetApps": [
-      "com.java.inspector"
+      "com.java.inspector",
+      "universal"
     ],
     "appCount": 1
   },
@@ -1307,7 +1329,9 @@
     "firstSeen": "2026-07-16T08:12:29",
     "patches": "patches/rivanced-universal.json",
     "createdAt": "2026-07-17T09:02:17",
-    "targetApps": [],
+    "targetApps": [
+      "universal"
+    ],
     "appCount": 0
   },
   "rookieenough": {
@@ -1352,7 +1376,8 @@
       "jp.pxv.android",
       "net.binarymode.android.irplus",
       "nl.sanomamedia.android.nu",
-      "tv.twitch.android.app"
+      "tv.twitch.android.app",
+      "universal"
     ],
     "appCount": 34
   },
@@ -1510,6 +1535,7 @@
       "sensustech.universal.tv.remote.control",
       "shareit.premium",
       "sp0n.citizen",
+      "universal",
       "verbosus.pialytic"
     ],
     "appCount": 146
@@ -1524,7 +1550,8 @@
     "createdAt": "2026-03-05T14:38:07",
     "targetApps": [
       "com.google.android.apps.youtube.music",
-      "com.google.android.youtube"
+      "com.google.android.youtube",
+      "universal"
     ],
     "appCount": 2
   },
@@ -1539,7 +1566,8 @@
     "targetApps": [
       "com.nicedayapps.iss_free",
       "com.overdevs.at4k",
-      "com.spocky.projengmenu"
+      "com.spocky.projengmenu",
+      "universal"
     ],
     "appCount": 3
   },
@@ -1593,7 +1621,9 @@
     "firstSeen": "2026-06-18T09:18:21",
     "patches": "patches/sjshb57-pairip.json",
     "createdAt": "2026-07-13T02:42:37",
-    "targetApps": [],
+    "targetApps": [
+      "universal"
+    ],
     "appCount": 0
   },
   "stylus": {
@@ -1646,7 +1676,8 @@
     "targetApps": [
       "com.google.android.apps.youtube.music",
       "com.google.android.youtube",
-      "com.reddit.frontpage"
+      "com.reddit.frontpage",
+      "universal"
     ],
     "appCount": 3
   },
@@ -1713,7 +1744,8 @@
       "com.avito.android",
       "com.idamob.tinkoff.android",
       "com.wildberries.ru",
-      "ru.ozon.app.android"
+      "ru.ozon.app.android",
+      "universal"
     ],
     "appCount": 4
   },
@@ -1740,7 +1772,8 @@
     "createdAt": "2026-06-15T17:16:26",
     "targetApps": [
       "com.jcdecaux.vls.lyon",
-      "ee.dustland.android.minesweeper"
+      "ee.dustland.android.minesweeper",
+      "universal"
     ],
     "appCount": 2
   }

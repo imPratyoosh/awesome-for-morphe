@@ -7,14 +7,6 @@ body:
     attributes:
       value: |
         Thanks for submitting a request! Use this template to add, remove, or customize the name/key of a bundle source.
-  - type: input
-    id: repo-url
-    attributes:
-      label: Repository URL
-      description: The GitHub or GitLab URL of the bundle source
-      placeholder: https://github.com/username/morphe-patches
-    validations:
-      required: true
   - type: dropdown
     id: action
     attributes:
@@ -25,6 +17,14 @@ body:
         - Remove Bundle
         - Customize Name / Key Bundle
       default: 0
+    validations:
+      required: true
+  - type: input
+    id: repo-url
+    attributes:
+      label: Repository URL
+      description: The GitHub or GitLab URL of the bundle source
+      placeholder: https://github.com/username/morphe-patches
     validations:
       required: true
   - type: input
