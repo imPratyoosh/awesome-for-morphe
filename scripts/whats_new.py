@@ -142,54 +142,34 @@ def build_json_diff(old_bundles, new_bundles, app_metadata, skip_words):
     json_diff = {}
 
     def app_sort_key(pkg):
-        return (
-            pkg == "universal",
-            format_app_name(pkg, app_metadata, skip_words).lower(),
-        )
+        return (pkg == "universal", format_app_name(pkg, app_metadata, skip_words).lower())
 
-    for key in sorted(new_bundles, key=lambda x: x.lower()):
-        patches_dict = new_bundles[key]
-        new_package_names = {package_name for package_name in patches_dict if is_valid_pkg(package_name)}
+    for key, patches_dict in sorted(new_bundles.items(), key=lambda x: x[0].lower()):
+        new_package_names = {pkg for pkg in patches_dict if is_valid_pkg(pkg)}
 
         if key not in old_bundles:
             json_diff[key] = {
                 "isNew": True,
                 "apps": {
-                    package_name: {
-                        "isNew": True,
-                        "patches": sorted(list(patches_dict.get(package_name, []))),
-                    }
-                    for package_name in sorted(new_package_names, key=app_sort_key)
+                    pkg: {"isNew": True, "patches": sorted(list(patches_dict.get(pkg, [])))} for pkg in sorted(new_package_names, key=app_sort_key)
                 },
             }
         else:
             old_patches_dict = old_bundles[key]
-            old_package_names = {package_name for package_name in old_patches_dict if is_valid_pkg(package_name)}
-
-            added_package_names = new_package_names - old_package_names
-
-            has_changes = False
+            old_package_names = {pkg for pkg in old_patches_dict if is_valid_pkg(pkg)}
             apps_dict = {}
-            for package_name in sorted(old_package_names & new_package_names):
-                added_patches = set(patches_dict.get(package_name, [])) - set(old_patches_dict.get(package_name, []))
-                if added_patches:
-                    has_changes = True
-                    apps_dict[package_name] = {
-                        "isNew": False,
-                        "patches": sorted(list(added_patches)),
-                    }
 
-            if added_package_names:
-                has_changes = True
-                for package_name in sorted(added_package_names):
-                    apps_dict[package_name] = {
-                        "isNew": True,
-                        "patches": sorted(list(patches_dict.get(package_name, []))),
-                    }
+            for pkg in sorted(new_package_names, key=app_sort_key):
+                if pkg not in old_package_names:
+                    apps_dict[pkg] = {"isNew": True, "patches": sorted(list(patches_dict.get(pkg, [])))}
+                else:
+                    added_patches = set(patches_dict.get(pkg, [])) - set(old_patches_dict.get(pkg, []))
+                    if added_patches:
+                        apps_dict[pkg] = {"isNew": False, "patches": sorted(list(added_patches))}
 
-            if has_changes:
-                sorted_apps_dict = {pkg: apps_dict[pkg] for pkg in sorted(apps_dict.keys(), key=app_sort_key)}
-                json_diff[key] = {"isNew": False, "apps": sorted_apps_dict}
+            if apps_dict:
+                json_diff[key] = {"isNew": False, "apps": apps_dict}
+
     return json_diff
 
 

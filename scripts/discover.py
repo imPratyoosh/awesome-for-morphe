@@ -1,3 +1,5 @@
+# Copyright (c) 2026 nvbangg (github.com/nvbangg)
+
 import re
 import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -7,7 +9,6 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from providers.utils import load_json, save_json
 from providers import official, jman, morphe_archive
-
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT_DIR / "data"

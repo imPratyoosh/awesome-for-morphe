@@ -1,3 +1,5 @@
+// Copyright (c) 2026 nvbangg (github.com/nvbangg)
+
 import { createApp, ref, computed, onMounted, watch, reactive, nextTick } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
 import { filterRows, getFilterOptions, getFilterOptionsFromBundles, loadInitialData, summarizeRows, appName, fetchJson } from "./data.js";
 
@@ -65,26 +67,17 @@ function parseShowTrie(inputString) {
 }
 
 const stringifyTrie = (bundlesDict) => {
-  const bundleStrs = [];
-  for (const [bundle, apps] of Object.entries(bundlesDict)) {
-    if (!apps || Object.keys(apps).length === 0) {
-      bundleStrs.push(bundle);
-    } else {
-      const appStrs = [];
-      for (const [app, patches] of Object.entries(apps)) {
-        if (!patches || patches.length === 0) {
-          appStrs.push(app);
-        } else if (patches.length === 1) {
-          appStrs.push(`${app}:${formatPatchName(patches[0])}`);
-        } else {
-          const patchStrs = patches.map(formatPatchName);
-          appStrs.push(`${app}:(${patchStrs.join(",")})`);
-        }
-      }
-      bundleStrs.push(appStrs.length === 1 ? `${bundle}:${appStrs[0]}` : `${bundle}:(${appStrs.join(",")})`);
-    }
-  }
-  return bundleStrs.join(",");
+  return Object.entries(bundlesDict)
+    .map(([bundle, apps]) => {
+      if (!apps || Object.keys(apps).length === 0) return bundle;
+      const appStrs = Object.entries(apps).map(([app, patches]) => {
+        if (!patches || patches.length === 0) return app;
+        if (patches.length === 1) return `${app}:${formatPatchName(patches[0])}`;
+        return `${app}:(${patches.map(formatPatchName).join(",")})`;
+      });
+      return appStrs.length === 1 ? `${bundle}:${appStrs[0]}` : `${bundle}:(${appStrs.join(",")})`;
+    })
+    .join(",");
 };
 
 const formatPatchName = (patchName) => {

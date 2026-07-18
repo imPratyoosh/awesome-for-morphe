@@ -26,16 +26,11 @@ export function buildBundleUrls(source, repo) {
   if (!repo) return { repoUrl: "", deepLink: "", changelogUrl: "" };
 
   const repoUrl = `https://${source}.com/${repo}`;
-  const deepLink = `https://morphe.software/add-source?${source}=${repo}`;
-  let changelogUrl = "";
-
-  if (source === "gitlab") {
-    changelogUrl = `${repoUrl}/-/releases`;
-  } else {
-    changelogUrl = `${repoUrl}/releases`;
-  }
-
-  return { repoUrl, deepLink, changelogUrl };
+  return {
+    repoUrl,
+    deepLink: `https://morphe.software/add-source?${source}=${repo}`,
+    changelogUrl: source === "gitlab" ? `${repoUrl}/-/releases` : `${repoUrl}/releases`,
+  };
 }
 
 export function appName(packageName, metadata, skipSet) {
@@ -56,40 +51,24 @@ export function appName(packageName, metadata, skipSet) {
 function extractVersions(value) {
   if (!Array.isArray(value)) return [];
 
-  const versionList = value.reduce((accumulator, versionItem) => {
-    if (typeof versionItem === "string") {
-      accumulator.push({ version: versionItem, isExperimental: false });
-    } else if (versionItem?.version) {
-      accumulator.push({ version: String(versionItem.version), isExperimental: !!versionItem.isExperimental });
-    }
-    return accumulator;
-  }, []);
-
-  if (!versionList.length) return [];
-
-  versionList.sort((versionA, versionB) => versionB.version.localeCompare(versionA.version, undefined, { numeric: true, sensitivity: "base" }));
-
-  return versionList;
+  return value
+    .flatMap((item) => {
+      if (typeof item === "string") return [{ version: item, isExperimental: false }];
+      if (item?.version) return [{ version: String(item.version), isExperimental: !!item.isExperimental }];
+      return [];
+    })
+    .sort((a, b) => b.version.localeCompare(a.version, undefined, { numeric: true, sensitivity: "base" }));
 }
 
 function packages(patch) {
   const compatiblePackages = patch.compatiblePackages;
   const universalResult = [{ packageName: "universal", versions: [], isPreRelease: false }];
 
-  if (!compatiblePackages || !Array.isArray(compatiblePackages)) {
-    return universalResult;
-  }
+  if (!Array.isArray(compatiblePackages)) return universalResult;
 
-  const packageRows = compatiblePackages.reduce((accumulator, packageItem) => {
-    if (packageItem?.packageName) {
-      accumulator.push({
-        packageName: packageItem.packageName,
-        isPreRelease: !!packageItem.isPreRelease,
-        versions: extractVersions(packageItem.targets || []),
-      });
-    }
-    return accumulator;
-  }, []);
+  const packageRows = compatiblePackages.flatMap((item) =>
+    item?.packageName ? [{ packageName: item.packageName, isPreRelease: !!item.isPreRelease, versions: extractVersions(item.targets || []) }] : [],
+  );
 
   return packageRows.length ? packageRows : universalResult;
 }
