@@ -68,6 +68,7 @@
 
   Alternative: [Patch Explorer](https://paresh-maheshwari.github.io/patch-explorer/) [![Repo](https://img.shields.io/badge/Repo-black?style=social&logo=github)](https://github.com/Paresh-Maheshwari/patch-explorer)
   </details>
+
 - [Revanced External Bundles](https://revanced-external-bundles.brosssh.com/) [![Repo](https://img.shields.io/badge/Repo-black?style=social&logo=github)](https://github.com/brosssh/revanced-external-bundles)
 - [Community Patch Space Explorer](https://dmh84.github.io/morphe-space-explorer/) [![Repo](https://img.shields.io/badge/Repo-black?style=social&logo=github)](https://github.com/dmh84/morphe-space-explorer)
 - [Morphe Patch Tracker](https://morphe-patches-drnx64.vercel.app/) [![Repo](https://img.shields.io/badge/Repo-black?style=social&logo=github)](https://github.com/drnx64/morphe-track-patches)
