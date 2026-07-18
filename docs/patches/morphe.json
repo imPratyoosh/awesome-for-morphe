@@ -625,6 +625,39 @@
     ]
   },
   {
+    "name": "Crossfade",
+    "description": "Adds a true dual-player crossfade between consecutive tracks. Requires YouTube Music 9.00 or newer; on older versions the patch is a no-op.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.google.android.apps.youtube.music",
+        "targets": [
+          {
+            "version": "9.26.51",
+            "isExperimental": true
+          },
+          {
+            "version": "9.25.50",
+            "isExperimental": true
+          },
+          {
+            "version": "9.24.51",
+            "isExperimental": true
+          },
+          {
+            "version": "9.15.51"
+          },
+          {
+            "version": "8.51.51"
+          },
+          {
+            "version": "7.29.52"
+          }
+        ]
+      }
+    ],
+    "isPreRelease": true
+  },
+  {
     "name": "Custom branding",
     "description": "Adds options to change the app icon and app name. Branding cannot be changed for mounted (root) installations.",
     "options": [
@@ -735,11 +768,11 @@
         "packageName": "com.reddit.frontpage",
         "targets": [
           {
-            "version": "2026.28.0",
+            "version": "2026.29.0",
             "isExperimental": true
           },
           {
-            "version": "2026.27.0",
+            "version": "2026.28.0",
             "isExperimental": true
           },
           {
@@ -1062,11 +1095,11 @@
         "packageName": "com.reddit.frontpage",
         "targets": [
           {
-            "version": "2026.28.0",
+            "version": "2026.29.0",
             "isExperimental": true
           },
           {
-            "version": "2026.27.0",
+            "version": "2026.28.0",
             "isExperimental": true
           },
           {
@@ -1245,11 +1278,11 @@
         "packageName": "com.reddit.frontpage",
         "targets": [
           {
-            "version": "2026.28.0",
+            "version": "2026.29.0",
             "isExperimental": true
           },
           {
-            "version": "2026.27.0",
+            "version": "2026.28.0",
             "isExperimental": true
           },
           {
@@ -1881,11 +1914,11 @@
         "packageName": "com.reddit.frontpage",
         "targets": [
           {
-            "version": "2026.28.0",
+            "version": "2026.29.0",
             "isExperimental": true
           },
           {
-            "version": "2026.27.0",
+            "version": "2026.28.0",
             "isExperimental": true
           },
           {
@@ -1949,11 +1982,11 @@
         "packageName": "com.reddit.frontpage",
         "targets": [
           {
-            "version": "2026.28.0",
+            "version": "2026.29.0",
             "isExperimental": true
           },
           {
-            "version": "2026.27.0",
+            "version": "2026.28.0",
             "isExperimental": true
           },
           {
@@ -2049,11 +2082,11 @@
         "packageName": "com.reddit.frontpage",
         "targets": [
           {
-            "version": "2026.28.0",
+            "version": "2026.29.0",
             "isExperimental": true
           },
           {
-            "version": "2026.27.0",
+            "version": "2026.28.0",
             "isExperimental": true
           },
           {
@@ -2362,11 +2395,11 @@
         "packageName": "com.reddit.frontpage",
         "targets": [
           {
-            "version": "2026.28.0",
+            "version": "2026.29.0",
             "isExperimental": true
           },
           {
-            "version": "2026.27.0",
+            "version": "2026.28.0",
             "isExperimental": true
           },
           {
@@ -2470,11 +2503,11 @@
         "packageName": "com.reddit.frontpage",
         "targets": [
           {
-            "version": "2026.28.0",
+            "version": "2026.29.0",
             "isExperimental": true
           },
           {
-            "version": "2026.27.0",
+            "version": "2026.28.0",
             "isExperimental": true
           },
           {
@@ -2628,11 +2661,11 @@
         "packageName": "com.reddit.frontpage",
         "targets": [
           {
-            "version": "2026.28.0",
+            "version": "2026.29.0",
             "isExperimental": true
           },
           {
-            "version": "2026.27.0",
+            "version": "2026.28.0",
             "isExperimental": true
           },
           {
@@ -2696,11 +2729,11 @@
         "packageName": "com.reddit.frontpage",
         "targets": [
           {
-            "version": "2026.28.0",
+            "version": "2026.29.0",
             "isExperimental": true
           },
           {
-            "version": "2026.27.0",
+            "version": "2026.28.0",
             "isExperimental": true
           },
           {
@@ -3094,11 +3127,11 @@
         "packageName": "com.reddit.frontpage",
         "targets": [
           {
-            "version": "2026.28.0",
+            "version": "2026.29.0",
             "isExperimental": true
           },
           {
-            "version": "2026.27.0",
+            "version": "2026.28.0",
             "isExperimental": true
           },
           {
@@ -3123,11 +3156,11 @@
         "packageName": "com.reddit.frontpage",
         "targets": [
           {
-            "version": "2026.28.0",
+            "version": "2026.29.0",
             "isExperimental": true
           },
           {
-            "version": "2026.27.0",
+            "version": "2026.28.0",
             "isExperimental": true
           },
           {
@@ -3604,11 +3637,11 @@
         "packageName": "com.reddit.frontpage",
         "targets": [
           {
-            "version": "2026.28.0",
+            "version": "2026.29.0",
             "isExperimental": true
           },
           {
-            "version": "2026.27.0",
+            "version": "2026.28.0",
             "isExperimental": true
           },
           {
@@ -3663,6 +3696,39 @@
         ]
       }
     ]
+  },
+  {
+    "name": "Return YouTube Dislike",
+    "description": "Adds an option to show the dislike count of tracks with Return YouTube Dislike.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.google.android.apps.youtube.music",
+        "targets": [
+          {
+            "version": "9.26.51",
+            "isExperimental": true
+          },
+          {
+            "version": "9.25.50",
+            "isExperimental": true
+          },
+          {
+            "version": "9.24.51",
+            "isExperimental": true
+          },
+          {
+            "version": "9.15.51"
+          },
+          {
+            "version": "8.51.51"
+          },
+          {
+            "version": "7.29.52"
+          }
+        ]
+      }
+    ],
+    "isPreRelease": true
   },
   {
     "name": "Return YouTube Dislike",
@@ -3743,11 +3809,11 @@
         "packageName": "com.reddit.frontpage",
         "targets": [
           {
-            "version": "2026.28.0",
+            "version": "2026.29.0",
             "isExperimental": true
           },
           {
-            "version": "2026.27.0",
+            "version": "2026.28.0",
             "isExperimental": true
           },
           {
@@ -3960,11 +4026,11 @@
         "packageName": "com.reddit.frontpage",
         "targets": [
           {
-            "version": "2026.28.0",
+            "version": "2026.29.0",
             "isExperimental": true
           },
           {
-            "version": "2026.27.0",
+            "version": "2026.28.0",
             "isExperimental": true
           },
           {
@@ -4170,11 +4236,11 @@
         "packageName": "com.reddit.frontpage",
         "targets": [
           {
-            "version": "2026.28.0",
+            "version": "2026.29.0",
             "isExperimental": true
           },
           {
-            "version": "2026.27.0",
+            "version": "2026.28.0",
             "isExperimental": true
           },
           {
@@ -4386,38 +4452,6 @@
           },
           {
             "version": "20.21.37"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Track crossfade",
-    "description": "Adds a true dual-player crossfade between consecutive tracks. Requires YouTube Music 9.00 or newer; on older versions the patch is a no-op.",
-    "compatiblePackages": [
-      {
-        "packageName": "com.google.android.apps.youtube.music",
-        "targets": [
-          {
-            "version": "9.26.51",
-            "isExperimental": true
-          },
-          {
-            "version": "9.25.50",
-            "isExperimental": true
-          },
-          {
-            "version": "9.24.51",
-            "isExperimental": true
-          },
-          {
-            "version": "9.15.51"
-          },
-          {
-            "version": "8.51.51"
-          },
-          {
-            "version": "7.29.52"
           }
         ]
       }

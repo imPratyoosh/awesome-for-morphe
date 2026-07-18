@@ -321,7 +321,7 @@
     "stars": 19,
     "firstSeen": "2026-07-06T22:13:39",
     "patches": "patches/bufferk.json",
-    "createdAt": "2026-07-17T20:43:55",
+    "createdAt": "2026-07-18T09:23:06",
     "targetApps": [
       "com.Splitwise.SplitwiseMobile",
       "com.bounce.connect",
@@ -969,7 +969,7 @@
     "stars": 2889,
     "firstSeen": "2026-06-23T13:04:19",
     "patches": "patches/morphe.json",
-    "createdAt": "2026-07-16T09:04:26",
+    "createdAt": "2026-07-18T06:39:30",
     "targetApps": [
       "com.google.android.apps.youtube.music",
       "com.google.android.youtube",
@@ -1164,7 +1164,7 @@
     "stars": 3,
     "firstSeen": "2026-07-12T05:58:07",
     "patches": "patches/pichiwa.json",
-    "createdAt": "2026-07-17T06:59:16",
+    "createdAt": "2026-07-18T08:33:53",
     "targetApps": [
       "com.whatsapp"
     ],
@@ -1388,7 +1388,7 @@
     "stars": 60,
     "firstSeen": "2026-06-02T17:21:27",
     "patches": "patches/rushiranpise.json",
-    "createdAt": "2026-07-17T07:16:34",
+    "createdAt": "2026-07-18T05:26:03",
     "targetApps": [
       "ai.topicfinder.podcastdiscovery",
       "alldocumentreader.office.viewer.filereader.pdfviewer",
@@ -1427,6 +1427,7 @@
       "com.community.mbox.tv",
       "com.community.oneroom",
       "com.cpuid.cpu_z",
+      "com.delphicoder.flud",
       "com.dubox.drive",
       "com.duolingo",
       "com.dywx.larkplayer",
@@ -1512,6 +1513,7 @@
       "com.wolfram.android.alphapro",
       "com.yatrirailways.yatri",
       "cz.mroczis.netmonster",
+      "cz.seznam.mapy",
       "de.komoot.android",
       "eu.darken.myperm",
       "eu.duong.imagedatefixer",
@@ -1538,7 +1540,7 @@
       "universal",
       "verbosus.pialytic"
     ],
-    "appCount": 146
+    "appCount": 148
   },
   "rvx-morphed": {
     "source": "github",
@@ -1672,7 +1674,7 @@
     "stars": 1,
     "firstSeen": "2026-07-16T08:12:29",
     "patches": "patches/variablenine.json",
-    "createdAt": "2026-07-17T23:58:21",
+    "createdAt": "2026-07-18T06:22:34",
     "targetApps": [
       "com.google.android.apps.youtube.music",
       "com.google.android.youtube",

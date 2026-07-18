@@ -776,6 +776,21 @@
   },
   {
     "name": "Remove Ads",
+    "description": "Removes all ads in app",
+    "compatiblePackages": [
+      {
+        "packageName": "com.delphicoder.flud",
+        "targets": [
+          {
+            "version": "2.0.13"
+          }
+        ],
+        "isPreRelease": true
+      }
+    ]
+  },
+  {
+    "name": "Remove Ads",
     "description": "Removes interstitial and exit native ads from m-Indicator.",
     "compatiblePackages": [
       {
@@ -1956,6 +1971,21 @@
             "version": "6.7.1"
           }
         ]
+      }
+    ]
+  },
+  {
+    "name": "Unlock Premium",
+    "description": "Unlocks Premium features in app after login.",
+    "compatiblePackages": [
+      {
+        "packageName": "cz.seznam.mapy",
+        "targets": [
+          {
+            "version": "26.7.1"
+          }
+        ],
+        "isPreRelease": true
       }
     ]
   },
