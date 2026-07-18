@@ -140,8 +140,7 @@
           }
         ]
       }
-    ],
-    "isPreRelease": true
+    ]
   },
   {
     "name": "Remove Premium UI",
