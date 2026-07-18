@@ -315,7 +315,7 @@
     "stars": 19,
     "firstSeen": "2026-07-06T22:13:39",
     "patches": "site/bufferk.json",
-    "createdAt": "2026-07-17T20:43:55",
+    "createdAt": "2026-07-18T09:23:06",
     "targetApps": [
       "com.Splitwise.SplitwiseMobile",
       "com.bounce.connect",
@@ -955,7 +955,7 @@
     "stars": 2889,
     "firstSeen": "2026-06-23T13:04:19",
     "patches": "site/morphe.json",
-    "createdAt": "2026-07-16T09:04:26",
+    "createdAt": "2026-07-18T06:39:30",
     "targetApps": [
       "com.google.android.apps.youtube.music",
       "com.google.android.youtube",
@@ -1144,7 +1144,7 @@
     "stars": 3,
     "firstSeen": "2026-07-12T05:58:07",
     "patches": "site/pichiwa.json",
-    "createdAt": "2026-07-17T06:59:16",
+    "createdAt": "2026-07-18T08:33:53",
     "targetApps": [
       "com.whatsapp"
     ],

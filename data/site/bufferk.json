@@ -1,5 +1,19 @@
 [
   {
+    "name": "Brave Origin",
+    "description": "Unlocks Brave Origin and enables feature toggle controls.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.brave.browser",
+        "targets": [
+          {
+            "version": "1.92.140"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "name": "Bypass license check",
     "description": "Bypasses the Google Play LVL backend license check, allowing full app access without activation.",
     "compatiblePackages": [
@@ -24,16 +38,6 @@
             "version": "26.10.6"
           }
         ]
-      }
-    ]
-  },
-  {
-    "name": "Enable Brave Origin",
-    "description": "Enables Brave Origin features by default.",
-    "compatiblePackages": [
-      {
-        "packageName": "com.brave.browser",
-        "isPreRelease": true
       }
     ]
   },
