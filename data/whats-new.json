@@ -2,6 +2,22 @@
   {
     "date": "July 18, 2026",
     "bundles": {
+      "adobo": {
+        "isNew": false,
+        "apps": {
+          "com.reddit.frontpage": {
+            "isNew": false,
+            "patches": [
+              "Disable bottom navigation bar auto-hide"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "date": "July 18, 2026",
+    "bundles": {
       "bufferk": {
         "isNew": false,
         "apps": {

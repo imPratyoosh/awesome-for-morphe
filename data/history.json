@@ -30,6 +30,7 @@
     ],
     "com.reddit.frontpage": [
       "Colorize comment indent lines",
+      "Disable bottom navigation bar auto-hide",
       "Disable home feed auto-refresh",
       "Disable home feed swipe",
       "Disable home screen redirect",
