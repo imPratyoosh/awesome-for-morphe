@@ -1,5 +1,73 @@
 [
   {
+    "date": "July 18, 2026",
+    "bundles": {
+      "bufferk": {
+        "isNew": false,
+        "apps": {
+          "com.brave.browser": {
+            "isNew": false,
+            "patches": [
+              "Brave Origin"
+            ]
+          },
+          "com.mygate.user": {
+            "isNew": false,
+            "patches": [
+              "MyGate"
+            ]
+          }
+        }
+      },
+      "lain": {
+        "isNew": false,
+        "apps": {
+          "com.sensemobile.action": {
+            "isNew": true,
+            "patches": [
+              "Enable Kapi Pro"
+            ]
+          },
+          "io.github.sds100.keymapper": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          }
+        }
+      },
+      "morphe": {
+        "isNew": false,
+        "apps": {
+          "com.google.android.apps.youtube.music": {
+            "isNew": false,
+            "patches": [
+              "Crossfade",
+              "Return YouTube Dislike"
+            ]
+          }
+        }
+      },
+      "rushiranpise": {
+        "isNew": false,
+        "apps": {
+          "com.delphicoder.flud": {
+            "isNew": true,
+            "patches": [
+              "Remove Ads"
+            ]
+          },
+          "cz.seznam.mapy": {
+            "isNew": true,
+            "patches": [
+              "Unlock Premium"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
     "date": "July 17, 2026",
     "bundles": {
       "bufferk": {
