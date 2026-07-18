@@ -1,6 +1,9 @@
 ### [nvbangg/awesome-for-morphe](https://github.com/nvbangg/awesome-for-morphe)
 
-This branch hosts the data and source code for the 🔍 [Awesome for Morphe Website](https://nvbangg.github.io/awesome-for-morphe)
+## Submitting a Bundle Request
+
+To add, remove, or customize a bundle source, please submit a [Bundle Request](https://github.com/nvbangg/awesome-for-morphe/issues/new?template=bundle-request.yml).
+
 
 ## Data
 

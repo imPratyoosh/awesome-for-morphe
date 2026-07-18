@@ -1,0 +1,52 @@
+name: Bundle Request
+description: Request to add, remove, or customize the name/key of a bundle source
+title: "[Bundle Request] "
+labels: ["bundle-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for submitting a request! Use this template to add, remove, or customize the name/key of a bundle source.
+  - type: input
+    id: repo-url
+    attributes:
+      label: Repository URL
+      description: The GitHub or GitLab URL of the bundle source
+      placeholder: https://github.com/username/morphe-patches
+    validations:
+      required: true
+  - type: dropdown
+    id: action
+    attributes:
+      label: Action
+      description: Purpose of this request
+      options:
+        - Add Bundle
+        - Remove Bundle
+        - Customize Name / Key Bundle
+      default: 0
+    validations:
+      required: true
+  - type: input
+    id: custom-name
+    attributes:
+      label: Custom Display Name (Optional)
+      placeholder: e.g. My Name
+    validations:
+      required: false
+  - type: input
+    id: custom-key
+    attributes:
+      label: Custom Key (Optional)
+      placeholder: e.g. my-key
+    validations:
+      required: false
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation
+      options:
+        - label: This repository has at least one published release
+          required: true
+        - label: The patches are compatible with Morphe
+          required: true
