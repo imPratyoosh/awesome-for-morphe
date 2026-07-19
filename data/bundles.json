@@ -1367,7 +1367,7 @@
     "stars": 60,
     "firstSeen": "2026-06-02T17:21:27",
     "patches": "site/rushiranpise.json",
-    "createdAt": "2026-07-18T05:26:03",
+    "createdAt": "2026-07-19T08:42:31",
     "targetApps": [
       "ai.topicfinder.podcastdiscovery",
       "alldocumentreader.office.viewer.filereader.pdfviewer",
@@ -1418,6 +1418,7 @@
       "com.flightaware.android.liveFlightTracker",
       "com.flightradar24free",
       "com.glority.picturemushroom",
+      "com.google.android.apps.photos",
       "com.google.android.verifier",
       "com.guochao.faceshow",
       "com.inscode.autoclicker",
@@ -1518,7 +1519,7 @@
       "sp0n.citizen",
       "verbosus.pialytic"
     ],
-    "appCount": 148
+    "appCount": 149
   },
   "rvx-morphed": {
     "source": "github",
