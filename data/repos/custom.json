@@ -1,7 +1,16 @@
 {
-    "github:anddea/revanced-patches": {
-        "key": "anddea",
-        "name": "Anddea"
-    },
-    "github:brealorg/breal-morphe-patches": {}
+  "github:anddea/revanced-patches": {
+    "key": "anddea",
+    "name": "Anddea"
+  },
+  "github:brealorg/breal-morphe-patches": {},
+  "github:Ikuradachi/ikura-patches": {
+    "enabled": false
+  },
+  "github:itsthejoker/itsthejoker-patches": {
+    "enabled": false
+  },
+  "github:Utsavrajputt/Modx-patches": {
+    "enabled": false
+  }
 }

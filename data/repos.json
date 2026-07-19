@@ -229,11 +229,6 @@
     "repo": "icysymmetra/tiktok-patches-for-morphe",
     "name": "TikTok"
   },
-  "ikuradachi": {
-    "source": "github",
-    "repo": "Ikuradachi/ikura-patches",
-    "name": "Ikura"
-  },
   "immortalzeus": {
     "source": "github",
     "repo": "ImmortalZeus/ImmortalZeus-Morphe-Patches",
@@ -258,11 +253,6 @@
     "source": "github",
     "repo": "isuruhg/fin-tweaks",
     "name": "Fin Tweaks"
-  },
-  "itsthejoker": {
-    "source": "github",
-    "repo": "itsthejoker/itsthejoker-patches",
-    "name": "Itsthejoker"
   },
   "jasonwu1994": {
     "source": "github",
@@ -493,11 +483,6 @@
     "source": "github",
     "repo": "Trimpsuz/morphe-busuu",
     "name": "Morphe Busuu"
-  },
-  "utsavrajputt": {
-    "source": "github",
-    "repo": "Utsavrajputt/Modx-patches",
-    "name": "Modx"
   },
   "variablenine": {
     "source": "github",

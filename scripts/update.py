@@ -592,8 +592,7 @@ def main():
     print(f"Generated bundles.json with {len(bundle_sources)} bundles.")
 
     write_json(APPS_JSON_PATH, app_metadata)
-    if app_tasks:
-        print(f"Updated apps.json with new metadata.")
+    print(f"Generated apps.json with {len(app_metadata)} apps.")
 
     missing_names = sorted(
         package_name

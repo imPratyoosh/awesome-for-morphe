@@ -126,7 +126,7 @@ Downloads raw patch and bundle metadata from remote sources.
 
 ### `update.py`
 
-Parses raw JSON files and compiles optimized web assets inside `docs/` for UI rendering.
+Parses raw JSON files and compiles optimized web assets inside `docs/` for UI rendering. Data is extracted directly from `data/bundles/` and `data/patches/`. Missing data is retrieved from `official-bundles.json`, scraped from Google Play, or customized manually.
 
 - `python scripts/update.py`: Compiles database index files.
 - Optional flags:
