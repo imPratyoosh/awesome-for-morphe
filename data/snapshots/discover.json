@@ -1,5 +1,5 @@
 {
-  "jman_tree_sha": "d917f3bdaf1bceb79a3aac41b27af9eff629ffb3",
+  "jman_tree_sha": "ecc26f40053763848c50e09f12418fffd3ed2a62",
   "jman_bundles": {
     "1fexd": {
       "sha": "4428619fe1755f86c0bd9d8fb5762fcc8c17b43a",
@@ -350,7 +350,7 @@
       "key": null
     },
     "morphe": {
-      "sha": "e1b43b2b608d9575662ca81d3b02fe49a535c7e1",
+      "sha": "309c79ce27e7232ed3c8da79029a1f9ae28ee08b",
       "key": "github:MorpheApp/morphe-patches"
     },
     "morphe-google": {
@@ -446,7 +446,7 @@
       "key": "gitlab:inotia00/proguard-patches"
     },
     "proxma": {
-      "sha": "af96ce31f11bb039429833177140cfe6d2b90ace",
+      "sha": "18f4715ea5124ee32592c1447dce5a27724cb8e6",
       "key": "github:totsiaw/proxma-patches"
     },
     "quantro100": {
@@ -518,7 +518,7 @@
       "key": null
     },
     "stylus": {
-      "sha": "7ae91e916b306b2f9033e6b377416bb336fc920e",
+      "sha": "9786e3b2dfe183a500cc5c4babde47aa6d222834",
       "key": "github:ch3thanhs/stylus"
     },
     "taknok": {

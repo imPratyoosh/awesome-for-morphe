@@ -973,7 +973,7 @@
     "stars": 2907,
     "firstSeen": "2026-06-23T13:04:19",
     "patches": "patches/morphe.json",
-    "createdAt": "2026-07-19T07:26:57",
+    "createdAt": "2026-07-19T15:02:51",
     "targetApps": [
       "com.google.android.apps.youtube.music",
       "com.google.android.youtube",
@@ -1276,15 +1276,16 @@
     "stars": 7,
     "firstSeen": "2026-07-14T05:29:43",
     "patches": "patches/proxma.json",
-    "createdAt": "2026-07-19T10:19:09",
+    "createdAt": "2026-07-19T12:15:23",
     "targetApps": [
       "com.blueinklabs.investifystocks.free",
       "com.jazz.jazzworld",
+      "com.sdev.mtproxy",
       "com.telenor.pakistan.mytelenor",
       "com.zong.customercare",
       "cz.mroczis.netmonster"
     ],
-    "appCount": 5
+    "appCount": 6
   },
   "rabilrbl": {
     "source": "github",
@@ -1640,7 +1641,7 @@
     "stars": 2,
     "firstSeen": "2026-07-17T19:07:01",
     "patches": "patches/stylus.json",
-    "createdAt": "2026-07-17T16:26:20",
+    "createdAt": "2026-07-19T14:35:53",
     "targetApps": [
       "com.reddit.frontpage"
     ],
