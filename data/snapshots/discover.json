@@ -1,5 +1,5 @@
 {
-  "jman_tree_sha": "2c49821461f3f328c8f2b76b4de866b04abb5c52",
+  "jman_tree_sha": "58ad294d790d02a51bcd697028abfe1a018acd07",
   "jman_bundles": {
     "1fexd": {
       "sha": "4428619fe1755f86c0bd9d8fb5762fcc8c17b43a",
@@ -162,7 +162,7 @@
       "key": null
     },
     "edge-morphe": {
-      "sha": "de009a2fef803adca2e4de306d562c1ba3c8efbd",
+      "sha": "017e1afaa1f3a469d420c4a54a42d06cf06abf3c",
       "key": "github:quantavil/edge-morphe-patches"
     },
     "ee-morphe": {
@@ -486,7 +486,7 @@
       "key": null
     },
     "rushiranpise": {
-      "sha": "2841d47a461915a6471f85dcb6bf0c5d5773d95e",
+      "sha": "dba184694a80c2181e93a77fe6c58c1364cf7964",
       "key": "github:rushiranpise/morphe-patches"
     },
     "rvx-morphed": {
