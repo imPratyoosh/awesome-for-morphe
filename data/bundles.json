@@ -381,7 +381,7 @@
     "stars": 33,
     "firstSeen": "2026-06-06T16:36:16",
     "patches": "site/edge-morphe.json",
-    "createdAt": "2026-06-11T08:29:13",
+    "createdAt": "2026-07-19T19:24:38",
     "targetApps": [
       "com.microsoft.emmx"
     ],
@@ -1369,7 +1369,7 @@
     "stars": 60,
     "firstSeen": "2026-06-02T17:21:27",
     "patches": "site/rushiranpise.json",
-    "createdAt": "2026-07-19T08:42:31",
+    "createdAt": "2026-07-19T18:47:03",
     "targetApps": [
       "ai.topicfinder.podcastdiscovery",
       "alldocumentreader.office.viewer.filereader.pdfviewer",

@@ -69,10 +69,9 @@
         "packageName": "com.google.android.apps.photos",
         "targets": [
           {
-            "version": "7.83.0.943371825"
+            "version": "7.84.0.949657053"
           }
-        ],
-        "isPreRelease": true
+        ]
       }
     ]
   },
@@ -175,10 +174,9 @@
         "packageName": "com.google.android.apps.photos",
         "targets": [
           {
-            "version": "7.83.0.943371825"
+            "version": "7.84.0.949657053"
           }
-        ],
-        "isPreRelease": true
+        ]
       }
     ]
   },
@@ -382,10 +380,9 @@
         "packageName": "com.google.android.apps.photos",
         "targets": [
           {
-            "version": "7.83.0.943371825"
+            "version": "7.84.0.949657053"
           }
-        ],
-        "isPreRelease": true
+        ]
       }
     ]
   },
@@ -488,10 +485,9 @@
         "packageName": "com.google.android.apps.photos",
         "targets": [
           {
-            "version": "7.83.0.943371825"
+            "version": "7.84.0.949657053"
           }
-        ],
-        "isPreRelease": true
+        ]
       }
     ]
   },
@@ -514,10 +510,9 @@
         "packageName": "com.google.android.apps.photos",
         "targets": [
           {
-            "version": "7.83.0.943371825"
+            "version": "7.84.0.949657053"
           }
-        ],
-        "isPreRelease": true
+        ]
       }
     ]
   },
@@ -876,8 +871,7 @@
           {
             "version": "2.0.13-beta02"
           }
-        ],
-        "isPreRelease": true
+        ]
       }
     ]
   },
@@ -905,8 +899,7 @@
           {
             "version": "2.0.0"
           }
-        ],
-        "isPreRelease": true
+        ]
       }
     ]
   },
@@ -1215,10 +1208,9 @@
         "packageName": "com.google.android.apps.photos",
         "targets": [
           {
-            "version": "7.83.0.943371825"
+            "version": "7.84.0.949657053"
           }
-        ],
-        "isPreRelease": true
+        ]
       }
     ]
   },
@@ -1450,7 +1442,7 @@
         "packageName": "com.kevinforeman.nzb360",
         "targets": [
           {
-            "version": "23.5"
+            "version": "24"
           }
         ]
       }
@@ -1786,7 +1778,7 @@
         "packageName": "io.goodservice.theweekendest",
         "targets": [
           {
-            "version": "1.2.8"
+            "version": "1.2.10"
           }
         ]
       }
@@ -2109,8 +2101,7 @@
           {
             "version": "26.7.1"
           }
-        ],
-        "isPreRelease": true
+        ]
       }
     ]
   },
@@ -2208,8 +2199,7 @@
           {
             "version": "8.3.5"
           }
-        ],
-        "isPreRelease": true
+        ]
       }
     ]
   },
@@ -2678,8 +2668,7 @@
           {
             "version": "5.4.13"
           }
-        ],
-        "isPreRelease": true
+        ]
       }
     ]
   },
