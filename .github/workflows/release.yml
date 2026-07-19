@@ -41,14 +41,14 @@ jobs:
       - name: Commit and push changes
         id: commit
         run: |
-          if [ -n "$(git status --porcelain)" ]; then
+          git add data/ docs/
+          if ! git diff --staged --quiet; then
             git config --global user.name "github-actions[bot]"
             git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
             TAG=$(date +'%Y.%m.%d')
             DAY=$(date +'%B %-d')
 
-            git add data/ docs/
             git commit -m "Update release history (${TAG})"
             git push origin HEAD:main
 
