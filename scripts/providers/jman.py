@@ -88,9 +88,7 @@ def discover():
     discovered = {}
 
     with ThreadPoolExecutor(max_workers=10) as executor:
-        futures = {
-            executor.submit(_process_bundle, name, path, blob_sha, cached_bundles.get(name)): name for name, (path, blob_sha) in bundles.items()
-        }
+        futures = {executor.submit(_process_bundle, name, path, blob_sha, cached_bundles.get(name)): name for name, (path, blob_sha) in bundles.items()}
         for future in as_completed(futures):
             bundle_name, new_sha, canonical_key = future.result()
             if new_sha:

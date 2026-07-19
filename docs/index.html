@@ -40,15 +40,15 @@
           <div
             class="relative flex flex-col items-center justify-center border-b-2 border-blue/10 py-3 lg:py-0 lg:h-12 gap-3 px-3">
             <a href="https://nvbangg.github.io/awesome-for-morphe/"
-              class="relative order-1 lg:order-none hover:opacity-80 transition-opacity" title="Go to Homepage">
+              class="relative order-1 lg:order-0 hover:opacity-80 transition-opacity" title="Go to Homepage">
               <h1
-                class="text-2xl lg:text-3xl font-extrabold flex items-center justify-center gap-2 lg:gap-3 text-transparent bg-clip-text bg-gradient-to-r from-blue to-green">
+                class="text-2xl lg:text-3xl font-extrabold flex items-center justify-center gap-2 lg:gap-3 text-transparent bg-clip-text bg-linear-to-r from-blue to-green">
                 <img src="assets/images/favicon.svg" alt="Logo" class="w-6 h-6 lg:w-8 lg:h-8 object-contain">
                 <span>Awesome for Morphe</span>
               </h1>
             </a>
 
-            <div class="flex items-center justify-center gap-2 flex-wrap order-2 lg:order-none lg:contents">
+            <div class="flex items-center justify-center gap-2 flex-wrap order-2 lg:order-0 lg:contents">
               <div class="flex items-center gap-2 lg:absolute lg:left-3 lg:top-1/2 lg:-translate-y-1/2">
                 <button v-if="isWhatsNewView" @click="closeWhatsNew" class="badge badge-md text-green">
                   <i class="fa-solid fa-house icon-center"></i>
@@ -98,7 +98,7 @@
                     <i v-else class="fa-solid fa-cubes text-light text-base shrink-0 -ml-1 sm:ml-0 icon-center"></i>
                     <span class="flex-1 truncate text-left">{{ bundle || 'All Bundles' }}</span>
                     <i
-                      class="fa-solid fa-chevron-down dd-chevron text-light text-xs flex-shrink-0 transition-transform duration-200 -mr-0.5 sm:mr-0"></i>
+                      class="fa-solid fa-chevron-down dd-chevron text-light text-xs shrink-0 transition-transform duration-200 -mr-0.5 sm:mr-0"></i>
                   </button>
                   <div
                     class="dd-panel max-h-[400px] overflow-y-auto bg-gray border border-lightGray rounded-md shadow-xl py-1 divide-y divide-white/10">
@@ -147,7 +147,7 @@
                     class="fa-solid fa-mobile-screen-button text-light text-base shrink-0 -ml-1 sm:ml-0 icon-center"></i>
                   <span class="flex-1 truncate text-left">{{ getAppName(app) }}</span>
                   <i
-                    class="fa-solid fa-chevron-down dd-chevron text-light text-xs flex-shrink-0 transition-transform duration-200 -mr-0.5 sm:mr-0"></i>
+                    class="fa-solid fa-chevron-down dd-chevron text-light text-xs shrink-0 transition-transform duration-200 -mr-0.5 sm:mr-0"></i>
                 </button>
                 <div
                   class="dd-panel max-h-[400px] overflow-y-auto bg-gray border border-lightGray rounded-md shadow-xl py-1 divide-y divide-white/10">
@@ -359,7 +359,7 @@
                       <div class="flex flex-wrap items-center gap-2 min-w-0 w-full"
                         :class="!effectiveTwoColumns ? 'justify-center md:justify-start' : 'justify-center'">
                         <strong @click.stop="openPopupFast(group.key)" title="View this bundle"
-                          class="font-bold text-lg sm:text-xl text-white break-words leading-tight cursor-pointer hover:opacity-80 transition-all">{{
+                          class="font-bold text-lg sm:text-xl text-white wrap-break-word leading-tight cursor-pointer hover:opacity-80 transition-all">{{
                           group.key }}</strong>
                         <span v-if="hasHighlight(group.key) || isNewBundle(group)"
                           class="badge badge-sm text-yellow shrink-0">✨ New</span>
@@ -384,7 +384,7 @@
                       :class="!effectiveTwoColumns ? 'justify-center md:justify-end' : 'justify-center'">
                       <a v-if="group.bundle.deepLink" :href="group.bundle.deepLink" target="_blank" rel="noreferrer"
                         @click.stop
-                        class="badge text-white bg-gradient-to-r from-blue to-green border-transparent hover:opacity-85 active:scale-95 cursor-pointer shrink-0 select-none">
+                        class="badge text-white bg-linear-to-r from-blue to-green border-transparent hover:opacity-85 active:scale-95 cursor-pointer shrink-0 select-none">
                         <i class="fa-solid fa-plus icon-center"></i>
                         <span>Add to Morphe</span>
                       </a>
@@ -446,7 +446,7 @@
                         </div>
                         <div class="flex flex-col min-w-0 flex-1 justify-center">
                           <div class="flex flex-wrap items-center gap-2 min-w-0 w-full">
-                            <span class="text-base font-semibold break-words leading-tight mt-0.5"
+                            <span class="text-base font-semibold wrap-break-word leading-tight mt-0.5"
                               :class="mainUI.expandedOptions.has('app_' + group.key + '_' + appItem.id) ? 'text-blue' : 'text-white'">{{
                               appItem.appName }}</span>
                             <span v-if="isAppHighlighted(group.key, appItem)"
@@ -457,7 +457,8 @@
                               Pre-release</span>
                           </div>
                           <span v-if="appItem.packageName && appItem.packageName !== 'universal'"
-                            class="text-xs text-light break-words leading-tight w-full">{{ appItem.packageName }}</span>
+                            class="text-xs text-light wrap-break-word leading-tight w-full">{{ appItem.packageName
+                            }}</span>
                         </div>
                         <i class="fa-solid shrink-0 ml-2 text-light transition-transform"
                           :class="mainUI.expandedOptions.has('app_' + group.key + '_' + appItem.id) ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
@@ -483,11 +484,11 @@
                             class="badge text-light shrink-0 relative"
                             :class="{ 'z-50': copiedStates['pkg_' + group.key + '_' + appItem.id] }"
                             :title="appItem.packageName">
-                            <i class="fa-solid !my-0"
+                            <i class="fa-solid my-0!"
                               :class="copiedStates['pkg_' + group.key + '_' + appItem.id] ? 'fa-check text-green' : 'fa-regular fa-copy'"></i>
                             <span>Package name</span>
                             <span v-if="copiedStates['pkg_' + group.key + '_' + appItem.id]"
-                              class="absolute top-full right-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-white bg-lightGray rounded shadow-lg whitespace-nowrap z-[60] pointer-events-none animate-float-in">
+                              class="absolute top-full right-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-white bg-lightGray rounded shadow-lg whitespace-nowrap z-60 pointer-events-none animate-float-in">
                               {{ appItem.packageName }}
                             </span>
                           </button>
@@ -535,7 +536,7 @@
                                         :class="[{ 'z-50': copiedStates['ver_' + appElement.id + '_last'] }, appElement.versions[0].version === 'Any version' ? 'text-light' : 'text-green']"
                                         :title="appElement.versions[0].isExperimental ? 'Copy experimental version' : 'Copy app version'">
                                         <span v-if="copiedStates['ver_' + appElement.id + '_last']"
-                                          class="absolute top-full right-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-white bg-lightGray rounded shadow-lg whitespace-nowrap z-[60] pointer-events-none animate-float-in">Copied!</span>
+                                          class="absolute top-full right-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-white bg-lightGray rounded shadow-lg whitespace-nowrap z-60 pointer-events-none animate-float-in">Copied!</span>
                                         <i v-if="appElement.versions[0].isExperimental"
                                           class="fa-solid fa-flask text-yellow"></i>
                                         <span>{{ appElement.versions[0].version }}</span>
@@ -553,7 +554,7 @@
                                         :class="[{ 'z-50': copiedStates['ver_' + appElement.id + '_' + versionItem.version] }, versionItem.version === 'Any version' ? 'text-light' : 'text-green']"
                                         :title="versionItem.isExperimental ? 'Copy experimental version' : 'Copy app version'">
                                         <span v-if="copiedStates['ver_' + appElement.id + '_' + versionItem.version]"
-                                          class="absolute top-full right-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-white bg-lightGray rounded shadow-lg whitespace-nowrap z-[60] pointer-events-none animate-float-in">Copied!</span>
+                                          class="absolute top-full right-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-white bg-lightGray rounded shadow-lg whitespace-nowrap z-60 pointer-events-none animate-float-in">Copied!</span>
                                         <i v-if="versionItem.isExperimental" class="fa-solid fa-flask text-yellow"></i>
                                         <span>{{ versionItem.version }}</span>
                                       </button>
@@ -594,7 +595,7 @@
 
     <!-- Popup Details Modal -->
     <div v-if="popupBundleKey"
-      class="fixed inset-0 z-[10000] flex flex-col items-center justify-start sm:justify-center px-0 pt-2 pb-8 sm:px-4 sm:py-6 bg-black/80 backdrop-blur-sm transition-opacity"
+      class="fixed inset-0 z-10000 flex flex-col items-center justify-start sm:justify-center px-0 pt-2 pb-8 sm:px-4 sm:py-6 bg-black/80 backdrop-blur-sm transition-opacity"
       style="padding-top: max(0.5rem, env(safe-area-inset-top, 0.5rem))" @click.self="closePopup">
       <div class="w-full max-w-4xl px-0 sm:px-3 max-h-full flex flex-col gap-2 overflow-visible animate-float-in">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 w-full shrink-0 pt-2 px-2"
@@ -604,7 +605,7 @@
             <!-- App selection dropdown (popup-app-dd) -->
             <div class="relative shrink-0 w-[45%] sm:w-[180px] dd-root" id="popup-app-dd" @click.stop>
               <button type="button" onclick="toggleDropdown('popup-app-dd')"
-                class="w-full h-[34px] px-2.5 sm:px-3 bg-black border border-lightGray rounded-md text-sm text-[#bfbfbf] flex items-center justify-between gap-2 hover:border-white/50 transition-all cursor-pointer"
+                class="w-full h-[34px] px-2.5 sm:px-3 bg-black border border-lightGray rounded-md text-sm text-light flex items-center justify-between gap-2 hover:border-white/50 transition-all cursor-pointer"
                 aria-label="Popup Apps filter">
                 <div class="flex items-center gap-1.5 min-w-0 flex-1">
                   <template v-if="showOptions.length > 1 || (showOptions.length === 1 && showOptions[0].includes('('))">
@@ -627,7 +628,7 @@
                   class="fa-solid fa-chevron-down dd-chevron text-light text-xs shrink-0 transition-transform duration-200"></i>
               </button>
               <div
-                class="dd-panel w-max min-w-[200px] left-0 max-h-[300px] overflow-y-auto bg-gray border border-lightGray rounded-md shadow-xl py-1 divide-y divide-white/10 z-[70]">
+                class="dd-panel w-max min-w-[200px] left-0 max-h-[300px] overflow-y-auto bg-gray border border-lightGray rounded-md shadow-xl py-1 divide-y divide-white/10 z-70">
                 <div class="sticky top-0 bg-gray px-2 pb-2 pt-1 border-b border-lightGray/30 z-10">
                   <div class="relative">
                     <span class="absolute left-2 top-0 h-8 flex items-center text-light pointer-events-none">
@@ -682,7 +683,7 @@
             <span class="badge text-light"><i class="fa-solid fa-puzzle-piece"></i><span>{{
                 popupGroup?.patches?.length || 0 }} patches</span></span>
 
-            <button @click="closePopup" class="badge text-yellow relative z-[60]">
+            <button @click="closePopup" class="badge text-yellow relative z-60">
               <i class="fa-solid fa-xmark icon-center"></i>
               <span>Close</span>
             </button>
@@ -706,7 +707,7 @@
                 <div class="flex flex-col min-w-0 justify-center items-start gap-1 sm:gap-1.5 max-w-full">
 
                   <div class="flex flex-wrap items-center gap-2 min-w-0 w-full justify-center md:justify-start">
-                    <strong class="font-bold text-lg sm:text-xl text-white break-words leading-tight">{{ group.key
+                    <strong class="font-bold text-lg sm:text-xl text-white wrap-break-word leading-tight">{{ group.key
                       }}</strong>
                     <span v-if="hasHighlight(group.key) || isNewBundle(group)" class="badge badge-sm text-yellow">✨
                       New</span>
@@ -728,7 +729,7 @@
                 class="flex flex-row flex-wrap items-center gap-2 text-xs text-light shrink-0 w-full md:w-auto justify-center md:justify-end">
                 <a v-if="group.bundle.deepLink" :href="group.bundle.deepLink" target="_blank" rel="noreferrer"
                   @click.stop
-                  class="badge text-white bg-gradient-to-r from-blue to-green border-transparent hover:opacity-85 active:scale-95 cursor-pointer shrink-0 select-none">
+                  class="badge text-white bg-linear-to-r from-blue to-green border-transparent hover:opacity-85 active:scale-95 cursor-pointer shrink-0 select-none">
                   <i class="fa-solid fa-plus icon-center"></i>
                   <span>Add to Morphe</span>
                 </a>
@@ -786,7 +787,7 @@
                     </div>
                     <div class="flex flex-col min-w-0 flex-1 justify-center">
                       <div class="flex flex-wrap items-center gap-2 min-w-0 w-full">
-                        <span class="text-base font-semibold break-words leading-tight mt-0.5"
+                        <span class="text-base font-semibold wrap-break-word leading-tight mt-0.5"
                           :class="popupUI.expandedOptions.has('popup_app_' + group.key + '_' + appItem.id) ? 'text-blue' : 'text-white'">{{
                           appItem.appName }}</span>
                         <span v-if="isAppHighlighted(group.key, appItem)" class="badge badge-sm text-yellow shrink-0">✨
@@ -796,7 +797,7 @@
                           Pre-release</span>
                       </div>
                       <span v-if="appItem.packageName && appItem.packageName !== 'universal'"
-                        class="text-xs text-light break-words leading-tight w-full">{{ appItem.packageName }}</span>
+                        class="text-xs text-light wrap-break-word leading-tight w-full">{{ appItem.packageName }}</span>
                     </div>
                     <i class="fa-solid shrink-0 ml-2 text-light transition-transform"
                       :class="popupUI.expandedOptions.has('popup_app_' + group.key + '_' + appItem.id) ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
@@ -822,11 +823,11 @@
                         class="badge text-light shrink-0 relative"
                         :class="{ 'z-50': copiedStates['pkg_' + group.key + '_' + appItem.id] }"
                         :title="appItem.packageName">
-                        <i class="fa-solid !my-0"
+                        <i class="fa-solid my-0!"
                           :class="copiedStates['pkg_' + group.key + '_' + appItem.id] ? 'fa-check text-green' : 'fa-regular fa-copy'"></i>
                         <span>Package name</span>
                         <span v-if="copiedStates['pkg_' + group.key + '_' + appItem.id]"
-                          class="absolute top-full right-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-white bg-lightGray rounded shadow-lg whitespace-nowrap z-[60] pointer-events-none animate-float-in">
+                          class="absolute top-full right-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-white bg-lightGray rounded shadow-lg whitespace-nowrap z-60 pointer-events-none animate-float-in">
                           {{ appItem.packageName }}
                         </span>
                       </button>
@@ -872,7 +873,7 @@
                                     :class="[{ 'z-50': copiedStates['ver_' + appElement.id + '_last'] }, appElement.versions[0].version === 'Any version' ? 'text-light' : 'text-green']"
                                     :title="appElement.versions[0].isExperimental ? 'Copy experimental version' : 'Copy app version'">
                                     <span v-if="copiedStates['ver_' + appElement.id + '_last']"
-                                      class="absolute top-full right-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-white bg-lightGray rounded shadow-lg whitespace-nowrap z-[60] pointer-events-none animate-float-in">Copied!</span>
+                                      class="absolute top-full right-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-white bg-lightGray rounded shadow-lg whitespace-nowrap z-60 pointer-events-none animate-float-in">Copied!</span>
                                     <i v-if="appElement.versions[0].isExperimental"
                                       class="fa-solid fa-flask text-yellow"></i>
                                     <span>{{ appElement.versions[0].version }}</span>
@@ -890,7 +891,7 @@
                                     :class="[{ 'z-50': copiedStates['ver_' + appElement.id + '_' + versionItem.version] }, versionItem.version === 'Any version' ? 'text-light' : 'text-green']"
                                     :title="versionItem.isExperimental ? 'Copy experimental version' : 'Copy app version'">
                                     <span v-if="copiedStates['ver_' + appElement.id + '_' + versionItem.version]"
-                                      class="absolute top-full right-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-white bg-lightGray rounded shadow-lg whitespace-nowrap z-[60] pointer-events-none animate-float-in">Copied!</span>
+                                      class="absolute top-full right-0 mt-1 px-1.5 py-0.5 text-[10px] leading-none text-white bg-lightGray rounded shadow-lg whitespace-nowrap z-60 pointer-events-none animate-float-in">Copied!</span>
                                     <i v-if="versionItem.isExperimental" class="fa-solid fa-flask text-yellow"></i>
                                     <span>{{ versionItem.version }}</span>
                                   </button>
@@ -930,7 +931,7 @@
 
   <!-- Back to Top -->
   <button id="back-to-top" aria-label="Back to Top"
-    class="fixed bottom-6 right-6 z-[9999] h-11 w-11 hidden items-center justify-center rounded-full bg-gradient-to-r from-blue to-green text-[#fafafa] shadow-lg shadow-green/40 hover:opacity-85 transition-all active:scale-95 border border-transparent">
+    class="fixed bottom-6 right-6 z-9999 h-11 w-11 hidden items-center justify-center rounded-full bg-linear-to-r from-blue to-green text-white shadow-lg shadow-green/40 hover:opacity-85 transition-all active:scale-95 border border-transparent">
     <i class="fa-solid fa-arrow-up"></i>
   </button>
   <script>

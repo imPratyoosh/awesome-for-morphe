@@ -26,11 +26,7 @@ def main():
         print(f"File {filepath} not found or empty, skipping notification.")
         return
 
-    lines = [
-        line.lstrip("# ") if line.startswith("#") else line
-        for line in content.splitlines()
-        if not line.startswith(("📢 *Telegram:*", "📢 _Telegram:"))
-    ]
+    lines = [line.lstrip("# ") if line.startswith("#") else line for line in content.splitlines() if not line.startswith(("📢 *Telegram:*", "📢 _Telegram:"))]
 
     content = re.sub(
         r"\[([^\]]+)\]\((https?://[^\s()]+(?:\([^\s()]+\)[^\s()]*)*)\)",

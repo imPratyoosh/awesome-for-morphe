@@ -597,24 +597,16 @@ def main():
     missing_names = sorted(
         package_name
         for package_name in all_packages
-        if (package_name not in app_metadata or app_metadata[package_name].get("name") is None)
-        and package_name != "universal"
-        and " " not in package_name
-        and "." in package_name
+        if (package_name not in app_metadata or app_metadata[package_name].get("name") is None) and package_name != "universal" and " " not in package_name and "." in package_name
     )
 
     missing_icons = sorted(
         package_name
         for package_name in all_packages
-        if (package_name not in app_metadata or app_metadata[package_name].get("iconUrl") is None)
-        and package_name != "universal"
-        and " " not in package_name
-        and "." in package_name
+        if (package_name not in app_metadata or app_metadata[package_name].get("iconUrl") is None) and package_name != "universal" and " " not in package_name and "." in package_name
     )
 
-    missing_avatars = sorted(
-        base for base, info in bundle_sources.items() if info.get("repo") and (info.get("avatarUrl") is None or info.get("avatarUrl") == "")
-    )
+    missing_avatars = sorted(base for base, info in bundle_sources.items() if info.get("repo") and (info.get("avatarUrl") is None or info.get("avatarUrl") == ""))
 
     missing_stars = sorted(base for base, info in bundle_sources.items() if info.get("repo") and info.get("stars") is None)
 

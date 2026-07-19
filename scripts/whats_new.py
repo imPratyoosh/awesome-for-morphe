@@ -150,9 +150,7 @@ def build_json_diff(old_bundles, new_bundles, app_metadata, skip_words):
         if key not in old_bundles:
             json_diff[key] = {
                 "isNew": True,
-                "apps": {
-                    pkg: {"isNew": True, "patches": sorted(list(patches_dict.get(pkg, [])))} for pkg in sorted(new_package_names, key=app_sort_key)
-                },
+                "apps": {pkg: {"isNew": True, "patches": sorted(list(patches_dict.get(pkg, [])))} for pkg in sorted(new_package_names, key=app_sort_key)},
             }
         else:
             old_patches_dict = old_bundles[key]

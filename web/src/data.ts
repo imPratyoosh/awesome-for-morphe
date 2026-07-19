@@ -1,16 +1,100 @@
 // Copyright (c) 2026 nvbangg (github.com/nvbangg)
 
-const jsonCache = new Map();
-const dataCache = new Map();
+export interface AppItem {
+  id: string;
+  appName: string;
+  appIcon?: string;
+  packageName?: string;
+  isAppPreRelease?: boolean;
+}
 
-const simplifyString = (inputString) =>
+export interface Bundle {
+  key: string;
+  name?: string;
+  source?: string;
+  repo?: string;
+  isPreRelease?: boolean;
+  avatarUrl?: string;
+  repoUrl?: string;
+  changelogUrl?: string;
+  createdAt?: string;
+  patches?: string;
+  version?: string;
+  targetApps?: string[];
+  deepLink?: string;
+}
+
+export interface PatchOption {
+  title?: string;
+  key?: string;
+  description?: string;
+}
+
+export interface PatchItem {
+  name?: string;
+  description?: string;
+  options?: PatchOption[];
+  use?: boolean;
+  default?: boolean;
+  isPreRelease?: boolean;
+  compatiblePackages?: Array<{
+    packageName?: string;
+    isPreRelease?: boolean;
+    targets?: Array<string | { version?: string; isExperimental?: boolean }>;
+  }>;
+}
+
+export interface VersionItem {
+  version: string;
+  isExperimental: boolean;
+}
+
+export interface PackageTarget {
+  packageName: string;
+  isPreRelease: boolean;
+  versions: VersionItem[];
+}
+
+export interface RowItem {
+  id: string;
+  patchId: string;
+  bundleKey: string;
+  repo: string;
+  bundleVersion: string;
+  bundleCreatedAt: string;
+  patchName: string;
+  description: string;
+  packageName: string;
+  appName: string;
+  appIcon: string;
+  isBundlePreRelease: boolean;
+  isAppPreRelease: boolean;
+  isPatchPreRelease: boolean;
+  versions: VersionItem[];
+  enabled: boolean;
+  options: PatchOption[];
+  searchPatchesText: string;
+}
+
+export interface ActiveData {
+  bundles: Bundle[];
+  rows: RowItem[];
+  bundleMap: Record<string, Bundle>;
+  namesMap: Record<string, any>;
+  skipSet: Set<string>;
+}
+
+const jsonCache = new Map<string, Promise<any>>();
+const dataCache = new Map<string, Promise<ActiveData>>();
+
+const simplifyString = (inputString: string | undefined): string =>
   (inputString || "")
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase()
     .replace(/[^a-z0-9]/g, "");
 
-export async function fetchJson(url) {
+export async function fetchJson(url: string | URL): Promise<any> {
   const key = url.toString();
   if (!jsonCache.has(key)) {
     const fetchPromise = fetch(url, { cache: "no-cache" }).then((response) => {
@@ -22,7 +106,7 @@ export async function fetchJson(url) {
   return jsonCache.get(key);
 }
 
-export function buildBundleUrls(source, repo, isPreRelease) {
+export function buildBundleUrls(source: string | undefined, repo: string | undefined, isPreRelease: boolean | undefined) {
   if (!repo) return { repoUrl: "", deepLink: "", changelogUrl: "" };
 
   const repoUrl = `https://${source}.com/${repo}`;
@@ -37,7 +121,7 @@ export function buildBundleUrls(source, repo, isPreRelease) {
   };
 }
 
-export function appName(packageName, metadata, skipSet) {
+export function appName(packageName: string | undefined, metadata: Record<string, any>, skipSet?: Set<string>): string {
   const key = packageName || "universal";
   const meta = metadata[key];
 
@@ -52,7 +136,7 @@ export function appName(packageName, metadata, skipSet) {
   return last.replace(/[-_]/g, " ").replace(/\b[a-z]/g, (char) => char.toUpperCase());
 }
 
-function extractVersions(value) {
+function extractVersions(value: any): VersionItem[] {
   if (!Array.isArray(value)) return [];
 
   return value
@@ -64,7 +148,7 @@ function extractVersions(value) {
     .sort((a, b) => b.version.localeCompare(a.version, undefined, { numeric: true, sensitivity: "base" }));
 }
 
-function packages(patch) {
+function packages(patch: PatchItem): PackageTarget[] {
   const compatiblePackages = patch.compatiblePackages;
   const universalResult = [{ packageName: "universal", versions: [], isPreRelease: false }];
 
@@ -77,7 +161,7 @@ function packages(patch) {
   return packageRows.length ? packageRows : universalResult;
 }
 
-async function loadSource(bundleKey, bundleObj, namesMap, skipSet) {
+async function loadSource(bundleKey: string, bundleObj: Bundle, namesMap: Record<string, any>, skipSet: Set<string>): Promise<RowItem[]> {
   if (!bundleObj.patches) return [];
   const listUrl = bundleObj.patches;
   const list = await fetchJson(listUrl).catch(() => null);
@@ -86,7 +170,7 @@ async function loadSource(bundleKey, bundleObj, namesMap, skipSet) {
   const bundleVersion = bundleObj.version || "";
   const bundleCreatedAt = bundleObj.createdAt || "";
 
-  return (list || []).flatMap((patch, patchIndex) => {
+  return (list || []).flatMap((patch: any, patchIndex: number) => {
     const patchId = `${bundleKey}:${patchIndex}`;
 
     return packages(patch).map((target, targetIndex) => {
@@ -95,7 +179,7 @@ async function loadSource(bundleKey, bundleObj, namesMap, skipSet) {
       const options = Array.isArray(patch.options) ? patch.options : [];
 
       const searchPatchesTextParts = [patch.name, patch.description];
-      options.forEach((option) => searchPatchesTextParts.push(option.title, option.key, option.description));
+      options.forEach((option: any) => searchPatchesTextParts.push(option.title, option.key, option.description));
       const searchPatchesText = searchPatchesTextParts.filter(Boolean).join(" ").toLowerCase();
 
       return {
@@ -122,15 +206,15 @@ async function loadSource(bundleKey, bundleObj, namesMap, skipSet) {
   });
 }
 
-export async function loadInitialData(priorityKeys = [], onPatchLoaded) {
+export async function loadInitialData(priorityKeys: string[] = [], onPatchLoaded?: (v: any) => void): Promise<ActiveData> {
   if (dataCache.has("latest")) {
     const cachedData = await dataCache.get("latest");
     if (onPatchLoaded) onPatchLoaded(null);
-    return cachedData;
+    return cachedData as ActiveData;
   }
 
-  let resolveCache;
-  const cachePromise = new Promise((resolve) => {
+  let resolveCache!: (value: ActiveData) => void;
+  const cachePromise = new Promise<ActiveData>((resolve) => {
     resolveCache = resolve;
   });
   dataCache.set("latest", cachePromise);
@@ -141,12 +225,12 @@ export async function loadInitialData(priorityKeys = [], onPatchLoaded) {
     fetchJson("assets/skip-words.json").catch(() => []),
   ]);
 
-  const skipSet = new Set(skipWordsArray);
+  const skipSet = new Set<string>(skipWordsArray);
   const bundleKeys = Object.keys(sources).sort((firstItem, secondItem) => firstItem.localeCompare(secondItem));
 
-  const bundleList = [];
-  const priorityTasks = [];
-  const backgroundTasks = [];
+  const bundleList: Bundle[] = [];
+  const priorityTasks: (() => Promise<RowItem[]>)[] = [];
+  const backgroundTasks: (() => Promise<RowItem[]>)[] = [];
 
   for (const key of bundleKeys) {
     const bundleObj = sources[key];
@@ -177,7 +261,7 @@ export async function loadInitialData(priorityKeys = [], onPatchLoaded) {
     }
   }
 
-  const activeData = {
+  const activeData: ActiveData = {
     bundles: bundleList,
     rows: [],
     bundleMap: Object.fromEntries(bundleList.map((bundle) => [bundle.key, bundle])),
@@ -186,7 +270,7 @@ export async function loadInitialData(priorityKeys = [], onPatchLoaded) {
   };
 
   (async () => {
-    const executeTasks = async (tasks, isPriority) => {
+    const executeTasks = async (tasks: (() => Promise<RowItem[]>)[], isPriority: boolean) => {
       if (!tasks.length) return;
       try {
         const results = await Promise.all(tasks.map((task) => task()));
@@ -208,12 +292,12 @@ export async function loadInitialData(priorityKeys = [], onPatchLoaded) {
   return activeData;
 }
 
-export function filterRows(data, filters) {
+export function filterRows(data: ActiveData, filters: any): RowItem[] {
   const searchQueryWords = (filters.query || "").split(/\s+/).map(simplifyString).filter(Boolean);
 
   let parsedShowOptions = null;
   if (filters.showOptions?.length > 0) {
-    parsedShowOptions = filters.showOptions.map((showOption) => {
+    parsedShowOptions = filters.showOptions.map((showOption: string) => {
       const parts = showOption.split(":");
       return {
         level: parts.length === 1 ? "bundle" : parts.length === 2 ? "app" : "patch",
@@ -226,7 +310,7 @@ export function filterRows(data, filters) {
 
   return data.rows.filter((row) => {
     if (parsedShowOptions) {
-      const matched = parsedShowOptions.some((showFilter) => {
+      const matched = parsedShowOptions.some((showFilter: any) => {
         if (showFilter.bundle && row.bundleKey !== showFilter.bundle) return false;
 
         if (showFilter.app) {
@@ -243,14 +327,14 @@ export function filterRows(data, filters) {
 
     if (searchQueryWords.length > 0) {
       const searchTarget = simplifyString(row.searchPatchesText);
-      if (!searchQueryWords.every((searchWord) => searchTarget.includes(searchWord))) return false;
+      if (!searchQueryWords.every((searchWord: string) => searchTarget.includes(searchWord))) return false;
     }
 
     return true;
   });
 }
 
-export function getFilterOptions(rows, namesMap = {}) {
+export function getFilterOptions(rows: RowItem[], namesMap: Record<string, any> = {}) {
   const appMap = new Map();
   const bundleSet = new Set();
   let hasUniversal = false;
@@ -274,18 +358,19 @@ export function getFilterOptions(rows, namesMap = {}) {
     appOptions.unshift({
       value: "universal",
       label: namesMap["universal"]?.name || "universal",
+      icon: namesMap["universal"]?.iconUrl || "",
     });
   }
 
   return {
     bundleOptions: Array.from(bundleSet)
-      .sort((firstItem, secondItem) => firstItem.localeCompare(secondItem))
-      .map((value) => ({ value, label: value })),
+      .sort((firstItem: any, secondItem: any) => firstItem.localeCompare(secondItem))
+      .map((value: any) => ({ value, label: value })),
     appOptions,
   };
 }
 
-export function summarizeRows(rows) {
+export function summarizeRows(rows: RowItem[]) {
   const bundles = new Set();
   const patches = new Set();
   const apps = new Set();
@@ -297,7 +382,7 @@ export function summarizeRows(rows) {
   return { bundles: bundles.size, patches: patches.size, apps: apps.size };
 }
 
-export function getFilterOptionsFromBundles(bundles, namesMap = {}, skipSet = new Set()) {
+export function getFilterOptionsFromBundles(bundles: Bundle[], namesMap: Record<string, any> = {}, skipSet: Set<string> = new Set()) {
   const appMap = new Map();
   const bundleSet = new Set();
   let hasUniversal = false;
@@ -328,13 +413,14 @@ export function getFilterOptionsFromBundles(bundles, namesMap = {}, skipSet = ne
     appOptions.unshift({
       value: "universal",
       label: namesMap["universal"]?.name || "universal",
+      icon: namesMap["universal"]?.iconUrl || "",
     });
   }
 
   return {
     bundleOptions: Array.from(bundleSet)
-      .sort((firstItem, secondItem) => firstItem.localeCompare(secondItem))
-      .map((value) => ({ value, label: value })),
+      .sort((firstItem: any, secondItem: any) => firstItem.localeCompare(secondItem))
+      .map((value: any) => ({ value, label: value })),
     appOptions,
   };
 }
