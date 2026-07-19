@@ -334,7 +334,7 @@
     "stars": 8,
     "firstSeen": "2026-06-11T13:50:03",
     "patches": "site/chiggi.json",
-    "createdAt": "2026-07-18T15:56:26",
+    "createdAt": "2026-07-19T15:34:53",
     "targetApps": [
       "com.crazygames.crazygamesapp",
       "com.easybrain.arrow.puzzle.game",
@@ -615,13 +615,14 @@
     "stars": 6,
     "firstSeen": "2026-07-17T19:07:01",
     "patches": "site/hxreborn.json",
-    "createdAt": "2026-07-17T18:43:34",
+    "createdAt": "2026-07-19T18:13:41",
     "targetApps": [
+      "ch.protonmail.android",
       "com.michaldrabik.showly2",
       "com.myvitale.forus",
       "com.spocky.projengmenu"
     ],
-    "appCount": 3
+    "appCount": 4
   },
   "icysymmetra-tiktok": {
     "source": "github",
@@ -1161,7 +1162,7 @@
     "stars": 4292,
     "firstSeen": "2026-03-10T21:59:56",
     "patches": "site/piko.json",
-    "createdAt": "2026-07-12T13:22:24",
+    "createdAt": "2026-07-19T17:03:30",
     "targetApps": [
       "com.instagram.android",
       "com.twitter.android"
@@ -1745,11 +1746,12 @@
     "stars": 9,
     "firstSeen": "2026-06-17T15:54:42",
     "patches": "site/zpatches.json",
-    "createdAt": "2026-06-15T17:16:26",
+    "createdAt": "2026-07-19T16:59:19",
     "targetApps": [
       "com.jcdecaux.vls.lyon",
-      "ee.dustland.android.minesweeper"
+      "ee.dustland.android.minesweeper",
+      "ee.dustland.android.solitaire"
     ],
-    "appCount": 2
+    "appCount": 3
   }
 }

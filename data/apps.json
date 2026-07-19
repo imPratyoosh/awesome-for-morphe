@@ -1997,5 +1997,9 @@
   "com.sdev.mtproxy": {
     "name": "MTProxy",
     "iconUrl": "https://play-lh.googleusercontent.com/3oWdlQ3-P2vws89VcjZnsbMPzuY_rkvPl0CpS7vGLlLIaaug2SGFsV5Kb86-5rGLZ9PAJIl6lN_0DTYqnSvVsjE=s64"
+  },
+  "ee.dustland.android.solitaire": {
+    "name": "Solitaire - The Clean One",
+    "iconUrl": "https://play-lh.googleusercontent.com/uYuj3GH-LlGxb2KyY5nq2DiHpYAIZgQAQF2o2or0pSTjsWqypT2pH_aCptFmFTwLxGfBGESChBvphMzQt6PIKw=s64"
   }
 }

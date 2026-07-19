@@ -9,8 +9,53 @@
     ]
   },
   {
+    "name": "Hide sidebar upselling",
+    "description": "Hides the 'Upgrade to Mail Plus' entry from the sidebar.",
+    "compatiblePackages": [
+      {
+        "packageName": "ch.protonmail.android",
+        "targets": [
+          {
+            "version": "4.15.0"
+          }
+        ],
+        "isPreRelease": true
+      }
+    ]
+  },
+  {
+    "name": "Remove 'Sent from' signature",
+    "description": "Removes the 'Sent from Proton Mail mobile' signature from emails.",
+    "compatiblePackages": [
+      {
+        "packageName": "ch.protonmail.android",
+        "targets": [
+          {
+            "version": "4.15.0"
+          }
+        ],
+        "isPreRelease": true
+      }
+    ]
+  },
+  {
+    "name": "Remove free accounts limit",
+    "description": "Removes the limit for maximum free accounts logged in.",
+    "compatiblePackages": [
+      {
+        "packageName": "ch.protonmail.android",
+        "targets": [
+          {
+            "version": "4.15.0"
+          }
+        ],
+        "isPreRelease": true
+      }
+    ]
+  },
+  {
     "name": "Unlock premium",
-    "description": "Unlocks premium features.",
+    "description": "Unlocks all premium features.",
     "compatiblePackages": [
       {
         "packageName": "com.myvitale.forus"
@@ -19,7 +64,7 @@
   },
   {
     "name": "Unlock premium",
-    "description": "Unlocks premium features.",
+    "description": "Unlocks all premium features.",
     "compatiblePackages": [
       {
         "packageName": "com.spocky.projengmenu"
