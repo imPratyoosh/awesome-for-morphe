@@ -70,10 +70,13 @@ a.badge {
 a.badge:not([class*="text-"]) {
   color: #3b82f6;
   background: #222222;
+  border-color: #3f3f46;
 }
-a.badge:not([class*="bg-"]):hover {
-  background: color-mix(in srgb, currentColor 20%, transparent);
-  border-color: color-mix(in srgb, currentColor 30%, transparent);
+a.badge:hover {
+  filter: brightness(1.25);
+}
+a.badge:active {
+  transform: scale(0.95);
 }
 
 button.badge {

@@ -466,9 +466,10 @@
                       </div>
                       <!-- Repo Row -->
                       <a v-if="group.bundle.repo" :href="group.bundle.repoUrl" target="_blank" rel="noreferrer"
-                        @click.stop class="badge badge-ghost max-w-full whitespace-normal h-auto items-start">
-                        <i class="mt-[2px]"
-                          :class="group.bundle.source === 'github' ? 'fa-brands fa-github text-white' : group.bundle.source === 'gitlab' ? 'fa-brands fa-gitlab text-orange' : 'fa-solid fa-globe text-light'"></i>
+                        @click.stop
+                        class="flex items-start sm:items-center gap-1 text-xs sm:text-sm text-blue hover:brightness-125 transition-all max-w-full">
+                        <i class="mt-[2px] sm:mt-0"
+                          :class="group.bundle.source === 'github' ? 'fa-brands fa-github text-white' : group.bundle.source === 'gitlab' ? 'fa-brands fa-gitlab text-orange' : 'fa-solid fa-globe'"></i>
                         <span class="break-all text-left">{{ group.bundle.repo }}</span>
                       </a>
                     </div>
@@ -486,17 +487,16 @@
                       <a v-if="group.bundle.createdAt"
                         :href="group.bundle.changelogUrl || (group.bundle.repoUrl ? group.bundle.repoUrl + '/releases' : '#')"
                         target="_blank" rel="noreferrer" @click.stop
-                        class="badge text-light bg-light/10 border-light/20 hover:scale-105 active:scale-95 transition-all group"
+                        class="badge"
                         title="View changelog">
-                        <i class="fa-solid fa-clock-rotate-left group-hover:text-blue transition-colors"></i>
-                        <span class="group-hover:text-blue transition-colors">{{ formatDate(group.bundle.createdAt)
-                          }}</span>
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        <span>{{ formatDate(group.bundle.createdAt) }}</span>
                       </a>
                       <button @click.stop="mainUI.toggleBundleView(group)" class="badge shrink-0 text-light select-none"
                         :title="mainUI.bundleViews[group.key] ? 'Switch to grid view' : 'Switch to list view'">
                         <i class="fa-solid icon-center"
                           :class="mainUI.bundleViews[group.key] ? 'fa-grip' : 'fa-list'"></i>
-                        <span>{{ mainUI.bundleViews[group.key] ? 'Grid view' : 'List view' }}</span>
+                        <span>{{ mainUI.bundleViews[group.key] ? 'Grid' : 'List' }}</span>
                       </button>
                     </span>
                   </span>
@@ -535,21 +535,29 @@
                     <template v-for="appItem in appsList" :key="'content-'+appItem.id">
                       <div v-if="mainUI.bundleViews[group.key]"
                         @click.stop="mainUI.selectApp(group.key, appItem, appsList)"
-                        class="flex items-center gap-2 px-3 sm:px-4 py-2 border-b border-lightGray/50 cursor-pointer hover:bg-white/5 transition-colors"
+                        class="flex items-center gap-3 px-3 sm:px-4 py-2 border-b border-lightGray/50 cursor-pointer hover:bg-white/5 transition-colors"
                         :class="mainUI.expandedOptions.has('app_' + group.key + '_' + appItem.id) ? 'bg-white/5' : ''">
                         <img v-if="appItem.appIcon" :src="appItem.appIcon"
-                          class="w-5 h-5 rounded-sm object-contain shrink-0" :alt="appItem.appName" loading="lazy">
-                        <i v-else
-                          class="fa-brands fa-android text-green text-base shrink-0 icon-center -ml-1 sm:ml-0"></i>
-                        <span class="font-medium truncate"
-                          :class="mainUI.expandedOptions.has('app_' + group.key + '_' + appItem.id) ? 'text-blue' : 'text-light'">{{
-                          appItem.appName }}</span>
-                        <span v-if="isAppHighlighted(group.key, appItem)" class="badge badge-sm text-yellow shrink-0">✨
-                          New</span>
-                        <span v-if="appItem.isAppPreRelease && !group.bundle.isPreRelease"
-                          class="badge badge-sm text-yellow shrink-0"><i class="fa-solid fa-flask"></i>
-                          Pre-release</span>
-                        <i class="fa-solid ml-auto text-light transition-transform"
+                          class="w-9 h-9 rounded-md object-contain shrink-0" :alt="appItem.appName" loading="lazy">
+                        <div v-else class="w-9 h-9 rounded-md flex items-center justify-center shrink-0">
+                          <i class="fa-brands fa-android text-green text-2xl icon-center"></i>
+                        </div>
+                        <div class="flex flex-col min-w-0 flex-1 justify-center">
+                          <div class="flex flex-wrap items-center gap-2 min-w-0 w-full">
+                            <span class="text-base font-semibold break-words leading-tight mt-0.5"
+                              :class="mainUI.expandedOptions.has('app_' + group.key + '_' + appItem.id) ? 'text-blue' : 'text-white'">{{
+                              appItem.appName }}</span>
+                            <span v-if="isAppHighlighted(group.key, appItem)"
+                              class="badge badge-sm text-yellow shrink-0">✨
+                              New</span>
+                            <span v-if="appItem.isAppPreRelease && !group.bundle.isPreRelease"
+                              class="badge badge-sm text-yellow shrink-0"><i class="fa-solid fa-flask"></i>
+                              Pre-release</span>
+                          </div>
+                          <span v-if="appItem.packageName && appItem.packageName !== 'universal'"
+                            class="text-xs text-light break-words leading-tight w-full">{{ appItem.packageName }}</span>
+                        </div>
+                        <i class="fa-solid shrink-0 ml-2 text-light transition-transform"
                           :class="mainUI.expandedOptions.has('app_' + group.key + '_' + appItem.id) ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
                       </div>
 
@@ -564,10 +572,10 @@
                             <span>Filter this app</span>
                           </button>
                           <a v-if="appItem.packageName !== 'universal'" :href="playUrl(appItem.packageName)"
-                            class="badge shrink-0 text-light bg-light/10 border-light/20 hover:scale-105 active:scale-95 transition-all group"
+                            class="badge shrink-0"
                             target="_blank" @click.stop title="Open on Play Store">
-                            <i class="fa-brands fa-google-play group-hover:text-blue transition-colors"></i>
-                            <span class="group-hover:text-blue transition-colors">Google Play</span>
+                            <i class="fa-brands fa-google-play"></i>
+                            <span>Google Play</span>
                           </a>
                           <button v-if="appItem.packageName !== 'universal'"
                             @click.stop="copyText(appItem.packageName, 'pkg_' + group.key + '_' + appItem.id)"
@@ -808,9 +816,9 @@
                   </div>
 
                   <a v-if="group.bundle.repo" :href="group.bundle.repoUrl" target="_blank" rel="noreferrer" @click.stop
-                    class="badge badge-ghost max-w-full whitespace-normal h-auto items-start">
-                    <i class="mt-[2px]"
-                      :class="group.bundle.source === 'github' ? 'fa-brands fa-github text-white' : group.bundle.source === 'gitlab' ? 'fa-brands fa-gitlab text-orange' : 'fa-solid fa-globe text-light'"></i>
+                    class="flex items-start sm:items-center gap-1 text-xs sm:text-sm text-blue hover:brightness-125 transition-all max-w-full">
+                    <i class="mt-[2px] sm:mt-0"
+                      :class="group.bundle.source === 'github' ? 'fa-brands fa-github text-white' : group.bundle.source === 'gitlab' ? 'fa-brands fa-gitlab text-orange' : 'fa-solid fa-globe'"></i>
                     <span class="break-all text-left">{{ group.bundle.repo }}</span>
                   </a>
                 </div>
@@ -826,15 +834,15 @@
                 <a v-if="group.bundle.createdAt"
                   :href="group.bundle.changelogUrl || (group.bundle.repoUrl ? group.bundle.repoUrl + '/releases' : '#')"
                   target="_blank" rel="noreferrer" @click.stop
-                  class="badge text-light bg-light/10 border-light/20 hover:scale-105 active:scale-95 transition-all group"
+                  class="badge"
                   title="View changelog">
-                  <i class="fa-solid fa-clock-rotate-left group-hover:text-blue transition-colors"></i>
-                  <span class="group-hover:text-blue transition-colors">{{ formatDate(group.bundle.createdAt) }}</span>
+                  <i class="fa-solid fa-clock-rotate-left"></i>
+                  <span>{{ formatDate(group.bundle.createdAt) }}</span>
                 </a>
                 <button @click.stop="popupUI.toggleBundleView(group)" class="badge shrink-0 text-light select-none"
                   :title="popupUI.bundleViews[group.key] ? 'Switch to grid view' : 'Switch to list view'">
                   <i class="fa-solid icon-center" :class="popupUI.bundleViews[group.key] ? 'fa-grip' : 'fa-list'"></i>
-                  <span>{{ popupUI.bundleViews[group.key] ? 'Grid view' : 'List view' }}</span>
+                  <span>{{ popupUI.bundleViews[group.key] ? 'Grid' : 'List' }}</span>
                 </button>
               </span>
             </div>
@@ -870,19 +878,28 @@
                 <template v-for="appItem in appsList" :key="'content-'+appItem.id">
                   <div v-if="popupUI.bundleViews[group.key]"
                     @click.stop="popupUI.selectApp(group.key, appItem, appsList)"
-                    class="flex items-center gap-2 px-4 py-2 border-b border-lightGray/50 cursor-pointer hover:bg-white/5 transition-colors shrink-0"
+                    class="flex items-center gap-3 px-4 py-2 border-b border-lightGray/50 cursor-pointer hover:bg-white/5 transition-colors shrink-0"
                     :class="popupUI.expandedOptions.has('popup_app_' + group.key + '_' + appItem.id) ? 'bg-white/5' : ''">
                     <img v-if="appItem.appIcon" :src="appItem.appIcon"
-                      class="w-5 h-5 rounded-sm object-contain shrink-0" :alt="appItem.appName" loading="lazy">
-                    <i v-else class="fa-brands fa-android text-green text-base shrink-0 icon-center -ml-1 sm:ml-0"></i>
-                    <span class="font-medium truncate"
-                      :class="popupUI.expandedOptions.has('popup_app_' + group.key + '_' + appItem.id) ? 'text-blue' : 'text-light'">{{
-                      appItem.appName }}</span>
-                    <span v-if="isAppHighlighted(group.key, appItem)" class="badge badge-sm text-yellow shrink-0">✨
-                      New</span>
-                    <span v-if="appItem.isAppPreRelease && !group.bundle.isPreRelease"
-                      class="badge badge-sm text-yellow shrink-0"><i class="fa-solid fa-flask"></i> Pre-release</span>
-                    <i class="fa-solid ml-auto text-light transition-transform"
+                      class="w-9 h-9 rounded-md object-contain shrink-0" :alt="appItem.appName" loading="lazy">
+                    <div v-else class="w-9 h-9 rounded-md flex items-center justify-center shrink-0">
+                      <i class="fa-brands fa-android text-green text-2xl icon-center"></i>
+                    </div>
+                    <div class="flex flex-col min-w-0 flex-1 justify-center">
+                      <div class="flex flex-wrap items-center gap-2 min-w-0 w-full">
+                        <span class="text-base font-semibold break-words leading-tight mt-0.5"
+                          :class="popupUI.expandedOptions.has('popup_app_' + group.key + '_' + appItem.id) ? 'text-blue' : 'text-white'">{{
+                          appItem.appName }}</span>
+                        <span v-if="isAppHighlighted(group.key, appItem)" class="badge badge-sm text-yellow shrink-0">✨
+                          New</span>
+                        <span v-if="appItem.isAppPreRelease && !group.bundle.isPreRelease"
+                          class="badge badge-sm text-yellow shrink-0"><i class="fa-solid fa-flask"></i>
+                          Pre-release</span>
+                      </div>
+                      <span v-if="appItem.packageName && appItem.packageName !== 'universal'"
+                        class="text-xs text-light break-words leading-tight w-full">{{ appItem.packageName }}</span>
+                    </div>
+                    <i class="fa-solid shrink-0 ml-2 text-light transition-transform"
                       :class="popupUI.expandedOptions.has('popup_app_' + group.key + '_' + appItem.id) ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
                   </div>
 
@@ -897,10 +914,10 @@
                         <span>Filter this app</span>
                       </button>
                       <a v-if="appItem.packageName !== 'universal'" :href="playUrl(appItem.packageName)"
-                        class="badge shrink-0 text-light bg-light/10 border-light/20 hover:scale-105 active:scale-95 transition-all group"
+                        class="badge shrink-0"
                         target="_blank" @click.stop title="Open on Play Store">
-                        <i class="fa-brands fa-google-play group-hover:text-blue transition-colors"></i>
-                        <span class="group-hover:text-blue transition-colors">Google Play</span>
+                        <i class="fa-brands fa-google-play"></i>
+                        <span>Google Play</span>
                       </a>
                       <button v-if="appItem.packageName !== 'universal'"
                         @click.stop="copyText(appItem.packageName, 'pkg_' + group.key + '_' + appItem.id)"
