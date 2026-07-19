@@ -32,6 +32,7 @@ function tokenize(inputString) {
   return tokens;
 }
 
+// Parses nested filter strings like "bundle:(app:(patch1,patch2))" into an array of paths: ["bundle:app:patch1", "bundle:app:patch2"]
 function parseShowTrie(inputString) {
   const tokens = tokenize(inputString);
   let pos = 0;
@@ -66,6 +67,7 @@ function parseShowTrie(inputString) {
   return results;
 }
 
+// Converts a dictionary of paths back into a nested string format for URL storage
 const stringifyTrie = (bundlesDict) => {
   return Object.entries(bundlesDict)
     .map(([bundle, apps]) => {
@@ -100,6 +102,7 @@ function useListUI(namespace = "") {
   const toggleOptions = (id) => (expandedOptions.has(id) ? expandedOptions.delete(id) : expandedOptions.add(id));
   const toggleVersions = (id) => (expandedVersions.has(id) ? expandedVersions.delete(id) : expandedVersions.add(id));
 
+  // Checks if the app list wraps to multiple lines in grid view to show the "Expand apps" button
   const checkOverflow = (element, key) => {
     if (!element) return;
     const wasExpanded = expandedAppLists.has(key);
