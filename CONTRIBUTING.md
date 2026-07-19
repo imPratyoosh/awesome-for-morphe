@@ -30,17 +30,12 @@
 │   │   └── official-bundles.json        # Snapshots of official bundles
 │   ├── history.json                     # Baseline sync state for tracking patch updates
 │   └── repos.json                       # Compiled database of all discovered bundles
-├── docs/
+├── docs/                                 # Website deployment folder (GitHub Pages)
 │   ├── patches/                         # Compiled patch lists of each bundle for the website
-│   ├── assets/
-│   │   ├── images/                      # Website image assets
-│   │   ├── data.js                      # Core data formatting and filtering logic
-│   │   ├── main.js                      # Vue frontend logic and UI state
-│   │   ├── skip-words.json              # Package name parsing skip lists
-│   │   └── style.css                    # Custom vanilla CSS styling
+│   ├── assets/                          # Contains compiled assets and other assets needed for the website
 │   ├── apps.json                        # Metadata containing target app names/icons
 │   ├── bundles.json                     # Central compiled index of all active bundles
-│   ├── index.html                       # Frontend main webpage interface
+│   ├── index.html                       # Frontend main webpage interface (compiled)
 │   └── whats-new.json                   # Rolling changelog JSON of last 15 releases
 ├── scripts/
 │   ├── providers/                       # Scraper providers for discovery
@@ -53,6 +48,7 @@
 │   ├── telegram.py                      # Sends Telegram notifications
 │   ├── update.py                        # Processes raw databases into optimized web formats
 │   └── whats_new.py                     # Diffs updates and compiles rolling release logs
+├── web/                                 # Website source code and Vite bundler configuration
 ├── CONTRIBUTING.md
 ├── LICENSE
 └── README.md

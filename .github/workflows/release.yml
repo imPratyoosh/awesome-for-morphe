@@ -38,6 +38,17 @@ jobs:
 
           python scripts/whats_new.py
 
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+
+      - name: Install dependencies and build
+        run: |
+          cd web
+          npm install
+          npm run build
+
       - name: Commit and push changes
         id: commit
         run: |
