@@ -459,7 +459,7 @@
     "patches": "site/gmaps.json",
     "createdAt": "2026-07-15T18:01:59",
     "targetApps": [
-      "Google Maps"
+      "com.google.android.apps.maps"
     ],
     "appCount": 1
   },
@@ -959,7 +959,7 @@
     "stars": 2905,
     "firstSeen": "2026-06-23T13:04:19",
     "patches": "site/morphe.json",
-    "createdAt": "2026-07-18T06:39:30",
+    "createdAt": "2026-07-19T07:26:57",
     "targetApps": [
       "com.google.android.apps.youtube.music",
       "com.google.android.youtube",
@@ -1148,7 +1148,7 @@
     "stars": 3,
     "firstSeen": "2026-07-12T05:58:07",
     "patches": "site/pichiwa.json",
-    "createdAt": "2026-07-18T08:33:53",
+    "createdAt": "2026-07-19T06:40:38",
     "targetApps": [
       "com.whatsapp"
     ],

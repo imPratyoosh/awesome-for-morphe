@@ -1989,5 +1989,9 @@
   "com.vimtv": {
     "name": "Vi Movies and TV",
     "iconUrl": "https://play-lh.googleusercontent.com/mgGhCved1RThSXji0vvbgiyHkY6fgyD20RWFLtkVbZ5UxmN8gYoWBGY9HkYe91hOv50_Qn_Yk1yrwJPXu--ZGBA=s64"
+  },
+  "com.google.android.apps.maps": {
+    "name": "Google Maps",
+    "iconUrl": "https://play-lh.googleusercontent.com/B8pdO_2K5nBsF0g1h6dKwV_jQFLP-XombGDEQGtJT-mw1EUKCKJpa9lBGCF4rP_MwCsozSXyvI3z19g9R3J4=s64"
   }
 }
