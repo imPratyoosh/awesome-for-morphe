@@ -1,5 +1,5 @@
 {
-  "jman_tree_sha": "7f8ab822871064a1201b7e169d94d1ccfc9c02ff",
+  "jman_tree_sha": "d917f3bdaf1bceb79a3aac41b27af9eff629ffb3",
   "jman_bundles": {
     "1fexd": {
       "sha": "4428619fe1755f86c0bd9d8fb5762fcc8c17b43a",
@@ -446,7 +446,7 @@
       "key": "gitlab:inotia00/proguard-patches"
     },
     "proxma": {
-      "sha": "fe76ce81ba3234061bc85b8de670875a301e0e0c",
+      "sha": "af96ce31f11bb039429833177140cfe6d2b90ace",
       "key": "github:totsiaw/proxma-patches"
     },
     "quantro100": {
