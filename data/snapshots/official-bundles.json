@@ -927,6 +927,14 @@
           "compatiblePackagesKey": 4
         },
         {
+          "name": "Disable swipe to create",
+          "description": "Prevents opening the creation screen by swiping right on the home tab.",
+          "default": true,
+          "options": [],
+          "preRelease": true,
+          "compatiblePackagesKey": 1
+        },
+        {
           "name": "Filter stories",
           "description": "Filter stories to hide based on different categories",
           "default": true,
@@ -965,7 +973,7 @@
       "avatarUrl": "https://avatars.githubusercontent.com/u/44558091?v=4&size=168",
       "bundleIconUrl": null,
       "deepLink": "https://morphe.software/add-source?github=crimera/piko",
-      "patchCount": 127,
+      "patchCount": 128,
       "targetApps": [
         "com.twitter.android",
         "com.instagram.android"
@@ -1633,6 +1641,13 @@
       "donate": "https://github.com/rushiranpise/morphe-patches#%EF%B8%8F-like-my-work-consider-donating",
       "patches": [
         {
+          "name": "AMOLED dark theme",
+          "description": "Makes Google Photos dark surfaces true black.",
+          "default": false,
+          "options": [],
+          "compatiblePackagesKey": 56
+        },
+        {
           "name": "Alert Distances",
           "description": "Configures radar/camera and hazard alert announcement distances.\nCredits: Waze CGE Mod.\n",
           "default": true,
@@ -1719,7 +1734,7 @@
               "values": null
             }
           ],
-          "compatiblePackagesKey": 56
+          "compatiblePackagesKey": 57
         },
         {
           "name": "AutoZoom",
@@ -1763,28 +1778,54 @@
               "values": null
             }
           ],
-          "compatiblePackagesKey": 56
+          "compatiblePackagesKey": 57
         },
         {
           "name": "Bypass License Check",
           "description": "Bypasses PairIP DRM license verification to prevent forced app shutdown on non-Play-licensed installs.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 57
+          "compatiblePackagesKey": 58
         },
         {
           "name": "Bypass Subscription Paywall",
           "description": "Bypasses the subscription paywall in-app.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 57
+          "compatiblePackagesKey": 58
         },
         {
           "name": "Bypass developer verification",
           "description": "Forces all APK install verification sessions to be bypassed, preventing the verifier from blocking sideloaded or unsigned apps on Android 16+ devices.Important: Requires pushing the patched APK as a system app replacement (e.g. via Magisk module or ADB with root)since the original holds DEVELOPER_VERIFICATION_AGENT permission. ADB installs are exempt from verification regardless.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 58
+          "compatiblePackagesKey": 59
+        },
+        {
+          "name": "Change package name",
+          "description": "Installs Google Photos beside the system Photos app by changing package, permissions, providers, and app name.",
+          "default": false,
+          "options": [
+            {
+              "key": "googlePhotosPackageName",
+              "title": "Package name",
+              "description": "Package name for the cloned Google Photos app.",
+              "required": true,
+              "type": "kotlin.String",
+              "default": "app.morphe.android.apps.photos",
+              "values": null
+            },
+            {
+              "key": "googlePhotosAppName",
+              "title": "App name",
+              "description": "Launcher name for the cloned Google Photos app.",
+              "required": true,
+              "type": "kotlin.String",
+              "default": "Photos Morphe",
+              "values": null
+            }
+          ],
+          "compatiblePackagesKey": 56
         },
         {
           "name": "Change version code",
@@ -1822,42 +1863,42 @@
               }
             }
           ],
-          "compatiblePackagesKey": 59
+          "compatiblePackagesKey": 60
         },
         {
           "name": "Disable Ads",
           "description": "Prevents the AppOpen ad preloader from initialising.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 60
+          "compatiblePackagesKey": 61
         },
         {
           "name": "Disable Ads",
           "description": "Suppresses all Waze ad systems via bundled preferences file:\n• AdMob SDK (Ad_.*)\n• Google Ads (Google_Ads.*)\n• Ads Inventory Prediction\n• ExternalPOI pins, coupons, popups (ExternalPO_ + Extern__POI both key variants)\n• Search autocomplete server ads\nCredits: Waze CGE Mod (ExternalPOI keys), Waze Chuppito (dual-key coverage).",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 56
+          "compatiblePackagesKey": 57
         },
         {
           "name": "Disable Advil Ad Requests",
           "description": "Stubs AdvilRequest.getPageUrl() → \"\" so the Advil ad server receives no page URL and returns no ad content. ",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 56
+          "compatiblePackagesKey": 57
         },
         {
           "name": "Disable Analytics / Telemetry",
           "description": "Disables App Analytics / Telemetry.",
           "default": false,
           "options": [],
-          "compatiblePackagesKey": 61
+          "compatiblePackagesKey": 62
         },
         {
           "name": "Disable Tracking",
           "description": "Disables analytics and telemetry in ES File Explorer",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 62
+          "compatiblePackagesKey": 63
         },
         {
           "name": "Disable ad SDK calls",
@@ -1878,7 +1919,7 @@
           "description": "Prevents search keypress and focus events from being sent with suggestion requests.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 59
+          "compatiblePackagesKey": 60
         },
         {
           "name": "Disable shake ads",
@@ -1892,14 +1933,14 @@
           "description": "Disables CamScanner's custom telemetry/log-agent system.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 63
+          "compatiblePackagesKey": 64
         },
         {
           "name": "Disable video autoplay",
           "description": "Prevents product and ad videos from autoplaying.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 59
+          "compatiblePackagesKey": 60
         },
         {
           "name": "Enable Android debugging",
@@ -1909,11 +1950,18 @@
           "options": []
         },
         {
+          "name": "Enable DCIM folders backup control",
+          "description": "Allows controlling Camera and other DCIM folder backup individually.",
+          "default": false,
+          "options": [],
+          "compatiblePackagesKey": 56
+        },
+        {
           "name": "Enable Debug Menu",
           "description": "Enables Duolingo's hidden debug menu in settings.",
           "default": false,
           "options": [],
-          "compatiblePackagesKey": 64
+          "compatiblePackagesKey": 65
         },
         {
           "name": "Enable ROM signature spoofing",
@@ -1963,7 +2011,7 @@
               "values": null
             }
           ],
-          "compatiblePackagesKey": 56
+          "compatiblePackagesKey": 57
         },
         {
           "name": "Export all activities",
@@ -1984,7 +2032,14 @@
           "description": "Updates shared Amazon permissions so other Amazon apps can coexist.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 59
+          "compatiblePackagesKey": 60
+        },
+        {
+          "name": "Fix DCIM folder classification",
+          "description": "Prevents non-Camera DCIM folders from being grouped as Camera.",
+          "default": false,
+          "options": [],
+          "compatiblePackagesKey": 56
         },
         {
           "name": "Fix Firebase after re-signing",
@@ -1999,6 +2054,13 @@
           "default": false,
           "compatiblePackages": null,
           "options": []
+        },
+        {
+          "name": "GmsCore support",
+          "description": "Adds MicroG/GmsCore support metadata for Google Photos.",
+          "default": false,
+          "options": [],
+          "compatiblePackagesKey": 56
         },
         {
           "name": "GmsCore support (MicroG)",
@@ -2055,7 +2117,7 @@
           "description": "Removes the Rufus AI assistant tab from Amazon's bottom navigation bar.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 59
+          "compatiblePackagesKey": 60
         },
         {
           "name": "Hide VPN and proxy",
@@ -2188,7 +2250,7 @@
               "values": null
             }
           ],
-          "compatiblePackagesKey": 56
+          "compatiblePackagesKey": 57
         },
         {
           "name": "Navigation & Map",
@@ -2280,14 +2342,14 @@
               }
             }
           ],
-          "compatiblePackagesKey": 56
+          "compatiblePackagesKey": 57
         },
         {
           "name": "Open links in browser",
           "description": "Opens non-Amazon URLs in the default browser instead of the in-app WebView.",
           "default": false,
           "options": [],
-          "compatiblePackagesKey": 59
+          "compatiblePackagesKey": 60
         },
         {
           "name": "Override certificate pinning",
@@ -2347,7 +2409,7 @@
               "values": null
             }
           ],
-          "compatiblePackagesKey": 56
+          "compatiblePackagesKey": 57
         },
         {
           "name": "Predictive back gesture",
@@ -2361,7 +2423,7 @@
           "description": "Injects Keepa and CamelCamelCamel price history charts on Amazon product pages.",
           "default": false,
           "options": [],
-          "compatiblePackagesKey": 59
+          "compatiblePackagesKey": 60
         },
         {
           "name": "Provide Original app certificate",
@@ -2412,49 +2474,63 @@
           "description": "Plays radar/speed camera sound alerts regardless of current speed. Official Waze only alerts when over the speed limit.\n",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 56
+          "compatiblePackagesKey": 57
         },
         {
           "name": "Remove ADS",
           "description": "Remove in-app ads",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 65
+          "compatiblePackagesKey": 66
+        },
+        {
+          "name": "Remove Ads",
+          "description": "Removes all ads in app",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 67
         },
         {
           "name": "Remove Ads",
           "description": "Removes interstitial and exit native ads from m-Indicator.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 66
+          "compatiblePackagesKey": 68
+        },
+        {
+          "name": "Remove Ads",
+          "description": "Removes ads from TorrDroid.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 69
         },
         {
           "name": "Remove Ads",
           "description": "Remove in-app ads.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 67
+          "compatiblePackagesKey": 70
         },
         {
           "name": "Remove Ads / Unlock Premium",
           "description": "Forces SubscriptionStateImpl.getStatus() (LB2/c.h) to always return HAS_UNLIMITED_SUBSCRIPTION and getPurchase() (LB2/c.g) to return a well-formed fake Purchase, removing ads and the upgrade button/banner without crashing on the now-expected non-null Purchase object.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 68
+          "compatiblePackagesKey": 71
         },
         {
           "name": "Remove Item Limits",
           "description": "Removes all  item limits in-app.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 57
+          "compatiblePackagesKey": 58
         },
         {
           "name": "Remove Watermark",
           "description": "Removes watermarks from Canva exports and previews.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 69
+          "compatiblePackagesKey": 72
         },
         {
           "name": "Remove ad manifest entries",
@@ -2468,35 +2544,35 @@
           "description": "Stubs all ad loading paths: banner/interstitial loaders, billing callbacks, and ad SDK init.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 70
+          "compatiblePackagesKey": 73
         },
         {
           "name": "Remove ads",
           "description": "Hides sponsored and ad content in Amazon Shopping via CSS injection.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 59
+          "compatiblePackagesKey": 60
         },
         {
           "name": "Remove ads",
           "description": "Disables Block Puzzle AdMob initialization, banner, and interstitial ads.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 71
+          "compatiblePackagesKey": 74
         },
         {
           "name": "Remove ads",
           "description": "Disables interstitial/banner ad loaders, hides promoted listings and profiles from search feeds.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 72
+          "compatiblePackagesKey": 75
         },
         {
           "name": "Remove ads",
           "description": "Disables LiveScore banner, native, and interstitial ad requests.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 73
+          "compatiblePackagesKey": 76
         },
         {
           "name": "Remove share targets",
@@ -2510,14 +2586,14 @@
           "description": "Adds a Report option when tapping the speedometer to report wrong or missing speed limits. Not available in the official version.\n",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 56
+          "compatiblePackagesKey": 57
         },
         {
           "name": "Sanitize share links",
           "description": "Strips tracking parameters from copied/shared Amazon links, leaving only the clean product URL.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 59
+          "compatiblePackagesKey": 60
         },
         {
           "name": "Set target SDK 34",
@@ -2544,7 +2620,7 @@
               }
             }
           ],
-          "compatiblePackagesKey": 56
+          "compatiblePackagesKey": 57
         },
         {
           "name": "Spoof Android ID",
@@ -2683,7 +2759,7 @@
           "description": "Unlocks WARP+ UI locally.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 61
+          "compatiblePackagesKey": 62
         },
         {
           "name": "Spoof Wi-Fi connection",
@@ -2860,6 +2936,78 @@
           ]
         },
         {
+          "name": "Spoof features",
+          "description": "Spoofs selectable Pixel Photos build and feature flags.",
+          "default": false,
+          "options": [
+            {
+              "key": "googlePhotosSpoofProfile",
+              "title": "Pixel profile",
+              "description": "Device profile used for Build fields and Pixel feature levels.",
+              "required": true,
+              "type": "kotlin.String",
+              "default": "pixel_xl",
+              "values": {
+                "Pixel XL - unlimited original quality": "pixel_xl",
+                "Pixel - unlimited original quality": "pixel",
+                "Pixel 2 - storage saver": "pixel_2",
+                "Pixel 3 XL - storage saver": "pixel_3_xl",
+                "Pixel 3a XL - storage saver": "pixel_3a_xl",
+                "Pixel 4 XL - storage saver": "pixel_4_xl",
+                "Pixel 4a - storage saver": "pixel_4a",
+                "Pixel 5 - storage saver": "pixel_5",
+                "Pixel 5a - storage saver": "pixel_5a",
+                "Pixel 6 Pro - feature gates only": "pixel_6_pro",
+                "Pixel 6a - feature gates only": "pixel_6a",
+                "Pixel 7 - feature gates only": "pixel_7",
+                "Pixel 7 Pro - feature gates only": "pixel_7_pro",
+                "Pixel 7a - feature gates only": "pixel_7a",
+                "Pixel 8 - feature gates only": "pixel_8",
+                "Pixel 8 Pro - Video Boost": "pixel_8_pro",
+                "Pixel 8a - feature gates only": "pixel_8a",
+                "Pixel 9 - AI editing": "pixel_9",
+                "Pixel 9 Pro - AI editing": "pixel_9_pro",
+                "Pixel 9 Pro XL - AI editing": "pixel_9_pro_xl",
+                "Pixel 9a - AI editing": "pixel_9a",
+                "Pixel 10 Pro XL - latest Pixel AI": "pixel_10_pro_xl"
+              }
+            },
+            {
+              "key": "googlePhotosAndroidVersion",
+              "title": "Android version",
+              "description": "Optionally spoof Build.VERSION fields. Follow profile uses the selected Pixel's matching Android version.",
+              "required": false,
+              "type": "kotlin.String",
+              "default": "none",
+              "values": {
+                "Do not spoof Android version": "none",
+                "Follow Pixel profile": "follow_profile",
+                "Nougat 7.1.2": "nougat_7_1_2",
+                "Oreo 8.1.0": "oreo_8_1_0",
+                "Pie 9.0": "pie_9_0",
+                "Q 10.0": "q_10_0",
+                "R 11.0": "r_11_0",
+                "S 12.0": "s_12_0",
+                "Android 13": "android_13",
+                "Android 14": "android_14",
+                "Android 15": "android_15",
+                "Android 16": "android_16",
+                "Android 17": "android_17"
+              }
+            },
+            {
+              "key": "googlePhotosOverrideRomFeatureLevels",
+              "title": "Override ROM feature levels",
+              "description": "Force newer Pixel feature flags off when the selected profile should not have them.",
+              "required": false,
+              "type": "kotlin.Boolean",
+              "default": true,
+              "values": null
+            }
+          ],
+          "compatiblePackagesKey": 56
+        },
+        {
           "name": "Spoof install source",
           "description": "Makes the app think it was installed from a specific store (default: Google Play).\n\nUseful when an app blocks features or shows errors because it detects it was not installed from the Play Store.\n\nOnly affects what the app itself sees - does not change the real system install record.",
           "default": false,
@@ -2954,539 +3102,553 @@
           "description": "Suppresses the in-app paywall.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 60
+          "compatiblePackagesKey": 61
         },
         {
           "name": "Suppress Premium Promotions",
           "description": "Supress all premium promotions in-app.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 57
+          "compatiblePackagesKey": 58
         },
         {
           "name": "Uncensored Radar / Camera Display",
           "description": "Shows exact fixed and mobile speed camera locations, including those not yet in the official Waze radar zone. Enables enforcement alerts via preferences keys:\nCredits: Waze CGE Mod.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 56
+          "compatiblePackagesKey": 57
         },
         {
           "name": "Unlock Ad-Free",
           "description": "Forces FlightAware ad-free subscribed state.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 74
+          "compatiblePackagesKey": 77
         },
         {
           "name": "Unlock Ad-Free",
           "description": "Removes ads and unlocks ad-free status in Speedtest by Ookla.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 75
+          "compatiblePackagesKey": 78
         },
         {
           "name": "Unlock All Access",
           "description": "Unlocks All access in Nzb360.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 76
+          "compatiblePackagesKey": 79
         },
         {
           "name": "Unlock All Features",
           "description": "Bypasses PairIP DRM license check, removes all paywalls, and unlocks all premium features including cloud sync and remote access.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 77
+          "compatiblePackagesKey": 80
         },
         {
           "name": "Unlock Business Premium",
           "description": "Unlocks Business/Gold premium features in Flightradar24: ad-free map, weather layers, ATC, 3D view, flight history, and unlimited saved locations.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 78
+          "compatiblePackagesKey": 81
         },
         {
           "name": "Unlock Cloud Service",
           "description": "Unlocks BluramsGuard cloud storage, AI detection, and playback features.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 79
+          "compatiblePackagesKey": 82
         },
         {
           "name": "Unlock Club",
           "description": "Unlocks Citymapper Club Membership Note: Need to manually Purchase inside APP!.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 80
+          "compatiblePackagesKey": 83
         },
         {
           "name": "Unlock Donation Features",
           "description": "Unlocks all premium donation features in Greenify.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 81
+          "compatiblePackagesKey": 84
         },
         {
           "name": "Unlock Drama Episodes",
           "description": "Bypasses the IAA (ad-watch-to-unlock) episode gate for drama mini-series.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 82
+          "compatiblePackagesKey": 85
         },
         {
           "name": "Unlock Elite",
           "description": "Unlocks JEFIT Elite features in app.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 83
+          "compatiblePackagesKey": 86
         },
         {
           "name": "Unlock Enterprise",
           "description": "Unlocks Enterprise features in app.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 84
+          "compatiblePackagesKey": 87
         },
         {
           "name": "Unlock Excel",
           "description": "Removes login requirement, unlocks premium, blocks ads, bypasses signature and code transparency checks.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 85
+          "compatiblePackagesKey": 88
         },
         {
           "name": "Unlock Followed Locations",
           "description": "Unlocks the Followed Locations premium feature.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 57
+          "compatiblePackagesKey": 58
         },
         {
           "name": "Unlock Full Version",
           "description": "Unlocks all features in Inure App Manager.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 86
+          "compatiblePackagesKey": 89
         },
         {
           "name": "Unlock Gold",
           "description": "Unlocks Kahoot! Plus Gold features in app.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 87
+          "compatiblePackagesKey": 90
         },
         {
           "name": "Unlock Lifetime",
           "description": "Unlocks lifetime subscription features in BlockerHero.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 88
+          "compatiblePackagesKey": 91
         },
         {
           "name": "Unlock Lifetime",
           "description": "Unlocks all Lifetime features in Proxyman.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 89
+          "compatiblePackagesKey": 92
         },
         {
           "name": "Unlock Lifetime",
           "description": "Unlocks SHAREit lifetime premium.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 90
+          "compatiblePackagesKey": 93
         },
         {
           "name": "Unlock Lifetime Premium",
           "description": "Unlocks all features locked behind the subscription paywall.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 91
+          "compatiblePackagesKey": 94
         },
         {
           "name": "Unlock Moovit+",
           "description": "Unlocks Moovit+",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 92
+          "compatiblePackagesKey": 95
         },
         {
           "name": "Unlock PRO",
           "description": "Unlocks all PRO features in app",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 93
+          "compatiblePackagesKey": 96
         },
         {
           "name": "Unlock Patron",
           "description": "Unlocks Pocket Casts Patron yearly feature checks.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 94
+          "compatiblePackagesKey": 97
         },
         {
           "name": "Unlock Platinum",
           "description": "Unlocks Life360 Platinum feature in app.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 95
+          "compatiblePackagesKey": 98
         },
         {
           "name": "Unlock Plus",
           "description": "Forces Clue Plus subscription active, unlocking all premium features.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 96
+          "compatiblePackagesKey": 99
         },
         {
           "name": "Unlock Plus",
           "description": "Unlocks all SpotAngels Plus features in app",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 97
+          "compatiblePackagesKey": 100
         },
         {
           "name": "Unlock Plus",
           "description": "Unlocks Sticker.ly PLUS subscriptionNote: For Facebook Login, Uninstall Facebook App.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 98
+          "compatiblePackagesKey": 101
         },
         {
           "name": "Unlock Plus",
           "description": "Unlocks Subway Now Plus.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 99
-        },
-        {
-          "name": "Unlock Premium",
-          "description": "Unlocks premium features in app.",
-          "default": true,
-          "options": [],
-          "compatiblePackagesKey": 100
-        },
-        {
-          "name": "Unlock Premium",
-          "description": "Unlocks AiScore Premium Features in app.",
-          "default": true,
-          "options": [],
-          "compatiblePackagesKey": 101
-        },
-        {
-          "name": "Unlock Premium",
-          "description": "Unlocks premium.",
-          "default": true,
-          "options": [],
           "compatiblePackagesKey": 102
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks all premium wallpapers.",
+          "description": "Unlocks premium features in app.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 103
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlock Premium Features in app.",
+          "description": "Unlocks AiScore Premium Features in app.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 104
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks Premium Features In the App.",
+          "description": "Unlocks premium.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 105
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks Carbon premium subscription.",
+          "description": "Unlocks all premium wallpapers.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 106
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks ColorNote premium and removes advertising ID permissions.",
+          "description": "Unlock Premium Features in app.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 107
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks all premium features in Countdown Widget",
+          "description": "Unlocks Premium Features In the App.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 108
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks premium features in app.",
+          "description": "Unlocks Carbon premium subscription.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 109
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks Premium Features In the App.",
-          "default": true,
-          "options": [],
-          "compatiblePackagesKey": 57
-        },
-        {
-          "name": "Unlock Premium",
-          "description": "Unlocks premium features after login.",
+          "description": "Unlocks ColorNote premium and removes advertising ID permissions.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 110
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks all premium wallpapers.",
+          "description": "Unlocks all premium features in Countdown Widget",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 111
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks all Fitbod premium features.",
+          "description": "Unlocks premium features in app.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 112
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks premium features in app.",
+          "description": "Unlocks Premium Features In the App.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 58
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks premium features after login.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 113
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlock Premium features in app.",
+          "description": "Unlocks all premium wallpapers.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 114
         },
         {
           "name": "Unlock Premium",
-          "description": null,
+          "description": "Unlocks all Fitbod premium features.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 115
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks all premium features in Image & Video Date Fixer.",
+          "description": "Unlocks premium features in app.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 116
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlock Premium features after login.",
+          "description": "Unlock Premium features in app.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 117
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks premium features and all map packs.",
+          "description": null,
           "default": true,
           "options": [],
           "compatiblePackagesKey": 118
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks premium features in app.",
+          "description": "Unlocks all premium features in Image & Video Date Fixer.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 119
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks Premium Features in app.",
+          "description": "Unlock Premium features after login.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 120
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlock all premium widgets.",
+          "description": "Unlocks premium features and all map packs.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 121
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks premium in Beta by Mirko.",
+          "description": "Unlocks premium features in app.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 122
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks MyRadar's yearly premium features",
+          "description": "Unlocks Premium Features in app.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 123
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks all premium features.",
+          "description": "Unlocks Premium features in app after login.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 124
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks Premium features in app..",
+          "description": "Unlock all premium widgets.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 125
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks Ninja VPN premium.",
+          "description": "Unlocks premium in Beta by Mirko.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 126
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks all Photo Editor premium features",
+          "description": "Unlocks MyRadar's yearly premium features",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 127
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks Picture Mushroom premium features.",
+          "description": "Unlocks all premium features.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 128
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks PictureThis premium features.",
+          "description": "Unlocks Premium features in app..",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 129
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks Pocket Prep premium subscription gates.",
+          "description": "Unlocks Ninja VPN premium.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 130
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks local Proton VPN premium  features.",
+          "description": "Unlocks premium features after login.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 131
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlock premium features in RecipeBro.",
+          "description": "Unlocks all Photo Editor premium features",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 132
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks all premium features in Rename & Organize.",
+          "description": "Unlocks Picture Mushroom premium features.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 133
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks Rocket Money Premium Features.",
+          "description": "Unlocks PictureThis premium features.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 134
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks premium features in app.",
+          "description": "Unlocks Pocket Prep premium subscription gates.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 135
         },
         {
           "name": "Unlock Premium",
-          "description": "Bypasses PairIP license check, paywall, ads, and pro upsell in SAI.",
+          "description": "Unlocks local Proton VPN premium  features.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 136
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks all premium feature in app.",
+          "description": "Unlock premium features in RecipeBro.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 137
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks all Premium features in Snipd: AI Podcast Player by spoofing the RevenueCat CustomerInfo.",
+          "description": "Unlocks all premium features in Rename & Organize.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 138
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks Premium features.",
+          "description": "Unlocks Rocket Money Premium Features.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 139
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks Social Gamebox premium features.",
+          "description": "Unlocks premium features in app.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 140
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks Sticker Maker premium and ad-free checks.",
+          "description": "Bypasses PairIP license check, paywall, ads, and pro upsell in SAI.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 141
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks Premium features in app. Also re-enables password login after OTP.",
+          "description": "Unlocks all premium feature in app.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 142
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks premium/lifetime featuers in app.",
+          "description": "Unlocks all Premium features in Snipd: AI Podcast Player by spoofing the RevenueCat CustomerInfo.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 143
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks The Weather Channel's Premium and Premium Pro subscription tiers. Enables the ad-free experience, extended 15-day hourly forecast, real-feel temperature, air quality index, minute-by-minute precipitation, severe weather notifications, and radar overlays gated behind the subscription paywall.",
+          "description": "Unlocks Premium features.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 144
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks all premium features.",
+          "description": "Unlocks Social Gamebox premium features.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 145
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks Sticker Maker premium and ad-free checks.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 146
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks Premium features in app. Also re-enables password login after OTP.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 147
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks premium/lifetime featuers in app.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 148
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks The Weather Channel's Premium and Premium Pro subscription tiers. Enables the ad-free experience, extended 15-day hourly forecast, real-feel temperature, air quality index, minute-by-minute precipitation, severe weather notifications, and radar overlays gated behind the subscription paywall.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 149
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks all premium features.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 150
         },
         {
           "name": "Unlock Premium",
@@ -3506,238 +3668,245 @@
               }
             }
           ],
-          "compatiblePackagesKey": 146
+          "compatiblePackagesKey": 151
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks Toxly Premium",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 147
+          "compatiblePackagesKey": 152
         },
         {
           "name": "Unlock Premium",
           "description": "Unlock premium features in app.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 148
+          "compatiblePackagesKey": 153
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks Premium Features In the App.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 60
+          "compatiblePackagesKey": 61
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks all Wavve Boating GPS premium features: charts, weather, tide data, and removes subscription paywall.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 149
+          "compatiblePackagesKey": 154
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks Windscribe premium account.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 150
+          "compatiblePackagesKey": 155
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks Windy Pro features.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 151
+          "compatiblePackagesKey": 156
         },
         {
           "name": "Unlock Premium ",
           "description": "Unlocks premium in Clickmate",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 152
+          "compatiblePackagesKey": 157
         },
         {
           "name": "Unlock Premium+",
           "description": "Unlocks AccuWeather's Premium+ subscription tier without a Play Store purchase. Enables the full 15-day and hourly forecast detail, MinuteCast extended precision, air quality and health indexes, real-feel temperature, severe weather notifications, and widget customisation.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 153
-        },
-        {
-          "name": "Unlock Pro",
-          "description": "Unlocks all premium features in Case Tracker — Immigration.",
-          "default": true,
-          "options": [],
-          "compatiblePackagesKey": 154
-        },
-        {
-          "name": "Unlock Pro",
-          "description": "Unlock Pro Features in Cashew App",
-          "default": true,
-          "options": [],
-          "compatiblePackagesKey": 155
-        },
-        {
-          "name": "Unlock Pro",
-          "description": "Unlocks all Citizen Plus/Protect features: Safety Network, Safety Center, Zones, Live Agent, Offender alerts, Clarity crime map, incident video, and more.",
-          "default": true,
-          "options": [],
-          "compatiblePackagesKey": 156
-        },
-        {
-          "name": "Unlock Pro",
-          "description": "Unlocks all pro features in Hibernator.",
-          "default": true,
-          "options": [],
-          "compatiblePackagesKey": 157
-        },
-        {
-          "name": "Unlock Pro",
-          "description": "Unlock Pro Features in app.",
-          "default": true,
-          "options": [],
           "compatiblePackagesKey": 158
         },
         {
           "name": "Unlock Pro",
-          "description": "Unlocks all pro features in KillApps.",
+          "description": "Unlocks Box Box Pro",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 159
         },
         {
           "name": "Unlock Pro",
-          "description": "Unlocks all Pro features.",
+          "description": "Unlocks all premium features in Case Tracker — Immigration.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 160
         },
         {
           "name": "Unlock Pro",
-          "description": "Unlocks all pro features in ML Manager.",
+          "description": "Unlock Pro Features in Cashew App",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 161
         },
         {
           "name": "Unlock Pro",
-          "description": "Unlocks all Pro features in app.",
+          "description": "Unlocks all Citizen Plus/Protect features: Safety Network, Safety Center, Zones, Live Agent, Offender alerts, Clarity crime map, incident video, and more.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 162
         },
         {
           "name": "Unlock Pro",
-          "description": "Unlocks all pro features in NetGuard.",
+          "description": "Unlocks all pro features in Hibernator.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 163
         },
         {
           "name": "Unlock Pro",
-          "description": "Unlocks Pro features in app.",
+          "description": "Unlock Pro Features in app.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 164
         },
         {
           "name": "Unlock Pro",
-          "description": "Unlocks 1Tap Cleaner PRO: history export, app-group filters, unlimited cache targets, ad removal.",
+          "description": "Unlocks all pro features in KillApps.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 165
         },
         {
           "name": "Unlock Pro",
-          "description": "Unlocks Pro Features in app.",
+          "description": "Unlocks all Pro features.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 166
         },
         {
           "name": "Unlock Pro",
-          "description": "Unlocks premium features in app.",
+          "description": "Unlocks all pro features in ML Manager.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 167
         },
         {
           "name": "Unlock Pro",
-          "description": "Removes ads and unlocks the no-ads subscription in RAR.",
+          "description": "Unlocks all Pro features in app.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 168
         },
         {
           "name": "Unlock Pro",
-          "description": "Unlocks all Pro features in app.",
+          "description": "Unlocks all pro features in NetGuard.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 169
         },
         {
           "name": "Unlock Pro",
-          "description": "Unlocks Splitwise Pro features, removes ad banners, and suppresses all upgrade upsell prompts.",
+          "description": "Unlocks Pro features in app.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 170
         },
         {
           "name": "Unlock Pro",
-          "description": "Unlocks UbikiTouch Pro features in app.",
+          "description": "Unlocks 1Tap Cleaner PRO: history export, app-group filters, unlimited cache targets, ad removal.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 171
         },
         {
           "name": "Unlock Pro",
-          "description": "Unlocks UDisc Pro subscription.",
+          "description": "Unlocks Pro Features in app.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 172
+        },
+        {
+          "name": "Unlock Pro",
+          "description": "Unlocks premium features in app.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 173
+        },
+        {
+          "name": "Unlock Pro",
+          "description": "Removes ads and unlocks the no-ads subscription in RAR.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 174
+        },
+        {
+          "name": "Unlock Pro",
+          "description": "Unlocks all Pro features in app.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 175
+        },
+        {
+          "name": "Unlock Pro",
+          "description": "Unlocks Splitwise Pro features, removes ad banners, and suppresses all upgrade upsell prompts.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 176
+        },
+        {
+          "name": "Unlock Pro",
+          "description": "Unlocks UbikiTouch Pro features in app.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 177
+        },
+        {
+          "name": "Unlock Pro",
+          "description": "Unlocks UDisc Pro subscription.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 178
         },
         {
           "name": "Unlock Pro / No Ads",
           "description": "Unlocks Pro/No Ads feature in app",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 173
+          "compatiblePackagesKey": 179
         },
         {
           "name": "Unlock Pro features",
           "description": "Unlock Pro features in app.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 174
+          "compatiblePackagesKey": 180
         },
         {
           "name": "Unlock Professional",
           "description": "Unlocks Professional features inapp.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 175
+          "compatiblePackagesKey": 181
         },
         {
           "name": "Unlock Royale",
           "description": "Unlocks Transit Royale Membership.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 176
+          "compatiblePackagesKey": 182
         },
         {
           "name": "Unlock SPIN Plus",
           "description": "Unlocks SPIN Plus",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 177
+          "compatiblePackagesKey": 183
         },
         {
           "name": "Unlock SVIP",
           "description": "Unlocks SViP features in app.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 178
+          "compatiblePackagesKey": 184
         },
         {
           "name": "Unlock Subscription",
@@ -3764,322 +3933,150 @@
               }
             }
           ],
-          "compatiblePackagesKey": 64
+          "compatiblePackagesKey": 65
         },
         {
           "name": "Unlock Subscription",
           "description": "Unlocks all subscription features in TWT App.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 179
+          "compatiblePackagesKey": 185
         },
         {
           "name": "Unlock Turbo",
           "description": "Unlocks Turbo subscription after login.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 180
+          "compatiblePackagesKey": 186
         },
         {
           "name": "Unlock Ultimate",
           "description": "Unlocks Ultimate Ad-Free + Android TV.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 181
+          "compatiblePackagesKey": 187
         },
         {
           "name": "Unlock Ultra",
           "description": "Unlocks Ultra features in app.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 182
+          "compatiblePackagesKey": 188
         },
         {
           "name": "Unlock VIP",
           "description": "Unlock ViP features in app.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 183
+          "compatiblePackagesKey": 189
         },
         {
           "name": "Unlock VIP",
           "description": "Unlocks Dubox Drive VIP/SVIP (Premium+)",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 184
+          "compatiblePackagesKey": 190
         },
         {
           "name": "Unlock VIP",
           "description": "Unlocks VIP features in app.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 185
+          "compatiblePackagesKey": 191
         },
         {
           "name": "Unlock VIP",
           "description": "Unlocks VIP Features in app.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 186
+          "compatiblePackagesKey": 192
         },
         {
           "name": "Unlock VIP",
           "description": "Unlock VIP subscription in app.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 187
+          "compatiblePackagesKey": 193
         },
         {
           "name": "Unlock VIP",
           "description": "Unlocks Yatri VIP by forcing active plan status and spoofing active plan DB query.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 188
+          "compatiblePackagesKey": 194
         },
         {
           "name": "Unlock VIP (Lifetime)",
           "description": "Forces permanent professional VIP tier, removes ads and upgrade popups, bypasses PairIP.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 189
+          "compatiblePackagesKey": 195
         },
         {
           "name": "Unlock VIP Lifetime",
           "description": "Unlock Vip Features in APP.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 62
+          "compatiblePackagesKey": 63
         },
         {
           "name": "Unlock Word",
           "description": "Removes login requirement, unlocks premium, blocks ads, bypasses signature and code transparency checks.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 190
+          "compatiblePackagesKey": 196
         },
         {
           "name": "Unlock donation",
           "description": "Forces h0() to return \"yes\" so donate dialog never shows and providers unlock.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 191
+          "compatiblePackagesKey": 197
         },
         {
           "name": "Unlock premium",
           "description": "Unlocks AmoledPix premium features and disables ads.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 192
+          "compatiblePackagesKey": 198
         },
         {
           "name": "Unlock premium",
           "description": "Unlocks NAVITIME Japan Travel Premium features in app",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 193
+          "compatiblePackagesKey": 199
         },
         {
           "name": "Unlock premium",
           "description": "Unlock Premium features in app",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 194
+          "compatiblePackagesKey": 200
         },
         {
           "name": "Unlock pro",
           "description": "Unlocks all pro features.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 195
+          "compatiblePackagesKey": 201
         },
         {
           "name": "Unlock subscription",
           "description": "Unlocks subscription in app",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 196
+          "compatiblePackagesKey": 202
         },
         {
           "name": "Yearly Unlock",
           "description": "Unlocks premium features without login. Note: Login Won't Work",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 63
-        },
-        {
-          "name": "AMOLED dark theme",
-          "description": "Makes Google Photos dark surfaces true black.",
-          "default": false,
-          "options": [],
-          "preRelease": true,
-          "compatiblePackagesKey": 197
-        },
-        {
-          "name": "Change package name",
-          "description": "Installs Google Photos beside the system Photos app by changing package, permissions, providers, and app name.",
-          "default": false,
-          "options": [
-            {
-              "key": "googlePhotosPackageName",
-              "title": "Package name",
-              "description": "Package name for the cloned Google Photos app.",
-              "required": true,
-              "type": "kotlin.String",
-              "default": "app.morphe.android.apps.photos",
-              "values": null
-            },
-            {
-              "key": "googlePhotosAppName",
-              "title": "App name",
-              "description": "Launcher name for the cloned Google Photos app.",
-              "required": true,
-              "type": "kotlin.String",
-              "default": "Photos Morphe",
-              "values": null
-            }
-          ],
-          "preRelease": true,
-          "compatiblePackagesKey": 197
-        },
-        {
-          "name": "Enable DCIM folders backup control",
-          "description": "Allows controlling Camera and other DCIM folder backup individually.",
-          "default": false,
-          "options": [],
-          "preRelease": true,
-          "compatiblePackagesKey": 197
-        },
-        {
-          "name": "Fix DCIM folder classification",
-          "description": "Prevents non-Camera DCIM folders from being grouped as Camera.",
-          "default": false,
-          "options": [],
-          "preRelease": true,
-          "compatiblePackagesKey": 197
-        },
-        {
-          "name": "GmsCore support",
-          "description": "Adds MicroG/GmsCore support metadata for Google Photos.",
-          "default": false,
-          "options": [],
-          "preRelease": true,
-          "compatiblePackagesKey": 197
-        },
-        {
-          "name": "Remove Ads",
-          "description": "Removes all ads in app",
-          "default": true,
-          "options": [],
-          "preRelease": true,
-          "compatiblePackagesKey": 198
-        },
-        {
-          "name": "Remove Ads",
-          "description": "Removes ads from TorrDroid.",
-          "default": true,
-          "options": [],
-          "preRelease": true,
-          "compatiblePackagesKey": 199
-        },
-        {
-          "name": "Spoof features",
-          "description": "Spoofs selectable Pixel Photos build and feature flags.",
-          "default": false,
-          "options": [
-            {
-              "key": "googlePhotosSpoofProfile",
-              "title": "Pixel profile",
-              "description": "Device profile used for Build fields and Pixel feature levels.",
-              "required": true,
-              "type": "kotlin.String",
-              "default": "pixel_xl",
-              "values": {
-                "Pixel XL - unlimited original quality": "pixel_xl",
-                "Pixel - unlimited original quality": "pixel",
-                "Pixel 2 - storage saver": "pixel_2",
-                "Pixel 3 XL - storage saver": "pixel_3_xl",
-                "Pixel 3a XL - storage saver": "pixel_3a_xl",
-                "Pixel 4 XL - storage saver": "pixel_4_xl",
-                "Pixel 4a - storage saver": "pixel_4a",
-                "Pixel 5 - storage saver": "pixel_5",
-                "Pixel 5a - storage saver": "pixel_5a",
-                "Pixel 6 Pro - feature gates only": "pixel_6_pro",
-                "Pixel 6a - feature gates only": "pixel_6a",
-                "Pixel 7 - feature gates only": "pixel_7",
-                "Pixel 7 Pro - feature gates only": "pixel_7_pro",
-                "Pixel 7a - feature gates only": "pixel_7a",
-                "Pixel 8 - feature gates only": "pixel_8",
-                "Pixel 8 Pro - Video Boost": "pixel_8_pro",
-                "Pixel 8a - feature gates only": "pixel_8a",
-                "Pixel 9 - AI editing": "pixel_9",
-                "Pixel 9 Pro - AI editing": "pixel_9_pro",
-                "Pixel 9 Pro XL - AI editing": "pixel_9_pro_xl",
-                "Pixel 9a - AI editing": "pixel_9a",
-                "Pixel 10 Pro XL - latest Pixel AI": "pixel_10_pro_xl"
-              }
-            },
-            {
-              "key": "googlePhotosAndroidVersion",
-              "title": "Android version",
-              "description": "Optionally spoof Build.VERSION fields. Follow profile uses the selected Pixel's matching Android version.",
-              "required": false,
-              "type": "kotlin.String",
-              "default": "none",
-              "values": {
-                "Do not spoof Android version": "none",
-                "Follow Pixel profile": "follow_profile",
-                "Nougat 7.1.2": "nougat_7_1_2",
-                "Oreo 8.1.0": "oreo_8_1_0",
-                "Pie 9.0": "pie_9_0",
-                "Q 10.0": "q_10_0",
-                "R 11.0": "r_11_0",
-                "S 12.0": "s_12_0",
-                "Android 13": "android_13",
-                "Android 14": "android_14",
-                "Android 15": "android_15",
-                "Android 16": "android_16",
-                "Android 17": "android_17"
-              }
-            },
-            {
-              "key": "googlePhotosOverrideRomFeatureLevels",
-              "title": "Override ROM feature levels",
-              "description": "Force newer Pixel feature flags off when the selected profile should not have them.",
-              "required": false,
-              "type": "kotlin.Boolean",
-              "default": true,
-              "values": null
-            }
-          ],
-          "preRelease": true,
-          "compatiblePackagesKey": 197
-        },
-        {
-          "name": "Unlock Premium",
-          "description": "Unlocks Premium features in app after login.",
-          "default": true,
-          "options": [],
-          "preRelease": true,
-          "compatiblePackagesKey": 200
-        },
-        {
-          "name": "Unlock Premium",
-          "description": "Unlocks premium features after login.",
-          "default": true,
-          "options": [],
-          "preRelease": true,
-          "compatiblePackagesKey": 201
-        },
-        {
-          "name": "Unlock Pro",
-          "description": "Unlocks Box Box Pro",
-          "default": true,
-          "options": [],
-          "preRelease": true,
-          "compatiblePackagesKey": 202
+          "compatiblePackagesKey": 64
         }
       ],
-      "changelog": "# Rushi's Patches v1.13.1\nPatch source for Morphe.\n**Channel:** stable  \n**Branch:** `main`  \n**Patch count:** 207\n**Install in Morphe:** https://morphe.software/add-source?github=rushiranpise/morphe-patches  \n**Download:** `patches-1.13.1.mpp` from the release assets below.\n\n## Supported Apps Changed\n\n### Updated App Versions\n- **Citizen** (`sp0n.citizen`): `0.1300.0` -> `0.1301.0`\n- **Crime Radar** (`com.newsbreak.crimeradar`): `26.27.0` -> `26.28.0`\n- **Fitbod** (`com.fitbod.fitbod`): `8.24.1-0` -> `8.25.0-2`\n- **HTTP Sniffer** (`com.anetcapture.mock`): `2.11.4-ad_mob` -> `2.11.7-ad_mob`\n- **Life360** (`com.life360.android.safetymapd`): `26.25.0` -> `26.26.0`\n- **NAVITIME** (`com.navitime.inbound.walk`): `12.0.3` -> `12.0.4`\n- **PictureThis - Plant Identifier** (`cn.danatech.xingseus`): `5.29.0` -> `5.30.0`\n- **Splitwise** (`com.Splitwise.SplitwiseMobile`): `26.7.1` -> `26.7.2`\n- **Wavve Boating** (`com.wavve.boating.gps`): `5.7.0` -> `5.7.1`\n\n## Need Help?\n\nIf a patch fails, open a bug report and include:\n\n- App version\n- Patch source release/build\n- APK source/type\n- Logs\n\nUse the bug templates so the required details are included:\nhttps://github.com/rushiranpise/morphe-patches/issues/new/choose\n\n## Verification\n\nDownload `SHA256SUMS.txt` from the release assets and compare it with the `.mpp` file you downloaded.\n\n## [1.13.1](https://github.com/rushiranpise/morphe-patches/compare/v1.13.0...v1.13.1) (2026-07-16)\n\n### Fixes\n\n* minimal widgets ([d7e7857](https://github.com/rushiranpise/morphe-patches/commit/d7e7857bba7fbbf8a8d4b1eacd5f3c76cf921050))\n\n# Rushi's Patches v1.13.1-dev.1\nPatch source for Morphe.\n**Channel:** dev prerelease  \n**Branch:** `dev`  \n**Patch count:** 207\n**Install in Morphe:** https://morphe.software/add-source?github=rushiranpise/morphe-patches  \n**Download:** `patches-1.13.1-dev.1.mpp` from the release assets below.\n> This is a dev prerelease and may be less stable than a stable release.\n\n## Supported Apps Changed\n\nNo supported app changes detected.\n\n## Need Help?\n\nIf a patch fails, open a bug report and include:\n\n- App version\n- Patch source release/build\n- APK source/type\n- Logs\n\nUse the bug templates so the required details are included:\nhttps://github.com/rushiranpise/morphe-patches/issues/new/choose\n\n## Verification\n\nDownload `SHA256SUMS.txt` from the release assets and compare it with the `.mpp` file you downloaded.\n\n## [1.13.1-dev.1](https://github.com/rushiranpise/morphe-patches/compare/v1.13.0...v1.13.1-dev.1) (2026-07-16)\n\n### Fixes\n\n* minimal widgets ([d7e7857](https://github.com/rushiranpise/morphe-patches/commit/d7e7857bba7fbbf8a8d4b1eacd5f3c76cf921050))\n\n# Rushi's Patches v1.13.0\nPatch source for Morphe.\n**Channel:** stable  \n**Branch:** `main`  \n**Patch count:** 207\n**Install in Morphe:** https://morphe.software/add-source?github=rushiranpise/morphe-patches  \n**Download:** `patches-1.13.0.mpp` from the release assets below.\n\n## Supported Apps Changed\n\n### Added Apps\n- **Android Developer Verifier** (`com.google.android.verifier`)\n- **Block Blast!** (`com.block.juggle`)\n- **Clue Period & Cycle Tracker** (`com.clue.android`)\n- **Countdown Widget** (`me.gira.widget.countdown`)\n- **ES File Explorer** (`com.estrongs.android.pop`)\n- **Kahoot!** (`no.mobitroll.kahoot.android`)\n- **NAVITIME** (`com.navitime.inbound.walk`)\n- **Parallel Space Pro** (`com.parallel.space.pro`)\n- **Super File** (`com.esuper.file.explorer`)\n\n### Updated App Versions\n- **1.1.1.1** (`com.cloudflare.onedotonedotonedotone`): `6.38.7` -> `6.38.8`\n- **AiScore** (`com.onesports.score`): `4.2.4` -> `4.2.6`\n- **Amazon Shopping** (`com.amazon.mShop.android.shopping`): `32.12.4.100` -> `32.13.0.100`\n- **Canva** (`com.canva.editor`): `2.367.0` -> `2.368.0`\n- **Citymapper** (`com.citymapper.app.release`): `11.55.1` -> `11.55.2`\n- **ColorNote** (`com.socialnmobile.dictapps.notepad.color.note`): `4.8.4` -> `4.8.6`\n- **Crime Radar** (`com.newsbreak.crimeradar`): `26.23.2` -> `26.27.0`\n- **FlightAware** (`com.flightaware.android.liveFlightTracker`): `5.15.4` -> `5.15.5`\n- **HTTP Sniffer** (`com.anetcapture.mock`): `2.11.1-ad_mob` -> `2.11.4-ad_mob`\n- **JEFIT** (`je.fit`): `17.2.5` -> `17.2.6`\n- **LiveScore** (`com.livescore`): `9.7.1` -> `9.8`\n- **MigraConnect** (`com.tecso.MigraConnect`): `2.8.1` -> `2.8.2`\n- ...and 17 more\n\n### Removed Apps\n- **Anatomy** (`air.com.musclemotion.anatomy`)\n- **Kyphosis** (`air.com.musclemotion.kyphosis`)\n- **pkge** (`net.pkge.pkge`)\n- **Posture** (`air.com.musclemotion.posture`)\n- **Strength Training** (`air.com.musclemotion.strength.mobile`)\n- **Workout** (`air.com.musclemotion.workout`)\n- **Yoga** (`air.com.musclemotion.yoga`)\n\n## Need Help?\n\nIf a patch fails, open a bug report and include:\n\n- App version\n- Patch source release/build\n- APK source/type\n- Logs\n\nUse the bug templates so the required details are included:\nhttps://github.com/rushiranpise/morphe-patches/issues/new/choose\n\n## Verification\n\nDownload `SHA256SUMS.txt` from the release assets and compare it with the `.mpp` file you downloaded.\n\n## [1.13.0](https://github.com/rushiranpise/morphe-patches/compare/v1.12.0...v1.13.0) (2026-07-16)\n\n### New Patches\n\n* add clue ([5235316](https://github.com/rushiranpise/morphe-patches/commit/52353166c37e4aec692739453b504918150475b9))\n* add count down widget ([2612472](https://github.com/rushiranpise/morphe-patches/commit/26124728e19209294145cd28ad697cdf28b6d5b9))\n* add es strong ([f1e23ef](https://github.com/rushiranpise/morphe-patches/commit/f1e23efbcffea3b35949915bd3fa50c06276b1e2))\n* add new apps ([78a06d5](https://github.com/rushiranpise/morphe-patches/commit/78a06d5c7f40d5c5c9154fde9613aed39a1feb4b))\n* add parallel space ([25f200d](https://github.com/rushiranpise/morphe-patches/commit/25f200ddb968bd2861e8cf3854e9ea1cb63677bb))\n* add super explorer ([1e26302](https://github.com/rushiranpise/morphe-patches/commit/1e26302512dc40c4be892e2bb8c6d252037aa0e5))\n* androidverifier ([f4d1169](https://github.com/rushiranpise/morphe-patches/commit/f4d1169f692fd6206470056c98f34102933c57ff))\n* update universal patches ([31273fd](https://github.com/rushiranpise/morphe-patches/commit/31273fdefabfe865b7d5a5df3a4a3cac9400425f))\n\n### Fixes\n\n* build ([b3fcd55](https://github.com/rushiranpise/morphe-patches/commit/b3fcd55a87b04f14062c9fbe2f167e30900f4fb1))\n* build ([607670e](https://github.com/rushiranpise/morphe-patches/commit/607670e96a8a1e966f6fabfc4376c5b55d77cf1a))\n* build for real XD ([26c50cd](https://github.com/rushiranpise/morphe-patches/commit/26c50cd7913ebc5ec194dfb359247ef7d70f23f7))\n* remove broken patches ([9dbaf40](https://github.com/rushiranpise/morphe-patches/commit/9dbaf40485ccefc6c46154edafb7dc4776f9b6b7))\n* trading view ([92b2546](https://github.com/rushiranpise/morphe-patches/commit/92b25462d2438978c6d44f6aa0daddf1cf58fc40))\n\n# Rushi's Patches v1.13.0-dev.6\nPatch source for Morphe.\n**Channel:** dev prerelease  \n**Branch:** `dev`  \n**Patch count:** 215\n**Install in Morphe:** https://morphe.software/add-source?github=rushiranpise/morphe-patches  \n**Download:** `patches-1.13.0-dev.6.mpp` from the release assets below.\n> This is a dev prerelease and may be less stable than a stable release.\n\n## Supported Apps Changed\n\nNo supported app changes detected.\n\n## Need Help?\n\nIf a patch fails, open a bug report and include:\n\n- App version\n- Patch source release/build\n- APK source/type\n- Logs\n\nUse the bug templates so the required details are included:\nhttps://github.com/rushiranpise/morphe-patches/issues/new/choose\n\n## Verification\n\nDownload `SHA256SUMS.txt` from the release assets and compare it with the `.mpp` file you downloaded.\n\n## [1.13.0-dev.6](https://github.com/rushiranpise/morphe-patches/compare/v1.13.0-dev.5...v1.13.0-dev.6) (2026-07-16)\n\n### Fixes\n\n* remove broken patches ([9dbaf40](https://github.com/rushiranpise/morphe-patches/commit/9dbaf40485ccefc6c46154edafb7dc4776f9b6b7))\n\n# Rushi's Patches v1.13.0-dev.5\nPatch source for Morphe.\n**Channel:** dev prerelease  \n**Branch:** `dev`  \n**Patch count:** 214\n**Install in Morphe:** https://morphe.software/add-source?github=rushiranpise/morphe-patches  \n**Download:** `patches-1.13.0-dev.5.mpp` from the release assets below.\n> This is a dev prerelease and may be less stable than a stable release.\n\n## Supported Apps Changed\n\nNo supported app changes detected.\n\n## Need Help?\n\nIf a patch fails, open a bug report and include:\n\n- App version\n- Patch source release/build\n- APK source/type\n- Logs\n\nUse the bug templates so the required details are included:\nhttps://github.com/rushiranpise/morphe-patches/issues/new/choose\n\n## Verification\n\nDownload `SHA256SUMS.txt` from the release assets and compare it with the `.mpp` file you downloaded.\n\n## [1.13.0-dev.5](https://github.com/rushiranpise/morphe-patches/compare/v1.13.0-dev.4...v1.13.0-dev.5) (2026-07-15)\n\n### New Patches\n\n* androidverifier ([f4d1169](https://github.com/rushiranpise/morphe-patches/commit/f4d1169f692fd6206470056c98f34102933c57ff))\n\n# Rushi's Patches v1.13.0-dev.4\nPatch source for Morphe.\n**Channel:** dev prerelease  \n**Branch:** `dev`  \n**Patch count:** 213\n**Install in Morphe:** https://morphe.software/add-source?github=rushiranpise/morphe-patches  \n**Download:** `patches-1.13.0-dev.4.mpp` from the release assets below.\n> This is a dev prerelease and may be less stable than a stable release.\n\n## Supported Apps Changed\n\nNo supported app changes detected.\n\n## Need Help?\n\nIf a patch fails, open a bug report and include:\n\n- App version\n- Patch source release/build\n- APK source/type\n- Logs\n\nUse the bug templates so the required details are included:\nhttps://github.com/rushiranpise/morphe-patches/issues/new/choose\n\n## Verification\n\nDownload `SHA256SUMS.txt` from the release assets and compare it with the `.mpp` file you downloaded.\n\n## [1.13.0-dev.4](https://github.com/rushiranpise/morphe-patches/compare/v1.13.0-dev.3...v1.13.0-dev.4) (2026-07-15)\n\n### New Patches\n\n* add clue ([5235316](https://github.com/rushiranpise/morphe-patches/commit/52353166c37e4aec692739453b504918150475b9))\n\n### Fixes\n\n* build ([b3fcd55](https://github.com/rushiranpise/morphe-patches/commit/b3fcd55a87b04f14062c9fbe2f167e30900f4fb1))\n* build ([607670e](https://github.com/rushiranpise/morphe-patches/commit/607670e96a8a1e966f6fabfc4376c5b55d77cf1a))\n* build for real XD ([26c50cd](https://github.com/rushiranpise/morphe-patches/commit/26c50cd7913ebc5ec194dfb359247ef7d70f23f7))\n* trading view ([92b2546](https://github.com/rushiranpise/morphe-patches/commit/92b25462d2438978c6d44f6aa0daddf1cf58fc40))\n\n# Rushi's Patches v1.13.0-dev.3\nPatch source for Morphe.\n**Channel:** dev prerelease  \n**Branch:** `dev`  \n**Patch count:** 218\n**Install in Morphe:** https://morphe.software/add-source?github=rushiranpise/morphe-patches  \n**Download:** `patches-1.13.0-dev.3.mpp` from the release assets below.\n> This is a dev prerelease and may be less stable than a stable release.\n\n## Supported Apps Changed\n\nNo supported app changes detected.\n\n## Need Help?\n\nIf a patch fails, open a bug report and include:\n\n- App version\n- Patch source release/build\n- APK source/type\n- Logs\n\nUse the bug templates so the required details are included:\nhttps://github.com/rushiranpise/morphe-patches/issues/new/choose\n\n## Verification\n\nDownload `SHA256SUMS.txt` from the release assets and compare it with the `.mpp` file you downloaded.\n\n## [1.13.0-dev.3](https://github.com/rushiranpise/morphe-patches/compare/v1.13.0-dev.2...v1.13.0-dev.3) (2026-07-14)\n\n### New Patches\n\n* add count down widget ([2612472](https://github.com/rushiranpise/morphe-patches/commit/26124728e19209294145cd28ad697cdf28b6d5b9))\n* add parallel space ([25f200d](https://github.com/rushiranpise/morphe-patches/commit/25f200ddb968bd2861e8cf3854e9ea1cb63677bb))\n* update universal patches ([31273fd](https://github.com/rushiranpise/morphe-patches/commit/31273fdefabfe865b7d5a5df3a4a3cac9400425f))\n\n# Rushi's Patches v1.13.0-dev.2\nPatch source for Morphe.\n**Channel:** dev prerelease  \n**Branch:** `dev`  \n**Patch count:** 215\n**Install in Morphe:** https://morphe.software/add-source?github=rushiranpise/morphe-patches  \n**Download:** `patches-1.13.0-dev.2.mpp` from the release assets below.\n> This is a dev prerelease and may be less stable than a stable release.\n\n## Supported Apps Changed\n\nNo supported app changes detected.\n\n## Need Help?\n\nIf a patch fails, open a bug report and include:\n\n- App version\n- Patch source release/build\n- APK source/type\n- Logs\n\nUse the bug templates so the required details are included:\nhttps://github.com/rushiranpise/morphe-patches/issues/new/choose\n\n## Verification\n\nDownload `SHA256SUMS.txt` from the release assets and compare it with the `.mpp` file you downloaded.\n\n## [1.13.0-dev.2](https://github.com/rushiranpise/morphe-patches/compare/v1.13.0-dev.1...v1.13.0-dev.2) (2026-07-14)\n\n### New Patches\n\n* add new apps ([78a06d5](https://github.com/rushiranpise/morphe-patches/commit/78a06d5c7f40d5c5c9154fde9613aed39a1feb4b))\n\n# Rushi's Patches v1.13.0-dev.1\nPatch source for Morphe.\n**Channel:** dev prerelease  \n**Branch:** `dev`  \n**Patch count:** 212\n**Install in Morphe:** https://morphe.software/add-source?github=rushiranpise/morphe-patches  \n**Download:** `patches-1.13.0-dev.1.mpp` from the release assets below.\n> This is a dev prerelease and may be less stable than a stable release.\n\n## Supported Apps Changed\n\nNo supported app changes detected.\n\n## Need Help?\n\nIf a patch fails, open a bug report and include:\n\n- App version\n- Patch source release/build\n- APK source/type\n- Logs\n\nUse the bug templates so the required details are included:\nhttps://github.com/rushiranpise/morphe-patches/issues/new/choose\n\n## Verification\n\nDownload `SHA256SUMS.txt` from the release assets and compare it with the `.mpp` file you downloaded.\n\n## [1.13.0-dev.1](https://github.com/rushiranpise/morphe-patches/compare/v1.12.0...v1.13.0-dev.1) (2026-07-13)\n\n### New Patches\n\n* add es strong ([f1e23ef](https://github.com/rushiranpise/morphe-patches/commit/f1e23efbcffea3b35949915bd3fa50c06276b1e2))\n* add super explorer ([1e26302](https://github.com/rushiranpise/morphe-patches/commit/1e26302512dc40c4be892e2bb8c6d252037aa0e5))\n\n# Rushi's Patches v1.12.0\nPatch source for Morphe.\n**Channel:** stable  \n**Branch:** `main`  \n**Patch count:** 212\n**Install in Morphe:** https://morphe.software/add-source?github=rushiranpise/morphe-patches  \n**Download:** `patches-1.12.0.mpp` from the release assets below.\n\n## Supported Apps Changed\n\n### Added Apps\n- **Ace Ex File Manager** (`com.ace.ex.file.manager`)\n- **Anime Depth Wallpapers** (`com.jndapp.anime.depth.live.wallpaper`)\n- **BuzzCast** (`com.guochao.faceshow`)\n- **Dailyhunt** (`com.eterno`)\n- **Depth Live Wallpaper** (`com.jndapp.depth.live.wallpaper`)\n- **KineMaster** (`com.nexstreaming.app.kinemasterfree`)\n- **komoot** (`de.komoot.android`)\n- **Lark Player** (`com.dywx.larkplayer`)\n- **MEGA** (`mega.privacy.android.app`)\n- **Minimal Widgets** (`com.jndapp.minimal.widgets`)\n- **NYT Games** (`com.nytimes.crossword`)\n- **Pixel Habit Tracker** (`com.pixel.al.pixelhabittracker`)\n- ...and 5 more\n\n### Updated App Versions\n- **Case Tracker** (`com.saldous.casetracker`): `5.5.2` -> `5.5.3`\n- **Cashew** (`com.budget.tracker_app`): `6.5.9` -> `6.6.11`\n- **Citizen** (`sp0n.citizen`): `0.1298.0` -> `0.1300.0`\n- **Fitbod** (`com.fitbod.fitbod`): `8.24.0-1` -> `8.24.1-0`\n- **Inmigreat** (`com.changayaf.inmigreat`): `2.2.83` -> `2.3.4`\n- **MovieBox** (`com.community.oneroom`): `3.0.16.0703.03` -> `3.0.16.0709.03`\n- **MovieBox TV** (`com.community.mbox.tv`): `1.1.1.0702.03` -> `1.1.4.0710.03`\n- **Splitwise** (`com.Splitwise.SplitwiseMobile`): `26.6.3` -> `26.7.1`\n\n## Need Help?\n\nIf a patch fails, open a bug report and include:\n\n- App version\n- Patch source release/build\n- APK source/type\n- Logs\n\nUse the bug templates so the required details are included:\nhttps://github.com/rushiranpise/morphe-patches/issues/new/choose\n\n## Verification\n\nDownload `SHA256SUMS.txt` from the release assets and compare it with the `.mpp` file you downloaded.\n\n## [1.12.0](https://github.com/rushiranpise/morphe-patches/compare/v1.11.0...v1.12.0) (2026-07-12)\n\n### New Patches\n\n* add ace ([6535fc2](https://github.com/rushiranpise/morphe-patches/commit/6535fc23c68398b2a3164788333052ad72d0cfed))\n* add buzzcast ([7d640be](https://github.com/rushiranpise/morphe-patches/commit/7d640bec1b163ca37c9119d3a959a32c971b0c05))\n* add daily hunt ([650c983](https://github.com/rushiranpise/morphe-patches/commit/650c983d8796297090d1fd0ef92b0978cd77937d))\n* add ex ([03af341](https://github.com/rushiranpise/morphe-patches/commit/03af3414ee323851b1c5b62b5ca9aeb629215ac2))\n* add justnew design apps ([0bfb500](https://github.com/rushiranpise/morphe-patches/commit/0bfb5002e8ce8ec438b616e71c88378c0f975615))\n* add kinemaster ([c9d9912](https://github.com/rushiranpise/morphe-patches/commit/c9d9912b14e24f43d8b3f83796719506c7c030d4))\n* add komoot ([58494ca](https://github.com/rushiranpise/morphe-patches/commit/58494ca40ec398d785e62b8088364edac706fed1))\n* add lark player ([cf76807](https://github.com/rushiranpise/morphe-patches/commit/cf7680717f8cce6f27b0ef21588a0234ff4b6a5d))\n* add mega ([74b2412](https://github.com/rushiranpise/morphe-patches/commit/74b24124d709ff21b9890df442649f3eca910bb8))\n* add nyttgames ([e531da4](https://github.com/rushiranpise/morphe-patches/commit/e531da4247e2da775f6932c5b3cff3ce72590160))\n* add pixelhabit ([89d4b0d](https://github.com/rushiranpise/morphe-patches/commit/89d4b0d3346797925216deaaf241a6ff4d85d22e))\n* add playit ([da32bef](https://github.com/rushiranpise/morphe-patches/commit/da32bef3169cc558d0316f2d4f1d3ac208b21a9c))\n* add pocketbard ([e0f8315](https://github.com/rushiranpise/morphe-patches/commit/e0f8315ab548135087a9ef348f5804c471ae1415))\n* add strava ([8e55342](https://github.com/rushiranpise/morphe-patches/commit/8e55342e7f9cb33561d55c57ca4d60bda53dba17))\n* add universal patches ([a80ca36](https://github.com/rushiranpise/morphe-patches/commit/a80ca366f446e2d93d271f43b0e87fdd3ea391f5))\n* add uptodown ([f5bbc0e](https://github.com/rushiranpise/morphe-patches/commit/f5bbc0ea9471e2be6cd486070d685ef7d9af647d))\n\n### Fixes\n\n* dailyhunt ([53561e8](https://github.com/rushiranpise/morphe-patches/commit/53561e8cfb8bf50509f60273d00956f120ebe857))\n* moovit crash ([4d64bc7](https://github.com/rushiranpise/morphe-patches/commit/4d64bc71c7bf92e9e03f90163d1f919f01ea9df8))\n* typo [skip ci] ([d458f73](https://github.com/rushiranpise/morphe-patches/commit/d458f731b58f3b87eb6bd50ddaa1b3afc0121318))\n\n# Rushi's Patches v1.12.0-dev.1\nPatch source for Morphe.\n**Channel:** dev prerelease  \n**Branch:** `dev`  \n**Patch count:** 165\n**Install in Morphe:** https://morphe.software/add-source?github=rushiranpise/morphe-patches  \n**Download:** `patches-1.12.0-dev.1.mpp` from the release assets below.\n> This is a dev prerelease and may be less stable than a stable release.\n\n## Supported Apps Changed\n\nNo supported app changes detected.\n\n## Need Help?\n\nIf a patch fails, open a bug report and include:\n\n- App version\n- Patch source release/build\n- APK source/type\n- Logs\n\nUse the bug templates so the required details are included:\nhttps://github.com/rushiranpise/morphe-patches/issues/new/choose\n\n## Verification\n\nDownload `SHA256SUMS.txt` from the release assets and compare it with the `.mpp` file you downloaded.\n\n## [1.12.0-dev.1](https://github.com/rushiranpise/morphe-patches/compare/v1.11.0...v1.12.0-dev.1) (2026-07-12)\n\n### New Patches\n\n* add ace ([6535fc2](https://github.com/rushiranpise/morphe-patches/commit/6535fc23c68398b2a3164788333052ad72d0cfed))\n* add buzzcast ([7d640be](https://github.com/rushiranpise/morphe-patches/commit/7d640bec1b163ca37c9119d3a959a32c971b0c05))\n* add daily hunt ([650c983](https://github.com/rushiranpise/morphe-patches/commit/650c983d8796297090d1fd0ef92b0978cd77937d))\n* add ex ([03af341](https://github.com/rushiranpise/morphe-patches/commit/03af3414ee323851b1c5b62b5ca9aeb629215ac2))\n* add justnew design apps ([0bfb500](https://github.com/rushiranpise/morphe-patches/commit/0bfb5002e8ce8ec438b616e71c88378c0f975615))\n* add kinemaster ([c9d9912](https://github.com/rushiranpise/morphe-patches/commit/c9d9912b14e24f43d8b3f83796719506c7c030d4))\n* add komoot ([58494ca](https://github.com/rushiranpise/morphe-patches/commit/58494ca40ec398d785e62b8088364edac706fed1))\n* add lark player ([cf76807](https://github.com/rushiranpise/morphe-patches/commit/cf7680717f8cce6f27b0ef21588a0234ff4b6a5d))\n* add mega ([74b2412](https://github.com/rushiranpise/morphe-patches/commit/74b24124d709ff21b9890df442649f3eca910bb8))\n* add nyttgames ([e531da4](https://github.com/rushiranpise/morphe-patches/commit/e531da4247e2da775f6932c5b3cff3ce72590160))\n* add pixelhabit ([89d4b0d](https://github.com/rushiranpise/morphe-patches/commit/89d4b0d3346797925216deaaf241a6ff4d85d22e))\n* add playit ([da32bef](https://github.com/rushiranpise/morphe-patches/commit/da32bef3169cc558d0316f2d4f1d3ac208b21a9c))\n* add pocketbard ([e0f8315](https://github.com/rushiranpise/morphe-patches/commit/e0f8315ab548135087a9ef348f5804c471ae1415))\n* add strava ([8e55342](https://github.com/rushiranpise/morphe-patches/commit/8e55342e7f9cb33561d55c57ca4d60bda53dba17))\n* add universal patches ([a80ca36](https://github.com/rushiranpise/morphe-patches/commit/a80ca366f446e2d93d271f43b0e87fdd3ea391f5))\n* add uptodown ([f5bbc0e](https://github.com/rushiranpise/morphe-patches/commit/f5bbc0ea9471e2be6cd486070d685ef7d9af647d))\n\n### Fixes\n\n* dailyhunt ([53561e8](https://github.com/rushiranpise/morphe-patches/commit/53561e8cfb8bf50509f60273d00956f120ebe857))\n* moovit crash ([4d64bc7](https://github.com/rushiranpise/morphe-patches/commit/4d64bc71c7bf92e9e03f90163d1f919f01ea9df8))\n\n# Rushi's Patches v1.11.0\nPatch source for Morphe.\n**Channel:** stable  \n**Branch:** `main`  \n**Patch count:** 165\n**Install in Morphe:** https://morphe.software/add-source?github=rushiranpise/morphe-patches  \n**Download:** `patches-1.11.0.mpp` from the release assets below.\n\n## Supported Apps Changed\n\n### Added Apps\n- **AiScore** (`com.onesports.score`)\n- **Amazon India** (`in.amazon.mShop.android.shopping`)\n- **Amazon Shopping** (`com.amazon.mShop.android.shopping`)\n- **AmoledPix** (`com.androholic.amoledpix`)\n- **APKMirror Installer** (`com.apkmirror.helper.prod`)\n- **Block Puzzle** (`game.puzzle.blockpuzzle`)\n- **Blurams** (`com.blurams.ipc`)\n- **Carousell** (`com.thecarousell.Carousell`)\n- **ColorNote** (`com.socialnmobile.dictapps.notepad.color.note`)\n- **Duolingo** (`com.duolingo`)\n- **Excel** (`com.microsoft.office.excel`)\n- **Fitbod** (`com.fitbod.fitbod`)\n- ...and 26 more\n\n### Updated App Versions\n- **AccuWeather** (`com.accuweather.android`): `21.1.11-1-rc` -> `21.1.13-1-rc`\n- **Anatomy** (`air.com.musclemotion.anatomy`): `3.2.0` -> `3.2.1`\n- **CamScanner** (`com.intsig.camscanner`): `7.20.0.2606230000` -> `7.20.5.2606250000`\n- **Canva** (`com.canva.editor`): `2.365.o` -> `2.367.0`\n- **Case Tracker** (`com.saldous.casetracker`): `5.5.1` -> `5.5.2`\n- **Flightradar24** (`com.flightradar24free`): `11.6.1` -> `11.7.0`\n- **HTTP Sniffer** (`com.anetcapture.mock`): `2.11.0-ad_mob` -> `2.11.1-ad_mob`\n- **Lawfully** (`com.lawfully.lawfully_ai_tracker`): `6.6.2` -> `6.7.1`\n- **m-Indicator** (`com.mobond.mindicator`): `18.0.352` -> `18.0.356`\n- **Moovit** (`com.tranzmate`): `5.195.0.1789` -> `5.195.2.1792`\n- **MovieBox** (`com.community.oneroom`): `3.0.15.0616.03` -> `3.0.16.0703.03`\n- **NetShare** (`kha.prog.mikrotik`): `UI/link-274` -> `277`\n- ...and 19 more\n\n### Removed Apps\n- **SkinSort** (`com.skinsort`)\n- **Tracked** (`com.tracked.mobile`)\n\n## Need Help?\n\nIf a patch fails, open a bug report and include:\n\n- App version\n- Patch source release/build\n- APK source/type\n- Logs\n\nUse the bug templates so the required details are included:\nhttps://github.com/rushiranpise/morphe-patches/issues/new/choose\n\n## Verification\n\nDownload `SHA256SUMS.txt` from the release assets and compare it with the `.mpp` file you downloaded.\n\n## [1.11.0](https://github.com/rushiranpise/morphe-patches/compare/v1.10.1...v1.11.0) (2026-07-10)\n\n### New Patches\n\n* add aiscore ([b758b02](https://github.com/rushiranpise/morphe-patches/commit/b758b024ca4c1f9b890bb8261e1a25bf5a542dcf))\n* add aiscore ([9884851](https://github.com/rushiranpise/morphe-patches/commit/9884851302d0244e85660716dd1ff651334224c6))\n* add amazon india ([6455cb7](https://github.com/rushiranpise/morphe-patches/commit/6455cb71d7878ad60ee8d1e4fc590d369e9ff232))\n* add amboss ([bb7701e](https://github.com/rushiranpise/morphe-patches/commit/bb7701ea2a9d74e9280950bbb9a6c6a160648d67))\n* add blurams ([08d6a77](https://github.com/rushiranpise/morphe-patches/commit/08d6a77966a880f03762b646849e13c04fa80464))\n* add Carousell ([78a814b](https://github.com/rushiranpise/morphe-patches/commit/78a814b6b798a52c9207f359557c86399d31a127))\n* add duolingo ([68bfbe4](https://github.com/rushiranpise/morphe-patches/commit/68bfbe40ccf17ecd524afcc3ce573c5dd5af74c1))\n* add flight apps ([78b3b79](https://github.com/rushiranpise/morphe-patches/commit/78b3b791a3c92c5cfc2ee9fcc083a74b236f2da0))\n* add historical calendar ([b530405](https://github.com/rushiranpise/morphe-patches/commit/b530405bcc295ed99f567b61341ed752ed0759c5))\n* add JEFIT ([19199f3](https://github.com/rushiranpise/morphe-patches/commit/19199f350f980d34c6ff45ec6d249f4691d5cb17))\n* add life360 ([6b26e06](https://github.com/rushiranpise/morphe-patches/commit/6b26e067124fa4a624e18ee49342140e410b2769))\n* add moviebox india ([a7662ba](https://github.com/rushiranpise/morphe-patches/commit/a7662ba12f5b858dfcb20bdb88f8f95c0ef6cbe9))\n* add movieboxtv ([998983d](https://github.com/rushiranpise/morphe-patches/commit/998983d0dbe11bbcd8ecdfd1eb6f919e239d8e19))\n* add myradar ([3c0b8a0](https://github.com/rushiranpise/morphe-patches/commit/3c0b8a06913408555ea1b968d5558eda9be8613c))\n* add picturethis apps ([2af13cf](https://github.com/rushiranpise/morphe-patches/commit/2af13cf2e0b4b9cd0669465ea6d2b422ca08f57d))\n* add pocketprep ([84bffb8](https://github.com/rushiranpise/morphe-patches/commit/84bffb817d597d8aa2ffc18d743cd42acee4bf81))\n* add RecipeBro ([ee4ee1d](https://github.com/rushiranpise/morphe-patches/commit/ee4ee1d642fe7d6b03b8fa10ed6b2f69d9bd000c))\n* add scrl ([75119d0](https://github.com/rushiranpise/morphe-patches/commit/75119d06342a224f50cff764788932e42a6bc169))\n* add stickerly ([af24434](https://github.com/rushiranpise/morphe-patches/commit/af24434cce7b8d8ce00cf1e8318c43ed81705115))\n* add todays weather ([ebe3e49](https://github.com/rushiranpise/morphe-patches/commit/ebe3e49a68e37312466cfb2aaac9341e0e9f3f18))\n* add toomics ([b3b213b](https://github.com/rushiranpise/morphe-patches/commit/b3b213bd47e069f04f66cdeb8c5cf5c58899bbc5))\n* add tradingview ([69e7d07](https://github.com/rushiranpise/morphe-patches/commit/69e7d07fb712b378755a54ecad62db70f3b105fc))\n* add UbikiTouch ([086ac80](https://github.com/rushiranpise/morphe-patches/commit/086ac80378e76a4a5f4f34c515d3ec3b5c7da2b5))\n* add WolframAlpha ([040db33](https://github.com/rushiranpise/morphe-patches/commit/040db33b9a46a59eecc6e496f569cb7a7a914ab0))\n* add word & excel ([1445673](https://github.com/rushiranpise/morphe-patches/commit/1445673f029e958f3fff60f5b490865b05d1514d))\n* amazon ([d2221ca](https://github.com/rushiranpise/morphe-patches/commit/d2221ca3793766fb59954cb2ea9407282c67e25a))\n* amoledpix ([5622279](https://github.com/rushiranpise/morphe-patches/commit/562227950f8002d29423226ba60f25f6acd43c25))\n* apkmirror ([4a56688](https://github.com/rushiranpise/morphe-patches/commit/4a56688db4cb0dadbb57e317bff190fcff1f448b))\n* blockpuzzle ([fc7896c](https://github.com/rushiranpise/morphe-patches/commit/fc7896c84075af63840d4573856b82df66aa2a2b))\n* colornote ([ecc74f5](https://github.com/rushiranpise/morphe-patches/commit/ecc74f53539d78c74801bc0f0e9084cd4812e51f))\n* fitpod ([b7ffd25](https://github.com/rushiranpise/morphe-patches/commit/b7ffd25593fa2ec0dbac31d82fdea01cb4faaee3))\n* pocketcast ([743da24](https://github.com/rushiranpise/morphe-patches/commit/743da241b5ea1a98d864b086c3cf8f4cc7f480ba))\n* stickermaker ([3a2268a](https://github.com/rushiranpise/morphe-patches/commit/3a2268abf3d2de449a7405776d77e3bec11d320a))\n* subwaynow ([62fc6ce](https://github.com/rushiranpise/morphe-patches/commit/62fc6ce86f6e50c88472d85d8ee64ca709e3146d))\n* trackercheck ([58a049c](https://github.com/rushiranpise/morphe-patches/commit/58a049cb5fb29a556121a2561d109dedaa5f3e78))\n* vizmanga ([14e3941](https://github.com/rushiranpise/morphe-patches/commit/14e39418d9b3be0478ac83588acb929cba1f7f3d))\n\n### Fixes\n\n* amazon ([7f9fe2a](https://github.com/rushiranpise/morphe-patches/commit/7f9fe2afa45379173fab5edb974fa8d2978c940b))\n* inject map api keys from actions secrets ([7d5d282](https://github.com/rushiranpise/morphe-patches/commit/7d5d282a29181e196677407d8c415a17b83f8853))\n* livescore ([0d7552a](https://github.com/rushiranpise/morphe-patches/commit/0d7552a4e7733b06c459cddb595eba156af3b7e8))\n* pkge ([933081f](https://github.com/rushiranpise/morphe-patches/commit/933081fe0f94292c92d9c38500cd9e35fa0294bd))\n* release ([76daaf4](https://github.com/rushiranpise/morphe-patches/commit/76daaf4c0ad922cb9dd08502c6da46108a8d8592))\n* Strength Training ([962d3c1](https://github.com/rushiranpise/morphe-patches/commit/962d3c1cb708f1581b4920f898ad3c41236b1628))\n\n# Rushi's Patches v1.11.0-dev.5\nPatch source for Morphe.\n**Channel:** dev prerelease  \n**Branch:** `dev`  \n**Patch count:** 163\n**Install in Morphe:** https://morphe.software/add-source?github=rushiranpise/morphe-patches  \n**Download:** `patches-1.11.0-dev.5.mpp` from the release assets below.\n> This is a dev prerelease and may be less stable than a stable release.\n\n## Supported Apps Changed\n\nNo supported app changes detected.\n\n## Need Help?\n\nIf a patch fails, open a bug report and include:\n\n- App version\n- Patch source release/build\n- APK source/type\n- Logs\n\nUse the bug templates so the required details are included:\nhttps://github.com/rushiranpise/morphe-patches/issues/new/choose\n\n## Verification\n\nDownload `SHA256SUMS.txt` from the release assets and compare it with the `.mpp` file you downloaded.\n\n## [1.11.0-dev.5](https://github.com/rushiranpise/morphe-patches/compare/v1.11.0-dev.4...v1.11.0-dev.5) (2026-07-10)\n\n### New Patches\n\n* add life360 ([6b26e06](https://github.com/rushiranpise/morphe-patches/commit/6b26e067124fa4a624e18ee49342140e410b2769))\n* add moviebox india ([a7662ba](https://github.com/rushiranpise/morphe-patches/commit/a7662ba12f5b858dfcb20bdb88f8f95c0ef6cbe9))\n* add todays weather ([ebe3e49](https://github.com/rushiranpise/morphe-patches/commit/ebe3e49a68e37312466cfb2aaac9341e0e9f3f18))\n* add UbikiTouch ([086ac80](https://github.com/rushiranpise/morphe-patches/commit/086ac80378e76a4a5f4f34c515d3ec3b5c7da2b5))\n\n### Fixes\n\n* amazon ([7f9fe2a](https://github.com/rushiranpise/morphe-patches/commit/7f9fe2afa45379173fab5edb974fa8d2978c940b))\n\n# Rushi's Patches v1.11.0-dev.4\nPatch source for Morphe.\n**Channel:** dev prerelease  \n**Branch:** `dev`  \n**Patch count:** 141\n**Install in Morphe:** https://morphe.software/add-source?github=rushiranpise/morphe-patches  \n**Download:** `patches-1.11.0-dev.4.mpp` from the release assets below.\n> This is a dev prerelease and may be less stable than a stable release.\n\n## Supported Apps Changed\n\nNo supported app changes detected.\n\n## Need Help?\n\nIf a patch fails, open a bug report and include:\n\n- App version\n- Patch source release/build\n- APK source/type\n- Logs\n\nUse the bug templates so the required details are included:\nhttps://github.com/rushiranpise/morphe-patches/issues/new/choose\n\n## Verification\n\nDownload `SHA256SUMS.txt` from the release assets and compare it with the `.mpp` file you downloaded.\n\n## [1.11.0-dev.4](https://github.com/rushiranpise/morphe-patches/compare/v1.11.0-dev.3...v1.11.0-dev.4) (2026-07-09)\n\n### New Patches\n\n* add aiscore ([b758b02](https://github.com/rushiranpise/morphe-patches/commit/b758b024ca4c1f9b890bb8261e1a25bf5a542dcf))\n* add aiscore ([9884851](https://github.com/rushiranpise/morphe-patches/commit/9884851302d0244e85660716dd1ff651334224c6))\n* add amazon india ([6455cb7](https://github.com/rushiranpise/morphe-patches/commit/6455cb71d7878ad60ee8d1e4fc590d369e9ff232))\n* add amboss ([bb7701e](https://github.com/rushiranpise/morphe-patches/commit/bb7701ea2a9d74e9280950bbb9a6c6a160648d67))\n* add blurams ([08d6a77](https://github.com/rushiranpise/morphe-patches/commit/08d6a77966a880f03762b646849e13c04fa80464))\n* add Carousell ([78a814b](https://github.com/rushiranpise/morphe-patches/commit/78a814b6b798a52c9207f359557c86399d31a127))\n* add duolingo ([68bfbe4](https://github.com/rushiranpise/morphe-patches/commit/68bfbe40ccf17ecd524afcc3ce573c5dd5af74c1))\n* add flight apps ([78b3b79](https://github.com/rushiranpise/morphe-patches/commit/78b3b791a3c92c5cfc2ee9fcc083a74b236f2da0))\n* add historical calendar ([b530405](https://github.com/rushiranpise/morphe-patches/commit/b530405bcc295ed99f567b61341ed752ed0759c5))\n* add JEFIT ([19199f3](https://github.com/rushiranpise/morphe-patches/commit/19199f350f980d34c6ff45ec6d249f4691d5cb17))\n* add movieboxtv ([998983d](https://github.com/rushiranpise/morphe-patches/commit/998983d0dbe11bbcd8ecdfd1eb6f919e239d8e19))\n* add myradar ([3c0b8a0](https://github.com/rushiranpise/morphe-patches/commit/3c0b8a06913408555ea1b968d5558eda9be8613c))\n* add pocketprep ([84bffb8](https://github.com/rushiranpise/morphe-patches/commit/84bffb817d597d8aa2ffc18d743cd42acee4bf81))\n* add RecipeBro ([ee4ee1d](https://github.com/rushiranpise/morphe-patches/commit/ee4ee1d642fe7d6b03b8fa10ed6b2f69d9bd000c))\n* add scrl ([75119d0](https://github.com/rushiranpise/morphe-patches/commit/75119d06342a224f50cff764788932e42a6bc169))\n* add stickerly ([af24434](https://github.com/rushiranpise/morphe-patches/commit/af24434cce7b8d8ce00cf1e8318c43ed81705115))\n* add tradingview ([69e7d07](https://github.com/rushiranpise/morphe-patches/commit/69e7d07fb712b378755a54ecad62db70f3b105fc))\n* add WolframAlpha ([040db33](https://github.com/rushiranpise/morphe-patches/commit/040db33b9a46a59eecc6e496f569cb7a7a914ab0))\n* add word & excel ([1445673](https://github.com/rushiranpise/morphe-patches/commit/1445673f029e958f3fff60f5b490865b05d1514d))\n\n### Fixes\n\n* livescore ([0d7552a](https://github.com/rushiranpise/morphe-patches/commit/0d7552a4e7733b06c459cddb595eba156af3b7e8))\n\n# Rushi's Patches v1.11.0-dev.3\nPatch source for Morphe.\n**Channel:** dev prerelease  \n**Branch:** `dev`  \n**Patch count:** 141\n**Install in Morphe:** https://morphe.software/add-source?github=rushiranpise/morphe-patches  \n**Download:** `patches-1.11.0-dev.3.mpp` from the release assets below.\n> This is a dev prerelease and may be less stable than a stable release.\n\n## Supported Apps Changed\n\nNo supported app changes detected.\n\n## Need Help?\n\nIf a patch fails, open a bug report and include:\n\n- App version\n- Patch source release/build\n- APK source/type\n- Logs\n\nUse the bug templates so the required details are included:\nhttps://github.com/rushiranpise/morphe-patches/issues/new/choose\n\n## Verification\n\nDownload `SHA256SUMS.txt` from the release assets and compare it with the `.mpp` file you downloaded.\n\n## [1.11.0-dev.3](https://github.com/rushiranpise/morphe-patches/compare/v1.11.0-dev.2...v1.11.0-dev.3) (2026-07-07)\n\n### Fixes\n\n* inject map api keys from actions secrets ([7d5d282](https://github.com/rushiranpise/morphe-patches/commit/7d5d282a29181e196677407d8c415a17b83f8853))\n\n# Rushi's Patches v1.11.0-dev.2\nPatch source for Morphe.\n**Channel:** dev prerelease  \n**Branch:** `dev`  \n**Patch count:** 122\n**Install in Morphe:** https://morphe.software/add-source?github=rushiranpise/morphe-patches  \n**Download:** `patches-1.11.0-dev.2.mpp` from the release assets below.\n> This is a dev prerelease and may be less stable than a stable release.\n\n## Supported Apps Changed\n\nNo supported app changes detected.\n\n## Need Help?\n\nIf a patch fails, open a bug report and include:\n\n- App version\n- Patch source release/build\n- APK source/type\n- Logs\n\nUse the bug templates so the required details are included:\nhttps://github.com/rushiranpise/morphe-patches/issues/new/choose\n\n## Verification\n\nDownload `SHA256SUMS.txt` from the release assets and compare it with the `.mpp` file you downloaded.",
+      "changelog": "## [1.14.0](https://github.com/rushiranpise/morphe-patches/compare/v1.13.1...v1.14.0) (2026-07-19)\n\n### 🐛 Bug Fixes\n\n* format release notes for update badges ([20fe7b5](https://github.com/rushiranpise/morphe-patches/commit/20fe7b546e9e1facf70b46cedf9ea2dad845d3ed))\n\n### ✨ New Features\n\n* add boxbox ([84183bc](https://github.com/rushiranpise/morphe-patches/commit/84183bc87b0368ac06deec0b962f7d1306a64531))\n* add flud ([ce7c0a1](https://github.com/rushiranpise/morphe-patches/commit/ce7c0a1f4570e4935a0e35ce6dccca37e365d476))\n* add google photos ([58552d0](https://github.com/rushiranpise/morphe-patches/commit/58552d0154b588ad1b05a2934cf2b9b7d81a002b))\n* add mapy ([eedc71a](https://github.com/rushiranpise/morphe-patches/commit/eedc71ae90ee77bc9a4ea4129212593aa6487a46))\n* add pcremote ([274df88](https://github.com/rushiranpise/morphe-patches/commit/274df888f8dcee59628b6cadf2624b6e09660086))\n* add torrdroid ([6efb2f4](https://github.com/rushiranpise/morphe-patches/commit/6efb2f4cc60cabaddb15da48116a8dcc8c97ca10))\n\n## [1.14.0-dev.4](https://github.com/rushiranpise/morphe-patches/compare/v1.14.0-dev.3...v1.14.0-dev.4) (2026-07-19)\n\n### 🐛 Bug Fixes\n\n* format release notes for update badges ([20fe7b5](https://github.com/rushiranpise/morphe-patches/commit/20fe7b546e9e1facf70b46cedf9ea2dad845d3ed))\n\n## [1.14.0-dev.3](https://github.com/rushiranpise/morphe-patches/compare/v1.14.0-dev.2...v1.14.0-dev.3) (2026-07-19)\n\n### ? New Features\n\n* add google photos ([58552d0](https://github.com/rushiranpise/morphe-patches/commit/58552d0154b588ad1b05a2934cf2b9b7d81a002b))\n\n## [1.14.0-dev.2](https://github.com/rushiranpise/morphe-patches/compare/v1.14.0-dev.1...v1.14.0-dev.2) (2026-07-18)\n\n### ? New Features\n\n* add flud ([ce7c0a1](https://github.com/rushiranpise/morphe-patches/commit/ce7c0a1f4570e4935a0e35ce6dccca37e365d476))\n* add mapy ([eedc71a](https://github.com/rushiranpise/morphe-patches/commit/eedc71ae90ee77bc9a4ea4129212593aa6487a46))\n\n## [1.14.0-dev.1](https://github.com/rushiranpise/morphe-patches/compare/v1.13.1...v1.14.0-dev.1) (2026-07-17)\n\n### ? New Features\n\n* add boxbox ([84183bc](https://github.com/rushiranpise/morphe-patches/commit/84183bc87b0368ac06deec0b962f7d1306a64531))\n* add pcremote ([274df88](https://github.com/rushiranpise/morphe-patches/commit/274df888f8dcee59628b6cadf2624b6e09660086))\n* add torrdroid ([6efb2f4](https://github.com/rushiranpise/morphe-patches/commit/6efb2f4cc60cabaddb15da48116a8dcc8c97ca10))\n\n## [1.13.1](https://github.com/rushiranpise/morphe-patches/compare/v1.13.0...v1.13.1) (2026-07-16)\n\n### ?? Bug Fixes\n\n* minimal widgets ([d7e7857](https://github.com/rushiranpise/morphe-patches/commit/d7e7857bba7fbbf8a8d4b1eacd5f3c76cf921050))\n\n## [1.13.1-dev.1](https://github.com/rushiranpise/morphe-patches/compare/v1.13.0...v1.13.1-dev.1) (2026-07-16)\n\n### ?? Bug Fixes\n\n* minimal widgets ([d7e7857](https://github.com/rushiranpise/morphe-patches/commit/d7e7857bba7fbbf8a8d4b1eacd5f3c76cf921050))\n\n## [1.13.0](https://github.com/rushiranpise/morphe-patches/compare/v1.12.0...v1.13.0) (2026-07-16)\n\n### ? New Features\n\n* add clue ([5235316](https://github.com/rushiranpise/morphe-patches/commit/52353166c37e4aec692739453b504918150475b9))\n* add count down widget ([2612472](https://github.com/rushiranpise/morphe-patches/commit/26124728e19209294145cd28ad697cdf28b6d5b9))\n* add es strong ([f1e23ef](https://github.com/rushiranpise/morphe-patches/commit/f1e23efbcffea3b35949915bd3fa50c06276b1e2))\n* add new apps ([78a06d5](https://github.com/rushiranpise/morphe-patches/commit/78a06d5c7f40d5c5c9154fde9613aed39a1feb4b))\n* add parallel space ([25f200d](https://github.com/rushiranpise/morphe-patches/commit/25f200ddb968bd2861e8cf3854e9ea1cb63677bb))\n* add super explorer ([1e26302](https://github.com/rushiranpise/morphe-patches/commit/1e26302512dc40c4be892e2bb8c6d252037aa0e5))\n* androidverifier ([f4d1169](https://github.com/rushiranpise/morphe-patches/commit/f4d1169f692fd6206470056c98f34102933c57ff))\n* update universal patches ([31273fd](https://github.com/rushiranpise/morphe-patches/commit/31273fdefabfe865b7d5a5df3a4a3cac9400425f))\n\n### ?? Bug Fixes\n\n* build ([b3fcd55](https://github.com/rushiranpise/morphe-patches/commit/b3fcd55a87b04f14062c9fbe2f167e30900f4fb1))\n* build ([607670e](https://github.com/rushiranpise/morphe-patches/commit/607670e96a8a1e966f6fabfc4376c5b55d77cf1a))\n* build for real XD ([26c50cd](https://github.com/rushiranpise/morphe-patches/commit/26c50cd7913ebc5ec194dfb359247ef7d70f23f7))\n* remove broken patches ([9dbaf40](https://github.com/rushiranpise/morphe-patches/commit/9dbaf40485ccefc6c46154edafb7dc4776f9b6b7))\n* trading view ([92b2546](https://github.com/rushiranpise/morphe-patches/commit/92b25462d2438978c6d44f6aa0daddf1cf58fc40))\n\n## [1.13.0-dev.6](https://github.com/rushiranpise/morphe-patches/compare/v1.13.0-dev.5...v1.13.0-dev.6) (2026-07-16)\n\n### ?? Bug Fixes\n\n* remove broken patches ([9dbaf40](https://github.com/rushiranpise/morphe-patches/commit/9dbaf40485ccefc6c46154edafb7dc4776f9b6b7))\n\n## [1.13.0-dev.5](https://github.com/rushiranpise/morphe-patches/compare/v1.13.0-dev.4...v1.13.0-dev.5) (2026-07-15)\n\n### ? New Features\n\n* androidverifier ([f4d1169](https://github.com/rushiranpise/morphe-patches/commit/f4d1169f692fd6206470056c98f34102933c57ff))\n\n## [1.13.0-dev.4](https://github.com/rushiranpise/morphe-patches/compare/v1.13.0-dev.3...v1.13.0-dev.4) (2026-07-15)\n\n### ? New Features\n\n* add clue ([5235316](https://github.com/rushiranpise/morphe-patches/commit/52353166c37e4aec692739453b504918150475b9))\n\n### ?? Bug Fixes\n\n* build ([b3fcd55](https://github.com/rushiranpise/morphe-patches/commit/b3fcd55a87b04f14062c9fbe2f167e30900f4fb1))\n* build ([607670e](https://github.com/rushiranpise/morphe-patches/commit/607670e96a8a1e966f6fabfc4376c5b55d77cf1a))\n* build for real XD ([26c50cd](https://github.com/rushiranpise/morphe-patches/commit/26c50cd7913ebc5ec194dfb359247ef7d70f23f7))\n* trading view ([92b2546](https://github.com/rushiranpise/morphe-patches/commit/92b25462d2438978c6d44f6aa0daddf1cf58fc40))\n\n## [1.13.0-dev.3](https://github.com/rushiranpise/morphe-patches/compare/v1.13.0-dev.2...v1.13.0-dev.3) (2026-07-14)\n\n### ? New Features\n\n* add count down widget ([2612472](https://github.com/rushiranpise/morphe-patches/commit/26124728e19209294145cd28ad697cdf28b6d5b9))\n* add parallel space ([25f200d](https://github.com/rushiranpise/morphe-patches/commit/25f200ddb968bd2861e8cf3854e9ea1cb63677bb))\n* update universal patches ([31273fd](https://github.com/rushiranpise/morphe-patches/commit/31273fdefabfe865b7d5a5df3a4a3cac9400425f))\n\n## [1.13.0-dev.2](https://github.com/rushiranpise/morphe-patches/compare/v1.13.0-dev.1...v1.13.0-dev.2) (2026-07-14)\n\n### ? New Features\n\n* add new apps ([78a06d5](https://github.com/rushiranpise/morphe-patches/commit/78a06d5c7f40d5c5c9154fde9613aed39a1feb4b))\n\n## [1.13.0-dev.1](https://github.com/rushiranpise/morphe-patches/compare/v1.12.0...v1.13.0-dev.1) (2026-07-13)\n\n### ? New Features\n\n* add es strong ([f1e23ef](https://github.com/rushiranpise/morphe-patches/commit/f1e23efbcffea3b35949915bd3fa50c06276b1e2))\n* add super explorer ([1e26302](https://github.com/rushiranpise/morphe-patches/commit/1e26302512dc40c4be892e2bb8c6d252037aa0e5))\n\n## [1.12.0](https://github.com/rushiranpise/morphe-patches/compare/v1.11.0...v1.12.0) (2026-07-12)\n\n### ? New Features\n\n* add ace ([6535fc2](https://github.com/rushiranpise/morphe-patches/commit/6535fc23c68398b2a3164788333052ad72d0cfed))\n* add buzzcast ([7d640be](https://github.com/rushiranpise/morphe-patches/commit/7d640bec1b163ca37c9119d3a959a32c971b0c05))\n* add daily hunt ([650c983](https://github.com/rushiranpise/morphe-patches/commit/650c983d8796297090d1fd0ef92b0978cd77937d))\n* add ex ([03af341](https://github.com/rushiranpise/morphe-patches/commit/03af3414ee323851b1c5b62b5ca9aeb629215ac2))\n* add justnew design apps ([0bfb500](https://github.com/rushiranpise/morphe-patches/commit/0bfb5002e8ce8ec438b616e71c88378c0f975615))\n* add kinemaster ([c9d9912](https://github.com/rushiranpise/morphe-patches/commit/c9d9912b14e24f43d8b3f83796719506c7c030d4))\n* add komoot ([58494ca](https://github.com/rushiranpise/morphe-patches/commit/58494ca40ec398d785e62b8088364edac706fed1))\n* add lark player ([cf76807](https://github.com/rushiranpise/morphe-patches/commit/cf7680717f8cce6f27b0ef21588a0234ff4b6a5d))\n* add mega ([74b2412](https://github.com/rushiranpise/morphe-patches/commit/74b24124d709ff21b9890df442649f3eca910bb8))\n* add nyttgames ([e531da4](https://github.com/rushiranpise/morphe-patches/commit/e531da4247e2da775f6932c5b3cff3ce72590160))\n* add pixelhabit ([89d4b0d](https://github.com/rushiranpise/morphe-patches/commit/89d4b0d3346797925216deaaf241a6ff4d85d22e))\n* add playit ([da32bef](https://github.com/rushiranpise/morphe-patches/commit/da32bef3169cc558d0316f2d4f1d3ac208b21a9c))\n* add pocketbard ([e0f8315](https://github.com/rushiranpise/morphe-patches/commit/e0f8315ab548135087a9ef348f5804c471ae1415))\n* add strava ([8e55342](https://github.com/rushiranpise/morphe-patches/commit/8e55342e7f9cb33561d55c57ca4d60bda53dba17))\n* add universal patches ([a80ca36](https://github.com/rushiranpise/morphe-patches/commit/a80ca366f446e2d93d271f43b0e87fdd3ea391f5))\n* add uptodown ([f5bbc0e](https://github.com/rushiranpise/morphe-patches/commit/f5bbc0ea9471e2be6cd486070d685ef7d9af647d))\n\n### ?? Bug Fixes\n\n* dailyhunt ([53561e8](https://github.com/rushiranpise/morphe-patches/commit/53561e8cfb8bf50509f60273d00956f120ebe857))\n* moovit crash ([4d64bc7](https://github.com/rushiranpise/morphe-patches/commit/4d64bc71c7bf92e9e03f90163d1f919f01ea9df8))\n* typo [skip ci] ([d458f73](https://github.com/rushiranpise/morphe-patches/commit/d458f731b58f3b87eb6bd50ddaa1b3afc0121318))",
       "fullChangelogUrl": "https://github.com/rushiranpise/morphe-patches/blob/main/CHANGELOG.md",
       "repoDescription": "Morphe patches I use and maintain in my spare time. Please report bugs and request patches via GitHub.",
       "avatarUrl": "https://avatars.githubusercontent.com/u/37355997?v=4&size=168",
@@ -4087,6 +4084,7 @@
       "deepLink": "https://morphe.software/add-source?github=rushiranpise/morphe-patches",
       "patchCount": 218,
       "targetApps": [
+        "com.google.android.apps.photos",
         "com.waze",
         "com.newsbreak.crimeradar",
         "com.google.android.verifier",
@@ -4098,7 +4096,9 @@
         "com.intsig.camscanner",
         "com.duolingo",
         "com.toomics.global.google",
+        "com.delphicoder.flud",
         "com.mobond.mindicator",
+        "intelligems.torrdroid",
         "com.vizmanga.android",
         "com.psiphon3.subscription",
         "com.canva.editor",
@@ -4153,12 +4153,14 @@
         "de.komoot.android",
         "com.dywx.larkplayer",
         "com.lawfully.lawfully_ai_tracker",
+        "cz.seznam.mapy",
         "com.jndapp.minimal.widgets",
         "it.mirko.beta",
         "com.acmeaom.android.myradar",
         "cz.mroczis.netmonster",
         "com.particlenews.newsbreak",
         "app.ninjavpn.android",
+        "com.monect.portable",
         "com.iudesk.android.photo.editor",
         "com.glority.picturemushroom",
         "cn.danatech.xingseus",
@@ -4186,6 +4188,7 @@
         "com.windyty.android",
         "com.inscode.autoclicker",
         "com.accuweather.android",
+        "club.boxbox.android",
         "com.saldous.casetracker",
         "com.budget.tracker_app",
         "sp0n.citizen",
@@ -4229,13 +4232,7 @@
         "com.navitime.inbound.walk",
         "com.MojoFilterMediaLLC.RPGSoundSystem",
         "com.urbandroid.kinestop",
-        "com.nytimes.crossword",
-        "com.google.android.apps.photos",
-        "com.delphicoder.flud",
-        "intelligems.torrdroid",
-        "cz.seznam.mapy",
-        "com.monect.portable",
-        "club.boxbox.android"
+        "com.nytimes.crossword"
       ],
       "firstSeen": 1780395687718
     },
@@ -12541,6 +12538,30 @@
           "default": true,
           "options": [],
           "compatiblePackagesKey": 543
+        },
+        {
+          "name": "Hide sidebar upselling",
+          "description": "Hides the 'Upgrade to Mail Plus' entry from the sidebar.",
+          "default": true,
+          "options": [],
+          "preRelease": true,
+          "compatiblePackagesKey": 544
+        },
+        {
+          "name": "Remove 'Sent from' signature",
+          "description": "Removes the 'Sent from Proton Mail mobile' signature from emails.",
+          "default": true,
+          "options": [],
+          "preRelease": true,
+          "compatiblePackagesKey": 544
+        },
+        {
+          "name": "Remove free accounts limit",
+          "description": "Removes the limit for maximum free accounts logged in.",
+          "default": true,
+          "options": [],
+          "preRelease": true,
+          "compatiblePackagesKey": 544
         }
       ],
       "changelog": "## [1.0.1](https://github.com/hxreborn/morphe-patches/compare/v1.0.0...v1.0.1) (2026-07-17)\n\n### Bug Fixes\n\n* **compat:** add app metadata, drop template patches ([faf5a83](https://github.com/hxreborn/morphe-patches/commit/faf5a83a0e7295feaaa5254ded0ff0a9493fcebc))\n\n## [1.0.1-dev.1](https://github.com/hxreborn/morphe-patches/compare/v1.0.0...v1.0.1-dev.1) (2026-07-17)\n\n### Bug Fixes\n\n* **compat:** add app metadata, drop template patches ([faf5a83](https://github.com/hxreborn/morphe-patches/commit/faf5a83a0e7295feaaa5254ded0ff0a9493fcebc))\n\n## 1.0.0 (2026-07-17)\n\n### Bug Fixes\n\n* **Forus - Unlock premium:** target module access getter ([cc1e9e3](https://github.com/hxreborn/morphe-patches/commit/cc1e9e3f9e3e44cd979cd21d40dad4a0b4fab6db))\n\n### New Features\n\n* **Forus - Unlock premium:** add unlock premium patch ([2a80e5a](https://github.com/hxreborn/morphe-patches/commit/2a80e5a8d0f9a40f5d2756e689948b9940120aa2))\n* **Projectivy - Disable tracking:** add disable tracking patch ([7a24927](https://github.com/hxreborn/morphe-patches/commit/7a24927e9da4975ba371b450a941048a111d50c9))\n* **Projectivy - Unlock premium:** add unlock premium patch ([30a6a78](https://github.com/hxreborn/morphe-patches/commit/30a6a78c929f7eb6ab979848745cf6d2d7c822b6))\n* **Showly - Unlock premium:** add unlock premium patch ([d4fe919](https://github.com/hxreborn/morphe-patches/commit/d4fe9196bb7afb6b740c36843d9628e83a5af537))\n\n## [1.0.0-dev.4](https://github.com/hxreborn/morphe-patches/compare/v1.0.0-dev.3...v1.0.0-dev.4) (2026-07-17)\n\n### New Features\n\n* **Projectivy - Disable tracking:** add disable tracking patch ([7a24927](https://github.com/hxreborn/morphe-patches/commit/7a24927e9da4975ba371b450a941048a111d50c9))\n* **Projectivy - Unlock premium:** add unlock premium patch ([30a6a78](https://github.com/hxreborn/morphe-patches/commit/30a6a78c929f7eb6ab979848745cf6d2d7c822b6))\n\n## [1.0.0-dev.3](https://github.com/hxreborn/morphe-patches/compare/v1.0.0-dev.2...v1.0.0-dev.3) (2026-07-17)\n\n### Bug Fixes\n\n* **Forus - Unlock premium:** target module access getter ([cc1e9e3](https://github.com/hxreborn/morphe-patches/commit/cc1e9e3f9e3e44cd979cd21d40dad4a0b4fab6db))\n\n## [1.0.0-dev.2](https://github.com/hxreborn/morphe-patches/compare/v1.0.0-dev.1...v1.0.0-dev.2) (2026-07-17)\n\n### New Features\n\n* **Showly - Unlock premium:** add unlock premium patch ([d4fe919](https://github.com/hxreborn/morphe-patches/commit/d4fe9196bb7afb6b740c36843d9628e83a5af537))\n\n## 1.0.0-dev.1 (2026-07-17)\n\n### New Features\n\n* **Forus - Unlock premium:** add unlock premium patch ([2a80e5a](https://github.com/hxreborn/morphe-patches/commit/2a80e5a8d0f9a40f5d2756e689948b9940120aa2))",
@@ -12549,11 +12570,12 @@
       "avatarUrl": "https://avatars.githubusercontent.com/u/32096750?v=4&size=168",
       "bundleIconUrl": null,
       "deepLink": "https://morphe.software/add-source?github=hxreborn/morphe-patches",
-      "patchCount": 4,
+      "patchCount": 7,
       "targetApps": [
         "com.spocky.projengmenu",
         "com.myvitale.forus",
-        "com.michaldrabik.showly2"
+        "com.michaldrabik.showly2",
+        "ch.protonmail.android"
       ],
       "firstSeen": 1784353679503
     },
@@ -12569,14 +12591,14 @@
           "description": "Bypasses ad-removal premium checks by forcing PremiumState.isRemoveAdPremium() to always return true.",
           "use": true,
           "options": [],
-          "compatiblePackagesKey": 544
+          "compatiblePackagesKey": 545
         },
         {
           "name": "Unlock Pro subscription",
           "description": "Bypasses premium checks by forcing PremiumState.isPremium() to always return true.",
           "use": true,
           "options": [],
-          "compatiblePackagesKey": 544
+          "compatiblePackagesKey": 545
         }
       ],
       "changelog": "# [1.0.0-dev.19](https://github.com/rabilrbl/fluffy-patches/compare/v1.0.0-dev.18...v1.0.0-dev.19) (2026-06-04)\n\n\n### Bug Fixes\n\n* **alarmy:** remove pairip bypass patches and docs ([9178d49](https://github.com/rabilrbl/fluffy-patches/commit/9178d49f0a2cdbe1cc9110781ca61eda1ea243d5))\n\n# [1.0.0-dev.18](https://github.com/rabilrbl/fluffy-patches/compare/v1.0.0-dev.17...v1.0.0-dev.18) (2026-06-04)\n\n# [1.0.0-dev.16](https://github.com/rabilrbl/fluffy-patches/compare/v1.0.0-dev.15...v1.0.0-dev.16) (2026-06-03)\n\n# [1.0.0-dev.15](https://github.com/rabilrbl/fluffy-patches/compare/v1.0.0-dev.14...v1.0.0-dev.15) (2026-06-03)\n\n\n### Features\n\n* **alarmy:** add unlock pro and remove ads patches ([e23da2c](https://github.com/rabilrbl/fluffy-patches/commit/e23da2ce2d3e21290375f663509d8e50909466d8))\n\n# [1.0.0-dev.14](https://github.com/rabilrbl/fluffy-patches/compare/v1.0.0-dev.13...v1.0.0-dev.14) (2026-04-06)\n\n# [1.0.0-dev.13](https://github.com/rabilrbl/fluffy-patches/compare/v1.0.0-dev.12...v1.0.0-dev.13) (2026-04-06)\n\n\n### Features\n\n* add jiotv-base-patched-temporary-files to .gitignore ([fa335d8](https://github.com/rabilrbl/fluffy-patches/commit/fa335d8053f19263166372a2bc2c11ee6eafedd3))\n* add play store disabled log for debugging purposes ([436f19e](https://github.com/rabilrbl/fluffy-patches/commit/436f19ee23f287b75d028cdc645ab0d34553d5f8))\n* update dismiss Google Play error dialog patch to prevent dialog from appearing on license check failure ([fca2782](https://github.com/rabilrbl/fluffy-patches/commit/fca27827d54ba84e0c5c55c62cf068121d836cb0))\n\n# [1.0.0-dev.12](https://github.com/rabilrbl/fluffy-patches/compare/v1.0.0-dev.11...v1.0.0-dev.12) (2026-04-06)\n\n\n### Features\n\n* add dismiss Google Play error dialog patch and remove obsolete license check patch ([7ba9dff](https://github.com/rabilrbl/fluffy-patches/commit/7ba9dff920100ffaa639b95d94c351e29a464137))\n\n# [1.0.0-dev.11](https://github.com/rabilrbl/fluffy-patches/compare/v1.0.0-dev.10...v1.0.0-dev.11) (2026-04-05)\n\n\n### Features\n\n* Enhance APK analysis documentation and add JADX CLI usage instructions across multiple files ([c58ab08](https://github.com/rabilrbl/fluffy-patches/commit/c58ab086e6b18d0dea5bf5e704632872f92ccb3b))\n\n# [1.0.0-dev.10](https://github.com/rabilrbl/fluffy-patches/compare/v1.0.0-dev.9...v1.0.0-dev.10) (2026-04-05)\n\n\n### Features\n\n* Add new commands and skills for OpenSpec workflow ([7f98188](https://github.com/rabilrbl/fluffy-patches/commit/7f981887fbfbd965bf4085f79b16a850bb33fc39))\n\n# [1.0.0-dev.9](https://github.com/rabilrbl/fluffy-patches/compare/v1.0.0-dev.8...v1.0.0-dev.9) (2026-04-04)\n\n\n### Bug Fixes\n\n* bypass AppDataManager.inu flag and remove broken constructor no-op ([e78b041](https://github.com/rabilrbl/fluffy-patches/commit/e78b0411bfb0f5431a2281dbe116a66e36a2dc4a))\n\n# [1.0.0-dev.8](https://github.com/rabilrbl/fluffy-patches/compare/v1.0.0-dev.7...v1.0.0-dev.8) (2026-04-03)\n\n\n### Bug Fixes\n\n* inject setCheckAppUpaduteData(null) at start of HomeActivity.onCreate and no-op onResume ([77fb430](https://github.com/rabilrbl/fluffy-patches/commit/77fb430c0ec5bf87d3ab2185b51b38b8f1d9e8fb))\n\n# [1.0.0-dev.7](https://github.com/rabilrbl/fluffy-patches/compare/v1.0.0-dev.6...v1.0.0-dev.7) (2026-04-03)\n\n\n### Bug Fixes\n\n* add AppUpdateHelper constructor no-op and AppUpdateManagerFactory.create null return ([e795f5f](https://github.com/rabilrbl/fluffy-patches/commit/e795f5fda0ac45b86d5716c0b43cffa363f95234))\n\n# [1.0.0-dev.6](https://github.com/rabilrbl/fluffy-patches/compare/v1.0.0-dev.5...v1.0.0-dev.6) (2026-04-03)\n\n\n### Bug Fixes\n\n* bypass app update checks by modifying CommonUtils and AppUpdateHelper methods ([4c43c6d](https://github.com/rabilrbl/fluffy-patches/commit/4c43c6de1bb56cb789c4fb33a23feb4f278c7624))\n\n# [1.0.0-dev.5](https://github.com/rabilrbl/fluffy-patches/compare/v1.0.0-dev.4...v1.0.0-dev.5) (2026-04-03)\n\n\n### Bug Fixes\n\n# [1.0.0-dev.4](https://github.com/rabilrbl/fluffy-patches/compare/v1.0.0-dev.3...v1.0.0-dev.4) (2026-04-03)",
@@ -12638,14 +12660,14 @@
           "description": "Disables the scan counter increment, preventing the scan count from increasing",
           "use": true,
           "options": [],
-          "compatiblePackagesKey": 545
+          "compatiblePackagesKey": 546
         },
         {
           "name": "Increase scan limit",
           "description": "Increases the free scan limit from 30 to 50 scans",
           "use": true,
           "options": [],
-          "compatiblePackagesKey": 545
+          "compatiblePackagesKey": 546
         }
       ],
       "changelog": "# 1.0.0-dev.1 (2026-01-30)\n\n\n### Features\n\n* add pokecardex patches ([#1](https://github.com/Almewty/my-morphe-patches/issues/1)) ([8110646](https://github.com/Almewty/my-morphe-patches/commit/81106460d7bb1922ae6befc3bde618d897442053))",
@@ -12681,14 +12703,14 @@
               "values": null
             }
           ],
-          "compatiblePackagesKey": 546
+          "compatiblePackagesKey": 547
         },
         {
           "name": "Pro Features Unlock",
           "description": "Unlock all pro features in Transit",
           "use": true,
           "options": [],
-          "compatiblePackagesKey": 546
+          "compatiblePackagesKey": 547
         }
       ],
       "changelog": "# [2.3.0](https://github.com/andronedev/morphe-patches/compare/v2.2.1...v2.3.0) (2026-04-01)\n\n\n### Features\n\n* Update Morphe dependencies and refactor Transit compatibility ([1613c6b](https://github.com/andronedev/morphe-patches/commit/1613c6b1e7b21be9b25e403ec2e45516115156ff))\n\n# [2.3.0-dev.1](https://github.com/andronedev/morphe-patches/compare/v2.2.1...v2.3.0-dev.1) (2026-04-01)\n\n\n### Features\n\n* Update Morphe dependencies and refactor Transit compatibility ([1613c6b](https://github.com/andronedev/morphe-patches/commit/1613c6b1e7b21be9b25e403ec2e45516115156ff))\n\n## [2.2.1](https://github.com/andronedev/morphe-patches/compare/v2.2.0...v2.2.1) (2026-04-01)\n\n\n### Bug Fixes\n\n* replace rawResourcePatch with native document() API for Maps key patching ([5d50f38](https://github.com/andronedev/morphe-patches/commit/5d50f3879a3a29d79c4a9c1809ffcd242cb31125))\n\n## [2.2.1-dev.1](https://github.com/andronedev/morphe-patches/compare/v2.2.0...v2.2.1-dev.1) (2026-04-01)\n\n\n### Bug Fixes\n\n* replace rawResourcePatch with native document() API for Maps key patching ([5d50f38](https://github.com/andronedev/morphe-patches/commit/5d50f3879a3a29d79c4a9c1809ffcd242cb31125))\n\n# [2.2.0](https://github.com/andronedev/morphe-patches/compare/v2.1.0...v2.2.0) (2026-02-12)\n\n\n### Features\n\n* Add Custom Maps API Key patch and update README with new patch details ([c2db592](https://github.com/andronedev/morphe-patches/commit/c2db5921014b9508fae2db7146d6d73b28f3fdd6))\n\n# [2.2.0-dev.1](https://github.com/andronedev/morphe-patches/compare/v2.1.0...v2.2.0-dev.1) (2026-02-12)\n\n\n### Features\n\n* Add Custom Maps API Key patch and update README with new patch details ([c2db592](https://github.com/andronedev/morphe-patches/commit/c2db5921014b9508fae2db7146d6d73b28f3fdd6))\n\n# [2.1.0](https://github.com/andronedev/morphe-patches/compare/v2.0.1...v2.1.0) (2026-02-11)\n\n\n### Features\n\n* **transit:** support v6.1.0 fingerprint and bump version to 2.1.0 ([dc7f31e](https://github.com/andronedev/morphe-patches/commit/dc7f31ea98dac04ceaf48dd5c219904e2f226089))\n\n## [2.0.1](https://github.com/andronedev/revanced-patches/compare/v2.0.0...v2.0.1) (2026-02-11)",
@@ -12714,7 +12736,7 @@
           "description": "Enables features by skipping checks",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 547
+          "compatiblePackagesKey": 548
         }
       ],
       "changelog": "## [1.0.1](https://github.com/abhis1n/Morphe-Patches/compare/v1.0.0...v1.0.1) (2026-06-17)\n\n\n### Bug Fixes\n\n* bump version to 26.5.5 ([759d14c](https://github.com/abhis1n/Morphe-Patches/commit/759d14ca5ae9367e42390af42c6416ac574294c5))\n* force release v26.5.5 after non-semantic commits ([7fb1e15](https://github.com/abhis1n/Morphe-Patches/commit/7fb1e15a5319b042a508f285757ef0c37a9cbd5e))\n\n## [1.0.1-dev.1](https://github.com/abhis1n/Morphe-Patches/compare/v1.0.0...v1.0.1-dev.1) (2026-06-17)\n\n\n### Bug Fixes\n\n* force release v26.5.5 after non-semantic commits ([7fb1e15](https://github.com/abhis1n/Morphe-Patches/commit/7fb1e15a5319b042a508f285757ef0c37a9cbd5e))\n\n# 1.0.0 (2026-04-29)\n\n\n### Features\n\n* add support for splitwise ([db3c952](https://github.com/abhis1n/Morphe-Patches/commit/db3c952afba7f3746826a626b104250f9ab1f991))\n\n# 1.0.0-dev.1 (2026-04-29)\n\n\n### Features\n\n* add support for splitwise ([db3c952](https://github.com/abhis1n/Morphe-Patches/commit/db3c952afba7f3746826a626b104250f9ab1f991))",
@@ -12740,7 +12762,7 @@
           "description": "Disables ads in Mafra AdView.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 548
+          "compatiblePackagesKey": 549
         }
       ],
       "changelog": "# 1.0.0 (2026-05-15)\n\n\n### Bug Fixes\n\n* build ([20649c8](https://github.com/kolaron/morphe-patcher/commit/20649c8a8a5f85643958fdc680c110f6e6ff1f7e))\n* Update README with installation instructions ([b56aba3](https://github.com/kolaron/morphe-patcher/commit/b56aba33db3d20f4fb4f59caac6afcf4b0e6cb59))\n\n\n### Features\n\n* **idos:** Basic fingerprint and bytecodePatch ([13aca21](https://github.com/kolaron/morphe-patcher/commit/13aca21b29b67bc98c808ae14fc1aa61132eef02))",
@@ -12766,7 +12788,7 @@
           "description": "Removes Ekşi Sözlük ad placements and disables ad loading.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 549
+          "compatiblePackagesKey": 550
         }
       ],
       "changelog": null,
@@ -12792,14 +12814,14 @@
           "description": "Applies a dark theme to all backgrounds, dialogs, and popups.",
           "use": true,
           "options": [],
-          "compatiblePackagesKey": 550
+          "compatiblePackagesKey": 551
         },
         {
           "name": "Enable Premium",
           "description": "Removes item/list limits and unlocks premium features (copy to list, manual sort, etc.).",
           "use": true,
           "options": [],
-          "compatiblePackagesKey": 550
+          "compatiblePackagesKey": 551
         }
       ],
       "changelog": "# [1.30.0](https://github.com/AlexNaga/android-patches/compare/v1.29.0...v1.30.0) (2026-05-05)\n\n\n### Bug Fixes\n\n* drop npm cache from release workflow ([e4316c1](https://github.com/AlexNaga/android-patches/commit/e4316c1972604285581fefdcc346d85fc8032cd3))\n\n\n### Features\n\n* switch release pipeline to semantic-release ([e64a398](https://github.com/AlexNaga/android-patches/commit/e64a398b6aaa2114e51bca6eafeaa1f3b6110e49))",
@@ -12825,7 +12847,7 @@
           "description": "Forces you to check the IP address only on Yandex",
           "use": true,
           "options": [],
-          "compatiblePackagesKey": 551
+          "compatiblePackagesKey": 552
         }
       ],
       "changelog": "## [1.1.1](https://github.com/RealCyberwash/max-patches/compare/v1.1.0...v1.1.1) (2026-04-06)\n\n\n### Bug Fixes\n\n* metadata ([2c0a1b0](https://github.com/RealCyberwash/max-patches/commit/2c0a1b0634067d8e8ec90dc0432656dd4334a11c))\n\n# [1.1.0](https://github.com/RealCyberwash/max-patches/compare/v1.0.1...v1.1.0) (2026-04-06)\n\n\n### Features\n\n* compatibility with version 26.11.3 ([4d39910](https://github.com/RealCyberwash/max-patches/commit/4d3991030f87d813f511e0154cdde3c5798104c6))\n\n## [1.0.1](https://github.com/RealCyberwash/max-patches/compare/v1.0.0...v1.0.1) (2026-04-06)\n\n\n### Bug Fixes\n\n* **release:** permissions ([b9ccd91](https://github.com/RealCyberwash/max-patches/commit/b9ccd9163b4dd701eba677bbf68f8d5b907828ff))\n\n# 1.0.0 (2026-04-06)\n\n\n### Features\n\n* bypass vpn check ([7c8a65e](https://github.com/RealCyberwash/max-patches/commit/7c8a65e27e49cd22e389b9f9b98d327223f5fd1d))",
@@ -12851,21 +12873,21 @@
           "description": "Unlocks all Soundbrenner Plus features and Home Customization.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 552
+          "compatiblePackagesKey": 553
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks all premium features (search, speed reading, unlimited highlights).",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 553
+          "compatiblePackagesKey": 554
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks all premium wallpapers and removes license verification features.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 554
+          "compatiblePackagesKey": 555
         }
       ],
       "changelog": "## [1.3.1](https://github.com/LaKakaReal/LaKakaShitPatches/compare/v1.3.0...v1.3.1) (2026-07-09)\n\n### 🐛 Bug Fixes\n\n* **Depth Live Wallpapers:** fixed certain icons appearing as a default pencil ([1e33787](https://github.com/LaKakaReal/LaKakaShitPatches/commit/1e33787acc411707d9a717119f5dcc26126cee63))\n\n## [1.3.1-dev.1](https://github.com/LaKakaReal/LaKakaShitPatches/compare/v1.3.0...v1.3.1-dev.1) (2026-07-09)\n\n### 🐛 Bug Fixes\n\n* **Depth Live Wallpapers:** fixed certain icons appearing as a default pencil ([1e33787](https://github.com/LaKakaReal/LaKakaShitPatches/commit/1e33787acc411707d9a717119f5dcc26126cee63))\n\n## [1.3.0](https://github.com/LaKakaReal/LaKakaShitPatches/compare/v1.2.0...v1.3.0) (2026-07-08)\n\n### ✨ New Features\n\n* **Instapaper:** added instapaper ([4050e7a](https://github.com/LaKakaReal/LaKakaShitPatches/commit/4050e7ae6e494c067471692c9ecd12f8ae786e8f))\n* **Soundbrenner:** added soundbrenner ([b98bf61](https://github.com/LaKakaReal/LaKakaShitPatches/commit/b98bf61ffef0e435bd91a74bbabcc72472c96dc3))\n\n## [1.3.0-dev.1](https://github.com/LaKakaReal/LaKakaShitPatches/compare/v1.2.0...v1.3.0-dev.1) (2026-07-08)\n\n### ✨ New Features\n\n* **Instapaper:** added instapaper ([4050e7a](https://github.com/LaKakaReal/LaKakaShitPatches/commit/4050e7ae6e494c067471692c9ecd12f8ae786e8f))\n* **Soundbrenner:** added soundbrenner ([b98bf61](https://github.com/LaKakaReal/LaKakaShitPatches/commit/b98bf61ffef0e435bd91a74bbabcc72472c96dc3))\n\n## [1.2.0](https://github.com/LaKakaReal/LaKakaShitPatches/compare/v1.1.1...v1.2.0) (2026-06-22)\n\n### ✨ New Features\n\n* **wallpaper:** added universal version compatibility ([d4bd326](https://github.com/LaKakaReal/LaKakaShitPatches/commit/d4bd326de1fee5c1ad5ec95e9c46af88b36eb329))\n\n## [1.2.0-dev.1](https://github.com/LaKakaReal/LaKakaShitPatches/compare/v1.1.1-dev.1...v1.2.0-dev.1) (2026-06-22)\n\n### ✨ New Features\n\n* **wallpaper:** added universal version compatibility ([d4bd326](https://github.com/LaKakaReal/LaKakaShitPatches/commit/d4bd326de1fee5c1ad5ec95e9c46af88b36eb329))\n\n## [1.1.1-dev.1](https://github.com/LaKakaReal/LaKakaShitPatches/compare/v1.1.0...v1.1.1-dev.1) (2026-06-12)\n## [1.1.1](https://github.com/LaKakaReal/LaKakaShitPatches/compare/v1.1.0...v1.1.1) (2026-06-12)\n\n### 🐛 Bug Fixes\n\n* push target version constraints ([f7ce9cd](https://github.com/LaKakaReal/LaKakaShitPatches/commit/f7ce9cdd7e00f3aa98a971651364874457121865))\n\n## [1.1.0](https://github.com/LaKakaReal/LaKakaShitPatches/compare/v1.0.0...v1.1.0) (2026-06-10)\n\n### 🐛 Bug Fixes\n\n* included new fingerprints forgot to publish them smh ([b13aac5](https://github.com/LaKakaReal/LaKakaShitPatches/commit/b13aac547be84e9235fbeea2adbc3c5eed88622b))\n\n### ✨ New Features\n\n* fix pairip integrity resource crash using free asset fallback ([4837b8d](https://github.com/LaKakaReal/LaKakaShitPatches/commit/4837b8d503c6c1e27e90da11c60d184fc52de6d2))\n\n## [1.1.0-dev.1](https://github.com/LaKakaReal/LaKakaShitPatches/compare/v1.0.0...v1.1.0-dev.1) (2026-06-10)\n\n### 🐛 Bug Fixes\n\n* included new fingerprints forgot to publish them smh ([b13aac5](https://github.com/LaKakaReal/LaKakaShitPatches/commit/b13aac547be84e9235fbeea2adbc3c5eed88622b))\n\n### ✨ New Features\n\n* fix pairip integrity resource crash using free asset fallback ([4837b8d](https://github.com/LaKakaReal/LaKakaShitPatches/commit/4837b8d503c6c1e27e90da11c60d184fc52de6d2))\n\n## [1.0.0-dev.2](https://github.com/LaKakaReal/LaKakaShitPatches/compare/v1.0.0-dev.1...v1.0.0-dev.2) (2026-06-10)\n\n### 🐛 Bug Fixes\n\n* included new fingerprints forgot to publish them smh ([b13aac5](https://github.com/LaKakaReal/LaKakaShitPatches/commit/b13aac547be84e9235fbeea2adbc3c5eed88622b))\n\n### ✨ New Features\n\n* fix pairip integrity resource crash using free asset fallback ([4837b8d](https://github.com/LaKakaReal/LaKakaShitPatches/commit/4837b8d503c6c1e27e90da11c60d184fc52de6d2))\n\n## 1.0.0-dev.1 (2026-06-07)\n## 1.0.0 (2026-06-07)\n\n### ✨ New Features\n\n* Made first doodoo patch - Depth Wallpapers premium unlocked ([c5fd928](https://github.com/LaKakaReal/LaKakaShitPatches/commit/c5fd928c6bcb343fe5cd6506b497823d42b2e153))",
@@ -12903,7 +12925,7 @@
           "options": [],
           "preRelease": true,
           "compatiblePackagesKey": 231,
-          "compatibilityKey": 555
+          "compatibilityKey": 556
         }
       ],
       "changelog": "## [1.1.3](https://github.com/Joristdh/Platypatch/compare/v1.1.2...v1.1.3) (2026-04-16)\n\n\n### Bug Fixes\n\n* complete renaming ([abf5e29](https://github.com/Joristdh/Platypatch/commit/abf5e299fdcd27e6ef4dfda4adb79a6e57e7dc3c))\n\n## [1.1.2](https://github.com/Joristdh/Morphe/compare/v1.1.1...v1.1.2) (2026-04-16)\n\n\n### Bug Fixes\n\n* brand update ([87d037e](https://github.com/Joristdh/Morphe/commit/87d037e1ba89bda7712da81dd9f3dab274e4c6c4))\n\n## [1.1.1](https://github.com/Joristdh/Morphe/compare/v1.1.0...v1.1.1) (2026-04-16)\n\n\n### Bug Fixes\n\n* Remove obsolete patch ([885bf3b](https://github.com/Joristdh/Morphe/commit/885bf3b2b6cc94a21404cd2c4426550173f2e08e))\n\n# [1.1.0](https://github.com/Joristdh/Morphe/compare/v1.0.0...v1.1.0) (2026-04-14)\n\n\n### Features\n\n* this should trigger a release ([b859465](https://github.com/Joristdh/Morphe/commit/b85946550f1944f675f383be93cb3f164820068d))\n\n# 1.0.0 (2026-04-14)\n\n\n### Bug Fixes\n\n* **ci:** restore semantic-release rules so feat, fix, and release commits trigger versions ([3728b97](https://github.com/Joristdh/De-ReVanced/commit/3728b978519854968a56847075aa9d58565a85e3))\n* google photos patch logic ([58f8bc8](https://github.com/Joristdh/De-ReVanced/commit/58f8bc80dfd601cfe5a5dfee81e64d78bab0f496))\n* make Google Photos spoof build patch self-contained ([7b431dd](https://github.com/Joristdh/De-ReVanced/commit/7b431dd5a707231b5289db60a6fdee5d24b27832))\n* make gradlew executable ([3be2ec5](https://github.com/Joristdh/De-ReVanced/commit/3be2ec51fff5990c174c166e7a02625971832063))\n* release 1.0.1 ([b68b315](https://github.com/Joristdh/De-ReVanced/commit/b68b31503e57a9253237a3bf2be8bacfd23f7c86))\n* release 1.0.1 ([26175cf](https://github.com/Joristdh/De-ReVanced/commit/26175cf2910917be08734a741087018e127a1648))\n* release v1.0.3 with Google Recorder fix ([c03c701](https://github.com/Joristdh/De-ReVanced/commit/c03c701a6ba658afb4f4f2093faca9e6bc91e49c))\n\n\n### Features\n\n* fork predictive back gesture patch ([b116877](https://github.com/Joristdh/De-ReVanced/commit/b116877bd2d67e6fe92393ae7268022ba4ae7b8b))\n* release v1.1.0 ([901b2ec](https://github.com/Joristdh/De-ReVanced/commit/901b2ec28fb8e5863d2085d471f0cf529de08422))\n\n## [1.0.3](https://github.com/RookieEnough/De-ReVanced/compare/v1.0.2...v1.0.3) (2026-04-02)\n\n\n### Bug Fixes\n\n* release v1.0.3 with Google Recorder fix ([c03c701](https://github.com/RookieEnough/De-ReVanced/commit/c03c701a6ba658afb4f4f2093faca9e6bc91e49c))\n\n\n\n\n\n### Bug Fixes\n\n* **Google Recorder — Remove device restrictions:** fingerprint and bytecode hook updated for current app builds — match `RecorderApplication.onCreate` without a fixed feature string, detect any `com.google.android.feature…PIXEL…` `const-string`, and apply the restriction bypass (fixes fingerprint mismatch on newer Recorder versions).\n\n### Maintenance\n\n* **Attribution:** add a standard `Forked from` source header across Kotlin sources that were still missing it.\n\n## [1.0.2](https://github.com/RookieEnough/De-ReVanced/compare/v1.0.1...v1.0.2) (2026-04-02)\n\n\n### Bug Fixes\n\n* **ci:** restore semantic-release rules so feat, fix, and release commits trigger versions ([3728b97](https://github.com/RookieEnough/De-ReVanced/commit/3728b978519854968a56847075aa9d58565a85e3))\n* release v1.0.3 with Google Recorder fix ([c03c701](https://github.com/RookieEnough/De-ReVanced/commit/c03c701a6ba658afb4f4f2093faca9e6bc91e49c))\n\n\n\n\n\n### Bug Fixes\n\n* **ci:** restore semantic-release rules so feat, fix, and release commits trigger versions ([3728b97](https://github.com/RookieEnough/De-ReVanced/commit/3728b978519854968a56847075aa9d58565a85e3))\n* **ci:** append `CHANGELOG.md` section to GitHub release notes when present\n\n### Morphe Manager integration\n\n* Bumped Morphe Gradle plugin to **1.2.0** and **morphe-patcher** to **1.3.3** (GitHub Packages: `gpr.user` / `gpr.key`).\n* All patches declare **`compatibleWith(Compatibility(...))`** via `AppCompatibilities` so Manager shows human-readable app titles and icon tint colors.\n* **`patches-list.json`** now includes a root **`appNames`** map (package → display name) and, for each patch, a **`compatibility`** array with `name`, `packageName`, `appIconColor`, optional `description`, and **`targets`** (version pins). This fixes the detail view where only package IDs appeared after tapping an app.\n* **Bundle artwork:** place **`patch-bundle.png`** in the same directory as **`patch-bundles.json`** so Morphe Manager can show that image instead of the user avatar for the bundle (per upstream guidance).\n\n### Compatibility tuning\n\n* **Google News** (`com.google.android.apps.magazines`): pinned to version **5.108.0.644447823** for all News-related patches.\n* **TikTok:** **Settings** and **Enable Open Debug** remain **43.6.2-only** (not supported on 43.8.3); descriptions state this explicitly. Other TikTok patches keep their existing 43.6.2 / 43.8.3 splits.\n\n### New app targets (16)\n\nPatches and extensions were added or expanded for:\n\n1. Bandcamp  \n2. Angulus  \n3. GMX Mail  \n4. Free Phone (GMX)  \n5. Hex Editor  \n6. Google Recorder  \n7. irplus  \n8. NU.nl  \n9. Nothing X  \n10. Peacock TV  \n11. Viber  \n12. TikTok  \n13. Twitch  \n14. Adobe Photoshop Mix  \n15. Threads  \n16. Facebook  \n\n### Notes\n\n* Regenerate **`patches-list.json`** with `./gradlew :patches:generatePatchesList` (or full `:patches:build`) after changes.\n\n## [1.0.3](https://github.com/RookieEnough/De-ReVanced/compare/v1.0.2...v1.0.3) (2026-04-01)\n\n### Bug Fixes\n\n* **Google Recorder — Remove device restrictions:** fingerprint and bytecode hook updated for current app builds — match `RecorderApplication.onCreate` without a fixed feature string, detect any `com.google.android.feature…PIXEL…` `const-string`, and apply the restriction bypass (fixes fingerprint mismatch on newer Recorder versions).\n\n### Maintenance\n\n* **Attribution:** add a standard `Forked from` source header across Kotlin sources that were still missing it.\n\n## [1.0.2](https://github.com/RookieEnough/De-ReVanced/compare/v1.0.1...v1.0.2) (2026-04-01)\n\n### Bug Fixes\n\n* **ci:** restore semantic-release rules so feat, fix, and release commits trigger versions ([3728b97](https://github.com/RookieEnough/De-ReVanced/commit/3728b978519854968a56847075aa9d58565a85e3))\n* **ci:** append `CHANGELOG.md` section to GitHub release notes when present\n\n### Morphe Manager integration\n\n* Bumped Morphe Gradle plugin to **1.2.0** and **morphe-patcher** to **1.3.3** (GitHub Packages: `gpr.user` / `gpr.key`).\n* All patches declare **`compatibleWith(Compatibility(...))`** via `AppCompatibilities` so Manager shows human-readable app titles and icon tint colors.\n* **`patches-list.json`** now includes a root **`appNames`** map (package → display name) and, for each patch, a **`compatibility`** array with `name`, `packageName`, `appIconColor`, optional `description`, and **`targets`** (version pins). This fixes the detail view where only package IDs appeared after tapping an app.\n* **Bundle artwork:** place **`patch-bundle.png`** in the same directory as **`patch-bundles.json`** so Morphe Manager can show that image instead of the user avatar for the bundle (per upstream guidance).\n\n### Compatibility tuning\n\n* **Google News** (`com.google.android.apps.magazines`): pinned to version **5.108.0.644447823** for all News-related patches.\n* **TikTok:** **Settings** and **Enable Open Debug** remain **43.6.2-only** (not supported on 43.8.3); descriptions state this explicitly. Other TikTok patches keep their existing 43.6.2 / 43.8.3 splits.\n\n### New app targets (16)\n\nPatches and extensions were added or expanded for:\n\n1. Bandcamp  \n2. Angulus  \n3. GMX Mail  \n4. Free Phone (GMX)  \n5. Hex Editor  \n6. Google Recorder  \n7. irplus  \n8. NU.nl  \n9. Nothing X  \n10. Peacock TV  \n11. Viber  \n12. TikTok  \n13. Twitch  \n14. Adobe Photoshop Mix  \n15. Threads  \n16. Facebook  \n\n### Notes\n\n* Regenerate **`patches-list.json`** with `./gradlew :patches:generatePatchesList` (or full `:patches:build`) after changes.\n\n---\n\n## [1.0.1](https://github.com/RookieEnough/De-ReVanced/compare/v1.0.0...v1.0.1) (2026-03-06)\n\n### Bug Fixes\n\n* Fixed all issues related to Google Photos  ([58f8bc8](https://github.com/RookieEnough/De-ReVanced/commit/58f8bc80dfd601cfe5a5dfee81e64d78bab0f496))\n\n### Features\n\n* Added Messenger patches — disable typing indicator, hide inbox ads, hide inbox subtabs, hide Facebook button, remove Meta AI ([58f8bc8](https://github.com/RookieEnough/De-ReVanced/commit/58f8bc80dfd601cfe5a5dfee81e64d78bab0f496))\n* Added Inshorts patches — hide ads ([58f8bc8](https://github.com/RookieEnough/De-ReVanced/commit/58f8bc80dfd601cfe5a5dfee81e64d78bab0f496))\n* Added Amazon Shopping patches — always allow deep-linking ([58f8bc8](https://github.com/RookieEnough/De-ReVanced/commit/58f8bc80dfd601cfe5a5dfee81e64d78bab0f496))",
@@ -14387,6 +14409,11 @@
       "iconUrl": "https://play-lh.googleusercontent.com/TuQLI-feVEhXj9pUf36cZ10Kwi_9w0UBv3Y1WBYbEyBf0ci3W0jB1swnzfittajO8KKEnCRK-qL7765B76j-",
       "description": "Build your icon pack anytime &amp; anywhere"
     },
+    "com.google.android.apps.photos": {
+      "name": "Google Photos",
+      "iconUrl": "https://play-lh.googleusercontent.com/kErBTF4VcGwhtKbCr80Bs2R1lNZiYkHbKcf1i3ZF6dg_5LqDAlCI4wU-nzwvo7PAbxeBXM_tv1hc11gr4aIIW-Q",
+      "description": "The home for your memories. Relive, share, and organize your photos."
+    },
     "com.waze": {
       "name": "Waze",
       "iconUrl": "https://play-lh.googleusercontent.com/d4dltd4baeDGnfJD1H-ut68ERsIynfywij9zHRL7ioB-PJW3ENw-bFgg08KGPo8zQfSyRW36e58xhlqQ0pE1gg",
@@ -14432,10 +14459,20 @@
       "iconUrl": "https://play-lh.googleusercontent.com/bVCtSs3SL17q4bEwnVahuJxqoYKKP-2uzicSDoEMVULHahXIZhHeJwbyTBJjMshIPkV8dOQKRkh__Ly_BYHBcw",
       "description": "Toomics is a premium comic service with every genre for all readers to enjoy!"
     },
+    "com.delphicoder.flud": {
+      "name": "Flud",
+      "iconUrl": "https://play-lh.googleusercontent.com/35qFT59FXT_QogXSqzkeV76iK23g3932gUM1ye7HIC_q_ELO9cTuYBLAJvTXIeeTLUk72UT_LxgqIg946p7DSQ",
+      "description": "Fully featured, no limits"
+    },
     "com.mobond.mindicator": {
       "name": "m-Indicator",
       "iconUrl": "https://play-lh.googleusercontent.com/6NH-2g_kwAlEExsNbcAA0w5bjfxoHMaALX4DrMpIhQe64-ZfaxLW085Cax9J-e_mvk9TNeNKZXDzeo8BNF-eExY",
       "description": "Mumbai Local Train Timetable &amp; Live Train Status. Bus, Auto, Taxi information."
+    },
+    "intelligems.torrdroid": {
+      "name": "TorrDroid",
+      "iconUrl": "https://play-lh.googleusercontent.com/FIgM8cMNv39T39kgTxAc6n8Vy3T3iuEw9l9txna8QCH8xWqtSmTRyPyR2UB5SvTXqW7VKHFicc_vY5JWk2szQTU",
+      "description": "Search and download torrents without browsing. All in one torrent app."
     },
     "com.vizmanga.android": {
       "name": "VIZ Manga",
@@ -14702,6 +14739,11 @@
       "iconUrl": "https://play-lh.googleusercontent.com/kJWGpOSNuSksksG3G0II-7GLqP5FrrrdExJmsqe-U1-z0jS73Ir_N8yCcqvuZKSFP_Sm_oO8-vv7AQpve_Hwv3Q",
       "description": "Track USCIS/NVC/DOL/EOIR case"
     },
+    "cz.seznam.mapy": {
+      "name": "Mapy.com",
+      "iconUrl": "https://play-lh.googleusercontent.com/HDxpj_c6Nhf7wDAErKy6JknknJQLthDi4HKx1PRQno2RD28iuBv0b2eRcm1ZEdy_2r4FindeqVsdCU_5m1Bcbwc",
+      "description": "Route Planner, GPS Navigation and Distance Tracker for Hiking &amp; Biking"
+    },
     "com.jndapp.minimal.widgets": {
       "name": "Minimal Widgets",
       "iconUrl": "https://play-lh.googleusercontent.com/YdxN2n40wSiPp-WZi832aZHxGFQSafDcHqNif-Wy9YH__t2nCXoB5yGaCQkisJaHWe13H37lI_olM7sKsfONBg",
@@ -14731,6 +14773,11 @@
       "name": "Ninja VPN",
       "iconUrl": "https://play-lh.googleusercontent.com/Z10nyQkvnKpejvNvZ7LS3xXzZNRqq-nXAMiorVg8Ciyp87u2A8vIfgKbukMOZ-shf2i1OZUGkVJDmlhIDg8chg",
       "description": "Ninja VPN - Fast &amp; Secure VPN for Gaming, Streaming &amp; Private Browsing!"
+    },
+    "com.monect.portable": {
+      "name": "PC Remote",
+      "iconUrl": "https://play-lh.googleusercontent.com/VkJnnrOeX3e6gG3irUBGWg8ekOPoc7VE8Atz-8Kbsf16s45lMmPCznLY25GKuJ1dO8XO2Xx5_svGABPw2C9H",
+      "description": "Control your PC remotely — play, create, and use your phone as a virtual webcam."
     },
     "com.iudesk.android.photo.editor": {
       "name": "Photo Editor",
@@ -14856,6 +14903,11 @@
       "name": "AccuWeather",
       "iconUrl": "https://play-lh.googleusercontent.com/wdQXBFb3I1NgNpRzJo9tMHJuV9P069NR5GJ2J7w8eX_SVarWLRarca-6MiemrDbnSqDQflFzvzjSG2smlwe39TQ",
       "description": "Your local weather forecast, storm tracker, radar maps &amp; live weather news"
+    },
+    "club.boxbox.android": {
+      "name": "Box Box",
+      "iconUrl": "https://play-lh.googleusercontent.com/kfxcsV5RmByTSzDnSnbwiRIOQ_rq6kUG6Fvmg_zoPtTAjKA9_y9Sy7cMSi39x7UKkosKHe_Ddu_MiVOtlDeRwQ",
+      "description": "F1 Widgets, News, Schedule and Leaderboard"
     },
     "com.saldous.casetracker": {
       "name": "Case Tracker",
@@ -15076,40 +15128,6 @@
       "name": "NYT Games",
       "iconUrl": "https://play-lh.googleusercontent.com/TBQl70kBjktUn0lqfEAIhSo4ooo_zaWfBAoIn2XdXvAsgfHchPnJdzEESs4G3gvhOxDTeUbLbsrJ-U8H9UFRVD4",
       "description": "Play fun word puzzles and number games to sharpen your mind."
-    },
-    "com.google.android.apps.photos": {
-      "name": "Google Photos",
-      "iconUrl": "https://play-lh.googleusercontent.com/kErBTF4VcGwhtKbCr80Bs2R1lNZiYkHbKcf1i3ZF6dg_5LqDAlCI4wU-nzwvo7PAbxeBXM_tv1hc11gr4aIIW-Q",
-      "description": "The home for your memories. Relive, share, and organize your photos."
-    },
-    "com.delphicoder.flud": {
-      "name": "Flud",
-      "iconUrl": "https://play-lh.googleusercontent.com/35qFT59FXT_QogXSqzkeV76iK23g3932gUM1ye7HIC_q_ELO9cTuYBLAJvTXIeeTLUk72UT_LxgqIg946p7DSQ",
-      "description": "Fully featured, no limits",
-      "preRelease": true
-    },
-    "intelligems.torrdroid": {
-      "name": "TorrDroid",
-      "iconUrl": "https://play-lh.googleusercontent.com/FIgM8cMNv39T39kgTxAc6n8Vy3T3iuEw9l9txna8QCH8xWqtSmTRyPyR2UB5SvTXqW7VKHFicc_vY5JWk2szQTU",
-      "description": "Search and download torrents without browsing. All in one torrent app.",
-      "preRelease": true
-    },
-    "cz.seznam.mapy": {
-      "name": "Mapy.com",
-      "iconUrl": "https://play-lh.googleusercontent.com/HDxpj_c6Nhf7wDAErKy6JknknJQLthDi4HKx1PRQno2RD28iuBv0b2eRcm1ZEdy_2r4FindeqVsdCU_5m1Bcbwc",
-      "description": "Route Planner, GPS Navigation and Distance Tracker for Hiking &amp; Biking"
-    },
-    "com.monect.portable": {
-      "name": "PC Remote",
-      "iconUrl": "https://play-lh.googleusercontent.com/VkJnnrOeX3e6gG3irUBGWg8ekOPoc7VE8Atz-8Kbsf16s45lMmPCznLY25GKuJ1dO8XO2Xx5_svGABPw2C9H",
-      "description": "Control your PC remotely — play, create, and use your phone as a virtual webcam.",
-      "preRelease": true
-    },
-    "club.boxbox.android": {
-      "name": "Box Box",
-      "iconUrl": "https://play-lh.googleusercontent.com/kfxcsV5RmByTSzDnSnbwiRIOQ_rq6kUG6Fvmg_zoPtTAjKA9_y9Sy7cMSi39x7UKkosKHe_Ddu_MiVOtlDeRwQ",
-      "description": "F1 Widgets, News, Schedule and Leaderboard",
-      "preRelease": true
     },
     "org.telegram.plus": {
       "name": "Plus Messenger",
@@ -17542,6 +17560,24 @@
     ],
     [
       {
+        "packageName": "com.google.android.apps.photos",
+        "name": "Google Photos",
+        "description": null,
+        "apkFileType": "APK",
+        "appIconColor": "#4285F4",
+        "signatures": null,
+        "targets": [
+          {
+            "version": "7.84.0.949657053",
+            "isExperimental": false,
+            "minSdk": null,
+            "description": null
+          }
+        ]
+      }
+    ],
+    [
+      {
         "packageName": "com.waze",
         "name": "Waze",
         "description": null,
@@ -17581,12 +17617,12 @@
         "packageName": "com.google.android.verifier",
         "name": "Android Developer Verifier",
         "description": null,
-        "apkFileType": "APKM",
+        "apkFileType": "XAPK",
         "appIconColor": "#4285F4",
         "signatures": null,
         "targets": [
           {
-            "version": "1.0.940985764",
+            "version": "1.0.943911795",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -17738,6 +17774,24 @@
     ],
     [
       {
+        "packageName": "com.delphicoder.flud",
+        "name": "Flud",
+        "description": null,
+        "apkFileType": "APKS",
+        "appIconColor": "#F16522",
+        "signatures": null,
+        "targets": [
+          {
+            "version": "2.0.13-beta02",
+            "isExperimental": false,
+            "minSdk": null,
+            "description": null
+          }
+        ]
+      }
+    ],
+    [
+      {
         "packageName": "com.mobond.mindicator",
         "name": "m-Indicator",
         "description": null,
@@ -17756,15 +17810,33 @@
     ],
     [
       {
+        "packageName": "intelligems.torrdroid",
+        "name": "TorrDroid",
+        "description": null,
+        "apkFileType": "APKS",
+        "appIconColor": "#1976D2",
+        "signatures": null,
+        "targets": [
+          {
+            "version": "2.0.0",
+            "isExperimental": false,
+            "minSdk": null,
+            "description": null
+          }
+        ]
+      }
+    ],
+    [
+      {
         "packageName": "com.vizmanga.android",
         "name": "VIZ Manga",
         "description": null,
-        "apkFileType": null,
+        "apkFileType": "APK",
         "appIconColor": "#E53935",
         "signatures": null,
         "targets": [
           {
-            "version": "4.14.0",
+            "version": "4.14.2",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -17921,12 +17993,12 @@
         "packageName": "com.kevinforeman.nzb360",
         "name": "nzb360",
         "description": null,
-        "apkFileType": null,
+        "apkFileType": "APK",
         "appIconColor": "#1565C0",
         "signatures": null,
         "targets": [
           {
-            "version": "23.5",
+            "version": "24",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -18047,12 +18119,12 @@
         "packageName": "je.fit",
         "name": "JEFIT",
         "description": null,
-        "apkFileType": "APKS",
+        "apkFileType": "XAPK",
         "appIconColor": "#1A73E8",
         "signatures": null,
         "targets": [
           {
-            "version": "17.2.6",
+            "version": "17.2.8",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -18335,12 +18407,12 @@
         "packageName": "io.goodservice.theweekendest",
         "name": "Subway Now",
         "description": null,
-        "apkFileType": null,
+        "apkFileType": "XAPK",
         "appIconColor": "#1565C0",
         "signatures": null,
         "targets": [
           {
-            "version": "1.2.8",
+            "version": "1.2.10",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -18728,15 +18800,33 @@
     ],
     [
       {
+        "packageName": "cz.seznam.mapy",
+        "name": "Mapy",
+        "description": null,
+        "apkFileType": "APKS",
+        "appIconColor": "#E03C31",
+        "signatures": null,
+        "targets": [
+          {
+            "version": "26.7.1",
+            "isExperimental": false,
+            "minSdk": null,
+            "description": null
+          }
+        ]
+      }
+    ],
+    [
+      {
         "packageName": "com.jndapp.minimal.widgets",
         "name": "Minimal Widgets",
         "description": null,
-        "apkFileType": "APKS",
+        "apkFileType": "XAPK",
         "appIconColor": "#212121",
         "signatures": null,
         "targets": [
           {
-            "version": "1.1.01",
+            "version": "1.3.01",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -18827,6 +18917,24 @@
         "targets": [
           {
             "version": "1.4.7",
+            "isExperimental": false,
+            "minSdk": null,
+            "description": null
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "packageName": "com.monect.portable",
+        "name": "PC Remote - Desktop & Phone",
+        "description": null,
+        "apkFileType": "APKS",
+        "appIconColor": "#1565C0",
+        "signatures": null,
+        "targets": [
+          {
+            "version": "8.3.5",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -19240,7 +19348,7 @@
         "signatures": null,
         "targets": [
           {
-            "version": "5.7.1",
+            "version": "5.7.3",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -19313,6 +19421,24 @@
         "targets": [
           {
             "version": "21.1.13-1-rc",
+            "isExperimental": false,
+            "minSdk": null,
+            "description": null
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "packageName": "club.boxbox.android",
+        "name": "Box Box",
+        "description": null,
+        "apkFileType": "APKS",
+        "appIconColor": "#E10600",
+        "signatures": null,
+        "targets": [
+          {
+            "version": "5.4.13",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -19775,12 +19901,12 @@
         "packageName": "com.twtapp",
         "name": "Stargazing Hub",
         "description": null,
-        "apkFileType": null,
+        "apkFileType": "XAPK",
         "appIconColor": "#1A1A2E",
         "signatures": null,
         "targets": [
           {
-            "version": "3.3.1",
+            "version": "3.3.2",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -19847,12 +19973,12 @@
         "packageName": "com.block.juggle",
         "name": "Block Blast!",
         "description": null,
-        "apkFileType": "APKS",
+        "apkFileType": "XAPK",
         "appIconColor": "#4CAF50",
         "signatures": null,
         "targets": [
           {
-            "version": "10.3.5",
+            "version": "10.3.9",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -20007,12 +20133,12 @@
         "packageName": "com.weawow",
         "name": "Weawow: Weather & Widget",
         "description": null,
-        "apkFileType": null,
+        "apkFileType": "APK",
         "appIconColor": "#2196F3",
         "signatures": null,
         "targets": [
           {
-            "version": "7.1.7",
+            "version": "7.1.8",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -20048,7 +20174,7 @@
         "signatures": null,
         "targets": [
           {
-            "version": "12.0.4",
+            "version": "12.0.5",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -20103,114 +20229,6 @@
         "targets": [
           {
             "version": "6.34.0",
-            "isExperimental": false,
-            "minSdk": null,
-            "description": null
-          }
-        ]
-      }
-    ],
-    [
-      {
-        "packageName": "com.google.android.apps.photos",
-        "name": "Google Photos",
-        "description": null,
-        "apkFileType": "APKS",
-        "appIconColor": "#4285F4",
-        "signatures": null,
-        "targets": [
-          {
-            "version": "7.83.0.943371825",
-            "isExperimental": false,
-            "minSdk": null,
-            "description": null
-          }
-        ]
-      }
-    ],
-    [
-      {
-        "packageName": "com.delphicoder.flud",
-        "name": "Flud",
-        "description": null,
-        "apkFileType": "APKS",
-        "appIconColor": "#F16522",
-        "signatures": null,
-        "targets": [
-          {
-            "version": "2.0.13-beta02",
-            "isExperimental": false,
-            "minSdk": null,
-            "description": null
-          }
-        ]
-      }
-    ],
-    [
-      {
-        "packageName": "intelligems.torrdroid",
-        "name": "TorrDroid",
-        "description": null,
-        "apkFileType": "APKS",
-        "appIconColor": "#1976D2",
-        "signatures": null,
-        "targets": [
-          {
-            "version": "2.0.0",
-            "isExperimental": false,
-            "minSdk": null,
-            "description": null
-          }
-        ]
-      }
-    ],
-    [
-      {
-        "packageName": "cz.seznam.mapy",
-        "name": "Mapy",
-        "description": null,
-        "apkFileType": "APKS",
-        "appIconColor": "#E03C31",
-        "signatures": null,
-        "targets": [
-          {
-            "version": "26.7.1",
-            "isExperimental": false,
-            "minSdk": null,
-            "description": null
-          }
-        ]
-      }
-    ],
-    [
-      {
-        "packageName": "com.monect.portable",
-        "name": "PC Remote - Desktop & Phone",
-        "description": null,
-        "apkFileType": "APKS",
-        "appIconColor": "#1565C0",
-        "signatures": null,
-        "targets": [
-          {
-            "version": "8.3.5",
-            "isExperimental": false,
-            "minSdk": null,
-            "description": null
-          }
-        ]
-      }
-    ],
-    [
-      {
-        "packageName": "club.boxbox.android",
-        "name": "Box Box",
-        "description": null,
-        "apkFileType": "APKS",
-        "appIconColor": "#E10600",
-        "signatures": null,
-        "targets": [
-          {
-            "version": "5.4.13",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -25920,6 +25938,30 @@
             "versionCodes": null,
             "isExperimental": false,
             "minSdk": null,
+            "description": null
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "packageName": "ch.protonmail.android",
+        "name": "Proton Mail",
+        "description": null,
+        "apkFileType": "APK",
+        "appIconColor": "#6D4AFF",
+        "signatures": null,
+        "targets": [
+          {
+            "version": "4.15.0",
+            "versionCodes": {
+              "ARM64_V8A": 11782,
+              "ARMEABI_V7A": 11782,
+              "X86_64": 11782,
+              "X86": 11782
+            },
+            "isExperimental": false,
+            "minSdk": 28,
             "description": null
           }
         ]

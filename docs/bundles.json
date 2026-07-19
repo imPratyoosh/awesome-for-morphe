@@ -611,13 +611,14 @@
     "stars": 6,
     "firstSeen": "2026-07-17T19:07:01",
     "patches": "patches/hxreborn.json",
-    "createdAt": "2026-07-17T18:43:34",
+    "createdAt": "2026-07-19T18:13:41",
     "targetApps": [
+      "ch.protonmail.android",
       "com.michaldrabik.showly2",
       "com.myvitale.forus",
       "com.spocky.projengmenu"
     ],
-    "appCount": 3
+    "appCount": 4
   },
   "icysymmetra-tiktok": {
     "source": "github",

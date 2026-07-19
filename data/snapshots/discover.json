@@ -1,5 +1,5 @@
 {
-  "jman_tree_sha": "8be9ef0272a0cd5dd784b441b899d5fa8d800cba",
+  "jman_tree_sha": "2c49821461f3f328c8f2b76b4de866b04abb5c52",
   "jman_bundles": {
     "1fexd": {
       "sha": "4428619fe1755f86c0bd9d8fb5762fcc8c17b43a",
@@ -222,7 +222,7 @@
       "key": "github:arandomhooman/hoomans-morphe-patches"
     },
     "hxreborn": {
-      "sha": "50a08fc2ae0e685d3a889bd191fd7a4b6f4e0411",
+      "sha": "71d2deeda0b3c64521d06d780f2ed72fc7e2a282",
       "key": "github:hxreborn/morphe-patches"
     },
     "hzbutcoding": {
