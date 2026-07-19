@@ -1106,6 +1106,11 @@
     ]
   },
   "hxreborn": {
+    "ch.protonmail.android": [
+      "Hide sidebar upselling",
+      "Remove 'Sent from' signature",
+      "Remove free accounts limit"
+    ],
     "com.michaldrabik.showly2": [
       "Unlock premium"
     ],
@@ -1825,6 +1830,7 @@
       "Disable screenshot detection",
       "Disable stories",
       "Disable story flipping",
+      "Disable swipe to create",
       "Disable typing status",
       "Disable video autoplay",
       "Download media",
@@ -2341,6 +2347,14 @@
     "com.glority.picturemushroom": [
       "Unlock Premium"
     ],
+    "com.google.android.apps.photos": [
+      "AMOLED dark theme",
+      "Change package name",
+      "Enable DCIM folders backup control",
+      "Fix DCIM folder classification",
+      "GmsCore support",
+      "Spoof features"
+    ],
     "com.google.android.verifier": [
       "Bypass developer verification"
     ],
@@ -2848,6 +2862,12 @@
     ],
     "dev.sasikanth.pinnit": [
       "Unlock Premium"
+    ]
+  },
+  "stylus": {
+    "com.reddit.frontpage": [
+      "Custom font",
+      "Force system font"
     ]
   },
   "ts2": {

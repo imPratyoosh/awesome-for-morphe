@@ -1,5 +1,62 @@
 [
   {
+    "date": "July 19, 2026",
+    "bundles": {
+      "hxreborn": {
+        "isNew": false,
+        "apps": {
+          "ch.protonmail.android": {
+            "isNew": true,
+            "patches": [
+              "Hide sidebar upselling",
+              "Remove 'Sent from' signature",
+              "Remove free accounts limit"
+            ]
+          }
+        }
+      },
+      "piko": {
+        "isNew": false,
+        "apps": {
+          "com.instagram.android": {
+            "isNew": false,
+            "patches": [
+              "Disable swipe to create"
+            ]
+          }
+        }
+      },
+      "rushiranpise": {
+        "isNew": false,
+        "apps": {
+          "com.google.android.apps.photos": {
+            "isNew": true,
+            "patches": [
+              "AMOLED dark theme",
+              "Change package name",
+              "Enable DCIM folders backup control",
+              "Fix DCIM folder classification",
+              "GmsCore support",
+              "Spoof features"
+            ]
+          }
+        }
+      },
+      "stylus": {
+        "isNew": true,
+        "apps": {
+          "com.reddit.frontpage": {
+            "isNew": true,
+            "patches": [
+              "Custom font",
+              "Force system font"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
     "date": "July 18, 2026",
     "bundles": {
       "adobo": {
