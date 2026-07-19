@@ -21,6 +21,7 @@ PATCHES_DIR = DATA_DIR / "patches"
 SITE_DIR = ROOT / "docs" / "patches"
 BUNDLES_JSON_PATH = ROOT / "docs" / "bundles.json"
 APPS_JSON_PATH = ROOT / "docs" / "apps.json"
+OFFICIAL_BUNDLES_PATH = DATA_DIR / "snapshots" / "official-bundles.json"
 CONCURRENCY = 8
 GITHUB_CONCURRENCY = 3
 
@@ -361,6 +362,13 @@ def main():
     app_metadata = read_json(APPS_JSON_PATH, {}) or {}
     existing_sources = read_json(BUNDLES_JSON_PATH, {}) or {}
 
+    official_data = read_json(OFFICIAL_BUNDLES_PATH, {}) or {}
+    official_store = official_data.get("store", {})
+    official_avatars = {}
+    for bundle in official_data.get("bundles", []):
+        if bundle.get("repo") and bundle.get("avatarUrl"):
+            official_avatars[bundle["repo"]] = bundle["avatarUrl"]
+
     bundle_sources = {}
     avatar_cache = {}
     stars_cache = {}
@@ -409,7 +417,19 @@ def main():
 
         if args.avatars or avatar_url is None:
             if repo_url:
-                avatar_tasks[base] = repo_url
+                if repo in official_avatars:
+                    avatar_url = official_avatars[repo]
+                    if avatar_url:
+                        if "googleusercontent.com" in avatar_url:
+                            if "=" in avatar_url:
+                                avatar_url = avatar_url.split("=")[0]
+                            avatar_url += "=s128"
+                        elif "githubusercontent.com" in avatar_url:
+                            avatar_url = avatar_url.split("?")[0] + "?s=128"
+                        elif "gitlab.com/uploads/" in avatar_url:
+                            avatar_url = avatar_url.split("?")[0] + "?width=128"
+                else:
+                    avatar_tasks[base] = repo_url
 
         stars = stars_cache.get(base, None)
         if not repo_url:
@@ -486,7 +506,19 @@ def main():
                     should_fetch = True
 
                 if should_fetch:
-                    app_tasks.add(package_name)
+                    official_app = official_store.get(package_name)
+                    if official_app:
+                        if official_app.get("iconUrl") and (args.icons or app_metadata[package_name].get("iconUrl") is None):
+                            icon_url = official_app["iconUrl"]
+                            if "googleusercontent.com" in icon_url:
+                                if "=" in icon_url:
+                                    icon_url = icon_url.split("=")[0]
+                                icon_url += "=s64"
+                            app_metadata[package_name]["iconUrl"] = icon_url
+                        if official_app.get("name") and app_metadata[package_name].get("name") is None:
+                            app_metadata[package_name]["name"] = official_app["name"]
+                    if app_metadata[package_name].get("iconUrl") is None or app_metadata[package_name].get("name") is None:
+                        app_tasks.add(package_name)
         # Write to patches/base.json
         site_file_path = SITE_DIR / f"{base}.json"
         write_json(site_file_path, out_patches)
