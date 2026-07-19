@@ -639,6 +639,21 @@
     ]
   },
   {
+    "name": "Disable swipe to create",
+    "description": "Prevents opening the creation screen by swiping right on the home tab.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.instagram.android",
+        "targets": [
+          {
+            "version": "435.0.0.37.76"
+          }
+        ]
+      }
+    ],
+    "isPreRelease": true
+  },
+  {
     "name": "Disable typing status",
     "compatiblePackages": [
       {

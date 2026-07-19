@@ -326,7 +326,7 @@
     "stars": 9,
     "firstSeen": "2026-06-11T13:50:03",
     "patches": "patches/chiggi.json",
-    "createdAt": "2026-07-18T15:56:26",
+    "createdAt": "2026-07-19T15:34:53",
     "targetApps": [
       "com.crazygames.crazygamesapp",
       "com.easybrain.arrow.puzzle.game",
@@ -1181,7 +1181,7 @@
     "stars": 4361,
     "firstSeen": "2026-03-10T21:59:56",
     "patches": "patches/piko.json",
-    "createdAt": "2026-07-12T13:22:24",
+    "createdAt": "2026-07-19T17:03:30",
     "targetApps": [
       "com.instagram.android",
       "com.twitter.android"
@@ -1777,12 +1777,13 @@
     "stars": 9,
     "firstSeen": "2026-06-17T15:54:42",
     "patches": "patches/zpatches.json",
-    "createdAt": "2026-06-15T17:16:26",
+    "createdAt": "2026-07-19T16:59:19",
     "targetApps": [
       "com.jcdecaux.vls.lyon",
       "ee.dustland.android.minesweeper",
+      "ee.dustland.android.solitaire",
       "universal"
     ],
-    "appCount": 2
+    "appCount": 3
   }
 }

@@ -21,6 +21,20 @@
     ]
   },
   {
+    "name": "Disable Internet and Telemetry",
+    "description": "Disable Internet and Telemetry by removing all non-necessary permissions from the manifest",
+    "compatiblePackages": [
+      {
+        "packageName": "ee.dustland.android.minesweeper",
+        "targets": []
+      },
+      {
+        "packageName": "ee.dustland.android.solitaire",
+        "targets": []
+      }
+    ]
+  },
+  {
     "name": "Disable map animations",
     "description": "Disable the map zoom-in animation",
     "compatiblePackages": [
@@ -31,6 +45,20 @@
             "version": "3.1.1"
           }
         ]
+      }
+    ]
+  },
+  {
+    "name": "Enable Premium",
+    "description": "Unlock all purchasables options",
+    "compatiblePackages": [
+      {
+        "packageName": "ee.dustland.android.minesweeper",
+        "targets": []
+      },
+      {
+        "packageName": "ee.dustland.android.solitaire",
+        "targets": []
       }
     ]
   },
@@ -47,20 +75,6 @@
         "targets": [
           {
             "version": "3.1.1"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Premium",
-    "description": "Unlock all purchasables options",
-    "compatiblePackages": [
-      {
-        "packageName": "ee.dustland.android.minesweeper",
-        "targets": [
-          {
-            "version": "1.21.1"
           }
         ]
       }
