@@ -1989,5 +1989,9 @@
   "com.mobge.Oddmar": {
     "name": "Oddmar",
     "iconUrl": "https://play-lh.googleusercontent.com/b9_EyCfljqMQpodvUGUHVni68pG3irH4M_a167nO0FMCY7EKJXrEUX64xXwPPIo3eJEqhN3hh4hrAiUWD8ihdQ=s64"
+  },
+  "com.google.android.apps.maps": {
+    "name": "Google Maps",
+    "iconUrl": "https://play-lh.googleusercontent.com/B8pdO_2K5nBsF0g1h6dKwV_jQFLP-XombGDEQGtJT-mw1EUKCKJpa9lBGCF4rP_MwCsozSXyvI3z19g9R3J4=s64"
   }
 }

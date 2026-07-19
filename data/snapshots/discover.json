@@ -1,5 +1,5 @@
 {
-  "jman_tree_sha": "4db8e21e4febfcb8dd9740e95182b90eeea9ffe1",
+  "jman_tree_sha": "aee1a42dfa6cf4e07ebc3a1cba71e6341e5e2af8",
   "jman_bundles": {
     "1fexd": {
       "sha": "4428619fe1755f86c0bd9d8fb5762fcc8c17b43a",
@@ -350,7 +350,7 @@
       "key": null
     },
     "morphe": {
-      "sha": "8ddf17df8e499792b8f68d3ef9cee7997b65d3f9",
+      "sha": "e1b43b2b608d9575662ca81d3b02fe49a535c7e1",
       "key": "github:MorpheApp/morphe-patches"
     },
     "morphe-google": {
@@ -406,7 +406,7 @@
       "key": null
     },
     "pichiwa": {
-      "sha": "6b5361bd632e509d19725161f6877f63117950eb",
+      "sha": "977553029a47b2102e74e26da9d724755fd9e66a",
       "key": "github:alejandrobellver/pichiwa-patches"
     },
     "piko": {

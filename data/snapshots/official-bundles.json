@@ -12360,14 +12360,14 @@
         },
         {
           "name": "Unlock premium",
-          "description": "Unlocks premium features.",
+          "description": "Unlocks all premium features.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 540
         },
         {
           "name": "Unlock premium",
-          "description": "Unlocks premium features.",
+          "description": "Unlocks all premium features.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 539
