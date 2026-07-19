@@ -1,6 +1,6 @@
 // Copyright (c) 2026 nvbangg (github.com/nvbangg)
 
-import { createApp, ref, computed, onMounted, watch, reactive, nextTick } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
+import { createApp, ref, computed, onMounted, watch, reactive, nextTick } from "https://unpkg.com/vue@3/dist/vue.esm-browser.prod.js";
 import { filterRows, getFilterOptions, getFilterOptionsFromBundles, loadInitialData, summarizeRows, appName, fetchJson } from "./data.js";
 
 function tokenize(inputString) {

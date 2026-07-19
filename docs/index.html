@@ -130,7 +130,7 @@
 <body class="bg-black min-h-screen relative overflow-x-hidden">
   <div id="app" v-cloak>
     <section class="mt-1 md:mt-4 max-w-4xl mx-auto px-0 sm:px-3 flex flex-col gap-2 md:gap-4" aria-label="Main Content">
-      <div class="p-[1px] bg-gradient-to-r from-blue to-green rounded-2xl shadow-lg relative z-10 mt-0">
+      <div class="border-2 border-lightGray rounded-2xl shadow-lg relative z-10 mt-0">
         <div class="bg-dark rounded-[14px] overflow-hidden h-full">
           <!-- Header: Logo and Links -->
           <div
@@ -445,9 +445,9 @@
                     :class="!effectiveTwoColumns ? 'justify-center md:justify-start md:w-auto' : 'justify-center'">
                     <img v-if="group.bundle.avatarUrl" :src="group.bundle.avatarUrl" alt="Avatar"
                       @click.stop="openPopupFast(group.key)" title="View this bundle"
-                      class="w-12 h-12 rounded-lg bg-lightGray/20 object-cover shrink-0 sm:mt-0.5 cursor-pointer hover:opacity-80 transition-opacity">
+                      class="w-12 h-12 rounded-lg bg-lightGray/20 border border-lightGray object-cover shrink-0 sm:mt-0.5 cursor-pointer hover:opacity-80 transition-opacity">
                     <div v-else @click.stop="openPopupFast(group.key)" title="View this bundle"
-                      class="w-12 h-12 rounded-lg bg-lightGray/20 flex items-center justify-center shrink-0 sm:mt-0.5 cursor-pointer hover:bg-lightGray/35 transition-colors">
+                      class="w-12 h-12 rounded-lg bg-lightGray/20 border border-lightGray flex items-center justify-center shrink-0 sm:mt-0.5 cursor-pointer hover:bg-lightGray/35 transition-colors">
                       <i class="fa-solid fa-cubes text-light text-xl icon-center"></i>
                     </div>
                     <div class="flex flex-col min-w-0 justify-center items-start gap-1 sm:gap-1.5 max-w-full">
@@ -797,9 +797,9 @@
               <div
                 class="flex items-center gap-3 min-w-0 flex-1 w-full text-left justify-center md:justify-start md:w-auto">
                 <img v-if="group.bundle.avatarUrl" :src="group.bundle.avatarUrl" alt="Avatar"
-                  class="w-12 h-12 rounded-lg bg-lightGray/20 object-cover pointer-events-none select-none shrink-0 sm:mt-0.5">
+                  class="w-12 h-12 rounded-lg bg-lightGray/20 border border-lightGray object-cover pointer-events-none select-none shrink-0 sm:mt-0.5">
                 <div v-else
-                  class="w-12 h-12 rounded-lg bg-lightGray/20 flex items-center justify-center shrink-0 sm:mt-0.5">
+                  class="w-12 h-12 rounded-lg bg-lightGray/20 border border-lightGray flex items-center justify-center shrink-0 sm:mt-0.5">
                   <i class="fa-solid fa-cubes text-light text-xl icon-center"></i>
                 </div>
                 <div class="flex flex-col min-w-0 justify-center items-start gap-1 sm:gap-1.5 max-w-full">
