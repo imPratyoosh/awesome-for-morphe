@@ -201,7 +201,9 @@ function useListUI(namespace = "") {
           }
         });
       } else {
-        expandedAppLists.delete(groupKey);
+        if (namespace !== "popup_") {
+          expandedOptions.delete(clickedKey);
+        }
       }
     } else {
       isCurrentlyExpanded ? expandedOptions.delete(clickedKey) : expandedOptions.add(clickedKey);
@@ -769,17 +771,30 @@ const app = createApp({
     const mainUI = useListUI("");
     const popupUI = useListUI("popup_");
 
-    const expandAll = () =>
-      bundlesGroups.value.forEach((group) => group.appsList?.length && mainUI.expandedOptions.add(`app_${group.key}_${group.appsList[0].id}`));
+    const expandAll = () => {
+      bundlesGroups.value.forEach((group) => {
+        if (!group.appsList?.length) return;
+        const isBundleOpen =
+          group.appsList.some((app) => mainUI.expandedOptions.has(`app_${group.key}_${app.id}`)) || mainUI.expandedAppLists.has(group.key);
+        if (!isBundleOpen) {
+          mainUI.expandedAppLists.add(group.key);
+          mainUI.expandedOptions.add(`app_${group.key}_${group.appsList[0].id}`);
+        } else if (mainUI.bundleViews[group.key]) {
+          group.appsList.forEach((app) => mainUI.expandedOptions.add(`app_${group.key}_${app.id}`));
+        }
+      });
+    };
     const collapseAll = () => bundlesGroups.value.forEach((group) => mainUI.collapseBundle(group));
     const toggleBundle = (groupItem) => {
       if (groupItem.appsList?.length > 0) {
         if (
           groupItem.appsList.some((appItem) => mainUI.expandedOptions.has(`app_${groupItem.key}_${appItem.id}`)) ||
-          mainUI.bundleViews[groupItem.key]
+          mainUI.bundleViews[groupItem.key] ||
+          mainUI.expandedAppLists.has(groupItem.key)
         ) {
           mainUI.collapseBundle(groupItem);
         } else {
+          mainUI.expandedAppLists.add(groupItem.key);
           mainUI.expandedOptions.add(`app_${groupItem.key}_${groupItem.appsList[0].id}`);
         }
       }
@@ -926,6 +941,7 @@ const app = createApp({
       app.value = packageName;
     };
     const resetFilters = () => {
+      collapseAll();
       query.value = bundle.value = app.value = appSearch.value = bundleSearch.value = popupSearchQuery.value = popupAppSearch.value = "";
       showOptions.value = [];
       isWhatsNewView.value = false;
