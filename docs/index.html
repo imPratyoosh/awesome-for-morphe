@@ -553,19 +553,19 @@
                         @touchend="mainUI.handleTouchEnd($event, group.key, appItem, appsList)"
                         class="flex flex-col gap-2 shadow-inner pt-2 pb-3"
                         :class="(mainUI.activeSwipeGroup === group.key && mainUI.swipeDirection ? 'swipe-transition-' + mainUI.swipeDirection : '') + (mainUI.bundleViews[group.key] ? ' border-b-2 border-lightGray/30' : '')">
-                        <div v-if="appItem.packageName && appItem.packageName !== 'universal'"
+                        <div v-if="appItem.packageName"
                           class="flex flex-wrap items-center gap-2 min-w-0 px-3 sm:px-4">
                           <button @click.stop="filterByApp(appItem.packageName)" class="badge shrink-0 select-none">
                             <i class="fa-solid fa-filter"></i>
                             <span>Filter this app</span>
                           </button>
-                          <a :href="playUrl(appItem.packageName)"
+                          <a v-if="appItem.packageName !== 'universal'" :href="playUrl(appItem.packageName)"
                             class="badge shrink-0 text-light bg-light/10 border-light/20 hover:scale-105 active:scale-95 transition-all group"
                             target="_blank" @click.stop title="Open on Play Store">
                             <i class="fa-brands fa-google-play group-hover:text-blue transition-colors"></i>
                             <span class="group-hover:text-blue transition-colors">Google Play</span>
                           </a>
-                          <button @click.stop="copyText(appItem.packageName, 'pkg_' + group.key + '_' + appItem.id)"
+                          <button v-if="appItem.packageName !== 'universal'" @click.stop="copyText(appItem.packageName, 'pkg_' + group.key + '_' + appItem.id)"
                             class="badge text-light shrink-0 relative"
                             :class="{ 'z-50': copiedStates['pkg_' + group.key + '_' + appItem.id] }"
                             :title="appItem.packageName">
@@ -885,19 +885,19 @@
                     @touchend="popupUI.handleTouchEnd($event, group.key, appItem, appsList)"
                     class="flex flex-col gap-2 shadow-inner pt-2 pb-3"
                     :class="(popupUI.activeSwipeGroup === group.key && popupUI.swipeDirection ? 'swipe-transition-' + popupUI.swipeDirection : '') + (popupUI.bundleViews[group.key] ? ' border-b-2 border-lightGray/30' : '')">
-                    <div v-if="appItem.packageName && appItem.packageName !== 'universal'"
+                    <div v-if="appItem.packageName"
                       class="flex flex-wrap items-center gap-2 min-w-0 px-4 shrink-0">
                       <button @click.stop="filterByApp(appItem.packageName)" class="badge shrink-0 select-none">
                         <i class="fa-solid fa-filter"></i>
                         <span>Filter this app</span>
                       </button>
-                      <a :href="playUrl(appItem.packageName)"
+                      <a v-if="appItem.packageName !== 'universal'" :href="playUrl(appItem.packageName)"
                         class="badge shrink-0 text-light bg-light/10 border-light/20 hover:scale-105 active:scale-95 transition-all group"
                         target="_blank" @click.stop title="Open on Play Store">
                         <i class="fa-brands fa-google-play group-hover:text-blue transition-colors"></i>
                         <span class="group-hover:text-blue transition-colors">Google Play</span>
                       </a>
-                      <button @click.stop="copyText(appItem.packageName, 'pkg_' + group.key + '_' + appItem.id)"
+                      <button v-if="appItem.packageName !== 'universal'" @click.stop="copyText(appItem.packageName, 'pkg_' + group.key + '_' + appItem.id)"
                         class="badge text-light shrink-0 relative"
                         :class="{ 'z-50': copiedStates['pkg_' + group.key + '_' + appItem.id] }"
                         :title="appItem.packageName">
