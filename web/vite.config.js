@@ -1,7 +1,9 @@
 import { defineConfig } from "vite";
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig(({ command }) => {
   return {
+    plugins: [tailwindcss()],
     publicDir: command === "serve" ? "../docs" : false,
     base: "./",
     build: {

@@ -14,103 +14,6 @@
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
   <link rel="stylesheet" href="/src/style.css">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            black: '#18181B',
-            dark: '#222222',
-            gray: '#27272A',
-            lightGray: '#3F3F46',
-            blue: '#3B82F6',
-            green: '#10B981',
-            yellow: '#EAB308',
-            orange: '#FC6D26',
-            light: '#bfbfbf',
-            white: '#FAFAFA',
-          }
-        }
-      }
-    }
-  </script>
-  <style type="text/tailwindcss">
-    @layer base {
-      [v-cloak] {
-        display: none !important;
-      }
-
-      input[type="search"]::-webkit-search-decoration,
-      input[type="search"]::-webkit-search-cancel-button,
-      input[type="search"]::-webkit-search-results-button,
-      input[type="search"]::-webkit-search-results-decoration {
-        display: none;
-      }
-    }
-
-    @layer utilities {
-      .hide-scrollbar {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
-      .hide-scrollbar::-webkit-scrollbar {
-        display: none;
-      }
-
-      .swipe-transition-left {
-        animation: slideInLeft 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-      }
-
-      .swipe-transition-right {
-        animation: slideInRight 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-      }
-
-      .dd-panel {
-        display: none;
-        position: fixed;
-        z-index: 9998;
-      }
-
-      .dd-root.open .dd-panel {
-        display: block;
-      }
-
-      .dd-root.open .dd-chevron {
-        transform: rotate(180deg);
-      }
-    }
-
-    @keyframes slideInLeft {
-      from {
-        opacity: 0.5;
-        transform: translateX(16px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-
-    @keyframes slideInRight {
-      from {
-        opacity: 0.5;
-        transform: translateX(-16px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-
-    @keyframes floatIn {
-      from { opacity: 0; transform: scale(0.95); }
-      to { opacity: 1; transform: scale(1); }
-    }
-    .animate-float-in {
-      animation: floatIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    }
-  </style>
 
   <script type="application/ld+json">
   {
@@ -486,9 +389,7 @@
                       </a>
                       <a v-if="group.bundle.createdAt"
                         :href="group.bundle.changelogUrl || (group.bundle.repoUrl ? group.bundle.repoUrl + '/releases' : '#')"
-                        target="_blank" rel="noreferrer" @click.stop
-                        class="badge"
-                        title="View changelog">
+                        target="_blank" rel="noreferrer" @click.stop class="badge" title="View changelog">
                         <i class="fa-solid fa-clock-rotate-left"></i>
                         <span>{{ formatDate(group.bundle.createdAt) }}</span>
                       </a>
@@ -572,8 +473,7 @@
                             <span>Filter this app</span>
                           </button>
                           <a v-if="appItem.packageName !== 'universal'" :href="playUrl(appItem.packageName)"
-                            class="badge shrink-0"
-                            target="_blank" @click.stop title="Open on Play Store">
+                            class="badge shrink-0" target="_blank" @click.stop title="Open on Play Store">
                             <i class="fa-brands fa-google-play"></i>
                             <span>Google Play</span>
                           </a>
@@ -833,9 +733,7 @@
                 </a>
                 <a v-if="group.bundle.createdAt"
                   :href="group.bundle.changelogUrl || (group.bundle.repoUrl ? group.bundle.repoUrl + '/releases' : '#')"
-                  target="_blank" rel="noreferrer" @click.stop
-                  class="badge"
-                  title="View changelog">
+                  target="_blank" rel="noreferrer" @click.stop class="badge" title="View changelog">
                   <i class="fa-solid fa-clock-rotate-left"></i>
                   <span>{{ formatDate(group.bundle.createdAt) }}</span>
                 </a>
@@ -914,8 +812,7 @@
                         <span>Filter this app</span>
                       </button>
                       <a v-if="appItem.packageName !== 'universal'" :href="playUrl(appItem.packageName)"
-                        class="badge shrink-0"
-                        target="_blank" @click.stop title="Open on Play Store">
+                        class="badge shrink-0" target="_blank" @click.stop title="Open on Play Store">
                         <i class="fa-brands fa-google-play"></i>
                         <span>Google Play</span>
                       </a>

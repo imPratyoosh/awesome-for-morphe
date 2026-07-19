@@ -572,10 +572,7 @@ const app = createApp({
     const loadWhatsNewData = async () => {
       isWhatsNewLoading.value = true;
       try {
-        const [history, apps] = await Promise.all([
-          fetchJson("whats-new.json"),
-          fetchJson("apps.json"),
-        ]);
+        const [history, apps] = await Promise.all([fetchJson("whats-new.json"), fetchJson("apps.json")]);
         whatsNewHistory.value = history || [];
         whatsNewAppsData.value = apps || {};
       } catch (error) {
