@@ -1993,5 +1993,9 @@
   "com.google.android.apps.maps": {
     "name": "Google Maps",
     "iconUrl": "https://play-lh.googleusercontent.com/B8pdO_2K5nBsF0g1h6dKwV_jQFLP-XombGDEQGtJT-mw1EUKCKJpa9lBGCF4rP_MwCsozSXyvI3z19g9R3J4=s64"
+  },
+  "com.sdev.mtproxy": {
+    "name": "MTProxy",
+    "iconUrl": "https://play-lh.googleusercontent.com/3oWdlQ3-P2vws89VcjZnsbMPzuY_rkvPl0CpS7vGLlLIaaug2SGFsV5Kb86-5rGLZ9PAJIl6lN_0DTYqnSvVsjE=s64"
   }
 }
