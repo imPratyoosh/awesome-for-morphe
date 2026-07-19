@@ -1,5 +1,5 @@
 {
-  "jman_tree_sha": "aee1a42dfa6cf4e07ebc3a1cba71e6341e5e2af8",
+  "jman_tree_sha": "7f8ab822871064a1201b7e169d94d1ccfc9c02ff",
   "jman_bundles": {
     "1fexd": {
       "sha": "4428619fe1755f86c0bd9d8fb5762fcc8c17b43a",
@@ -486,7 +486,7 @@
       "key": null
     },
     "rushiranpise": {
-      "sha": "8c6930d874082ff5161b491a24ef4e4f8cbbca1c",
+      "sha": "2841d47a461915a6471f85dcb6bf0c5d5773d95e",
       "key": "github:rushiranpise/morphe-patches"
     },
     "rvx-morphed": {
