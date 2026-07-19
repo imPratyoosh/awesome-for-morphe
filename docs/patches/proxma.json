@@ -71,6 +71,20 @@
   },
   {
     "name": "Remove ads",
+    "description": "Removes every AdMob ad — the interstitial (rerouted to its onAdFailedToLoad branch so the proxy-apply action still runs, but no ad loads or shows) and the on-screen banner (load skipped). No feature is lost.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.sdev.mtproxy",
+        "targets": [
+          {
+            "version": "2.1.4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Remove ads",
     "description": "Removes every Google Ad Manager ad (banners + interstitials) across Daily Rewards, Home, Test Your Skills and Explore by nulling the remote ad-config chokepoint, so each surface renders its no-ads layout and never requests an interstitial.",
     "compatiblePackages": [
       {
