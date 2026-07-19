@@ -22,13 +22,17 @@ export async function fetchJson(url) {
   return jsonCache.get(key);
 }
 
-export function buildBundleUrls(source, repo) {
+export function buildBundleUrls(source, repo, isPreRelease) {
   if (!repo) return { repoUrl: "", deepLink: "", changelogUrl: "" };
 
   const repoUrl = `https://${source}.com/${repo}`;
+  let deepLinkRepo = repo;
+  if (isPreRelease) {
+    deepLinkRepo = source === "gitlab" ? `${repo}/-/tree/dev` : `${repo}/tree/dev`;
+  }
   return {
     repoUrl,
-    deepLink: `https://morphe.software/add-source?${source}=${repo}`,
+    deepLink: `https://morphe.software/add-source?${source}=${deepLinkRepo}`,
     changelogUrl: source === "gitlab" ? `${repoUrl}/-/releases` : `${repoUrl}/releases`,
   };
 }
@@ -149,7 +153,7 @@ export async function loadInitialData(priorityKeys = [], onPatchLoaded) {
     if (!bundleObj.patches) continue;
 
     bundleObj.key = key;
-    const urls = buildBundleUrls(bundleObj.source, bundleObj.repo);
+    const urls = buildBundleUrls(bundleObj.source, bundleObj.repo, bundleObj.isPreRelease);
     bundleObj.repoUrl = urls.repoUrl;
     bundleObj.deepLink = urls.deepLink;
     bundleObj.changelogUrl = urls.changelogUrl;
