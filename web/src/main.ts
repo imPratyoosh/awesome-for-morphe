@@ -100,7 +100,6 @@ function useListUI(namespace: string = "") {
   const expandedOptions = reactive(new Set<string>());
   const expandedAppLists = reactive(new Set<string>());
   const overflowingAppLists = reactive(new Set<string>());
-  const bundleViews = reactive<Record<string, boolean>>({});
   const expandedVersions = reactive(new Set<string>());
   const appListRefs = new Map<string, any>();
   const activeSwipeGroup = ref<string>("");
@@ -161,7 +160,6 @@ function useListUI(namespace: string = "") {
   };
 
   const collapseBundle = (groupItem: any) => {
-    bundleViews[groupItem.key] = false;
     expandedAppLists.delete(groupItem.key);
     if (groupItem.appsList) {
       groupItem.appsList.forEach((appItem: any) => expandedOptions.delete(`${namespace}app_${groupItem.key}_${appItem.id}`));
@@ -174,27 +172,13 @@ function useListUI(namespace: string = "") {
     }
   };
 
-  const toggleBundleView = (groupItem: any) => {
-    const key = typeof groupItem === "string" ? groupItem : groupItem.key;
-    const actualGroup = typeof groupItem === "string" ? null : groupItem;
-    bundleViews[key] = !bundleViews[key];
-
-    if (!bundleViews[key] && actualGroup) {
-      collapseBundle(actualGroup);
-      // Auto-expand first app on switch to grid view
-      if (actualGroup.appsList?.length > 0) {
-        expandedOptions.add(`${namespace}app_${key}_${actualGroup.appsList[0].id}`);
-      }
-    }
-  };
-
   const selectApp = (groupKey: string, clickedApp: any, appsList: any[]) => {
     activeSwipeGroup.value = "";
     swipeDirection.value = "";
     const clickedKey = `${namespace}app_${groupKey}_${clickedApp.id}`;
     const isCurrentlyExpanded = expandedOptions.has(clickedKey);
 
-    if (!bundleViews[groupKey]) {
+    if (namespace !== "popup_") {
       appsList.forEach((appItem) => {
         const key = `${namespace}app_${groupKey}_${appItem.id}`;
         if (key !== clickedKey && expandedOptions.has(key)) expandedOptions.delete(key);
@@ -213,9 +197,7 @@ function useListUI(namespace: string = "") {
           }
         });
       } else {
-        if (namespace !== "popup_") {
-          expandedOptions.delete(clickedKey);
-        }
+        expandedOptions.delete(clickedKey);
       }
     } else {
       isCurrentlyExpanded ? expandedOptions.delete(clickedKey) : expandedOptions.add(clickedKey);
@@ -253,7 +235,6 @@ function useListUI(namespace: string = "") {
   const clearState = () => {
     expandedOptions.clear();
     expandedAppLists.clear();
-    for (const key in bundleViews) delete bundleViews[key];
     expandedVersions.clear();
   };
 
@@ -261,7 +242,6 @@ function useListUI(namespace: string = "") {
     expandedOptions,
     expandedAppLists,
     overflowingAppLists,
-    bundleViews,
     expandedVersions,
     activeSwipeGroup,
     swipeDirection,
@@ -272,7 +252,6 @@ function useListUI(namespace: string = "") {
     selectApp,
     handleTouchStart,
     handleTouchEnd,
-    toggleBundleView,
     clearState,
     collapseBundle,
   };
@@ -302,7 +281,7 @@ const app = createApp({
 
     const popupBundleKey = ref<string | null>(null);
     const popupSearchQuery = ref<string>("");
-    const popupAppSearch = ref<string>("");
+
 
     const activeData = ref<ActiveData | null>(null);
     const isLoading = ref<boolean>(true);
@@ -321,7 +300,7 @@ const app = createApp({
     const localBundleSearch = ref(bundleSearch.value);
     const localAppSearch = ref(appSearch.value);
     const localPopupSearchQuery = ref(popupSearchQuery.value);
-    const localPopupAppSearch = ref(popupAppSearch.value);
+
 
     watch(query, (val) => {
       if (val !== localQuery.value) localQuery.value = val;
@@ -335,9 +314,7 @@ const app = createApp({
     watch(popupSearchQuery, (val) => {
       if (val !== localPopupSearchQuery.value) localPopupSearchQuery.value = val;
     });
-    watch(popupAppSearch, (val) => {
-      if (val !== localPopupAppSearch.value) localPopupAppSearch.value = val;
-    });
+
 
     const updateQuery = debounce((val: string) => {
       query.value = val;
@@ -351,15 +328,13 @@ const app = createApp({
     const updatePopupSearchQuery = debounce((val: string) => {
       popupSearchQuery.value = val;
     }, 200);
-    const updatePopupAppSearch = debounce((val: string) => {
-      popupAppSearch.value = val;
-    }, 150);
+
 
     watch(localQuery, (val) => updateQuery(val));
     watch(localBundleSearch, (val) => updateBundleSearch(val));
     watch(localAppSearch, (val) => updateAppSearch(val));
     watch(localPopupSearchQuery, (val) => updatePopupSearchQuery(val));
-    watch(localPopupAppSearch, (val) => updatePopupAppSearch(val));
+
 
     const initialParams = new URLSearchParams(location.search);
     const priorityKeys = new Set<string>();
@@ -770,8 +745,6 @@ const app = createApp({
         if (!isBundleOpen) {
           mainUI.expandedAppLists.add(group.key);
           mainUI.expandedOptions.add(`app_${group.key}_${group.appsList[0].id}`);
-        } else if (mainUI.bundleViews[group.key]) {
-          group.appsList.forEach((app: any) => mainUI.expandedOptions.add(`app_${group.key}_${app.id}`));
         }
       });
     };
@@ -780,7 +753,6 @@ const app = createApp({
       if (groupItem.appsList?.length > 0) {
         if (
           groupItem.appsList.some((appItem: any) => mainUI.expandedOptions.has(`app_${groupItem.key}_${appItem.id}`)) ||
-          mainUI.bundleViews[groupItem.key] ||
           mainUI.expandedAppLists.has(groupItem.key)
         ) {
           mainUI.collapseBundle(groupItem);
@@ -792,9 +764,16 @@ const app = createApp({
     };
 
     watch(bundlesGroups, (newGroups) => {
-      if (newGroups?.length === 1 && !popupBundleKey.value && newGroups[0].appsList?.length > 0) {
-        const group = newGroups[0];
-        if (!group.appsList.some((appItem) => mainUI.expandedOptions.has(`app_${group.key}_${appItem.id}`))) mainUI.expandedOptions.add(`app_${group.key}_${group.appsList[0].id}`);
+      if (newGroups && !popupBundleKey.value) {
+        const uniqueApps = new Set();
+        newGroups.forEach((group: any) => {
+          group.appsList?.forEach((appItem: any) => {
+            uniqueApps.add(appItem.packageName || appItem.appName);
+          });
+        });
+        if (newGroups.length === 1 || uniqueApps.size === 1) {
+          expandAll();
+        }
       }
     });
 
@@ -812,7 +791,6 @@ const app = createApp({
       document.body.style.overflow = "";
       popupBundleKey.value = null;
       popupSearchQuery.value = "";
-      popupAppSearch.value = "";
       const urlParams = new URLSearchParams(location.search);
       urlParams.delete("show");
       urlParams.delete("pq");
@@ -829,17 +807,9 @@ const app = createApp({
       if (popupBundleKey.value) {
         const group = popupGroup.value;
         if (group && group.key === popupBundleKey.value && group.appsList?.length > 0) {
-          const targetApp = app.value ? group.appsList.find((firstItem) => firstItem.packageName === app.value) || group.appsList[0] : group.appsList[0];
-          if (!group.appsList.some((appElement) => popupUI.expandedOptions.has(`popup_app_${group.key}_${appElement.id}`))) {
+          const targetApp = app.value ? group.appsList.find((firstItem) => firstItem.packageName === app.value) : null;
+          if (targetApp && !group.appsList.some((appElement) => popupUI.expandedOptions.has(`popup_app_${group.key}_${appElement.id}`))) {
             popupUI.expandedOptions.add(`popup_app_${group.key}_${targetApp.id}`);
-            nextTick(() => {
-              const el = document.getElementById(`tab_popup_${group.key}_${targetApp.id}`);
-              if (el?.parentElement)
-                el.parentElement.scrollTo({
-                  top: el.offsetTop - el.parentElement.clientHeight / 2 + el.clientHeight / 2,
-                  behavior: "smooth",
-                });
-            });
           }
         }
       }
@@ -869,47 +839,20 @@ const app = createApp({
 
     watch(popupGroup, (newGroup) => {
       if (!newGroup) return;
-      if (!popupUI.bundleViews[newGroup.key] && newGroup.appsList?.length > 0) {
-        const hasExpanded = newGroup.appsList.some((appElement) => popupUI.expandedOptions.has(`popup_app_${newGroup.key}_${appElement.id}`));
-        if (!hasExpanded) {
-          const targetApp = app.value ? newGroup.appsList.find((firstItem) => firstItem.packageName === app.value) || newGroup.appsList[0] : newGroup.appsList[0];
-          popupUI.expandedOptions.add(`popup_app_${newGroup.key}_${targetApp.id}`);
-        }
-      }
-      if ((showOptions.value.length === 1 && showOptions.value[0].includes(":")) || (popupSearchQuery.value || "").trim().length > 0 || newGroup.appsList.length <= 1) {
-        if (!popupUI.expandedAppLists.has(newGroup.key)) popupUI.expandedAppLists.add(newGroup.key);
-        if (newGroup.appsList.length > 0 && !popupUI.expandedOptions.has(`popup_app_${newGroup.key}_${newGroup.appsList[0].id}`))
+      
+      const hasExpanded = newGroup.appsList?.some((appElement: any) => popupUI.expandedOptions.has(`popup_app_${newGroup.key}_${appElement.id}`));
+      
+      if (!hasExpanded && newGroup.appsList?.length > 0) {
+        if (newGroup.appsList.length === 1) {
           popupUI.expandedOptions.add(`popup_app_${newGroup.key}_${newGroup.appsList[0].id}`);
-      }
-    });
-
-    const popupAllApps = computed(() => {
-      const bundleItem = activeData.value?.bundles.find((bundleElement: Bundle) => bundleElement.key === popupBundleKey.value);
-      return (bundleItem?.targetApps || [])
-        .map((packageName: string) => ({
-          value: packageName,
-          label: appName(packageName, activeData.value?.namesMap || {}, activeData.value?.skipSet),
-          icon: activeData.value?.namesMap[packageName]?.iconUrl || "",
-        }))
-        .sort((firstItem: any, secondItem: any) => (firstItem.value === "universal" ? 1 : 0) - (secondItem.value === "universal" ? 1 : 0) || firstItem.label.localeCompare(secondItem.label));
-    });
-
-    const selectPopupAppFromDropdown = (appValue: string) => {
-      isSyncing = true;
-      popupUI.expandedOptions.clear();
-      const newShow = appValue ? `${popupBundleKey.value}:${appValue}` : popupBundleKey.value || "";
-      showOptions.value = [newShow];
-      isWhatsNewView.value = false;
-      try {
-        history.pushState(null, "", buildUrlString(""));
-      } catch (error) {}
-      nextTick(() => {
-        isSyncing = false;
-        if (!appValue) {
-          autoExpandPopupApp();
+        } else if (app.value) {
+          const targetApp = newGroup.appsList.find((firstItem: any) => firstItem.packageName === app.value);
+          if (targetApp) popupUI.expandedOptions.add(`popup_app_${newGroup.key}_${targetApp.id}`);
         }
-      });
-    };
+      }
+      
+    });
+
 
     const filterByApp = (packageName: string) => {
       if (popupBundleKey.value) {
@@ -921,7 +864,7 @@ const app = createApp({
     };
     const resetFilters = () => {
       collapseAll();
-      query.value = bundle.value = app.value = appSearch.value = bundleSearch.value = popupSearchQuery.value = popupAppSearch.value = "";
+      query.value = bundle.value = app.value = appSearch.value = bundleSearch.value = popupSearchQuery.value = "";
       showOptions.value = [];
       isWhatsNewView.value = false;
       mainUI.clearState();
@@ -948,7 +891,7 @@ const app = createApp({
       localBundleSearch,
       localAppSearch,
       localPopupSearchQuery,
-      localPopupAppSearch,
+
       sortOrder,
       isTwoColumns,
       isLoading,
@@ -963,11 +906,10 @@ const app = createApp({
       isWhatsNewLoading,
       popupBundleKey,
       popupSearchQuery,
-      popupAppSearch,
       popupGroup,
       filteredAppOptions: computed(() => filterDropdownOptions(filterOptions.value.appOptions, localAppSearch.value, [])),
       filteredBundleOptions: computed(() => filterDropdownOptions(filterOptions.value.bundleOptions, localBundleSearch.value, ["repo"])),
-      filteredPopupAllApps: computed(() => filterDropdownOptions(popupAllApps.value, localPopupAppSearch.value, ["label", "value"])),
+
 
       mainUI,
       popupUI,
@@ -986,7 +928,7 @@ const app = createApp({
       },
       openPopupFast,
       closePopup,
-      selectPopupAppFromDropdown,
+
       selectBundleFromDropdown: (key: string) => (bundle.value = key || ""),
       openBundlePopup,
       openAppPopup,

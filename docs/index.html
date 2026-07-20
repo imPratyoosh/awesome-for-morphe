@@ -394,12 +394,7 @@
                         <i class="fa-solid fa-clock-rotate-left"></i>
                         <span>{{ formatDate(group.bundle.createdAt) }}</span>
                       </a>
-                      <button @click.stop="mainUI.toggleBundleView(group)" class="badge shrink-0 text-light select-none"
-                        :title="mainUI.bundleViews[group.key] ? 'Switch to grid view' : 'Switch to list view'">
-                        <i class="fa-solid icon-center"
-                          :class="mainUI.bundleViews[group.key] ? 'fa-grip' : 'fa-list'"></i>
-                        <span>{{ mainUI.bundleViews[group.key] ? 'Grid' : 'List' }}</span>
-                      </button>
+
                     </span>
                   </span>
                 </div>
@@ -407,7 +402,7 @@
                 <!-- Bundle: Apps & Patches List -->
                 <div class="border-t-2 border-lightGray bg-gray shadow-inner flex flex-col">
                   <template v-for="appsList in [group.appsList]">
-                    <div class="relative" v-show="!mainUI.bundleViews[group.key]">
+                    <div class="relative">
                       <div :ref="(el) => mainUI.setupOverflowObserver(el, group.key)"
                         class="flex gap-1.5 py-1.5 px-3 border-b border-lightGray relative"
                         :class="[mainUI.expandedAppLists.has(group.key) ? 'flex-wrap content-start' : 'flex-nowrap overflow-x-auto hide-scrollbar', mainUI.overflowingAppLists.has(group.key) ? 'pr-10' : '']">
@@ -435,40 +430,11 @@
                     </div>
 
                     <template v-for="appItem in appsList" :key="'content-'+appItem.id">
-                      <div v-if="mainUI.bundleViews[group.key]"
-                        @click.stop="mainUI.selectApp(group.key, appItem, appsList)"
-                        class="flex items-center gap-3 px-3 sm:px-4 py-2 border-b border-lightGray/50 cursor-pointer hover:bg-white/5 transition-colors"
-                        :class="mainUI.expandedOptions.has('app_' + group.key + '_' + appItem.id) ? 'bg-white/5' : ''">
-                        <img v-if="appItem.appIcon" :src="appItem.appIcon"
-                          class="w-9 h-9 rounded-md object-contain shrink-0" :alt="appItem.appName" loading="lazy">
-                        <div v-else class="w-9 h-9 rounded-md flex items-center justify-center shrink-0">
-                          <i class="fa-brands fa-android text-green text-2xl icon-center"></i>
-                        </div>
-                        <div class="flex flex-col min-w-0 flex-1 justify-center">
-                          <div class="flex flex-wrap items-center gap-2 min-w-0 w-full">
-                            <span class="text-base font-semibold wrap-break-word leading-tight mt-0.5"
-                              :class="mainUI.expandedOptions.has('app_' + group.key + '_' + appItem.id) ? 'text-blue' : 'text-white'">{{
-                              appItem.appName }}</span>
-                            <span v-if="isAppHighlighted(group.key, appItem)"
-                              class="badge badge-sm text-yellow shrink-0">✨
-                              New</span>
-                            <span v-if="appItem.isAppPreRelease && !group.bundle.isPreRelease"
-                              class="badge badge-sm text-yellow shrink-0"><i class="fa-solid fa-flask"></i>
-                              Pre-release</span>
-                          </div>
-                          <span v-if="appItem.packageName && appItem.packageName !== 'universal'"
-                            class="text-xs text-light wrap-break-word leading-tight w-full">{{ appItem.packageName
-                            }}</span>
-                        </div>
-                        <i class="fa-solid shrink-0 ml-2 text-light transition-transform"
-                          :class="mainUI.expandedOptions.has('app_' + group.key + '_' + appItem.id) ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
-                      </div>
 
                       <div v-if="mainUI.expandedOptions.has('app_' + group.key + '_' + appItem.id)"
                         @touchstart="mainUI.handleTouchStart"
                         @touchend="mainUI.handleTouchEnd($event, group.key, appItem, appsList)"
-                        class="flex flex-col gap-2 shadow-inner pt-2 pb-3"
-                        :class="(mainUI.activeSwipeGroup === group.key && mainUI.swipeDirection ? 'swipe-transition-' + mainUI.swipeDirection : '') + (mainUI.bundleViews[group.key] ? ' border-b-2 border-lightGray/30' : '')">
+                        class="flex flex-col gap-2 shadow-inner pt-2 pb-3">
                         <div v-if="appItem.packageName" class="flex flex-wrap items-center gap-2 min-w-0 px-3 sm:px-4">
                           <button @click.stop="filterByApp(appItem.packageName)" class="badge shrink-0 select-none">
                             <i class="fa-solid fa-filter"></i>
@@ -495,8 +461,7 @@
                         </div>
 
                         <div class="pl-6 pr-1 sm:px-4">
-                          <div class="flex flex-col gap-1.5 pr-1.5 sm:pr-0 py-0.5"
-                            :class="!mainUI.bundleViews[group.key] ? 'max-h-[45vh] overflow-y-auto' : ''">
+                          <div class="flex flex-col gap-1.5 pr-1.5 sm:pr-0 py-0.5 max-h-[45vh] overflow-y-auto">
                             <div
                               v-for="patchItem in group.patches.filter(patchElement => patchElement.apps.some(appElement => appElement.packageName === appItem.packageName))"
                               :key="patchItem.id"
@@ -615,68 +580,11 @@
       <div class="w-full max-w-4xl px-0 sm:px-3 max-h-full flex flex-col gap-2 overflow-visible animate-float-in">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 w-full shrink-0 pt-2 px-2"
           v-if="popupGroup" @click.self="closePopup">
-          <!-- Left Group: App Selector + Search Input -->
-          <div class="flex items-center gap-2 w-full sm:w-auto flex-1 min-w-0" @click.self="closePopup">
-            <!-- App selection dropdown (popup-app-dd) -->
-            <div class="relative shrink-0 w-[45%] sm:w-[180px] dd-root" id="popup-app-dd" @click.stop>
-              <button type="button" onclick="toggleDropdown('popup-app-dd')"
-                class="w-full h-[34px] px-2.5 sm:px-3 bg-black border border-lightGray rounded-md text-sm text-light flex items-center justify-between gap-2 hover:border-white/50 transition-all cursor-pointer"
-                aria-label="Popup Apps filter">
-                <div class="flex items-center gap-1.5 min-w-0 flex-1">
-                  <template v-if="showOptions.length > 1 || (showOptions.length === 1 && showOptions[0].includes('('))">
-                    <i class="fa-solid fa-list text-light text-sm shrink-0 icon-center"></i>
-                    <span class="truncate text-left flex-1 font-semibold">Custom</span>
-                  </template>
-                  <template v-else-if="showOptions.length === 1 && showOptions[0].includes(':')">
-                    <img v-if="getAppIcon(showOptions[0].split(':')[1])" :src="getAppIcon(showOptions[0].split(':')[1])"
-                      class="w-4 h-4 rounded-sm object-contain shrink-0" alt="" loading="lazy">
-                    <i v-else class="fa-brands fa-android text-green text-sm shrink-0 icon-center"></i>
-                    <span class="truncate text-left flex-1 font-semibold">{{ getAppName(showOptions[0].split(':')[1])
-                      }}</span>
-                  </template>
-                  <template v-else>
-                    <i class="fa-solid fa-mobile-screen-button text-light text-sm shrink-0 icon-center"></i>
-                    <span class="truncate text-left flex-1 font-semibold">All Apps</span>
-                  </template>
-                </div>
-                <i
-                  class="fa-solid fa-chevron-down dd-chevron text-light text-xs shrink-0 transition-transform duration-200"></i>
-              </button>
-              <div
-                class="dd-panel w-max min-w-[200px] left-0 max-h-[300px] overflow-y-auto bg-gray border border-lightGray rounded-md shadow-xl py-1 divide-y divide-white/10 z-70">
-                <div class="sticky top-0 bg-gray px-2 pb-2 pt-1 border-b border-lightGray/30 z-10">
-                  <div class="relative">
-                    <span class="absolute left-2 top-0 h-8 flex items-center text-light pointer-events-none">
-                      <i class="fa-solid fa-magnifying-glass text-[10px] icon-center"></i>
-                    </span>
-                    <input type="search" v-model="localPopupAppSearch" placeholder="Search apps..."
-                      class="w-full h-8 pl-6 pr-2 bg-black border border-lightGray rounded-md text-xs text-white focus:border-light focus:ring-1 focus:ring-light/20 outline-none transition-all"
-                      autocomplete="off" @click.stop>
-                  </div>
-                </div>
-                <div
-                  :class="(!showOptions.length || (showOptions.length === 1 && !showOptions[0].includes(':') && !showOptions[0].includes('('))) ? 'text-white bg-white/10 font-medium' : 'text-white hover:bg-white/5'"
-                  @click="selectPopupAppFromDropdown(''); localPopupAppSearch = ''; $event.target.closest('.dd-root')?.classList?.remove('open')"
-                  class="px-3 py-2 text-sm cursor-pointer transition-colors flex items-center gap-2">
-                  <i
-                    class="fa-solid fa-mobile-screen-button text-light text-base w-4 shrink-0 text-center icon-center"></i>
-                  <span class="flex-1">All Apps</span>
-                </div>
-                <div v-for="optionItem in filteredPopupAllApps" :key="optionItem.value"
-                  :class="(showOptions.length === 1 && showOptions[0] === popupBundleKey + ':' + optionItem.value) ? 'text-white bg-white/10 font-medium' : 'text-white hover:bg-white/5'"
-                  @click="selectPopupAppFromDropdown(optionItem.value); localPopupAppSearch = ''; $event.target.closest('.dd-root')?.classList?.remove('open')"
-                  class="px-3 py-2 text-sm cursor-pointer transition-colors flex items-center gap-2">
-                  <img v-if="optionItem.icon" :src="optionItem.icon" class="w-4 h-4 rounded-sm object-contain shrink-0"
-                    alt="" loading="lazy">
-                  <i v-else class="fa-brands fa-android text-green text-base w-4 shrink-0 text-center icon-center"></i>
-                  <span class="leading-tight flex-1 font-normal">{{ optionItem.label }}</span>
-                </div>
-              </div>
-            </div>
-
+          <!-- Left Group: Search Input -->
+          <div class="flex items-center gap-2 w-full sm:w-[320px] max-w-sm flex-1 min-w-0" @click.self="closePopup">
             <!-- Patch Search -->
             <form @submit.prevent="$event.target.querySelector('input').blur()" @click.stop
-              class="relative flex-1 min-w-0 sm:w-[220px] sm:max-w-[220px]">
+              class="relative flex-1 min-w-0 w-full">
               <span class="absolute left-3 top-0 h-[34px] flex items-center text-light pointer-events-none">
                 <i class="fa-solid fa-magnifying-glass text-xs icon-center"></i>
               </span>
@@ -706,11 +614,10 @@
         </div>
 
         <div v-if="popupGroup"
-          class="w-full border-2 border-lightGray rounded-2xl shadow-2xl bg-gray flex flex-col shrink min-h-0"
-          :class="(popupGroup && (popupUI.expandedAppLists.has(popupGroup.key) || popupUI.bundleViews[popupGroup.key])) ? 'overflow-y-auto' : 'overflow-hidden'">
-          <div v-for="group in [popupGroup]" :key="group.key" class="bg-gray flex flex-col">
+          class="w-full border-2 border-lightGray rounded-2xl shadow-2xl bg-gray flex flex-col shrink min-h-0 overflow-hidden">
+          <div v-for="group in [popupGroup]" :key="group.key" class="bg-gray flex flex-col shrink min-h-0">
             <div
-              class="flex justify-between gap-3 py-2 px-3 flex-col md:flex-row items-stretch md:items-center shrink-0 sticky top-0 z-10 bg-gray shadow-sm">
+              class="flex justify-between gap-3 py-2 px-3 flex-col md:flex-row items-stretch md:items-center shrink-0 z-20 bg-gray shadow-sm">
               <div
                 class="flex items-center gap-3 min-w-0 flex-1 w-full text-left justify-center md:justify-start md:w-auto">
                 <img v-if="group.bundle.avatarUrl" :src="group.bundle.avatarUrl" alt="Avatar"
@@ -754,46 +661,18 @@
                   <i class="fa-solid fa-clock-rotate-left"></i>
                   <span>{{ formatDate(group.bundle.createdAt) }}</span>
                 </a>
-                <button @click.stop="popupUI.toggleBundleView(group)" class="badge shrink-0 text-light select-none"
-                  :title="popupUI.bundleViews[group.key] ? 'Switch to grid view' : 'Switch to list view'">
-                  <i class="fa-solid icon-center" :class="popupUI.bundleViews[group.key] ? 'fa-grip' : 'fa-list'"></i>
-                  <span>{{ popupUI.bundleViews[group.key] ? 'Grid' : 'List' }}</span>
-                </button>
+
               </span>
             </div>
 
-            <div class="border-t-2 border-lightGray bg-gray shadow-inner flex flex-col">
+            <div class="border-t-2 border-lightGray bg-gray shadow-inner flex flex-col overflow-y-auto flex-1 min-h-0 relative">
               <template v-for="appsList in [group.appsList]">
-                <div class="relative" v-show="!popupUI.bundleViews[group.key]">
-                  <div :ref="(el) => popupUI.setupOverflowObserver(el, group.key)"
-                    class="flex gap-1.5 py-1.5 px-3 border-b border-lightGray shrink-0 relative"
-                    :class="[popupUI.expandedAppLists.has(group.key) ? 'flex-wrap content-start' : 'flex-nowrap overflow-x-auto hide-scrollbar', popupUI.overflowingAppLists.has(group.key) ? 'pr-10' : '']">
-                    <button v-for="appItem in appsList" :key="appItem.id"
-                      :id="'tab_popup_' + group.key + '_' + appItem.id"
-                      @click.stop="popupUI.selectApp(group.key, appItem, appsList)" class="badge badge-md shrink-0"
-                      :class="popupUI.expandedOptions.has('popup_app_' + group.key + '_' + appItem.id) ? 'text-blue' : 'text-light'">
-                      <img v-if="appItem.appIcon" :src="appItem.appIcon"
-                        class="w-4 h-4 rounded-sm object-contain shrink-0" :alt="appItem.appName" loading="lazy">
-                      <i v-else class="fa-brands fa-android text-green"></i>
-                      <span class="truncate">{{ appItem.appName }}</span>
-                      <span v-if="isAppHighlighted(group.key, appItem)" class="badge badge-sm text-yellow">✨ New</span>
-                      <span v-if="appItem.isAppPreRelease && !group.bundle.isPreRelease"
-                        class="badge badge-sm text-yellow"><i class="fa-solid fa-flask"></i> Pre-release</span>
-                    </button>
-                  </div>
-                  <button v-show="popupUI.overflowingAppLists.has(group.key)"
-                    @click.stop="popupUI.toggleAppList(group.key)"
-                    class="absolute right-1 top-[5px] z-10 w-7 h-7 flex items-center justify-center rounded-full bg-white border border-light text-gray hover:bg-light transition-all cursor-pointer shadow-md"
-                    :title="popupUI.expandedAppLists.has(group.key) ? 'Collapse apps' : 'Expand apps'">
-                    <i class="fa-solid text-xs"
-                      :class="popupUI.expandedAppLists.has(group.key) ? 'fa-compress' : 'fa-expand'"></i>
-                  </button>
-                </div>
 
-                <template v-for="appItem in appsList" :key="'content-'+appItem.id">
-                  <div v-if="popupUI.bundleViews[group.key]"
-                    @click.stop="popupUI.selectApp(group.key, appItem, appsList)"
-                    class="flex items-center gap-3 px-4 py-2 border-b border-lightGray/50 cursor-pointer hover:bg-white/5 transition-colors shrink-0"
+
+                <div v-for="appItem in appsList" :key="'content-'+appItem.id" class="flex flex-col relative">
+                  <div class="sticky top-0 z-10 bg-gray shadow-sm">
+                    <div @click.stop="popupUI.selectApp(group.key, appItem, appsList)"
+                      class="flex items-center gap-3 px-4 py-2 border-b border-lightGray/50 cursor-pointer hover:bg-white/5 transition-colors shrink-0"
                     :class="popupUI.expandedOptions.has('popup_app_' + group.key + '_' + appItem.id) ? 'bg-white/5' : ''">
                     <img v-if="appItem.appIcon" :src="appItem.appIcon"
                       class="w-9 h-9 rounded-md object-contain shrink-0" :alt="appItem.appName" loading="lazy">
@@ -817,12 +696,13 @@
                     <i class="fa-solid shrink-0 ml-2 text-light transition-transform"
                       :class="popupUI.expandedOptions.has('popup_app_' + group.key + '_' + appItem.id) ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
                   </div>
+                  </div>
 
                   <div v-if="popupUI.expandedOptions.has('popup_app_' + group.key + '_' + appItem.id)"
                     @touchstart="popupUI.handleTouchStart"
                     @touchend="popupUI.handleTouchEnd($event, group.key, appItem, appsList)"
                     class="flex flex-col gap-2 shadow-inner pt-2 pb-3"
-                    :class="(popupUI.activeSwipeGroup === group.key && popupUI.swipeDirection ? 'swipe-transition-' + popupUI.swipeDirection : '') + (popupUI.bundleViews[group.key] ? ' border-b-2 border-lightGray/30' : '')">
+                    :class="(popupUI.activeSwipeGroup === group.key && popupUI.swipeDirection ? 'swipe-transition-' + popupUI.swipeDirection : '') + ' border-b-2 border-lightGray/30'">
                     <div v-if="appItem.packageName" class="flex flex-wrap items-center gap-2 min-w-0 px-4 shrink-0">
                       <button @click.stop="filterByApp(appItem.packageName)" class="badge shrink-0 select-none">
                         <i class="fa-solid fa-filter"></i>
@@ -849,8 +729,7 @@
                     </div>
 
                     <div class="px-4 flex flex-col">
-                      <div class="flex flex-col gap-1.5 pr-0 py-0.5"
-                        :class="!popupUI.bundleViews[group.key] ? 'h-[55vh] sm:h-[60vh] overflow-y-auto' : ''">
+                      <div class="flex flex-col gap-1.5 pr-0 py-0.5">
                         <div
                           v-for="patchItem in group.patches.filter(patchElement => patchElement.apps.some(appElement => appElement.packageName === appItem.packageName))"
                           :key="patchItem.id" @click="patchItem.options.length && popupUI.toggleOptions(patchItem.id)"
@@ -934,7 +813,7 @@
                       </div>
                     </div>
                   </div>
-                </template>
+                </div>
               </template>
             </div>
           </div>

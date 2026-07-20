@@ -167,9 +167,17 @@
     cursor: pointer;
   }
   a.badge:not([class*="text-"]) {
+    color: #bfbfbf;
+    background: color-mix(in srgb, #bfbfbf 10%, transparent);
+    border-color: color-mix(in srgb, #bfbfbf 20%, transparent);
+  }
+  a.badge:not([class*="text-"]) i,
+  a.badge:not([class*="text-"]) svg {
     color: #3b82f6;
-    background: #222222;
-    border-color: #3f3f46;
+  }
+  a.badge:not([class*="text-"]):hover {
+    color: #3b82f6;
+    filter: none;
   }
   a.badge:hover {
     filter: brightness(1.25);
