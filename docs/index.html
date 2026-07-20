@@ -371,7 +371,7 @@
                       <!-- Repo Row -->
                       <a v-if="group.bundle.repo" :href="group.bundle.repoUrl" target="_blank" rel="noreferrer"
                         @click.stop
-                        class="flex items-start sm:items-center gap-1 text-xs sm:text-sm text-blue hover:brightness-125 transition-all max-w-full">
+                        class="flex items-start sm:items-center gap-1 text-sm sm:text-base text-blue hover:brightness-125 transition-all max-w-full">
                         <i class="mt-[2px] sm:mt-0"
                           :class="group.bundle.source === 'github' ? 'fa-brands fa-github text-white' : group.bundle.source === 'gitlab' ? 'fa-brands fa-gitlab text-orange' : 'fa-solid fa-globe'"></i>
                         <span class="break-all text-left">{{ group.bundle.repo }}</span>
@@ -640,7 +640,7 @@
                   </div>
 
                   <a v-if="group.bundle.repo" :href="group.bundle.repoUrl" target="_blank" rel="noreferrer" @click.stop
-                    class="flex items-start sm:items-center gap-1 text-xs sm:text-sm text-blue hover:brightness-125 transition-all max-w-full">
+                    class="flex items-start sm:items-center gap-1 text-sm sm:text-base text-blue hover:brightness-125 transition-all max-w-full">
                     <i class="mt-[2px] sm:mt-0"
                       :class="group.bundle.source === 'github' ? 'fa-brands fa-github text-white' : group.bundle.source === 'gitlab' ? 'fa-brands fa-gitlab text-orange' : 'fa-solid fa-globe'"></i>
                     <span class="break-all text-left">{{ group.bundle.repo }}</span>
