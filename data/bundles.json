@@ -74,7 +74,7 @@
     "stars": 85,
     "firstSeen": "2026-05-25T15:05:44",
     "patches": "site/ajstrick81-androidtv.json",
-    "createdAt": "2026-07-18T14:31:30",
+    "createdAt": "2026-07-20T11:28:09",
     "targetApps": [
       "com.amazon.amazonvideo.livingroom",
       "com.bamnetworks.mobile.android.gameday.atbat",
@@ -658,12 +658,9 @@
     "stars": 1,
     "firstSeen": "2026-07-17T19:07:01",
     "patches": "site/ikura.json",
-    "createdAt": "2026-07-17T09:07:41",
-    "targetApps": [
-      "com.example.app",
-      "net.easyconn.carman.wws"
-    ],
-    "appCount": 2
+    "createdAt": "2026-07-20T09:15:42",
+    "targetApps": [],
+    "appCount": 0
   },
   "imxeren": {
     "source": "github",
@@ -960,7 +957,7 @@
     "stars": 2905,
     "firstSeen": "2026-06-23T13:04:19",
     "patches": "site/morphe.json",
-    "createdAt": "2026-07-19T15:02:51",
+    "createdAt": "2026-07-20T09:30:34",
     "targetApps": [
       "com.google.android.apps.youtube.music",
       "com.google.android.youtube",

@@ -286,7 +286,7 @@
         "packageName": "com.tubitv",
         "targets": [
           {
-            "version": "10.20.5000"
+            "version": "10.28.5000"
           }
         ]
       }

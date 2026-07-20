@@ -790,6 +790,36 @@
     ]
   },
   {
+    "name": "Custom font",
+    "description": "Adds an option to replace Reddit Sans / Roboto with a custom TTF or OTF font file at runtime.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.reddit.frontpage",
+        "targets": [
+          {
+            "version": "2026.29.0",
+            "isExperimental": true
+          },
+          {
+            "version": "2026.28.0",
+            "isExperimental": true
+          },
+          {
+            "version": "2026.24.0",
+            "isExperimental": true
+          },
+          {
+            "version": "2026.14.0"
+          },
+          {
+            "version": "2026.04.0"
+          }
+        ]
+      }
+    ],
+    "isPreRelease": true
+  },
+  {
     "name": "Custom player overlay opacity",
     "description": "Adds an option to change the opacity of the video player background when player controls are visible.",
     "compatiblePackages": [
@@ -1802,6 +1832,36 @@
         ]
       }
     ]
+  },
+  {
+    "name": "Force system font",
+    "description": "Adds an option that renders Reddit with the device system font instead of Reddit Sans / Roboto.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.reddit.frontpage",
+        "targets": [
+          {
+            "version": "2026.29.0",
+            "isExperimental": true
+          },
+          {
+            "version": "2026.28.0",
+            "isExperimental": true
+          },
+          {
+            "version": "2026.24.0",
+            "isExperimental": true
+          },
+          {
+            "version": "2026.14.0"
+          },
+          {
+            "version": "2026.04.0"
+          }
+        ]
+      }
+    ],
+    "isPreRelease": true
   },
   {
     "name": "GmsCore support",
