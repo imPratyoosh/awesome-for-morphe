@@ -219,21 +219,21 @@ export async function loadInitialData(priorityKeys: string[] = [], onPatchLoaded
   });
   dataCache.set("latest", cachePromise);
 
-  const [namesMap, sources, skipWordsArray] = await Promise.all([
+  const [namesMap, sourcesData, skipWordsArray] = await Promise.all([
     fetchJson("apps.json").catch(() => ({})),
-    fetchJson("bundles.json").catch(() => ({})),
+    fetchJson("bundles.json").catch(() => ({ bundles: [] })),
     fetchJson("assets/skip-words.json").catch(() => []),
   ]);
 
   const skipSet = new Set<string>(skipWordsArray);
-  const bundleKeys = Object.keys(sources).sort((firstItem, secondItem) => firstItem.localeCompare(secondItem));
+  const bundlesListRaw = sourcesData.bundles || [];
 
   const bundleList: Bundle[] = [];
   const priorityTasks: (() => Promise<RowItem[]>)[] = [];
   const backgroundTasks: (() => Promise<RowItem[]>)[] = [];
 
-  for (const key of bundleKeys) {
-    const bundleObj = sources[key];
+  for (const bundleObj of bundlesListRaw) {
+    const key = bundleObj.key;
     if (!bundleObj.patches) continue;
 
     bundleObj.key = key;

@@ -360,7 +360,12 @@ def main():
     avatar_cache = {}
     stars_cache = {}
 
-    for base_key, bundle_info in existing_sources.items():
+    existing_bundles = {}
+    for bundle in existing_sources.get("bundles", []):
+        if "key" in bundle:
+            existing_bundles[bundle["key"]] = bundle
+
+    for base_key, bundle_info in existing_bundles.items():
         if bundle_info.get("avatarUrl"):
             avatar_cache[base_key] = bundle_info["avatarUrl"]
         if "stars" in bundle_info:
@@ -433,8 +438,8 @@ def main():
             "stars": stars,
         }
 
-        if base in existing_sources and existing_sources[base].get("firstSeen"):
-            source_entry["firstSeen"] = existing_sources[base]["firstSeen"]
+        if base in existing_bundles and existing_bundles[base].get("firstSeen"):
+            source_entry["firstSeen"] = existing_bundles[base]["firstSeen"]
 
         stable_date = stable_json.get("created_at", "") if stable_json else ""
         dev_date = dev_json.get("created_at", "") if dev_json else ""
@@ -574,9 +579,14 @@ def main():
                 except Exception as e:
                     print(f"Failed to fetch app details for {package_name}: {e}")
 
-    bundle_sources = dict(sorted(bundle_sources.items(), key=lambda item: item[0].lower()))
-    save_json(BUNDLES_JSON_PATH, bundle_sources)
-    print(f"Generated bundles.json with {len(bundle_sources)} bundles.")
+    sorted_bundles = []
+    for base, data in sorted(bundle_sources.items(), key=lambda item: item[0].lower()):
+        ordered_data = {"key": base}
+        ordered_data.update(data)
+        sorted_bundles.append(ordered_data)
+
+    save_json(BUNDLES_JSON_PATH, {"bundles": sorted_bundles})
+    print(f"Generated bundles.json with {len(sorted_bundles)} bundles.")
 
     save_json(APPS_JSON_PATH, app_metadata)
     print(f"Generated apps.json with {len(app_metadata)} apps.")
