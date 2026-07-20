@@ -13221,7 +13221,7 @@
         },
         {
           "name": "Login Fix",
-          "description": "Bypasses verification bans. REQUIRED: Install microG-RE for Play Integrity.",
+          "description": "Bypasses verification bans by spoofing signatures, installers, and faking GMS checks. REQUIRED: You must manually install microG-RE for Play Integrity to pass.",
           "isPreRelease": true,
           "compatiblePackagesKey": 323
         },
@@ -13249,7 +13249,7 @@
           "compatiblePackagesKey": 323
         }
       ],
-      "createdAt": "2026-07-19T06:40:38",
+      "createdAt": "2026-07-20T18:31:59",
       "targetApps": [
         "com.whatsapp"
       ],

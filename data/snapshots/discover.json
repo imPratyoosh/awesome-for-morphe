@@ -1,5 +1,5 @@
 {
-  "jman_tree_sha": "0a39b2f95b1e5d2aaf7e61f66893cc85a5818560",
+  "jman_tree_sha": "b3557ad651862ad6ab445d3a30f6953f24bdcdca",
   "jman_bundles": {
     "1fexd": {
       "sha": "4428619fe1755f86c0bd9d8fb5762fcc8c17b43a",
@@ -406,7 +406,7 @@
       "key": null
     },
     "pichiwa": {
-      "sha": "977553029a47b2102e74e26da9d724755fd9e66a",
+      "sha": "3cbcc10f2d2b39607e1c41a8aba79d1c06402eef",
       "key": "github:alejandrobellver/pichiwa-patches"
     },
     "piko": {
