@@ -1,5 +1,13 @@
 // Copyright (c) 2026 nvbangg (github.com/nvbangg)
 
+if (typeof window !== "undefined" && "serviceWorker" in navigator) {
+  navigator.serviceWorker.getRegistrations().then((registrations) => {
+    for (const registration of registrations) {
+      registration.unregister();
+    }
+  });
+}
+
 import { createApp, ref, computed, onMounted, watch, reactive, nextTick } from "vue";
 import { filterRows, getFilterOptions, getFilterOptionsFromBundles, loadInitialData, summarizeRows, appName, fetchJson } from "./data.js";
 import type { ActiveData, RowItem, Bundle, AppItem, PatchOption } from "./data.js";

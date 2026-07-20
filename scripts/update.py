@@ -6,18 +6,18 @@ import json
 import os
 import urllib.request
 import time
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Set, Tuple
+from typing import Any, Dict, Optional, Tuple
 
-from utils import load_json, save_json
+from utils import fetch, load_json, save_json
 
 try:
     from google_play_scraper import app as gplay_app
 except ImportError:
     gplay_app = None
 
-ROOT = Path.cwd()
+ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data"
 BUNDLES_DIR = DATA_DIR / "bundles"
 PATCHES_DIR = DATA_DIR / "patches"
@@ -465,7 +465,7 @@ def main():
         dev_date = dev_json.get("created_at", "") if dev_json else ""
 
         if "firstSeen" not in source_entry:
-            source_entry["firstSeen"] = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S")
+            source_entry["firstSeen"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S")
 
         latest = "dev" if (dev_date and stable_date and dev_date > stable_date) else "stable"
         if not stable_json:
