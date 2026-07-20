@@ -1,5 +1,22 @@
 [
   {
+    "date": "July 20, 2026",
+    "bundles": {
+      "morphe": {
+        "isNew": false,
+        "apps": {
+          "com.reddit.frontpage": {
+            "isNew": false,
+            "patches": [
+              "Custom font",
+              "Force system font"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
     "date": "July 19, 2026",
     "bundles": {
       "hxreborn": {

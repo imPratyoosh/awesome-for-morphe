@@ -1154,16 +1154,7 @@
       "Enable PRO"
     ]
   },
-  "ikura": {
-    "com.example.app": [
-      "Example Patch"
-    ],
-    "net.easyconn.carman.wws": [
-      "CarbitLink Customizations",
-      "CarbitLink Login Bypass",
-      "CarbitLink Premium"
-    ]
-  },
+  "ikura": {},
   "ImmortalZeus": {
     "com.example.app": [
       "Example Patch"
@@ -1534,8 +1525,10 @@
     ],
     "com.reddit.frontpage": [
       "Custom branding name for Reddit",
+      "Custom font",
       "Disable modern home",
       "Disable screenshot popup",
+      "Force system font",
       "Hide Ask button",
       "Hide Reddit search",
       "Hide Trending shelves",
