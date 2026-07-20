@@ -7,7 +7,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from providers.utils import load_json, save_json
+from utils import load_json, save_json
 from providers import official, jman, morphe_archive
 
 ROOT_DIR = Path(__file__).resolve().parent.parent

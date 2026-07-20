@@ -6,6 +6,8 @@ import re
 import urllib.parse
 from pathlib import Path
 
+from utils import load_json, save_json
+
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data"
 PATCHES_DIR = DATA_DIR / "patches"
@@ -14,18 +16,6 @@ APPS_JSON_PATH = ROOT / "docs" / "apps.json"
 SKIP_WORDS_PATH = ROOT / "docs" / "assets" / "skip-words.json"
 WHATS_NEW_PATH = ROOT / "whats-new.md"
 WHATS_NEW_JSON_PATH = ROOT / "docs" / "whats-new.json"
-
-
-def read_json(path, default=None):
-    try:
-        return json.loads(path.read_text(encoding="utf8"))
-    except (FileNotFoundError, json.JSONDecodeError):
-        return default
-
-
-def write_json(path, data):
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(data, indent=2) + "\n", encoding="utf8")
 
 
 def collect_apps(list_json):
@@ -60,7 +50,7 @@ def build_current_bundles():
         if not match:
             continue
         base, channel = match.groups()
-        list_json = read_json(patch_file)
+        list_json = load_json(patch_file)
         if not list_json:
             continue
         target = stable_dict if channel == "stable" else dev_dict
@@ -257,10 +247,10 @@ def main():
     if not any(PATCHES_DIR.glob("*.json")):
         raise SystemExit("No patches found — run download.py first")
 
-    old_history = read_json(HISTORY_PATH, {}) or {}
-    app_metadata = read_json(APPS_JSON_PATH, {})
-    skip_words = read_json(SKIP_WORDS_PATH, []) or []
-    whats_new_data = read_json(WHATS_NEW_JSON_PATH, []) or []
+    old_history = load_json(HISTORY_PATH, {}) or {}
+    app_metadata = load_json(APPS_JSON_PATH, {})
+    skip_words = load_json(SKIP_WORDS_PATH, []) or []
+    whats_new_data = load_json(WHATS_NEW_JSON_PATH, []) or []
 
     # Shift time back by 12 hours to handle GitHub Actions delays
     now = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(hours=12)
@@ -285,10 +275,10 @@ def main():
     whats_new_data.insert(0, {"date": today_str, "bundles": json_diff})
 
     whats_new_data = whats_new_data[:15]
-    write_json(WHATS_NEW_JSON_PATH, whats_new_data)
+    save_json(WHATS_NEW_JSON_PATH, whats_new_data)
     print("Updated whats-new.json.")
 
-    write_json(HISTORY_PATH, new_dev)
+    save_json(HISTORY_PATH, new_dev)
     print("History updated for a new baseline.")
 
 

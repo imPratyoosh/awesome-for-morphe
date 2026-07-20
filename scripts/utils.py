@@ -1,13 +1,12 @@
-# Copyright (c) 2026 nvbangg (github.com/nvbangg)
-
 import json
 import time
 import urllib.request
 import urllib.error
 from pathlib import Path
+from typing import Any, Dict, Optional, Union
 
 
-def fetch(url, headers=None, timeout=15, as_json=False):
+def fetch(url: str, headers: Optional[Dict[str, str]] = None, timeout: int = 15, as_json: bool = False) -> Any:
     if headers is None:
         headers = {}
     headers.setdefault("User-Agent", "AwesomeForMorphe/1.0")
@@ -20,7 +19,7 @@ def fetch(url, headers=None, timeout=15, as_json=False):
             return json.loads(content) if as_json else content
 
         except urllib.error.HTTPError as e:
-            if e.code in (403, 429) and attempt < 2:
+            if e.code in (401, 403, 429) and attempt < 2:
                 wait = 2**attempt
                 print(f"    Rate limited (HTTP {e.code}), waiting {wait}s...")
                 time.sleep(wait)
@@ -36,22 +35,23 @@ def fetch(url, headers=None, timeout=15, as_json=False):
     raise RuntimeError(f"Failed to fetch {url}")
 
 
-def load_json(path):
+def load_json(path: Union[str, Path], default: Any = None) -> Any:
     path = Path(path)
     if not path.exists():
-        return {}
+        return default if default is not None else {}
     try:
         with open(path, "r", encoding="utf-8") as f:
             return json.load(f)
     except json.JSONDecodeError:
         print(f"Warning: Corrupted JSON file: {path}")
-        return {}
+        return default if default is not None else {}
     except IOError:
-        return {}
+        return default if default is not None else {}
 
 
-def save_json(path, data):
+def save_json(path: Union[str, Path], data: Any) -> None:
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
+        f.write("\n")

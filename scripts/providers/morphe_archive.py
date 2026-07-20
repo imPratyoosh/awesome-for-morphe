@@ -6,7 +6,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from providers.utils import fetch, save_json
+from utils import fetch, load_json, save_json
 
 
 README_URL = "https://raw.githubusercontent.com/rushiforai/morphe-archive/main/README.md"

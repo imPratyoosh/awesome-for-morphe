@@ -6,7 +6,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from providers.utils import fetch, load_json, save_json
+from utils import fetch, load_json, save_json
 
 
 BUNDLES_URL = "https://morphe-patches.software/data/bundles.json"

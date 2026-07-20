@@ -6,8 +6,11 @@ import json
 import os
 import urllib.request
 import time
-from pathlib import Path
 from datetime import datetime
+from pathlib import Path
+from typing import Any, Dict, List, Optional, Set, Tuple
+
+from utils import load_json, save_json
 
 try:
     from google_play_scraper import app as gplay_app
@@ -26,19 +29,7 @@ CONCURRENCY = 8
 GITHUB_CONCURRENCY = 3
 
 
-def read_json(path, default=None):
-    try:
-        return json.loads(path.read_text(encoding="utf8"))
-    except (FileNotFoundError, json.JSONDecodeError):
-        return default
-
-
-def write_json(path, data):
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf8")
-
-
-def get_repo_info(bundle_json):
+def get_repo_info(bundle_json: Dict[str, Any]) -> Tuple[str, str, str]:
     url = bundle_json.get("download_url", "")
     source = "github"
     if "gitlab.com" in url:
@@ -56,7 +47,7 @@ def get_repo_info(bundle_json):
     return source, "", ""
 
 
-def fetch_avatar_url(repo_url):
+def fetch_avatar_url(repo_url: str) -> Optional[str]:
     if not repo_url:
         return ""
 
@@ -66,24 +57,19 @@ def fetch_avatar_url(repo_url):
             username = parts[1].split("/")[0]
             if username:
                 try:
-                    request = urllib.request.Request(
-                        f"https://gitlab.com/api/v4/users?username={username}",
-                        headers={"User-Agent": "Mozilla/5.0"},
-                    )
-                    with urllib.request.urlopen(request, timeout=10) as response:
-                        data = json.loads(response.read().decode("utf-8"))
-                        if data and len(data) > 0:
-                            avatar = data[0].get("avatar_url", "")
-                            if avatar:
-                                if "secure.gravatar.com" in avatar:
-                                    if "s=80" in avatar:
-                                        avatar = avatar.replace("s=80", "s=128")
-                                    elif "s=" not in avatar:
-                                        avatar += ("&" if "?" in avatar else "?") + "s=128"
-                                elif "gitlab.com/uploads/" in avatar:
-                                    if "width=" not in avatar:
-                                        avatar += ("&" if "?" in avatar else "?") + "width=128"
-                                return avatar
+                    data = fetch(f"https://gitlab.com/api/v4/users?username={username}", timeout=10, as_json=True)
+                    if data and len(data) > 0:
+                        avatar = data[0].get("avatar_url", "")
+                        if avatar:
+                            if "secure.gravatar.com" in avatar:
+                                if "s=80" in avatar:
+                                    avatar = avatar.replace("s=80", "s=128")
+                                elif "s=" not in avatar:
+                                    avatar += ("&" if "?" in avatar else "?") + "s=128"
+                            elif "gitlab.com/uploads/" in avatar:
+                                if "width=" not in avatar:
+                                    avatar += ("&" if "?" in avatar else "?") + "width=128"
+                            return avatar
                 except Exception as e:
                     print(f"Failed to fetch gitlab avatar for {username}: {e}")
                     return None
@@ -98,7 +84,7 @@ def fetch_avatar_url(repo_url):
     return None
 
 
-def fetch_repo_stars(repo_url):
+def fetch_repo_stars(repo_url: str) -> Optional[int]:
     if not repo_url:
         return 0
 
@@ -110,21 +96,20 @@ def fetch_repo_stars(repo_url):
                 owner, name = repo_path[0], repo_path[1]
                 api_url = f"https://api.github.com/repos/{owner}/{name}"
 
-                def fetch(use_token=True):
-                    request = urllib.request.Request(api_url, headers={"User-Agent": "Awesome-For-Morphe"})
+                def fetch_stars(use_token: bool = True) -> Optional[int]:
+                    headers = {"User-Agent": "Awesome-For-Morphe"}
                     if use_token and os.environ.get("GITHUB_TOKEN"):
-                        request.add_header("Authorization", f"Bearer {os.environ['GITHUB_TOKEN']}")
-                    with urllib.request.urlopen(request, timeout=10) as response:
-                        return json.loads(response.read().decode()).get("stargazers_count", 0)
+                        headers["Authorization"] = f"Bearer {os.environ['GITHUB_TOKEN']}"
+                    return fetch(api_url, headers=headers, timeout=10, as_json=True).get("stargazers_count", 0)
 
                 try:
                     time.sleep(0.5)
-                    return fetch(use_token=True)
+                    return fetch_stars(use_token=True)
                 except urllib.error.HTTPError as error:
                     if error.code in (401, 403, 429):
                         try:
                             time.sleep(1)
-                            return fetch(use_token=False)
+                            return fetch_stars(use_token=False)
                         except Exception as inner_exception:
                             print(f"Error fetching stars (no token) for {repo_url}: {inner_exception}")
                             return None
@@ -143,9 +128,7 @@ def fetch_repo_stars(repo_url):
             api_url = f"https://gitlab.com/api/v4/projects/{encoded_path}"
             try:
                 time.sleep(0.5)
-                request = urllib.request.Request(api_url, headers={"User-Agent": "Awesome-For-Morphe"})
-                with urllib.request.urlopen(request, timeout=10) as response:
-                    return json.loads(response.read().decode()).get("star_count", 0)
+                return fetch(api_url, timeout=10, as_json=True).get("star_count", 0)
             except Exception as e:
                 print(f"Error fetching GitLab stars for {repo_url}: {e}")
                 return None
@@ -153,7 +136,7 @@ def fetch_repo_stars(repo_url):
     return None
 
 
-def fetch_app_details(package_name):
+def fetch_app_details(package_name: str) -> Tuple[Optional[str], Optional[str]]:
     if not gplay_app:
         print("Warning: google-play-scraper is not installed. Run: pip install google-play-scraper")
         return None, None
@@ -176,8 +159,8 @@ def fetch_app_details(package_name):
     return None, None
 
 
-def strip_patch(patch, discovered_names):
-    out = {}
+def strip_patch(patch: Dict[str, Any], discovered_names: Dict[str, str]) -> Optional[Dict[str, Any]]:
+    out: Dict[str, Any] = {}
     if "name" in patch:
         out["name"] = patch["name"]
     if patch.get("description"):
@@ -259,6 +242,8 @@ def build_site_json(stable_list, dev_list, latest, discovered_names):
     def process_patches(patches, is_prerelease=False):
         for patch in patches:
             stripped = strip_patch(patch, discovered_names)
+            if not stripped:
+                continue
             if is_prerelease:
                 stripped["isPreRelease"] = True
             out_patches.append(stripped)
@@ -301,6 +286,8 @@ def build_site_json(stable_list, dev_list, latest, discovered_names):
 
         for patch in dev_patches_raw:
             stripped = strip_patch(patch, discovered_names)
+            if not stripped:
+                continue
             patch_name = stripped.get("name")
 
             compatible_packages = stripped.get("compatiblePackages")
@@ -359,10 +346,10 @@ def main():
         print("No bundles directory found. Run download.py first.")
         return
 
-    app_metadata = read_json(APPS_JSON_PATH, {}) or {}
-    existing_sources = read_json(BUNDLES_JSON_PATH, {}) or {}
+    app_metadata = load_json(APPS_JSON_PATH, {}) or {}
+    existing_sources = load_json(BUNDLES_JSON_PATH, {}) or {}
 
-    official_data = read_json(OFFICIAL_BUNDLES_PATH, {}) or {}
+    official_data = load_json(OFFICIAL_BUNDLES_PATH, {}) or {}
     official_store = official_data.get("store", {})
     official_avatars = {}
     for bundle in official_data.get("bundles", []):
@@ -400,8 +387,8 @@ def main():
         stable_list_path = PATCHES_DIR / f"{base}-stable.json"
         dev_list_path = PATCHES_DIR / f"{base}-dev.json"
 
-        stable_json = read_json(stable_bundle_path) if stable_bundle_path.exists() and stable_list_path.exists() else None
-        dev_json = read_json(dev_bundle_path) if dev_bundle_path.exists() and dev_list_path.exists() else None
+        stable_json = load_json(stable_bundle_path) if stable_bundle_path.exists() and stable_list_path.exists() else None
+        dev_json = load_json(dev_bundle_path) if dev_bundle_path.exists() and dev_list_path.exists() else None
 
         if not stable_json and not dev_json:
             continue
@@ -461,8 +448,8 @@ def main():
         if not dev_json:
             latest = "stable"
 
-        stable_list_json = read_json(stable_list_path) if stable_list_path.exists() else None
-        dev_list_json = read_json(dev_list_path) if dev_list_path.exists() else None
+        stable_list_json = load_json(stable_list_path) if stable_list_path.exists() else None
+        dev_list_json = load_json(dev_list_path) if dev_list_path.exists() else None
 
         discovered = {}
         out_patches, is_bundle_prerelease, target_apps, app_count = build_site_json(stable_list_json, dev_list_json, latest, discovered)
@@ -521,7 +508,7 @@ def main():
                         app_tasks.add(package_name)
         # Write to patches/base.json
         site_file_path = SITE_DIR / f"{base}.json"
-        write_json(site_file_path, out_patches)
+        save_json(site_file_path, out_patches)
 
         latest_bundle_json = dev_json if latest == "dev" else stable_json
 
@@ -588,10 +575,10 @@ def main():
                     print(f"Failed to fetch app details for {package_name}: {e}")
 
     bundle_sources = dict(sorted(bundle_sources.items(), key=lambda item: item[0].lower()))
-    write_json(BUNDLES_JSON_PATH, bundle_sources)
+    save_json(BUNDLES_JSON_PATH, bundle_sources)
     print(f"Generated bundles.json with {len(bundle_sources)} bundles.")
 
-    write_json(APPS_JSON_PATH, app_metadata)
+    save_json(APPS_JSON_PATH, app_metadata)
     print(f"Generated apps.json with {len(app_metadata)} apps.")
 
     missing_names = sorted(

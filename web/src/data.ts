@@ -334,22 +334,7 @@ export function filterRows(data: ActiveData, filters: any): RowItem[] {
   });
 }
 
-export function getFilterOptions(rows: RowItem[], namesMap: Record<string, any> = {}) {
-  const appMap = new Map();
-  const bundleSet = new Set();
-  let hasUniversal = false;
-
-  for (const row of rows) {
-    bundleSet.add(row.bundleKey);
-    if (row.packageName && row.packageName !== "universal") {
-      if (!appMap.has(row.packageName)) {
-        appMap.set(row.packageName, { label: row.appName, icon: row.appIcon });
-      }
-    } else {
-      hasUniversal = true;
-    }
-  }
-
+function buildFilterOptions(appMap: Map<string, any>, bundleSet: Set<string>, namesMap: Record<string, any>, hasUniversal: boolean) {
   const appOptions = Array.from(appMap.entries())
     .map(([value, { label, icon }]) => ({ value, label, icon }))
     .sort((appA, appB) => appA.label.localeCompare(appB.label) || appA.value.localeCompare(appB.value));
@@ -370,6 +355,25 @@ export function getFilterOptions(rows: RowItem[], namesMap: Record<string, any> 
   };
 }
 
+export function getFilterOptions(rows: RowItem[], namesMap: Record<string, any> = {}) {
+  const appMap = new Map();
+  const bundleSet = new Set<string>();
+  let hasUniversal = false;
+
+  for (const row of rows) {
+    bundleSet.add(row.bundleKey);
+    if (row.packageName && row.packageName !== "universal") {
+      if (!appMap.has(row.packageName)) {
+        appMap.set(row.packageName, { label: row.appName, icon: row.appIcon });
+      }
+    } else {
+      hasUniversal = true;
+    }
+  }
+
+  return buildFilterOptions(appMap, bundleSet, namesMap, hasUniversal);
+}
+
 export function summarizeRows(rows: RowItem[]) {
   const bundles = new Set();
   const patches = new Set();
@@ -384,7 +388,7 @@ export function summarizeRows(rows: RowItem[]) {
 
 export function getFilterOptionsFromBundles(bundles: Bundle[], namesMap: Record<string, any> = {}, skipSet: Set<string> = new Set()) {
   const appMap = new Map();
-  const bundleSet = new Set();
+  const bundleSet = new Set<string>();
   let hasUniversal = false;
 
   for (const bundle of bundles) {
@@ -405,22 +409,5 @@ export function getFilterOptionsFromBundles(bundles: Bundle[], namesMap: Record<
     }
   }
 
-  const appOptions = Array.from(appMap.entries())
-    .map(([value, { label, icon }]) => ({ value, label, icon }))
-    .sort((appA, appB) => appA.label.localeCompare(appB.label) || appA.value.localeCompare(appB.value));
-
-  if (hasUniversal) {
-    appOptions.unshift({
-      value: "universal",
-      label: namesMap["universal"]?.name || "universal",
-      icon: namesMap["universal"]?.iconUrl || "",
-    });
-  }
-
-  return {
-    bundleOptions: Array.from(bundleSet)
-      .sort((firstItem: any, secondItem: any) => firstItem.localeCompare(secondItem))
-      .map((value: any) => ({ value, label: value })),
-    appOptions,
-  };
+  return buildFilterOptions(appMap, bundleSet, namesMap, hasUniversal);
 }

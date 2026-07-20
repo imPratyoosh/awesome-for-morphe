@@ -6,23 +6,14 @@ import shutil
 import sys
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
-from urllib.request import urlopen
+
+from utils import fetch
 
 RAW = "https://raw.githubusercontent.com/Jman-Github/ReVanced-Patch-Bundles/bundles/patch-bundles"
 BUNDLES_DIR = Path("data/bundles")
 PATCHES_DIR = Path("data/patches")
 CHANNELS = ("stable", "dev")
 CONCURRENCY = 8
-
-
-def download(url, retries=3):
-    for attempt in range(retries):
-        try:
-            with urlopen(url, timeout=30) as response:
-                return response.read().decode("utf8")
-        except Exception:
-            if attempt == retries - 1:
-                raise
 
 
 def normalize(text):
@@ -38,7 +29,7 @@ def fetch_bundle(args):
     base, channel = args
     url = f"{RAW}/{base}-patch-bundles/{base}-{channel}-patches-bundle.json"
     try:
-        text = download(url)
+        text = fetch(url)
         bundle_json = json.loads(text)
         if not is_morphe(bundle_json):
             return None
@@ -52,7 +43,7 @@ def fetch_list(args):
     base, channel = args
     url = f"{RAW}/{base}-patch-bundles/{base}-{channel}-patches-list.json"
     try:
-        return (base, channel, download(url))
+        return (base, channel, fetch(url))
     except Exception as e:
         print(f"Skip list {base}-{channel} ({e})")
         return None
@@ -60,7 +51,7 @@ def fetch_list(args):
 
 def download_bundles():
     try:
-        bundles = json.loads(download(f"{RAW}/bundle-sources.json"))
+        bundles = fetch(f"{RAW}/bundle-sources.json", as_json=True)
     except Exception as e:
         raise SystemExit(f"Failed to fetch bundle-sources.json: {e}")
 
