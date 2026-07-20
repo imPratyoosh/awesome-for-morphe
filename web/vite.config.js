@@ -1,9 +1,22 @@
 import { defineConfig } from "vite";
 import tailwindcss from "@tailwindcss/vite";
 
+const cacheBustPlugin = () => {
+  return {
+    name: "cache-bust",
+    enforce: "post",
+    transformIndexHtml(html) {
+      return html.replace(
+        /(assets\/index\.(?:js|css))/g,
+        `$1?v=${Date.now()}`
+      );
+    }
+  };
+};
+
 export default defineConfig(({ command }) => {
   return {
-    plugins: [tailwindcss()],
+    plugins: [tailwindcss(), cacheBustPlugin()],
     publicDir: command === "serve" ? "../docs" : false,
     base: "./",
     build: {
