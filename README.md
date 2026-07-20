@@ -63,8 +63,8 @@
 
 🔍 Browse and explore all supported Morphe apps and patches from the following sources:
 
-- [Official Website](https://morphe-patches.software/)
 - [Awesome for Morphe Website](https://nvbangg.github.io/awesome-for-morphe/) [![Repo](https://img.shields.io/badge/Repo-black?style=social&logo=github)](https://github.com/nvbangg/awesome-for-morphe)
+- [Morphe Community Patches](https://morphe-patches.software/)
 - <details><summary><a href="https://patch-explorer.web.app/">Patch Explorer</a> <a href="https://gitlab.com/Paresh-Maheshwari/patch-explorer"><img src="https://img.shields.io/badge/Repo-black?style=social&logo=gitlab" alt="Repo"></a></summary>
 
   Alternative: [Patch Explorer](https://paresh-maheshwari.github.io/patch-explorer/) [![Repo](https://img.shields.io/badge/Repo-black?style=social&logo=github)](https://github.com/Paresh-Maheshwari/patch-explorer)
@@ -73,6 +73,7 @@
 - [Revanced External Bundles](https://revanced-external-bundles.brosssh.com/) [![Repo](https://img.shields.io/badge/Repo-black?style=social&logo=github)](https://github.com/brosssh/revanced-external-bundles)
 - [Community Patch Space Explorer](https://dmh84.github.io/morphe-space-explorer/) [![Repo](https://img.shields.io/badge/Repo-black?style=social&logo=github)](https://github.com/dmh84/morphe-space-explorer)
 - [Morphe Patch Tracker](https://morphe-patches-drnx64.vercel.app/) [![Repo](https://img.shields.io/badge/Repo-black?style=social&logo=github)](https://github.com/drnx64/morphe-track-patches)
+- [Patch Atlas](https://patch-atlas.vercel.app/) [![Repo](https://img.shields.io/badge/Repo-black?style=social&logo=github)](https://github.com/shakir2117/Patch-Atlas)
 - [Patch Index sticky post](https://www.reddit.com/r/MorpheApp/comments/1ta0bek/how_to_patch_more_apps_with_morphe/)
 - [ReVanced Patch Bundles](https://github.com/Jman-Github/ReVanced-Patch-Bundles)
 - [rushiforai/morphe-archive](https://github.com/rushiforai/morphe-archive)
@@ -96,12 +97,21 @@
 
 ---
 
-<p align="center">⭐ Star <a href="https://github.com/nvbangg/awesome-for-morphe">this repo</a> if useful</p>
+## ℹ️ About this project
 
-<details>
-<summary align="center"><i>Maintained with ❤️ by <a href="https://github.com/nvbangg">nvbangg</a></i></summary>
+<div align="center">
 
-### 🙏 Credits
+Maintained with ❤️ by **[@nvbangg](https://github.com/nvbangg)**  
+⭐ Star repository **[nvbangg/awesome-for-morphe](https://github.com/nvbangg/awesome-for-morphe)** if useful!
 
+</div>
+
+#### ⚠️ Disclaimer
+
+- This project is not affiliated with Morphe or any developers mentioned here.
+- Only use patch sources or projects you trust. This project is for informational purposes only and is not responsible for any arising issues.
+
+#### 🙏 Credits
+
+- Patch data is automatically aggregated from: [my custom sources](data/repos/custom.json), [Morphe Community Patches](https://morphe-patches.software), [ReVanced Patch Bundles](https://github.com/Jman-Github/ReVanced-Patch-Bundles), and [Morphe Archive](https://github.com/rushiforai/morphe-archive).
 - This project is inspired by [Awesome ReVanced](https://github.com/Jman-Github/Awesome-ReVanced) and [Patch Explorer](https://github.com/Paresh-Maheshwari/patch-explorer).
-</details>

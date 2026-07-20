@@ -596,7 +596,7 @@ def main():
                     print(f"Failed to fetch app details for {package_name}: {e}")
 
     sorted_bundles = []
-    
+
     for base, data in sorted(bundle_sources.items(), key=lambda item: (item[1].get("firstSeen", ""), item[0].lower())):
         ordered_data = {"key": base}
         ordered_data.update(data)

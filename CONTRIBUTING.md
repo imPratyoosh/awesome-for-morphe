@@ -40,12 +40,12 @@
 │   ├── providers/                       # Scraper providers for discovery
 │   │   ├── jman.py                      # Jman repository parser
 │   │   ├── morphe_archive.py            # Morphe Archive parser
-│   │   ├── official.py                  # Official Website parser
-│   │   └── utils.py                     # Provider shared utils
+│   │   └── official.py                  # Official Website parser
 │   ├── discover.py                      # Scans community patch repositories
 │   ├── download.py                      # Downloads raw bundle and patch list database metadata
 │   ├── telegram.py                      # Sends Telegram notifications
 │   ├── update.py                        # Processes raw databases into optimized web formats
+│   ├── utils.py                         # Shared utility functions
 │   └── whats_new.py                     # Diffs updates and compiles rolling release logs
 ├── web/                                 # Website source code and Vite bundler configuration
 ├── CONTRIBUTING.md
@@ -91,7 +91,7 @@ Scans community patch repositories and compiles them to `data/repos.json`.
 
 #### Discovered Sources
 
-- [Official Morphe Community Patches](https://morphe-patches.software)
+- [Morphe Community Patches](https://morphe-patches.software)
 - [Jman's ReVanced Patch Bundles](https://github.com/Jman-Github/ReVanced-Patch-Bundles)
 - [Morphe Archive](https://github.com/rushiforai/morphe-archive)
 - My custom sources defined in [`custom.json`](data/repos/custom.json)
@@ -142,9 +142,3 @@ Generates the "What's New" changelog by diffing current patch data against the b
 Sends release updates from `whats-new.md` to a Telegram channel.
 
 - `python scripts/telegram.py` (accepts optional `"Title"` and `"file.md"` arguments)
-
----
-
-<p align="center">⭐ Star <a href="https://github.com/nvbangg/awesome-for-morphe">this repo</a> if useful</p>
-
-<p align="center"><i>Maintained with ❤️ by <a href="https://github.com/nvbangg">nvbangg</a></i></p>
