@@ -6812,12 +6812,13 @@
           "compatiblePackagesKey": 21
         }
       ],
-      "createdAt": "2026-05-07T22:57:11",
+      "createdAt": "2026-05-07T22:54:46",
       "targetApps": [
         "com.roidapp.photogrid",
         "io.foodvisor.foodvisor"
       ],
-      "appCount": 2
+      "appCount": 2,
+      "isPreRelease": true
     },
     {
       "key": "xob0t",
