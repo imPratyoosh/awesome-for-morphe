@@ -1,5 +1,5 @@
 {
-  "jman_tree_sha": "1e09b871ad5c85f674d3a9a70878af608de9f9f3",
+  "jman_tree_sha": "0a39b2f95b1e5d2aaf7e61f66893cc85a5818560",
   "jman_bundles": {
     "1fexd": {
       "sha": "4428619fe1755f86c0bd9d8fb5762fcc8c17b43a",
@@ -198,7 +198,7 @@
       "key": "github:franticg33k/morphe-patches"
     },
     "gmaps": {
-      "sha": "75296d251b2775e99f2501f5e0758e2edb878089",
+      "sha": "736354a64391ebff8d5ca2782a6197136858e006",
       "key": "github:fangkampanat/gmaps-patches"
     },
     "gryphous-morphe": {

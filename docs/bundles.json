@@ -13835,12 +13835,12 @@
       "firstSeen": "2026-07-14T19:19:17",
       "patches": [
         {
-          "name": "Google Maps MicroG",
+          "name": "Google Maps for ReVanced GmsCore",
           "description": "Routes supported Google Maps builds through ReVanced GmsCore using the patched Maps package and known Google Maps certificate spoof metadata.",
           "compatiblePackagesKey": 107
         }
       ],
-      "createdAt": "2026-07-15T18:01:59",
+      "createdAt": "2026-07-20T16:38:25",
       "targetApps": [
         "com.google.android.apps.maps"
       ],
@@ -16773,6 +16773,9 @@
           },
           {
             "version": "26.28.03.942936911"
+          },
+          {
+            "version": "26.29.02.946673643"
           }
         ]
       }
