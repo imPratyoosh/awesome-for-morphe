@@ -1,5 +1,5 @@
 {
-  "jman_tree_sha": "58ad294d790d02a51bcd697028abfe1a018acd07",
+  "jman_tree_sha": "1e09b871ad5c85f674d3a9a70878af608de9f9f3",
   "jman_bundles": {
     "1fexd": {
       "sha": "4428619fe1755f86c0bd9d8fb5762fcc8c17b43a",
@@ -22,7 +22,7 @@
       "key": "github:jkennethcarino/adobo"
     },
     "ajstrick81-androidtv": {
-      "sha": "8960d9ed6046a897c05d73f1055806e9207ec99a",
+      "sha": "6f18e65d9cc1de30285bc15aa858f67feda35dc0",
       "key": "github:ajstrick81/morphe-androidtv-patches"
     },
     "AlexNaga": {
@@ -238,7 +238,7 @@
       "key": "github:bdgerszewski/morphe-patches-ihealth"
     },
     "ikura": {
-      "sha": "1e6f7c493067ba167d733fa774a35c601bb25782",
+      "sha": "41911c83be852d205d96e977fb549b16c2fbcb85",
       "key": "github:Ikuradachi/ikura-patches"
     },
     "ImmortalZeus": {
@@ -350,7 +350,7 @@
       "key": null
     },
     "morphe": {
-      "sha": "309c79ce27e7232ed3c8da79029a1f9ae28ee08b",
+      "sha": "ffc96d0c6fbf6184de0b0f4334216c3271fea9b4",
       "key": "github:MorpheApp/morphe-patches"
     },
     "morphe-google": {
