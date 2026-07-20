@@ -457,7 +457,7 @@
     "stars": 3,
     "firstSeen": "2026-07-14T19:19:17",
     "patches": "site/gmaps.json",
-    "createdAt": "2026-07-15T18:01:59",
+    "createdAt": "2026-07-20T16:38:25",
     "targetApps": [
       "com.google.android.apps.maps"
     ],
