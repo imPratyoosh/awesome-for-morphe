@@ -18,7 +18,7 @@ export interface Bundle {
   repoUrl?: string;
   changelogUrl?: string;
   createdAt?: string;
-  patches?: string;
+  patches?: PatchItem[];
   version?: string;
   targetApps?: string[];
   deepLink?: string;
@@ -37,6 +37,7 @@ export interface PatchItem {
   use?: boolean;
   default?: boolean;
   isPreRelease?: boolean;
+  compatiblePackagesKey?: number;
   compatiblePackages?: Array<{
     packageName?: string;
     isPreRelease?: boolean;
@@ -82,6 +83,7 @@ export interface ActiveData {
   bundleMap: Record<string, Bundle>;
   namesMap: Record<string, any>;
   skipSet: Set<string>;
+  compatibilities: any[];
 }
 
 const jsonCache = new Map<string, Promise<any>>();
@@ -148,64 +150,6 @@ function extractVersions(value: any): VersionItem[] {
     .sort((a, b) => b.version.localeCompare(a.version, undefined, { numeric: true, sensitivity: "base" }));
 }
 
-function packages(patch: PatchItem): PackageTarget[] {
-  const compatiblePackages = patch.compatiblePackages;
-  const universalResult = [{ packageName: "universal", versions: [], isPreRelease: false }];
-
-  if (!Array.isArray(compatiblePackages)) return universalResult;
-
-  const packageRows = compatiblePackages.flatMap((item) =>
-    item?.packageName ? [{ packageName: item.packageName, isPreRelease: !!item.isPreRelease, versions: extractVersions(item.targets || []) }] : [],
-  );
-
-  return packageRows.length ? packageRows : universalResult;
-}
-
-async function loadSource(bundleKey: string, bundleObj: Bundle, namesMap: Record<string, any>, skipSet: Set<string>): Promise<RowItem[]> {
-  if (!bundleObj.patches) return [];
-  const listUrl = bundleObj.patches;
-  const list = await fetchJson(listUrl).catch(() => null);
-
-  const repo = bundleObj.repo || "";
-  const bundleVersion = bundleObj.version || "";
-  const bundleCreatedAt = bundleObj.createdAt || "";
-
-  return (list || []).flatMap((patch: any, patchIndex: number) => {
-    const patchId = `${bundleKey}:${patchIndex}`;
-
-    return packages(patch).map((target, targetIndex) => {
-      const packageName = target.packageName || "";
-      const name = appName(packageName, namesMap, skipSet);
-      const options = Array.isArray(patch.options) ? patch.options : [];
-
-      const searchPatchesTextParts = [patch.name, patch.description];
-      options.forEach((option: any) => searchPatchesTextParts.push(option.title, option.key, option.description));
-      const searchPatchesText = searchPatchesTextParts.filter(Boolean).join(" ").toLowerCase();
-
-      return {
-        id: `${patchId}:${targetIndex}`,
-        patchId,
-        bundleKey,
-        repo,
-        bundleVersion,
-        bundleCreatedAt,
-        patchName: patch.name || "Unnamed patch",
-        description: patch.description || "",
-        packageName,
-        appName: name,
-        appIcon: namesMap[packageName]?.iconUrl || "",
-        isBundlePreRelease: !!bundleObj.isPreRelease,
-        isAppPreRelease: !!target.isPreRelease,
-        isPatchPreRelease: !!patch.isPreRelease,
-        versions: target.versions,
-        enabled: patch.use ?? patch.default ?? true,
-        options,
-        searchPatchesText,
-      };
-    });
-  });
-}
-
 export async function loadInitialData(priorityKeys: string[] = [], onPatchLoaded?: (v: any) => void): Promise<ActiveData> {
   if (dataCache.has("latest")) {
     const cachedData = await dataCache.get("latest");
@@ -221,16 +165,16 @@ export async function loadInitialData(priorityKeys: string[] = [], onPatchLoaded
 
   const [namesMap, sourcesData, skipWordsArray] = await Promise.all([
     fetchJson("apps.json").catch(() => ({})),
-    fetchJson("bundles.json").catch(() => ({ bundles: [] })),
+    fetchJson("bundles.json").catch(() => ({ bundles: [], compatibilities: [] })),
     fetchJson("assets/skip-words.json").catch(() => []),
   ]);
 
   const skipSet = new Set<string>(skipWordsArray);
   const bundlesListRaw = sourcesData.bundles || [];
+  const compatibilities = sourcesData.compatibilities || [];
 
   const bundleList: Bundle[] = [];
-  const priorityTasks: (() => Promise<RowItem[]>)[] = [];
-  const backgroundTasks: (() => Promise<RowItem[]>)[] = [];
+  const rows: RowItem[] = [];
 
   for (const bundleObj of bundlesListRaw) {
     const key = bundleObj.key;
@@ -244,50 +188,72 @@ export async function loadInitialData(priorityKeys: string[] = [], onPatchLoaded
 
     bundleList.push(bundleObj);
 
-    const task = async () => {
-      try {
-        const rows = await loadSource(key, bundleObj, namesMap, skipSet);
-        return rows || [];
-      } catch (error) {
-        console.error(`Failed to load source ${key}:`, error);
-        return [];
-      }
-    };
+    const repo = bundleObj.repo || "";
+    const bundleVersion = bundleObj.version || "";
+    const bundleCreatedAt = bundleObj.createdAt || "";
 
-    if (priorityKeys.includes(key)) {
-      priorityTasks.push(task);
-    } else {
-      backgroundTasks.push(task);
-    }
+    const patchRows = bundleObj.patches.flatMap((patch: any, patchIndex: number) => {
+      const patchId = `${key}:${patchIndex}`;
+
+      const compatiblePackages = patch.compatiblePackagesKey !== undefined ? compatibilities[patch.compatiblePackagesKey] : patch.compatiblePackages;
+
+      const universalResult: PackageTarget[] = [{ packageName: "universal", versions: [], isPreRelease: false }];
+      let packageRows: PackageTarget[] = universalResult;
+
+      if (Array.isArray(compatiblePackages)) {
+        const mapped = compatiblePackages.flatMap((item: any) =>
+          item?.packageName ? [{ packageName: item.packageName, isPreRelease: !!item.isPreRelease, versions: extractVersions(item.targets || []) }] : [],
+        );
+        if (mapped.length) packageRows = mapped;
+      }
+
+      return packageRows.map((target, targetIndex) => {
+        const packageName = target.packageName || "";
+        const name = appName(packageName, namesMap, skipSet);
+        const options = Array.isArray(patch.options) ? patch.options : [];
+
+        const searchPatchesTextParts = [patch.name, patch.description];
+        options.forEach((option: any) => searchPatchesTextParts.push(option.title, option.key, option.description));
+        const searchPatchesText = searchPatchesTextParts.filter(Boolean).join(" ").toLowerCase();
+
+        return {
+          id: `${patchId}:${targetIndex}`,
+          patchId,
+          bundleKey: key,
+          repo,
+          bundleVersion,
+          bundleCreatedAt,
+          patchName: patch.name || "Unnamed patch",
+          description: patch.description || "",
+          packageName,
+          appName: name,
+          appIcon: namesMap[packageName]?.iconUrl || "",
+          isBundlePreRelease: !!bundleObj.isPreRelease,
+          isAppPreRelease: !!target.isPreRelease,
+          isPatchPreRelease: !!patch.isPreRelease,
+          versions: target.versions,
+          enabled: patch.use ?? patch.default ?? true,
+          options,
+          searchPatchesText,
+        };
+      });
+    });
+
+    rows.push(...patchRows);
   }
 
   const activeData: ActiveData = {
     bundles: bundleList,
-    rows: [],
+    rows,
     bundleMap: Object.fromEntries(bundleList.map((bundle) => [bundle.key, bundle])),
     namesMap,
     skipSet,
+    compatibilities,
   };
 
-  (async () => {
-    const executeTasks = async (tasks: (() => Promise<RowItem[]>)[], isPriority: boolean) => {
-      if (!tasks.length) return;
-      try {
-        const results = await Promise.all(tasks.map((task) => task()));
-        const rows = results.flat();
-        activeData.rows.push(...rows);
-        if (onPatchLoaded && rows.length > 0) onPatchLoaded(true);
-      } catch (error) {
-        console.error(`${isPriority ? "Priority" : "Background"} load failed`, error);
-      }
-    };
-
-    await executeTasks(priorityTasks, true);
-    await executeTasks(backgroundTasks, false);
-
-    if (onPatchLoaded) onPatchLoaded(null);
-    resolveCache(activeData);
-  })();
+  if (onPatchLoaded && rows.length > 0) onPatchLoaded(true);
+  if (onPatchLoaded) onPatchLoaded(null);
+  resolveCache(activeData);
 
   return activeData;
 }

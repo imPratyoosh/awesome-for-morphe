@@ -28,6 +28,9 @@ OFFICIAL_BUNDLES_PATH = DATA_DIR / "snapshots" / "official-bundles.json"
 CONCURRENCY = 8
 GITHUB_CONCURRENCY = 3
 
+compatibilities_list = []
+compatibilities_map = {}
+
 
 def get_repo_info(bundle_json: Dict[str, Any]) -> Tuple[str, str, str]:
     url = bundle_json.get("download_url", "")
@@ -159,6 +162,18 @@ def fetch_app_details(package_name: str) -> Tuple[Optional[str], Optional[str]]:
     return None, None
 
 
+def get_compat_key(compat_data: list) -> int:
+
+    compat_json = json.dumps(compat_data, sort_keys=True)
+    if compat_json in compatibilities_map:
+        return compatibilities_map[compat_json]
+    else:
+        idx = len(compatibilities_list)
+        compatibilities_list.append(compat_data)
+        compatibilities_map[compat_json] = idx
+        return idx
+
+
 def strip_patch(patch: Dict[str, Any], discovered_names: Dict[str, str]) -> Optional[Dict[str, Any]]:
     out: Dict[str, Any] = {}
     if "name" in patch:
@@ -246,11 +261,15 @@ def build_site_json(stable_list, dev_list, latest, discovered_names):
                 continue
             if is_prerelease:
                 stripped["isPreRelease"] = True
-            out_patches.append(stripped)
-            if comp := stripped.get("compatiblePackages"):
+
+            comp = stripped.pop("compatiblePackages", None)
+            if comp:
+                stripped["compatiblePackagesKey"] = get_compat_key(comp)
                 target_apps.update(pkg["packageName"] for pkg in comp)
             else:
                 target_apps.add("universal")
+
+            out_patches.append(stripped)
 
     if latest == "stable" or not dev_list:
         process_patches(stable_patches_raw)
@@ -305,6 +324,9 @@ def build_site_json(stable_list, dev_list, latest, discovered_names):
 
                 if patch_is_new_for_some_old_app:
                     stripped["isPreRelease"] = True
+
+                comp = stripped.pop("compatiblePackages")
+                stripped["compatiblePackagesKey"] = get_compat_key(comp)
             else:
                 target_apps.add("universal")
                 if "universal" not in stable_apps:
@@ -511,14 +533,10 @@ def main():
                             app_metadata[package_name]["name"] = official_app["name"]
                     if app_metadata[package_name].get("iconUrl") is None or app_metadata[package_name].get("name") is None:
                         app_tasks.add(package_name)
-        # Write to patches/base.json
-        site_file_path = SITE_DIR / f"{base}.json"
-        save_json(site_file_path, out_patches)
-
         latest_bundle_json = dev_json if latest == "dev" else stable_json
 
         # Update source_entry with the new schema
-        source_entry["patches"] = f"patches/{base}.json"
+        source_entry["patches"] = out_patches
         source_entry["createdAt"] = latest_bundle_json.get("created_at", "")
         source_entry["targetApps"] = target_apps
         source_entry["appCount"] = app_count
@@ -580,12 +598,14 @@ def main():
                     print(f"Failed to fetch app details for {package_name}: {e}")
 
     sorted_bundles = []
-    for base, data in sorted(bundle_sources.items(), key=lambda item: item[0].lower()):
+    
+    for base, data in sorted(bundle_sources.items(), key=lambda item: (item[1].get("firstSeen", ""), item[0].lower())):
         ordered_data = {"key": base}
         ordered_data.update(data)
         sorted_bundles.append(ordered_data)
 
-    save_json(BUNDLES_JSON_PATH, {"bundles": sorted_bundles})
+    output_data = {"bundles": sorted_bundles, "compatibilities": compatibilities_list}
+    save_json(BUNDLES_JSON_PATH, output_data)
     print(f"Generated bundles.json with {len(sorted_bundles)} bundles.")
 
     save_json(APPS_JSON_PATH, app_metadata)
