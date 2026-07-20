@@ -274,7 +274,7 @@ def main():
     # Insert today's JSON entry
     whats_new_data.insert(0, {"date": today_str, "bundles": json_diff})
 
-    whats_new_data = whats_new_data[:15]
+    whats_new_data = whats_new_data[:30]
     save_json(WHATS_NEW_JSON_PATH, whats_new_data)
     print("Updated whats-new.json.")
 

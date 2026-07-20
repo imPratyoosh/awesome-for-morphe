@@ -35,7 +35,7 @@
 │   ├── apps.json                        # Metadata containing target app names/icons
 │   ├── bundles.json                     # Central compiled index of all active bundles
 │   ├── index.html                       # Frontend main webpage interface (compiled)
-│   └── whats-new.json                   # Rolling changelog JSON of last 15 releases
+│   └── whats-new.json                   # Rolling changelog JSON of last 30 releases
 ├── scripts/
 │   ├── providers/                       # Scraper providers for discovery
 │   │   ├── jman.py                      # Jman repository parser

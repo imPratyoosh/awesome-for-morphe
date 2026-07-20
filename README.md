@@ -101,17 +101,18 @@
 
 <div align="center">
 
-Maintained with ❤️ by **[@nvbangg](https://github.com/nvbangg)**  
-⭐ Star repository **[nvbangg/awesome-for-morphe](https://github.com/nvbangg/awesome-for-morphe)** if useful!
+**[github.com/nvbangg/awesome-for-morphe](https://github.com/nvbangg/awesome-for-morphe)**  
+⭐ Star this repo if you find it useful!  
+Maintained with ❤️ by **[@nvbangg](https://github.com/nvbangg)**
 
 </div>
 
 #### ⚠️ Disclaimer
 
-- This project is not affiliated with Morphe or any developers mentioned here.
+- [This project](https://github.com/nvbangg/awesome-for-morphe) is not affiliated with [Morphe](https://morphe.software/) or any authors mentioned here.
 - Only use patch sources or projects you trust. This project is for informational purposes only and is not responsible for any arising issues.
 
 #### 🙏 Credits
 
-- Patch data is automatically aggregated from: [my custom sources](data/repos/custom.json), [Morphe Community Patches](https://morphe-patches.software), [ReVanced Patch Bundles](https://github.com/Jman-Github/ReVanced-Patch-Bundles), and [Morphe Archive](https://github.com/rushiforai/morphe-archive).
+- Patch data is automatically aggregated from: [My custom sources](data/repos/custom.json), [Morphe Community Patches](https://morphe-patches.software), [ReVanced Patch Bundles](https://github.com/Jman-Github/ReVanced-Patch-Bundles), and [Morphe Archive](https://github.com/rushiforai/morphe-archive).
 - This project is inspired by [Awesome ReVanced](https://github.com/Jman-Github/Awesome-ReVanced) and [Patch Explorer](https://github.com/Paresh-Maheshwari/patch-explorer).
