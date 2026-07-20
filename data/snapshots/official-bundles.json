@@ -978,7 +978,11 @@
         "com.twitter.android",
         "com.instagram.android"
       ],
-      "firstSeen": 1773154796000
+      "stars": 4373,
+      "updatedAt": 1784551398000,
+      "firstSeen": 1773154796000,
+      "starsGained7d": 1,
+      "starsGained40d": 1
     },
     {
       "source": "github",
@@ -1631,7 +1635,11 @@
         "ch.protonvpn.android",
         "cn.ommiao.iconpacker"
       ],
-      "firstSeen": 1768941201000
+      "stars": 844,
+      "updatedAt": 1784259596000,
+      "firstSeen": 1768941201000,
+      "starsGained7d": 2,
+      "starsGained40d": 2
     },
     {
       "source": "github",
@@ -4234,7 +4242,11 @@
         "com.urbandroid.kinestop",
         "com.nytimes.crossword"
       ],
-      "firstSeen": 1780395687718
+      "stars": 193,
+      "updatedAt": 1784486825000,
+      "firstSeen": 1780395687718,
+      "starsGained7d": 1,
+      "starsGained40d": 1
     },
     {
       "source": "gitlab",
@@ -4673,7 +4685,11 @@
         "com.rk.taskmanager",
         "com.frontrow.vlog"
       ],
-      "firstSeen": 1778457600000
+      "stars": 56,
+      "updatedAt": 1784456749977,
+      "firstSeen": 1778457600000,
+      "starsGained7d": 0,
+      "starsGained40d": 0
     },
     {
       "source": "github",
@@ -4962,7 +4978,11 @@
         "fr.tramb.park4night",
         "cz.seznam.mapy"
       ],
-      "firstSeen": 1773147404000
+      "stars": 290,
+      "updatedAt": 1784192346000,
+      "firstSeen": 1773147404000,
+      "starsGained7d": 1,
+      "starsGained40d": 1
     },
     {
       "source": "github",
@@ -5515,7 +5535,11 @@
         "org.cygnusx1.continuum",
         "me.edgan.redditslide"
       ],
-      "firstSeen": 1767402720000
+      "stars": 717,
+      "updatedAt": 1777846542000,
+      "firstSeen": 1767402720000,
+      "starsGained7d": 2,
+      "starsGained40d": 2
     },
     {
       "source": "github",
@@ -6216,7 +6240,11 @@
         "com.ninegag.android.app",
         "com.imdb.mobile"
       ],
-      "firstSeen": 1771585164000
+      "stars": 193,
+      "updatedAt": 1784478857000,
+      "firstSeen": 1771585164000,
+      "starsGained7d": 1,
+      "starsGained40d": 1
     },
     {
       "source": "github",
@@ -7026,7 +7054,11 @@
         "com.flexcil.flexcilnote",
         "kr.co.nowcom.mobile.afreeca"
       ],
-      "firstSeen": 1774756607000
+      "stars": 130,
+      "updatedAt": 1784121256000,
+      "firstSeen": 1774756607000,
+      "starsGained7d": 0,
+      "starsGained40d": 0
     },
     {
       "source": "github",
@@ -7214,7 +7246,11 @@
         "com.fox.foxone",
         "com.tubitv"
       ],
-      "firstSeen": 1779696344214
+      "stars": 85,
+      "updatedAt": 1784568252000,
+      "firstSeen": 1779696344214,
+      "starsGained7d": 0,
+      "starsGained40d": 0
     },
     {
       "source": "github",
@@ -7354,7 +7390,11 @@
       "targetApps": [
         "com.zhiliaoapp.musically"
       ],
-      "firstSeen": 1780156086693
+      "stars": 136,
+      "updatedAt": 1783638554000,
+      "firstSeen": 1780156086693,
+      "starsGained7d": 1,
+      "starsGained40d": 1
     },
     {
       "source": "github",
@@ -7812,7 +7852,11 @@
         "com.thehungrywasp.iamsober",
         "net.uniquegem.directchat"
       ],
-      "firstSeen": 1781531935954
+      "stars": 97,
+      "updatedAt": 1784457768000,
+      "firstSeen": 1781531935954,
+      "starsGained7d": 1,
+      "starsGained40d": 1
     },
     {
       "source": "github",
@@ -8734,7 +8778,11 @@
         "com.disney.disneyplus",
         "ginlemon.iconpackstudio"
       ],
-      "firstSeen": 1772385009000
+      "stars": 1018,
+      "updatedAt": 1784325130000,
+      "firstSeen": 1772385009000,
+      "starsGained7d": 1,
+      "starsGained40d": 1
     },
     {
       "source": "github",
@@ -9155,7 +9203,11 @@
         "com.mixapplications.ventoy_app",
         "io.github.sds100.keymapper"
       ],
-      "firstSeen": 1780649325226
+      "stars": 23,
+      "updatedAt": 1784339364000,
+      "firstSeen": 1780649325226,
+      "starsGained7d": 1,
+      "starsGained40d": 1
     },
     {
       "source": "github",
@@ -9355,7 +9407,11 @@
         "com.ufovpn.connect.velnet",
         "com.vpn.free.hotspot.secure.vpnify"
       ],
-      "firstSeen": 1778544000000
+      "stars": 53,
+      "updatedAt": 1782150284000,
+      "firstSeen": 1778544000000,
+      "starsGained7d": 0,
+      "starsGained40d": 0
     },
     {
       "source": "github",
@@ -9573,7 +9629,11 @@
         "com.quvideo.wisemeal",
         "com.yazio.android"
       ],
-      "firstSeen": 1781163794016
+      "stars": 19,
+      "updatedAt": 1783258450000,
+      "firstSeen": 1781163794016,
+      "starsGained7d": 0,
+      "starsGained40d": 0
     },
     {
       "source": "github",
@@ -9695,7 +9755,11 @@
         "com.sysops.thenx",
         "video.player.videoplayer"
       ],
-      "firstSeen": 1783168495852
+      "stars": 9,
+      "updatedAt": 1784229765000,
+      "firstSeen": 1783168495852,
+      "starsGained7d": 0,
+      "starsGained40d": 0
     },
     {
       "source": "github",
@@ -9798,7 +9862,11 @@
         "app.symfonik.music.player",
         "org.withouthat.acalendar"
       ],
-      "firstSeen": 1776003728000
+      "stars": 128,
+      "updatedAt": 1782911388000,
+      "firstSeen": 1776003728000,
+      "starsGained7d": 0,
+      "starsGained40d": 0
     },
     {
       "source": "github",
@@ -9936,7 +10004,11 @@
         "com.harwin.prismatica",
         "com.bytecaretech.merokarobar"
       ],
-      "firstSeen": 1783403226287
+      "stars": 7,
+      "updatedAt": 1784526150000,
+      "firstSeen": 1783403226287,
+      "starsGained7d": 0,
+      "starsGained40d": 0
     },
     {
       "source": "github",
@@ -10052,7 +10124,11 @@
         "com.Splitwise.SplitwiseMobile",
         "com.overdevs.at4k"
       ],
-      "firstSeen": 1783348412813
+      "stars": 60,
+      "updatedAt": 1784466182000,
+      "firstSeen": 1783348412813,
+      "starsGained7d": 1,
+      "starsGained40d": 1
     },
     {
       "source": "github",
@@ -10569,7 +10645,11 @@
         "com.instagram.barcelona",
         "com.vimtv"
       ],
-      "firstSeen": 1781160603756
+      "stars": 9,
+      "updatedAt": 1784475292000,
+      "firstSeen": 1781160603756,
+      "starsGained7d": 0,
+      "starsGained40d": 0
     },
     {
       "source": "gitlab",
@@ -10759,7 +10839,11 @@
         "com.going.mobile",
         "com.innologica.inoreader"
       ],
-      "firstSeen": 1783191936034
+      "stars": 4,
+      "updatedAt": 1784412116572,
+      "firstSeen": 1783191936034,
+      "starsGained7d": 0,
+      "starsGained40d": 0
     },
     {
       "source": "github",
@@ -10904,7 +10988,11 @@
         "fi.twomenandadog.zombiecatchers",
         "diozz.cubex"
       ],
-      "firstSeen": 1784128715801
+      "stars": 13,
+      "updatedAt": 1784482807000,
+      "firstSeen": 1784128715801,
+      "starsGained7d": 0,
+      "starsGained40d": 0
     },
     {
       "source": "github",
@@ -11115,7 +11203,11 @@
         "ru.ozon.app.android",
         "com.wildberries.ru"
       ],
-      "firstSeen": 1778236605000
+      "stars": 24,
+      "updatedAt": 1783422409000,
+      "firstSeen": 1778236605000,
+      "starsGained7d": 0,
+      "starsGained40d": 0
     },
     {
       "source": "github",
@@ -11167,7 +11259,11 @@
         "com.delphicoder.flud",
         "dev.sasikanth.pinnit"
       ],
-      "firstSeen": 1783972075822
+      "stars": 5,
+      "updatedAt": 1784490771000,
+      "firstSeen": 1783972075822,
+      "starsGained7d": 0,
+      "starsGained40d": 0
     },
     {
       "source": "github",
@@ -11268,7 +11364,11 @@
       "deepLink": "https://morphe.software/add-source?github=Nai64/Nai64Patches",
       "patchCount": 4,
       "targetApps": [],
-      "firstSeen": 1783021319050
+      "stars": 186,
+      "updatedAt": 1783333921000,
+      "firstSeen": 1783021319050,
+      "starsGained7d": 1,
+      "starsGained40d": 1
     },
     {
       "source": "github",
@@ -11302,7 +11402,11 @@
         "io.foodvisor.foodvisor",
         "com.roidapp.photogrid"
       ],
-      "firstSeen": 1778105036000
+      "stars": 16,
+      "updatedAt": 1782892588000,
+      "firstSeen": 1778105036000,
+      "starsGained7d": 0,
+      "starsGained40d": 0
     },
     {
       "source": "github",
@@ -11382,7 +11486,11 @@
         "ee.dustland.android.minesweeper",
         "ee.dustland.android.solitaire"
       ],
-      "firstSeen": 1781686482508
+      "stars": 9,
+      "updatedAt": 1784480352000,
+      "firstSeen": 1781686482508,
+      "starsGained7d": 0,
+      "starsGained40d": 0
     },
     {
       "source": "github",
@@ -11444,7 +11552,11 @@
         "com.persapps.multitimer",
         "com.ihealthlabs.MyVitalsPro"
       ],
-      "firstSeen": 1782053444148
+      "stars": 6,
+      "updatedAt": 1784545843000,
+      "firstSeen": 1782053444148,
+      "starsGained7d": 0,
+      "starsGained40d": 0
     },
     {
       "source": "github",
@@ -11493,7 +11605,11 @@
         "com.vladlee.easyblacklist",
         "com.ipoji.app"
       ],
-      "firstSeen": 1776065534000
+      "stars": 17,
+      "updatedAt": 1782933461000,
+      "firstSeen": 1776065534000,
+      "starsGained7d": 0,
+      "starsGained40d": 0
     },
     {
       "source": "gitlab",
@@ -11562,7 +11678,11 @@
       "targetApps": [
         "com.twitter.android"
       ],
-      "firstSeen": 1781596395094
+      "stars": 34,
+      "updatedAt": 1783038474165,
+      "firstSeen": 1781596395094,
+      "starsGained7d": 0,
+      "starsGained40d": 0
     },
     {
       "source": "github",
@@ -11735,7 +11855,11 @@
       "targetApps": [
         "com.google.android.inputmethod.latin"
       ],
-      "firstSeen": 1775543003000
+      "stars": 136,
+      "updatedAt": 1782859221000,
+      "firstSeen": 1775543003000,
+      "starsGained7d": 0,
+      "starsGained40d": 0
     },
     {
       "source": "github",
@@ -11804,7 +11928,11 @@
       "targetApps": [
         "com.chess"
       ],
-      "firstSeen": 1782804287706
+      "stars": 44,
+      "updatedAt": 1784543164000,
+      "firstSeen": 1782804287706,
+      "starsGained7d": 0,
+      "starsGained40d": 0
     },
     {
       "source": "github",
@@ -11844,7 +11972,11 @@
       "targetApps": [
         "com.microsoft.emmx"
       ],
-      "firstSeen": 1780738576635
+      "stars": 34,
+      "updatedAt": 1784489639000,
+      "firstSeen": 1780738576635,
+      "starsGained7d": 0,
+      "starsGained40d": 0
     },
     {
       "source": "github",
@@ -11877,7 +12009,11 @@
       "targetApps": [
         "com.sec.android.app.shealth"
       ],
-      "firstSeen": 1782236339824
+      "stars": 6,
+      "updatedAt": 1782825948000,
+      "firstSeen": 1782236339824,
+      "starsGained7d": 0,
+      "starsGained40d": 0
     },
     {
       "source": "github",
@@ -11931,7 +12067,11 @@
       "targetApps": [
         "com.pinterest"
       ],
-      "firstSeen": 1782206425615
+      "stars": 21,
+      "updatedAt": 1784519563000,
+      "firstSeen": 1782206425615,
+      "starsGained7d": 0,
+      "starsGained40d": 0
     },
     {
       "source": "github",
@@ -12020,7 +12160,11 @@
       "targetApps": [
         "com.alibaba.aliexpresshd"
       ],
-      "firstSeen": 1782824605539
+      "stars": 8,
+      "updatedAt": 1780431725000,
+      "firstSeen": 1782824605539,
+      "starsGained7d": 0,
+      "starsGained40d": 0
     },
     {
       "source": "github",
@@ -12138,7 +12282,11 @@
       "targetApps": [
         "com.pinterest"
       ],
-      "firstSeen": 1784136283489
+      "stars": 10,
+      "updatedAt": 1784262249000,
+      "firstSeen": 1784136283489,
+      "starsGained7d": 1,
+      "starsGained40d": 1
     },
     {
       "source": "github",
@@ -12179,7 +12327,11 @@
       "targetApps": [
         "com.letterboxd.letterboxd"
       ],
-      "firstSeen": 1784100903208
+      "stars": 1,
+      "updatedAt": 1784154385000,
+      "firstSeen": 1784100903208,
+      "starsGained7d": 0,
+      "starsGained40d": 0
     },
     {
       "source": "github",
@@ -12205,7 +12357,11 @@
       "targetApps": [
         "com.sankakucomplex.channel.black"
       ],
-      "firstSeen": 1782472442332
+      "stars": 9,
+      "updatedAt": 1784193862000,
+      "firstSeen": 1782472442332,
+      "starsGained7d": 0,
+      "starsGained40d": 0
     },
     {
       "source": "github",
@@ -12231,7 +12387,11 @@
       "targetApps": [
         "com.movistarplus.androidtv"
       ],
-      "firstSeen": 1784126725894
+      "stars": 2,
+      "updatedAt": 1784279677000,
+      "firstSeen": 1784126725894,
+      "starsGained7d": 0,
+      "starsGained40d": 0
     },
     {
       "source": "github",
@@ -12257,7 +12417,11 @@
       "targetApps": [
         "tv.trakt.trakt"
       ],
-      "firstSeen": 1774254496000
+      "stars": 22,
+      "updatedAt": 1777198435000,
+      "firstSeen": 1774254496000,
+      "starsGained7d": 0,
+      "starsGained40d": 0
     },
     {
       "source": "github",
@@ -12291,7 +12455,11 @@
         "com.laurencedawson.reddit_sync",
         "tv.trakt.trakt"
       ],
-      "firstSeen": 1779377400000
+      "stars": 18,
+      "updatedAt": 1784464973000,
+      "firstSeen": 1779377400000,
+      "starsGained7d": 0,
+      "starsGained40d": 0
     },
     {
       "source": "github",
@@ -12317,7 +12485,11 @@
       "targetApps": [
         "com.teamsnap.teamsnap"
       ],
-      "firstSeen": 1782279314009
+      "stars": 4,
+      "updatedAt": 1782097001000,
+      "firstSeen": 1782279314009,
+      "starsGained7d": 0,
+      "starsGained40d": 0
     },
     {
       "source": "github",
@@ -12343,7 +12515,11 @@
       "targetApps": [
         "com.generalcomp.truecloud"
       ],
-      "firstSeen": 1783246898450
+      "stars": 6,
+      "updatedAt": 1784163267000,
+      "firstSeen": 1783246898450,
+      "starsGained7d": 0,
+      "starsGained40d": 0
     },
     {
       "source": "github",
@@ -12369,7 +12545,11 @@
       "targetApps": [
         "com.crunchyroll.crunchyroid"
       ],
-      "firstSeen": 1783420111086
+      "stars": 5,
+      "updatedAt": 1784569116000,
+      "firstSeen": 1783420111086,
+      "starsGained7d": 0,
+      "starsGained40d": 0
     },
     {
       "source": "github",
@@ -12477,7 +12657,11 @@
         "com.zong.customercare",
         "cz.mroczis.netmonster"
       ],
-      "firstSeen": 1784064356850
+      "stars": 7,
+      "updatedAt": 1784463317000,
+      "firstSeen": 1784064356850,
+      "starsGained7d": 0,
+      "starsGained40d": 0
     },
     {
       "source": "github",
@@ -12503,7 +12687,11 @@
       "targetApps": [
         "com.imperihome.lite"
       ],
-      "firstSeen": 1784316101094
+      "stars": 1,
+      "updatedAt": 1784406968000,
+      "firstSeen": 1784316101094,
+      "starsGained7d": 0,
+      "starsGained40d": 0
     },
     {
       "source": "github",
@@ -12577,7 +12765,11 @@
         "com.michaldrabik.showly2",
         "ch.protonmail.android"
       ],
-      "firstSeen": 1784353679503
+      "stars": 10,
+      "updatedAt": 1784484815000,
+      "firstSeen": 1784353679503,
+      "starsGained7d": 0,
+      "starsGained40d": 0
     },
     {
       "source": "github",
@@ -12611,7 +12803,11 @@
       "targetApps": [
         "droom.sleepIfUCan"
       ],
-      "firstSeen": 1774890412000
+      "stars": 24,
+      "updatedAt": 1784373091000,
+      "firstSeen": 1774890412000,
+      "starsGained7d": 0,
+      "starsGained40d": 0
     },
     {
       "source": "github",
@@ -12646,7 +12842,11 @@
       "targetApps": [
         "com.facebook.katana"
       ],
-      "firstSeen": 1775943939000
+      "stars": 46,
+      "updatedAt": 1782913714000,
+      "firstSeen": 1775943939000,
+      "starsGained7d": 0,
+      "starsGained40d": 0
     },
     {
       "source": "github",
@@ -12680,7 +12880,11 @@
       "targetApps": [
         "com.application.pokecardex"
       ],
-      "firstSeen": 1767610400249
+      "stars": 13,
+      "updatedAt": 1782924420000,
+      "firstSeen": 1767610400249,
+      "starsGained7d": 0,
+      "starsGained40d": 0
     },
     {
       "source": "github",
@@ -12723,7 +12927,11 @@
       "targetApps": [
         "com.thetransitapp.droid"
       ],
-      "firstSeen": 1767603990000
+      "stars": 82,
+      "updatedAt": 1783342607000,
+      "firstSeen": 1767603990000,
+      "starsGained7d": 0,
+      "starsGained40d": 0
     },
     {
       "source": "github",
@@ -12749,7 +12957,11 @@
       "targetApps": [
         "com.Splitwise.SplitwiseMobile"
       ],
-      "firstSeen": 1777489987000
+      "stars": 15,
+      "updatedAt": 1781677479000,
+      "firstSeen": 1777489987000,
+      "starsGained7d": 0,
+      "starsGained40d": 0
     },
     {
       "source": "github",
@@ -12775,7 +12987,11 @@
       "targetApps": [
         "cz.mafra.jizdnirady"
       ],
-      "firstSeen": 1778889600000
+      "stars": 9,
+      "updatedAt": 1784175851000,
+      "firstSeen": 1778889600000,
+      "starsGained7d": 0,
+      "starsGained40d": 0
     },
     {
       "source": "github",
@@ -12801,7 +13017,11 @@
       "targetApps": [
         "com.eksiteknoloji.eksisozluk"
       ],
-      "firstSeen": 1777893988000
+      "stars": 7,
+      "updatedAt": 1779029943000,
+      "firstSeen": 1777893988000,
+      "starsGained7d": 0,
+      "starsGained40d": 0
     },
     {
       "source": "github",
@@ -12834,7 +13054,11 @@
       "targetApps": [
         "se.matlistan.free"
       ],
-      "firstSeen": 1779904173542
+      "stars": 7,
+      "updatedAt": 1777982798000,
+      "firstSeen": 1779904173542,
+      "starsGained7d": 0,
+      "starsGained40d": 0
     },
     {
       "source": "github",
@@ -12860,7 +13084,11 @@
       "targetApps": [
         "ru.oneme.app"
       ],
-      "firstSeen": 1774798841000
+      "stars": 24,
+      "updatedAt": 1782894431000,
+      "firstSeen": 1774798841000,
+      "starsGained7d": 0,
+      "starsGained40d": 0
     },
     {
       "source": "github",
@@ -12902,7 +13130,11 @@
         "com.instapaper.android",
         "com.jndapp.depth.live.wallpaper"
       ],
-      "firstSeen": 1781162568074
+      "stars": 12,
+      "updatedAt": 1784439173000,
+      "firstSeen": 1781162568074,
+      "starsGained7d": 0,
+      "starsGained40d": 0
     },
     {
       "source": "github",
@@ -12938,7 +13170,11 @@
       "targetApps": [
         "com.laurencedawson.reddit_sync"
       ],
-      "firstSeen": 1776154900000
+      "stars": 12,
+      "updatedAt": 1782325752000,
+      "firstSeen": 1776154900000,
+      "starsGained7d": 0,
+      "starsGained40d": 0
     },
     {
       "source": "github",
@@ -14135,7 +14371,11 @@
       "deepLink": "https://morphe.software/add-source?github=rushiranpise/Ri-Vanced-Universal-Morphe-Patches",
       "patchCount": 27,
       "targetApps": [],
-      "firstSeen": 1784191866679
+      "stars": 6,
+      "updatedAt": 1784278940000,
+      "firstSeen": 1784191866679,
+      "starsGained7d": 0,
+      "starsGained40d": 0
     }
   ],
   "store": {
@@ -14401,7 +14641,7 @@
     },
     "ch.protonvpn.android": {
       "name": "Proton VPN",
-      "iconUrl": "https://play-lh.googleusercontent.com/yLQ8EKyC_HIHiR6UND0eVjiBsW7WH3jHPzieT7YFqg9_VBRBreUDC8QD-iIUtRhEpMrIxDPVPegm4KSyfduyiw",
+      "iconUrl": "https://play-lh.googleusercontent.com/AuP73yDcGQx35ofTuB4g9FOdsfbjzICrFGz6c-BrkLqJVwYNZZczlwWDATuTWVMgHBiV",
       "description": "VPN for Privacy &amp; Security. Fast VPN Proxy, Private Internet Connection"
     },
     "cn.ommiao.iconpacker": {
@@ -15140,7 +15380,7 @@
       "description": "Telegram is a messaging app with a focus on speed and security."
     },
     "in.startv.hotstar": {
-      "name": "Disney+ Hotstar",
+      "name": "JioHotstar",
       "iconUrl": "https://play-lh.googleusercontent.com/02xiO0ptbXjD8NR3sbS2StP1P9aytDN56dDR15zqM_i66Vwq5W_hD-98CoFxvRVoUS4uV_xMSv-iQh3nQFeDeQ",
       "description": "Micro shows on Tadka, endless sports, entertainment. Infinite possibilities."
     },
@@ -15351,7 +15591,7 @@
       "description": "Watch free movies, shows &amp; sports on the best entertainment streaming app"
     },
     "com.amazon.amazonvideo.livingroom": {
-      "name": "Prime Video",
+      "name": "Prime Video (Android TV)",
       "iconUrl": "https://play-lh.googleusercontent.com/qyXqjzPggunbifX0ODhCehdy4ei0F90u0N3f4pPk8NhgCZD75dH8bdQYPROGRVlTVOs8B8JAT58X6ImMZv5ugHg",
       "description": "Watch movies, TV shows, live programming and sports on Prime Video"
     },
@@ -26133,5 +26373,36 @@
         ]
       }
     ]
+  ],
+  "featured": [
+    "com.instagram.android",
+    "com.twitter.android",
+    "com.zhiliaoapp.musically",
+    "com.chess",
+    "com.google.android.inputmethod.latin",
+    "com.pinterest",
+    "com.kakao.talk",
+    "com.dcinside.app.android",
+    "com.truecaller",
+    "com.tumblr",
+    "com.waze",
+    "com.reddit.frontpage",
+    "com.amazon.mShop.android.shopping",
+    "com.google.android.apps.photos",
+    "org.telegram.messenger.web",
+    "org.telegram.plus",
+    "tv.twitch.android.app",
+    "com.amazon.avod.thirdpartyclient",
+    "com.amazon.amazonvideo.livingroom",
+    "com.sonyliv",
+    "com.disney.disneyplus",
+    "in.startv.hotstar",
+    "com.peacocktv.peacockandroid",
+    "tv.pluto.android",
+    "com.wbd.hbomax",
+    "com.univision.prendetv",
+    "com.cbs.ott",
+    "com.fox.foxone",
+    "com.tubitv"
   ]
 }
