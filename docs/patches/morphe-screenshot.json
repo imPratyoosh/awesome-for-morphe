@@ -1,6 +1,0 @@
-[
-  {
-    "name": "Remove screenshot restriction",
-    "description": "Removes FLAG_SECURE from all windows so screenshots and screen recordings work in any app."
-  }
-]

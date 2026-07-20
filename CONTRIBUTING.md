@@ -31,7 +31,6 @@
 │   ├── history.json                     # Baseline sync state for tracking patch updates
 │   └── repos.json                       # Compiled database of all discovered bundles
 ├── docs/                                 # Website deployment folder (GitHub Pages)
-│   ├── patches/                         # Compiled patch lists of each bundle for the website
 │   ├── assets/                          # Contains compiled assets and other assets needed for the website
 │   ├── apps.json                        # Metadata containing target app names/icons
 │   ├── bundles.json                     # Central compiled index of all active bundles

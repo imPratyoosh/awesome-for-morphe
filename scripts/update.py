@@ -21,7 +21,6 @@ ROOT = Path.cwd()
 DATA_DIR = ROOT / "data"
 BUNDLES_DIR = DATA_DIR / "bundles"
 PATCHES_DIR = DATA_DIR / "patches"
-SITE_DIR = ROOT / "docs" / "patches"
 BUNDLES_JSON_PATH = ROOT / "docs" / "bundles.json"
 APPS_JSON_PATH = ROOT / "docs" / "apps.json"
 OFFICIAL_BUNDLES_PATH = DATA_DIR / "snapshots" / "official-bundles.json"
@@ -363,7 +362,6 @@ def main():
     if args.all:
         args.stars = args.avatars = args.icons = args.daily = True
 
-    SITE_DIR.mkdir(parents=True, exist_ok=True)
     if not BUNDLES_DIR.exists():
         print("No bundles directory found. Run download.py first.")
         return
