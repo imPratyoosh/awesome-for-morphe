@@ -953,26 +953,22 @@ const app = createApp({
       }
     };
 
-    const scrollToTop = () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    };
-
     const handleBottomNav = (tab: "bundles" | "whatsnew") => {
       if (tab === "bundles") {
         if (!isWhatsNewView.value) {
-          scrollToTop();
+          window.scrollTo({ top: 0, behavior: "smooth" });
         } else {
+          window.scrollTo(0, 0);
           isWhatsNewView.value = false;
           safeUpdateHistory(buildUrlString(""), true);
-          scrollToTop();
         }
       } else if (tab === "whatsnew") {
         if (isWhatsNewView.value) {
-          scrollToTop();
+          window.scrollTo({ top: 0, behavior: "smooth" });
         } else {
+          window.scrollTo(0, 0);
           isWhatsNewView.value = true;
           safeUpdateHistory(buildUrlString("#whats-new"), true);
-          scrollToTop();
         }
       }
     };
