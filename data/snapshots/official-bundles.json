@@ -982,15 +982,15 @@
         "com.instagram.android": 1784419200000,
         "com.twitter.android": 1784419200000
       },
-      "stars": 4376,
+      "stars": 4378,
       "updatedAt": 1782518400000,
       "firstSeen": 1773154796000,
       "appFirstSeen": {
         "com.twitter.android": 1773154796000,
         "com.instagram.android": 1773154796000
       },
-      "starsGained7d": 4,
-      "starsGained40d": 4
+      "starsGained7d": 6,
+      "starsGained40d": 6
     },
     {
       "source": "github",
@@ -4351,7 +4351,7 @@
         "com.nytimes.crossword"
       ],
       "appUpdates": {},
-      "stars": 200,
+      "stars": 201,
       "updatedAt": 1784419200000,
       "firstSeen": 1780395687718,
       "appFirstSeen": {
@@ -4505,8 +4505,8 @@
         "com.urbandroid.kinestop": 1783291168540,
         "com.nytimes.crossword": 1783875617302
       },
-      "starsGained7d": 8,
-      "starsGained40d": 8
+      "starsGained7d": 9,
+      "starsGained40d": 9
     },
     {
       "source": "gitlab",
@@ -6562,7 +6562,7 @@
         "com.ninegag.android.app": 1781395200000,
         "com.imdb.mobile": 1783900800000
       },
-      "stars": 193,
+      "stars": 194,
       "updatedAt": 1781395200000,
       "firstSeen": 1771585164000,
       "appFirstSeen": {
@@ -6571,8 +6571,8 @@
         "com.ninegag.android.app": 1781427843830,
         "com.imdb.mobile": 1771585164000
       },
-      "starsGained7d": 1,
-      "starsGained40d": 1
+      "starsGained7d": 2,
+      "starsGained40d": 2
     },
     {
       "source": "github",
@@ -11623,7 +11623,7 @@
         "com.mobge.Oddmar": 1784332800000,
         "air.com.midjiwan.polytopia": 1783987200000
       },
-      "stars": 13,
+      "stars": 14,
       "updatedAt": 1784332800000,
       "firstSeen": 1784128715801,
       "appFirstSeen": {
@@ -11636,8 +11636,8 @@
         "fi.twomenandadog.zombiecatchers": 1784222332279,
         "diozz.cubex": 1784128715801
       },
-      "starsGained7d": 0,
-      "starsGained40d": 0
+      "starsGained7d": 1,
+      "starsGained40d": 1
     },
     {
       "source": "github",
@@ -12634,14 +12634,14 @@
       "appUpdates": {
         "com.chess": 1783987200000
       },
-      "stars": 44,
+      "stars": 45,
       "updatedAt": 1783641600000,
       "firstSeen": 1782804287706,
       "appFirstSeen": {
         "com.chess": 1782804287706
       },
-      "starsGained7d": 0,
-      "starsGained40d": 0
+      "starsGained7d": 1,
+      "starsGained40d": 1
     },
     {
       "source": "github",
@@ -13061,14 +13061,14 @@
         "com.letterboxd.letterboxd"
       ],
       "appUpdates": {},
-      "stars": 1,
+      "stars": 3,
       "updatedAt": null,
       "firstSeen": 1784100903208,
       "appFirstSeen": {
         "com.letterboxd.letterboxd": 1784100903208
       },
-      "starsGained7d": 0,
-      "starsGained40d": 0
+      "starsGained7d": 2,
+      "starsGained40d": 2
     },
     {
       "source": "github",

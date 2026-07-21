@@ -1,5 +1,5 @@
 {
-  "jman_tree_sha": "9bfe75c3147710a7a18a157c75d8a6e528d80921",
+  "jman_tree_sha": "ee12e1f067501d52717523b35030118820e992c4",
   "jman_bundles": {
     "1fexd": {
       "sha": "4428619fe1755f86c0bd9d8fb5762fcc8c17b43a",
@@ -142,7 +142,7 @@
       "key": "github:skulldogged/cobalt-morphe"
     },
     "coronenic": {
-      "sha": "12b0f7c6962c5b765ead38a43d59e1699dd60207",
+      "sha": "cfb02f2b3664fbd263a2fd678382a7cae93e2de6",
       "key": null
     },
     "d4n3436": {
