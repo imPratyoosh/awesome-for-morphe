@@ -1608,11 +1608,12 @@
     "stars": 2,
     "firstSeen": "2026-07-17T19:07:01",
     "patches": "site/stylus.json",
-    "createdAt": "2026-07-19T14:35:53",
+    "createdAt": "2026-07-21T05:56:45",
     "targetApps": [
-      "com.reddit.frontpage"
+      "com.reddit.frontpage",
+      "com.x8bit.bitwarden"
     ],
-    "appCount": 1
+    "appCount": 2
   },
   "telegram-morphe": {
     "source": "github",

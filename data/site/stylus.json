@@ -72,5 +72,19 @@
         ]
       }
     ]
+  },
+  {
+    "name": "Force system font (Bitwarden)",
+    "description": "Renders the app using the device's system font instead of DM Sans / Roboto.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.x8bit.bitwarden",
+        "targets": [
+          {
+            "version": "2026.6.1"
+          }
+        ]
+      }
+    ]
   }
 ]
