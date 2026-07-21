@@ -414,6 +414,11 @@
     "repo": "RealCyberwash/max-patches",
     "name": "Chmax"
   },
+  "reemx": {
+    "source": "github",
+    "repo": "ReemX/morphe-me-patches",
+    "name": "ReemX"
+  },
   "ripthulhu": {
     "source": "github",
     "repo": "Ripthulhu/morphe-google-patches",

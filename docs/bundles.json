@@ -499,7 +499,7 @@
         },
         {
           "name": "Miniplayer",
-          "description": "Adds options to change the in-app minimized player.",
+          "description": "Adds options to change the in-app minimized player. Patching 21.28.206 and lower has more miniplayer types to choose from.",
           "compatiblePackagesKey": 300
         },
         {
@@ -659,6 +659,18 @@
           "compatiblePackagesKey": 300
         },
         {
+          "name": "Settings menu filter",
+          "description": "Adds an option to hide items on the standard YouTube Music settings screen by their visible name.",
+          "isPreRelease": true,
+          "compatiblePackagesKey": 301
+        },
+        {
+          "name": "Settings menu filter",
+          "description": "Adds an option to hide items on the standard YouTube settings screen by their visible name.",
+          "isPreRelease": true,
+          "compatiblePackagesKey": 300
+        },
+        {
           "name": "Shorts autoplay",
           "description": "Adds options to automatically play the next Short.",
           "compatiblePackagesKey": 300
@@ -753,7 +765,7 @@
           "compatiblePackagesKey": 300
         }
       ],
-      "createdAt": "2026-07-20T09:30:34",
+      "createdAt": "2026-07-21T08:48:08",
       "targetApps": [
         "com.google.android.apps.youtube.music",
         "com.google.android.youtube",
@@ -13243,7 +13255,7 @@
           "compatiblePackagesKey": 322
         }
       ],
-      "createdAt": "2026-07-20T18:31:59",
+      "createdAt": "2026-07-21T08:26:36",
       "targetApps": [
         "com.whatsapp"
       ],
@@ -18816,15 +18828,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
