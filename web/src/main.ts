@@ -37,7 +37,9 @@ interface GroupItem {
   appsList: AppElement[];
 }
 
-type HTMLElementWithObserver = HTMLElement & { resizeObserver?: ResizeObserver | null };
+type HTMLElementWithObserver = HTMLElement & {
+  resizeObserver?: ResizeObserver | null;
+};
 
 function tokenize(inputString: string) {
   const tokens = [];
@@ -595,7 +597,15 @@ const app = createApp({
     };
 
     const openAppPopup = (bundleKey: string, packageName: string, appData: WhatsNewApp) => {
-      navigateToWhatsNewShow(!appData || appData.isNew ? `${bundleKey}:${packageName}` : stringifyTrie({ [bundleKey]: { [packageName]: [...(appData.patches || [])].sort() } }));
+      navigateToWhatsNewShow(
+        !appData || appData.isNew
+          ? `${bundleKey}:${packageName}`
+          : stringifyTrie({
+              [bundleKey]: {
+                [packageName]: [...(appData.patches || [])].sort(),
+              },
+            }),
+      );
     };
 
     const openPatchPopup = (bundleKey: string, packageName: string, patchName: string) => navigateToWhatsNewShow(stringifyTrie({ [bundleKey]: { [packageName]: [patchName] } }));
@@ -608,7 +618,10 @@ const app = createApp({
       if (!activeData.value || !backgroundReady.value) return [];
       const targetPrefix = `${bundle.value || ""}${app.value ? ":" + app.value : ""}`;
       const currentShowOptions = targetPrefix ? [targetPrefix] : [];
-      return filterRows(activeData.value, { query: query.value, showOptions: currentShowOptions });
+      return filterRows(activeData.value, {
+        query: query.value,
+        showOptions: currentShowOptions,
+      });
     });
 
     const filterOptions = computed(() => {
@@ -618,7 +631,11 @@ const app = createApp({
         return options
           .map((option) => {
             const bundleObject = activeData.value?.bundleMap[option.value];
-            return { ...option, repo: bundleObject?.repo?.toLowerCase() || "", icon: bundleObject?.avatarUrl || "" };
+            return {
+              ...option,
+              repo: bundleObject?.repo?.toLowerCase() || "",
+              icon: bundleObject?.avatarUrl || "",
+            };
           })
           .sort((firstItem, secondItem) =>
             sortBundlesHelper(activeData.value?.bundleMap[firstItem.value], activeData.value?.bundleMap[secondItem.value], firstItem.value, secondItem.value, sortOrder.value),
@@ -644,7 +661,10 @@ const app = createApp({
         query: query.value,
         showOptions: bundle.value ? [bundle.value] : [],
       });
-      return { bundleOptions, appOptions: getFilterOptions(rowsForApp, activeData.value.namesMap).appOptions };
+      return {
+        bundleOptions,
+        appOptions: getFilterOptions(rowsForApp, activeData.value.namesMap).appOptions,
+      };
     });
 
     const filterDropdownOptions = (options: { value: string; label: string }[], searchValue: string, extraFields: string[], allOptionLabel: string) => {
@@ -721,7 +741,13 @@ const app = createApp({
         return firstItem.appName.localeCompare(secondItem.appName);
       });
 
-      return { key: bundleItem.key, bundle: bundleItem, rows, patches, appsList };
+      return {
+        key: bundleItem.key,
+        bundle: bundleItem,
+        rows,
+        patches,
+        appsList,
+      };
     };
 
     const bundlesGroups = computed(() => {
@@ -917,6 +943,40 @@ const app = createApp({
         })
         .catch(() => {});
 
+    const isSideMenuOpen = ref<boolean>(false);
+    const toggleSideMenu = () => {
+      isSideMenuOpen.value = !isSideMenuOpen.value;
+      if (isSideMenuOpen.value) {
+        document.body.style.overflow = "hidden";
+      } else if (!popupBundleKey.value) {
+        document.body.style.overflow = "";
+      }
+    };
+
+    const scrollToTop = () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+
+    const handleBottomNav = (tab: "bundles" | "whatsnew") => {
+      if (tab === "bundles") {
+        if (!isWhatsNewView.value) {
+          scrollToTop();
+        } else {
+          isWhatsNewView.value = false;
+          safeUpdateHistory(buildUrlString(""), true);
+          scrollToTop();
+        }
+      } else if (tab === "whatsnew") {
+        if (isWhatsNewView.value) {
+          scrollToTop();
+        } else {
+          isWhatsNewView.value = true;
+          safeUpdateHistory(buildUrlString("#whats-new"), true);
+          scrollToTop();
+        }
+      }
+    };
+
     return {
       query,
       bundle,
@@ -936,6 +996,9 @@ const app = createApp({
       bundlesGroups,
       effectiveTwoColumns: computed(() => (bundlesGroups.value.length === 1 ? false : isTwoColumns.value)),
       isWhatsNewView,
+      isSideMenuOpen,
+      toggleSideMenu,
+      handleBottomNav,
       whatsNewHighlights,
       whatsNewHistory,
       isWhatsNewLoading,
@@ -972,10 +1035,21 @@ const app = createApp({
       formatDate: (value: string | number | Date) => {
         if (!value) return "";
         const parsedDate = new Date(value);
-        return isNaN(parsedDate.getTime()) ? "" : parsedDate.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+        return isNaN(parsedDate.getTime())
+          ? ""
+          : parsedDate.toLocaleDateString("en-US", {
+              month: "short",
+              day: "numeric",
+              year: "numeric",
+            });
       },
       playUrl: (packageName: string) => `https://play.google.com/store/apps/details?id=${encodeURIComponent(packageName)}`,
-      getWhatsNewAppIcon: (packageName: string) => whatsNewAppsData.value[packageName]?.iconUrl || activeData.value?.namesMap?.[packageName]?.iconUrl || "",
+      getWhatsNewAppIcon: (packageName: string) => {
+        const whatsNewMeta = whatsNewAppsData.value[packageName];
+        if (whatsNewMeta?.iconUrl) return whatsNewMeta.iconUrl;
+        const meta = activeData.value?.namesMap?.[packageName];
+        return typeof meta === "object" && meta !== null ? (meta as AppNameMeta).iconUrl || "" : "";
+      },
       formatWhatsNewAppName: (packageName: string) =>
         appName(packageName, Object.keys(whatsNewAppsData.value).length > 0 ? whatsNewAppsData.value : activeData.value?.namesMap || {}, activeData.value?.skipSet),
       getAppName: (packageName: string) => (packageName ? appName(packageName, activeData.value?.namesMap || {}, activeData.value?.skipSet) : "All Apps"),

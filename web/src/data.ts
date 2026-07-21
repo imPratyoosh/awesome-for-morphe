@@ -160,10 +160,21 @@ function extractVersions(value: unknown): VersionItem[] {
   return value
     .flatMap((item) => {
       if (typeof item === "string") return [{ version: item, isExperimental: false }];
-      if (item?.version) return [{ version: String(item.version), isExperimental: !!item.isExperimental }];
+      if (item?.version)
+        return [
+          {
+            version: String(item.version),
+            isExperimental: !!item.isExperimental,
+          },
+        ];
       return [];
     })
-    .sort((a, b) => b.version.localeCompare(a.version, undefined, { numeric: true, sensitivity: "base" }));
+    .sort((a, b) =>
+      b.version.localeCompare(a.version, undefined, {
+        numeric: true,
+        sensitivity: "base",
+      }),
+    );
 }
 
 export async function loadInitialData(onPatchLoaded?: (v: boolean | null) => void): Promise<ActiveData> {
@@ -219,7 +230,15 @@ export async function loadInitialData(onPatchLoaded?: (v: boolean | null) => voi
 
       if (Array.isArray(compatiblePackages)) {
         const mapped = compatiblePackages.flatMap((item: CompatibilityItem) =>
-          item?.packageName ? [{ packageName: item.packageName, isPreRelease: !!item.isPreRelease, versions: extractVersions(item.targets || []) }] : [],
+          item?.packageName
+            ? [
+                {
+                  packageName: item.packageName,
+                  isPreRelease: !!item.isPreRelease,
+                  versions: extractVersions(item.targets || []),
+                },
+              ]
+            : [],
         );
         if (mapped.length) packageRows = mapped;
       }
@@ -374,7 +393,11 @@ export function getFilterOptions(rows: RowItem[], namesMap: Record<string, AppNa
   return buildFilterOptions(appMap, bundleSet, namesMap, hasUniversal);
 }
 
-export function summarizeRows(rows: RowItem[]): { bundles: number; patches: number; apps: number } {
+export function summarizeRows(rows: RowItem[]): {
+  bundles: number;
+  patches: number;
+  apps: number;
+} {
   const bundles = new Set();
   const patches = new Set();
   const apps = new Set();

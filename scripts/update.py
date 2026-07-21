@@ -59,7 +59,11 @@ def fetch_avatar_url(repo_url: str) -> Optional[str]:
             username = parts[1].split("/")[0]
             if username:
                 try:
-                    data = fetch(f"https://gitlab.com/api/v4/users?username={username}", timeout=10, as_json=True)
+                    data = fetch(
+                        f"https://gitlab.com/api/v4/users?username={username}",
+                        timeout=10,
+                        as_json=True,
+                    )
                     if data and len(data) > 0:
                         avatar = data[0].get("avatar_url", "")
                         if avatar:
@@ -597,7 +601,10 @@ def main():
 
     sorted_bundles = []
 
-    for base, data in sorted(bundle_sources.items(), key=lambda item: (item[1].get("firstSeen", ""), item[0].lower())):
+    for base, data in sorted(
+        bundle_sources.items(),
+        key=lambda item: (item[1].get("firstSeen", ""), item[0].lower()),
+    ):
         ordered_data = {"key": base}
         ordered_data.update(data)
         sorted_bundles.append(ordered_data)

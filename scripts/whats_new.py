@@ -131,7 +131,10 @@ def build_json_diff(old_bundles, new_bundles, app_metadata, skip_words):
     json_diff = {}
 
     def app_sort_key(pkg):
-        return (pkg == "universal", format_app_name(pkg, app_metadata, skip_words).lower())
+        return (
+            pkg == "universal",
+            format_app_name(pkg, app_metadata, skip_words).lower(),
+        )
 
     for key, patches_dict in sorted(new_bundles.items(), key=lambda x: x[0].lower()):
         new_package_names = {pkg for pkg in patches_dict if is_valid_pkg(pkg)}
@@ -139,7 +142,13 @@ def build_json_diff(old_bundles, new_bundles, app_metadata, skip_words):
         if key not in old_bundles:
             json_diff[key] = {
                 "isNew": True,
-                "apps": {pkg: {"isNew": True, "patches": sorted(list(patches_dict.get(pkg, [])))} for pkg in sorted(new_package_names, key=app_sort_key)},
+                "apps": {
+                    pkg: {
+                        "isNew": True,
+                        "patches": sorted(list(patches_dict.get(pkg, []))),
+                    }
+                    for pkg in sorted(new_package_names, key=app_sort_key)
+                },
             }
         else:
             old_patches_dict = old_bundles[key]
@@ -148,11 +157,17 @@ def build_json_diff(old_bundles, new_bundles, app_metadata, skip_words):
 
             for pkg in sorted(new_package_names, key=app_sort_key):
                 if pkg not in old_package_names:
-                    apps_dict[pkg] = {"isNew": True, "patches": sorted(list(patches_dict.get(pkg, [])))}
+                    apps_dict[pkg] = {
+                        "isNew": True,
+                        "patches": sorted(list(patches_dict.get(pkg, []))),
+                    }
                 else:
                     added_patches = set(patches_dict.get(pkg, [])) - set(old_patches_dict.get(pkg, []))
                     if added_patches:
-                        apps_dict[pkg] = {"isNew": False, "patches": sorted(list(added_patches))}
+                        apps_dict[pkg] = {
+                            "isNew": False,
+                            "patches": sorted(list(added_patches)),
+                        }
 
             if apps_dict:
                 json_diff[key] = {"isNew": False, "apps": apps_dict}

@@ -6,7 +6,8 @@ const cacheBustPlugin = () => {
     name: "cache-bust",
     enforce: "post",
     transformIndexHtml(html) {
-      return html.replace(
+      let cleanHtml = html.replace(/\r\n/g, "\n").replace(/(\n[ \t]*){2,}\n/g, "\n\n").trim() + "\n";
+      return cleanHtml.replace(
         /(assets\/index\.(?:js|css))/g,
         `$1?v=${Date.now()}`
       );
