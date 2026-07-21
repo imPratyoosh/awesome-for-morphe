@@ -15,7 +15,7 @@ SNAPSHOT_PATH = Path(__file__).resolve().parents[2] / "data" / "snapshots" / "of
 
 HEADERS = {
     "Referer": "https://morphe-patches.software/",
-    "User-Agent": "AwesomeForMorphe/1.0 (+https://github.com/nvbangg/awesome-for-morphe)",
+    "User-Agent": "AwesomeMorphe/1.0 (+https://github.com/nvbangg/awesome-morphe)",
 }
 
 _PATCHES_RE = re.compile(r"(?:'s\s+patches|\s+patches)$", re.IGNORECASE)

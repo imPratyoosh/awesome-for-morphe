@@ -1,12 +1,12 @@
-### [nvbangg/awesome-for-morphe](https://github.com/nvbangg/awesome-for-morphe)
+### [nvbangg/awesome-morphe](https://github.com/nvbangg/awesome-morphe)
 
 > [!NOTE]
-> This document contains contribution guidelines, project structure details, and automation workflows for the [Awesome for Morphe Website](https://nvbangg.github.io/awesome-for-morphe/).
+> This document contains contribution guidelines, project structure details, and automation workflows for the [Awesome Morphe Website](https://awesome-morphe.vercel.app/).
 
 ## 📬 Contributing
 
-- To add, remove, or customize a bundle source, please submit a [Bundle Request](https://github.com/nvbangg/awesome-for-morphe/issues/new?template=bundle-request.yml).
-- For any other issues, suggestions, or questions, feel free to [open a new issue](https://github.com/nvbangg/awesome-for-morphe/issues/new).
+- To add, remove, or customize a bundle source, please submit a [Bundle Request](https://github.com/nvbangg/awesome-morphe/issues/new?template=bundle-request.yml).
+- For any other issues, suggestions, or questions, feel free to [open a new issue](https://github.com/nvbangg/awesome-morphe/issues/new).
 
 ## 📂 Project Structure & Data
 

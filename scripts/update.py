@@ -99,7 +99,7 @@ def fetch_repo_stars(repo_url: str) -> Optional[int]:
                 api_url = f"https://api.github.com/repos/{owner}/{name}"
 
                 def fetch_stars(use_token: bool = True) -> Optional[int]:
-                    headers = {"User-Agent": "Awesome-For-Morphe"}
+                    headers = {"User-Agent": "Awesome-Morphe"}
                     if use_token and os.environ.get("GITHUB_TOKEN"):
                         headers["Authorization"] = f"Bearer {os.environ['GITHUB_TOKEN']}"
                     return fetch(api_url, headers=headers, timeout=10, as_json=True).get("stargazers_count", 0)

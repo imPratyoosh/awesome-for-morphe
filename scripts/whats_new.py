@@ -104,7 +104,7 @@ def stringify_trie(bundles_dict):
 
 
 def make_url(bundle, app=None, patches=None):
-    url = "https://nvbangg.github.io/awesome-for-morphe/"
+    url = "https://awesome-morphe.vercel.app/"
     query = []
 
     if patches:
@@ -209,7 +209,7 @@ def generate_markdown(json_diff, app_metadata, skip_words):
             trie_dict = {bundle_key: bundle_changes}
             trie_str = stringify_trie(trie_dict)
             q = urllib.parse.quote(trie_str, safe=':,"')
-            url = f"https://nvbangg.github.io/awesome-for-morphe/?show={q}#whats-new"
+            url = f"https://awesome-morphe.vercel.app/?show={q}#whats-new"
 
             link = f"[{bundle_key}]({url})"
             bundle_md = [f"- 📦 {link}"]
@@ -229,7 +229,7 @@ def generate_markdown(json_diff, app_metadata, skip_words):
 
     sections = []
     if all_changes:
-        full_url = "https://nvbangg.github.io/awesome-for-morphe/#whats-new"
+        full_url = "https://awesome-morphe.vercel.app/#whats-new"
         sections.append(f"✨ [_View full changelog_]({full_url})")
 
     if markdown_lines:
@@ -238,7 +238,7 @@ def generate_markdown(json_diff, app_metadata, skip_words):
     if not sections:
         return ""
 
-    sections.insert(0, "📢 _Telegram: [@awesome_for_morphe](https://t.me/awesome_for_morphe)_")
+    sections.insert(0, "📢 _Telegram: [@awesome_morphe](https://t.me/awesome_morphe)_")
     return "\n\n".join(sections)
 
 

@@ -546,7 +546,7 @@ const app = createApp({
     const loadWhatsNewData = async () => {
       isWhatsNewLoading.value = true;
       try {
-        const data = await fetchJson<{ history: unknown[]; apps: Record<string, AppNameMeta> }>("assets/whats-new.json").catch(() => ({ history: [], apps: {} }));
+        const data = await fetchJson<{ history: unknown[]; apps: Record<string, AppNameMeta> }>("whats-new.json").catch(() => ({ history: [], apps: {} }));
         whatsNewHistory.value = data.history || [];
         whatsNewAppsData.value = data.apps || {};
       } catch (err) {

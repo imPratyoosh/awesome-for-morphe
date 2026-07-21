@@ -1,11 +1,11 @@
-### [nvbangg/awesome-for-morphe](https://github.com/nvbangg/awesome-for-morphe)
+### [nvbangg/awesome-morphe](https://github.com/nvbangg/awesome-morphe)
 
-🔍 [Awesome for Morphe Website](https://nvbangg.github.io/awesome-for-morphe)
+### 🔍 [awesome-morphe.vercel.app](https://awesome-morphe.vercel.app)
 
 > [!NOTE]
 > 🌐 A curated list of all [Morphe](https://morphe.software) resources and projects.  
-> 🔍 Explore [all supported apps and patches](https://nvbangg.github.io/awesome-for-morphe), automatically updated.  
-> 🔔 Get [daily notifications](https://github.com/nvbangg/awesome-for-morphe/releases) when there are new updates. [![Telegram Channel](https://img.shields.io/badge/Telegram_Channel-blue?style=social&logo=telegram)](https://t.me/awesome_for_morphe)  
+> 🔍 Explore [all supported apps and patches](https://awesome-morphe.vercel.app), automatically updated.  
+> 🔔 Get [daily notifications](https://github.com/nvbangg/awesome-morphe/releases) when there are new updates. [![Telegram Channel](https://img.shields.io/badge/Telegram_Channel-blue?style=social&logo=telegram)](https://t.me/awesome_morphe)  
 > 📂 For contribution guidelines and documentation, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ### 🔗 Jump to:
@@ -64,7 +64,7 @@
 
 🔍 Browse and explore all supported Morphe apps and patches from the following sources:
 
-- [Awesome for Morphe Website](https://nvbangg.github.io/awesome-for-morphe/) [![Repo](https://img.shields.io/badge/Repo-black?style=social&logo=github)](https://github.com/nvbangg/awesome-for-morphe)
+- [Awesome Morphe Website](https://awesome-morphe.vercel.app/) [![Repo](https://img.shields.io/badge/Repo-black?style=social&logo=github)](https://github.com/nvbangg/awesome-morphe)
 - [Morphe Community Patches](https://morphe-patches.software/)
 - <details><summary><a href="https://patch-explorer.web.app/">Patch Explorer</a> <a href="https://gitlab.com/Paresh-Maheshwari/patch-explorer"><img src="https://img.shields.io/badge/Repo-black?style=social&logo=gitlab" alt="Repo"></a></summary>
 
@@ -100,7 +100,7 @@
 
 <div align="center">
 
-**[github.com/nvbangg/awesome-for-morphe](https://github.com/nvbangg/awesome-for-morphe)**  
+**[github.com/nvbangg/awesome-morphe](https://github.com/nvbangg/awesome-morphe)**  
 ⭐ Star this repo if you find it useful!  
 Maintained with ❤️ by **[@nvbangg](https://github.com/nvbangg)**
 
@@ -108,7 +108,7 @@ Maintained with ❤️ by **[@nvbangg](https://github.com/nvbangg)**
 
 #### ⚠️ Disclaimer
 
-- [This project](https://github.com/nvbangg/awesome-for-morphe) is not affiliated with [Morphe](https://morphe.software/) or any authors mentioned here.
+- [This project](https://github.com/nvbangg/awesome-morphe) is not affiliated with [Morphe](https://morphe.software/) or any authors mentioned here.
 - Only use patch sources or projects you trust. This project is for informational purposes only and is not responsible for any arising issues.
 
 #### 🙏 Credits

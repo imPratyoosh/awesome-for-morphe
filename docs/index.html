@@ -4,23 +4,27 @@
 <html lang="en" class="bg-black text-white antialiased" style="color-scheme: dark;">
 
 <head>
+  <script>
+    if (window.location.hostname.includes("github.io")) {
+      window.location.replace("https://awesome-morphe.vercel.app" + window.location.pathname + window.location.search + window.location.hash);
+    }
+  </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Awesome for Morphe Website</title>
+  <title>Awesome Morphe Website</title>
   <meta name="description" content="Explore all supported apps and patches, automatically updated.">
-  <link rel="canonical" href="https://nvbangg.github.io/awesome-for-morphe/">
+  <link rel="canonical" href="https://awesome-morphe.vercel.app/">
   <meta name="theme-color" content="#0C0C0D">
   <meta name="color-scheme" content="only dark">
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Awesome for Morphe Website",
-    "url": "https://nvbangg.github.io/awesome-for-morphe/",
+    "name": "Awesome Morphe Website",
+    "url": "https://awesome-morphe.vercel.app/",
     "description": "Explore all supported apps and patches, automatically updated."
   }
   </script>
@@ -28,8 +32,8 @@
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-80G574QRZ0"></script>
   <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-80G574QRZ0');</script>
-  <script type="module" crossorigin src="./assets/index.js?v=1784638257263"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index.css?v=1784638257263">
+  <script type="module" crossorigin src="./assets/index.js?v=1784643014104"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index.css?v=1784643014104">
 </head>
 
 <body class="bg-black min-h-screen relative overflow-x-hidden">
@@ -40,12 +44,12 @@
           <!-- Header: Logo and Links -->
           <div
             class="relative flex flex-col items-center justify-center border-b-2 border-blue/10 py-3 lg:py-0 lg:h-12 gap-3 px-3">
-            <a href="https://nvbangg.github.io/awesome-for-morphe/"
+            <a href="https://awesome-morphe.vercel.app/"
               class="relative order-1 lg:order-0 hover:opacity-80 transition-opacity" title="Go to Homepage">
               <h1
                 class="text-2xl lg:text-3xl font-extrabold flex items-center justify-center gap-2 lg:gap-3 text-transparent bg-clip-text bg-linear-to-r from-blue to-green">
                 <img src="assets/images/favicon.svg" alt="Logo" class="w-6 h-6 lg:w-8 lg:h-8 object-contain">
-                <span>Awesome for Morphe</span>
+                <span>Awesome Morphe</span>
               </h1>
             </a>
 
@@ -62,12 +66,12 @@
               </div>
 
               <div class="flex items-center gap-2 lg:absolute lg:right-3 lg:top-1/2 lg:-translate-y-1/2">
-                <a href="https://github.com/nvbangg/awesome-for-morphe" target="_blank" rel="noreferrer"
+                <a href="https://github.com/nvbangg/awesome-morphe" target="_blank" rel="noreferrer"
                   class="badge badge-md bg-black border-lightGray hover:border-white/50 text-white">
                   <i class="fa-brands fa-github icon-center"></i>
                   <span>GitHub</span>
                 </a>
-                <a href="https://t.me/awesome_for_morphe" target="_blank" rel="noreferrer"
+                <a href="https://t.me/awesome_morphe" target="_blank" rel="noreferrer"
                   class="badge badge-md bg-blue border-white/40 hover:opacity-90 text-white">
                   <i class="fa-brands fa-telegram icon-center"></i>
                   <span>Telegram</span>
@@ -550,7 +554,7 @@
             Disclaimer
           </h4>
           <ul class="list-disc list-outside ml-4 text-light text-xs flex flex-col gap-1">
-            <li><a href="https://github.com/nvbangg/awesome-for-morphe" target="_blank"
+            <li><a href="https://github.com/nvbangg/awesome-morphe" target="_blank"
                 class="font-bold text-blue hover:underline">This project</a> is not affiliated with <a
                 href="https://morphe.software/" target="_blank" class="font-bold text-blue hover:underline">Morphe</a>
               or any authors mentioned here.</li>
@@ -814,8 +818,7 @@
       </div>
     </div>
 
-  </div>
-
+  </div>
 
   <!-- Back to Top -->
   <button id="back-to-top" aria-label="Back to Top"
