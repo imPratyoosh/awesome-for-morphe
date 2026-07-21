@@ -14077,27 +14077,32 @@
           "default": false
         },
         {
-          "name": "Free in-app purchases",
-          "description": "Patches the Google Play Billing bridge to report success and validate purchases. Handles crystal packs and other IAP items at the billing layer. For unlocking tribes and skins, use the 'Unlock all tribes' patch instead.",
-          "default": false,
+          "name": "Disable Google Play Games sign-in prompt when already signed in",
+          "description": "Suppresses the Google Play Games sign-in popup ONLY when the user has already signed in before. On first launch (or after signing out) the popup still appears so the user can authenticate and get cloud saves. On subsequent launches the popup is suppressed because getAccount() returns the cached GoogleSignInAccount. Cloud saves, leaderboards and achievements continue to work normally. The in-game Sign In button is unaffected. Fixes the issue where the popup reappeared on every launch even after the user had already signed in.",
           "compatiblePackagesKey": 292
         },
         {
           "name": "Free in-app purchases",
-          "description": "When you try to buy something, the purchase is immediately marked as successful without contacting Google Play. The EA Nimble MTX system receives a null error (success) and grants the item.",
+          "description": "Patches the Google Play Billing bridge to report success and validate purchases. Handles crystal packs and other IAP items at the billing layer. For unlocking tribes and skins, use the 'Unlock all tribes' patch instead.",
+          "default": false,
           "compatiblePackagesKey": 293
+        },
+        {
+          "name": "Free in-app purchases",
+          "description": "When you try to buy something, the purchase is immediately marked as successful without contacting Google Play. The EA Nimble MTX system receives a null error (success) and grants the item.",
+          "compatiblePackagesKey": 294
         },
         {
           "name": "Free in-app purchases",
           "description": "Skips purchase signature verification and forces billing to report success. Patches RunnerBillingSecurity.verifyPurchase to always return true, Purchase.isAcknowledged/getPurchaseState to return valid values, and the billing bridge callbacks.",
           "default": false,
-          "compatiblePackagesKey": 294
+          "compatiblePackagesKey": 295
         },
         {
           "name": "Free in-app purchases",
           "description": "Makes every IAP purchase succeed instantly without contacting Google Play Billing. When the user taps 'Buy' on any in-app product, the game credits the purchase immediately and skips the Play Store dialog. For Oddmar 0.111 the only IAP product is 'unlock_all_levels', so this patch gives a free full-game unlock on demand. Note: literal 'unlimited coins' (the in-game currency counter) requires native libil2cpp.so patching and is NOT covered by this Java patch.",
           "default": false,
-          "compatiblePackagesKey": 295
+          "compatiblePackagesKey": 292
         },
         {
           "name": "Free in-app purchases",
@@ -14107,17 +14112,17 @@
         {
           "name": "Free reward ads",
           "description": "When the game tries to show a rewarded ad, it immediately fires the ad-clicked and ad-closed callbacks without actually showing the ad. You get the reward instantly.",
-          "compatiblePackagesKey": 293
+          "compatiblePackagesKey": 294
         },
         {
           "name": "Remove ads",
           "description": "Prevents video ads from loading. When the game tries to load an ad, nothing happens. Ads will not be shown.",
-          "compatiblePackagesKey": 293
+          "compatiblePackagesKey": 294
         },
         {
           "name": "Remove ads",
           "description": "Simulates the purchase of the 'climbnoads' IAP product by injecting a fake Purchase into the purchase list when the game queries purchases. The game finds 'climbnoads' and treats No Ads as purchased.",
-          "compatiblePackagesKey": 294
+          "compatiblePackagesKey": 295
         },
         {
           "name": "Unity IL2CPP hex patch",
@@ -14137,12 +14142,12 @@
         {
           "name": "Unlock all tribes",
           "description": "Unlocks all 20 tribes (Xinxi, Imperius, Bardur, Oumaji, Kickoo, Hoodrick, Luxidoor, Vengir, Zebasi, Aimo, Aquarion, Elyrion, Polaris, Magma, Yadakk, Quetzali, Cymanti, Swamp, Ikarus, Urkaz) and all skins by patching the native IL2CPP library (libil2cpp.so). Makes IsProductUnlocked return true, skips the purchase flow, and suppresses the 'Purchase error' dialog. Pure ARM64 hex patching, no smali, no extension.",
-          "compatiblePackagesKey": 292
+          "compatiblePackagesKey": 293
         },
         {
           "name": "Unlock full game",
           "description": "Unlocks the full game (all levels, all worlds) by intercepting the IAP 'has product been purchased' check. Oddmar's only IAP product is 'unlock_all_levels' — this patch makes the game think it has already been purchased, so every level is unlocked from the start. No Google Play Billing connection is required. Also disables the startup 'acknowledge all purchases' query so the patch doesn't try to reach Google Play at boot.",
-          "compatiblePackagesKey": 295
+          "compatiblePackagesKey": 292
         },
         {
           "name": "Unlock premium",
@@ -14155,7 +14160,7 @@
           "compatiblePackagesKey": 297
         }
       ],
-      "createdAt": "2026-07-18T22:46:50",
+      "createdAt": "2026-07-21T16:48:15",
       "targetApps": [
         "air.com.midjiwan.polytopia",
         "com.IvanAF.ClimbAMIYPfree",
@@ -18724,6 +18729,19 @@
     ],
     [
       {
+        "packageName": "com.mobge.Oddmar",
+        "targets": [
+          {
+            "version": "0.111"
+          },
+          {
+            "isExperimental": true
+          }
+        ]
+      }
+    ],
+    [
+      {
         "packageName": "air.com.midjiwan.polytopia",
         "targets": [
           {
@@ -18757,19 +18775,6 @@
           },
           {
             "version": "6.0.5"
-          },
-          {
-            "isExperimental": true
-          }
-        ]
-      }
-    ],
-    [
-      {
-        "packageName": "com.mobge.Oddmar",
-        "targets": [
-          {
-            "version": "0.111"
           },
           {
             "isExperimental": true
