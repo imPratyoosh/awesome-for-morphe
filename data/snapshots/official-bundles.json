@@ -4351,7 +4351,7 @@
         "com.nytimes.crossword"
       ],
       "appUpdates": {},
-      "stars": 194,
+      "stars": 195,
       "updatedAt": 1784419200000,
       "firstSeen": 1780395687718,
       "appFirstSeen": {
@@ -4505,8 +4505,8 @@
         "com.urbandroid.kinestop": 1783291168540,
         "com.nytimes.crossword": 1783875617302
       },
-      "starsGained7d": 2,
-      "starsGained40d": 2
+      "starsGained7d": 3,
+      "starsGained40d": 3
     },
     {
       "source": "gitlab",
@@ -7753,14 +7753,14 @@
       "appUpdates": {
         "com.zhiliaoapp.musically": 1781654400000
       },
-      "stars": 136,
+      "stars": 139,
       "updatedAt": 1781654400000,
       "firstSeen": 1780156086693,
       "appFirstSeen": {
         "com.zhiliaoapp.musically": 1780156086693
       },
-      "starsGained7d": 1,
-      "starsGained40d": 1
+      "starsGained7d": 4,
+      "starsGained40d": 4
     },
     {
       "source": "github",
@@ -7840,7 +7840,7 @@
         },
         {
           "name": "Remove Ads",
-          "description": "Stops the banner and interstitial ads SofaScore shows around scores and between screens. Every ad site reads one decision method off the cached account, and the app's own ad master switch caches that method's result, so forcing it to \"no ads\" turns them all off with no login needed. The result holds across a sync because the switch re-reads the same method. Ads that are served by the video/story SDK inside embedded content are not affected. Re-signing breaks SofaScore's login (it only offers Google and Facebook sign-in, both of which reject the new signature), but removing ads does not need an account so the patch still works.",
+          "description": "Stops the banner and interstitial ads SofaScore shows around scores and between screens. Every ad site reads one decision method off the cached account, and the app's own ad master switch caches that method's result, so forcing it to \"no ads\" turns them all off with no login needed. The result holds across a sync because the switch re-reads the same method. Ads that are served by the video/story SDK inside embedded content are not affected. The patch also keeps Firebase notification registration compatible with the re-signed build. Re-signing breaks SofaScore's login (it only offers Google and Facebook sign-in, both of which reject the new signature), but removing ads does not need an account so the patch still works.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 278
@@ -8022,7 +8022,7 @@
         },
         {
           "name": "Unlock Premium",
-          "description": "Turns on Symfonium's paid features. The build ships as a public beta with a built-in trial: a license value the app keeps locally decides whether the paid UI is open, and two timers (the beta cutoff and the trial countdown) lock the app once they pass. This forces the license read to \"licensed\" so the paid screens open, drops the \"trial expires on ...\" line from settings, and freezes the trusted-time lookup the timers read at a fixed pre-cutoff instant so neither timer can fire. The license is checked on the client (a local Play purchase verify), so the unlock holds without an account. Connecting Plex, Jellyfin and other media servers is untouched.",
+          "description": "Turns on Symfonium's paid features. The build ships as a public beta with a built-in trial, so this also prevents the expired-beta screen. The license is checked locally and the unlock does not require an account. Connecting Plex, Jellyfin and other media servers is untouched.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 301
@@ -8168,7 +8168,7 @@
           "compatiblePackagesKey": 315
         }
       ],
-      "changelog": "## [1.43.0](https://github.com/arandomhooman/hoomans-morphe-patches/compare/v1.42.1...v1.43.0) (2026-07-12)\n\n### 🐛 Bug Fixes\n\n* unlock Quizlet Learn/Test meters and Tracked free-tier StrictEq sites ([bf81012](https://github.com/arandomhooman/hoomans-morphe-patches/commit/bf81012c023f16cf8d3ac633dc15054113202b6b))\n* unlock Quizlet mid-quiz Plus gates ([37e9290](https://github.com/arandomhooman/hoomans-morphe-patches/commit/37e929084c1ec4d8db9776c4a3867a5f117e0386))\n* unlock Tracked customize-dashboard pro gate ([8dd606f](https://github.com/arandomhooman/hoomans-morphe-patches/commit/8dd606f857860267a938f60fdd509909c5f9e4e6))\n\n### ✨ New Features\n\n* support Alpha Progression 7.0 Unlock Premium ([db931b4](https://github.com/arandomhooman/hoomans-morphe-patches/commit/db931b4406e93bed5aa90bc3bb910fc3e0fca41f))\n\n## [1.42.1](https://github.com/arandomhooman/hoomans-morphe-patches/compare/v1.42.0...v1.42.1) (2026-07-12)\n\n### 🐛 Bug Fixes\n\n* neutralize Poweramp settings export/import crash on re-sign ([7f263ed](https://github.com/arandomhooman/hoomans-morphe-patches/commit/7f263ed3bdd2c865a7bc95c52bda3874cb930293))\n* return fixed SNTP time for Symfonium beta cutoff ([a184ae4](https://github.com/arandomhooman/hoomans-morphe-patches/commit/a184ae4efe4b3b11e2461fa75e0dece14eb28a40))\n* stop Poweramp 0-byte settings export and Symfonium post-cutoff SNTP ([11a9e9a](https://github.com/arandomhooman/hoomans-morphe-patches/commit/11a9e9a2c4768284a40d000fe2f00ec6ec406462))\n\n## [1.42.0](https://github.com/arandomhooman/hoomans-morphe-patches/compare/v1.41.1...v1.42.0) (2026-07-05)\n\n### ✨ New Features\n\n* add ChatBoost unlock premium ([1d8d23e](https://github.com/arandomhooman/hoomans-morphe-patches/commit/1d8d23e524bfaa57310dbc53ca4a02c559c4e530))\n\n## [1.41.1](https://github.com/arandomhooman/hoomans-morphe-patches/compare/v1.41.0...v1.41.1) (2026-07-04)\n\n### 🐛 Bug Fixes\n\n* note that patching SofaScore breaks login in Remove Ads ([31b02aa](https://github.com/arandomhooman/hoomans-morphe-patches/commit/31b02aa215061fa66cca79c25b86024302aa2def))\n\n## [1.41.0](https://github.com/arandomhooman/hoomans-morphe-patches/compare/v1.40.0...v1.41.0) (2026-07-03)\n\n### ✨ New Features\n\n* add SofaScore remove ads patch ([58f3eaa](https://github.com/arandomhooman/hoomans-morphe-patches/commit/58f3eaa9ff7bdba36e3b97961a46492b93805593))\n\n## [1.40.0](https://github.com/arandomhooman/hoomans-morphe-patches/compare/v1.39.0...v1.40.0) (2026-07-02)\n\n### ✨ New Features\n\n* restore Projectivy Launcher 4.68 support alongside 4.70 ([b4fbf96](https://github.com/arandomhooman/hoomans-morphe-patches/commit/b4fbf96513e5c7764394dc500e7c5c589ec60ec3))\n\n## [1.39.0](https://github.com/arandomhooman/hoomans-morphe-patches/compare/v1.38.0...v1.39.0) (2026-07-01)\n\n### ✨ New Features\n\n* add Todoist unlock pro ([cd547ac](https://github.com/arandomhooman/hoomans-morphe-patches/commit/cd547ac6a2869c66f563470707b5275737613fa5))\n\n## [1.38.0](https://github.com/arandomhooman/hoomans-morphe-patches/compare/v1.37.0...v1.38.0) (2026-07-01)\n\n### ✨ New Features\n\n* add ADM remove ads patch ([78dd9f3](https://github.com/arandomhooman/hoomans-morphe-patches/commit/78dd9f35bdecbac34d5a5ed5617349b9c4e57f81))\n\n## [1.37.0](https://github.com/arandomhooman/hoomans-morphe-patches/compare/v1.36.0...v1.37.0) (2026-07-01)\n\n### ✨ New Features\n\n* add Hevy unlock pro ([30ac2ab](https://github.com/arandomhooman/hoomans-morphe-patches/commit/30ac2ab5328ba5c717b9904d57b2094a43d9a740))\n\n## [1.36.0](https://github.com/arandomhooman/hoomans-morphe-patches/compare/v1.35.0...v1.36.0) (2026-06-30)\n\n### ✨ New Features\n\n* add Symfonium unlock premium ([0ab2ecb](https://github.com/arandomhooman/hoomans-morphe-patches/commit/0ab2ecba425a3e2728783be994170515a61a566d))\n\n## [1.35.0](https://github.com/arandomhooman/hoomans-morphe-patches/compare/v1.34.1...v1.35.0) (2026-06-29)\n\n### ✨ New Features\n\n* add Smart AudioBook Player full unlock ([e212cf5](https://github.com/arandomhooman/hoomans-morphe-patches/commit/e212cf500597d53fb13b9e384a06f09248a7b05f))\n\n## [1.34.1](https://github.com/arandomhooman/hoomans-morphe-patches/compare/v1.34.0...v1.34.1) (2026-06-29)\n\n### 🐛 Bug Fixes\n\n* support Battery Guru 2.5.0.2 beta ([463a458](https://github.com/arandomhooman/hoomans-morphe-patches/commit/463a458b1e8a543d4d5b413fca32672d6eb12b8a))\n\n## [1.34.0](https://github.com/arandomhooman/hoomans-morphe-patches/compare/v1.33.0...v1.34.0) (2026-06-29)\n\n### ✨ New Features\n\n* add Poweramp unlock premium ([c04cd02](https://github.com/arandomhooman/hoomans-morphe-patches/commit/c04cd02a25d6d2fe42e692913bbdbfc42d23e3c3))\n\n## [1.33.0](https://github.com/arandomhooman/hoomans-morphe-patches/compare/v1.32.0...v1.33.0) (2026-06-28)\n\n### 🐛 Bug Fixes\n\n* stop blazed sponsored posts slipping past Tumblr Remove ads ([a3ceef9](https://github.com/arandomhooman/hoomans-morphe-patches/commit/a3ceef924eb5472c55ab50310355a4298c4e7d92))\n\n### ✨ New Features\n\n* add Tumblr annoyance toggles ([570bf9f](https://github.com/arandomhooman/hoomans-morphe-patches/commit/570bf9fc296a4429b81dd54b5f88e68a14ced455))\n\n## [1.32.0](https://github.com/arandomhooman/hoomans-morphe-patches/compare/v1.31.3...v1.32.0) (2026-06-28)\n\n### ✨ New Features\n\n* update Projectivy Launcher Unlock Premium for 4.70 ([74c2232](https://github.com/arandomhooman/hoomans-morphe-patches/commit/74c22324cb3f4ef7c478ac3b1538c6d860e55555))",
+      "changelog": "## [1.43.1](https://github.com/arandomhooman/hoomans-morphe-patches/compare/v1.43.0...v1.43.1) (2026-07-20)\n\n### 🐛 Bug Fixes\n\n* resolve reported patch regressions ([d99af82](https://github.com/arandomhooman/hoomans-morphe-patches/commit/d99af82f4dd1babdf11bd14fdffee0880cce5ad0))\n\n## [1.43.0](https://github.com/arandomhooman/hoomans-morphe-patches/compare/v1.42.1...v1.43.0) (2026-07-12)\n\n### 🐛 Bug Fixes\n\n* unlock Quizlet Learn/Test meters and Tracked free-tier StrictEq sites ([bf81012](https://github.com/arandomhooman/hoomans-morphe-patches/commit/bf81012c023f16cf8d3ac633dc15054113202b6b))\n* unlock Quizlet mid-quiz Plus gates ([37e9290](https://github.com/arandomhooman/hoomans-morphe-patches/commit/37e929084c1ec4d8db9776c4a3867a5f117e0386))\n* unlock Tracked customize-dashboard pro gate ([8dd606f](https://github.com/arandomhooman/hoomans-morphe-patches/commit/8dd606f857860267a938f60fdd509909c5f9e4e6))\n\n### ✨ New Features\n\n* support Alpha Progression 7.0 Unlock Premium ([db931b4](https://github.com/arandomhooman/hoomans-morphe-patches/commit/db931b4406e93bed5aa90bc3bb910fc3e0fca41f))\n\n## [1.42.1](https://github.com/arandomhooman/hoomans-morphe-patches/compare/v1.42.0...v1.42.1) (2026-07-12)\n\n### 🐛 Bug Fixes\n\n* neutralize Poweramp settings export/import crash on re-sign ([7f263ed](https://github.com/arandomhooman/hoomans-morphe-patches/commit/7f263ed3bdd2c865a7bc95c52bda3874cb930293))\n* return fixed SNTP time for Symfonium beta cutoff ([a184ae4](https://github.com/arandomhooman/hoomans-morphe-patches/commit/a184ae4efe4b3b11e2461fa75e0dece14eb28a40))\n* stop Poweramp 0-byte settings export and Symfonium post-cutoff SNTP ([11a9e9a](https://github.com/arandomhooman/hoomans-morphe-patches/commit/11a9e9a2c4768284a40d000fe2f00ec6ec406462))\n\n## [1.42.0](https://github.com/arandomhooman/hoomans-morphe-patches/compare/v1.41.1...v1.42.0) (2026-07-05)\n\n### ✨ New Features\n\n* add ChatBoost unlock premium ([1d8d23e](https://github.com/arandomhooman/hoomans-morphe-patches/commit/1d8d23e524bfaa57310dbc53ca4a02c559c4e530))\n\n## [1.41.1](https://github.com/arandomhooman/hoomans-morphe-patches/compare/v1.41.0...v1.41.1) (2026-07-04)\n\n### 🐛 Bug Fixes\n\n* note that patching SofaScore breaks login in Remove Ads ([31b02aa](https://github.com/arandomhooman/hoomans-morphe-patches/commit/31b02aa215061fa66cca79c25b86024302aa2def))\n\n## [1.41.0](https://github.com/arandomhooman/hoomans-morphe-patches/compare/v1.40.0...v1.41.0) (2026-07-03)\n\n### ✨ New Features\n\n* add SofaScore remove ads patch ([58f3eaa](https://github.com/arandomhooman/hoomans-morphe-patches/commit/58f3eaa9ff7bdba36e3b97961a46492b93805593))\n\n## [1.40.0](https://github.com/arandomhooman/hoomans-morphe-patches/compare/v1.39.0...v1.40.0) (2026-07-02)\n\n### ✨ New Features\n\n* restore Projectivy Launcher 4.68 support alongside 4.70 ([b4fbf96](https://github.com/arandomhooman/hoomans-morphe-patches/commit/b4fbf96513e5c7764394dc500e7c5c589ec60ec3))\n\n## [1.39.0](https://github.com/arandomhooman/hoomans-morphe-patches/compare/v1.38.0...v1.39.0) (2026-07-01)\n\n### ✨ New Features\n\n* add Todoist unlock pro ([cd547ac](https://github.com/arandomhooman/hoomans-morphe-patches/commit/cd547ac6a2869c66f563470707b5275737613fa5))\n\n## [1.38.0](https://github.com/arandomhooman/hoomans-morphe-patches/compare/v1.37.0...v1.38.0) (2026-07-01)\n\n### ✨ New Features\n\n* add ADM remove ads patch ([78dd9f3](https://github.com/arandomhooman/hoomans-morphe-patches/commit/78dd9f35bdecbac34d5a5ed5617349b9c4e57f81))\n\n## [1.37.0](https://github.com/arandomhooman/hoomans-morphe-patches/compare/v1.36.0...v1.37.0) (2026-07-01)\n\n### ✨ New Features\n\n* add Hevy unlock pro ([30ac2ab](https://github.com/arandomhooman/hoomans-morphe-patches/commit/30ac2ab5328ba5c717b9904d57b2094a43d9a740))\n\n## [1.36.0](https://github.com/arandomhooman/hoomans-morphe-patches/compare/v1.35.0...v1.36.0) (2026-06-30)\n\n### ✨ New Features\n\n* add Symfonium unlock premium ([0ab2ecb](https://github.com/arandomhooman/hoomans-morphe-patches/commit/0ab2ecba425a3e2728783be994170515a61a566d))\n\n## [1.35.0](https://github.com/arandomhooman/hoomans-morphe-patches/compare/v1.34.1...v1.35.0) (2026-06-29)\n\n### ✨ New Features\n\n* add Smart AudioBook Player full unlock ([e212cf5](https://github.com/arandomhooman/hoomans-morphe-patches/commit/e212cf500597d53fb13b9e384a06f09248a7b05f))\n\n## [1.34.1](https://github.com/arandomhooman/hoomans-morphe-patches/compare/v1.34.0...v1.34.1) (2026-06-29)\n\n### 🐛 Bug Fixes\n\n* support Battery Guru 2.5.0.2 beta ([463a458](https://github.com/arandomhooman/hoomans-morphe-patches/commit/463a458b1e8a543d4d5b413fca32672d6eb12b8a))\n\n## [1.34.0](https://github.com/arandomhooman/hoomans-morphe-patches/compare/v1.33.0...v1.34.0) (2026-06-29)\n\n### ✨ New Features\n\n* add Poweramp unlock premium ([c04cd02](https://github.com/arandomhooman/hoomans-morphe-patches/commit/c04cd02a25d6d2fe42e692913bbdbfc42d23e3c3))\n\n## [1.33.0](https://github.com/arandomhooman/hoomans-morphe-patches/compare/v1.32.0...v1.33.0) (2026-06-28)\n\n### 🐛 Bug Fixes\n\n* stop blazed sponsored posts slipping past Tumblr Remove ads ([a3ceef9](https://github.com/arandomhooman/hoomans-morphe-patches/commit/a3ceef924eb5472c55ab50310355a4298c4e7d92))\n\n### ✨ New Features\n\n* add Tumblr annoyance toggles ([570bf9f](https://github.com/arandomhooman/hoomans-morphe-patches/commit/570bf9fc296a4429b81dd54b5f88e68a14ced455))",
       "fullChangelogUrl": "https://github.com/arandomhooman/hoomans-morphe-patches/blob/main/CHANGELOG.md",
       "repoDescription": "Patches for morphe",
       "avatarUrl": "https://avatars.githubusercontent.com/u/64605756?v=4&size=168",
@@ -8226,7 +8226,7 @@
         "com.blockerhero": 1781395200000
       },
       "stars": 97,
-      "updatedAt": 1783814400000,
+      "updatedAt": 1784505600000,
       "firstSeen": 1781531935954,
       "appFirstSeen": {
         "tv.twitch.android.app": 1781927670628,
@@ -9687,7 +9687,7 @@
         "io.github.sds100.keymapper": 1784332800000,
         "com.mixapplications.rufus": 1783900800000
       },
-      "stars": 23,
+      "stars": 24,
       "updatedAt": 1783814400000,
       "firstSeen": 1780649325226,
       "appFirstSeen": {
@@ -9722,8 +9722,8 @@
         "com.mixapplications.ventoy_app": 1783953500646,
         "io.github.sds100.keymapper": 1784342313600
       },
-      "starsGained7d": 1,
-      "starsGained40d": 1
+      "starsGained7d": 2,
+      "starsGained40d": 2
     },
     {
       "source": "github",
@@ -12033,12 +12033,12 @@
       "patchCount": 4,
       "targetApps": [],
       "appUpdates": {},
-      "stars": 186,
+      "stars": 187,
       "updatedAt": 1783209600000,
       "firstSeen": 1783021319050,
       "appFirstSeen": {},
-      "starsGained7d": 1,
-      "starsGained40d": 1
+      "starsGained7d": 2,
+      "starsGained40d": 2
     },
     {
       "source": "github",
@@ -12789,14 +12789,14 @@
       "appUpdates": {
         "com.pinterest": 1782864000000
       },
-      "stars": 21,
+      "stars": 22,
       "updatedAt": 1782864000000,
       "firstSeen": 1782206425615,
       "appFirstSeen": {
         "com.pinterest": 1782206425615
       },
-      "starsGained7d": 0,
-      "starsGained40d": 0
+      "starsGained7d": 1,
+      "starsGained40d": 1
     },
     {
       "source": "github",
@@ -23267,6 +23267,12 @@
         "targets": [
           {
             "version": "build-1025-bundle-play",
+            "isExperimental": false,
+            "minSdk": null,
+            "description": null
+          },
+          {
+            "version": "build-1025-uni",
             "isExperimental": false,
             "minSdk": null,
             "description": null
