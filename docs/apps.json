@@ -2001,5 +2001,9 @@
   "ee.dustland.android.solitaire": {
     "name": "Solitaire - The Clean One",
     "iconUrl": "https://play-lh.googleusercontent.com/uYuj3GH-LlGxb2KyY5nq2DiHpYAIZgQAQF2o2or0pSTjsWqypT2pH_aCptFmFTwLxGfBGESChBvphMzQt6PIKw=s64"
+  },
+  "com.x8bit.bitwarden": {
+    "name": "Bitwarden",
+    "iconUrl": "https://play-lh.googleusercontent.com/ezsPZ5JtRMkMd6DtbUOZghm4m-EbYcZSzXAIxJMumYOaDP9sI8o-DN8-tZpds0HJUXb-ur7F-oB9rFH78Jy2lA=s64"
   }
 }

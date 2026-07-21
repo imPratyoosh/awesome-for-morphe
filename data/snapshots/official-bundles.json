@@ -982,15 +982,15 @@
         "com.instagram.android": 1784419200000,
         "com.twitter.android": 1784419200000
       },
-      "stars": 4373,
+      "stars": 4371,
       "updatedAt": 1782518400000,
       "firstSeen": 1773154796000,
       "appFirstSeen": {
         "com.twitter.android": 1773154796000,
         "com.instagram.android": 1773154796000
       },
-      "starsGained7d": 1,
-      "starsGained40d": 1
+      "starsGained7d": 0,
+      "starsGained40d": 0
     },
     {
       "source": "github",
@@ -4351,7 +4351,7 @@
         "com.nytimes.crossword"
       ],
       "appUpdates": {},
-      "stars": 195,
+      "stars": 196,
       "updatedAt": 1784419200000,
       "firstSeen": 1780395687718,
       "appFirstSeen": {
@@ -4505,8 +4505,8 @@
         "com.urbandroid.kinestop": 1783291168540,
         "com.nytimes.crossword": 1783875617302
       },
-      "starsGained7d": 3,
-      "starsGained40d": 3
+      "starsGained7d": 4,
+      "starsGained40d": 4
     },
     {
       "source": "gitlab",
@@ -7753,14 +7753,14 @@
       "appUpdates": {
         "com.zhiliaoapp.musically": 1781654400000
       },
-      "stars": 139,
+      "stars": 138,
       "updatedAt": 1781654400000,
       "firstSeen": 1780156086693,
       "appFirstSeen": {
         "com.zhiliaoapp.musically": 1780156086693
       },
-      "starsGained7d": 4,
-      "starsGained40d": 4
+      "starsGained7d": 3,
+      "starsGained40d": 3
     },
     {
       "source": "github",
@@ -8225,7 +8225,7 @@
         "com.atomengineapps.teachmeanatomy": 1781481600000,
         "com.blockerhero": 1781395200000
       },
-      "stars": 97,
+      "stars": 98,
       "updatedAt": 1784505600000,
       "firstSeen": 1781531935954,
       "appFirstSeen": {
@@ -8271,8 +8271,8 @@
         "com.thehungrywasp.iamsober": 1782336283293,
         "net.uniquegem.directchat": 1783168495852
       },
-      "starsGained7d": 1,
-      "starsGained40d": 1
+      "starsGained7d": 2,
+      "starsGained40d": 2
     },
     {
       "source": "github",
@@ -9199,7 +9199,7 @@
         "com.google.android.apps.magazines": 1775088000000,
         "com.zhiliaoapp.musically": 1775088000000
       },
-      "stars": 1018,
+      "stars": 1019,
       "updatedAt": 1778630400000,
       "firstSeen": 1772385009000,
       "appFirstSeen": {
@@ -9237,8 +9237,8 @@
         "com.disney.disneyplus": 1773594609000,
         "ginlemon.iconpackstudio": 1773594609000
       },
-      "starsGained7d": 1,
-      "starsGained40d": 1
+      "starsGained7d": 2,
+      "starsGained40d": 2
     },
     {
       "source": "github",
@@ -10149,7 +10149,7 @@
         }
       ],
       "changelog": "## [1.17.0](https://github.com/kondratjev/morphe-patches/compare/v1.16.0...v1.17.0) (2026-07-05)\n\n### ✨ New Features\n\n* add Muscle Motion Strength Training patch ([fad4901](https://github.com/kondratjev/morphe-patches/commit/fad49018b79ce7428c78b3e0a48bcc2592c09f2d))\n\n## [1.17.0-dev.1](https://github.com/kondratjev/morphe-patches/compare/v1.16.0...v1.17.0-dev.1) (2026-07-05)\n\n### ✨ New Features\n\n* add Muscle Motion Strength Training patch ([fad4901](https://github.com/kondratjev/morphe-patches/commit/fad49018b79ce7428c78b3e0a48bcc2592c09f2d))\n\n## [1.16.0](https://github.com/kondratjev/morphe-patches/compare/v1.15.0...v1.16.0) (2026-07-03)\n\n## [1.16.0-dev.1](https://github.com/kondratjev/morphe-patches/compare/v1.15.0...v1.16.0-dev.1) (2026-07-03)\n\n## [1.15.0](https://github.com/kondratjev/morphe-patches/compare/v1.14.0...v1.15.0) (2026-07-03)\n\n### ✨ New Features\n\n* bump pillo and soundcloud ([b917a17](https://github.com/kondratjev/morphe-patches/commit/b917a17d2c7b484748917c0bef6facafeb6f5446))\n* bump rustore and lyfta ([2340d98](https://github.com/kondratjev/morphe-patches/commit/2340d98c295e73b3bb2679c35cd309dd90141c28))\n\n## [1.15.0-dev.2](https://github.com/kondratjev/morphe-patches/compare/v1.15.0-dev.1...v1.15.0-dev.2) (2026-07-03)\n\n### ✨ New Features\n\n* bump pillo and soundcloud ([b917a17](https://github.com/kondratjev/morphe-patches/commit/b917a17d2c7b484748917c0bef6facafeb6f5446))\n\n## [1.15.0-dev.1](https://github.com/kondratjev/morphe-patches/compare/v1.14.0...v1.15.0-dev.1) (2026-06-27)\n\n### ✨ New Features\n\n* bump rustore and lyfta ([2340d98](https://github.com/kondratjev/morphe-patches/commit/2340d98c295e73b3bb2679c35cd309dd90141c28))\n\n## [1.14.0](https://github.com/kondratjev/morphe-patches/compare/v1.13.0...v1.14.0) (2026-06-23)\n\n### ✨ New Features\n\n* rollback lifesum ([08565f4](https://github.com/kondratjev/morphe-patches/commit/08565f4d0b88849719d96a3b910df7cd16375edf))\n\n## [1.14.0-dev.1](https://github.com/kondratjev/morphe-patches/compare/v1.13.0...v1.14.0-dev.1) (2026-06-23)\n\n### ✨ New Features\n\n* rollback lifesum ([08565f4](https://github.com/kondratjev/morphe-patches/commit/08565f4d0b88849719d96a3b910df7cd16375edf))\n\n## [1.13.0](https://github.com/kondratjev/morphe-patches/compare/v1.12.0...v1.13.0) (2026-06-20)\n\n### ✨ New Features\n\n* add ornament patches ([04f79f6](https://github.com/kondratjev/morphe-patches/commit/04f79f6445e6df9bd4d42a60a0e34f3bd5614df1))\n* update pillo and lifesum ([9b732d0](https://github.com/kondratjev/morphe-patches/commit/9b732d082adf4349c0caa55055927b078d75970e))\n\n## [1.13.0-dev.2](https://github.com/kondratjev/morphe-patches/compare/v1.13.0-dev.1...v1.13.0-dev.2) (2026-06-20)\n\n### ✨ New Features\n\n* add ornament patches ([04f79f6](https://github.com/kondratjev/morphe-patches/commit/04f79f6445e6df9bd4d42a60a0e34f3bd5614df1))\n\n## [1.13.0-dev.1](https://github.com/kondratjev/morphe-patches/compare/v1.12.0...v1.13.0-dev.1) (2026-06-20)\n\n### ✨ New Features\n\n* update pillo and lifesum ([9b732d0](https://github.com/kondratjev/morphe-patches/commit/9b732d082adf4349c0caa55055927b078d75970e))\n\n## [1.12.0](https://github.com/kondratjev/morphe-patches/compare/v1.11.0...v1.12.0) (2026-06-15)\n\n### ✨ New Features\n\n* Add Soundcloud and Pillo patches ([23150a0](https://github.com/kondratjev/morphe-patches/commit/23150a05e949ec925d29a31c09c57fa1ea1c4780))\n* Add Soundcloud and Pillo patches ([cea0a8a](https://github.com/kondratjev/morphe-patches/commit/cea0a8ace694acc58fa248d075808055ef44adc8))\n* Bump Lyfta patch version ([6a05a7f](https://github.com/kondratjev/morphe-patches/commit/6a05a7f50e546711ae46b9b23f58abc8452afde4))\n\n## [1.12.0-dev.3](https://github.com/kondratjev/morphe-patches/compare/v1.12.0-dev.2...v1.12.0-dev.3) (2026-06-15)\n\n### ✨ New Features\n\n* Add Soundcloud and Pillo patches ([23150a0](https://github.com/kondratjev/morphe-patches/commit/23150a05e949ec925d29a31c09c57fa1ea1c4780))\n\n## [1.12.0-dev.2](https://github.com/kondratjev/morphe-patches/compare/v1.12.0-dev.1...v1.12.0-dev.2) (2026-06-15)\n\n### ✨ New Features\n\n* Add Soundcloud and Pillo patches ([cea0a8a](https://github.com/kondratjev/morphe-patches/commit/cea0a8ace694acc58fa248d075808055ef44adc8))",
-      "fullChangelogUrl": "https://github.com/kondratjev/morphe-patches/blob/main/CHANGELOG.md",
+      "fullChangelogUrl": "https://github.com/kondratjev/morphe-patches/blob/master/CHANGELOG.md",
       "repoDescription": null,
       "avatarUrl": "https://avatars.githubusercontent.com/u/39211385?v=4&size=168",
       "bundleIconUrl": null,
@@ -10727,7 +10727,7 @@
         "com.brave.browser": 1784332800000,
         "com.medium.reader": 1783209600000
       },
-      "stars": 60,
+      "stars": 62,
       "updatedAt": 1784332800000,
       "firstSeen": 1783348412813,
       "appFirstSeen": {
@@ -10739,8 +10739,8 @@
         "com.Splitwise.SplitwiseMobile": 1783348412813,
         "com.overdevs.at4k": 1783348412813
       },
-      "starsGained7d": 1,
-      "starsGained40d": 1
+      "starsGained7d": 3,
+      "starsGained40d": 3
     },
     {
       "source": "github",
@@ -12033,12 +12033,12 @@
       "patchCount": 4,
       "targetApps": [],
       "appUpdates": {},
-      "stars": 187,
+      "stars": 188,
       "updatedAt": 1783209600000,
       "firstSeen": 1783021319050,
       "appFirstSeen": {},
-      "starsGained7d": 2,
-      "starsGained40d": 2
+      "starsGained7d": 3,
+      "starsGained40d": 3
     },
     {
       "source": "github",
@@ -12789,14 +12789,14 @@
       "appUpdates": {
         "com.pinterest": 1782864000000
       },
-      "stars": 22,
+      "stars": 23,
       "updatedAt": 1782864000000,
       "firstSeen": 1782206425615,
       "appFirstSeen": {
         "com.pinterest": 1782206425615
       },
-      "starsGained7d": 1,
-      "starsGained40d": 1
+      "starsGained7d": 2,
+      "starsGained40d": 2
     },
     {
       "source": "github",
@@ -13012,14 +13012,14 @@
         "com.pinterest"
       ],
       "appUpdates": {},
-      "stars": 10,
+      "stars": 11,
       "updatedAt": 1784073600000,
       "firstSeen": 1784136283489,
       "appFirstSeen": {
         "com.pinterest": 1784136283489
       },
-      "starsGained7d": 1,
-      "starsGained40d": 1
+      "starsGained7d": 2,
+      "starsGained40d": 2
     },
     {
       "source": "github",
@@ -15228,12 +15228,12 @@
       "patchCount": 27,
       "targetApps": [],
       "appUpdates": {},
-      "stars": 6,
+      "stars": 7,
       "updatedAt": 1784246400000,
       "firstSeen": 1784191866679,
       "appFirstSeen": {},
-      "starsGained7d": 0,
-      "starsGained40d": 0
+      "starsGained7d": 1,
+      "starsGained40d": 1
     }
   ],
   "store": {

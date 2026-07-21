@@ -1,5 +1,5 @@
 {
-  "jman_tree_sha": "d5f32e8c80044f6c986dc4a1d4b596a665ef6f84",
+  "jman_tree_sha": "b0481c3a55198e66e68391039a52998a0620a6dc",
   "jman_bundles": {
     "1fexd": {
       "sha": "4428619fe1755f86c0bd9d8fb5762fcc8c17b43a",
@@ -518,7 +518,7 @@
       "key": null
     },
     "stylus": {
-      "sha": "9786e3b2dfe183a500cc5c4babde47aa6d222834",
+      "sha": "3756b8916a58b6828c25916c68cba77c166b4518",
       "key": "github:ch3thanhs/stylus"
     },
     "taknok": {
