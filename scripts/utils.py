@@ -9,7 +9,7 @@ from typing import Any, Dict, Optional, Union
 def fetch(url: str, headers: Optional[Dict[str, str]] = None, timeout: int = 15, as_json: bool = False) -> Any:
     if headers is None:
         headers = {}
-    headers.setdefault("User-Agent", "AwesomeForMorphe/1.0")
+    headers.setdefault("User-Agent", "AwesomeMorphe/1.0")
 
     for attempt in range(3):
         try:
