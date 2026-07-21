@@ -13232,6 +13232,12 @@
           "compatiblePackagesKey": 322
         },
         {
+          "name": "Network Security Config",
+          "description": "Habilita la intercepci�n de red (MITM) agregando un archivo limpio de configuraci�n.",
+          "isPreRelease": true,
+          "compatiblePackagesKey": 322
+        },
+        {
           "name": "No Forward Limit",
           "description": "Forward messages to unlimited contacts.",
           "isPreRelease": true,
@@ -13255,7 +13261,7 @@
           "compatiblePackagesKey": 322
         }
       ],
-      "createdAt": "2026-07-21T08:26:36",
+      "createdAt": "2026-07-21T11:54:55",
       "targetApps": [
         "com.whatsapp"
       ],
