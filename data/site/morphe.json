@@ -7,15 +7,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -46,15 +46,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -85,15 +85,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -156,15 +156,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -195,15 +195,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -234,15 +234,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -273,15 +273,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -358,15 +358,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -483,15 +483,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -554,15 +554,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -593,15 +593,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -721,15 +721,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -827,15 +827,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -898,15 +898,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -969,15 +969,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -1008,15 +1008,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -1047,15 +1047,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -1086,15 +1086,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -1159,15 +1159,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -1230,15 +1230,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -1269,15 +1269,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -1337,15 +1337,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -1376,15 +1376,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -1415,15 +1415,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -1454,15 +1454,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -1525,15 +1525,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -1596,15 +1596,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -1731,15 +1731,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -1802,15 +1802,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -1903,15 +1903,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -2003,15 +2003,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -2071,15 +2071,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -2171,15 +2171,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -2210,15 +2210,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -2313,15 +2313,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -2384,15 +2384,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -2484,15 +2484,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -2523,15 +2523,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -2592,15 +2592,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -2631,15 +2631,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -2682,15 +2682,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -2750,15 +2750,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -2818,15 +2818,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -2857,15 +2857,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -2896,15 +2896,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -2929,21 +2929,21 @@
   },
   {
     "name": "Miniplayer",
-    "description": "Adds options to change the in-app minimized player.",
+    "description": "Adds options to change the in-app minimized player. Patching 21.28.206 and lower has more miniplayer types to choose from.",
     "compatiblePackages": [
       {
         "packageName": "com.google.android.youtube",
         "targets": [
+          {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
           {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -3038,15 +3038,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -3109,15 +3109,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -3148,15 +3148,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -3245,15 +3245,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -3284,15 +3284,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -3323,15 +3323,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -3362,15 +3362,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -3406,15 +3406,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -3445,15 +3445,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -3484,15 +3484,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -3523,15 +3523,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -3658,15 +3658,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -3726,15 +3726,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -3798,15 +3798,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -3898,15 +3898,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -3937,15 +3937,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -4008,15 +4008,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -4040,12 +4040,49 @@
     ]
   },
   {
-    "name": "Shorts autoplay",
-    "description": "Adds options to automatically play the next Short.",
+    "name": "Settings menu filter",
+    "description": "Adds an option to hide items on the standard YouTube Music settings screen by their visible name.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.google.android.apps.youtube.music",
+        "targets": [
+          {
+            "version": "9.28.51",
+            "isExperimental": true
+          },
+          {
+            "version": "9.26.51",
+            "isExperimental": true
+          },
+          {
+            "version": "9.25.50",
+            "isExperimental": true
+          },
+          {
+            "version": "9.15.51"
+          },
+          {
+            "version": "8.51.51"
+          },
+          {
+            "version": "7.29.52"
+          }
+        ]
+      }
+    ],
+    "isPreRelease": true
+  },
+  {
+    "name": "Settings menu filter",
+    "description": "Adds an option to hide items on the standard YouTube settings screen by their visible name.",
     "compatiblePackages": [
       {
         "packageName": "com.google.android.youtube",
         "targets": [
+          {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
           {
             "version": "21.28.204",
             "isExperimental": true
@@ -4055,7 +4092,43 @@
             "isExperimental": true
           },
           {
-            "version": "21.25.523",
+            "version": "21.05.265",
+            "isExperimental": true
+          },
+          {
+            "version": "21.04.223"
+          },
+          {
+            "version": "20.51.39"
+          },
+          {
+            "version": "20.31.42"
+          },
+          {
+            "version": "20.21.37"
+          }
+        ]
+      }
+    ],
+    "isPreRelease": true
+  },
+  {
+    "name": "Shorts autoplay",
+    "description": "Adds options to automatically play the next Short.",
+    "compatiblePackages": [
+      {
+        "packageName": "com.google.android.youtube",
+        "targets": [
+          {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
+            "version": "21.28.204",
+            "isExperimental": true
+          },
+          {
+            "version": "21.26.360",
             "isExperimental": true
           },
           {
@@ -4147,15 +4220,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -4218,15 +4291,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -4257,15 +4330,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -4357,15 +4430,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -4396,15 +4469,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -4486,15 +4559,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -4525,15 +4598,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
@@ -4564,15 +4637,15 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
+            "version": "21.29.363-SECONDARY",
+            "isExperimental": true
+          },
+          {
             "version": "21.28.204",
             "isExperimental": true
           },
           {
             "version": "21.26.360",
-            "isExperimental": true
-          },
-          {
-            "version": "21.25.523",
             "isExperimental": true
           },
           {
