@@ -3,7 +3,7 @@
 🔍 [Awesome for Morphe Website](https://nvbangg.github.io/awesome-for-morphe)
 
 > [!NOTE]
-> 🌐 A curated list of all Morphe resources and projects.  
+> 🌐 A curated list of all [Morphe](https://morphe.software) resources and projects.  
 > 🔍 Explore [all supported apps and patches](https://nvbangg.github.io/awesome-for-morphe), automatically updated.  
 > 🔔 Get [daily notifications](https://github.com/nvbangg/awesome-for-morphe/releases) when there are new updates. [![Telegram Channel](https://img.shields.io/badge/Telegram_Channel-blue?style=social&logo=telegram)](https://t.me/awesome_for_morphe)  
 > 📂 For contribution guidelines and documentation, see [CONTRIBUTING.md](CONTRIBUTING.md).
@@ -52,6 +52,7 @@
   - [Shorts player has no buttons](https://www.reddit.com/r/MorpheApp/comments/1pverk7/comment/ogdw6mk/)
   - [Cannot login to Reddit](https://www.reddit.com/r/MorpheApp/comments/1pverk7/comment/oot13cq/)
 - [How To Patch More Apps With Morphe](https://www.reddit.com/r/MorpheApp/comments/1ta0bek/how_to_patch_more_apps_with_morphe/)
+- [(Guide) Fix video playback issue on YouTube and YT music](https://www.reddit.com/r/MorpheApp/comments/1uxcvgp/guide_fix_video_playback_issue_on_youtube_and_yt/)
 - [Morphe Desktop (Currently Morphe CLI)](https://www.reddit.com/r/MorpheApp/comments/1rtr3ee/morphe_desktop_currently_morphe_cli/)
 - [How to patch X with Piko patches](https://www.reddit.com/r/MorpheApp/comments/1r4xt24/x_twitter_can_now_be_patched_with_piko_patches/)
 - [Likes count not showing](https://www.reddit.com/r/MorpheApp/comments/1u4kjms/likes_count_not_showing/)
@@ -96,8 +97,6 @@
 > If you still want to explore them, see [Jman’s list](https://github.com/Jman-Github/Awesome-ReVanced#%EF%B8%8F-builder)
 
 ---
-
-## ℹ️ About this project
 
 <div align="center">
 
