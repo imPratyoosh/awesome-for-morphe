@@ -1,5 +1,9 @@
 // Copyright (c) 2026 nvbangg (github.com/nvbangg)
 
+import { createApp, ref, computed, onMounted, watch, reactive, nextTick } from "vue";
+import { filterRows, getFilterOptions, getFilterOptionsFromBundles, loadInitialData, summarizeRows, appName, fetchJson } from "./data.js";
+import type { ActiveData, RowItem, Bundle, PatchOption, VersionItem, AppNameMeta } from "./data.js";
+
 if (typeof window !== "undefined" && "serviceWorker" in navigator) {
   navigator.serviceWorker.getRegistrations().then((registrations) => {
     for (const registration of registrations) {
@@ -8,9 +12,32 @@ if (typeof window !== "undefined" && "serviceWorker" in navigator) {
   });
 }
 
-import { createApp, ref, computed, onMounted, watch, reactive, nextTick } from "vue";
-import { filterRows, getFilterOptions, getFilterOptionsFromBundles, loadInitialData, summarizeRows, appName, fetchJson } from "./data.js";
-import type { ActiveData, RowItem, Bundle, AppItem, PatchOption } from "./data.js";
+interface AppElement {
+  id: string;
+  appName: string;
+  appIcon?: string;
+  packageName?: string;
+  versions?: VersionItem[];
+}
+
+interface PatchGroupItem {
+  id: string;
+  patchName: string;
+  description?: string;
+  enabled?: boolean;
+  options?: PatchOption[];
+  apps: AppElement[];
+}
+
+interface GroupItem {
+  key: string;
+  bundle: Bundle;
+  rows: RowItem[];
+  patches: PatchGroupItem[];
+  appsList: AppElement[];
+}
+
+type HTMLElementWithObserver = HTMLElement & { resizeObserver?: ResizeObserver | null };
 
 function tokenize(inputString: string) {
   const tokens = [];
@@ -101,7 +128,7 @@ function useListUI(namespace: string = "") {
   const expandedAppLists = reactive(new Set<string>());
   const overflowingAppLists = reactive(new Set<string>());
   const expandedVersions = reactive(new Set<string>());
-  const appListRefs = new Map<string, any>();
+  const appListRefs = new Map<string, HTMLElementWithObserver>();
   const activeSwipeGroup = ref<string>("");
   const swipeDirection = ref<string>("");
   const touchStartX = ref<number>(0);
@@ -111,7 +138,7 @@ function useListUI(namespace: string = "") {
   const toggleVersions = (id: string) => (expandedVersions.has(id) ? expandedVersions.delete(id) : expandedVersions.add(id));
 
   // Checks if the app list wraps to multiple lines in grid view to show the "Expand apps" button
-  const checkOverflow = (element: any, key: string) => {
+  const checkOverflow = (element: HTMLElementWithObserver | null | undefined, key: string) => {
     if (!element) return;
     const wasExpanded = expandedAppLists.has(key);
     if (wasExpanded) {
@@ -132,7 +159,7 @@ function useListUI(namespace: string = "") {
     }
   };
 
-  const setupOverflowObserver = (element: any, key: string) => {
+  const setupOverflowObserver = (element: HTMLElementWithObserver | null | undefined, key: string) => {
     if (element) {
       appListRefs.set(key, element);
       if (!element.resizeObserver) {
@@ -159,20 +186,20 @@ function useListUI(namespace: string = "") {
     }, 50);
   };
 
-  const collapseBundle = (groupItem: any) => {
+  const collapseBundle = (groupItem: GroupItem) => {
     expandedAppLists.delete(groupItem.key);
     if (groupItem.appsList) {
-      groupItem.appsList.forEach((appItem: any) => expandedOptions.delete(`${namespace}app_${groupItem.key}_${appItem.id}`));
+      groupItem.appsList.forEach((appItem: AppElement) => expandedOptions.delete(`${namespace}app_${groupItem.key}_${appItem.id}`));
     }
     if (groupItem.patches) {
-      groupItem.patches.forEach((patch: any) => {
+      groupItem.patches.forEach((patch: PatchGroupItem) => {
         expandedOptions.delete(patch.id);
-        if (patch.apps) patch.apps.forEach((appElement: any) => expandedVersions.delete(appElement.id));
+        if (patch.apps) patch.apps.forEach((appElement: AppElement) => expandedVersions.delete(appElement.id));
       });
     }
   };
 
-  const selectApp = (groupKey: string, clickedApp: any, appsList: any[]) => {
+  const selectApp = (groupKey: string, clickedApp: AppElement, appsList: AppElement[]) => {
     activeSwipeGroup.value = "";
     swipeDirection.value = "";
     const clickedKey = `${namespace}app_${groupKey}_${clickedApp.id}`;
@@ -211,7 +238,7 @@ function useListUI(namespace: string = "") {
     }
   };
 
-  const handleTouchEnd = (event: TouchEvent, groupKey: string, currentApp: any, appsList: any[]) => {
+  const handleTouchEnd = (event: TouchEvent, groupKey: string, currentApp: AppElement, appsList: AppElement[]) => {
     if (!event.changedTouches?.length) return;
     const deltaX = event.changedTouches[0].clientX - touchStartX.value;
     const deltaY = event.changedTouches[0].clientY - touchStartY.value;
@@ -257,24 +284,44 @@ function useListUI(namespace: string = "") {
   };
 }
 
+function debounce<T extends (...args: any[]) => void>(fn: T, delay: number) {
+  let timeoutId: ReturnType<typeof setTimeout> | undefined;
+  return (...args: Parameters<T>) => {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => fn(...args), delay);
+  };
+}
+
+function safeUpdateHistory(url: string, push: boolean = false) {
+  try {
+    push ? history.pushState(null, "", url) : history.replaceState(null, "", url);
+  } catch (error) {}
+}
+
 const app = createApp({
   setup() {
-    const sortBundlesHelper = (firstBundle: any, secondBundle: any, firstKey: string, secondKey: string, order: string) => {
-      if (order === "apps" && firstBundle?.appCount !== secondBundle?.appCount) return (secondBundle?.appCount || 0) - (firstBundle?.appCount || 0);
+    const sortBundlesHelper = (firstBundle: Bundle | undefined, secondBundle: Bundle | undefined, firstKey: string, secondKey: string, order: string) => {
+      if (order === "apps") {
+        const appsA = firstBundle?.appCount || 0;
+        const appsB = secondBundle?.appCount || 0;
+        if (appsA !== appsB) return appsB - appsA;
+      }
       if (order === "latest") {
-        const dateA = firstBundle?.createdAt ? new Date(firstBundle.createdAt).getTime() : 0;
-        const dateB = secondBundle?.createdAt ? new Date(secondBundle.createdAt).getTime() : 0;
+        const dateA = firstBundle?.createdTimestamp || 0;
+        const dateB = secondBundle?.createdTimestamp || 0;
         if (dateA !== dateB) return dateB - dateA;
       }
-      if (order === "stars" && firstBundle?.stars !== secondBundle?.stars) return (secondBundle?.stars || 0) - (firstBundle?.stars || 0);
+      if (order === "stars") {
+        const starsA = firstBundle?.stars || 0;
+        const starsB = secondBundle?.stars || 0;
+        if (starsA !== starsB) return starsB - starsA;
+      }
       return firstKey.localeCompare(secondKey);
     };
 
     const query = ref<string>("");
     const bundle = ref<string>("");
     const app = ref<string>("");
-    const appSearch = ref<string>("");
-    const bundleSearch = ref<string>("");
     const showOptions = ref<string[]>([]);
     const sortOrder = ref<string>("stars");
     const isTwoColumns = ref<boolean>(new URLSearchParams(location.search).get("view") !== "list");
@@ -282,76 +329,38 @@ const app = createApp({
     const popupBundleKey = ref<string | null>(null);
     const popupSearchQuery = ref<string>("");
 
-
     const activeData = ref<ActiveData | null>(null);
     const isLoading = ref<boolean>(true);
     const patchesLoaded = ref(false);
     const errorMsg = ref("");
 
-    function debounce(fn: any, delay: number) {
-      let timeoutId: any;
-      return (...args: any[]) => {
-        clearTimeout(timeoutId);
-        timeoutId = setTimeout(() => fn(...args), delay);
-      };
-    }
-
     const localQuery = ref(query.value);
-    const localBundleSearch = ref(bundleSearch.value);
-    const localAppSearch = ref(appSearch.value);
+    const localBundleSearch = ref("");
+    const localAppSearch = ref("");
     const localPopupSearchQuery = ref(popupSearchQuery.value);
-
 
     watch(query, (val) => {
       if (val !== localQuery.value) localQuery.value = val;
-    });
-    watch(bundleSearch, (val) => {
-      if (val !== localBundleSearch.value) localBundleSearch.value = val;
-    });
-    watch(appSearch, (val) => {
-      if (val !== localAppSearch.value) localAppSearch.value = val;
     });
     watch(popupSearchQuery, (val) => {
       if (val !== localPopupSearchQuery.value) localPopupSearchQuery.value = val;
     });
 
-
     const updateQuery = debounce((val: string) => {
       query.value = val;
     }, 200);
-    const updateBundleSearch = debounce((val: string) => {
-      bundleSearch.value = val;
-    }, 150);
-    const updateAppSearch = debounce((val: string) => {
-      appSearch.value = val;
-    }, 150);
     const updatePopupSearchQuery = debounce((val: string) => {
       popupSearchQuery.value = val;
     }, 200);
 
-
     watch(localQuery, (val) => updateQuery(val));
-    watch(localBundleSearch, (val) => updateBundleSearch(val));
-    watch(localAppSearch, (val) => updateAppSearch(val));
     watch(localPopupSearchQuery, (val) => updatePopupSearchQuery(val));
-
-
-    const initialParams = new URLSearchParams(location.search);
-    const priorityKeys = new Set<string>();
-    if (initialParams.get("show")) {
-      initialParams
-        .get("show")!
-        .split(",")
-        .forEach((part) => {
-          const key = part.split(":")[0];
-          if (key) priorityKeys.add(key);
-        });
-    }
 
     const isWhatsNewView = ref<boolean>(false);
     const whatsNewHighlights = ref<string[]>([]);
     const rawShowParam = ref<string>("");
 
+    const initialParams = new URLSearchParams(location.search);
     const backgroundReady = ref<boolean>(!initialParams.get("show"));
     watch(activeData, (newData) => {
       if (newData && !backgroundReady.value) {
@@ -413,11 +422,9 @@ const app = createApp({
       }
 
       if (urlChanged) {
-        try {
-          const newSearch = params.toString();
-          const targetHash = isWhatsNewView.value ? "#whats-new" : location.hash === "#whats-new" ? "" : location.hash;
-          history.replaceState(null, "", `${location.pathname}${newSearch ? "?" + newSearch : ""}${targetHash || ""}`);
-        } catch (error) {}
+        const newSearch = params.toString();
+        const targetHash = isWhatsNewView.value ? "#whats-new" : location.hash === "#whats-new" ? "" : location.hash;
+        safeUpdateHistory(`${location.pathname}${newSearch ? "?" + newSearch : ""}${targetHash || ""}`);
       }
 
       query.value = params.get("q") || "";
@@ -446,11 +453,7 @@ const app = createApp({
           }
         } else {
           params.delete("show");
-          try {
-            history.replaceState(null, "", `${location.pathname}?${params.toString().replace(/=&/g, "&").replace(/=$/, "")}#whats-new`);
-          } catch (error) {
-            location.hash = "whats-new";
-          }
+          safeUpdateHistory(`${location.pathname}?${params.toString().replace(/=&/g, "&").replace(/=$/, "")}#whats-new`);
           nextTick(() => {
             isSyncing = false;
             syncFromUrl(location.search);
@@ -470,10 +473,7 @@ const app = createApp({
       whatsNewHighlights.value = isWhatsNewView.value && showOptions.value.length > 0 ? showOptions.value : [];
 
       nextTick(() => {
-        if (hadNewParam)
-          try {
-            history.replaceState(null, "", buildUrlString("#whats-new"));
-          } catch (error) {}
+        if (hadNewParam) safeUpdateHistory(buildUrlString("#whats-new"));
         isSyncing = false;
       });
     }
@@ -497,10 +497,7 @@ const app = createApp({
     });
 
     watch(popupSearchQuery, () => {
-      if (!isSyncing)
-        try {
-          history.replaceState(null, "", buildUrlString(location.hash));
-        } catch (error) {}
+      if (!isSyncing) safeUpdateHistory(buildUrlString(location.hash));
     });
 
     watch([query, bundle, app, sortOrder, isTwoColumns, showOptions], (newValues, oldValues) => {
@@ -512,14 +509,10 @@ const app = createApp({
 
       if (location.pathname + location.search + location.hash !== newUrl) {
         if (!oldValues) {
-          try {
-            history.replaceState(null, "", newUrl);
-          } catch (error) {}
+          safeUpdateHistory(newUrl);
         } else {
           const otherChanged = oldValues[1] !== newValues[1] || oldValues[2] !== newValues[2] || oldValues[3] !== newValues[3] || JSON.stringify(oldValues[5]) !== JSON.stringify(newValues[5]);
-          try {
-            otherChanged ? history.pushState(null, "", newUrl) : history.replaceState(null, "", newUrl);
-          } catch (error) {}
+          safeUpdateHistory(newUrl, otherChanged);
         }
       }
     });
@@ -529,7 +522,7 @@ const app = createApp({
       patchesLoaded.value = false;
       errorMsg.value = "";
       try {
-        activeData.value = await loadInitialData(Array.from(priorityKeys), (isUpdate) => {
+        activeData.value = await loadInitialData((isUpdate) => {
           if (isUpdate === null) {
             patchesLoaded.value = true;
             isLoading.value = false;
@@ -539,24 +532,25 @@ const app = createApp({
           }
         });
         if (!query.value && showOptions.value.length === 0) isLoading.value = false;
-      } catch (error: any) {
-        errorMsg.value = error.message || error;
+      } catch (error) {
+        if (error instanceof Error) errorMsg.value = error.message;
+        else errorMsg.value = String(error);
         isLoading.value = false;
       }
     };
 
-    const whatsNewHistory = ref<any[]>([]);
-    const whatsNewAppsData = ref<Record<string, any>>({});
+    const whatsNewHistory = ref<unknown[]>([]);
+    const whatsNewAppsData = ref<Record<string, AppNameMeta>>({});
     const isWhatsNewLoading = ref<boolean>(false);
 
     const loadWhatsNewData = async () => {
       isWhatsNewLoading.value = true;
       try {
-        const [history, apps] = await Promise.all([fetchJson("whats-new.json"), fetchJson("apps.json")]);
-        whatsNewHistory.value = history || [];
-        whatsNewAppsData.value = apps || {};
-      } catch (error) {
-        console.error("Failed to load what's new data", error);
+        const data = await fetchJson<{ history: unknown[]; apps: Record<string, AppNameMeta> }>("assets/whats-new.json").catch(() => ({ history: [], apps: {} }));
+        whatsNewHistory.value = data.history || [];
+        whatsNewAppsData.value = data.apps || {};
+      } catch (err) {
+        console.error("Failed to load what's new data", err);
       } finally {
         isWhatsNewLoading.value = false;
       }
@@ -577,16 +571,25 @@ const app = createApp({
       syncFromUrl(`?${urlParts.join("&")}`);
     };
 
-    const openBundlePopup = (bundleKey: string, bundleData: any) => {
+    interface WhatsNewApp {
+      isNew?: boolean;
+      patches?: string[];
+    }
+    interface WhatsNewBundle {
+      isNew?: boolean;
+      apps?: Record<string, WhatsNewApp>;
+    }
+
+    const openBundlePopup = (bundleKey: string, bundleData: WhatsNewBundle) => {
       if (!bundleData || bundleData.isNew) return navigateToWhatsNewShow(bundleKey);
       const bundleChanges: Record<string, string[]> = {};
-      for (const [packageName, data] of Object.entries<any>(bundleData.apps || {})) {
+      for (const [packageName, data] of Object.entries<WhatsNewApp>(bundleData.apps || {})) {
         bundleChanges[packageName] = data.isNew ? [] : [...(data.patches || [])].sort();
       }
       navigateToWhatsNewShow(stringifyTrie({ [bundleKey]: bundleChanges }));
     };
 
-    const openAppPopup = (bundleKey: string, packageName: string, appData: any) => {
+    const openAppPopup = (bundleKey: string, packageName: string, appData: WhatsNewApp) => {
       navigateToWhatsNewShow(!appData || appData.isNew ? `${bundleKey}:${packageName}` : stringifyTrie({ [bundleKey]: { [packageName]: [...(appData.patches || [])].sort() } }));
     };
 
@@ -606,7 +609,7 @@ const app = createApp({
     const filterOptions = computed(() => {
       if (!activeData.value) return { bundleOptions: [], appOptions: [] };
 
-      const enrichAndSortBundleOptions = (options: any[]) => {
+      const enrichAndSortBundleOptions = (options: { value: string; label: string }[]) => {
         return options
           .map((option) => {
             const bundleObject = activeData.value?.bundleMap[option.value];
@@ -639,17 +642,22 @@ const app = createApp({
       return { bundleOptions, appOptions: getFilterOptions(rowsForApp, activeData.value.namesMap).appOptions };
     });
 
-    const filterDropdownOptions = (options: any[], searchValue: string, extraFields: string[]) => {
+    const filterDropdownOptions = (options: { value: string; label: string }[], searchValue: string, extraFields: string[], allOptionLabel: string) => {
       const queryWords = searchValue.toLowerCase().split(/\s+/).filter(Boolean);
-      if (queryWords.length === 0) return options;
-      return options.filter((option) => {
-        const searchable = [option.label, option.value, ...extraFields.map((field) => option[field] || "")].join(" ").toLowerCase();
-        return queryWords.every((word) => searchable.includes(word));
-      });
+      let filtered = options;
+      if (queryWords.length > 0) {
+        filtered = options.filter((option) => {
+          const targets = [option.label, option.value];
+          extraFields.forEach((field) => targets.push((option as any)[field] || ""));
+          const targetStr = targets.join(" ").toLowerCase();
+          return queryWords.every((word) => targetStr.includes(word));
+        });
+      }
+      return [{ value: "", label: allOptionLabel }, ...filtered];
     };
 
     const buildGroupFromRows = (bundleItem: Bundle, rows: RowItem[], hasFilters: boolean) => {
-      const patchIdMap = new Map<string, any>();
+      const patchIdMap = new Map<string, PatchGroupItem>();
       for (const row of rows) {
         if (!patchIdMap.has(row.patchId)) {
           patchIdMap.set(row.patchId, {
@@ -662,7 +670,7 @@ const app = createApp({
           });
         }
         if (row.packageName || row.appName) {
-          patchIdMap.get(row.patchId).apps.push({
+          patchIdMap.get(row.patchId)!.apps.push({
             id: row.id,
             appName: row.appName,
             appIcon: row.appIcon,
@@ -671,23 +679,38 @@ const app = createApp({
           });
         }
       }
-      const patches = Array.from(patchIdMap.values()).sort((firstItem: any, secondItem: any) => firstItem.patchName.localeCompare(secondItem.patchName));
-      const appsMap = new Map<string, any>();
+      const patches = Array.from(patchIdMap.values()).sort((firstItem: PatchGroupItem, secondItem: PatchGroupItem) => firstItem.patchName.localeCompare(secondItem.patchName));
+      const appsMap = new Map<string, AppElement>();
 
-      if (!patchesLoaded.value && bundleItem.targetApps && !hasFilters) {
+      if (!patchesLoaded.value && bundleItem.targetApps && bundleItem.targetApps.length > 0 && !hasFilters) {
         for (const packageName of bundleItem.targetApps) {
-          appsMap.set(packageName, {
-            id: `${bundleItem.key}:${packageName}`,
-            appName: appName(packageName, activeData.value?.namesMap || {}, activeData.value?.skipSet),
-            appIcon: activeData.value?.namesMap[packageName]?.iconUrl || "",
-            packageName,
-            versions: [],
-          });
+          if (packageName !== "universal") {
+            if (!appsMap.has(packageName)) {
+              const meta = activeData.value!.namesMap[packageName];
+              appsMap.set(packageName, {
+                id: `patch_app_${packageName}`,
+                packageName,
+                appName: appName(packageName, activeData.value!.namesMap, activeData.value!.skipSet),
+                appIcon: typeof meta === "object" && meta !== null ? (meta as AppNameMeta).iconUrl || "" : "",
+              });
+            }
+            if (bundleItem.targetApps && bundleItem.targetApps.length === 1) {
+              appsMap.get(packageName)!.appName = bundleItem.name || appsMap.get(packageName)!.appName;
+            }
+          } else {
+            appsMap.set(packageName, {
+              id: `${bundleItem.key}:${packageName}`,
+              appName: appName(packageName, activeData.value?.namesMap || {}, activeData.value?.skipSet),
+              appIcon: "",
+              packageName,
+              versions: [],
+            });
+          }
         }
       }
-      for (const patch of patches) for (const appItem of patch.apps) appsMap.set(appItem.packageName, appItem);
+      for (const patch of patches) for (const appItem of patch.apps) appsMap.set(appItem.packageName || "universal", appItem);
 
-      const appsList = Array.from(appsMap.values()).sort((firstItem: any, secondItem: any) => {
+      const appsList = Array.from(appsMap.values()).sort((firstItem: AppElement, secondItem: AppElement) => {
         if ((firstItem.packageName === "universal") !== (secondItem.packageName === "universal"))
           return (firstItem.packageName === "universal" ? 1 : 0) - (secondItem.packageName === "universal" ? 1 : 0);
         return firstItem.appName.localeCompare(secondItem.appName);
@@ -732,29 +755,26 @@ const app = createApp({
           }
           return true;
         })
-        .sort((firstItem: any, secondItem: any) => sortBundlesHelper(firstItem.bundle, secondItem.bundle, firstItem.key, secondItem.key, sortOrder.value));
+        .sort((firstItem: GroupItem, secondItem: GroupItem) => sortBundlesHelper(firstItem.bundle, secondItem.bundle, firstItem.key, secondItem.key, sortOrder.value));
     });
 
     const mainUI = useListUI("");
     const popupUI = useListUI("popup_");
 
     const expandAll = () => {
-      bundlesGroups.value.forEach((group: any) => {
+      bundlesGroups.value.forEach((group: GroupItem) => {
         if (!group.appsList?.length) return;
-        const isBundleOpen = group.appsList.some((app: any) => mainUI.expandedOptions.has(`app_${group.key}_${app.id}`)) || mainUI.expandedAppLists.has(group.key);
+        const isBundleOpen = group.appsList.some((app: AppElement) => mainUI.expandedOptions.has(`app_${group.key}_${app.id}`)) || mainUI.expandedAppLists.has(group.key);
         if (!isBundleOpen) {
           mainUI.expandedAppLists.add(group.key);
           mainUI.expandedOptions.add(`app_${group.key}_${group.appsList[0].id}`);
         }
       });
     };
-    const collapseAll = () => bundlesGroups.value.forEach((group: any) => mainUI.collapseBundle(group));
-    const toggleBundle = (groupItem: any) => {
+    const collapseAll = () => bundlesGroups.value.forEach((group: GroupItem) => mainUI.collapseBundle(group));
+    const toggleBundle = (groupItem: GroupItem) => {
       if (groupItem.appsList?.length > 0) {
-        if (
-          groupItem.appsList.some((appItem: any) => mainUI.expandedOptions.has(`app_${groupItem.key}_${appItem.id}`)) ||
-          mainUI.expandedAppLists.has(groupItem.key)
-        ) {
+        if (groupItem.appsList.some((appItem: AppElement) => mainUI.expandedOptions.has(`app_${groupItem.key}_${appItem.id}`)) || mainUI.expandedAppLists.has(groupItem.key)) {
           mainUI.collapseBundle(groupItem);
         } else {
           mainUI.expandedAppLists.add(groupItem.key);
@@ -766,8 +786,8 @@ const app = createApp({
     watch(bundlesGroups, (newGroups) => {
       if (newGroups && !popupBundleKey.value) {
         const uniqueApps = new Set();
-        newGroups.forEach((group: any) => {
-          group.appsList?.forEach((appItem: any) => {
+        newGroups.forEach((group: GroupItem) => {
+          group.appsList?.forEach((appItem: AppElement) => {
             uniqueApps.add(appItem.packageName || appItem.appName);
           });
         });
@@ -781,9 +801,7 @@ const app = createApp({
       const params = new URLSearchParams();
       params.set("show", groupKey);
       const newUrl = `?${params.toString()}${location.hash === "#whats-new" ? "#whats-new" : ""}`;
-      try {
-        history.pushState(null, "", newUrl);
-      } catch (error) {}
+      safeUpdateHistory(newUrl, true);
       syncFromUrl(newUrl.split("#")[0]);
     };
 
@@ -795,11 +813,8 @@ const app = createApp({
       urlParams.delete("show");
       urlParams.delete("pq");
       const newUrl = `${location.pathname}${urlParams.toString() ? "?" + urlParams.toString() : ""}${isWhatsNewView.value ? "#whats-new" : location.hash}`;
-      try {
-        history[isWhatsNewView.value ? "replaceState" : "pushState"](null, "", newUrl);
-      } catch (error) {
-        if (isWhatsNewView.value) location.hash = "whats-new";
-      }
+      safeUpdateHistory(newUrl, !isWhatsNewView.value);
+      if (isWhatsNewView.value && location.hash !== "#whats-new") location.hash = "whats-new";
       syncFromUrl(urlParams.toString() ? "?" + urlParams.toString() : "");
     };
 
@@ -839,20 +854,18 @@ const app = createApp({
 
     watch(popupGroup, (newGroup) => {
       if (!newGroup) return;
-      
-      const hasExpanded = newGroup.appsList?.some((appElement: any) => popupUI.expandedOptions.has(`popup_app_${newGroup.key}_${appElement.id}`));
-      
+
+      const hasExpanded = newGroup.appsList?.some((appElement: AppElement) => popupUI.expandedOptions.has(`popup_app_${newGroup.key}_${appElement.id}`));
+
       if (!hasExpanded && newGroup.appsList?.length > 0) {
         if (newGroup.appsList.length === 1) {
           popupUI.expandedOptions.add(`popup_app_${newGroup.key}_${newGroup.appsList[0].id}`);
         } else if (app.value) {
-          const targetApp = newGroup.appsList.find((firstItem: any) => firstItem.packageName === app.value);
+          const targetApp = newGroup.appsList.find((firstItem: AppElement) => firstItem.packageName === app.value);
           if (targetApp) popupUI.expandedOptions.add(`popup_app_${newGroup.key}_${targetApp.id}`);
         }
       }
-      
     });
-
 
     const filterByApp = (packageName: string) => {
       if (popupBundleKey.value) {
@@ -864,10 +877,29 @@ const app = createApp({
     };
     const resetFilters = () => {
       collapseAll();
-      query.value = bundle.value = app.value = appSearch.value = bundleSearch.value = popupSearchQuery.value = "";
+      query.value = bundle.value = app.value = popupSearchQuery.value = "";
       showOptions.value = [];
       isWhatsNewView.value = false;
       mainUI.clearState();
+    };
+
+    const onBundleSelected = (value: string, event: Event) => {
+      bundle.value = value || "";
+      localBundleSearch.value = "";
+      const target = event.target as HTMLElement;
+      target.closest(".dd-root")?.classList.remove("open");
+    };
+
+    const onAppSelected = (value: string, event: Event) => {
+      app.value = value || "";
+      localAppSearch.value = "";
+      const target = event.target as HTMLElement;
+      target.closest(".dd-root")?.classList.remove("open");
+    };
+
+    const blurSearchInput = (event: Event) => {
+      const target = event.target as HTMLElement;
+      target.querySelector("input")?.blur();
     };
 
     const copiedStates = reactive<Record<string, boolean>>({});
@@ -885,8 +917,6 @@ const app = createApp({
       bundle,
       app,
       showOptions,
-      appSearch,
-      bundleSearch,
       localQuery,
       localBundleSearch,
       localAppSearch,
@@ -907,9 +937,8 @@ const app = createApp({
       popupBundleKey,
       popupSearchQuery,
       popupGroup,
-      filteredAppOptions: computed(() => filterDropdownOptions(filterOptions.value.appOptions, localAppSearch.value, [])),
-      filteredBundleOptions: computed(() => filterDropdownOptions(filterOptions.value.bundleOptions, localBundleSearch.value, ["repo"])),
-
+      filteredAppOptions: computed(() => filterDropdownOptions(filterOptions.value.appOptions, localAppSearch.value, [], "All Apps")),
+      filteredBundleOptions: computed(() => filterDropdownOptions(filterOptions.value.bundleOptions, localBundleSearch.value, ["repo"], "All Bundles")),
 
       mainUI,
       popupUI,
@@ -921,33 +950,38 @@ const app = createApp({
       closeWhatsNew: () => {
         if (isWhatsNewView.value) {
           isWhatsNewView.value = false;
-          try {
-            history.pushState(null, "", buildUrlString(""));
-          } catch (error) {}
+          safeUpdateHistory(buildUrlString(""), true);
         }
       },
       openPopupFast,
       closePopup,
-
-      selectBundleFromDropdown: (key: string) => (bundle.value = key || ""),
+      onBundleSelected,
+      onAppSelected,
+      blurSearchInput,
       openBundlePopup,
       openAppPopup,
       openPatchPopup,
       copyText,
       copiedStates,
 
-      formatDate: (value: string | number | Date) =>
-        value ? (isNaN(new Date(value).getTime()) ? "" : new Date(value).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })) : "",
+      formatDate: (value: string | number | Date) => {
+        if (!value) return "";
+        const parsedDate = new Date(value);
+        return isNaN(parsedDate.getTime()) ? "" : parsedDate.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+      },
       playUrl: (packageName: string) => `https://play.google.com/store/apps/details?id=${encodeURIComponent(packageName)}`,
       getWhatsNewAppIcon: (packageName: string) => whatsNewAppsData.value[packageName]?.iconUrl || "",
       formatWhatsNewAppName: (packageName: string) => appName(packageName, whatsNewAppsData.value, activeData.value?.skipSet),
       getAppName: (packageName: string) => (packageName ? appName(packageName, activeData.value?.namesMap || {}, activeData.value?.skipSet) : "All Apps"),
-      getAppIcon: (packageName: string) => activeData.value?.namesMap[packageName]?.iconUrl || "",
+      getAppIcon: (packageName: string) => {
+        const meta = activeData.value?.namesMap[packageName];
+        return typeof meta === "object" && meta !== null ? (meta as AppNameMeta).iconUrl || "" : "";
+      },
       getBundleIcon: (key: string) => activeData.value?.bundleMap[key]?.avatarUrl || "",
       toggleColumns: () => (isTwoColumns.value = !isTwoColumns.value),
-      isNewBundle: (group: any) => !isWhatsNewView.value && group?.bundle?.firstSeen && (Date.now() - new Date(group.bundle.firstSeen).getTime()) / 86400000 <= 7,
+      isNewBundle: (group: GroupItem) => !isWhatsNewView.value && !!group?.bundle?.firstSeen && (Date.now() - new Date(group.bundle.firstSeen).getTime()) / 86400000 <= 7,
       hasHighlight: (prefix: string) => isWhatsNewView.value && whatsNewHighlights.value.includes(prefix),
-      isAppHighlighted: (groupKey: string, appItem: any) =>
+      isAppHighlighted: (groupKey: string, appItem: AppElement) =>
         isWhatsNewView.value && (whatsNewHighlights.value.includes(`${groupKey}:${appItem.packageName}`) || whatsNewHighlights.value.includes(`${groupKey}:${appItem.appName}`)),
     };
   },

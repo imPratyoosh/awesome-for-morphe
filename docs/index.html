@@ -12,7 +12,7 @@
   <meta name="theme-color" content="#0C0C0D">
   <meta name="color-scheme" content="only dark">
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 
   <script type="application/ld+json">
   {
@@ -27,8 +27,8 @@
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-80G574QRZ0"></script>
   <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-80G574QRZ0');</script>
-  <script type="module" crossorigin src="./assets/index.js?v=1784623071786"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index.css?v=1784623071786">
+  <script type="module" crossorigin src="./assets/index.js?v=1784638257263"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index.css?v=1784638257263">
 </head>
 
 <body class="bg-black min-h-screen relative overflow-x-hidden">
@@ -112,17 +112,10 @@
                           autocomplete="off" @click.stop>
                       </div>
                     </div>
-                    <div :class="!bundle ? 'text-white bg-white/10 font-medium' : 'text-white hover:bg-white/5'"
-                      :data-selected="!bundle ? 'true' : null"
-                      @click="selectBundleFromDropdown(''); localBundleSearch = ''; $event.target.closest('.dd-root').classList.remove('open')"
-                      class="px-3 py-2 text-sm cursor-pointer transition-colors flex items-center gap-2">
-                      <i class="fa-solid fa-cubes text-light text-base w-4 shrink-0 text-center icon-center"></i>
-                      <span class="leading-tight flex-1">All Bundles</span>
-                    </div>
                     <div v-for="optionItem in filteredBundleOptions" :key="optionItem.value"
                       :class="bundle === optionItem.value ? 'text-white bg-white/10 font-medium' : 'text-white hover:bg-white/5'"
                       :data-selected="bundle === optionItem.value ? 'true' : null"
-                      @click="selectBundleFromDropdown(optionItem.value); localBundleSearch = ''; $event.target.closest('.dd-root').classList.remove('open')"
+                      @click="onBundleSelected(optionItem.value, $event)"
                       class="px-3 py-2 text-sm cursor-pointer transition-colors flex items-center gap-2">
                       <img v-if="optionItem.icon" :src="optionItem.icon"
                         class="w-4 h-4 rounded-full object-cover shrink-0" alt="" loading="lazy">
@@ -161,18 +154,10 @@
                         autocomplete="off" @click.stop>
                     </div>
                   </div>
-                  <div :class="!app ? 'text-white bg-white/10 font-medium' : 'text-white hover:bg-white/5'"
-                    :data-selected="!app ? 'true' : null"
-                    @click="app = ''; localAppSearch = ''; $event.target.closest('.dd-root').classList.remove('open')"
-                    class="px-3 py-2 text-sm cursor-pointer transition-colors flex items-center gap-2">
-                    <i
-                      class="fa-solid fa-mobile-screen-button text-light text-base w-4 shrink-0 text-center icon-center"></i>
-                    <span class="flex-1">All Apps</span>
-                  </div>
                   <div v-for="optionItem in filteredAppOptions" :key="optionItem.value"
                     :class="app === optionItem.value ? 'text-white bg-white/10 font-medium' : 'text-white hover:bg-white/5'"
                     :data-selected="app === optionItem.value ? 'true' : null"
-                    @click="app = optionItem.value; localAppSearch = ''; $event.target.closest('.dd-root').classList.remove('open')"
+                    @click="onAppSelected(optionItem.value, $event)"
                     class="px-3 py-2 text-sm cursor-pointer transition-colors flex items-center gap-2">
                     <img v-if="optionItem.icon" :src="optionItem.icon"
                       class="w-4 h-4 rounded-sm object-contain shrink-0" alt="" loading="lazy">
@@ -188,7 +173,7 @@
             <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-y-2 gap-x-4 mt-0 md:mt-1">
               <!-- Search Patches -->
               <div class="w-full md:w-1/2 min-w-0">
-                <form @submit.prevent="$event.target.querySelector('input').blur()" class="relative w-full mt-0">
+                <form @submit.prevent="blurSearchInput($event)" class="relative w-full mt-0">
                   <span class="absolute left-3 top-0 h-[34px] flex items-center text-light pointer-events-none">
                     <i class="fa-solid fa-magnifying-glass text-xs icon-center"></i>
                   </span>
@@ -564,8 +549,12 @@
             Disclaimer
           </h4>
           <ul class="list-disc list-outside ml-4 text-light text-xs flex flex-col gap-1">
-            <li><a href="https://github.com/nvbangg/awesome-for-morphe" target="_blank" class="font-bold text-blue hover:underline">This project</a> is not affiliated with <a href="https://morphe.software/" target="_blank" class="font-bold text-blue hover:underline">Morphe</a> or any authors mentioned here.</li>
-            <li>Only use patch sources or projects you trust. This project is for informational purposes only and is not responsible for any arising issues.</li>
+            <li><a href="https://github.com/nvbangg/awesome-for-morphe" target="_blank"
+                class="font-bold text-blue hover:underline">This project</a> is not affiliated with <a
+                href="https://morphe.software/" target="_blank" class="font-bold text-blue hover:underline">Morphe</a>
+              or any authors mentioned here.</li>
+            <li>Only use patch sources or projects you trust. This project is for informational purposes only and is not
+              responsible for any arising issues.</li>
           </ul>
         </div>
       </footer>
@@ -665,7 +654,8 @@
               </span>
             </div>
 
-            <div class="border-t-2 border-lightGray bg-gray shadow-inner flex flex-col overflow-y-auto flex-1 min-h-0 relative">
+            <div
+              class="border-t-2 border-lightGray bg-gray shadow-inner flex flex-col overflow-y-auto flex-1 min-h-0 relative">
               <template v-for="appsList in [group.appsList]">
 
 
@@ -673,29 +663,31 @@
                   <div class="sticky top-0 z-10 bg-gray shadow-sm">
                     <div @click.stop="popupUI.selectApp(group.key, appItem, appsList)"
                       class="flex items-center gap-3 px-4 py-2 border-b border-lightGray/50 cursor-pointer hover:bg-white/5 transition-colors shrink-0"
-                    :class="popupUI.expandedOptions.has('popup_app_' + group.key + '_' + appItem.id) ? 'bg-white/5' : ''">
-                    <img v-if="appItem.appIcon" :src="appItem.appIcon"
-                      class="w-9 h-9 rounded-md object-contain shrink-0" :alt="appItem.appName" loading="lazy">
-                    <div v-else class="w-9 h-9 rounded-md flex items-center justify-center shrink-0">
-                      <i class="fa-brands fa-android text-green text-2xl icon-center"></i>
-                    </div>
-                    <div class="flex flex-col min-w-0 flex-1 justify-center">
-                      <div class="flex flex-wrap items-center gap-2 min-w-0 w-full">
-                        <span class="text-base font-semibold wrap-break-word leading-tight mt-0.5"
-                          :class="popupUI.expandedOptions.has('popup_app_' + group.key + '_' + appItem.id) ? 'text-blue' : 'text-white'">{{
-                          appItem.appName }}</span>
-                        <span v-if="isAppHighlighted(group.key, appItem)" class="badge badge-sm text-yellow shrink-0">✨
-                          New</span>
-                        <span v-if="appItem.isAppPreRelease && !group.bundle.isPreRelease"
-                          class="badge badge-sm text-yellow shrink-0"><i class="fa-solid fa-flask"></i>
-                          Pre-release</span>
+                      :class="popupUI.expandedOptions.has('popup_app_' + group.key + '_' + appItem.id) ? 'bg-white/5' : ''">
+                      <img v-if="appItem.appIcon" :src="appItem.appIcon"
+                        class="w-9 h-9 rounded-md object-contain shrink-0" :alt="appItem.appName" loading="lazy">
+                      <div v-else class="w-9 h-9 rounded-md flex items-center justify-center shrink-0">
+                        <i class="fa-brands fa-android text-green text-2xl icon-center"></i>
                       </div>
-                      <span v-if="appItem.packageName && appItem.packageName !== 'universal'"
-                        class="text-xs text-light wrap-break-word leading-tight w-full">{{ appItem.packageName }}</span>
+                      <div class="flex flex-col min-w-0 flex-1 justify-center">
+                        <div class="flex flex-wrap items-center gap-2 min-w-0 w-full">
+                          <span class="text-base font-semibold wrap-break-word leading-tight mt-0.5"
+                            :class="popupUI.expandedOptions.has('popup_app_' + group.key + '_' + appItem.id) ? 'text-blue' : 'text-white'">{{
+                            appItem.appName }}</span>
+                          <span v-if="isAppHighlighted(group.key, appItem)"
+                            class="badge badge-sm text-yellow shrink-0">✨
+                            New</span>
+                          <span v-if="appItem.isAppPreRelease && !group.bundle.isPreRelease"
+                            class="badge badge-sm text-yellow shrink-0"><i class="fa-solid fa-flask"></i>
+                            Pre-release</span>
+                        </div>
+                        <span v-if="appItem.packageName && appItem.packageName !== 'universal'"
+                          class="text-xs text-light wrap-break-word leading-tight w-full">{{ appItem.packageName
+                          }}</span>
+                      </div>
+                      <i class="fa-solid shrink-0 ml-2 text-light transition-transform"
+                        :class="popupUI.expandedOptions.has('popup_app_' + group.key + '_' + appItem.id) ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
                     </div>
-                    <i class="fa-solid shrink-0 ml-2 text-light transition-transform"
-                      :class="popupUI.expandedOptions.has('popup_app_' + group.key + '_' + appItem.id) ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
-                  </div>
                   </div>
 
                   <div v-if="popupUI.expandedOptions.has('popup_app_' + group.key + '_' + appItem.id)"
@@ -819,9 +811,9 @@
           </div>
         </div>
       </div>
-      </div>
+    </div>
 
-  </div>
+  </div>
 
   <!-- Back to Top -->
   <button id="back-to-top" aria-label="Back to Top"
@@ -886,7 +878,6 @@
     const backToTopButton = document.getElementById('back-to-top');
     window.addEventListener('scroll', function () {
       backToTopButton.style.display = window.scrollY > 300 ? 'flex' : 'none';
-      closeAllDropdowns();
     });
 
     backToTopButton.addEventListener('click', function () {

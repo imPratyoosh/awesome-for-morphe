@@ -1,7 +1,6 @@
 # Copyright (c) 2026 nvbangg (github.com/nvbangg)
 
 import datetime
-import json
 import re
 import urllib.parse
 from pathlib import Path
@@ -105,7 +104,7 @@ def stringify_trie(bundles_dict):
 
 
 def make_url(bundle, app=None, patches=None):
-    url = f"https://nvbangg.github.io/awesome-for-morphe/"
+    url = "https://nvbangg.github.io/awesome-for-morphe/"
     query = []
 
     if patches:
