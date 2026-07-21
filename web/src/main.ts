@@ -546,9 +546,14 @@ const app = createApp({
     const loadWhatsNewData = async () => {
       isWhatsNewLoading.value = true;
       try {
-        const data = await fetchJson<{ history: unknown[]; apps: Record<string, AppNameMeta> }>("whats-new.json").catch(() => ({ history: [], apps: {} }));
-        whatsNewHistory.value = data.history || [];
-        whatsNewAppsData.value = data.apps || {};
+        const data = await fetchJson<any>("whats-new.json").catch(() => []);
+        if (Array.isArray(data)) {
+          whatsNewHistory.value = data;
+          whatsNewAppsData.value = {};
+        } else {
+          whatsNewHistory.value = data?.history || [];
+          whatsNewAppsData.value = data?.apps || {};
+        }
       } catch (err) {
         console.error("Failed to load what's new data", err);
       } finally {
@@ -970,8 +975,9 @@ const app = createApp({
         return isNaN(parsedDate.getTime()) ? "" : parsedDate.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
       },
       playUrl: (packageName: string) => `https://play.google.com/store/apps/details?id=${encodeURIComponent(packageName)}`,
-      getWhatsNewAppIcon: (packageName: string) => whatsNewAppsData.value[packageName]?.iconUrl || "",
-      formatWhatsNewAppName: (packageName: string) => appName(packageName, whatsNewAppsData.value, activeData.value?.skipSet),
+      getWhatsNewAppIcon: (packageName: string) => whatsNewAppsData.value[packageName]?.iconUrl || activeData.value?.namesMap?.[packageName]?.iconUrl || "",
+      formatWhatsNewAppName: (packageName: string) =>
+        appName(packageName, Object.keys(whatsNewAppsData.value).length > 0 ? whatsNewAppsData.value : activeData.value?.namesMap || {}, activeData.value?.skipSet),
       getAppName: (packageName: string) => (packageName ? appName(packageName, activeData.value?.namesMap || {}, activeData.value?.skipSet) : "All Apps"),
       getAppIcon: (packageName: string) => {
         const meta = activeData.value?.namesMap[packageName];
