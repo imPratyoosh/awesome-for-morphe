@@ -1,5 +1,5 @@
 {
-  "jman_tree_sha": "d7ff0960d1121d7daa7202fc1b1fe107b7df7b3f",
+  "jman_tree_sha": "fce47f287f8cb8e82b509379170f4229ff65a7fd",
   "jman_bundles": {
     "1fexd": {
       "sha": "4428619fe1755f86c0bd9d8fb5762fcc8c17b43a",
@@ -50,7 +50,7 @@
       "key": "github:ameenalasady/photogrid-morphe"
     },
     "amplerevanced": {
-      "sha": "29254a59469d8652dd94b3b0ce1f4b3cd0bb24a2",
+      "sha": "4a5a5a9d3941b3720759bd7df312d22e1842248a",
       "key": "github:AmpleReVanced/revanced-patches"
     },
     "anddea": {

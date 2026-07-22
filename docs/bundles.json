@@ -6220,7 +6220,7 @@
           "compatiblePackagesKey": 23
         }
       ],
-      "createdAt": "2026-07-22T07:24:50",
+      "createdAt": "2026-07-22T14:04:27",
       "targetApps": [
         "com.dcinside.app.android",
         "com.flexcil.flexcilnote",
@@ -15791,7 +15791,7 @@
         "packageName": "com.flexcil.flexcilnote",
         "targets": [
           {
-            "version": "1.4.3.30"
+            "version": "1.4.4.9"
           }
         ]
       }
