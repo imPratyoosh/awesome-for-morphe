@@ -1,5 +1,5 @@
 {
-  "jman_tree_sha": "f4c99693806972067f5eabe99c45e1d35913b5b6",
+  "jman_tree_sha": "6cd7104b91c3dd2d67662ebec519505ae9a38588",
   "jman_bundles": {
     "1fexd": {
       "sha": "4428619fe1755f86c0bd9d8fb5762fcc8c17b43a",
@@ -22,7 +22,7 @@
       "key": "github:jkennethcarino/adobo"
     },
     "ajstrick81-androidtv": {
-      "sha": "6f18e65d9cc1de30285bc15aa858f67feda35dc0",
+      "sha": "da169c6ca71591b6333eb2f18448755be4053bd9",
       "key": "github:ajstrick81/morphe-androidtv-patches"
     },
     "AlexNaga": {
@@ -50,7 +50,7 @@
       "key": "github:ameenalasady/photogrid-morphe"
     },
     "amplerevanced": {
-      "sha": "5ccce1706b0f48d0c2dff5d410fe2217beb88179",
+      "sha": "2207c5419b5b4076ec2e368c9d90caf3f559945e",
       "key": "github:AmpleReVanced/revanced-patches"
     },
     "anddea": {
@@ -350,7 +350,7 @@
       "key": null
     },
     "morphe": {
-      "sha": "2c41939928c4c65aff2dbd1950132504fa47eb55",
+      "sha": "aa7013d95ef3c712209dc5d88534bf0ba4eabd2f",
       "key": "github:MorpheApp/morphe-patches"
     },
     "morphe-google": {
@@ -502,7 +502,7 @@
       "key": "github:bigyank/morphe-patches-samsung"
     },
     "seobject": {
-      "sha": "fcdc22c54a837903a7f4385d443b14236679aad7",
+      "sha": "1e35c749b7a8fdf801dc116c5b36fd316a18ae1f",
       "key": "github:Seobject/Seobject-patches"
     },
     "shaun-sheep": {

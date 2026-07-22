@@ -765,7 +765,7 @@
           "compatiblePackagesKey": 300
         }
       ],
-      "createdAt": "2026-07-21T08:48:08",
+      "createdAt": "2026-07-22T05:18:32",
       "targetApps": [
         "com.google.android.apps.youtube.music",
         "com.google.android.youtube",
@@ -6220,7 +6220,7 @@
           "compatiblePackagesKey": 23
         }
       ],
-      "createdAt": "2026-07-15T12:58:12",
+      "createdAt": "2026-07-22T05:48:41",
       "targetApps": [
         "com.dcinside.app.android",
         "com.flexcil.flexcilnote",
@@ -7777,7 +7777,7 @@
           "compatiblePackagesKey": 14
         }
       ],
-      "createdAt": "2026-07-20T11:28:09",
+      "createdAt": "2026-07-22T01:19:11",
       "targetApps": [
         "com.amazon.amazonvideo.livingroom",
         "com.bamnetworks.mobile.android.gameday.atbat",
@@ -13922,7 +13922,7 @@
           "compatiblePackagesKey": 524
         }
       ],
-      "createdAt": "2026-07-21T21:59:20",
+      "createdAt": "2026-07-22T00:40:13",
       "targetApps": [
         "com.google.android.apps.youtube.music"
       ],
@@ -15626,6 +15626,9 @@
           },
           {
             "version": "26.9.2+rc1-2026.06.12"
+          },
+          {
+            "version": "26.12.1+rc1-2026.07.15"
           }
         ]
       }
@@ -15757,7 +15760,7 @@
         "packageName": "com.kakao.talk",
         "targets": [
           {
-            "version": "26.6.0"
+            "version": "26.6.1"
           }
         ]
       }
@@ -18839,7 +18842,7 @@
         "packageName": "com.google.android.youtube",
         "targets": [
           {
-            "version": "21.29.363-SECONDARY",
+            "version": "21.29.366",
             "isExperimental": true
           },
           {
@@ -21196,6 +21199,10 @@
       {
         "packageName": "com.google.android.apps.youtube.music",
         "targets": [
+          {
+            "version": "9.28.51",
+            "isExperimental": true
+          },
           {
             "version": "9.26.51",
             "isExperimental": true
