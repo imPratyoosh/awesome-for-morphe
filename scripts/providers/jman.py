@@ -1,5 +1,6 @@
 # Copyright (c) 2026 nvbangg (github.com/nvbangg)
 
+import os
 import re
 import json
 import sys
@@ -56,8 +57,12 @@ def _process_bundle(bundle_name, bundle_path, blob_sha, cached):
 
 def discover():
     print("  [jman] Fetching bundle tree from API...")
+    headers = {}
+    if os.environ.get("GITHUB_TOKEN"):
+        headers["Authorization"] = f"Bearer {os.environ['GITHUB_TOKEN']}"
+
     try:
-        tree_data = fetch(TREE_API_URL, timeout=30, as_json=True)
+        tree_data = fetch(TREE_API_URL, headers=headers, timeout=30, as_json=True)
     except Exception as e:
         print(f"  [jman] Failed to fetch tree: {e}")
         return {}

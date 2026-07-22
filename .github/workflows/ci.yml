@@ -22,6 +22,8 @@ jobs:
 
       - name: Download and update bundles
         id: update
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           python scripts/discover.py
           python scripts/download.py --bundles
