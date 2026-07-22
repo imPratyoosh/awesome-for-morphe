@@ -982,15 +982,15 @@
         "com.instagram.android": 1784419200000,
         "com.twitter.android": 1784419200000
       },
-      "stars": 4379,
+      "stars": 4381,
       "updatedAt": 1782518400000,
       "firstSeen": 1773154796000,
       "appFirstSeen": {
         "com.twitter.android": 1773154796000,
         "com.instagram.android": 1773154796000
       },
-      "starsGained7d": 7,
-      "starsGained40d": 7
+      "starsGained7d": 9,
+      "starsGained40d": 9
     },
     {
       "source": "github",
@@ -7753,14 +7753,14 @@
       "appUpdates": {
         "com.zhiliaoapp.musically": 1781654400000
       },
-      "stars": 141,
+      "stars": 142,
       "updatedAt": 1781654400000,
       "firstSeen": 1780156086693,
       "appFirstSeen": {
         "com.zhiliaoapp.musically": 1780156086693
       },
-      "starsGained7d": 6,
-      "starsGained40d": 6
+      "starsGained7d": 7,
+      "starsGained40d": 7
     },
     {
       "source": "github",
@@ -12379,14 +12379,14 @@
         "com.twitter.android"
       ],
       "appUpdates": {},
-      "stars": 34,
+      "stars": 35,
       "updatedAt": 1783036800000,
       "firstSeen": 1781596395094,
       "appFirstSeen": {
         "com.twitter.android": 1781596395094
       },
-      "starsGained7d": 0,
-      "starsGained40d": 0
+      "starsGained7d": 1,
+      "starsGained40d": 1
     },
     {
       "source": "github",
