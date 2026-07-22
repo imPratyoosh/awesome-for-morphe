@@ -5654,7 +5654,7 @@
           "compatiblePackagesKey": 327
         }
       ],
-      "createdAt": "2026-03-31T09:28:51",
+      "createdAt": "2026-07-22T08:02:46",
       "targetApps": [
         "tv.trakt.trakt"
       ],
@@ -6220,7 +6220,7 @@
           "compatiblePackagesKey": 23
         }
       ],
-      "createdAt": "2026-07-22T05:48:41",
+      "createdAt": "2026-07-22T07:24:50",
       "targetApps": [
         "com.dcinside.app.android",
         "com.flexcil.flexcilnote",
@@ -15770,7 +15770,7 @@
         "packageName": "com.navercorp.game.android.community",
         "targets": [
           {
-            "version": "3.6.2"
+            "version": "3.9.0"
           }
         ]
       }
@@ -15780,7 +15780,7 @@
         "packageName": "kr.co.nowcom.mobile.afreeca",
         "targets": [
           {
-            "version": "8.25.2"
+            "version": "8.28.3"
           }
         ],
         "isPreRelease": true

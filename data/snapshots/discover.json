@@ -1,5 +1,5 @@
 {
-  "jman_tree_sha": "6cd7104b91c3dd2d67662ebec519505ae9a38588",
+  "jman_tree_sha": "4646836aaa94a46bb0cf08a98c68210aff4ecfa2",
   "jman_bundles": {
     "1fexd": {
       "sha": "4428619fe1755f86c0bd9d8fb5762fcc8c17b43a",
@@ -50,7 +50,7 @@
       "key": "github:ameenalasady/photogrid-morphe"
     },
     "amplerevanced": {
-      "sha": "2207c5419b5b4076ec2e368c9d90caf3f559945e",
+      "sha": "29254a59469d8652dd94b3b0ce1f4b3cd0bb24a2",
       "key": "github:AmpleReVanced/revanced-patches"
     },
     "anddea": {
@@ -422,7 +422,7 @@
       "key": "github:SouBryan/pinterest-morphed"
     },
     "pixelpusher247": {
-      "sha": "99fc836743e471be780edc89bed6be55ad973c93",
+      "sha": "302653c27b50de7980382b550cff59b8e831cd09",
       "key": "github:PixelPusher247/morphe-patches"
     },
     "polka-bear": {
