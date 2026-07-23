@@ -1000,15 +1000,15 @@
         "com.instagram.android": 1784764800000,
         "com.twitter.android": 1784764800000
       },
-      "stars": 4400,
+      "stars": 4403,
       "updatedAt": 1782518400000,
       "firstSeen": 1773154796000,
       "appFirstSeen": {
         "com.twitter.android": 1773154796000,
         "com.instagram.android": 1773154796000
       },
-      "starsGained7d": 28,
-      "starsGained40d": 28
+      "starsGained7d": 31,
+      "starsGained40d": 31
     },
     {
       "source": "github",
@@ -1725,7 +1725,7 @@
         "ginlemon.flowerfree": 1770076800000,
         "com.simyasolutions.ling.universal": 1784678400000
       },
-      "stars": 852,
+      "stars": 853,
       "updatedAt": 1784073600000,
       "firstSeen": 1768941201000,
       "appFirstSeen": {
@@ -1783,8 +1783,8 @@
         "cn.ommiao.iconpacker": 1768941201000,
         "com.simyasolutions.ling.universal": 1784769617321
       },
-      "starsGained7d": 10,
-      "starsGained40d": 10
+      "starsGained7d": 11,
+      "starsGained40d": 11
     },
     {
       "source": "github",
@@ -1802,7 +1802,7 @@
         },
         {
           "name": "Alert Distances",
-          "description": "Configures radar/camera and hazard alert announcement distances.\nCredits: Waze CGE Mod.\n",
+          "description": "Configures radar/camera and hazard alert announcement distances.\nWrites all key variants (truncated _ + underscore + space) for resilience across versions.\nCredits: Waze CGE Mod.\nOfficial → default values (metres):\nAccident 600→2000 | Alert 600→1000 | Police 600→1000 |\nFreeways 2000→1200 | Highways 1000→900 | Streets 500→700 |\nHazard 600→500 | Heavy Traffic 600→3000 | Between Alerts 300→200",
           "default": true,
           "options": [
             {
@@ -1891,7 +1891,7 @@
         },
         {
           "name": "AutoZoom",
-          "description": "Controls how aggressively the map zooms in/out based on driving speed.\nCredits: Waze Chuppito Mod",
+          "description": "Controls how aggressively the map zooms in/out based on driving speed.\nCredits: Waze Chuppito Mod (Speed Factor 20, Gradient Speed Threshold 60).",
           "default": true,
           "options": [
             {
@@ -2000,7 +2000,7 @@
         {
           "name": "Dark mode",
           "description": "Force dark mode for Amazon Shopping.",
-          "default": false,
+          "default": true,
           "options": [
             {
               "key": "amazonDarkMode",
@@ -2034,7 +2034,7 @@
         },
         {
           "name": "Disable Advil Ad Requests",
-          "description": "Stubs AdvilRequest.getPageUrl() → \"\" so the Advil ad server receives no page URL and returns no ad content. ",
+          "description": "Stubs AdvilRequest.getPageUrl() → \"\" so the Advil ad server receives no page URL and returns no ad content. Target: Lcom/waze/jni/protos/AdvilRequest;->getPageUrl() in classes6.dex (verified ✓).",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 58
@@ -2090,6 +2090,13 @@
         },
         {
           "name": "Disable video autoplay",
+          "description": "Prevents videos from autoplaying in Amazon's in-app WebView pages.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 61
+        },
+        {
+          "name": "Disable video autoplay",
           "description": "Prevents product and ad videos from autoplaying.",
           "default": true,
           "options": [],
@@ -2142,8 +2149,8 @@
         },
         {
           "name": "Enlarged Speedometer",
-          "description": "Increases speedometer digit size for better readability.",
-          "default": false,
+          "description": "Increases speedometer digit size for better readability.\nDefault: speed < 100 → 28sp (orig 20sp), speed ≥ 100 → 21sp (orig 13sp).\nTarget: Lcom/waze/main_screen/h/b/d;->f() in classes6.dex (verified ✓).\nNote: the two const/16 values are non-consecutive (goto between them) — scanned independently.",
+          "default": true,
           "options": [
             {
               "key": "smallTextSize",
@@ -2336,7 +2343,7 @@
         },
         {
           "name": "Map Skin (Vitamin C)",
-          "description": "Applies Chuppito's 'Vitamin C' map skin. All visual values configurable.\n• Night: true black AMOLED background (saves battery, prevents burn-in)\n• Day: warm beige background\n• Larger font labels across the board\n• Wider navigation arrow head for better visibility\n• Custom car 3D models: Batmobile, Riddler, race car, 3D arrow\nCredits: ALEX02-GTT (skin design), Waze Chuppito Mod (integration).",
+          "description": "Applies Chuppito's 'Vitamin C' map skin. All visual values configurable.\n• Night: true black AMOLED background (saves battery, prevents burn-in)\n• Day: warm beige background\n• Larger font labels across the board\n• Wider navigation arrow head for better visibility\n• Custom car 3D models: Batmobile, Riddler, race car, 3D arrow\nNote: skin changes require a fresh APK install; updating an existing patched install may keep cached skin files.\nCredits: ALEX02-GTT (skin design), Waze Chuppito Mod (integration).",
           "default": true,
           "options": [
             {
@@ -2407,7 +2414,7 @@
         },
         {
           "name": "Navigation & Map",
-          "description": "Configures navigation and map behaviour:\n• Nearing destination distance (Credits: CGE Mod)\n• Android Auto head-up alert distances\n• Map turn mode (auto-zoom to upcoming turn)\n• Traffic bar minimum time threshold\n• GPS icon visibility\n• Route notifications (hazard, school zone) both disabled by default\nCredits: Waze CGE Mod (nearing destination), Waze Chuppito (remaining keys).",
+          "description": "Configures navigation and map behaviour:\n• Nearing destination distance (Credits: CGE Mod)\n• Android Auto head-up alert distances\n• Map turn mode (auto-zoom to upcoming turn)\n• Traffic bar minimum time threshold\n• GPS icon visibility\n• Route notifications (hazard, school zone) — both disabled by default\nCredits: Waze CGE Mod (nearing destination), Waze Chuppito (remaining keys).",
           "default": true,
           "options": [
             {
@@ -2500,7 +2507,7 @@
         {
           "name": "Open links in browser",
           "description": "Opens non-Amazon URLs in the default browser instead of the in-app WebView.",
-          "default": false,
+          "default": true,
           "options": [],
           "compatiblePackagesKey": 61
         },
@@ -2513,7 +2520,7 @@
         },
         {
           "name": "Popup Suppression",
-          "description": "Prevents promotional and ad popups from appearing while driving.\nRaises the minimum trigger speed to a near-impossible value so popups never appear.\nCredits: Waze Chuppito Mod.",
+          "description": "Prevents promotional and ad popups from appearing while driving.\nRaises the minimum trigger speed to a near-impossible value so popups never appear.\nWrites both Popup_ and Popu__ key variants for version resilience.\nCredits: Waze Chuppito Mod.",
           "default": true,
           "options": [
             {
@@ -2574,7 +2581,7 @@
         {
           "name": "Price history charts",
           "description": "Injects Keepa and CamelCamelCamel price history charts on Amazon product pages.",
-          "default": false,
+          "default": true,
           "options": [],
           "compatiblePackagesKey": 61
         },
@@ -2624,7 +2631,7 @@
         },
         {
           "name": "Radar Sound (Any Speed)",
-          "description": "Plays radar/speed camera sound alerts regardless of current speed. Official Waze only alerts when over the speed limit.\n",
+          "description": "Plays radar/speed camera sound alerts regardless of current speed. Official Waze only alerts when over the speed limit.\nPatches CONFIG_VALUE_ALERTS_PLAY_SPEED_CAMERA_SOUND_BELOW_SPEED_LIMIT (ordinal 632) via setConfigValueBoolNTV on every server config sync.\nTarget: Lcom/waze/ConfigManager;->onConfigSyncedFromServer() in classes5.dex (verified ✓).",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 58
@@ -2652,24 +2659,45 @@
         },
         {
           "name": "Remove Ads",
-          "description": "Removes ads from TorrDroid.",
+          "description": "Blocks all ad display across Opera News's five ad networks and all mediation layers (AdsFacade, AppLovin MAX, TopOn, MCSDK, SmartDigiMkt).",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 70
         },
         {
           "name": "Remove Ads",
-          "description": "Remove in-app ads.",
+          "description": "Unlocks the Remove Ads purchase in qBitConnect by injecting IAP ownership flags into SharedPreferences before Flutter reads them.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 71
+        },
+        {
+          "name": "Remove Ads",
+          "description": "Removes ads.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 72
+        },
+        {
+          "name": "Remove Ads",
+          "description": "Removes ads from TorrDroid.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 73
+        },
+        {
+          "name": "Remove Ads",
+          "description": "Remove in-app ads.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 74
         },
         {
           "name": "Remove Ads / Unlock Premium",
           "description": "Forces SubscriptionStateImpl.getStatus() (LB2/c.h) to always return HAS_UNLIMITED_SUBSCRIPTION and getPurchase() (LB2/c.g) to return a well-formed fake Purchase, removing ads and the upgrade button/banner without crashing on the now-expected non-null Purchase object.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 72
+          "compatiblePackagesKey": 75
         },
         {
           "name": "Remove Item Limits",
@@ -2679,11 +2707,18 @@
           "compatiblePackagesKey": 59
         },
         {
+          "name": "Remove Sound Delay",
+          "description": "Removes the 10-minute waiting period before playing a sound on a detected tracker.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 76
+        },
+        {
           "name": "Remove Watermark",
           "description": "Removes watermarks from Canva exports and previews.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 73
+          "compatiblePackagesKey": 77
         },
         {
           "name": "Remove ad manifest entries",
@@ -2697,7 +2732,7 @@
           "description": "Stubs all ad loading paths: banner/interstitial loaders, billing callbacks, and ad SDK init.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 74
+          "compatiblePackagesKey": 78
         },
         {
           "name": "Remove ads",
@@ -2711,21 +2746,14 @@
           "description": "Disables Block Puzzle AdMob initialization, banner, and interstitial ads.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 75
-        },
-        {
-          "name": "Remove ads",
-          "description": "Disables interstitial/banner ad loaders, hides promoted listings and profiles from search feeds.",
-          "default": true,
-          "options": [],
-          "compatiblePackagesKey": 76
+          "compatiblePackagesKey": 79
         },
         {
           "name": "Remove ads",
           "description": "Disables LiveScore banner, native, and interstitial ad requests.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 77
+          "compatiblePackagesKey": 80
         },
         {
           "name": "Remove share targets",
@@ -2736,17 +2764,10 @@
         },
         {
           "name": "Report Speed Limit",
-          "description": "Adds a Report option when tapping the speedometer to report wrong or missing speed limits. Not available in the official version.\n",
+          "description": "Adds a Report option when tapping the speedometer to report wrong or missing speed limits. Not available in the official version.\nKey: Map.Speedometer report speed enable_: 1",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 58
-        },
-        {
-          "name": "Sanitize share links",
-          "description": "Strips tracking parameters from copied/shared Amazon links, leaving only the clean product URL.",
-          "default": true,
-          "options": [],
-          "compatiblePackagesKey": 61
         },
         {
           "name": "Set target SDK 34",
@@ -2757,7 +2778,7 @@
         },
         {
           "name": "Speed Limit Sign",
-          "description": "Sets the speed limit sign style shown on the map.",
+          "description": "Sets the speed limit sign style shown on the map.\n• us (default) — large circular US-style sign, more readable at a glance\n• metric — smaller local-style sign\nKey: Map.Speedometer sign style",
           "default": true,
           "options": [
             {
@@ -3266,7 +3287,7 @@
         },
         {
           "name": "Uncensored Radar / Camera Display",
-          "description": "Shows exact fixed and mobile speed camera locations, including those not yet in the official Waze radar zone. Enables enforcement alerts via preferences keys:\nCredits: Waze CGE Mod.",
+          "description": "Shows exact fixed and mobile speed camera locations, including those not yet in the official Waze radar zone. Enables enforcement alerts via preferences keys:\nAlerts.Enable Enforcement Alert_ / Alert / Polic_ (truncated + full variants).\nCredits: Waze CGE Mod.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 58
@@ -3276,84 +3297,91 @@
           "description": "Forces FlightAware ad-free subscribed state.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 78
+          "compatiblePackagesKey": 81
         },
         {
           "name": "Unlock Ad-Free",
           "description": "Removes ads and unlocks ad-free status in Speedtest by Ookla.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 79
+          "compatiblePackagesKey": 82
         },
         {
           "name": "Unlock All Access",
           "description": "Unlocks All access in Nzb360.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 80
+          "compatiblePackagesKey": 83
         },
         {
           "name": "Unlock All Features",
           "description": "Bypasses PairIP DRM license check, removes all paywalls, and unlocks all premium features including cloud sync and remote access.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 81
+          "compatiblePackagesKey": 84
         },
         {
           "name": "Unlock Business Premium",
           "description": "Unlocks Business/Gold premium features in Flightradar24: ad-free map, weather layers, ATC, 3D view, flight history, and unlimited saved locations.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 82
+          "compatiblePackagesKey": 85
         },
         {
           "name": "Unlock Cloud Service",
           "description": "Unlocks BluramsGuard cloud storage, AI detection, and playback features.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 83
+          "compatiblePackagesKey": 86
         },
         {
           "name": "Unlock Club",
           "description": "Unlocks Citymapper Club Membership Note: Need to manually Purchase inside APP!.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 84
+          "compatiblePackagesKey": 87
+        },
+        {
+          "name": "Unlock Deluxe",
+          "description": "Unlocks the Deluxe subscription.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 88
         },
         {
           "name": "Unlock Donation Features",
           "description": "Unlocks all premium donation features in Greenify.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 85
+          "compatiblePackagesKey": 89
         },
         {
           "name": "Unlock Drama Episodes",
           "description": "Bypasses the IAA (ad-watch-to-unlock) episode gate for drama mini-series.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 86
+          "compatiblePackagesKey": 90
         },
         {
           "name": "Unlock Elite",
           "description": "Unlocks JEFIT Elite features in app.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 87
+          "compatiblePackagesKey": 91
         },
         {
           "name": "Unlock Enterprise",
           "description": "Unlocks Enterprise features in app.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 88
+          "compatiblePackagesKey": 92
         },
         {
           "name": "Unlock Excel",
           "description": "Removes login requirement, unlocks premium, blocks ads, bypasses signature and code transparency checks.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 89
+          "compatiblePackagesKey": 93
         },
         {
           "name": "Unlock Followed Locations",
@@ -3367,168 +3395,231 @@
           "description": "Unlocks all features in Inure App Manager.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 90
+          "compatiblePackagesKey": 94
         },
         {
           "name": "Unlock Gold",
           "description": "Unlocks Kahoot! Plus Gold features in app.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 91
+          "compatiblePackagesKey": 95
         },
         {
           "name": "Unlock Lifetime",
           "description": "Unlocks lifetime subscription features in BlockerHero.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 92
+          "compatiblePackagesKey": 96
         },
         {
           "name": "Unlock Lifetime",
           "description": "Unlocks all Lifetime features in Proxyman.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 93
+          "compatiblePackagesKey": 97
         },
         {
           "name": "Unlock Lifetime",
           "description": "Unlocks SHAREit lifetime premium.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 94
+          "compatiblePackagesKey": 98
         },
         {
           "name": "Unlock Lifetime Premium",
           "description": "Unlocks all features locked behind the subscription paywall.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 95
+          "compatiblePackagesKey": 99
         },
         {
           "name": "Unlock Moovit+",
           "description": "Unlocks Moovit+",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 96
+          "compatiblePackagesKey": 100
         },
         {
           "name": "Unlock PRO",
           "description": "Unlocks all PRO features in app",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 97
+          "compatiblePackagesKey": 101
         },
         {
           "name": "Unlock Patron",
           "description": "Unlocks Pocket Casts Patron yearly feature checks.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 98
+          "compatiblePackagesKey": 102
         },
         {
           "name": "Unlock Platinum",
           "description": "Unlocks Life360 Platinum feature in app.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 99
+          "compatiblePackagesKey": 103
         },
         {
           "name": "Unlock Plus",
           "description": "Forces Clue Plus subscription active, unlocking all premium features.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 100
+          "compatiblePackagesKey": 104
         },
         {
           "name": "Unlock Plus",
           "description": "Unlocks all SpotAngels Plus features in app",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 101
+          "compatiblePackagesKey": 105
         },
         {
           "name": "Unlock Plus",
           "description": "Unlocks Sticker.ly PLUS subscriptionNote: For Facebook Login, Uninstall Facebook App.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 102
+          "compatiblePackagesKey": 106
         },
         {
           "name": "Unlock Plus",
           "description": "Unlocks Subway Now Plus.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 103
-        },
-        {
-          "name": "Unlock Premium",
-          "description": "Unlocks premium features in app.",
-          "default": true,
-          "options": [],
-          "compatiblePackagesKey": 104
-        },
-        {
-          "name": "Unlock Premium",
-          "description": "Unlocks AiScore Premium Features in app.",
-          "default": true,
-          "options": [],
-          "compatiblePackagesKey": 105
-        },
-        {
-          "name": "Unlock Premium",
-          "description": "Unlocks premium.",
-          "default": true,
-          "options": [],
-          "compatiblePackagesKey": 106
-        },
-        {
-          "name": "Unlock Premium",
-          "description": "Unlocks all premium wallpapers.",
-          "default": true,
-          "options": [],
           "compatiblePackagesKey": 107
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlock Premium Features in app.",
+          "description": "Unlocks AccuBattery Pro by bypassing server offer validity, the Google Play purchase gate, and all UI premium banners.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 108
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks Premium Features In the App.",
+          "description": "Unlocks premium features in app.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 109
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks Carbon premium subscription.",
+          "description": "Unlocks AiScore Premium Features in app.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 110
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks ColorNote premium and removes advertising ID permissions.",
+          "description": "Unlocks premium.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 111
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks all premium features in Countdown Widget",
+          "description": "Unlocks the Remove Ads purchase in Ampere by bypassing the isProVersion getter, purchase verifier, and payment-needed gate.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 112
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks premium features in app.",
+          "description": "Unlocks AndroPods Pro: voice call integration, assistant control, ear detection auto-pause/resume, and all premium preferences.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 113
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks all premium wallpapers.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 114
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks premium and marks the yearly plan as purchased.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 115
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks BatteryPods Pro: removes all advertisements and enables premium features including all widget themes and device customization options.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 116
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlock Premium Features in app.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 117
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks Calimoto LIFETIME membership by spoofing the membership getter.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 118
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks Premium Features In the App.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 119
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks Calm lifetime subscription",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 120
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks Calory Pro and removes ads.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 121
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks Carbon premium subscription.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 122
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks Charge Meter premium features.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 123
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks ColorNote premium and removes advertising ID permissions.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 124
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks all premium features in Countdown Widget",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 125
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks premium features in app.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 126
         },
         {
           "name": "Unlock Premium",
@@ -3542,266 +3633,329 @@
           "description": "Unlocks premium features after login.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 114
+          "compatiblePackagesKey": 127
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks all premium wallpapers.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 115
-        },
-        {
-          "name": "Unlock Premium",
-          "description": "Unlocks all Fitbod premium features.",
-          "default": true,
-          "options": [],
-          "compatiblePackagesKey": 116
-        },
-        {
-          "name": "Unlock Premium",
-          "description": "Unlocks premium features in app.",
-          "default": true,
-          "options": [],
-          "compatiblePackagesKey": 117
-        },
-        {
-          "name": "Unlock Premium",
-          "description": "Unlock Premium features in app.",
-          "default": true,
-          "options": [],
-          "compatiblePackagesKey": 118
-        },
-        {
-          "name": "Unlock Premium",
-          "description": null,
-          "default": true,
-          "options": [],
-          "compatiblePackagesKey": 119
-        },
-        {
-          "name": "Unlock Premium",
-          "description": "Unlocks all premium features in Image & Video Date Fixer.",
-          "default": true,
-          "options": [],
-          "compatiblePackagesKey": 120
-        },
-        {
-          "name": "Unlock Premium",
-          "description": "Unlock Premium features after login.",
-          "default": true,
-          "options": [],
-          "compatiblePackagesKey": 121
-        },
-        {
-          "name": "Unlock Premium",
-          "description": "Unlocks premium features and all map packs.",
-          "default": true,
-          "options": [],
-          "compatiblePackagesKey": 122
-        },
-        {
-          "name": "Unlock Premium",
-          "description": "Unlocks premium features in app.",
-          "default": true,
-          "options": [],
-          "compatiblePackagesKey": 123
-        },
-        {
-          "name": "Unlock Premium",
-          "description": "Unlocks Premium Features in app.",
-          "default": true,
-          "options": [],
-          "compatiblePackagesKey": 124
-        },
-        {
-          "name": "Unlock Premium",
-          "description": "Unlocks Premium features in app after login.",
-          "default": true,
-          "options": [],
-          "compatiblePackagesKey": 125
-        },
-        {
-          "name": "Unlock Premium",
-          "description": "Unlock all premium widgets.",
-          "default": true,
-          "options": [],
-          "compatiblePackagesKey": 126
-        },
-        {
-          "name": "Unlock Premium",
-          "description": "Unlocks premium in Beta by Mirko.",
-          "default": true,
-          "options": [],
-          "compatiblePackagesKey": 127
-        },
-        {
-          "name": "Unlock Premium",
-          "description": "Unlocks MyRadar's yearly premium features",
-          "default": true,
-          "options": [],
           "compatiblePackagesKey": 128
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks all premium features.",
+          "description": "Unlocks Electron premium features",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 129
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks Premium features in app..",
+          "description": "Unlocks all Fitbod premium features.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 130
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks Ninja VPN premium.",
+          "description": "Unlocks premium features in app.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 131
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks premium features after login.",
+          "description": "Unlock Premium features in app.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 132
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks all Photo Editor premium features",
+          "description": null,
           "default": true,
           "options": [],
           "compatiblePackagesKey": 133
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks Picture Mushroom premium features.",
+          "description": "Unlocks all premium features in Image & Video Date Fixer.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 134
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks PictureThis premium features.",
+          "description": "Unlock Premium features after login.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 135
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks Pocket Prep premium subscription gates.",
+          "description": "Unlocks premium features and all map packs.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 136
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks local Proton VPN premium  features.",
+          "description": "Unlocks premium features in app.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 137
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlock premium features in RecipeBro.",
+          "description": "Unlocks Premium Features in app.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 138
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks all premium features in Rename & Organize.",
+          "description": "Unlocks Premium features in app after login.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 139
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks Rocket Money Premium Features.",
+          "description": "Unlocks Material Capsule pro.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 140
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks premium features in app.",
+          "description": "Unlocks all pro features.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 141
         },
         {
           "name": "Unlock Premium",
-          "description": "Bypasses PairIP license check, paywall, ads, and pro upsell in SAI.",
+          "description": "Unlock all premium widgets.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 142
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks all premium feature in app.",
+          "description": "Unlocks premium in Beta by Mirko.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 143
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks all Premium features in Snipd: AI Podcast Player by spoofing the RevenueCat CustomerInfo.",
+          "description": "Unlocks MobiOffice premium and removes ads.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 144
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks Premium features.",
+          "description": "Unlocks MyRadar's yearly premium features",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 145
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks Social Gamebox premium features.",
+          "description": "Unlocks all premium features.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 146
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks Sticker Maker premium and ad-free checks.",
+          "description": "Unlocks Premium features in app..",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 147
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks Premium features in app. Also re-enables password login after OTP.",
+          "description": "Unlocks Ninja VPN premium.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 148
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks premium/lifetime featuers in app.",
+          "description": "Unlocks all premium features including advanced diagnostics, live sensor data, freeze frame, and removes the daily usage quota.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 149
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks The Weather Channel's Premium and Premium Pro subscription tiers. Enables the ad-free experience, extended 15-day hourly forecast, real-feel temperature, air quality index, minute-by-minute precipitation, severe weather notifications, and radar overlays gated behind the subscription paywall.",
+          "description": "Unlock premium features.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 150
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks all premium features.",
+          "description": "Unlocks premium features after login.",
           "default": true,
           "options": [],
           "compatiblePackagesKey": 151
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks all Photo Editor premium features",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 152
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks Picture Mushroom premium features.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 153
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks PictureThis premium features.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 154
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks Pocket Prep premium subscription gates and full question bank.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 155
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks lifetime pro by bypassing all entitlement checks and poisoning the account cache.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 156
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks local Proton VPN premium  features.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 157
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlock premium features in RecipeBro.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 158
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks all premium features in Rename & Organize.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 159
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks Rocket Money Premium Features.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 160
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks premium features in app.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 161
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks all premium feature in app.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 162
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks all premium features.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 163
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks all Premium features in Snipd: AI Podcast Player by spoofing the RevenueCat CustomerInfo.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 164
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks Premium features.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 165
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks Social Gamebox premium features.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 166
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks Sticker Maker premium and ad-free checks.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 167
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks Premium features in app. Also re-enables password login after OTP.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 168
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks premium/lifetime featuers in app.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 169
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks Tag Tracker PRO: unlimited trackers, advanced detection, full history, and ad-free experience.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 170
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Bypasses The Athletic article paywall by spoofing the NYT subscription entitlement check.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 171
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks The Weather Channel's Premium and Premium Pro subscription tiers. Enables the ad-free experience, extended 15-day hourly forecast, real-feel temperature, air quality index, minute-by-minute precipitation, severe weather notifications, and radar overlays gated behind the subscription paywall.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 172
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks all premium features.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 173
         },
         {
           "name": "Unlock Premium",
@@ -3821,21 +3975,21 @@
               }
             }
           ],
-          "compatiblePackagesKey": 152
+          "compatiblePackagesKey": 174
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks Toxly Premium",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 153
+          "compatiblePackagesKey": 175
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlock premium features in app.",
+          "description": "Unlocks Ultimate plan features, disables all paywalls and upgrade dialogs, suppresses payment-banned blocking errors, and grants access to all benefits including bar replay, custom intervals, multiple charts, study-on-study, server-side alerts, and ad-free charts.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 154
+          "compatiblePackagesKey": 176
         },
         {
           "name": "Unlock Premium",
@@ -3849,217 +4003,266 @@
           "description": "Unlocks all Wavve Boating GPS premium features: charts, weather, tide data, and removes subscription paywall.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 155
+          "compatiblePackagesKey": 177
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks Windscribe premium account.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 156
+          "compatiblePackagesKey": 178
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks Windy Pro features.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 157
+          "compatiblePackagesKey": 179
         },
         {
           "name": "Unlock Premium ",
           "description": "Unlocks premium in Clickmate",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 158
+          "compatiblePackagesKey": 180
         },
         {
           "name": "Unlock Premium+",
           "description": "Unlocks AccuWeather's Premium+ subscription tier without a Play Store purchase. Enables the full 15-day and hourly forecast detail, MinuteCast extended precision, air quality and health indexes, real-feel temperature, severe weather notifications, and widget customisation.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 159
+          "compatiblePackagesKey": 181
+        },
+        {
+          "name": "Unlock Pro",
+          "description": "Unlocks the Pro upgrade in Bluetooth Volume Manager by forcing isUpgraded=true in the billing Info constructor.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 182
         },
         {
           "name": "Unlock Pro",
           "description": "Unlocks Box Box Pro",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 160
+          "compatiblePackagesKey": 183
+        },
+        {
+          "name": "Unlock Pro",
+          "description": "Unlocks the Pro.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 184
         },
         {
           "name": "Unlock Pro",
           "description": "Unlocks all premium features in Case Tracker — Immigration.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 161
+          "compatiblePackagesKey": 185
         },
         {
           "name": "Unlock Pro",
           "description": "Unlock Pro Features in Cashew App",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 162
+          "compatiblePackagesKey": 186
         },
         {
           "name": "Unlock Pro",
           "description": "Unlocks all Citizen Plus/Protect features: Safety Network, Safety Center, Zones, Live Agent, Offender alerts, Clarity crime map, incident video, and more.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 163
+          "compatiblePackagesKey": 187
         },
         {
           "name": "Unlock Pro",
           "description": "Unlocks all pro features in Hibernator.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 164
+          "compatiblePackagesKey": 188
         },
         {
           "name": "Unlock Pro",
           "description": "Unlock Pro Features in app.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 165
+          "compatiblePackagesKey": 189
         },
         {
           "name": "Unlock Pro",
           "description": "Unlocks all pro features in KillApps.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 166
+          "compatiblePackagesKey": 190
         },
         {
           "name": "Unlock Pro",
           "description": "Unlocks all Pro features.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 167
+          "compatiblePackagesKey": 191
         },
         {
           "name": "Unlock Pro",
           "description": "Unlocks all pro features in ML Manager.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 168
+          "compatiblePackagesKey": 192
         },
         {
           "name": "Unlock Pro",
           "description": "Unlocks all Pro features in app.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 169
+          "compatiblePackagesKey": 193
         },
         {
           "name": "Unlock Pro",
           "description": "Unlocks all pro features in NetGuard.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 170
+          "compatiblePackagesKey": 194
         },
         {
           "name": "Unlock Pro",
           "description": "Unlocks Pro features in app.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 171
+          "compatiblePackagesKey": 195
         },
         {
           "name": "Unlock Pro",
-          "description": "Unlocks 1Tap Cleaner PRO: history export, app-group filters, unlimited cache targets, ad removal.",
+          "description": "Unlock Pro features.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 172
+          "compatiblePackagesKey": 196
+        },
+        {
+          "name": "Unlock Pro",
+          "description": "Unlocks the Pro upgrade in Octi.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 197
+        },
+        {
+          "name": "Unlock Pro",
+          "description": "Unlocks 1Tap Cleaner PRO features: history export, app-group filters, unlimited cache targets, and ad removal.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 198
         },
         {
           "name": "Unlock Pro",
           "description": "Unlocks Pro Features in app.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 173
+          "compatiblePackagesKey": 199
         },
         {
           "name": "Unlock Pro",
           "description": "Unlocks premium features in app.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 174
+          "compatiblePackagesKey": 200
         },
         {
           "name": "Unlock Pro",
           "description": "Removes ads and unlocks the no-ads subscription in RAR.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 175
+          "compatiblePackagesKey": 201
+        },
+        {
+          "name": "Unlock Pro",
+          "description": "Unlocks SAI PRO gates and removes ads.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 202
+        },
+        {
+          "name": "Unlock Pro",
+          "description": "Unlocks SD Maid SE Pro features.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 203
         },
         {
           "name": "Unlock Pro",
           "description": "Unlocks all Pro features in app.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 176
+          "compatiblePackagesKey": 204
         },
         {
           "name": "Unlock Pro",
           "description": "Unlocks Splitwise Pro features, removes ad banners, and suppresses all upgrade upsell prompts.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 177
+          "compatiblePackagesKey": 205
+        },
+        {
+          "name": "Unlock Pro",
+          "description": "Unlocks all pro features and removes ads .",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 206
         },
         {
           "name": "Unlock Pro",
           "description": "Unlocks UbikiTouch Pro features in app.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 178
+          "compatiblePackagesKey": 207
         },
         {
           "name": "Unlock Pro",
           "description": "Unlocks UDisc Pro subscription.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 179
+          "compatiblePackagesKey": 208
         },
         {
           "name": "Unlock Pro / No Ads",
           "description": "Unlocks Pro/No Ads feature in app",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 180
+          "compatiblePackagesKey": 209
         },
         {
           "name": "Unlock Pro features",
           "description": "Unlock Pro features in app.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 181
+          "compatiblePackagesKey": 210
         },
         {
           "name": "Unlock Professional",
           "description": "Unlocks Professional features inapp.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 182
+          "compatiblePackagesKey": 211
         },
         {
           "name": "Unlock Royale",
           "description": "Unlocks Transit Royale Membership.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 183
+          "compatiblePackagesKey": 212
         },
         {
           "name": "Unlock SPIN Plus",
           "description": "Unlocks SPIN Plus",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 184
+          "compatiblePackagesKey": 213
         },
         {
           "name": "Unlock SVIP",
           "description": "Unlocks SViP features in app.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 185
+          "compatiblePackagesKey": 214
         },
         {
           "name": "Unlock Subscription",
@@ -4093,77 +4296,77 @@
           "description": "Unlocks all subscription features in TWT App.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 186
+          "compatiblePackagesKey": 215
         },
         {
           "name": "Unlock Turbo",
           "description": "Unlocks Turbo subscription after login.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 187
+          "compatiblePackagesKey": 216
         },
         {
           "name": "Unlock Ultimate",
           "description": "Unlocks Ultimate Ad-Free + Android TV.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 188
+          "compatiblePackagesKey": 217
         },
         {
           "name": "Unlock Ultra",
           "description": "Unlocks Ultra features in app.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 189
+          "compatiblePackagesKey": 218
         },
         {
           "name": "Unlock VIP",
           "description": "Unlock ViP features in app.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 190
+          "compatiblePackagesKey": 219
         },
         {
           "name": "Unlock VIP",
           "description": "Unlocks Dubox Drive VIP/SVIP (Premium+)",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 191
+          "compatiblePackagesKey": 220
         },
         {
           "name": "Unlock VIP",
           "description": "Unlocks VIP features in app.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 192
+          "compatiblePackagesKey": 221
         },
         {
           "name": "Unlock VIP",
           "description": "Unlocks VIP Features in app.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 193
+          "compatiblePackagesKey": 222
         },
         {
           "name": "Unlock VIP",
           "description": "Unlock VIP subscription in app.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 194
+          "compatiblePackagesKey": 223
         },
         {
           "name": "Unlock VIP",
           "description": "Unlocks Yatri VIP by forcing active plan status and spoofing active plan DB query.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 195
+          "compatiblePackagesKey": 224
         },
         {
           "name": "Unlock VIP (Lifetime)",
           "description": "Forces permanent professional VIP tier, removes ads and upgrade popups, bypasses PairIP.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 196
+          "compatiblePackagesKey": 225
         },
         {
           "name": "Unlock VIP Lifetime",
@@ -4177,49 +4380,49 @@
           "description": "Removes login requirement, unlocks premium, blocks ads, bypasses signature and code transparency checks.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 197
+          "compatiblePackagesKey": 226
         },
         {
           "name": "Unlock donation",
           "description": "Forces h0() to return \"yes\" so donate dialog never shows and providers unlock.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 198
+          "compatiblePackagesKey": 227
         },
         {
           "name": "Unlock premium",
           "description": "Unlocks AmoledPix premium features and disables ads.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 199
+          "compatiblePackagesKey": 228
         },
         {
           "name": "Unlock premium",
           "description": "Unlocks NAVITIME Japan Travel Premium features in app",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 200
+          "compatiblePackagesKey": 229
         },
         {
           "name": "Unlock premium",
           "description": "Unlock Premium features in app",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 201
+          "compatiblePackagesKey": 230
         },
         {
           "name": "Unlock pro",
           "description": "Unlocks all pro features.",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 202
+          "compatiblePackagesKey": 231
         },
         {
           "name": "Unlock subscription",
           "description": "Unlocks subscription in app",
           "default": true,
           "options": [],
-          "compatiblePackagesKey": 203
+          "compatiblePackagesKey": 232
         },
         {
           "name": "Yearly Unlock",
@@ -4227,241 +4430,9 @@
           "default": true,
           "options": [],
           "compatiblePackagesKey": 65
-        },
-        {
-          "name": "AccuBattery Premium",
-          "description": "Unlocks AccuBattery Pro by bypassing server offer validity, the Google Play purchase gate, and all UI premium banners.",
-          "default": true,
-          "options": [],
-          "preRelease": true,
-          "compatiblePackagesKey": 204
-        },
-        {
-          "name": "Calimoto Premium",
-          "description": "Unlocks Calimoto LIFETIME membership by spoofing the membership getter.",
-          "default": true,
-          "options": [],
-          "preRelease": true,
-          "compatiblePackagesKey": 205
-        },
-        {
-          "name": "Calm Premium",
-          "description": "Unlocks Calm lifetime subscription",
-          "default": true,
-          "options": [],
-          "preRelease": true,
-          "compatiblePackagesKey": 206
-        },
-        {
-          "name": "Calory Premium",
-          "description": "Unlocks Calory Pro and removes ads.",
-          "default": true,
-          "options": [],
-          "preRelease": true,
-          "compatiblePackagesKey": 207
-        },
-        {
-          "name": "Manga Plus Premium",
-          "description": "Unlocks the Deluxe subscription.",
-          "default": true,
-          "options": [],
-          "preRelease": true,
-          "compatiblePackagesKey": 208
-        },
-        {
-          "name": "Material Capsule Premium",
-          "description": "Unlocks Material Capsule pro.",
-          "default": true,
-          "options": [],
-          "preRelease": true,
-          "compatiblePackagesKey": 209
-        },
-        {
-          "name": "OBD Android Premium Unlock",
-          "description": "Unlocks all premium features including advanced diagnostics, live sensor data, freeze frame, and removes the daily usage quota.",
-          "default": true,
-          "options": [],
-          "preRelease": true,
-          "compatiblePackagesKey": 210
-        },
-        {
-          "name": "PodsLink Premium",
-          "description": "Unlocks lifetime pro by bypassing all entitlement checks and poisoning the account cache.",
-          "default": true,
-          "options": [],
-          "preRelease": true,
-          "compatiblePackagesKey": 211
-        },
-        {
-          "name": "Remove Ads",
-          "description": "Blocks all ad display across Opera News's five ad networks and all mediation layers (AdsFacade, AppLovin MAX, TopOn, MCSDK, SmartDigiMkt).",
-          "default": true,
-          "options": [],
-          "preRelease": true,
-          "compatiblePackagesKey": 212
-        },
-        {
-          "name": "Remove Ads",
-          "description": "Removes ads.",
-          "default": true,
-          "options": [],
-          "preRelease": true,
-          "compatiblePackagesKey": 213
-        },
-        {
-          "name": "Remove Sound Delay",
-          "description": "Removes the 10-minute waiting period before playing a sound on a detected tracker.",
-          "default": true,
-          "options": [],
-          "preRelease": true,
-          "compatiblePackagesKey": 214
-        },
-        {
-          "name": "Slopes Premium Unlock",
-          "description": "Unlocks all premium features.",
-          "default": true,
-          "options": [],
-          "preRelease": true,
-          "compatiblePackagesKey": 215
-        },
-        {
-          "name": "The Athletic Premium",
-          "description": "Bypasses The Athletic article paywall by spoofing the NYT subscription entitlement check.",
-          "default": true,
-          "options": [],
-          "preRelease": true,
-          "compatiblePackagesKey": 216
-        },
-        {
-          "name": "TradingView Unlock Premium",
-          "description": "Unlocks Ultimate plan features, disables all paywalls and upgrade dialogs, suppresses payment-banned blocking errors, and grants access to all benefits including bar replay, custom intervals, multiple charts, study-on-study, server-side alerts, and ad-free charts.",
-          "default": true,
-          "options": [],
-          "preRelease": true,
-          "compatiblePackagesKey": 217
-        },
-        {
-          "name": "Unlock Premium",
-          "description": "Unlocks the Remove Ads purchase in Ampere by bypassing the isProVersion getter, purchase verifier, and payment-needed gate.",
-          "default": true,
-          "options": [],
-          "preRelease": true,
-          "compatiblePackagesKey": 218
-        },
-        {
-          "name": "Unlock Premium",
-          "description": "Unlocks AndroPods Pro: voice call integration, assistant control, ear detection auto-pause/resume, and all premium preferences.",
-          "default": true,
-          "options": [],
-          "preRelease": true,
-          "compatiblePackagesKey": 219
-        },
-        {
-          "name": "Unlock Premium",
-          "description": "Unlocks BatteryPods Pro: removes all advertisements and enables premium features including all widget themes and device customization options.",
-          "default": true,
-          "options": [],
-          "preRelease": true,
-          "compatiblePackagesKey": 220
-        },
-        {
-          "name": "Unlock Premium",
-          "description": "Unlocks Charge Meter premium features.",
-          "default": true,
-          "options": [],
-          "preRelease": true,
-          "compatiblePackagesKey": 221
-        },
-        {
-          "name": "Unlock Premium",
-          "description": "Unlocks Electron premium features",
-          "default": true,
-          "options": [],
-          "preRelease": true,
-          "compatiblePackagesKey": 222
-        },
-        {
-          "name": "Unlock Premium",
-          "description": "Unlocks all pro features.",
-          "default": true,
-          "options": [],
-          "preRelease": true,
-          "compatiblePackagesKey": 223
-        },
-        {
-          "name": "Unlock Premium",
-          "description": "Unlocks MobiOffice premium and removes ads.",
-          "default": true,
-          "options": [],
-          "preRelease": true,
-          "compatiblePackagesKey": 224
-        },
-        {
-          "name": "Unlock Premium",
-          "description": "Unlock premium features.",
-          "default": true,
-          "options": [],
-          "preRelease": true,
-          "compatiblePackagesKey": 225
-        },
-        {
-          "name": "Unlock Premium",
-          "description": "Unlocks Tag Tracker PRO: unlimited trackers, advanced detection, full history, and ad-free experience.",
-          "default": true,
-          "options": [],
-          "preRelease": true,
-          "compatiblePackagesKey": 226
-        },
-        {
-          "name": "Unlock Pro",
-          "description": "Unlocks the Pro upgrade in Bluetooth Volume Manager by forcing isUpgraded=true in the billing Info constructor.",
-          "default": true,
-          "options": [],
-          "preRelease": true,
-          "compatiblePackagesKey": 227
-        },
-        {
-          "name": "Unlock Pro",
-          "description": "Unlocks the Pro.",
-          "default": true,
-          "options": [],
-          "preRelease": true,
-          "compatiblePackagesKey": 228
-        },
-        {
-          "name": "Unlock Pro",
-          "description": "Unlock Pro features.",
-          "default": true,
-          "options": [],
-          "preRelease": true,
-          "compatiblePackagesKey": 229
-        },
-        {
-          "name": "Unlock Pro",
-          "description": "Unlocks the Pro upgrade in Octi.",
-          "default": true,
-          "options": [],
-          "preRelease": true,
-          "compatiblePackagesKey": 230
-        },
-        {
-          "name": "Unlock Pro",
-          "description": "Unlocks all pro features and removes ads .",
-          "default": true,
-          "options": [],
-          "preRelease": true,
-          "compatiblePackagesKey": 231
-        },
-        {
-          "name": "Unlock Remove Ads",
-          "description": "Unlocks the Remove Ads purchase in qBitConnect by injecting IAP ownership flags into SharedPreferences before Flutter reads them.",
-          "default": true,
-          "options": [],
-          "preRelease": true,
-          "compatiblePackagesKey": 232
         }
       ],
-      "changelog": "## [1.14.0](https://github.com/rushiranpise/morphe-patches/compare/v1.13.1...v1.14.0) (2026-07-19)\n\n### 🐛 Bug Fixes\n\n* format release notes for update badges ([20fe7b5](https://github.com/rushiranpise/morphe-patches/commit/20fe7b546e9e1facf70b46cedf9ea2dad845d3ed))\n\n### ✨ New Features\n\n* add boxbox ([84183bc](https://github.com/rushiranpise/morphe-patches/commit/84183bc87b0368ac06deec0b962f7d1306a64531))\n* add flud ([ce7c0a1](https://github.com/rushiranpise/morphe-patches/commit/ce7c0a1f4570e4935a0e35ce6dccca37e365d476))\n* add google photos ([58552d0](https://github.com/rushiranpise/morphe-patches/commit/58552d0154b588ad1b05a2934cf2b9b7d81a002b))\n* add mapy ([eedc71a](https://github.com/rushiranpise/morphe-patches/commit/eedc71ae90ee77bc9a4ea4129212593aa6487a46))\n* add pcremote ([274df88](https://github.com/rushiranpise/morphe-patches/commit/274df888f8dcee59628b6cadf2624b6e09660086))\n* add torrdroid ([6efb2f4](https://github.com/rushiranpise/morphe-patches/commit/6efb2f4cc60cabaddb15da48116a8dcc8c97ca10))\n\n## [1.14.0-dev.4](https://github.com/rushiranpise/morphe-patches/compare/v1.14.0-dev.3...v1.14.0-dev.4) (2026-07-19)\n\n### 🐛 Bug Fixes\n\n* format release notes for update badges ([20fe7b5](https://github.com/rushiranpise/morphe-patches/commit/20fe7b546e9e1facf70b46cedf9ea2dad845d3ed))\n\n## [1.14.0-dev.3](https://github.com/rushiranpise/morphe-patches/compare/v1.14.0-dev.2...v1.14.0-dev.3) (2026-07-19)\n\n### ? New Features\n\n* add google photos ([58552d0](https://github.com/rushiranpise/morphe-patches/commit/58552d0154b588ad1b05a2934cf2b9b7d81a002b))\n\n## [1.14.0-dev.2](https://github.com/rushiranpise/morphe-patches/compare/v1.14.0-dev.1...v1.14.0-dev.2) (2026-07-18)\n\n### ? New Features\n\n* add flud ([ce7c0a1](https://github.com/rushiranpise/morphe-patches/commit/ce7c0a1f4570e4935a0e35ce6dccca37e365d476))\n* add mapy ([eedc71a](https://github.com/rushiranpise/morphe-patches/commit/eedc71ae90ee77bc9a4ea4129212593aa6487a46))\n\n## [1.14.0-dev.1](https://github.com/rushiranpise/morphe-patches/compare/v1.13.1...v1.14.0-dev.1) (2026-07-17)\n\n### ? New Features\n\n* add boxbox ([84183bc](https://github.com/rushiranpise/morphe-patches/commit/84183bc87b0368ac06deec0b962f7d1306a64531))\n* add pcremote ([274df88](https://github.com/rushiranpise/morphe-patches/commit/274df888f8dcee59628b6cadf2624b6e09660086))\n* add torrdroid ([6efb2f4](https://github.com/rushiranpise/morphe-patches/commit/6efb2f4cc60cabaddb15da48116a8dcc8c97ca10))\n\n## [1.13.1](https://github.com/rushiranpise/morphe-patches/compare/v1.13.0...v1.13.1) (2026-07-16)\n\n### ?? Bug Fixes\n\n* minimal widgets ([d7e7857](https://github.com/rushiranpise/morphe-patches/commit/d7e7857bba7fbbf8a8d4b1eacd5f3c76cf921050))\n\n## [1.13.1-dev.1](https://github.com/rushiranpise/morphe-patches/compare/v1.13.0...v1.13.1-dev.1) (2026-07-16)\n\n### ?? Bug Fixes\n\n* minimal widgets ([d7e7857](https://github.com/rushiranpise/morphe-patches/commit/d7e7857bba7fbbf8a8d4b1eacd5f3c76cf921050))\n\n## [1.13.0](https://github.com/rushiranpise/morphe-patches/compare/v1.12.0...v1.13.0) (2026-07-16)\n\n### ? New Features\n\n* add clue ([5235316](https://github.com/rushiranpise/morphe-patches/commit/52353166c37e4aec692739453b504918150475b9))\n* add count down widget ([2612472](https://github.com/rushiranpise/morphe-patches/commit/26124728e19209294145cd28ad697cdf28b6d5b9))\n* add es strong ([f1e23ef](https://github.com/rushiranpise/morphe-patches/commit/f1e23efbcffea3b35949915bd3fa50c06276b1e2))\n* add new apps ([78a06d5](https://github.com/rushiranpise/morphe-patches/commit/78a06d5c7f40d5c5c9154fde9613aed39a1feb4b))\n* add parallel space ([25f200d](https://github.com/rushiranpise/morphe-patches/commit/25f200ddb968bd2861e8cf3854e9ea1cb63677bb))\n* add super explorer ([1e26302](https://github.com/rushiranpise/morphe-patches/commit/1e26302512dc40c4be892e2bb8c6d252037aa0e5))\n* androidverifier ([f4d1169](https://github.com/rushiranpise/morphe-patches/commit/f4d1169f692fd6206470056c98f34102933c57ff))\n* update universal patches ([31273fd](https://github.com/rushiranpise/morphe-patches/commit/31273fdefabfe865b7d5a5df3a4a3cac9400425f))\n\n### ?? Bug Fixes\n\n* build ([b3fcd55](https://github.com/rushiranpise/morphe-patches/commit/b3fcd55a87b04f14062c9fbe2f167e30900f4fb1))\n* build ([607670e](https://github.com/rushiranpise/morphe-patches/commit/607670e96a8a1e966f6fabfc4376c5b55d77cf1a))\n* build for real XD ([26c50cd](https://github.com/rushiranpise/morphe-patches/commit/26c50cd7913ebc5ec194dfb359247ef7d70f23f7))\n* remove broken patches ([9dbaf40](https://github.com/rushiranpise/morphe-patches/commit/9dbaf40485ccefc6c46154edafb7dc4776f9b6b7))\n* trading view ([92b2546](https://github.com/rushiranpise/morphe-patches/commit/92b25462d2438978c6d44f6aa0daddf1cf58fc40))\n\n## [1.13.0-dev.6](https://github.com/rushiranpise/morphe-patches/compare/v1.13.0-dev.5...v1.13.0-dev.6) (2026-07-16)\n\n### ?? Bug Fixes\n\n* remove broken patches ([9dbaf40](https://github.com/rushiranpise/morphe-patches/commit/9dbaf40485ccefc6c46154edafb7dc4776f9b6b7))\n\n## [1.13.0-dev.5](https://github.com/rushiranpise/morphe-patches/compare/v1.13.0-dev.4...v1.13.0-dev.5) (2026-07-15)\n\n### ? New Features\n\n* androidverifier ([f4d1169](https://github.com/rushiranpise/morphe-patches/commit/f4d1169f692fd6206470056c98f34102933c57ff))\n\n## [1.13.0-dev.4](https://github.com/rushiranpise/morphe-patches/compare/v1.13.0-dev.3...v1.13.0-dev.4) (2026-07-15)\n\n### ? New Features\n\n* add clue ([5235316](https://github.com/rushiranpise/morphe-patches/commit/52353166c37e4aec692739453b504918150475b9))\n\n### ?? Bug Fixes\n\n* build ([b3fcd55](https://github.com/rushiranpise/morphe-patches/commit/b3fcd55a87b04f14062c9fbe2f167e30900f4fb1))\n* build ([607670e](https://github.com/rushiranpise/morphe-patches/commit/607670e96a8a1e966f6fabfc4376c5b55d77cf1a))\n* build for real XD ([26c50cd](https://github.com/rushiranpise/morphe-patches/commit/26c50cd7913ebc5ec194dfb359247ef7d70f23f7))\n* trading view ([92b2546](https://github.com/rushiranpise/morphe-patches/commit/92b25462d2438978c6d44f6aa0daddf1cf58fc40))\n\n## [1.13.0-dev.3](https://github.com/rushiranpise/morphe-patches/compare/v1.13.0-dev.2...v1.13.0-dev.3) (2026-07-14)\n\n### ? New Features\n\n* add count down widget ([2612472](https://github.com/rushiranpise/morphe-patches/commit/26124728e19209294145cd28ad697cdf28b6d5b9))\n* add parallel space ([25f200d](https://github.com/rushiranpise/morphe-patches/commit/25f200ddb968bd2861e8cf3854e9ea1cb63677bb))\n* update universal patches ([31273fd](https://github.com/rushiranpise/morphe-patches/commit/31273fdefabfe865b7d5a5df3a4a3cac9400425f))\n\n## [1.13.0-dev.2](https://github.com/rushiranpise/morphe-patches/compare/v1.13.0-dev.1...v1.13.0-dev.2) (2026-07-14)\n\n### ? New Features\n\n* add new apps ([78a06d5](https://github.com/rushiranpise/morphe-patches/commit/78a06d5c7f40d5c5c9154fde9613aed39a1feb4b))\n\n## [1.13.0-dev.1](https://github.com/rushiranpise/morphe-patches/compare/v1.12.0...v1.13.0-dev.1) (2026-07-13)\n\n### ? New Features\n\n* add es strong ([f1e23ef](https://github.com/rushiranpise/morphe-patches/commit/f1e23efbcffea3b35949915bd3fa50c06276b1e2))\n* add super explorer ([1e26302](https://github.com/rushiranpise/morphe-patches/commit/1e26302512dc40c4be892e2bb8c6d252037aa0e5))\n\n## [1.12.0](https://github.com/rushiranpise/morphe-patches/compare/v1.11.0...v1.12.0) (2026-07-12)\n\n### ? New Features\n\n* add ace ([6535fc2](https://github.com/rushiranpise/morphe-patches/commit/6535fc23c68398b2a3164788333052ad72d0cfed))\n* add buzzcast ([7d640be](https://github.com/rushiranpise/morphe-patches/commit/7d640bec1b163ca37c9119d3a959a32c971b0c05))\n* add daily hunt ([650c983](https://github.com/rushiranpise/morphe-patches/commit/650c983d8796297090d1fd0ef92b0978cd77937d))\n* add ex ([03af341](https://github.com/rushiranpise/morphe-patches/commit/03af3414ee323851b1c5b62b5ca9aeb629215ac2))\n* add justnew design apps ([0bfb500](https://github.com/rushiranpise/morphe-patches/commit/0bfb5002e8ce8ec438b616e71c88378c0f975615))\n* add kinemaster ([c9d9912](https://github.com/rushiranpise/morphe-patches/commit/c9d9912b14e24f43d8b3f83796719506c7c030d4))\n* add komoot ([58494ca](https://github.com/rushiranpise/morphe-patches/commit/58494ca40ec398d785e62b8088364edac706fed1))\n* add lark player ([cf76807](https://github.com/rushiranpise/morphe-patches/commit/cf7680717f8cce6f27b0ef21588a0234ff4b6a5d))\n* add mega ([74b2412](https://github.com/rushiranpise/morphe-patches/commit/74b24124d709ff21b9890df442649f3eca910bb8))\n* add nyttgames ([e531da4](https://github.com/rushiranpise/morphe-patches/commit/e531da4247e2da775f6932c5b3cff3ce72590160))\n* add pixelhabit ([89d4b0d](https://github.com/rushiranpise/morphe-patches/commit/89d4b0d3346797925216deaaf241a6ff4d85d22e))\n* add playit ([da32bef](https://github.com/rushiranpise/morphe-patches/commit/da32bef3169cc558d0316f2d4f1d3ac208b21a9c))\n* add pocketbard ([e0f8315](https://github.com/rushiranpise/morphe-patches/commit/e0f8315ab548135087a9ef348f5804c471ae1415))\n* add strava ([8e55342](https://github.com/rushiranpise/morphe-patches/commit/8e55342e7f9cb33561d55c57ca4d60bda53dba17))\n* add universal patches ([a80ca36](https://github.com/rushiranpise/morphe-patches/commit/a80ca366f446e2d93d271f43b0e87fdd3ea391f5))\n* add uptodown ([f5bbc0e](https://github.com/rushiranpise/morphe-patches/commit/f5bbc0ea9471e2be6cd486070d685ef7d9af647d))\n\n### ?? Bug Fixes\n\n* dailyhunt ([53561e8](https://github.com/rushiranpise/morphe-patches/commit/53561e8cfb8bf50509f60273d00956f120ebe857))\n* moovit crash ([4d64bc7](https://github.com/rushiranpise/morphe-patches/commit/4d64bc71c7bf92e9e03f90163d1f919f01ea9df8))\n* typo [skip ci] ([d458f73](https://github.com/rushiranpise/morphe-patches/commit/d458f731b58f3b87eb6bd50ddaa1b3afc0121318))",
+      "changelog": "## [1.15.0](https://github.com/rushiranpise/morphe-patches/compare/v1.14.0...v1.15.0) (2026-07-23)\n\n### 🐛 Bug Fixes\n\n* build ([625f7e6](https://github.com/rushiranpise/morphe-patches/commit/625f7e67880ce888514e99f815d88b7cb8545bb5))\n\n### ✨ New Features\n\n* add sai ([aaa5163](https://github.com/rushiranpise/morphe-patches/commit/aaa51635541b49ee830d6190263c799c7847aabf))\n* update & add new apps ([8611906](https://github.com/rushiranpise/morphe-patches/commit/8611906c0e35142e73be18fcf403b6f4d7f93d3a))\n* update &add new apps ([729f9f0](https://github.com/rushiranpise/morphe-patches/commit/729f9f0b5a13ad65ae9f8e1c747de63a13bff6fe))\n\n## [1.15.0-dev.2](https://github.com/rushiranpise/morphe-patches/compare/v1.15.0-dev.1...v1.15.0-dev.2) (2026-07-23)\n\n### 🐛 Bug Fixes\n\n* build ([625f7e6](https://github.com/rushiranpise/morphe-patches/commit/625f7e67880ce888514e99f815d88b7cb8545bb5))\n\n### ✨ New Features\n\n* add sai ([aaa5163](https://github.com/rushiranpise/morphe-patches/commit/aaa51635541b49ee830d6190263c799c7847aabf))\n* update &add new apps ([729f9f0](https://github.com/rushiranpise/morphe-patches/commit/729f9f0b5a13ad65ae9f8e1c747de63a13bff6fe))\n\n## [1.15.0-dev.1](https://github.com/rushiranpise/morphe-patches/compare/v1.14.0...v1.15.0-dev.1) (2026-07-23)\n\n### ✨ New Features\n\n* update & add new apps ([8611906](https://github.com/rushiranpise/morphe-patches/commit/8611906c0e35142e73be18fcf403b6f4d7f93d3a))\n\n## [1.14.0](https://github.com/rushiranpise/morphe-patches/compare/v1.13.1...v1.14.0) (2026-07-19)\n\n### 🐛 Bug Fixes\n\n* format release notes for update badges ([20fe7b5](https://github.com/rushiranpise/morphe-patches/commit/20fe7b546e9e1facf70b46cedf9ea2dad845d3ed))\n\n### ✨ New Features\n\n* add boxbox ([84183bc](https://github.com/rushiranpise/morphe-patches/commit/84183bc87b0368ac06deec0b962f7d1306a64531))\n* add flud ([ce7c0a1](https://github.com/rushiranpise/morphe-patches/commit/ce7c0a1f4570e4935a0e35ce6dccca37e365d476))\n* add google photos ([58552d0](https://github.com/rushiranpise/morphe-patches/commit/58552d0154b588ad1b05a2934cf2b9b7d81a002b))\n* add mapy ([eedc71a](https://github.com/rushiranpise/morphe-patches/commit/eedc71ae90ee77bc9a4ea4129212593aa6487a46))\n* add pcremote ([274df88](https://github.com/rushiranpise/morphe-patches/commit/274df888f8dcee59628b6cadf2624b6e09660086))\n* add torrdroid ([6efb2f4](https://github.com/rushiranpise/morphe-patches/commit/6efb2f4cc60cabaddb15da48116a8dcc8c97ca10))\n\n## [1.14.0-dev.4](https://github.com/rushiranpise/morphe-patches/compare/v1.14.0-dev.3...v1.14.0-dev.4) (2026-07-19)\n\n### 🐛 Bug Fixes\n\n* format release notes for update badges ([20fe7b5](https://github.com/rushiranpise/morphe-patches/commit/20fe7b546e9e1facf70b46cedf9ea2dad845d3ed))\n\n## [1.14.0-dev.3](https://github.com/rushiranpise/morphe-patches/compare/v1.14.0-dev.2...v1.14.0-dev.3) (2026-07-19)\n\n### ? New Features\n\n* add google photos ([58552d0](https://github.com/rushiranpise/morphe-patches/commit/58552d0154b588ad1b05a2934cf2b9b7d81a002b))\n\n## [1.14.0-dev.2](https://github.com/rushiranpise/morphe-patches/compare/v1.14.0-dev.1...v1.14.0-dev.2) (2026-07-18)\n\n### ? New Features\n\n* add flud ([ce7c0a1](https://github.com/rushiranpise/morphe-patches/commit/ce7c0a1f4570e4935a0e35ce6dccca37e365d476))\n* add mapy ([eedc71a](https://github.com/rushiranpise/morphe-patches/commit/eedc71ae90ee77bc9a4ea4129212593aa6487a46))\n\n## [1.14.0-dev.1](https://github.com/rushiranpise/morphe-patches/compare/v1.13.1...v1.14.0-dev.1) (2026-07-17)\n\n### ? New Features\n\n* add boxbox ([84183bc](https://github.com/rushiranpise/morphe-patches/commit/84183bc87b0368ac06deec0b962f7d1306a64531))\n* add pcremote ([274df88](https://github.com/rushiranpise/morphe-patches/commit/274df888f8dcee59628b6cadf2624b6e09660086))\n* add torrdroid ([6efb2f4](https://github.com/rushiranpise/morphe-patches/commit/6efb2f4cc60cabaddb15da48116a8dcc8c97ca10))\n\n## [1.13.1](https://github.com/rushiranpise/morphe-patches/compare/v1.13.0...v1.13.1) (2026-07-16)\n\n### ?? Bug Fixes\n\n* minimal widgets ([d7e7857](https://github.com/rushiranpise/morphe-patches/commit/d7e7857bba7fbbf8a8d4b1eacd5f3c76cf921050))\n\n## [1.13.1-dev.1](https://github.com/rushiranpise/morphe-patches/compare/v1.13.0...v1.13.1-dev.1) (2026-07-16)\n\n### ?? Bug Fixes\n\n* minimal widgets ([d7e7857](https://github.com/rushiranpise/morphe-patches/commit/d7e7857bba7fbbf8a8d4b1eacd5f3c76cf921050))\n\n## [1.13.0](https://github.com/rushiranpise/morphe-patches/compare/v1.12.0...v1.13.0) (2026-07-16)\n\n### ? New Features\n\n* add clue ([5235316](https://github.com/rushiranpise/morphe-patches/commit/52353166c37e4aec692739453b504918150475b9))\n* add count down widget ([2612472](https://github.com/rushiranpise/morphe-patches/commit/26124728e19209294145cd28ad697cdf28b6d5b9))\n* add es strong ([f1e23ef](https://github.com/rushiranpise/morphe-patches/commit/f1e23efbcffea3b35949915bd3fa50c06276b1e2))\n* add new apps ([78a06d5](https://github.com/rushiranpise/morphe-patches/commit/78a06d5c7f40d5c5c9154fde9613aed39a1feb4b))\n* add parallel space ([25f200d](https://github.com/rushiranpise/morphe-patches/commit/25f200ddb968bd2861e8cf3854e9ea1cb63677bb))\n* add super explorer ([1e26302](https://github.com/rushiranpise/morphe-patches/commit/1e26302512dc40c4be892e2bb8c6d252037aa0e5))\n* androidverifier ([f4d1169](https://github.com/rushiranpise/morphe-patches/commit/f4d1169f692fd6206470056c98f34102933c57ff))\n* update universal patches ([31273fd](https://github.com/rushiranpise/morphe-patches/commit/31273fdefabfe865b7d5a5df3a4a3cac9400425f))\n\n### ?? Bug Fixes\n\n* build ([b3fcd55](https://github.com/rushiranpise/morphe-patches/commit/b3fcd55a87b04f14062c9fbe2f167e30900f4fb1))\n* build ([607670e](https://github.com/rushiranpise/morphe-patches/commit/607670e96a8a1e966f6fabfc4376c5b55d77cf1a))\n* build for real XD ([26c50cd](https://github.com/rushiranpise/morphe-patches/commit/26c50cd7913ebc5ec194dfb359247ef7d70f23f7))\n* remove broken patches ([9dbaf40](https://github.com/rushiranpise/morphe-patches/commit/9dbaf40485ccefc6c46154edafb7dc4776f9b6b7))\n* trading view ([92b2546](https://github.com/rushiranpise/morphe-patches/commit/92b25462d2438978c6d44f6aa0daddf1cf58fc40))\n\n## [1.13.0-dev.6](https://github.com/rushiranpise/morphe-patches/compare/v1.13.0-dev.5...v1.13.0-dev.6) (2026-07-16)\n\n### ?? Bug Fixes\n\n* remove broken patches ([9dbaf40](https://github.com/rushiranpise/morphe-patches/commit/9dbaf40485ccefc6c46154edafb7dc4776f9b6b7))\n\n## [1.13.0-dev.5](https://github.com/rushiranpise/morphe-patches/compare/v1.13.0-dev.4...v1.13.0-dev.5) (2026-07-15)\n\n### ? New Features\n\n* androidverifier ([f4d1169](https://github.com/rushiranpise/morphe-patches/commit/f4d1169f692fd6206470056c98f34102933c57ff))\n\n## [1.13.0-dev.4](https://github.com/rushiranpise/morphe-patches/compare/v1.13.0-dev.3...v1.13.0-dev.4) (2026-07-15)\n\n### ? New Features\n\n* add clue ([5235316](https://github.com/rushiranpise/morphe-patches/commit/52353166c37e4aec692739453b504918150475b9))\n\n### ?? Bug Fixes\n\n* build ([b3fcd55](https://github.com/rushiranpise/morphe-patches/commit/b3fcd55a87b04f14062c9fbe2f167e30900f4fb1))\n* build ([607670e](https://github.com/rushiranpise/morphe-patches/commit/607670e96a8a1e966f6fabfc4376c5b55d77cf1a))\n* build for real XD ([26c50cd](https://github.com/rushiranpise/morphe-patches/commit/26c50cd7913ebc5ec194dfb359247ef7d70f23f7))\n* trading view ([92b2546](https://github.com/rushiranpise/morphe-patches/commit/92b25462d2438978c6d44f6aa0daddf1cf58fc40))\n\n## [1.13.0-dev.3](https://github.com/rushiranpise/morphe-patches/compare/v1.13.0-dev.2...v1.13.0-dev.3) (2026-07-14)\n\n### ? New Features\n\n* add count down widget ([2612472](https://github.com/rushiranpise/morphe-patches/commit/26124728e19209294145cd28ad697cdf28b6d5b9))\n* add parallel space ([25f200d](https://github.com/rushiranpise/morphe-patches/commit/25f200ddb968bd2861e8cf3854e9ea1cb63677bb))\n* update universal patches ([31273fd](https://github.com/rushiranpise/morphe-patches/commit/31273fdefabfe865b7d5a5df3a4a3cac9400425f))",
       "fullChangelogUrl": "https://github.com/rushiranpise/morphe-patches/blob/main/CHANGELOG.md",
       "repoDescription": "Morphe patches I use and maintain in my spare time. Please report bugs and request patches via GitHub.",
       "avatarUrl": "https://avatars.githubusercontent.com/u/37355997?v=4&size=168",
@@ -4483,13 +4454,16 @@
         "com.toomics.global.google",
         "com.delphicoder.flud",
         "com.mobond.mindicator",
+        "com.opera.app.news",
+        "com.bluematter.qbitconnect",
+        "com.yablio.sendfilestotv",
         "intelligems.torrdroid",
         "com.vizmanga.android",
         "com.psiphon3.subscription",
+        "com.apple.trackerdetect",
         "com.canva.editor",
         "com.finalwire.aida64",
         "game.puzzle.blockpuzzle",
-        "com.thecarousell.Carousell",
         "com.livescore",
         "com.flightaware.android.liveFlightTracker",
         "org.zwanoo.android.speedtest",
@@ -4498,6 +4472,7 @@
         "com.flightradar24free",
         "com.blurams.ipc",
         "com.citymapper.app.release",
+        "jp.co.shueisha.mangaplus",
         "com.oasisfeng.greenify",
         "com.localaiapp.scoops",
         "je.fit",
@@ -4517,18 +4492,28 @@
         "com.spotangels.android",
         "com.snowcorp.stickerly.android",
         "io.goodservice.theweekendest",
+        "com.digibites.accubattery",
         "com.ace.ex.file.manager",
         "com.onesports.score",
         "alldocumentreader.office.viewer.filereader.pdfviewer",
+        "com.gombosdev.ampere",
+        "pro.vitalii.andropods",
         "com.jndapp.anime.depth.live.wallpaper",
+        "com.paget96.batteryguru",
+        "com.sumyapplications.bluetooth.earphone",
         "apps.automan.blurwallpaper",
+        "com.calimoto.calimoto",
         "com.catalinagroup.callrecorder",
+        "com.calm.android",
+        "com.funnmedia.calory",
         "com.joincarbon.nutrition",
+        "dev.km.android.chargemeter",
         "com.socialnmobile.dictapps.notepad.color.note",
         "me.gira.widget.countdown",
         "com.cpuid.cpu_z",
         "com.eterno",
         "com.jndapp.depth.live.wallpaper",
+        "com.mahersafadi.electron",
         "com.fitbod.fitbod",
         "com.live.flight.tracker",
         "com.alexandrucene.dayhistory",
@@ -4539,30 +4524,48 @@
         "com.dywx.larkplayer",
         "com.lawfully.lawfully_ai_tracker",
         "cz.seznam.mapy",
+        "com.pryshedko.mtisland",
+        "com.pryshedko.materialpods",
         "com.jndapp.minimal.widgets",
         "it.mirko.beta",
+        "com.mobisystems.office",
         "com.acmeaom.android.myradar",
         "cz.mroczis.netmonster",
         "com.particlenews.newsbreak",
         "app.ninjavpn.android",
+        "ai.metaverselabs.obdandroid",
+        "com.brightstripe.parcels",
         "com.monect.portable",
         "com.iudesk.android.photo.editor",
         "com.glority.picturemushroom",
         "cn.danatech.xingseus",
         "com.pocketprep.android.itcybersecurity",
+        "com.pocketprep.android.professional",
+        "com.pocketprep.android.behavioralhealth",
+        "com.pocketprep.android.medical",
+        "com.pocketprep.android.nursingschool",
+        "com.pocketprep.android.nursing",
+        "com.pocketprep.android.ems",
+        "com.pocketprep.android.automotive",
+        "com.pocketprep.android.fitness",
+        "com.pocketprep.android.essentials",
+        "com.pocketprep.android.pocketprep",
+        "net.podslink",
         "ch.protonvpn.android",
         "com.recipebro.cookingbuddy",
         "eu.duong.picturemanager",
         "com.truebill",
         "com.rs.explorer.filemanager",
-        "com.mtv.sai",
         "com.appostrophe.scrl",
+        "com.consumedbycode.slopes",
         "ai.topicfinder.podcastdiscovery",
         "com.snow_forecast.snowforecast",
         "com.app.social_gamebox",
         "com.marsvard.stickermakerforwhatsapp",
         "com.strava",
         "com.esuper.file.explorer",
+        "com.makeevapps.tagtracker",
+        "com.theathletic",
         "com.weather.Weather",
         "mobi.lockdown.weather",
         "com.tomtom.gplay.navapp",
@@ -4573,7 +4576,9 @@
         "com.windyty.android",
         "com.inscode.autoclicker",
         "com.accuweather.android",
+        "eu.darken.bluemusic",
         "club.boxbox.android",
+        "eu.darken.capod",
         "com.saldous.casetracker",
         "com.budget.tracker_app",
         "sp0n.citizen",
@@ -4585,12 +4590,17 @@
         "eu.darken.myperm",
         "eu.faircode.netguard",
         "kha.prog.mikrotik",
+        "com.paget96.netspeedindicator",
+        "eu.darken.octi",
         "com.a0soft.gphone.acc.free",
         "com.parallel.space.pro",
         "police.scanner.radio.broadcastify.citizen",
         "com.rarlab.rar",
+        "com.mtv.sai",
+        "eu.darken.sdmse",
         "com.shexa.permissionmanager",
         "com.Splitwise.SplitwiseMobile",
+        "torrent.search.revolutionv2",
         "eu.toneiv.ubktouch",
         "com.regasoftware.udisc",
         "com.metalsoft.trackchecker_mobile",
@@ -4617,39 +4627,11 @@
         "com.navitime.inbound.walk",
         "com.MojoFilterMediaLLC.RPGSoundSystem",
         "com.urbandroid.kinestop",
-        "com.nytimes.crossword",
-        "com.digibites.accubattery",
-        "com.calimoto.calimoto",
-        "com.calm.android",
-        "com.funnmedia.calory",
-        "jp.co.shueisha.mangaplus",
-        "com.pryshedko.mtisland",
-        "ai.metaverselabs.obdandroid",
-        "net.podslink",
-        "com.opera.app.news",
-        "com.yablio.sendfilestotv",
-        "com.apple.trackerdetect",
-        "com.consumedbycode.slopes",
-        "com.theathletic",
-        "com.gombosdev.ampere",
-        "pro.vitalii.andropods",
-        "com.sumyapplications.bluetooth.earphone",
-        "dev.km.android.chargemeter",
-        "com.mahersafadi.electron",
-        "com.pryshedko.materialpods",
-        "com.mobisystems.office",
-        "com.brightstripe.parcels",
-        "com.makeevapps.tagtracker",
-        "eu.darken.bluemusic",
-        "eu.darken.capod",
-        "com.paget96.netspeedindicator",
-        "eu.darken.octi",
-        "torrent.search.revolutionv2",
-        "com.bluematter.qbitconnect"
+        "com.nytimes.crossword"
       ],
       "appUpdates": {},
-      "stars": 212,
-      "updatedAt": 1784419200000,
+      "stars": 214,
+      "updatedAt": 1784764800000,
       "firstSeen": 1780395687718,
       "appFirstSeen": {
         "com.google.android.apps.photos": 1784454802307,
@@ -4666,13 +4648,16 @@
         "com.toomics.global.google": 1783447728251,
         "com.delphicoder.flud": 1784353679503,
         "com.mobond.mindicator": 1781088959639,
+        "com.opera.app.news": 1784787724195,
+        "com.bluematter.qbitconnect": 1784787724195,
+        "com.yablio.sendfilestotv": 1784787724195,
         "intelligems.torrdroid": 1784282359421,
         "com.vizmanga.android": 1783447728251,
         "com.psiphon3.subscription": 1782035611577,
+        "com.apple.trackerdetect": 1784787724195,
         "com.canva.editor": 1781536390520,
         "com.finalwire.aida64": 1782035611577,
         "game.puzzle.blockpuzzle": 1783447728251,
-        "com.thecarousell.Carousell": 1783596088539,
         "com.livescore": 1783596088539,
         "com.flightaware.android.liveFlightTracker": 1783596088539,
         "org.zwanoo.android.speedtest": 1782035611577,
@@ -4681,6 +4666,7 @@
         "com.flightradar24free": 1782035611577,
         "com.blurams.ipc": 1783596088539,
         "com.citymapper.app.release": 1783077295505,
+        "jp.co.shueisha.mangaplus": 1784787724195,
         "com.oasisfeng.greenify": 1780910144584,
         "com.localaiapp.scoops": 1783077295505,
         "je.fit": 1783596088539,
@@ -4700,18 +4686,28 @@
         "com.spotangels.android": 1783291168540,
         "com.snowcorp.stickerly.android": 1783596088539,
         "io.goodservice.theweekendest": 1783447728251,
+        "com.digibites.accubattery": 1784787724195,
         "com.ace.ex.file.manager": 1783875617302,
         "com.onesports.score": 1783596088539,
         "alldocumentreader.office.viewer.filereader.pdfviewer": 1783291168540,
+        "com.gombosdev.ampere": 1784787724195,
+        "pro.vitalii.andropods": 1784787724195,
         "com.jndapp.anime.depth.live.wallpaper": 1783875617302,
+        "com.paget96.batteryguru": 1784801305543,
+        "com.sumyapplications.bluetooth.earphone": 1784787724195,
         "apps.automan.blurwallpaper": 1783077295505,
+        "com.calimoto.calimoto": 1784787724195,
         "com.catalinagroup.callrecorder": 1780395687718,
+        "com.calm.android": 1784787724195,
+        "com.funnmedia.calory": 1784787724195,
         "com.joincarbon.nutrition": 1783077295505,
+        "dev.km.android.chargemeter": 1784787724195,
         "com.socialnmobile.dictapps.notepad.color.note": 1783447728251,
         "me.gira.widget.countdown": 1784018383719,
         "com.cpuid.cpu_z": 1782035611577,
         "com.eterno": 1783875617302,
         "com.jndapp.depth.live.wallpaper": 1783875617302,
+        "com.mahersafadi.electron": 1784787724195,
         "com.fitbod.fitbod": 1783447728251,
         "com.live.flight.tracker": 1783596088539,
         "com.alexandrucene.dayhistory": 1783596088539,
@@ -4722,30 +4718,48 @@
         "com.dywx.larkplayer": 1783875617302,
         "com.lawfully.lawfully_ai_tracker": 1783077295505,
         "cz.seznam.mapy": 1784353679503,
+        "com.pryshedko.mtisland": 1784787724195,
+        "com.pryshedko.materialpods": 1784787724195,
         "com.jndapp.minimal.widgets": 1783875617302,
         "it.mirko.beta": 1781078703632,
+        "com.mobisystems.office": 1784787724195,
         "com.acmeaom.android.myradar": 1783596088539,
         "cz.mroczis.netmonster": 1781211410251,
         "com.particlenews.newsbreak": 1783077295505,
         "app.ninjavpn.android": 1782587642556,
+        "ai.metaverselabs.obdandroid": 1784787724195,
+        "com.brightstripe.parcels": 1784787724195,
         "com.monect.portable": 1784282359421,
         "com.iudesk.android.photo.editor": 1781078703632,
         "com.glority.picturemushroom": 1783365870570,
         "cn.danatech.xingseus": 1783365870570,
         "com.pocketprep.android.itcybersecurity": 1783596088539,
+        "com.pocketprep.android.professional": 1784801305543,
+        "com.pocketprep.android.behavioralhealth": 1784801305543,
+        "com.pocketprep.android.medical": 1784801305543,
+        "com.pocketprep.android.nursingschool": 1784801305543,
+        "com.pocketprep.android.nursing": 1784801305543,
+        "com.pocketprep.android.ems": 1784801305543,
+        "com.pocketprep.android.automotive": 1784801305543,
+        "com.pocketprep.android.fitness": 1784801305543,
+        "com.pocketprep.android.essentials": 1784801305543,
+        "com.pocketprep.android.pocketprep": 1784801305543,
+        "net.podslink": 1784787724195,
         "ch.protonvpn.android": 1782035611577,
         "com.recipebro.cookingbuddy": 1783596088539,
         "eu.duong.picturemanager": 1783194762733,
         "com.truebill": 1782194773238,
         "com.rs.explorer.filemanager": 1783875617302,
-        "com.mtv.sai": 1781507172046,
         "com.appostrophe.scrl": 1783596088539,
+        "com.consumedbycode.slopes": 1784787724195,
         "ai.topicfinder.podcastdiscovery": 1780910144584,
         "com.snow_forecast.snowforecast": 1783077295505,
         "com.app.social_gamebox": 1782035611577,
         "com.marsvard.stickermakerforwhatsapp": 1783447728251,
         "com.strava": 1783875617302,
         "com.esuper.file.explorer": 1783922087670,
+        "com.makeevapps.tagtracker": 1784787724195,
+        "com.theathletic": 1784787724195,
         "com.weather.Weather": 1782587642556,
         "mobi.lockdown.weather": 1783654306759,
         "com.tomtom.gplay.navapp": 1782587642556,
@@ -4756,7 +4770,9 @@
         "com.windyty.android": 1782587642556,
         "com.inscode.autoclicker": 1781583945043,
         "com.accuweather.android": 1782359310631,
+        "eu.darken.bluemusic": 1784787724195,
         "club.boxbox.android": 1784282359421,
+        "eu.darken.capod": 1784787724195,
         "com.saldous.casetracker": 1780395687718,
         "com.budget.tracker_app": 1782194773238,
         "sp0n.citizen": 1780395687718,
@@ -4768,12 +4784,17 @@
         "eu.darken.myperm": 1782035611577,
         "eu.faircode.netguard": 1781583945043,
         "kha.prog.mikrotik": 1782035611577,
+        "com.paget96.netspeedindicator": 1784787724195,
+        "eu.darken.octi": 1784787724195,
         "com.a0soft.gphone.acc.free": 1782587642556,
         "com.parallel.space.pro": 1784018383719,
         "police.scanner.radio.broadcastify.citizen": 1783077295505,
         "com.rarlab.rar": 1781080898912,
+        "com.mtv.sai": 1781507172046,
+        "eu.darken.sdmse": 1784801305543,
         "com.shexa.permissionmanager": 1782035611577,
         "com.Splitwise.SplitwiseMobile": 1780469339182,
+        "torrent.search.revolutionv2": 1784787724195,
         "eu.toneiv.ubktouch": 1783654306759,
         "com.regasoftware.udisc": 1783077295505,
         "com.metalsoft.trackchecker_mobile": 1783447728251,
@@ -4800,38 +4821,10 @@
         "com.navitime.inbound.walk": 1784009540466,
         "com.MojoFilterMediaLLC.RPGSoundSystem": 1783875617302,
         "com.urbandroid.kinestop": 1783291168540,
-        "com.nytimes.crossword": 1783875617302,
-        "com.digibites.accubattery": 1784787724195,
-        "com.calimoto.calimoto": 1784787724195,
-        "com.calm.android": 1784787724195,
-        "com.funnmedia.calory": 1784787724195,
-        "jp.co.shueisha.mangaplus": 1784787724195,
-        "com.pryshedko.mtisland": 1784787724195,
-        "ai.metaverselabs.obdandroid": 1784787724195,
-        "net.podslink": 1784787724195,
-        "com.opera.app.news": 1784787724195,
-        "com.yablio.sendfilestotv": 1784787724195,
-        "com.apple.trackerdetect": 1784787724195,
-        "com.consumedbycode.slopes": 1784787724195,
-        "com.theathletic": 1784787724195,
-        "com.gombosdev.ampere": 1784787724195,
-        "pro.vitalii.andropods": 1784787724195,
-        "com.sumyapplications.bluetooth.earphone": 1784787724195,
-        "dev.km.android.chargemeter": 1784787724195,
-        "com.mahersafadi.electron": 1784787724195,
-        "com.pryshedko.materialpods": 1784787724195,
-        "com.mobisystems.office": 1784787724195,
-        "com.brightstripe.parcels": 1784787724195,
-        "com.makeevapps.tagtracker": 1784787724195,
-        "eu.darken.bluemusic": 1784787724195,
-        "eu.darken.capod": 1784787724195,
-        "com.paget96.netspeedindicator": 1784787724195,
-        "eu.darken.octi": 1784787724195,
-        "torrent.search.revolutionv2": 1784787724195,
-        "com.bluematter.qbitconnect": 1784787724195
+        "com.nytimes.crossword": 1783875617302
       },
-      "starsGained7d": 20,
-      "starsGained40d": 20
+      "starsGained7d": 22,
+      "starsGained40d": 22
     },
     {
       "source": "gitlab",
@@ -6887,7 +6880,7 @@
         "com.ninegag.android.app": 1781395200000,
         "com.imdb.mobile": 1783900800000
       },
-      "stars": 199,
+      "stars": 200,
       "updatedAt": 1781395200000,
       "firstSeen": 1771585164000,
       "appFirstSeen": {
@@ -6896,8 +6889,8 @@
         "com.ninegag.android.app": 1781427843830,
         "com.imdb.mobile": 1771585164000
       },
-      "starsGained7d": 7,
-      "starsGained40d": 7
+      "starsGained7d": 8,
+      "starsGained40d": 8
     },
     {
       "source": "github",
@@ -16142,6 +16135,24 @@
       "description": "Mumbai Local Train Timetable &amp; Live Train Status. Bus, Auto, Taxi information.",
       "firstSeen": 1781088959639
     },
+    "com.opera.app.news": {
+      "name": "Opera News - Breaking & Local",
+      "iconUrl": "https://play-lh.googleusercontent.com/fnwwL9-i_oeJtExsO6JnPw-XV0ySX9vVEIWseeM9t0Dhy07WmsaB8FvuJhhx8Ia0nZtuNQsdehKcsizfuNl6",
+      "description": "Get global and local news as it happens, wherever you are.",
+      "firstSeen": 1784787724195
+    },
+    "com.bluematter.qbitconnect": {
+      "name": "qBitConnect",
+      "iconUrl": "https://play-lh.googleusercontent.com/exyBNKGLN6cGAt8T9koU60_B0WCH3gUN740fY19zzyoLsNrP-clAFnEaEaU8RB31gdyHphlhzXoREE37P-Y-ig",
+      "description": "qBitConnect - Remote qBittorrent Manager",
+      "firstSeen": 1784787724195
+    },
+    "com.yablio.sendfilestotv": {
+      "name": "Send Files To TV",
+      "iconUrl": "https://play-lh.googleusercontent.com/_wRe-FHoXo6xhr-PnDw2FsIPMiqZOfqkV8KY1UJ4sNwjOlGOyakwjZVlH4GThXYbRbimjDsajPW-4aCl0-_ynw",
+      "description": "Easily transfer files to your Smart TV android from your mobile or your computer",
+      "firstSeen": 1784787724195
+    },
     "intelligems.torrdroid": {
       "name": "TorrDroid",
       "iconUrl": "https://play-lh.googleusercontent.com/FIgM8cMNv39T39kgTxAc6n8Vy3T3iuEw9l9txna8QCH8xWqtSmTRyPyR2UB5SvTXqW7VKHFicc_vY5JWk2szQTU",
@@ -16160,6 +16171,12 @@
       "description": "Connect and browse the internet with a fast VPN proxy server and IP blocker.",
       "firstSeen": 1782035611577
     },
+    "com.apple.trackerdetect": {
+      "name": "Tracker Detect",
+      "iconUrl": "https://play-lh.googleusercontent.com/BhT0k3dvFxve4vCGR-CvDHUD4FKWlOr0Jtjd6IFOko1ODTUJk_rDTNSOZGEqntJDK55tWI5YF9d5lLTAb6wH",
+      "description": "Tracker Detect looks for Find My compatible item trackers that may be with you.",
+      "firstSeen": 1784787724195
+    },
     "com.canva.editor": {
       "name": "Canva",
       "iconUrl": "https://play-lh.googleusercontent.com/52fzAlhKzDyZV8ttyQ_DHB-jOeLZAZEdKlgXnWL__YNMZuvsoRCshJX5mr_ArFZjK7rte4hqEJ4ucjtuKJK5",
@@ -16177,12 +16194,6 @@
       "iconUrl": "https://play-lh.googleusercontent.com/LykZe_bTYCKYSv8j903U7YSynvqmMTPaikpAHGiS65aYr_Za8RV9pGuXNqDhTmglMN6ppdB209IIihK874DxMA",
       "description": "Simple but addictive puzzle game!",
       "firstSeen": 1783447728251
-    },
-    "com.thecarousell.Carousell": {
-      "name": "Carousell",
-      "iconUrl": "https://play-lh.googleusercontent.com/r1f5W1ePhZMhGwhNhnX3fFCH8mFebO8fAGUEpQk2IYi7h3F8TPE8slANAMza86LVqpFBO7QyJSBEEO3rXAXD",
-      "description": "Buy and sell fashion &amp; luxury items, electronics, home services, cars or houses",
-      "firstSeen": 1783596088539
     },
     "com.livescore": {
       "name": "LiveScore",
@@ -16231,6 +16242,12 @@
       "iconUrl": "https://play-lh.googleusercontent.com/U0baiS5SFsdl6hU6WW2Rq94xd5lIscxgwVZNw0rsN2G7Tqlg3m86KieOuhgR9GTQZMYngD_ilppCeot9lBuBPQ",
       "description": "Route Planner for City Navigation: MTA MBTA NJ Transit Bus Times &amp; Subway Map",
       "firstSeen": 1783077295505
+    },
+    "jp.co.shueisha.mangaplus": {
+      "name": "Manga Plus",
+      "iconUrl": "https://play-lh.googleusercontent.com/ONRtv3AJrkOZy9XhINn66xi_J5MkHIGJQp5s71I_JA1l1znuwfKIhDR502TnAfcvhsjDSoVd8eO_tLqpoEiij6Y",
+      "description": "Get the latest manga chapters daily, released simultaneously with Japan.",
+      "firstSeen": 1783610049625
     },
     "com.oasisfeng.greenify": {
       "name": "Greenify",
@@ -16340,6 +16357,12 @@
       "description": "Formerly The Weekendest; Track realtime MTA subway arrivals and service changes.",
       "firstSeen": 1783447728251
     },
+    "com.digibites.accubattery": {
+      "name": "AccuBattery",
+      "iconUrl": "https://play-lh.googleusercontent.com/CO5EuNTM6QRlBDKvC6PKneqRTt_aKynOeLmL9wI0nOCpBmdayO5pYxxHvHBwV9611JPapWha0al9OySPurxd",
+      "description": "Accu​Battery monitors battery health performance via science",
+      "firstSeen": 1784787724195
+    },
     "com.ace.ex.file.manager": {
       "name": "Ace Ex File Manager",
       "iconUrl": "https://play-lh.googleusercontent.com/nz9hmHaHAynzg6g25uEqTkdjBNyCw3ojPPxW-IvVAH0Rf0OOZIxMu6acfVsciCP_0J2uPSdwaRIRW430tNjW9g",
@@ -16358,11 +16381,35 @@
       "description": "All document reader, pdf viewer app, read docs &amp; excel files",
       "firstSeen": 1783291168540
     },
+    "com.gombosdev.ampere": {
+      "name": "Ampere",
+      "iconUrl": "https://play-lh.googleusercontent.com/lcX9_HYNjEpWRkE2YN5d_HLLmSXI80F_EjSv0TIZ7o7gzLlzCbvzJH6d4CckX2RrEZtK77Zs0aPJB0fVwjZgRg",
+      "description": "Measure the charging and discharging current of your battery.",
+      "firstSeen": 1784787724195
+    },
+    "pro.vitalii.andropods": {
+      "name": "AndroPods",
+      "iconUrl": "https://play-lh.googleusercontent.com/rkKIzZdciulWbRvZvw7hnlJ8Xb0qfl7mAm_qjmjwzRKiOwTIY6QL-4EWZ-vGe7-votZ3H6yvshzFs34oXjxN-co",
+      "description": "Simplify use Apple AirPods (Pro, Powerbeats Pro) on Android",
+      "firstSeen": 1784787724195
+    },
     "com.jndapp.anime.depth.live.wallpaper": {
       "name": "Anime Depth Wallpapers",
       "iconUrl": "https://play-lh.googleusercontent.com/jYmevEkyKdHZs_FSQEIRg8Ifxx4YU2-BQtso3Z0iQkMPM9w9ZkrOcbD7rys6Kq34t4Evufy1UVOgwwP0y4KKWc8",
       "description": "Anime depth wallpapers with live 3D effects &amp; a built-in clock for your screen",
       "firstSeen": 1783875617302
+    },
+    "com.paget96.batteryguru": {
+      "name": "Battery Guru",
+      "iconUrl": "https://play-lh.googleusercontent.com/dGzjJqkvyNS6Iz4ze1YSaqTtzXu6PH8eiSVf56ALnykqigf9S_Sb36BvOA0xX_KVeUT8NJZDR20cIziK9nby",
+      "description": "Battery health monitor with mAh, charging speed, always-on display and alarms.",
+      "firstSeen": 1782102477286
+    },
+    "com.sumyapplications.bluetooth.earphone": {
+      "name": "BatteryPods",
+      "iconUrl": "https://play-lh.googleusercontent.com/JX6vKXernce59eCJ033qXWqu3NDryxBp4Y_TuuCn3A9oWq_I_hL06FJQK1gYNOVrkOVr-cevOm04VREtBAVXtg",
+      "description": "Use AirPods, TWS on Android: battery status and Noise Control",
+      "firstSeen": 1784787724195
     },
     "apps.automan.blurwallpaper": {
       "name": "BlurWall",
@@ -16370,17 +16417,41 @@
       "description": "Apply a blurry effect to images and set them as your home screen or lock screen",
       "firstSeen": 1783077295505
     },
+    "com.calimoto.calimoto": {
+      "name": "calimoto",
+      "iconUrl": "https://play-lh.googleusercontent.com/kKaoi4tJiGPOoaTERi8PbT-mFNNhbttLUun_ywr8AxFIj6BV35mnQEAYkcklGwVTPFrk2k4XjwnHQjYtCzQiXjw",
+      "description": "Scenic motorcycle routes. GPS route planner, maps &amp; navigation for curvier rides",
+      "firstSeen": 1784787724195
+    },
     "com.catalinagroup.callrecorder": {
       "name": "Call Recorder",
       "iconUrl": "https://play-lh.googleusercontent.com/dJwOASgiOu0tCod_WeCDjX9d_oJI9SuZpmtFlSP6ATA63hXM8pUxnTp1HCI9YK1jD5v2lQw3JSKEWatwDzPMQg",
       "description": "Record phone calls &amp; voice memo with automatic Call Recorder - Cube ACR.",
       "firstSeen": 1780395687718
     },
+    "com.calm.android": {
+      "name": "Calm: Sleep & Meditation",
+      "iconUrl": "https://play-lh.googleusercontent.com/Xkdn4M50zGD8JQk4jsNSAu_s5XaaPJDDTifjTi52R3lnKYYhva9mnNsxKG3rE2Ib-yspI90WWXrIqneMHlL0ag",
+      "description": "Tackle everyday stress and anxiety. Self-care and sound sleep through meditation",
+      "firstSeen": 1784787724195
+    },
+    "com.funnmedia.calory": {
+      "name": "Calory",
+      "iconUrl": "https://play-lh.googleusercontent.com/TXCHLJJ7dK8lLKptjcLyDdhHQQFd4uaLanntYSNHsSu0tYuo0goLBBbH_vSRGgRRZn4z6_6sz8EiHjc2zh2g",
+      "description": "Count calories &amp; track food with AI. Easy to use calorie counter.",
+      "firstSeen": 1784787724195
+    },
     "com.joincarbon.nutrition": {
       "name": "Carbon",
       "iconUrl": "https://play-lh.googleusercontent.com/xh_SCE1_93pOL_plTk450pnGx9uDxf2yhIaI_S4Ew0B8oTu9kde8mnTz5K0WDqIchUREMctKWdMErCpWNAxV",
       "description": "More than a food tracker. Your diet &amp; health coach for any lifestyle.",
       "firstSeen": 1783077295505
+    },
+    "dev.km.android.chargemeter": {
+      "name": "Charge Meter",
+      "iconUrl": "https://play-lh.googleusercontent.com/bQDgmBCZoMRRfkHMF3nzolNptg0joJ9eGqtdyb72U0Sapk85I_nR9Mt6bAwjVZEpNr1qOmz4PXeYRdZqgxMFd4E",
+      "description": "Use Charge Meter to find the fastest charger and USB cable for your device.",
+      "firstSeen": 1784787724195
     },
     "com.socialnmobile.dictapps.notepad.color.note": {
       "name": "ColorNote",
@@ -16411,6 +16482,12 @@
       "iconUrl": "https://play-lh.googleusercontent.com/h9g140jbgc6tR6o2VgL2lF0OYTr8cq2n9x_GihS_Toxe3PioggBfXHzIwM2OeNeEyWHfZFpqoMov5Whdm_qMeg",
       "description": "Beautiful Wallpapers with Live Clock and Depth Effects",
       "firstSeen": 1781162568074
+    },
+    "com.mahersafadi.electron": {
+      "name": "Electron",
+      "iconUrl": "https://play-lh.googleusercontent.com/0t-xeeDB6UuldF-nGTXFlE1Yvzm1NVBx-bYdnVYCdMfIyyT0niQNLa9dYLketH9ESOpeF4YzuihgI_Mz6SnlgQ",
+      "description": "Check on the stats and health of your battery like never before!",
+      "firstSeen": 1784787724195
     },
     "com.fitbod.fitbod": {
       "name": "Fitbod",
@@ -16472,6 +16549,18 @@
       "description": "Route Planner, GPS Navigation and Distance Tracker for Hiking &amp; Biking",
       "firstSeen": 1773147404000
     },
+    "com.pryshedko.mtisland": {
+      "name": "Material Capsule",
+      "iconUrl": "https://play-lh.googleusercontent.com/mrNuw058MP_GKlWVCLuZrg3QyONOUJAzrw4mCkdTvtGckt5EGUEzbO26z49bMCJTlX5WRs1qP9fSljF30k3xcAk",
+      "description": "Dynamic Island, shortcuts, music control, notifications &amp; more near your camera",
+      "firstSeen": 1784787724195
+    },
+    "com.pryshedko.materialpods": {
+      "name": "MaterialPods",
+      "iconUrl": "https://play-lh.googleusercontent.com/UoW5uw07ZrwZQdwC8K1Ze9Vx4VcFH9DK94Bj83SWJ8_HYVaPvmV8p8fZ6LwTIY1qIqiXmkNjPluNhUeKfH3EWw",
+      "description": "AirPods and PowerBeats companion",
+      "firstSeen": 1784787724195
+    },
     "com.jndapp.minimal.widgets": {
       "name": "Minimal Widgets",
       "iconUrl": "https://play-lh.googleusercontent.com/YdxN2n40wSiPp-WZi832aZHxGFQSafDcHqNif-Wy9YH__t2nCXoB5yGaCQkisJaHWe13H37lI_olM7sKsfONBg",
@@ -16483,6 +16572,12 @@
       "iconUrl": "https://play-lh.googleusercontent.com/cvamBkdg3UQgYgQwlLbursoGoTRWi6DzmY7rph_dwWC9XCxUveVgU4NOx_lMj2dE0d8klY_tC1Y_9YdIOVYD",
       "description": "Get notified when a beta program is available!",
       "firstSeen": 1781078703632
+    },
+    "com.mobisystems.office": {
+      "name": "MobiOffice- Word, Excel, Slide",
+      "iconUrl": "https://play-lh.googleusercontent.com/zrx4obX-smDllWz6sQr3hbg1QyodgMT_AJcbOOQJNsE-7XE-UdQsV86JXI5QZY5IjHooUBa_ASJcO_HWsdc5FCA",
+      "description": "Mobile office documents — Word docs, Excel sheets, PowerPoint slides, PDF editor",
+      "firstSeen": 1784787724195
     },
     "com.acmeaom.android.myradar": {
       "name": "MyRadar",
@@ -16507,6 +16602,18 @@
       "iconUrl": "https://play-lh.googleusercontent.com/Z10nyQkvnKpejvNvZ7LS3xXzZNRqq-nXAMiorVg8Ciyp87u2A8vIfgKbukMOZ-shf2i1OZUGkVJDmlhIDg8chg",
       "description": "Ninja VPN - Fast &amp; Secure VPN for Gaming, Streaming &amp; Private Browsing!",
       "firstSeen": 1782587642556
+    },
+    "ai.metaverselabs.obdandroid": {
+      "name": "OBD Android",
+      "iconUrl": "https://play-lh.googleusercontent.com/Q64PixunDIiph11XoEuVXE9z4wU09So-9P7xixeNSvK9v_Mde8BoUsgB8hQ1jQXsA8o4VkrgKeYW8I7WmgVuzds",
+      "description": "OBD2 Scanner For Torque OBD, FixD, Veepeak Car Scanner, OBD Fusion",
+      "firstSeen": 1784787724195
+    },
+    "com.brightstripe.parcels": {
+      "name": "Parcels",
+      "iconUrl": "https://play-lh.googleusercontent.com/0CDcWcVJbaIhudQ95OeUySIuRZuPfvHY8z-xuCXjwW6WQMitwUr4Iy3jjGWqZMXqIT2k0sWmeiLmFOhqXno1",
+      "description": "Track all your packages from eBay, Temu, Shein, Shopee, UPS, FedEx",
+      "firstSeen": 1781464495354
     },
     "com.monect.portable": {
       "name": "PC Remote",
@@ -16533,10 +16640,76 @@
       "firstSeen": 1783365870570
     },
     "com.pocketprep.android.itcybersecurity": {
-      "name": "Pocket Prep",
+      "name": "Pocket Prep IT Cybersecurity",
       "iconUrl": "https://play-lh.googleusercontent.com/hRmqBwclSreWYl3aGXxFFfQbv4JLRYRUI-I83LaoYr7ftnVnThsHIm553TMBuCBSVYEXJQ761fU_AMXPR8xB",
       "description": "Pass 26 IT &amp; cybersecurity certification exams with 25k+ practice questions.",
       "firstSeen": 1783596088539
+    },
+    "com.pocketprep.android.professional": {
+      "name": "Pocket Prep Professional",
+      "iconUrl": "https://play-lh.googleusercontent.com/os1QBycANzciGGMO1ufe9blrq554FbDlWOs9Cs6sUy9ZUkz21pakq5R5XPKGiNogeRUUpiqjwEoFQG0gDiuxEQ",
+      "description": "Pass 21 Professional certification exams with 22k+ prep questions &amp; mock tests.",
+      "firstSeen": 1784801305543
+    },
+    "com.pocketprep.android.behavioralhealth": {
+      "name": "Pocket Prep Behavioral Health",
+      "iconUrl": "https://play-lh.googleusercontent.com/FLn-1sO3DJbrmBnRDRN4cgVlirnFGYnlrcK8Kz32LmbX8qCSZhQ6DNP-a6j-E9RmgG9IXKRUtWHLXvM_wePWlA",
+      "description": "Pass 13 social work and counseling exams with practice questions &amp; mock tests.",
+      "firstSeen": 1784801305543
+    },
+    "com.pocketprep.android.medical": {
+      "name": "Pocket Prep Medical",
+      "iconUrl": "https://play-lh.googleusercontent.com/_ZFQFXkmUhQWv9i8el3CNpKC5IcTUusazAf-t32BeP-XZgZb5WEtph5VyuVWS5vXQp2Cy_zGPNMQq3dx-PES",
+      "description": "Pass 19 medical exams with thousands of practice questions and mock tests.",
+      "firstSeen": 1784801305543
+    },
+    "com.pocketprep.android.nursingschool": {
+      "name": "Pocket Prep Nursing School",
+      "iconUrl": "https://play-lh.googleusercontent.com/PCSCBcApmP1PeFNstfyyrmNBIr4XkaA77yFPhcsZfaA-YKO209qzw6Nvc4-ySXumc0F5CYAn_LeLGl4R9TgfrQ",
+      "description": "Prep for 6 nursing school exams with 10k+ practice questions and mock tests.",
+      "firstSeen": 1784801305543
+    },
+    "com.pocketprep.android.nursing": {
+      "name": "Pocket Prep Nursing",
+      "iconUrl": "https://play-lh.googleusercontent.com/pQ_4zTujo1aYMkP6qNZzXzvRtGv7E0rtrXaPqHoJX7A2L85JoJge7A9CnQ7X2J_V5mHJAH3V5v9pspIuDU9JXg",
+      "description": "Pass 36 nursing certification exams with 28k+ practice questions and mock tests.",
+      "firstSeen": 1784801305543
+    },
+    "com.pocketprep.android.ems": {
+      "name": "Pocket Prep EMS",
+      "iconUrl": "https://play-lh.googleusercontent.com/vw0nXiO7xr39BcGysbM7Pfqo1rrOhjVfB0O-X7Ugj7HKc6tX2TqdVRB5bKOYdygBQFaUBe7G4zZ3WhioAfsrEA",
+      "description": "Pass 9 EMS exams with 9,000+ practice questions &amp; mock exams.",
+      "firstSeen": 1784801305543
+    },
+    "com.pocketprep.android.automotive": {
+      "name": "Pocket Prep Skilled Trades",
+      "iconUrl": "https://play-lh.googleusercontent.com/n5wLok-7ejYEOTOPhJa40eblhN6MwLAuK3sy467Wex2bKXZTgoFiTGk9RxCSYcrJZ448-YQ064CrLu0lJhcO",
+      "description": "Pass 11 exams including automotive, electrician, plumber with 3k+ questions.",
+      "firstSeen": 1784801305543
+    },
+    "com.pocketprep.android.fitness": {
+      "name": "Pocket Prep Fitness",
+      "iconUrl": "https://play-lh.googleusercontent.com/hy4WrAwLVyprIOVOc1GUdp8ZgKyrmct9TS1zKNZUBpNA3KbQ5OkOPG6CnJbf15vYZeF3npzsqtmM5ub9RXdMHg",
+      "description": "Pass 13 fitness &amp; exercise science exams with 11k+ prep questions &amp; mock tests.",
+      "firstSeen": 1784801305543
+    },
+    "com.pocketprep.android.essentials": {
+      "name": "Pocket Prep Essentials",
+      "iconUrl": null,
+      "description": null,
+      "firstSeen": 1784801305543
+    },
+    "com.pocketprep.android.pocketprep": {
+      "name": "Pocket Prep",
+      "iconUrl": "https://play-lh.googleusercontent.com/9KWDGzAw7WxwePfeKUyNRRa2motXaumVXSpAUY9Lx_-yYl59CvX2muQR-dNBTY9GecD-IxRym-XU8EncCW7rmg",
+      "description": "Exam Practice Questions",
+      "firstSeen": 1784801305543
+    },
+    "net.podslink": {
+      "name": "PodsLink",
+      "iconUrl": "https://play-lh.googleusercontent.com/9OWUG--OXZiAGjyK3wMbaXRV1EwMDmyRG7I6RWQS5MIokELT06zMpZk0_CEzf-OC6Eh_l6ExpMWBEv_FMAgVVAI",
+      "description": "AirPods and Beats battery display and location tracking",
+      "firstSeen": 1784787724195
     },
     "com.recipebro.cookingbuddy": {
       "name": "RecipeBro",
@@ -16562,17 +16735,17 @@
       "description": "RS File Explorer is File Manager helps you easily manage Local and Cloud files",
       "firstSeen": 1783875617302
     },
-    "com.mtv.sai": {
-      "name": "SAI",
-      "iconUrl": "https://play-lh.googleusercontent.com/NZEdYeZWgBVa10wkMBpdJrWQyL6lXuUWZDWx-ZSfWa4YJnatabcXAl7B55m1q83MrBq5OcqqFJCthyJ7muX9Hw",
-      "description": "The fastest app bundles installer - XAPK, APK, APKm, and APKs for Android",
-      "firstSeen": 1781507172046
-    },
     "com.appostrophe.scrl": {
       "name": "SCRL",
       "iconUrl": "https://play-lh.googleusercontent.com/lxQjbpVTFHvkfuOZVrcIBqlj8LJNYspLJppPXJwa4oTXswlR-vwCKvi09-ic4HeaQioowYHr_olZCj2lj3EH",
       "description": "Fit multiple photos on one post. Create carousels &amp; scroll layouts for Instagram",
       "firstSeen": 1783596088539
+    },
+    "com.consumedbycode.slopes": {
+      "name": "Slopes",
+      "iconUrl": "https://play-lh.googleusercontent.com/DeEfQ2t1MT_FKQQERWNi5nxQrqKTHJDGIhmC6WK6qK_k2jvxtnTK_T-LeqnfXYfeb-Ym8xyYBWtUj45hmJFn",
+      "description": "The smart ski tracking app with detailed stats, resort maps, slopes conditions.",
+      "firstSeen": 1784787724195
     },
     "ai.topicfinder.podcastdiscovery": {
       "name": "Snipd",
@@ -16609,6 +16782,18 @@
       "iconUrl": "https://play-lh.googleusercontent.com/KQM6SZZdY1mk15_m88HtiPqMD_0UTTXw0r60cEZxR8bQwXCy2YQv24try-UD1K1s65zCMwkrfPqr0EvmyQUL1g",
       "description": "Super File Manager is a powerful local and network file manager.",
       "firstSeen": 1783922087670
+    },
+    "com.makeevapps.tagtracker": {
+      "name": "Tag Tracker",
+      "iconUrl": "https://play-lh.googleusercontent.com/i_cwM3vOXBGhtBCTNXbw9x6leBumcnQGSJpR-D7YG20rZhO4y7t72nCcLGANwgNJJcmD1qkYE2cUOkxlVaKiAg",
+      "description": "Detect and find AirTags, SmartTags, Tile, Chipolo, and hidden trackers nearby",
+      "firstSeen": 1784787724195
+    },
+    "com.theathletic": {
+      "name": "The Athletic",
+      "iconUrl": "https://play-lh.googleusercontent.com/nW0aGxUwhfR988FFvGPsOJ0b1vgEafyfSXlrsR3gs8PZF85J_puVoa7qMOH720CoeslLzMWOlvhctlmOU1nK_vg",
+      "description": "Game-changing sports coverage with breaking news, live commentary and scores.",
+      "firstSeen": 1784787724195
     },
     "com.weather.Weather": {
       "name": "The Weather Channel",
@@ -16664,11 +16849,23 @@
       "description": "Your local weather forecast, storm tracker, radar maps &amp; live weather news",
       "firstSeen": 1782359310631
     },
+    "eu.darken.bluemusic": {
+      "name": "Bluetooth Volume Manager",
+      "iconUrl": "https://play-lh.googleusercontent.com/ilGuA0JkppRjdJHKJBr3pBwndNN8dgn9Dmr6zVrWZc8N_-PJZx9bqpl2ot6NXWiF2OOSeWPS6bxtmhxnaJEG",
+      "description": "Individual voice &amp; music volume configuration for Bluetooth devices.",
+      "firstSeen": 1784787724195
+    },
     "club.boxbox.android": {
       "name": "Box Box",
       "iconUrl": "https://play-lh.googleusercontent.com/kfxcsV5RmByTSzDnSnbwiRIOQ_rq6kUG6Fvmg_zoPtTAjKA9_y9Sy7cMSi39x7UKkosKHe_Ddu_MiVOtlDeRwQ",
       "description": "F1 Widgets, News, Schedule and Leaderboard",
       "firstSeen": 1784282359421
+    },
+    "eu.darken.capod": {
+      "name": "CAPod",
+      "iconUrl": "https://play-lh.googleusercontent.com/hoY_DnqaWHgEjOyXZQCbpwwLtOvjT69iqFDQl2LYwUOYpiMh9zOPT8IMDpL5RhS74TC5JbvaD7pITOQV5OHw",
+      "description": "CAPod is a companion app for AirPods on Android.",
+      "firstSeen": 1784787724195
     },
     "com.saldous.casetracker": {
       "name": "Case Tracker",
@@ -16736,6 +16933,18 @@
       "description": "Share your internet or extends your existing Wifi connection as a WiFi Repeater",
       "firstSeen": 1782035611577
     },
+    "com.paget96.netspeedindicator": {
+      "name": "Network Guru - Net Analyzer",
+      "iconUrl": "https://play-lh.googleusercontent.com/0vyibKnbIFSNsPiDew8-W27cpuwLEH3J-wkgRCH-m3tTjVnaU7QuACP_fvlPi1Zaiyo5TsT776axmU5_UQ8X",
+      "description": "Monitor download and upload speed in real time from your status bar.",
+      "firstSeen": 1784787724195
+    },
+    "eu.darken.octi": {
+      "name": "Octi",
+      "iconUrl": "https://play-lh.googleusercontent.com/BM7CRVUsjarBmNuI0sDmKyk6OPbyulJyy08sIeWapv533Bl4GvPvvil3KC6mteR4bQ2gSGxNra_epUBZsThN4g",
+      "description": "Monitor and synchronize information between multiple Android devices",
+      "firstSeen": 1784787724195
+    },
     "com.a0soft.gphone.acc.free": {
       "name": "1Tap Cleaner",
       "iconUrl": "https://play-lh.googleusercontent.com/RTKE8PfBmgWxT1Q7pdvw1kkyHWegQ6c_sBFTfOByK9Ncl9oVn_WA7pqBzYqjRSLY23AmTIHnaVAMZLVLyrFabQ",
@@ -16760,6 +16969,18 @@
       "description": "Create RAR and ZIP, unpack RAR, ZIP, TAR, GZ, BZ2, XZ, 7z, ISO, ARJ archives.",
       "firstSeen": 1773594609000
     },
+    "com.mtv.sai": {
+      "name": "SAI",
+      "iconUrl": "https://play-lh.googleusercontent.com/NZEdYeZWgBVa10wkMBpdJrWQyL6lXuUWZDWx-ZSfWa4YJnatabcXAl7B55m1q83MrBq5OcqqFJCthyJ7muX9Hw",
+      "description": "The fastest app bundles installer - XAPK, APK, APKm, and APKs for Android",
+      "firstSeen": 1781507172046
+    },
+    "eu.darken.sdmse": {
+      "name": "SD Maid SE",
+      "iconUrl": "https://play-lh.googleusercontent.com/3prZ4AWUkRpB76xwwWQV_cvDrlu87YAmlEv2j_5QEB_ZC3-9lZiIXdwKW7-40in7Fs7l9iHUGVHcQZWmgdWqXA",
+      "description": "A trusted assistant for your Android, to keep it clean and tidy.",
+      "firstSeen": 1778457600000
+    },
     "com.shexa.permissionmanager": {
       "name": "App Permission Manager",
       "iconUrl": "https://play-lh.googleusercontent.com/RzmOwc2oqu3vvXd8Lawc40E-f6OxrvwdmMUeei3Qj_fVAknevHOxWiCJ16Qw900hF-38mLPjq4Uez0Vxny1E",
@@ -16771,6 +16992,12 @@
       "iconUrl": "https://play-lh.googleusercontent.com/0H4UbwiIienhLb6jn_zs7wZ06Oqw2DtqZmoUw6puac1F5ZalD_Jja14N7gGk1seq78403uGUvdmtiVxqckMw",
       "description": "Split expenses with friends, roommates, group trips, and more",
       "firstSeen": 1777489987000
+    },
+    "torrent.search.revolutionv2": {
+      "name": "Torrent Search Revolution V2",
+      "iconUrl": "https://play-lh.googleusercontent.com/iXczZGftq8t6RNwWnyWAxaEFRv91QPHHq_uUAehvxsCA4fckus0kr90aqmAoXbjpVylSaBmVWN1zr2HLVJHCRXQ",
+      "description": "Search and download torrent magnet links from multiple sources.",
+      "firstSeen": 1784787724195
     },
     "eu.toneiv.ubktouch": {
       "name": "UbikiTouch",
@@ -16934,200 +17161,6 @@
       "description": "Play fun word puzzles and number games to sharpen your mind.",
       "firstSeen": 1783875617302
     },
-    "com.digibites.accubattery": {
-      "name": "AccuBattery",
-      "iconUrl": "https://play-lh.googleusercontent.com/CO5EuNTM6QRlBDKvC6PKneqRTt_aKynOeLmL9wI0nOCpBmdayO5pYxxHvHBwV9611JPapWha0al9OySPurxd",
-      "description": "Accu​Battery monitors battery health performance via science",
-      "preRelease": true,
-      "firstSeen": 1784787724195
-    },
-    "com.calimoto.calimoto": {
-      "name": "calimoto",
-      "iconUrl": "https://play-lh.googleusercontent.com/kKaoi4tJiGPOoaTERi8PbT-mFNNhbttLUun_ywr8AxFIj6BV35mnQEAYkcklGwVTPFrk2k4XjwnHQjYtCzQiXjw",
-      "description": "Scenic motorcycle routes. GPS route planner, maps &amp; navigation for curvier rides",
-      "preRelease": true,
-      "firstSeen": 1784787724195
-    },
-    "com.calm.android": {
-      "name": "Calm: Sleep & Meditation",
-      "iconUrl": "https://play-lh.googleusercontent.com/Xkdn4M50zGD8JQk4jsNSAu_s5XaaPJDDTifjTi52R3lnKYYhva9mnNsxKG3rE2Ib-yspI90WWXrIqneMHlL0ag",
-      "description": "Tackle everyday stress and anxiety. Self-care and sound sleep through meditation",
-      "preRelease": true,
-      "firstSeen": 1784787724195
-    },
-    "com.funnmedia.calory": {
-      "name": "Calory - Calorie Counter & Diet",
-      "iconUrl": "https://play-lh.googleusercontent.com/TXCHLJJ7dK8lLKptjcLyDdhHQQFd4uaLanntYSNHsSu0tYuo0goLBBbH_vSRGgRRZn4z6_6sz8EiHjc2zh2g",
-      "description": "Count calories &amp; track food with AI. Easy to use calorie counter.",
-      "preRelease": true,
-      "firstSeen": 1784787724195
-    },
-    "jp.co.shueisha.mangaplus": {
-      "name": "Manga Plus",
-      "iconUrl": "https://play-lh.googleusercontent.com/ONRtv3AJrkOZy9XhINn66xi_J5MkHIGJQp5s71I_JA1l1znuwfKIhDR502TnAfcvhsjDSoVd8eO_tLqpoEiij6Y",
-      "description": "Get the latest manga chapters daily, released simultaneously with Japan.",
-      "firstSeen": 1783610049625
-    },
-    "com.pryshedko.mtisland": {
-      "name": "Material Capsule",
-      "iconUrl": "https://play-lh.googleusercontent.com/mrNuw058MP_GKlWVCLuZrg3QyONOUJAzrw4mCkdTvtGckt5EGUEzbO26z49bMCJTlX5WRs1qP9fSljF30k3xcAk",
-      "description": "Dynamic Island, shortcuts, music control, notifications &amp; more near your camera",
-      "preRelease": true,
-      "firstSeen": 1784787724195
-    },
-    "ai.metaverselabs.obdandroid": {
-      "name": "OBD Android",
-      "iconUrl": "https://play-lh.googleusercontent.com/Q64PixunDIiph11XoEuVXE9z4wU09So-9P7xixeNSvK9v_Mde8BoUsgB8hQ1jQXsA8o4VkrgKeYW8I7WmgVuzds",
-      "description": "OBD2 Scanner For Torque OBD, FixD, Veepeak Car Scanner, OBD Fusion",
-      "preRelease": true,
-      "firstSeen": 1784787724195
-    },
-    "net.podslink": {
-      "name": "PodsLink",
-      "iconUrl": "https://play-lh.googleusercontent.com/9OWUG--OXZiAGjyK3wMbaXRV1EwMDmyRG7I6RWQS5MIokELT06zMpZk0_CEzf-OC6Eh_l6ExpMWBEv_FMAgVVAI",
-      "description": "AirPods and Beats battery display and location tracking",
-      "preRelease": true,
-      "firstSeen": 1784787724195
-    },
-    "com.opera.app.news": {
-      "name": "Opera News - Breaking & Local",
-      "iconUrl": "https://play-lh.googleusercontent.com/fnwwL9-i_oeJtExsO6JnPw-XV0ySX9vVEIWseeM9t0Dhy07WmsaB8FvuJhhx8Ia0nZtuNQsdehKcsizfuNl6",
-      "description": "Get global and local news as it happens, wherever you are.",
-      "preRelease": true,
-      "firstSeen": 1784787724195
-    },
-    "com.yablio.sendfilestotv": {
-      "name": "Send Files To TV",
-      "iconUrl": "https://play-lh.googleusercontent.com/_wRe-FHoXo6xhr-PnDw2FsIPMiqZOfqkV8KY1UJ4sNwjOlGOyakwjZVlH4GThXYbRbimjDsajPW-4aCl0-_ynw",
-      "description": "Easily transfer files to your Smart TV android from your mobile or your computer",
-      "preRelease": true,
-      "firstSeen": 1784787724195
-    },
-    "com.apple.trackerdetect": {
-      "name": "Tracker Detect",
-      "iconUrl": "https://play-lh.googleusercontent.com/BhT0k3dvFxve4vCGR-CvDHUD4FKWlOr0Jtjd6IFOko1ODTUJk_rDTNSOZGEqntJDK55tWI5YF9d5lLTAb6wH",
-      "description": "Tracker Detect looks for Find My compatible item trackers that may be with you.",
-      "preRelease": true,
-      "firstSeen": 1784787724195
-    },
-    "com.consumedbycode.slopes": {
-      "name": "Slopes",
-      "iconUrl": "https://play-lh.googleusercontent.com/DeEfQ2t1MT_FKQQERWNi5nxQrqKTHJDGIhmC6WK6qK_k2jvxtnTK_T-LeqnfXYfeb-Ym8xyYBWtUj45hmJFn",
-      "description": "The smart ski tracking app with detailed stats, resort maps, slopes conditions.",
-      "preRelease": true,
-      "firstSeen": 1784787724195
-    },
-    "com.theathletic": {
-      "name": "The Athletic",
-      "iconUrl": "https://play-lh.googleusercontent.com/nW0aGxUwhfR988FFvGPsOJ0b1vgEafyfSXlrsR3gs8PZF85J_puVoa7qMOH720CoeslLzMWOlvhctlmOU1nK_vg",
-      "description": "Game-changing sports coverage with breaking news, live commentary and scores.",
-      "preRelease": true,
-      "firstSeen": 1784787724195
-    },
-    "com.gombosdev.ampere": {
-      "name": "Ampere",
-      "iconUrl": "https://play-lh.googleusercontent.com/lcX9_HYNjEpWRkE2YN5d_HLLmSXI80F_EjSv0TIZ7o7gzLlzCbvzJH6d4CckX2RrEZtK77Zs0aPJB0fVwjZgRg",
-      "description": "Measure the charging and discharging current of your battery.",
-      "preRelease": true,
-      "firstSeen": 1784787724195
-    },
-    "pro.vitalii.andropods": {
-      "name": "AndroPods",
-      "iconUrl": "https://play-lh.googleusercontent.com/rkKIzZdciulWbRvZvw7hnlJ8Xb0qfl7mAm_qjmjwzRKiOwTIY6QL-4EWZ-vGe7-votZ3H6yvshzFs34oXjxN-co",
-      "description": "Simplify use Apple AirPods (Pro, Powerbeats Pro) on Android",
-      "preRelease": true,
-      "firstSeen": 1784787724195
-    },
-    "com.sumyapplications.bluetooth.earphone": {
-      "name": "BatteryPods",
-      "iconUrl": "https://play-lh.googleusercontent.com/JX6vKXernce59eCJ033qXWqu3NDryxBp4Y_TuuCn3A9oWq_I_hL06FJQK1gYNOVrkOVr-cevOm04VREtBAVXtg",
-      "description": "Use AirPods, TWS on Android: battery status and Noise Control",
-      "preRelease": true,
-      "firstSeen": 1784787724195
-    },
-    "dev.km.android.chargemeter": {
-      "name": "Charge Meter",
-      "iconUrl": "https://play-lh.googleusercontent.com/bQDgmBCZoMRRfkHMF3nzolNptg0joJ9eGqtdyb72U0Sapk85I_nR9Mt6bAwjVZEpNr1qOmz4PXeYRdZqgxMFd4E",
-      "description": "Use Charge Meter to find the fastest charger and USB cable for your device.",
-      "preRelease": true,
-      "firstSeen": 1784787724195
-    },
-    "com.mahersafadi.electron": {
-      "name": "Electron",
-      "iconUrl": "https://play-lh.googleusercontent.com/0t-xeeDB6UuldF-nGTXFlE1Yvzm1NVBx-bYdnVYCdMfIyyT0niQNLa9dYLketH9ESOpeF4YzuihgI_Mz6SnlgQ",
-      "description": "Check on the stats and health of your battery like never before!",
-      "preRelease": true,
-      "firstSeen": 1784787724195
-    },
-    "com.pryshedko.materialpods": {
-      "name": "MaterialPods",
-      "iconUrl": "https://play-lh.googleusercontent.com/UoW5uw07ZrwZQdwC8K1Ze9Vx4VcFH9DK94Bj83SWJ8_HYVaPvmV8p8fZ6LwTIY1qIqiXmkNjPluNhUeKfH3EWw",
-      "description": "AirPods and PowerBeats companion",
-      "preRelease": true,
-      "firstSeen": 1784787724195
-    },
-    "com.mobisystems.office": {
-      "name": "MobiOffice- Word, Excel, Slide",
-      "iconUrl": "https://play-lh.googleusercontent.com/zrx4obX-smDllWz6sQr3hbg1QyodgMT_AJcbOOQJNsE-7XE-UdQsV86JXI5QZY5IjHooUBa_ASJcO_HWsdc5FCA",
-      "description": "Mobile office documents — Word docs, Excel sheets, PowerPoint slides, PDF editor",
-      "preRelease": true,
-      "firstSeen": 1784787724195
-    },
-    "com.brightstripe.parcels": {
-      "name": "Parcels",
-      "iconUrl": "https://play-lh.googleusercontent.com/0CDcWcVJbaIhudQ95OeUySIuRZuPfvHY8z-xuCXjwW6WQMitwUr4Iy3jjGWqZMXqIT2k0sWmeiLmFOhqXno1",
-      "description": "Track all your packages from eBay, Temu, Shein, Shopee, UPS, FedEx",
-      "firstSeen": 1781464495354
-    },
-    "com.makeevapps.tagtracker": {
-      "name": "Tag Tracker: Find Lost Items",
-      "iconUrl": "https://play-lh.googleusercontent.com/i_cwM3vOXBGhtBCTNXbw9x6leBumcnQGSJpR-D7YG20rZhO4y7t72nCcLGANwgNJJcmD1qkYE2cUOkxlVaKiAg",
-      "description": "Detect and find AirTags, SmartTags, Tile, Chipolo, and hidden trackers nearby",
-      "preRelease": true,
-      "firstSeen": 1784787724195
-    },
-    "eu.darken.bluemusic": {
-      "name": "Bluetooth Volume Manager",
-      "iconUrl": "https://play-lh.googleusercontent.com/ilGuA0JkppRjdJHKJBr3pBwndNN8dgn9Dmr6zVrWZc8N_-PJZx9bqpl2ot6NXWiF2OOSeWPS6bxtmhxnaJEG",
-      "description": "Individual voice &amp; music volume configuration for Bluetooth devices.",
-      "preRelease": true,
-      "firstSeen": 1784787724195
-    },
-    "eu.darken.capod": {
-      "name": "CAPod",
-      "iconUrl": "https://play-lh.googleusercontent.com/hoY_DnqaWHgEjOyXZQCbpwwLtOvjT69iqFDQl2LYwUOYpiMh9zOPT8IMDpL5RhS74TC5JbvaD7pITOQV5OHw",
-      "description": "CAPod is a companion app for AirPods on Android.",
-      "preRelease": true,
-      "firstSeen": 1784787724195
-    },
-    "com.paget96.netspeedindicator": {
-      "name": "Network Guru - Net Analyzer",
-      "iconUrl": "https://play-lh.googleusercontent.com/0vyibKnbIFSNsPiDew8-W27cpuwLEH3J-wkgRCH-m3tTjVnaU7QuACP_fvlPi1Zaiyo5TsT776axmU5_UQ8X",
-      "description": "Monitor download and upload speed in real time from your status bar.",
-      "preRelease": true,
-      "firstSeen": 1784787724195
-    },
-    "eu.darken.octi": {
-      "name": "Octi",
-      "iconUrl": "https://play-lh.googleusercontent.com/BM7CRVUsjarBmNuI0sDmKyk6OPbyulJyy08sIeWapv533Bl4GvPvvil3KC6mteR4bQ2gSGxNra_epUBZsThN4g",
-      "description": "Monitor and synchronize information between multiple Android devices",
-      "preRelease": true,
-      "firstSeen": 1784787724195
-    },
-    "torrent.search.revolutionv2": {
-      "name": "Torrent Search Revolution V2",
-      "iconUrl": "https://play-lh.googleusercontent.com/iXczZGftq8t6RNwWnyWAxaEFRv91QPHHq_uUAehvxsCA4fckus0kr90aqmAoXbjpVylSaBmVWN1zr2HLVJHCRXQ",
-      "description": "Search and download torrent magnet links from multiple sources.",
-      "preRelease": true,
-      "firstSeen": 1784787724195
-    },
-    "com.bluematter.qbitconnect": {
-      "name": "qBitConnect",
-      "iconUrl": "https://play-lh.googleusercontent.com/exyBNKGLN6cGAt8T9koU60_B0WCH3gUN740fY19zzyoLsNrP-clAFnEaEaU8RB31gdyHphlhzXoREE37P-Y-ig",
-      "description": "qBitConnect - Remote qBittorrent Manager",
-      "preRelease": true,
-      "firstSeen": 1784787724195
-    },
     "org.telegram.plus": {
       "name": "Plus Messenger",
       "iconUrl": "https://play-lh.googleusercontent.com/tvinmqPRqEdX_C3x319DHieZ6XDUL5PyLZa-8TDJe9gb4d05G9I5zaakv7MOWmXTMQi-Lq5W0yDfUeiHPk9d",
@@ -17234,12 +17267,6 @@
       "name": "Alarmo",
       "iconUrl": "https://play-lh.googleusercontent.com/I5tM2cUkBSMH74XAmBYPlBVnoaY08B7wgwY4DhqKKYUQ_zYtU_nWNMVn5pe337MVGsEQNluDYugOaPsVQZJIyQ",
       "description": "Alarm for heavy sleepers, solve challenges Maths, QR &amp; barcode, very Loud, ADHD",
-      "firstSeen": 1778457600000
-    },
-    "eu.darken.sdmse": {
-      "name": "SD Maid SE",
-      "iconUrl": "https://play-lh.googleusercontent.com/3prZ4AWUkRpB76xwwWQV_cvDrlu87YAmlEv2j_5QEB_ZC3-9lZiIXdwKW7-40in7Fs7l9iHUGVHcQZWmgdWqXA",
-      "description": "A trusted assistant for your Android, to keep it clean and tidy.",
       "firstSeen": 1778457600000
     },
     "com.rk.taskmanager": {
@@ -17494,12 +17521,6 @@
       "iconUrl": "https://play-lh.googleusercontent.com/x_PQHLeE9ptFfTZ4nmhuKDQ34nghCrRcmoYISeAV_O-Oi5yuhoXzkrRjtBgn7yfLyTo2bOtiu6HzqoEhphmliQ",
       "description": "Make beats anywhere on BandLab. Record, mix &amp; produce, all from your phone.",
       "firstSeen": 1781682468117
-    },
-    "com.paget96.batteryguru": {
-      "name": "Battery Guru",
-      "iconUrl": "https://play-lh.googleusercontent.com/dGzjJqkvyNS6Iz4ze1YSaqTtzXu6PH8eiSVf56ALnykqigf9S_Sb36BvOA0xX_KVeUT8NJZDR20cIziK9nby",
-      "description": "Battery health monitor with mAh, charging speed, always-on display and alarms.",
-      "firstSeen": 1782102477286
     },
     "com.finch.finch": {
       "name": "Finch",
@@ -19844,7 +19865,7 @@
         "signatures": null,
         "targets": [
           {
-            "version": "7.84.0.949657053",
+            "version": "7.85.0.950510832",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -19880,7 +19901,7 @@
         "signatures": null,
         "targets": [
           {
-            "version": "26.28.0",
+            "version": "26.29.0",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -19916,7 +19937,7 @@
         "signatures": null,
         "targets": [
           {
-            "version": "32.13.0.100",
+            "version": "32.13.2.100",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -20022,7 +20043,7 @@
         "signatures": null,
         "targets": [
           {
-            "version": "6.87.6",
+            "version": "6.88.2",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -20086,6 +20107,60 @@
     ],
     [
       {
+        "packageName": "com.opera.app.news",
+        "name": "Opera News - Breaking & Local",
+        "description": null,
+        "apkFileType": "APKS",
+        "appIconColor": "#FF1B2A",
+        "signatures": null,
+        "targets": [
+          {
+            "version": "14.1.2254.83278",
+            "isExperimental": false,
+            "minSdk": null,
+            "description": null
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "packageName": "com.bluematter.qbitconnect",
+        "name": "qBitConnect",
+        "description": null,
+        "apkFileType": "XAPK",
+        "appIconColor": "#4FC3F7",
+        "signatures": null,
+        "targets": [
+          {
+            "version": "2.0.5",
+            "isExperimental": false,
+            "minSdk": null,
+            "description": null
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "packageName": "com.yablio.sendfilestotv",
+        "name": "Send Files To TV",
+        "description": null,
+        "apkFileType": "APKS",
+        "appIconColor": "#1565C0",
+        "signatures": null,
+        "targets": [
+          {
+            "version": "1.4.22",
+            "isExperimental": false,
+            "minSdk": null,
+            "description": null
+          }
+        ]
+      }
+    ],
+    [
+      {
         "packageName": "intelligems.torrdroid",
         "name": "TorrDroid",
         "description": null,
@@ -20140,15 +20215,33 @@
     ],
     [
       {
+        "packageName": "com.apple.trackerdetect",
+        "name": "Tracker Detect",
+        "description": null,
+        "apkFileType": "APKS",
+        "appIconColor": "#000000",
+        "signatures": null,
+        "targets": [
+          {
+            "version": "1.2",
+            "isExperimental": false,
+            "minSdk": null,
+            "description": null
+          }
+        ]
+      }
+    ],
+    [
+      {
         "packageName": "com.canva.editor",
         "name": "Canva",
         "description": null,
-        "apkFileType": null,
+        "apkFileType": "APKS",
         "appIconColor": "#8B3DFF",
         "signatures": null,
         "targets": [
           {
-            "version": "2.368.0",
+            "version": "2.369.0",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -20185,24 +20278,6 @@
         "targets": [
           {
             "version": "6.0",
-            "isExperimental": false,
-            "minSdk": null,
-            "description": null
-          }
-        ]
-      }
-    ],
-    [
-      {
-        "packageName": "com.thecarousell.Carousell",
-        "name": "Carousell",
-        "description": null,
-        "apkFileType": null,
-        "appIconColor": "#E7392C",
-        "signatures": null,
-        "targets": [
-          {
-            "version": "2.461.8",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -20274,7 +20349,7 @@
         "signatures": null,
         "targets": [
           {
-            "version": "24",
+            "version": "24.1",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -20356,6 +20431,24 @@
     ],
     [
       {
+        "packageName": "jp.co.shueisha.mangaplus",
+        "name": "MANGA Plus by SHUEISHA",
+        "description": null,
+        "apkFileType": "APKS",
+        "appIconColor": "#E53935",
+        "signatures": null,
+        "targets": [
+          {
+            "version": "2.6.0",
+            "isExperimental": false,
+            "minSdk": null,
+            "description": null
+          }
+        ]
+      }
+    ],
+    [
+      {
         "packageName": "com.oasisfeng.greenify",
         "name": "Greenify",
         "description": null,
@@ -20400,7 +20493,7 @@
         "signatures": null,
         "targets": [
           {
-            "version": "17.2.8",
+            "version": "17.2.9",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -20562,7 +20655,7 @@
         "signatures": null,
         "targets": [
           {
-            "version": "5.195.2.1792",
+            "version": "5.196.0.1794",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -20616,7 +20709,7 @@
         "signatures": null,
         "targets": [
           {
-            "version": "26.26.0",
+            "version": "26.27.0",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -20629,12 +20722,12 @@
         "packageName": "com.clue.android",
         "name": "Clue Period & Cycle Tracker",
         "description": null,
-        "apkFileType": "APKS",
+        "apkFileType": "XAPK",
         "appIconColor": "#E91E63",
         "signatures": null,
         "targets": [
           {
-            "version": "261.0",
+            "version": "262.0",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -20698,6 +20791,24 @@
     ],
     [
       {
+        "packageName": "com.digibites.accubattery",
+        "name": "AccuBattery",
+        "description": null,
+        "apkFileType": null,
+        "appIconColor": "#00BCD4",
+        "signatures": null,
+        "targets": [
+          {
+            "version": "2.1.8",
+            "isExperimental": false,
+            "minSdk": null,
+            "description": null
+          }
+        ]
+      }
+    ],
+    [
+      {
         "packageName": "com.ace.ex.file.manager",
         "name": "Ace Ex File Manager",
         "description": null,
@@ -20719,12 +20830,12 @@
         "packageName": "com.onesports.score",
         "name": "AiScore",
         "description": null,
-        "apkFileType": "APKS",
+        "apkFileType": "XAPK",
         "appIconColor": "#2563EB",
         "signatures": null,
         "targets": [
           {
-            "version": "4.2.6",
+            "version": "4.2.7",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -20752,6 +20863,42 @@
     ],
     [
       {
+        "packageName": "com.gombosdev.ampere",
+        "name": "Ampere",
+        "description": null,
+        "apkFileType": "APK",
+        "appIconColor": "#FF9800",
+        "signatures": null,
+        "targets": [
+          {
+            "version": "v4.37.0",
+            "isExperimental": false,
+            "minSdk": null,
+            "description": null
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "packageName": "pro.vitalii.andropods",
+        "name": "AndroPods",
+        "description": null,
+        "apkFileType": "APKS",
+        "appIconColor": "#1DA1F2",
+        "signatures": null,
+        "targets": [
+          {
+            "version": "1.5.28",
+            "isExperimental": false,
+            "minSdk": null,
+            "description": null
+          }
+        ]
+      }
+    ],
+    [
+      {
         "packageName": "com.jndapp.anime.depth.live.wallpaper",
         "name": "Anime Depth Wallpapers",
         "description": null,
@@ -20770,15 +20917,69 @@
     ],
     [
       {
+        "packageName": "com.paget96.batteryguru",
+        "name": "Battery Guru",
+        "description": null,
+        "apkFileType": "APKS",
+        "appIconColor": "#1B7080",
+        "signatures": null,
+        "targets": [
+          {
+            "version": "2.5.0.5",
+            "isExperimental": false,
+            "minSdk": null,
+            "description": null
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "packageName": "com.sumyapplications.bluetooth.earphone",
+        "name": "BatteryPods",
+        "description": null,
+        "apkFileType": "XAPK",
+        "appIconColor": "#4CAF50",
+        "signatures": null,
+        "targets": [
+          {
+            "version": "7.20",
+            "isExperimental": false,
+            "minSdk": null,
+            "description": null
+          }
+        ]
+      }
+    ],
+    [
+      {
         "packageName": "apps.automan.blurwallpaper",
         "name": "BlurWall",
         "description": null,
-        "apkFileType": null,
+        "apkFileType": "XAPK",
         "appIconColor": "#42A5F5",
         "signatures": null,
         "targets": [
           {
-            "version": "2.9.2",
+            "version": "2.9.4",
+            "isExperimental": false,
+            "minSdk": null,
+            "description": null
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "packageName": "com.calimoto.calimoto",
+        "name": "calimoto",
+        "description": null,
+        "apkFileType": "APK",
+        "appIconColor": "#FF5722",
+        "signatures": null,
+        "targets": [
+          {
+            "version": "2026.07.3",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -20806,6 +21007,42 @@
     ],
     [
       {
+        "packageName": "com.calm.android",
+        "name": "Calm: Sleep & Meditation",
+        "description": null,
+        "apkFileType": "XAPK",
+        "appIconColor": "#4A90D9",
+        "signatures": null,
+        "targets": [
+          {
+            "version": "6.100.1",
+            "isExperimental": false,
+            "minSdk": null,
+            "description": null
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "packageName": "com.funnmedia.calory",
+        "name": "Calory",
+        "description": null,
+        "apkFileType": "APKS",
+        "appIconColor": "#FF6B35",
+        "signatures": null,
+        "targets": [
+          {
+            "version": "3.6.2",
+            "isExperimental": false,
+            "minSdk": null,
+            "description": null
+          }
+        ]
+      }
+    ],
+    [
+      {
         "packageName": "com.joincarbon.nutrition",
         "name": "Carbon",
         "description": null,
@@ -20814,7 +21051,25 @@
         "signatures": null,
         "targets": [
           {
-            "version": "2.76.5784",
+            "version": "2.76.5891",
+            "isExperimental": false,
+            "minSdk": null,
+            "description": null
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "packageName": "dev.km.android.chargemeter",
+        "name": "Charge Meter",
+        "description": null,
+        "apkFileType": "APKS",
+        "appIconColor": "#4CAF50",
+        "signatures": null,
+        "targets": [
+          {
+            "version": "2.9.7",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -20881,12 +21136,12 @@
         "packageName": "com.eterno",
         "name": "Dailyhunt",
         "description": null,
-        "apkFileType": "APKS",
+        "apkFileType": "XAPK",
         "appIconColor": "#E53935",
         "signatures": null,
         "targets": [
           {
-            "version": "33.5.4",
+            "version": "34.0.4",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -20914,6 +21169,24 @@
     ],
     [
       {
+        "packageName": "com.mahersafadi.electron",
+        "name": "Electron",
+        "description": null,
+        "apkFileType": "APKS",
+        "appIconColor": "#29B6F6",
+        "signatures": null,
+        "targets": [
+          {
+            "version": "3.0.3",
+            "isExperimental": false,
+            "minSdk": null,
+            "description": null
+          }
+        ]
+      }
+    ],
+    [
+      {
         "packageName": "com.fitbod.fitbod",
         "name": "Fitbod",
         "description": null,
@@ -20922,7 +21195,7 @@
         "signatures": null,
         "targets": [
           {
-            "version": "8.25.0-2",
+            "version": "8.26.0-0",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -21030,7 +21303,7 @@
         "signatures": null,
         "targets": [
           {
-            "version": "2026.28.2",
+            "version": "2026.29.0",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -21048,7 +21321,7 @@
         "signatures": null,
         "targets": [
           {
-            "version": "2026.9.6",
+            "version": "2026.10.5",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -21061,12 +21334,12 @@
         "packageName": "com.lawfully.lawfully_ai_tracker",
         "name": "Lawfully",
         "description": null,
-        "apkFileType": null,
+        "apkFileType": "XAPK",
         "appIconColor": "#0D47A1",
         "signatures": null,
         "targets": [
           {
-            "version": "6.7.1",
+            "version": "6.7.2",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -21085,6 +21358,42 @@
         "targets": [
           {
             "version": "26.7.1",
+            "isExperimental": false,
+            "minSdk": null,
+            "description": null
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "packageName": "com.pryshedko.mtisland",
+        "name": "Material Capsule",
+        "description": null,
+        "apkFileType": "APKS",
+        "appIconColor": "#6750A4",
+        "signatures": null,
+        "targets": [
+          {
+            "version": "15.5",
+            "isExperimental": false,
+            "minSdk": null,
+            "description": null
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "packageName": "com.pryshedko.materialpods",
+        "name": "MaterialPods",
+        "description": null,
+        "apkFileType": "APKS",
+        "appIconColor": "#1B72E8",
+        "signatures": null,
+        "targets": [
+          {
+            "version": "6.70",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -21121,6 +21430,24 @@
         "targets": [
           {
             "version": "0.9.4",
+            "isExperimental": false,
+            "minSdk": null,
+            "description": null
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "packageName": "com.mobisystems.office",
+        "name": "MobiOffice- Word, Excel, Slide",
+        "description": null,
+        "apkFileType": "APKS",
+        "appIconColor": "#1565C0",
+        "signatures": null,
+        "targets": [
+          {
+            "version": "16.4.60095",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -21202,6 +21529,42 @@
     ],
     [
       {
+        "packageName": "ai.metaverselabs.obdandroid",
+        "name": "OBD Android",
+        "description": null,
+        "apkFileType": "APKS",
+        "appIconColor": "#E53935",
+        "signatures": null,
+        "targets": [
+          {
+            "version": "4.9",
+            "isExperimental": false,
+            "minSdk": null,
+            "description": null
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "packageName": "com.brightstripe.parcels",
+        "name": "Parcels — Package Tracker",
+        "description": null,
+        "apkFileType": "APK",
+        "appIconColor": "#FF6B35",
+        "signatures": null,
+        "targets": [
+          {
+            "version": "3.0.11",
+            "isExperimental": false,
+            "minSdk": null,
+            "description": null
+          }
+        ]
+      }
+    ],
+    [
+      {
         "packageName": "com.monect.portable",
         "name": "PC Remote - Desktop & Phone",
         "description": null,
@@ -21259,12 +21622,12 @@
         "packageName": "cn.danatech.xingseus",
         "name": "PictureThis - Plant Identifier",
         "description": null,
-        "apkFileType": "XAPK",
+        "apkFileType": "APKM",
         "appIconColor": "#4CAF50",
         "signatures": null,
         "targets": [
           {
-            "version": "5.30.0",
+            "version": "5.31.0",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -21275,6 +21638,166 @@
     [
       {
         "packageName": "com.pocketprep.android.itcybersecurity",
+        "name": "Pocket Prep IT Cybersecurity",
+        "description": null,
+        "apkFileType": "APKS",
+        "appIconColor": "#1D5CFF",
+        "signatures": null,
+        "targets": [
+          {
+            "version": "3.28.0",
+            "isExperimental": false,
+            "minSdk": null,
+            "description": null
+          }
+        ]
+      },
+      {
+        "packageName": "com.pocketprep.android.professional",
+        "name": "Pocket Prep Professional",
+        "description": null,
+        "apkFileType": "APKS",
+        "appIconColor": "#1D5CFF",
+        "signatures": null,
+        "targets": [
+          {
+            "version": "3.28.0",
+            "isExperimental": false,
+            "minSdk": null,
+            "description": null
+          }
+        ]
+      },
+      {
+        "packageName": "com.pocketprep.android.behavioralhealth",
+        "name": "Pocket Prep Behavioral Health",
+        "description": null,
+        "apkFileType": "APKS",
+        "appIconColor": "#1D5CFF",
+        "signatures": null,
+        "targets": [
+          {
+            "version": "3.28.0",
+            "isExperimental": false,
+            "minSdk": null,
+            "description": null
+          }
+        ]
+      },
+      {
+        "packageName": "com.pocketprep.android.medical",
+        "name": "Pocket Prep Medical",
+        "description": null,
+        "apkFileType": "APKS",
+        "appIconColor": "#1D5CFF",
+        "signatures": null,
+        "targets": [
+          {
+            "version": "3.28.0",
+            "isExperimental": false,
+            "minSdk": null,
+            "description": null
+          }
+        ]
+      },
+      {
+        "packageName": "com.pocketprep.android.nursingschool",
+        "name": "Pocket Prep Nursing School",
+        "description": null,
+        "apkFileType": "APKS",
+        "appIconColor": "#1D5CFF",
+        "signatures": null,
+        "targets": [
+          {
+            "version": "3.28.0",
+            "isExperimental": false,
+            "minSdk": null,
+            "description": null
+          }
+        ]
+      },
+      {
+        "packageName": "com.pocketprep.android.nursing",
+        "name": "Pocket Prep Nursing",
+        "description": null,
+        "apkFileType": "APKS",
+        "appIconColor": "#1D5CFF",
+        "signatures": null,
+        "targets": [
+          {
+            "version": "3.28.0",
+            "isExperimental": false,
+            "minSdk": null,
+            "description": null
+          }
+        ]
+      },
+      {
+        "packageName": "com.pocketprep.android.ems",
+        "name": "Pocket Prep EMS",
+        "description": null,
+        "apkFileType": "APKS",
+        "appIconColor": "#1D5CFF",
+        "signatures": null,
+        "targets": [
+          {
+            "version": "3.28.0",
+            "isExperimental": false,
+            "minSdk": null,
+            "description": null
+          }
+        ]
+      },
+      {
+        "packageName": "com.pocketprep.android.automotive",
+        "name": "Pocket Prep Skilled Trades",
+        "description": null,
+        "apkFileType": "APKS",
+        "appIconColor": "#1D5CFF",
+        "signatures": null,
+        "targets": [
+          {
+            "version": "3.28.0",
+            "isExperimental": false,
+            "minSdk": null,
+            "description": null
+          }
+        ]
+      },
+      {
+        "packageName": "com.pocketprep.android.fitness",
+        "name": "Pocket Prep Fitness",
+        "description": null,
+        "apkFileType": "APKS",
+        "appIconColor": "#1D5CFF",
+        "signatures": null,
+        "targets": [
+          {
+            "version": "3.28.0",
+            "isExperimental": false,
+            "minSdk": null,
+            "description": null
+          }
+        ]
+      },
+      {
+        "packageName": "com.pocketprep.android.essentials",
+        "name": "Pocket Prep Essentials",
+        "description": null,
+        "apkFileType": "APKS",
+        "appIconColor": "#1D5CFF",
+        "signatures": null,
+        "targets": [
+          {
+            "version": "3.28.0",
+            "isExperimental": false,
+            "minSdk": null,
+            "description": null
+          }
+        ]
+      },
+      {
+        "packageName": "com.pocketprep.android.pocketprep",
         "name": "Pocket Prep",
         "description": null,
         "apkFileType": "APKS",
@@ -21282,7 +21805,25 @@
         "signatures": null,
         "targets": [
           {
-            "version": "3.27.2",
+            "version": "3.28.0",
+            "isExperimental": false,
+            "minSdk": null,
+            "description": null
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "packageName": "net.podslink",
+        "name": "PodsLink",
+        "description": null,
+        "apkFileType": "APKS",
+        "appIconColor": "#1A73E8",
+        "signatures": null,
+        "targets": [
+          {
+            "version": "1.3.5",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -21313,12 +21854,12 @@
         "packageName": "com.recipebro.cookingbuddy",
         "name": "RecipeBro",
         "description": null,
-        "apkFileType": null,
+        "apkFileType": "APKS",
         "appIconColor": "#E65100",
         "signatures": null,
         "targets": [
           {
-            "version": "1.3.74",
+            "version": "1.4.22",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -21382,15 +21923,15 @@
     ],
     [
       {
-        "packageName": "com.mtv.sai",
-        "name": "SAI",
+        "packageName": "com.appostrophe.scrl",
+        "name": "SCRL",
         "description": null,
-        "apkFileType": null,
-        "appIconColor": "#1565C0",
+        "apkFileType": "XAPK",
+        "appIconColor": "#EFC67A",
         "signatures": null,
         "targets": [
           {
-            "version": "2.2.8",
+            "version": "1.23.1",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -21400,15 +21941,15 @@
     ],
     [
       {
-        "packageName": "com.appostrophe.scrl",
-        "name": "SCRL",
+        "packageName": "com.consumedbycode.slopes",
+        "name": "Slopes",
         "description": null,
         "apkFileType": "APKS",
-        "appIconColor": "#EFC67A",
+        "appIconColor": "#1565C0",
         "signatures": null,
         "targets": [
           {
-            "version": "1.22",
+            "version": "2026.14",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -21526,15 +22067,51 @@
     ],
     [
       {
+        "packageName": "com.makeevapps.tagtracker",
+        "name": "Tag Tracker",
+        "description": null,
+        "apkFileType": "APKS",
+        "appIconColor": "#2196F3",
+        "signatures": null,
+        "targets": [
+          {
+            "version": "1.3.2",
+            "isExperimental": false,
+            "minSdk": null,
+            "description": null
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "packageName": "com.theathletic",
+        "name": "The Athletic",
+        "description": null,
+        "apkFileType": "APKS",
+        "appIconColor": "#1A1A1A",
+        "signatures": null,
+        "targets": [
+          {
+            "version": "13.141.0",
+            "isExperimental": false,
+            "minSdk": null,
+            "description": null
+          }
+        ]
+      }
+    ],
+    [
+      {
         "packageName": "com.weather.Weather",
         "name": "The Weather Channel",
         "description": null,
-        "apkFileType": null,
+        "apkFileType": "XAPK",
         "appIconColor": "#1B6AC9",
         "signatures": null,
         "targets": [
           {
-            "version": "16.13.0",
+            "version": "16.14.1",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -21552,7 +22129,7 @@
         "signatures": null,
         "targets": [
           {
-            "version": "2.5.0-5",
+            "version": "2.5.0-6",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -21588,7 +22165,7 @@
         "signatures": null,
         "targets": [
           {
-            "version": "1.16.6",
+            "version": "1.17.1",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -21606,7 +22183,7 @@
         "signatures": null,
         "targets": [
           {
-            "version": "1.20.78.1.1002330",
+            "version": "1.20.79.0.1002355",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -21619,12 +22196,12 @@
         "packageName": "com.wavve.boating.gps",
         "name": "Wavve Boating",
         "description": null,
-        "apkFileType": "XAPK",
+        "apkFileType": "APKM",
         "appIconColor": "#0077CC",
         "signatures": null,
         "targets": [
           {
-            "version": "5.7.3",
+            "version": "5.7.4",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -21706,6 +22283,24 @@
     ],
     [
       {
+        "packageName": "eu.darken.bluemusic",
+        "name": "Bluetooth Volume Manager",
+        "description": null,
+        "apkFileType": "APK",
+        "appIconColor": "#2196F3",
+        "signatures": null,
+        "targets": [
+          {
+            "version": "3.4.3",
+            "isExperimental": false,
+            "minSdk": null,
+            "description": null
+          }
+        ]
+      }
+    ],
+    [
+      {
         "packageName": "club.boxbox.android",
         "name": "Box Box",
         "description": null,
@@ -21715,6 +22310,24 @@
         "targets": [
           {
             "version": "5.4.13",
+            "isExperimental": false,
+            "minSdk": null,
+            "description": null
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "packageName": "eu.darken.capod",
+        "name": "CAPod",
+        "description": null,
+        "apkFileType": "APKS",
+        "appIconColor": "#F5A623",
+        "signatures": null,
+        "targets": [
+          {
+            "version": "5.2.1",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -21835,12 +22448,12 @@
         "packageName": "mega.privacy.android.app",
         "name": "MEGA",
         "description": null,
-        "apkFileType": "APKS",
+        "apkFileType": "APK",
         "appIconColor": "#D9272E",
         "signatures": null,
         "targets": [
           {
-            "version": "16.9(261881039)(3c7e30562a)",
+            "version": "16.10(261970902)(8daeddaf4d)",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -21922,15 +22535,51 @@
     ],
     [
       {
-        "packageName": "com.a0soft.gphone.acc.free",
-        "name": "1Tap Cleaner",
+        "packageName": "com.paget96.netspeedindicator",
+        "name": "Network Guru - Net Analyzer",
         "description": null,
-        "apkFileType": null,
+        "apkFileType": "APKS",
         "appIconColor": "#1565C0",
         "signatures": null,
         "targets": [
           {
-            "version": "5.18",
+            "version": "1.9-beta5",
+            "isExperimental": false,
+            "minSdk": null,
+            "description": null
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "packageName": "eu.darken.octi",
+        "name": "Octi",
+        "description": null,
+        "apkFileType": "APKS",
+        "appIconColor": "#FF6F00",
+        "signatures": null,
+        "targets": [
+          {
+            "version": "1.0.4",
+            "isExperimental": false,
+            "minSdk": null,
+            "description": null
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "packageName": "com.a0soft.gphone.acc.free",
+        "name": "1Tap Cleaner",
+        "description": null,
+        "apkFileType": "APKS",
+        "appIconColor": "#1565C0",
+        "signatures": null,
+        "targets": [
+          {
+            "version": "5.21",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -21994,6 +22643,42 @@
     ],
     [
       {
+        "packageName": "com.mtv.sai",
+        "name": "SAI",
+        "description": null,
+        "apkFileType": "APKS",
+        "appIconColor": "#1565C0",
+        "signatures": null,
+        "targets": [
+          {
+            "version": "2.3.1",
+            "isExperimental": false,
+            "minSdk": null,
+            "description": null
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "packageName": "eu.darken.sdmse",
+        "name": "SD Maid SE",
+        "description": null,
+        "apkFileType": "APKS",
+        "appIconColor": "#4CAF50",
+        "signatures": null,
+        "targets": [
+          {
+            "version": "1.7.5-rc0",
+            "isExperimental": false,
+            "minSdk": null,
+            "description": null
+          }
+        ]
+      }
+    ],
+    [
+      {
         "packageName": "com.shexa.permissionmanager",
         "name": "App Permission Manager",
         "description": null,
@@ -22030,6 +22715,24 @@
     ],
     [
       {
+        "packageName": "torrent.search.revolutionv2",
+        "name": "Torrent Search Revolution V2",
+        "description": null,
+        "apkFileType": "APKS",
+        "appIconColor": "#1565C0",
+        "signatures": null,
+        "targets": [
+          {
+            "version": "2.3.2",
+            "isExperimental": false,
+            "minSdk": null,
+            "description": null
+          }
+        ]
+      }
+    ],
+    [
+      {
         "packageName": "eu.toneiv.ubktouch",
         "name": "UbikiTouch",
         "description": null,
@@ -22056,7 +22759,7 @@
         "signatures": null,
         "targets": [
           {
-            "version": "24.2.1",
+            "version": "24.2.3",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -22159,12 +22862,12 @@
         "packageName": "com.guochao.faceshow",
         "name": "BuzzCast",
         "description": null,
-        "apkFileType": "APKS",
+        "apkFileType": "XAPK",
         "appIconColor": "#7C3AED",
         "signatures": null,
         "targets": [
           {
-            "version": "3.2.80",
+            "version": "3.2.82",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -22231,12 +22934,12 @@
         "packageName": "com.thegrizzlylabs.geniusscan.free",
         "name": "Genius Scan",
         "description": null,
-        "apkFileType": null,
+        "apkFileType": "APKS",
         "appIconColor": "#1565C0",
         "signatures": null,
         "targets": [
           {
-            "version": "7.40.0",
+            "version": "7.41.0",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -22254,7 +22957,7 @@
         "signatures": null,
         "targets": [
           {
-            "version": "10.3.9",
+            "version": "10.4.3",
             "isExperimental": false,
             "minSdk": null,
             "description": null
@@ -22407,7 +23110,7 @@
     [
       {
         "packageName": "com.weawow",
-        "name": "Weawow: Weather & Widget",
+        "name": "Weawow",
         "description": null,
         "apkFileType": "APK",
         "appIconColor": "#2196F3",
@@ -22504,529 +23207,7 @@
         "signatures": null,
         "targets": [
           {
-            "version": "6.34.0",
-            "isExperimental": false,
-            "minSdk": null,
-            "description": null
-          }
-        ]
-      }
-    ],
-    [
-      {
-        "packageName": "com.digibites.accubattery",
-        "name": "AccuBattery",
-        "description": null,
-        "apkFileType": null,
-        "appIconColor": "#00BCD4",
-        "signatures": null,
-        "targets": [
-          {
-            "version": "2.1.8",
-            "isExperimental": false,
-            "minSdk": null,
-            "description": null
-          }
-        ]
-      }
-    ],
-    [
-      {
-        "packageName": "com.calimoto.calimoto",
-        "name": "calimoto",
-        "description": null,
-        "apkFileType": "APK",
-        "appIconColor": "#FF5722",
-        "signatures": null,
-        "targets": [
-          {
-            "version": "2026.07.2",
-            "isExperimental": false,
-            "minSdk": null,
-            "description": null
-          }
-        ]
-      }
-    ],
-    [
-      {
-        "packageName": "com.calm.android",
-        "name": "Calm: Sleep & Meditation",
-        "description": null,
-        "apkFileType": "APKS",
-        "appIconColor": "#4A90D9",
-        "signatures": null,
-        "targets": [
-          {
-            "version": "6.99.1",
-            "isExperimental": false,
-            "minSdk": null,
-            "description": null
-          }
-        ]
-      }
-    ],
-    [
-      {
-        "packageName": "com.funnmedia.calory",
-        "name": "Calory - Calorie Counter & Diet",
-        "description": null,
-        "apkFileType": "APKS",
-        "appIconColor": "#FF6B35",
-        "signatures": null,
-        "targets": [
-          {
-            "version": "3.6.2",
-            "isExperimental": false,
-            "minSdk": null,
-            "description": null
-          }
-        ]
-      }
-    ],
-    [
-      {
-        "packageName": "jp.co.shueisha.mangaplus",
-        "name": "MANGA Plus by SHUEISHA",
-        "description": null,
-        "apkFileType": "APKS",
-        "appIconColor": "#E53935",
-        "signatures": null,
-        "targets": [
-          {
-            "version": "2.5.0",
-            "isExperimental": false,
-            "minSdk": null,
-            "description": null
-          }
-        ]
-      }
-    ],
-    [
-      {
-        "packageName": "com.pryshedko.mtisland",
-        "name": "Material Capsule",
-        "description": null,
-        "apkFileType": "APKS",
-        "appIconColor": "#6750A4",
-        "signatures": null,
-        "targets": [
-          {
-            "version": "15.5",
-            "isExperimental": false,
-            "minSdk": null,
-            "description": null
-          }
-        ]
-      }
-    ],
-    [
-      {
-        "packageName": "ai.metaverselabs.obdandroid",
-        "name": "OBD Android",
-        "description": null,
-        "apkFileType": "APKS",
-        "appIconColor": "#E53935",
-        "signatures": null,
-        "targets": [
-          {
-            "version": "4.9",
-            "isExperimental": false,
-            "minSdk": null,
-            "description": null
-          }
-        ]
-      }
-    ],
-    [
-      {
-        "packageName": "net.podslink",
-        "name": "PodsLink",
-        "description": null,
-        "apkFileType": "APKS",
-        "appIconColor": "#1A73E8",
-        "signatures": null,
-        "targets": [
-          {
-            "version": "1.3.5",
-            "isExperimental": false,
-            "minSdk": null,
-            "description": null
-          }
-        ]
-      }
-    ],
-    [
-      {
-        "packageName": "com.opera.app.news",
-        "name": "Opera News - Breaking & Local",
-        "description": null,
-        "apkFileType": "APKS",
-        "appIconColor": "#FF1B2A",
-        "signatures": null,
-        "targets": [
-          {
-            "version": "14.1.2254.83278",
-            "isExperimental": false,
-            "minSdk": null,
-            "description": null
-          }
-        ]
-      }
-    ],
-    [
-      {
-        "packageName": "com.yablio.sendfilestotv",
-        "name": "Send Files To TV",
-        "description": null,
-        "apkFileType": "APKS",
-        "appIconColor": "#1565C0",
-        "signatures": null,
-        "targets": [
-          {
-            "version": "1.4.22",
-            "isExperimental": false,
-            "minSdk": null,
-            "description": null
-          }
-        ]
-      }
-    ],
-    [
-      {
-        "packageName": "com.apple.trackerdetect",
-        "name": "Tracker Detect",
-        "description": null,
-        "apkFileType": "APKS",
-        "appIconColor": "#000000",
-        "signatures": null,
-        "targets": [
-          {
-            "version": "1.2",
-            "isExperimental": false,
-            "minSdk": null,
-            "description": null
-          }
-        ]
-      }
-    ],
-    [
-      {
-        "packageName": "com.consumedbycode.slopes",
-        "name": "Slopes",
-        "description": null,
-        "apkFileType": "APKS",
-        "appIconColor": "#1565C0",
-        "signatures": null,
-        "targets": [
-          {
-            "version": "2026.14",
-            "isExperimental": false,
-            "minSdk": null,
-            "description": null
-          }
-        ]
-      }
-    ],
-    [
-      {
-        "packageName": "com.theathletic",
-        "name": "The Athletic",
-        "description": null,
-        "apkFileType": "APKS",
-        "appIconColor": "#1A1A1A",
-        "signatures": null,
-        "targets": [
-          {
-            "version": "13.141.0",
-            "isExperimental": false,
-            "minSdk": null,
-            "description": null
-          }
-        ]
-      }
-    ],
-    [
-      {
-        "packageName": "com.tradingview.tradingviewapp",
-        "name": "TradingView",
-        "description": null,
-        "apkFileType": "APKS",
-        "appIconColor": "#2962FF",
-        "signatures": null,
-        "targets": [
-          {
-            "version": "1.20.78.1.1002330",
-            "isExperimental": false,
-            "minSdk": null,
-            "description": null
-          }
-        ]
-      }
-    ],
-    [
-      {
-        "packageName": "com.gombosdev.ampere",
-        "name": "Ampere",
-        "description": null,
-        "apkFileType": null,
-        "appIconColor": "#FF9800",
-        "signatures": null,
-        "targets": [
-          {
-            "version": "v4.36.1",
-            "isExperimental": false,
-            "minSdk": null,
-            "description": null
-          }
-        ]
-      }
-    ],
-    [
-      {
-        "packageName": "pro.vitalii.andropods",
-        "name": "AndroPods",
-        "description": null,
-        "apkFileType": "APKS",
-        "appIconColor": "#1DA1F2",
-        "signatures": null,
-        "targets": [
-          {
-            "version": "1.5.28",
-            "isExperimental": false,
-            "minSdk": null,
-            "description": null
-          }
-        ]
-      }
-    ],
-    [
-      {
-        "packageName": "com.sumyapplications.bluetooth.earphone",
-        "name": "BatteryPods",
-        "description": null,
-        "apkFileType": "APKS",
-        "appIconColor": "#4CAF50",
-        "signatures": null,
-        "targets": [
-          {
-            "version": "7.10",
-            "isExperimental": false,
-            "minSdk": null,
-            "description": null
-          }
-        ]
-      }
-    ],
-    [
-      {
-        "packageName": "dev.km.android.chargemeter",
-        "name": "Charge Meter",
-        "description": null,
-        "apkFileType": "APKS",
-        "appIconColor": "#4CAF50",
-        "signatures": null,
-        "targets": [
-          {
-            "version": "2.9.7",
-            "isExperimental": false,
-            "minSdk": null,
-            "description": null
-          }
-        ]
-      }
-    ],
-    [
-      {
-        "packageName": "com.mahersafadi.electron",
-        "name": "Electron",
-        "description": null,
-        "apkFileType": "APKS",
-        "appIconColor": "#29B6F6",
-        "signatures": null,
-        "targets": [
-          {
-            "version": "3.0.3",
-            "isExperimental": false,
-            "minSdk": null,
-            "description": null
-          }
-        ]
-      }
-    ],
-    [
-      {
-        "packageName": "com.pryshedko.materialpods",
-        "name": "MaterialPods",
-        "description": null,
-        "apkFileType": "APKS",
-        "appIconColor": "#1B72E8",
-        "signatures": null,
-        "targets": [
-          {
-            "version": "6.70",
-            "isExperimental": false,
-            "minSdk": null,
-            "description": null
-          }
-        ]
-      }
-    ],
-    [
-      {
-        "packageName": "com.mobisystems.office",
-        "name": "MobiOffice- Word, Excel, Slide",
-        "description": null,
-        "apkFileType": "APKS",
-        "appIconColor": "#1565C0",
-        "signatures": null,
-        "targets": [
-          {
-            "version": "16.4.60095",
-            "isExperimental": false,
-            "minSdk": null,
-            "description": null
-          }
-        ]
-      }
-    ],
-    [
-      {
-        "packageName": "com.brightstripe.parcels",
-        "name": "Parcels — Package Tracker",
-        "description": null,
-        "apkFileType": "APK",
-        "appIconColor": "#FF6B35",
-        "signatures": null,
-        "targets": [
-          {
-            "version": "3.0.10",
-            "isExperimental": false,
-            "minSdk": null,
-            "description": null
-          }
-        ]
-      }
-    ],
-    [
-      {
-        "packageName": "com.makeevapps.tagtracker",
-        "name": "Tag Tracker: Find Lost Items",
-        "description": null,
-        "apkFileType": "APKS",
-        "appIconColor": "#2196F3",
-        "signatures": null,
-        "targets": [
-          {
-            "version": "1.3.2",
-            "isExperimental": false,
-            "minSdk": null,
-            "description": null
-          }
-        ]
-      }
-    ],
-    [
-      {
-        "packageName": "eu.darken.bluemusic",
-        "name": "Bluetooth Volume Manager",
-        "description": null,
-        "apkFileType": "APK",
-        "appIconColor": "#2196F3",
-        "signatures": null,
-        "targets": [
-          {
-            "version": "3.4.3",
-            "isExperimental": false,
-            "minSdk": null,
-            "description": null
-          }
-        ]
-      }
-    ],
-    [
-      {
-        "packageName": "eu.darken.capod",
-        "name": "CAPod",
-        "description": null,
-        "apkFileType": "APKS",
-        "appIconColor": "#F5A623",
-        "signatures": null,
-        "targets": [
-          {
-            "version": "5.2.1",
-            "isExperimental": false,
-            "minSdk": null,
-            "description": null
-          }
-        ]
-      }
-    ],
-    [
-      {
-        "packageName": "com.paget96.netspeedindicator",
-        "name": "Network Guru - Net Analyzer",
-        "description": null,
-        "apkFileType": "APKS",
-        "appIconColor": "#1565C0",
-        "signatures": null,
-        "targets": [
-          {
-            "version": "1.9-beta5",
-            "isExperimental": false,
-            "minSdk": null,
-            "description": null
-          }
-        ]
-      }
-    ],
-    [
-      {
-        "packageName": "eu.darken.octi",
-        "name": "Octi",
-        "description": null,
-        "apkFileType": "APKS",
-        "appIconColor": "#FF6F00",
-        "signatures": null,
-        "targets": [
-          {
-            "version": "1.0.4",
-            "isExperimental": false,
-            "minSdk": null,
-            "description": null
-          }
-        ]
-      }
-    ],
-    [
-      {
-        "packageName": "torrent.search.revolutionv2",
-        "name": "Torrent Search Revolution V2",
-        "description": null,
-        "apkFileType": "APKS",
-        "appIconColor": "#1565C0",
-        "signatures": null,
-        "targets": [
-          {
-            "version": "2.3.2",
-            "isExperimental": false,
-            "minSdk": null,
-            "description": null
-          }
-        ]
-      }
-    ],
-    [
-      {
-        "packageName": "com.bluematter.qbitconnect",
-        "name": "qBitConnect",
-        "description": null,
-        "apkFileType": "APKS",
-        "appIconColor": "#4FC3F7",
-        "signatures": null,
-        "targets": [
-          {
-            "version": "2.0.1",
+            "version": "6.35.0",
             "isExperimental": false,
             "minSdk": null,
             "description": null
