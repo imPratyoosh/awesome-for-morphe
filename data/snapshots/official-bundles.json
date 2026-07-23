@@ -1000,15 +1000,15 @@
         "com.instagram.android": 1784764800000,
         "com.twitter.android": 1784764800000
       },
-      "stars": 4403,
+      "stars": 4404,
       "updatedAt": 1782518400000,
       "firstSeen": 1773154796000,
       "appFirstSeen": {
         "com.twitter.android": 1773154796000,
         "com.instagram.android": 1773154796000
       },
-      "starsGained7d": 31,
-      "starsGained40d": 31
+      "starsGained7d": 32,
+      "starsGained40d": 32
     },
     {
       "source": "github",
@@ -1725,7 +1725,7 @@
         "ginlemon.flowerfree": 1770076800000,
         "com.simyasolutions.ling.universal": 1784678400000
       },
-      "stars": 853,
+      "stars": 855,
       "updatedAt": 1784073600000,
       "firstSeen": 1768941201000,
       "appFirstSeen": {
@@ -1783,8 +1783,8 @@
         "cn.ommiao.iconpacker": 1768941201000,
         "com.simyasolutions.ling.universal": 1784769617321
       },
-      "starsGained7d": 11,
-      "starsGained40d": 11
+      "starsGained7d": 13,
+      "starsGained40d": 13
     },
     {
       "source": "github",
@@ -4630,7 +4630,7 @@
         "com.nytimes.crossword"
       ],
       "appUpdates": {},
-      "stars": 214,
+      "stars": 217,
       "updatedAt": 1784764800000,
       "firstSeen": 1780395687718,
       "appFirstSeen": {
@@ -4823,8 +4823,8 @@
         "com.urbandroid.kinestop": 1783291168540,
         "com.nytimes.crossword": 1783875617302
       },
-      "starsGained7d": 22,
-      "starsGained40d": 22
+      "starsGained7d": 25,
+      "starsGained40d": 25
     },
     {
       "source": "gitlab",
@@ -5268,7 +5268,7 @@
         "in.startv.hotstar": 1780012800000,
         "com.ticktick.task": 1780012800000
       },
-      "stars": 56,
+      "stars": 57,
       "updatedAt": 1783382400000,
       "firstSeen": 1778457600000,
       "appFirstSeen": {
@@ -5295,8 +5295,8 @@
         "com.rk.taskmanager": 1783446492226,
         "com.frontrow.vlog": 1778457600000
       },
-      "starsGained7d": 0,
-      "starsGained40d": 0
+      "starsGained7d": 1,
+      "starsGained40d": 1
     },
     {
       "source": "github",
@@ -5592,7 +5592,7 @@
         "fr.chargeprice.app": 1775433600000,
         "fr.tramb.park4night": 1753315200000
       },
-      "stars": 291,
+      "stars": 292,
       "updatedAt": 1784160000000,
       "firstSeen": 1773147404000,
       "appFirstSeen": {
@@ -5602,8 +5602,8 @@
         "fr.tramb.park4night": 1773147404000,
         "cz.seznam.mapy": 1773147404000
       },
-      "starsGained7d": 2,
-      "starsGained40d": 2
+      "starsGained7d": 3,
+      "starsGained40d": 3
     },
     {
       "source": "github",
@@ -6880,7 +6880,7 @@
         "com.ninegag.android.app": 1781395200000,
         "com.imdb.mobile": 1783900800000
       },
-      "stars": 200,
+      "stars": 201,
       "updatedAt": 1781395200000,
       "firstSeen": 1771585164000,
       "appFirstSeen": {
@@ -6889,8 +6889,8 @@
         "com.ninegag.android.app": 1781427843830,
         "com.imdb.mobile": 1771585164000
       },
-      "starsGained7d": 8,
-      "starsGained40d": 8
+      "starsGained7d": 9,
+      "starsGained40d": 9
     },
     {
       "source": "github",
@@ -7920,7 +7920,7 @@
         "com.univision.prendetv": 1783814400000,
         "tv.pluto.android": 1783123200000
       },
-      "stars": 87,
+      "stars": 88,
       "updatedAt": 1784678400000,
       "firstSeen": 1779696344214,
       "appFirstSeen": {
@@ -7935,8 +7935,8 @@
         "com.fox.foxone": 1780293505455,
         "com.tubitv": 1780009881312
       },
-      "starsGained7d": 2,
-      "starsGained40d": 2
+      "starsGained7d": 3,
+      "starsGained40d": 3
     },
     {
       "source": "github",
@@ -8079,14 +8079,14 @@
       "appUpdates": {
         "com.zhiliaoapp.musically": 1781654400000
       },
-      "stars": 145,
+      "stars": 146,
       "updatedAt": 1781654400000,
       "firstSeen": 1780156086693,
       "appFirstSeen": {
         "com.zhiliaoapp.musically": 1780156086693
       },
-      "starsGained7d": 10,
-      "starsGained40d": 10
+      "starsGained7d": 11,
+      "starsGained40d": 11
     },
     {
       "source": "github",
@@ -12308,7 +12308,7 @@
         "ru.ozon.app.android": 1782000000000,
         "com.idamob.tinkoff.android": 1780185600000
       },
-      "stars": 24,
+      "stars": 25,
       "updatedAt": 1784764800000,
       "firstSeen": 1778236605000,
       "appFirstSeen": {
@@ -12317,8 +12317,8 @@
         "ru.ozon.app.android": 1778236605000,
         "com.wildberries.ru": 1778236605000
       },
-      "starsGained7d": 0,
-      "starsGained40d": 0
+      "starsGained7d": 1,
+      "starsGained40d": 1
     },
     {
       "source": "github",
@@ -12487,12 +12487,12 @@
       "patchCount": 4,
       "targetApps": [],
       "appUpdates": {},
-      "stars": 192,
+      "stars": 193,
       "updatedAt": 1784678400000,
       "firstSeen": 1783021319050,
       "appFirstSeen": {},
-      "starsGained7d": 7,
-      "starsGained40d": 7
+      "starsGained7d": 8,
+      "starsGained40d": 8
     },
     {
       "source": "github",
@@ -13617,14 +13617,14 @@
         "tv.trakt.trakt"
       ],
       "appUpdates": {},
-      "stars": 22,
+      "stars": 23,
       "updatedAt": null,
       "firstSeen": 1774254496000,
       "appFirstSeen": {
         "tv.trakt.trakt": 1774254496000
       },
-      "starsGained7d": 0,
-      "starsGained40d": 0
+      "starsGained7d": 1,
+      "starsGained40d": 1
     },
     {
       "source": "github",
@@ -13882,7 +13882,7 @@
         "cz.mroczis.netmonster"
       ],
       "appUpdates": {},
-      "stars": 6,
+      "stars": 8,
       "updatedAt": 1784419200000,
       "firstSeen": 1784064356850,
       "appFirstSeen": {
@@ -13893,8 +13893,8 @@
         "com.zong.customercare": 1784064356850,
         "cz.mroczis.netmonster": 1784064356850
       },
-      "starsGained7d": 0,
-      "starsGained40d": 0
+      "starsGained7d": 1,
+      "starsGained40d": 1
     },
     {
       "source": "github",
@@ -16695,8 +16695,8 @@
     },
     "com.pocketprep.android.essentials": {
       "name": "Pocket Prep Essentials",
-      "iconUrl": null,
-      "description": null,
+      "iconUrl": "https://play-lh.googleusercontent.com/9KWDGzAw7WxwePfeKUyNRRa2motXaumVXSpAUY9Lx_-yYl59CvX2muQR-dNBTY9GecD-IxRym-XU8EncCW7rmg",
+      "description": "Exam Practice Questions",
       "firstSeen": 1784801305543
     },
     "com.pocketprep.android.pocketprep": {

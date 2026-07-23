@@ -1423,7 +1423,7 @@
     "iconUrl": "https://play-lh.googleusercontent.com/nTO1o2vh3LsFQnbIT3SjsPvtpTloFIuQNohUMBeiyBUIE8mkuviPKO2ocSUAujQIWMo33wTHJT-F3wJH-7vpgs8=s64"
   },
   "com.weawow": {
-    "name": "Weawow: Weather & Widget",
+    "name": "Weawow",
     "iconUrl": "https://play-lh.googleusercontent.com/mo_d82SnAfbPtjpR3nVHs-wBPZ2ByUyR_30SUxSoxDpD1DMjU7mPpnV5QD4O7dMMvKp5AgefBpb1yDtf2y7J=s64"
   },
   "com.nationaledtech.spinbrowser": {
@@ -1619,7 +1619,7 @@
     "iconUrl": "https://play-lh.googleusercontent.com/urhFtqMp4ZIAsERTr8WVQFCqEFU-ZYK2a-B2NeGqvy2jxL8PyXhYi5ybwxFQemQ9VVYQyS-QhA8zn5iKaGmbpgo=s64"
   },
   "com.pocketprep.android.itcybersecurity": {
-    "name": "Pocket Prep",
+    "name": "Pocket Prep IT Cybersecurity",
     "iconUrl": "https://play-lh.googleusercontent.com/hRmqBwclSreWYl3aGXxFFfQbv4JLRYRUI-I83LaoYr7ftnVnThsHIm553TMBuCBSVYEXJQ761fU_AMXPR8xB=s64"
   },
   "com.recipebro.cookingbuddy": {
@@ -2051,7 +2051,7 @@
     "iconUrl": "https://play-lh.googleusercontent.com/CO5EuNTM6QRlBDKvC6PKneqRTt_aKynOeLmL9wI0nOCpBmdayO5pYxxHvHBwV9611JPapWha0al9OySPurxd=s64"
   },
   "com.funnmedia.calory": {
-    "name": "Calory - Calorie Counter & Diet",
+    "name": "Calory",
     "iconUrl": "https://play-lh.googleusercontent.com/TXCHLJJ7dK8lLKptjcLyDdhHQQFd4uaLanntYSNHsSu0tYuo0goLBBbH_vSRGgRRZn4z6_6sz8EiHjc2zh2g=s64"
   },
   "com.gombosdev.ampere": {
@@ -2063,7 +2063,7 @@
     "iconUrl": "https://play-lh.googleusercontent.com/0t-xeeDB6UuldF-nGTXFlE1Yvzm1NVBx-bYdnVYCdMfIyyT0niQNLa9dYLketH9ESOpeF4YzuihgI_Mz6SnlgQ=s64"
   },
   "com.makeevapps.tagtracker": {
-    "name": "Tag Tracker: Find Lost Items",
+    "name": "Tag Tracker",
     "iconUrl": "https://play-lh.googleusercontent.com/i_cwM3vOXBGhtBCTNXbw9x6leBumcnQGSJpR-D7YG20rZhO4y7t72nCcLGANwgNJJcmD1qkYE2cUOkxlVaKiAg=s64"
   },
   "com.mobisystems.office": {
@@ -2125,5 +2125,45 @@
   "torrent.search.revolutionv2": {
     "name": "Torrent Search Revolution V2",
     "iconUrl": "https://play-lh.googleusercontent.com/iXczZGftq8t6RNwWnyWAxaEFRv91QPHHq_uUAehvxsCA4fckus0kr90aqmAoXbjpVylSaBmVWN1zr2HLVJHCRXQ=s64"
+  },
+  "com.pocketprep.android.automotive": {
+    "name": "Pocket Prep Skilled Trades",
+    "iconUrl": "https://play-lh.googleusercontent.com/n5wLok-7ejYEOTOPhJa40eblhN6MwLAuK3sy467Wex2bKXZTgoFiTGk9RxCSYcrJZ448-YQ064CrLu0lJhcO=s64"
+  },
+  "com.pocketprep.android.behavioralhealth": {
+    "name": "Pocket Prep Behavioral Health",
+    "iconUrl": "https://play-lh.googleusercontent.com/FLn-1sO3DJbrmBnRDRN4cgVlirnFGYnlrcK8Kz32LmbX8qCSZhQ6DNP-a6j-E9RmgG9IXKRUtWHLXvM_wePWlA=s64"
+  },
+  "com.pocketprep.android.ems": {
+    "name": "Pocket Prep EMS",
+    "iconUrl": "https://play-lh.googleusercontent.com/vw0nXiO7xr39BcGysbM7Pfqo1rrOhjVfB0O-X7Ugj7HKc6tX2TqdVRB5bKOYdygBQFaUBe7G4zZ3WhioAfsrEA=s64"
+  },
+  "com.pocketprep.android.essentials": {
+    "name": "Pocket Prep Essentials",
+    "iconUrl": "https://play-lh.googleusercontent.com/9KWDGzAw7WxwePfeKUyNRRa2motXaumVXSpAUY9Lx_-yYl59CvX2muQR-dNBTY9GecD-IxRym-XU8EncCW7rmg=s64"
+  },
+  "com.pocketprep.android.fitness": {
+    "name": "Pocket Prep Fitness",
+    "iconUrl": "https://play-lh.googleusercontent.com/hy4WrAwLVyprIOVOc1GUdp8ZgKyrmct9TS1zKNZUBpNA3KbQ5OkOPG6CnJbf15vYZeF3npzsqtmM5ub9RXdMHg=s64"
+  },
+  "com.pocketprep.android.medical": {
+    "name": "Pocket Prep Medical",
+    "iconUrl": "https://play-lh.googleusercontent.com/_ZFQFXkmUhQWv9i8el3CNpKC5IcTUusazAf-t32BeP-XZgZb5WEtph5VyuVWS5vXQp2Cy_zGPNMQq3dx-PES=s64"
+  },
+  "com.pocketprep.android.nursing": {
+    "name": "Pocket Prep Nursing",
+    "iconUrl": "https://play-lh.googleusercontent.com/pQ_4zTujo1aYMkP6qNZzXzvRtGv7E0rtrXaPqHoJX7A2L85JoJge7A9CnQ7X2J_V5mHJAH3V5v9pspIuDU9JXg=s64"
+  },
+  "com.pocketprep.android.nursingschool": {
+    "name": "Pocket Prep Nursing School",
+    "iconUrl": "https://play-lh.googleusercontent.com/PCSCBcApmP1PeFNstfyyrmNBIr4XkaA77yFPhcsZfaA-YKO209qzw6Nvc4-ySXumc0F5CYAn_LeLGl4R9TgfrQ=s64"
+  },
+  "com.pocketprep.android.pocketprep": {
+    "name": "Pocket Prep",
+    "iconUrl": "https://play-lh.googleusercontent.com/9KWDGzAw7WxwePfeKUyNRRa2motXaumVXSpAUY9Lx_-yYl59CvX2muQR-dNBTY9GecD-IxRym-XU8EncCW7rmg=s64"
+  },
+  "com.pocketprep.android.professional": {
+    "name": "Pocket Prep Professional",
+    "iconUrl": "https://play-lh.googleusercontent.com/os1QBycANzciGGMO1ufe9blrq554FbDlWOs9Cs6sUy9ZUkz21pakq5R5XPKGiNogeRUUpiqjwEoFQG0gDiuxEQ=s64"
   }
 }

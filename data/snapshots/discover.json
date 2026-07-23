@@ -1,5 +1,5 @@
 {
-  "jman_tree_sha": "daa0138eb74cafd7793306c6802a2eaadd765f81",
+  "jman_tree_sha": "d18c7c215e8b92d0965d71833899e2152d7a70a3",
   "jman_bundles": {
     "1fexd": {
       "sha": "4428619fe1755f86c0bd9d8fb5762fcc8c17b43a",
@@ -350,7 +350,7 @@
       "key": null
     },
     "morphe": {
-      "sha": "b96a7c4a0c15b8473c624b1b753547de28a3ebf8",
+      "sha": "ce0e2693de560f779c72c68987217e91e8a07f79",
       "key": "github:MorpheApp/morphe-patches"
     },
     "morphe-google": {
@@ -486,7 +486,7 @@
       "key": null
     },
     "rushiranpise": {
-      "sha": "abfacde360469930a7528b25acd831774a160818",
+      "sha": "892ccdb8bd4838defe7d537e6bbecd1831ee15b4",
       "key": "github:rushiranpise/morphe-patches"
     },
     "rvx-morphed": {
@@ -518,7 +518,7 @@
       "key": null
     },
     "stylus": {
-      "sha": "3756b8916a58b6828c25916c68cba77c166b4518",
+      "sha": "1881d2ecb799209174e3b0eda8d1de759c4405c6",
       "key": "github:ch3thanhs/stylus"
     },
     "taknok": {

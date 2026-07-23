@@ -127,7 +127,6 @@
         {
           "name": "Crossfade",
           "description": "Adds a true dual-player crossfade between consecutive tracks. Requires YouTube Music 9.00 or newer; on older versions the patch is a no-op.",
-          "isPreRelease": true,
           "compatiblePackagesKey": 305
         },
         {
@@ -180,7 +179,6 @@
         {
           "name": "Custom font",
           "description": "Adds an option to replace Reddit Sans / Roboto with a custom TTF or OTF font file at runtime.",
-          "isPreRelease": true,
           "compatiblePackagesKey": 306
         },
         {
@@ -331,7 +329,6 @@
         {
           "name": "Force system font",
           "description": "Adds an option that renders Reddit with the device system font instead of Reddit Sans / Roboto.",
-          "isPreRelease": true,
           "compatiblePackagesKey": 306
         },
         {
@@ -620,7 +617,6 @@
         {
           "name": "Return YouTube Dislike",
           "description": "Adds an option to show the dislike count of tracks with Return YouTube Dislike.",
-          "isPreRelease": true,
           "compatiblePackagesKey": 305
         },
         {
@@ -661,13 +657,11 @@
         {
           "name": "Settings menu filter",
           "description": "Adds an option to hide items on the standard YouTube Music settings screen by their visible name.",
-          "isPreRelease": true,
           "compatiblePackagesKey": 305
         },
         {
           "name": "Settings menu filter",
           "description": "Adds an option to hide items on the standard YouTube settings screen by their visible name.",
-          "isPreRelease": true,
           "compatiblePackagesKey": 304
         },
         {
@@ -765,7 +759,7 @@
           "compatiblePackagesKey": 304
         }
       ],
-      "createdAt": "2026-07-23T08:36:36",
+      "createdAt": "2026-07-23T10:30:00",
       "targetApps": [
         "com.google.android.apps.youtube.music",
         "com.google.android.youtube",
@@ -7988,11 +7982,6 @@
       "firstSeen": "2026-06-02T10:21:27",
       "patches": [
         {
-          "name": "AccuBattery Premium",
-          "description": "Unlocks AccuBattery Pro by bypassing server offer validity, the Google Play purchase gate, and all UI premium banners.",
-          "compatiblePackagesKey": 381
-        },
-        {
           "name": "Alert Distances",
           "description": "Configures radar/camera and hazard alert announcement distances.\nWrites all key variants (truncated _ + underscore + space) for resilience across versions.\nCredits: Waze CGE Mod.\nOfficial → default values (metres):\nAccident 600→2000 | Alert 600→1000 | Police 600→1000 |\nFreeways 2000→1200 | Highways 1000→900 | Streets 500→700 |\nHazard 600→500 | Heavy Traffic 600→3000 | Between Alerts 300→200",
           "options": [
@@ -8042,13 +8031,13 @@
               "description": "Official: 300m."
             }
           ],
-          "compatiblePackagesKey": 382
+          "compatiblePackagesKey": 381
         },
         {
           "name": "AMOLED dark theme",
           "description": "Makes Google Photos dark surfaces true black.",
           "default": false,
-          "compatiblePackagesKey": 383
+          "compatiblePackagesKey": 382
         },
         {
           "name": "AutoZoom",
@@ -8075,37 +8064,22 @@
               "description": "Zoom gradient activates above this speed. Official: 30."
             }
           ],
-          "compatiblePackagesKey": 382
+          "compatiblePackagesKey": 381
         },
         {
           "name": "Bypass developer verification",
           "description": "Forces all APK install verification sessions to be bypassed, preventing the verifier from blocking sideloaded or unsigned apps on Android 16+ devices.Important: Requires pushing the patched APK as a system app replacement (e.g. via Magisk module or ADB with root)since the original holds DEVELOPER_VERIFICATION_AGENT permission. ADB installs are exempt from verification regardless.",
-          "compatiblePackagesKey": 384
+          "compatiblePackagesKey": 383
         },
         {
           "name": "Bypass License Check",
           "description": "Bypasses PairIP DRM license verification to prevent forced app shutdown on non-Play-licensed installs.",
-          "compatiblePackagesKey": 385
+          "compatiblePackagesKey": 384
         },
         {
           "name": "Bypass Subscription Paywall",
           "description": "Bypasses the subscription paywall in-app.",
-          "compatiblePackagesKey": 385
-        },
-        {
-          "name": "Calimoto Premium",
-          "description": "Unlocks Calimoto LIFETIME membership by spoofing the membership getter.",
-          "compatiblePackagesKey": 386
-        },
-        {
-          "name": "Calm Premium",
-          "description": "Unlocks Calm lifetime subscription",
-          "compatiblePackagesKey": 387
-        },
-        {
-          "name": "Calory Premium",
-          "description": "Unlocks Calory Pro and removes ads.",
-          "compatiblePackagesKey": 388
+          "compatiblePackagesKey": 384
         },
         {
           "name": "Change package name",
@@ -8123,7 +8097,7 @@
               "description": "Launcher name for the cloned Google Photos app."
             }
           ],
-          "compatiblePackagesKey": 383
+          "compatiblePackagesKey": 382
         },
         {
           "name": "Change version code",
@@ -8147,7 +8121,7 @@
               "description": "Off / Follow system / Always on."
             }
           ],
-          "compatiblePackagesKey": 389
+          "compatiblePackagesKey": 385
         },
         {
           "name": "Disable ad SDK calls",
@@ -8157,23 +8131,23 @@
         {
           "name": "Disable Ads",
           "description": "Prevents the AppOpen ad preloader from initialising.",
-          "compatiblePackagesKey": 390
+          "compatiblePackagesKey": 386
         },
         {
           "name": "Disable Ads",
           "description": "Suppresses all Waze ad systems via bundled preferences file:\n• AdMob SDK (Ad_.*)\n• Google Ads (Google_Ads.*)\n• Ads Inventory Prediction\n• ExternalPOI pins, coupons, popups (ExternalPO_ + Extern__POI both key variants)\n• Search autocomplete server ads\nCredits: Waze CGE Mod (ExternalPOI keys), Waze Chuppito (dual-key coverage).",
-          "compatiblePackagesKey": 382
+          "compatiblePackagesKey": 381
         },
         {
           "name": "Disable Advil Ad Requests",
           "description": "Stubs AdvilRequest.getPageUrl() → \"\" so the Advil ad server receives no page URL and returns no ad content. Target: Lcom/waze/jni/protos/AdvilRequest;->getPageUrl() in classes6.dex (verified ✓).",
-          "compatiblePackagesKey": 382
+          "compatiblePackagesKey": 381
         },
         {
           "name": "Disable Analytics / Telemetry",
           "description": "Disables App Analytics / Telemetry.",
           "default": false,
-          "compatiblePackagesKey": 391
+          "compatiblePackagesKey": 387
         },
         {
           "name": "Disable clipboard access",
@@ -8183,7 +8157,7 @@
         {
           "name": "Disable search suggestions tracking",
           "description": "Prevents search keypress and focus events from being sent with suggestion requests.",
-          "compatiblePackagesKey": 389
+          "compatiblePackagesKey": 385
         },
         {
           "name": "Disable shake ads",
@@ -8193,22 +8167,22 @@
         {
           "name": "Disable telemetry",
           "description": "Disables CamScanner's custom telemetry/log-agent system.",
-          "compatiblePackagesKey": 392
+          "compatiblePackagesKey": 388
         },
         {
           "name": "Disable Tracking",
           "description": "Disables analytics and telemetry in ES File Explorer",
-          "compatiblePackagesKey": 393
+          "compatiblePackagesKey": 389
         },
         {
           "name": "Disable video autoplay",
           "description": "Prevents videos from autoplaying in Amazon's in-app WebView pages.",
-          "compatiblePackagesKey": 389
+          "compatiblePackagesKey": 385
         },
         {
           "name": "Disable video autoplay",
           "description": "Prevents product and ad videos from autoplaying.",
-          "compatiblePackagesKey": 389
+          "compatiblePackagesKey": 385
         },
         {
           "name": "Enable Android debugging",
@@ -8219,7 +8193,7 @@
           "name": "Enable DCIM folders backup control",
           "description": "Allows controlling Camera and other DCIM folder backup individually.",
           "default": false,
-          "compatiblePackagesKey": 383
+          "compatiblePackagesKey": 382
         },
         {
           "name": "Enable debug build target",
@@ -8230,7 +8204,7 @@
           "name": "Enable Debug Menu",
           "description": "Enables Duolingo's hidden debug menu in settings.",
           "default": false,
-          "compatiblePackagesKey": 394
+          "compatiblePackagesKey": 390
         },
         {
           "name": "Enable ROM signature spoofing",
@@ -8258,7 +8232,7 @@
               "description": "Speedometer font size when speed ≥ 100. Default: 21sp (original: 13sp)."
             }
           ],
-          "compatiblePackagesKey": 382
+          "compatiblePackagesKey": 381
         },
         {
           "name": "Export all activities",
@@ -8273,13 +8247,13 @@
         {
           "name": "Fix Amazon manifest conflicts",
           "description": "Updates shared Amazon permissions so other Amazon apps can coexist.",
-          "compatiblePackagesKey": 389
+          "compatiblePackagesKey": 385
         },
         {
           "name": "Fix DCIM folder classification",
           "description": "Prevents non-Camera DCIM folders from being grouped as Camera.",
           "default": false,
-          "compatiblePackagesKey": 383
+          "compatiblePackagesKey": 382
         },
         {
           "name": "Fix Firebase after re-signing",
@@ -8295,7 +8269,7 @@
           "name": "GmsCore support",
           "description": "Adds MicroG/GmsCore support metadata for Google Photos.",
           "default": false,
-          "compatiblePackagesKey": 383
+          "compatiblePackagesKey": 382
         },
         {
           "name": "GmsCore support (MicroG)",
@@ -8354,17 +8328,12 @@
         {
           "name": "Hide Rufus tab",
           "description": "Removes the Rufus AI assistant tab from Amazon's bottom navigation bar.",
-          "compatiblePackagesKey": 389
+          "compatiblePackagesKey": 385
         },
         {
           "name": "Hide VPN and proxy",
           "description": "Hides common VPN transport/interface and Java proxy property checks.",
           "default": false
-        },
-        {
-          "name": "Manga Plus Premium",
-          "description": "Unlocks the Deluxe subscription.",
-          "compatiblePackagesKey": 395
         },
         {
           "name": "Map Skin (Vitamin C)",
@@ -8406,12 +8375,7 @@
               "description": "Default: 10.0 (original: 3.0). Wider = more visible chevron."
             }
           ],
-          "compatiblePackagesKey": 382
-        },
-        {
-          "name": "Material Capsule Premium",
-          "description": "Unlocks Material Capsule pro.",
-          "compatiblePackagesKey": 396
+          "compatiblePackagesKey": 381
         },
         {
           "name": "Navigation & Map",
@@ -8458,27 +8422,17 @@
               "description": "Default: disabled (0)."
             }
           ],
-          "compatiblePackagesKey": 382
-        },
-        {
-          "name": "OBD Android Premium Unlock",
-          "description": "Unlocks all premium features including advanced diagnostics, live sensor data, freeze frame, and removes the daily usage quota.",
-          "compatiblePackagesKey": 397
+          "compatiblePackagesKey": 381
         },
         {
           "name": "Open links in browser",
           "description": "Opens non-Amazon URLs in the default browser instead of the in-app WebView.",
-          "compatiblePackagesKey": 389
+          "compatiblePackagesKey": 385
         },
         {
           "name": "Override certificate pinning",
           "description": "Forces network security config trust anchors to override pins.",
           "default": false
-        },
-        {
-          "name": "PodsLink Premium",
-          "description": "Unlocks lifetime pro by bypassing all entitlement checks and poisoning the account cache.",
-          "compatiblePackagesKey": 398
         },
         {
           "name": "Popup Suppression",
@@ -8510,7 +8464,7 @@
               "description": "Seconds before popup can appear post-interaction. Official: 0."
             }
           ],
-          "compatiblePackagesKey": 382
+          "compatiblePackagesKey": 381
         },
         {
           "name": "Predictive back gesture",
@@ -8520,7 +8474,7 @@
         {
           "name": "Price history charts",
           "description": "Injects Keepa and CamelCamelCamel price history charts on Amazon product pages.",
-          "compatiblePackagesKey": 389
+          "compatiblePackagesKey": 385
         },
         {
           "name": "Provide Original app certificate",
@@ -8552,7 +8506,7 @@
         {
           "name": "Radar Sound (Any Speed)",
           "description": "Plays radar/speed camera sound alerts regardless of current speed. Official Waze only alerts when over the speed limit.\nPatches CONFIG_VALUE_ALERTS_PLAY_SPEED_CAMERA_SOUND_BELOW_SPEED_LIMIT (ordinal 632) via setConfigValueBoolNTV on every server config sync.\nTarget: Lcom/waze/ConfigManager;->onConfigSyncedFromServer() in classes5.dex (verified ✓).",
-          "compatiblePackagesKey": 382
+          "compatiblePackagesKey": 381
         },
         {
           "name": "Remove ad manifest entries",
@@ -8562,67 +8516,72 @@
         {
           "name": "Remove ADS",
           "description": "Remove in-app ads",
-          "compatiblePackagesKey": 399
+          "compatiblePackagesKey": 391
         },
         {
           "name": "Remove Ads",
           "description": "Removes all ads in app",
-          "compatiblePackagesKey": 400
+          "compatiblePackagesKey": 392
         },
         {
           "name": "Remove Ads",
           "description": "Removes interstitial and exit native ads from m-Indicator.",
-          "compatiblePackagesKey": 401
+          "compatiblePackagesKey": 393
         },
         {
           "name": "Remove Ads",
           "description": "Blocks all ad display across Opera News's five ad networks and all mediation layers (AdsFacade, AppLovin MAX, TopOn, MCSDK, SmartDigiMkt).",
-          "compatiblePackagesKey": 402
+          "compatiblePackagesKey": 394
+        },
+        {
+          "name": "Remove Ads",
+          "description": "Unlocks the Remove Ads purchase in qBitConnect by injecting IAP ownership flags into SharedPreferences before Flutter reads them.",
+          "compatiblePackagesKey": 395
         },
         {
           "name": "Remove Ads",
           "description": "Removes ads.",
-          "compatiblePackagesKey": 403
+          "compatiblePackagesKey": 396
         },
         {
           "name": "Remove Ads",
           "description": "Removes ads from TorrDroid.",
-          "compatiblePackagesKey": 404
+          "compatiblePackagesKey": 397
         },
         {
           "name": "Remove Ads",
           "description": "Remove in-app ads.",
-          "compatiblePackagesKey": 405
+          "compatiblePackagesKey": 398
         },
         {
           "name": "Remove ads",
           "description": "Stubs all ad loading paths: banner/interstitial loaders, billing callbacks, and ad SDK init.",
-          "compatiblePackagesKey": 406
+          "compatiblePackagesKey": 399
         },
         {
           "name": "Remove ads",
           "description": "Hides sponsored and ad content in Amazon Shopping via CSS injection.",
-          "compatiblePackagesKey": 389
+          "compatiblePackagesKey": 385
         },
         {
           "name": "Remove ads",
           "description": "Disables Block Puzzle AdMob initialization, banner, and interstitial ads.",
-          "compatiblePackagesKey": 407
+          "compatiblePackagesKey": 400
         },
         {
           "name": "Remove ads",
           "description": "Disables LiveScore banner, native, and interstitial ad requests.",
-          "compatiblePackagesKey": 408
+          "compatiblePackagesKey": 401
         },
         {
           "name": "Remove Ads / Unlock Premium",
           "description": "Forces SubscriptionStateImpl.getStatus() (LB2/c.h) to always return HAS_UNLIMITED_SUBSCRIPTION and getPurchase() (LB2/c.g) to return a well-formed fake Purchase, removing ads and the upgrade button/banner without crashing on the now-expected non-null Purchase object.",
-          "compatiblePackagesKey": 409
+          "compatiblePackagesKey": 402
         },
         {
           "name": "Remove Item Limits",
           "description": "Removes all  item limits in-app.",
-          "compatiblePackagesKey": 385
+          "compatiblePackagesKey": 384
         },
         {
           "name": "Remove share targets",
@@ -8632,27 +8591,22 @@
         {
           "name": "Remove Sound Delay",
           "description": "Removes the 10-minute waiting period before playing a sound on a detected tracker.",
-          "compatiblePackagesKey": 410
+          "compatiblePackagesKey": 403
         },
         {
           "name": "Remove Watermark",
           "description": "Removes watermarks from Canva exports and previews.",
-          "compatiblePackagesKey": 411
+          "compatiblePackagesKey": 404
         },
         {
           "name": "Report Speed Limit",
           "description": "Adds a Report option when tapping the speedometer to report wrong or missing speed limits. Not available in the official version.\nKey: Map.Speedometer report speed enable_: 1",
-          "compatiblePackagesKey": 382
+          "compatiblePackagesKey": 381
         },
         {
           "name": "Set target SDK 34",
           "description": "Sets targetSdkVersion to 34.",
           "default": false
-        },
-        {
-          "name": "Slopes Premium Unlock",
-          "description": "Unlocks all premium features.",
-          "compatiblePackagesKey": 412
         },
         {
           "name": "Speed Limit Sign",
@@ -8664,7 +8618,7 @@
               "description": "us = large circular US-style (recommended). metric = small local-style."
             }
           ],
-          "compatiblePackagesKey": 382
+          "compatiblePackagesKey": 381
         },
         {
           "name": "Spoof Android ID",
@@ -8765,7 +8719,7 @@
               "description": "Force newer Pixel feature flags off when the selected profile should not have them."
             }
           ],
-          "compatiblePackagesKey": 383
+          "compatiblePackagesKey": 382
         },
         {
           "name": "Spoof install source",
@@ -8865,7 +8819,7 @@
         {
           "name": "Spoof WARP+ Unlimited UI",
           "description": "Unlocks WARP+ UI locally.",
-          "compatiblePackagesKey": 391
+          "compatiblePackagesKey": 387
         },
         {
           "name": "Spoof Wi-Fi connection",
@@ -8911,108 +8865,102 @@
         {
           "name": "Suppress Paywall",
           "description": "Suppresses the in-app paywall.",
-          "compatiblePackagesKey": 390
+          "compatiblePackagesKey": 386
         },
         {
           "name": "Suppress Premium Promotions",
           "description": "Supress all premium promotions in-app.",
-          "compatiblePackagesKey": 385
-        },
-        {
-          "name": "The Athletic Premium",
-          "description": "Bypasses The Athletic article paywall by spoofing the NYT subscription entitlement check.",
-          "compatiblePackagesKey": 413
-        },
-        {
-          "name": "TradingView Unlock Premium",
-          "description": "Unlocks Ultimate plan features, disables all paywalls and upgrade dialogs, suppresses payment-banned blocking errors, and grants access to all benefits including bar replay, custom intervals, multiple charts, study-on-study, server-side alerts, and ad-free charts.",
-          "isPreRelease": true,
-          "compatiblePackagesKey": 414
+          "compatiblePackagesKey": 384
         },
         {
           "name": "Uncensored Radar / Camera Display",
           "description": "Shows exact fixed and mobile speed camera locations, including those not yet in the official Waze radar zone. Enables enforcement alerts via preferences keys:\nAlerts.Enable Enforcement Alert_ / Alert / Polic_ (truncated + full variants).\nCredits: Waze CGE Mod.",
-          "compatiblePackagesKey": 382
+          "compatiblePackagesKey": 381
         },
         {
           "name": "Unlock Ad-Free",
           "description": "Forces FlightAware ad-free subscribed state.",
-          "compatiblePackagesKey": 415
+          "compatiblePackagesKey": 405
         },
         {
           "name": "Unlock Ad-Free",
           "description": "Removes ads and unlocks ad-free status in Speedtest by Ookla.",
-          "compatiblePackagesKey": 416
+          "compatiblePackagesKey": 406
         },
         {
           "name": "Unlock All Access",
           "description": "Unlocks All access in Nzb360.",
-          "compatiblePackagesKey": 417
+          "compatiblePackagesKey": 407
         },
         {
           "name": "Unlock All Features",
           "description": "Bypasses PairIP DRM license check, removes all paywalls, and unlocks all premium features including cloud sync and remote access.",
-          "compatiblePackagesKey": 418
+          "compatiblePackagesKey": 408
         },
         {
           "name": "Unlock Business Premium",
           "description": "Unlocks Business/Gold premium features in Flightradar24: ad-free map, weather layers, ATC, 3D view, flight history, and unlimited saved locations.",
-          "compatiblePackagesKey": 419
+          "compatiblePackagesKey": 409
         },
         {
           "name": "Unlock Cloud Service",
           "description": "Unlocks BluramsGuard cloud storage, AI detection, and playback features.",
-          "compatiblePackagesKey": 420
+          "compatiblePackagesKey": 410
         },
         {
           "name": "Unlock Club",
           "description": "Unlocks Citymapper Club Membership Note: Need to manually Purchase inside APP!.",
-          "compatiblePackagesKey": 421
+          "compatiblePackagesKey": 411
+        },
+        {
+          "name": "Unlock Deluxe",
+          "description": "Unlocks the Deluxe subscription.",
+          "compatiblePackagesKey": 412
         },
         {
           "name": "Unlock donation",
           "description": "Forces h0() to return \"yes\" so donate dialog never shows and providers unlock.",
-          "compatiblePackagesKey": 422
+          "compatiblePackagesKey": 413
         },
         {
           "name": "Unlock Donation Features",
           "description": "Unlocks all premium donation features in Greenify.",
-          "compatiblePackagesKey": 423
+          "compatiblePackagesKey": 414
         },
         {
           "name": "Unlock Drama Episodes",
           "description": "Bypasses the IAA (ad-watch-to-unlock) episode gate for drama mini-series.",
-          "compatiblePackagesKey": 424
+          "compatiblePackagesKey": 415
         },
         {
           "name": "Unlock Elite",
           "description": "Unlocks JEFIT Elite features in app.",
-          "compatiblePackagesKey": 425
+          "compatiblePackagesKey": 416
         },
         {
           "name": "Unlock Enterprise",
           "description": "Unlocks Enterprise features in app.",
-          "compatiblePackagesKey": 426
+          "compatiblePackagesKey": 417
         },
         {
           "name": "Unlock Excel",
           "description": "Removes login requirement, unlocks premium, blocks ads, bypasses signature and code transparency checks.",
-          "compatiblePackagesKey": 427
+          "compatiblePackagesKey": 418
         },
         {
           "name": "Unlock Followed Locations",
           "description": "Unlocks the Followed Locations premium feature.",
-          "compatiblePackagesKey": 385
+          "compatiblePackagesKey": 384
         },
         {
           "name": "Unlock Full Version",
           "description": "Unlocks all features in Inure App Manager.",
-          "compatiblePackagesKey": 428
+          "compatiblePackagesKey": 419
         },
         {
           "name": "Unlock Gold",
           "description": "Unlocks Kahoot! Plus Gold features in app.",
-          "compatiblePackagesKey": 429
+          "compatiblePackagesKey": 420
         },
         {
           "name": "Unlock Lifetime",
@@ -9022,216 +8970,246 @@
         {
           "name": "Unlock Lifetime",
           "description": "Unlocks all Lifetime features in Proxyman.",
-          "compatiblePackagesKey": 430
+          "compatiblePackagesKey": 421
         },
         {
           "name": "Unlock Lifetime",
           "description": "Unlocks SHAREit lifetime premium.",
-          "compatiblePackagesKey": 431
+          "compatiblePackagesKey": 422
         },
         {
           "name": "Unlock Lifetime Premium",
           "description": "Unlocks all features locked behind the subscription paywall.",
-          "compatiblePackagesKey": 432
+          "compatiblePackagesKey": 423
         },
         {
           "name": "Unlock Moovit+",
           "description": "Unlocks Moovit+",
-          "compatiblePackagesKey": 433
+          "compatiblePackagesKey": 424
         },
         {
           "name": "Unlock Patron",
           "description": "Unlocks Pocket Casts Patron yearly feature checks.",
-          "compatiblePackagesKey": 434
+          "compatiblePackagesKey": 425
         },
         {
           "name": "Unlock Platinum",
           "description": "Unlocks Life360 Platinum feature in app.",
-          "compatiblePackagesKey": 435
+          "compatiblePackagesKey": 426
         },
         {
           "name": "Unlock Plus",
           "description": "Forces Clue Plus subscription active, unlocking all premium features.",
-          "compatiblePackagesKey": 436
+          "compatiblePackagesKey": 427
         },
         {
           "name": "Unlock Plus",
           "description": "Unlocks all SpotAngels Plus features in app",
-          "compatiblePackagesKey": 437
+          "compatiblePackagesKey": 428
         },
         {
           "name": "Unlock Plus",
           "description": "Unlocks Sticker.ly PLUS subscriptionNote: For Facebook Login, Uninstall Facebook App.",
-          "compatiblePackagesKey": 438
+          "compatiblePackagesKey": 429
         },
         {
           "name": "Unlock Plus",
           "description": "Unlocks Subway Now Plus.",
-          "compatiblePackagesKey": 439
+          "compatiblePackagesKey": 430
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks AccuBattery Pro by bypassing server offer validity, the Google Play purchase gate, and all UI premium banners.",
+          "compatiblePackagesKey": 431
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks premium features in app.",
-          "compatiblePackagesKey": 440
+          "compatiblePackagesKey": 432
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks AiScore Premium Features in app.",
-          "compatiblePackagesKey": 441
+          "compatiblePackagesKey": 433
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks premium.",
-          "compatiblePackagesKey": 442
+          "compatiblePackagesKey": 434
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks the Remove Ads purchase in Ampere by bypassing the isProVersion getter, purchase verifier, and payment-needed gate.",
-          "compatiblePackagesKey": 443
+          "compatiblePackagesKey": 435
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks AndroPods Pro: voice call integration, assistant control, ear detection auto-pause/resume, and all premium preferences.",
-          "compatiblePackagesKey": 444
+          "compatiblePackagesKey": 436
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks all premium wallpapers.",
-          "compatiblePackagesKey": 445
+          "compatiblePackagesKey": 437
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks premium and marks the yearly plan as purchased.",
+          "compatiblePackagesKey": 438
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks BatteryPods Pro: removes all advertisements and enables premium features including all widget themes and device customization options.",
-          "compatiblePackagesKey": 446
+          "compatiblePackagesKey": 439
         },
         {
           "name": "Unlock Premium",
           "description": "Unlock Premium Features in app.",
-          "compatiblePackagesKey": 447
+          "compatiblePackagesKey": 440
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks Calimoto LIFETIME membership by spoofing the membership getter.",
+          "compatiblePackagesKey": 441
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks Premium Features In the App.",
-          "compatiblePackagesKey": 448
+          "compatiblePackagesKey": 442
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks Calm lifetime subscription",
+          "compatiblePackagesKey": 443
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks Calory Pro and removes ads.",
+          "compatiblePackagesKey": 444
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks Carbon premium subscription.",
-          "compatiblePackagesKey": 449
+          "compatiblePackagesKey": 445
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks Charge Meter premium features.",
-          "compatiblePackagesKey": 450
+          "compatiblePackagesKey": 446
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks ColorNote premium and removes advertising ID permissions.",
-          "compatiblePackagesKey": 451
+          "compatiblePackagesKey": 447
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks all premium features in Countdown Widget",
-          "compatiblePackagesKey": 452
+          "compatiblePackagesKey": 448
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks premium features in app.",
-          "compatiblePackagesKey": 453
+          "compatiblePackagesKey": 449
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks Premium Features In the App.",
-          "compatiblePackagesKey": 385
+          "compatiblePackagesKey": 384
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks premium features after login.",
-          "compatiblePackagesKey": 454
+          "compatiblePackagesKey": 450
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks all premium wallpapers.",
-          "compatiblePackagesKey": 455
+          "compatiblePackagesKey": 451
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks Electron premium features",
-          "compatiblePackagesKey": 456
+          "compatiblePackagesKey": 452
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks all Fitbod premium features.",
-          "compatiblePackagesKey": 457
+          "compatiblePackagesKey": 453
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks premium features in app.",
-          "compatiblePackagesKey": 458
+          "compatiblePackagesKey": 454
         },
         {
           "name": "Unlock Premium",
           "description": "Unlock Premium features in app.",
-          "compatiblePackagesKey": 459
+          "compatiblePackagesKey": 455
         },
         {
           "name": "Unlock Premium",
-          "compatiblePackagesKey": 460
+          "compatiblePackagesKey": 456
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks all premium features in Image & Video Date Fixer.",
-          "compatiblePackagesKey": 461
+          "compatiblePackagesKey": 457
         },
         {
           "name": "Unlock Premium",
           "description": "Unlock Premium features after login.",
-          "compatiblePackagesKey": 462
+          "compatiblePackagesKey": 458
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks premium features and all map packs.",
-          "compatiblePackagesKey": 463
+          "compatiblePackagesKey": 459
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks premium features in app.",
-          "compatiblePackagesKey": 464
+          "compatiblePackagesKey": 460
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks Premium Features in app.",
-          "compatiblePackagesKey": 465
+          "compatiblePackagesKey": 461
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks Premium features in app after login.",
-          "compatiblePackagesKey": 466
+          "compatiblePackagesKey": 462
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks Material Capsule pro.",
+          "compatiblePackagesKey": 463
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks all pro features.",
-          "compatiblePackagesKey": 467
+          "compatiblePackagesKey": 464
         },
         {
           "name": "Unlock Premium",
           "description": "Unlock all premium widgets.",
-          "compatiblePackagesKey": 468
+          "compatiblePackagesKey": 465
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks premium in Beta by Mirko.",
-          "compatiblePackagesKey": 469
+          "compatiblePackagesKey": 466
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks MobiOffice premium and removes ads.",
-          "compatiblePackagesKey": 470
+          "compatiblePackagesKey": 467
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks MyRadar's yearly premium features",
-          "compatiblePackagesKey": 471
+          "compatiblePackagesKey": 468
         },
         {
           "name": "Unlock Premium",
@@ -9241,42 +9219,52 @@
         {
           "name": "Unlock Premium",
           "description": "Unlocks Premium features in app..",
-          "compatiblePackagesKey": 472
+          "compatiblePackagesKey": 469
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks Ninja VPN premium.",
-          "compatiblePackagesKey": 473
+          "compatiblePackagesKey": 470
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks all premium features including advanced diagnostics, live sensor data, freeze frame, and removes the daily usage quota.",
+          "compatiblePackagesKey": 471
         },
         {
           "name": "Unlock Premium",
           "description": "Unlock premium features.",
-          "compatiblePackagesKey": 474
+          "compatiblePackagesKey": 254
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks premium features after login.",
-          "compatiblePackagesKey": 475
+          "compatiblePackagesKey": 472
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks all Photo Editor premium features",
-          "compatiblePackagesKey": 476
+          "compatiblePackagesKey": 473
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks Picture Mushroom premium features.",
-          "compatiblePackagesKey": 477
+          "compatiblePackagesKey": 474
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks PictureThis premium features.",
-          "compatiblePackagesKey": 478
+          "compatiblePackagesKey": 475
         },
         {
           "name": "Unlock Premium",
-          "description": "Unlocks Pocket Prep premium subscription gates.",
-          "compatiblePackagesKey": 479
+          "description": "Unlocks Pocket Prep premium subscription gates and full question bank.",
+          "compatiblePackagesKey": 476
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks lifetime pro by bypassing all entitlement checks and poisoning the account cache.",
+          "compatiblePackagesKey": 477
         },
         {
           "name": "Unlock Premium",
@@ -9286,77 +9274,82 @@
         {
           "name": "Unlock Premium",
           "description": "Unlock premium features in RecipeBro.",
-          "compatiblePackagesKey": 480
+          "compatiblePackagesKey": 478
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks all premium features in Rename & Organize.",
-          "compatiblePackagesKey": 481
+          "compatiblePackagesKey": 479
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks Rocket Money Premium Features.",
-          "compatiblePackagesKey": 482
+          "compatiblePackagesKey": 480
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks premium features in app.",
-          "compatiblePackagesKey": 483
-        },
-        {
-          "name": "Unlock Premium",
-          "description": "Bypasses PairIP license check, paywall, ads, and pro upsell in SAI.",
-          "compatiblePackagesKey": 484
+          "compatiblePackagesKey": 481
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks all premium feature in app.",
-          "compatiblePackagesKey": 485
-        },
-        {
-          "name": "Unlock Premium",
-          "description": "Unlocks all Premium features in Snipd: AI Podcast Player by spoofing the RevenueCat CustomerInfo.",
-          "compatiblePackagesKey": 486
-        },
-        {
-          "name": "Unlock Premium",
-          "description": "Unlocks Premium features.",
-          "compatiblePackagesKey": 487
-        },
-        {
-          "name": "Unlock Premium",
-          "description": "Unlocks Social Gamebox premium features.",
-          "compatiblePackagesKey": 488
-        },
-        {
-          "name": "Unlock Premium",
-          "description": "Unlocks Sticker Maker premium and ad-free checks.",
-          "compatiblePackagesKey": 489
-        },
-        {
-          "name": "Unlock Premium",
-          "description": "Unlocks Premium features in app. Also re-enables password login after OTP.",
-          "compatiblePackagesKey": 490
-        },
-        {
-          "name": "Unlock Premium",
-          "description": "Unlocks premium/lifetime featuers in app.",
-          "compatiblePackagesKey": 491
-        },
-        {
-          "name": "Unlock Premium",
-          "description": "Unlocks Tag Tracker PRO: unlimited trackers, advanced detection, full history, and ad-free experience.",
-          "compatiblePackagesKey": 492
-        },
-        {
-          "name": "Unlock Premium",
-          "description": "Unlocks The Weather Channel's Premium and Premium Pro subscription tiers. Enables the ad-free experience, extended 15-day hourly forecast, real-feel temperature, air quality index, minute-by-minute precipitation, severe weather notifications, and radar overlays gated behind the subscription paywall.",
-          "compatiblePackagesKey": 493
+          "compatiblePackagesKey": 482
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks all premium features.",
-          "compatiblePackagesKey": 494
+          "compatiblePackagesKey": 483
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks all Premium features in Snipd: AI Podcast Player by spoofing the RevenueCat CustomerInfo.",
+          "compatiblePackagesKey": 484
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks Premium features.",
+          "compatiblePackagesKey": 485
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks Social Gamebox premium features.",
+          "compatiblePackagesKey": 486
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks Sticker Maker premium and ad-free checks.",
+          "compatiblePackagesKey": 487
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks Premium features in app. Also re-enables password login after OTP.",
+          "compatiblePackagesKey": 488
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks premium/lifetime featuers in app.",
+          "compatiblePackagesKey": 489
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks Tag Tracker PRO: unlimited trackers, advanced detection, full history, and ad-free experience.",
+          "compatiblePackagesKey": 490
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Bypasses The Athletic article paywall by spoofing the NYT subscription entitlement check.",
+          "compatiblePackagesKey": 491
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks The Weather Channel's Premium and Premium Pro subscription tiers. Enables the ad-free experience, extended 15-day hourly forecast, real-feel temperature, air quality index, minute-by-minute precipitation, severe weather notifications, and radar overlays gated behind the subscription paywall.",
+          "compatiblePackagesKey": 492
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks all premium features.",
+          "compatiblePackagesKey": 493
         },
         {
           "name": "Unlock Premium",
@@ -9368,17 +9361,22 @@
               "description": "Choose which premium path to unlock."
             }
           ],
-          "compatiblePackagesKey": 495
+          "compatiblePackagesKey": 494
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks Toxly Premium",
+          "compatiblePackagesKey": 495
+        },
+        {
+          "name": "Unlock Premium",
+          "description": "Unlocks Ultimate plan features, disables all paywalls and upgrade dialogs, suppresses payment-banned blocking errors, and grants access to all benefits including bar replay, custom intervals, multiple charts, study-on-study, server-side alerts, and ad-free charts.",
           "compatiblePackagesKey": 496
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks Premium Features In the App.",
-          "compatiblePackagesKey": 390
+          "compatiblePackagesKey": 386
         },
         {
           "name": "Unlock Premium",
@@ -9527,63 +9525,68 @@
         },
         {
           "name": "Unlock Pro",
-          "description": "Unlocks all Pro features in app.",
+          "description": "Unlocks SAI PRO gates and removes ads.",
           "compatiblePackagesKey": 525
         },
         {
           "name": "Unlock Pro",
-          "description": "Unlocks Splitwise Pro features, removes ad banners, and suppresses all upgrade upsell prompts.",
+          "description": "Unlocks SD Maid SE Pro features.",
           "compatiblePackagesKey": 526
         },
         {
           "name": "Unlock Pro",
-          "description": "Unlocks all pro features and removes ads .",
+          "description": "Unlocks all Pro features in app.",
           "compatiblePackagesKey": 527
         },
         {
           "name": "Unlock Pro",
-          "description": "Unlocks UbikiTouch Pro features in app.",
+          "description": "Unlocks Splitwise Pro features, removes ad banners, and suppresses all upgrade upsell prompts.",
           "compatiblePackagesKey": 528
         },
         {
           "name": "Unlock Pro",
-          "description": "Unlocks UDisc Pro subscription.",
+          "description": "Unlocks all pro features and removes ads .",
           "compatiblePackagesKey": 529
+        },
+        {
+          "name": "Unlock Pro",
+          "description": "Unlocks UbikiTouch Pro features in app.",
+          "compatiblePackagesKey": 530
+        },
+        {
+          "name": "Unlock Pro",
+          "description": "Unlocks UDisc Pro subscription.",
+          "compatiblePackagesKey": 531
         },
         {
           "name": "Unlock pro",
           "description": "Unlocks all pro features.",
-          "compatiblePackagesKey": 530
+          "compatiblePackagesKey": 532
         },
         {
           "name": "Unlock Pro / No Ads",
           "description": "Unlocks Pro/No Ads feature in app",
-          "compatiblePackagesKey": 531
+          "compatiblePackagesKey": 533
         },
         {
           "name": "Unlock Pro features",
           "description": "Unlock Pro features in app.",
-          "compatiblePackagesKey": 532
+          "compatiblePackagesKey": 534
         },
         {
           "name": "Unlock Professional",
           "description": "Unlocks Professional features inapp.",
-          "compatiblePackagesKey": 533
-        },
-        {
-          "name": "Unlock Remove Ads",
-          "description": "Unlocks the Remove Ads purchase in qBitConnect by injecting IAP ownership flags into SharedPreferences before Flutter reads them.",
-          "compatiblePackagesKey": 534
+          "compatiblePackagesKey": 535
         },
         {
           "name": "Unlock Royale",
           "description": "Unlocks Transit Royale Membership.",
-          "compatiblePackagesKey": 535
+          "compatiblePackagesKey": 536
         },
         {
           "name": "Unlock SPIN Plus",
           "description": "Unlocks SPIN Plus",
-          "compatiblePackagesKey": 536
+          "compatiblePackagesKey": 537
         },
         {
           "name": "Unlock Subscription",
@@ -9595,90 +9598,90 @@
               "description": "Choose Super, Max, Lite, or Immersive metadata."
             }
           ],
-          "compatiblePackagesKey": 394
+          "compatiblePackagesKey": 390
         },
         {
           "name": "Unlock Subscription",
           "description": "Unlocks all subscription features in TWT App.",
-          "compatiblePackagesKey": 537
+          "compatiblePackagesKey": 538
         },
         {
           "name": "Unlock subscription",
           "description": "Unlocks subscription in app",
-          "compatiblePackagesKey": 538
+          "compatiblePackagesKey": 539
         },
         {
           "name": "Unlock SVIP",
           "description": "Unlocks SViP features in app.",
-          "compatiblePackagesKey": 539
+          "compatiblePackagesKey": 540
         },
         {
           "name": "Unlock Turbo",
           "description": "Unlocks Turbo subscription after login.",
-          "compatiblePackagesKey": 540
+          "compatiblePackagesKey": 541
         },
         {
           "name": "Unlock Ultimate",
           "description": "Unlocks Ultimate Ad-Free + Android TV.",
-          "compatiblePackagesKey": 541
+          "compatiblePackagesKey": 542
         },
         {
           "name": "Unlock Ultra",
           "description": "Unlocks Ultra features in app.",
-          "compatiblePackagesKey": 542
-        },
-        {
-          "name": "Unlock VIP",
-          "description": "Unlock ViP features in app.",
           "compatiblePackagesKey": 543
         },
         {
           "name": "Unlock VIP",
-          "description": "Unlocks Dubox Drive VIP/SVIP (Premium+)",
+          "description": "Unlock ViP features in app.",
           "compatiblePackagesKey": 544
         },
         {
           "name": "Unlock VIP",
-          "description": "Unlocks VIP features in app.",
+          "description": "Unlocks Dubox Drive VIP/SVIP (Premium+)",
           "compatiblePackagesKey": 545
         },
         {
           "name": "Unlock VIP",
-          "description": "Unlocks VIP Features in app.",
+          "description": "Unlocks VIP features in app.",
           "compatiblePackagesKey": 546
         },
         {
           "name": "Unlock VIP",
-          "description": "Unlock VIP subscription in app.",
+          "description": "Unlocks VIP Features in app.",
           "compatiblePackagesKey": 547
         },
         {
           "name": "Unlock VIP",
-          "description": "Unlocks Yatri VIP by forcing active plan status and spoofing active plan DB query.",
+          "description": "Unlock VIP subscription in app.",
           "compatiblePackagesKey": 548
+        },
+        {
+          "name": "Unlock VIP",
+          "description": "Unlocks Yatri VIP by forcing active plan status and spoofing active plan DB query.",
+          "compatiblePackagesKey": 549
         },
         {
           "name": "Unlock VIP (Lifetime)",
           "description": "Forces permanent professional VIP tier, removes ads and upgrade popups, bypasses PairIP.",
-          "compatiblePackagesKey": 549
+          "compatiblePackagesKey": 550
         },
         {
           "name": "Unlock VIP Lifetime",
           "description": "Unlock Vip Features in APP.",
-          "compatiblePackagesKey": 393
+          "compatiblePackagesKey": 389
         },
         {
           "name": "Unlock Word",
           "description": "Removes login requirement, unlocks premium, blocks ads, bypasses signature and code transparency checks.",
-          "compatiblePackagesKey": 550
+          "compatiblePackagesKey": 551
         },
         {
           "name": "Yearly Unlock",
           "description": "Unlocks premium features without login. Note: Login Won't Work",
-          "compatiblePackagesKey": 392
+          "compatiblePackagesKey": 388
         }
       ],
-      "createdAt": "2026-07-23T04:31:50",
+      "createdAt": "2026-07-23T09:56:31",
       "targetApps": [
         "ai.metaverselabs.obdandroid",
         "ai.topicfinder.podcastdiscovery",
@@ -9775,13 +9778,24 @@
         "com.oasisfeng.greenify",
         "com.onesports.score",
         "com.opera.app.news",
+        "com.paget96.batteryguru",
         "com.paget96.netspeedindicator",
         "com.parallel.space.pro",
         "com.particlenews.newsbreak",
         "com.piksoft.turboscan.free",
         "com.pixel.al.pixelhabittracker",
         "com.playit.videoplayer",
+        "com.pocketprep.android.automotive",
+        "com.pocketprep.android.behavioralhealth",
+        "com.pocketprep.android.ems",
+        "com.pocketprep.android.essentials",
+        "com.pocketprep.android.fitness",
         "com.pocketprep.android.itcybersecurity",
+        "com.pocketprep.android.medical",
+        "com.pocketprep.android.nursing",
+        "com.pocketprep.android.nursingschool",
+        "com.pocketprep.android.pocketprep",
+        "com.pocketprep.android.professional",
         "com.proxyman.proxymanandroid",
         "com.pryshedko.materialpods",
         "com.pryshedko.mtisland",
@@ -9830,6 +9844,7 @@
         "eu.darken.capod",
         "eu.darken.myperm",
         "eu.darken.octi",
+        "eu.darken.sdmse",
         "eu.duong.imagedatefixer",
         "eu.duong.picturemanager",
         "eu.faircode.netguard",
@@ -9858,7 +9873,7 @@
         "universal",
         "verbosus.pialytic"
       ],
-      "appCount": 176
+      "appCount": 188
     },
     {
       "key": "proguard",
@@ -12513,12 +12528,12 @@
         {
           "name": "Bypass Samsung Account provider checks",
           "description": "Replaces com.osp.app.signin with com.notsamsung.dummy in dex and routes account lookups through Android AccountManager instead of Samsung Account's provider.",
-          "compatiblePackagesKey": 553
+          "compatiblePackagesKey": 554
         },
         {
           "name": "Disable Knox integrity checks",
           "description": "Bypass Knox, root, warranty bit, and SAK checks so Samsung Health runs on Knox-tripped devices (0x1) without root.",
-          "compatiblePackagesKey": 553
+          "compatiblePackagesKey": 554
         }
       ],
       "createdAt": "2026-06-30T13:25:55",
@@ -13643,12 +13658,12 @@
         {
           "name": "Unlock Premium",
           "description": "Unlocks all premium features by forcing the pro_version SharedPreferences check to always return true.",
-          "compatiblePackagesKey": 551
+          "compatiblePackagesKey": 552
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks all premium features by bypassing the native library premium check.",
-          "compatiblePackagesKey": 552
+          "compatiblePackagesKey": 553
         }
       ],
       "createdAt": "2026-07-15T18:07:09",
@@ -13713,22 +13728,22 @@
         {
           "name": "Flud Ad-Free & Bypasses",
           "description": "Unlock ad-free experience (disable banners/interstitials), bypass storage permission setup block, and disable Google Play Integrity licensing check.",
-          "compatiblePackagesKey": 555
+          "compatiblePackagesKey": 556
         },
         {
           "name": "RSS Reader Premium",
           "description": "Unlock premium features and remove ads in RSS Reader.",
-          "compatiblePackagesKey": 556
+          "compatiblePackagesKey": 557
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks all premium features by forcing KineService.Companion.isTrial() to return false (pro state).",
-          "compatiblePackagesKey": 530
+          "compatiblePackagesKey": 532
         },
         {
           "name": "Unlock Premium",
           "description": "Unlocks all premium features of Pinnit by bypassing the RevenueCat entitlement and purchase checks.",
-          "compatiblePackagesKey": 557
+          "compatiblePackagesKey": 558
         }
       ],
       "createdAt": "2026-07-12T08:51:41",
@@ -14179,7 +14194,7 @@
         {
           "name": "Pin playlists",
           "description": "Pins playlists to the top of the YouTube Music Library.",
-          "compatiblePackagesKey": 554
+          "compatiblePackagesKey": 555
         }
       ],
       "createdAt": "2026-07-22T00:40:13",
@@ -15665,35 +15680,16 @@
       "firstSeen": "2026-07-17T19:07:01",
       "patches": [
         {
-          "name": "Custom font",
-          "description": "Applies a custom font selected while patching, replacing Reddit Sans / Roboto. A variable font is recommended so heading and body text keep their different weights. Do not enable \"Force system font\" at the same time.",
-          "default": false,
-          "options": [
-            {
-              "key": "customFontFile",
-              "title": "Custom font",
-              "description": "The file path to your font file. Tap the file picker and select it. The font file must be in TTF or OTF format. A variable font is recommended so heading and body text keep their different weights."
-            }
-          ],
-          "compatiblePackagesKey": 558
-        },
-        {
-          "name": "Force system font",
-          "description": "Renders the app using the device's system font instead of Reddit Sans / Roboto.",
-          "compatiblePackagesKey": 558
-        },
-        {
           "name": "Force system font (Bitwarden)",
           "description": "Renders the app using the device's system font instead of DM Sans / Roboto.",
           "compatiblePackagesKey": 559
         }
       ],
-      "createdAt": "2026-07-21T05:56:45",
+      "createdAt": "2026-07-23T12:27:09",
       "targetApps": [
-        "com.reddit.frontpage",
         "com.x8bit.bitwarden"
       ],
-      "appCount": 2
+      "appCount": 1
     },
     {
       "key": "hxreborn",
@@ -20006,17 +20002,6 @@
     ],
     [
       {
-        "packageName": "com.digibites.accubattery",
-        "targets": [
-          {
-            "version": "2.1.8"
-          }
-        ],
-        "isPreRelease": true
-      }
-    ],
-    [
-      {
         "packageName": "com.waze",
         "targets": [
           {
@@ -20030,7 +20015,7 @@
         "packageName": "com.google.android.apps.photos",
         "targets": [
           {
-            "version": "7.84.0.949657053"
+            "version": "7.85.0.950510832"
           }
         ]
       }
@@ -20050,42 +20035,9 @@
         "packageName": "com.newsbreak.crimeradar",
         "targets": [
           {
-            "version": "26.28.0"
+            "version": "26.29.0"
           }
         ]
-      }
-    ],
-    [
-      {
-        "packageName": "com.calimoto.calimoto",
-        "targets": [
-          {
-            "version": "2026.07.2"
-          }
-        ],
-        "isPreRelease": true
-      }
-    ],
-    [
-      {
-        "packageName": "com.calm.android",
-        "targets": [
-          {
-            "version": "6.99.1"
-          }
-        ],
-        "isPreRelease": true
-      }
-    ],
-    [
-      {
-        "packageName": "com.funnmedia.calory",
-        "targets": [
-          {
-            "version": "3.6.2"
-          }
-        ],
-        "isPreRelease": true
       }
     ],
     [
@@ -20158,50 +20110,6 @@
     ],
     [
       {
-        "packageName": "jp.co.shueisha.mangaplus",
-        "targets": [
-          {
-            "version": "2.5.0"
-          }
-        ],
-        "isPreRelease": true
-      }
-    ],
-    [
-      {
-        "packageName": "com.pryshedko.mtisland",
-        "targets": [
-          {
-            "version": "15.5"
-          }
-        ],
-        "isPreRelease": true
-      }
-    ],
-    [
-      {
-        "packageName": "ai.metaverselabs.obdandroid",
-        "targets": [
-          {
-            "version": "4.9"
-          }
-        ],
-        "isPreRelease": true
-      }
-    ],
-    [
-      {
-        "packageName": "net.podslink",
-        "targets": [
-          {
-            "version": "1.3.5"
-          }
-        ],
-        "isPreRelease": true
-      }
-    ],
-    [
-      {
         "packageName": "com.toomics.global.google",
         "targets": [
           {
@@ -20237,8 +20145,17 @@
           {
             "version": "14.1.2254.83278"
           }
-        ],
-        "isPreRelease": true
+        ]
+      }
+    ],
+    [
+      {
+        "packageName": "com.bluematter.qbitconnect",
+        "targets": [
+          {
+            "version": "2.0.5"
+          }
+        ]
       }
     ],
     [
@@ -20248,8 +20165,7 @@
           {
             "version": "1.4.22"
           }
-        ],
-        "isPreRelease": true
+        ]
       }
     ],
     [
@@ -20319,8 +20235,7 @@
           {
             "version": "1.2"
           }
-        ],
-        "isPreRelease": true
+        ]
       }
     ],
     [
@@ -20329,38 +20244,6 @@
         "targets": [
           {
             "version": "2.369.0"
-          }
-        ]
-      }
-    ],
-    [
-      {
-        "packageName": "com.consumedbycode.slopes",
-        "targets": [
-          {
-            "version": "2026.14"
-          }
-        ],
-        "isPreRelease": true
-      }
-    ],
-    [
-      {
-        "packageName": "com.theathletic",
-        "targets": [
-          {
-            "version": "13.141.0"
-          }
-        ],
-        "isPreRelease": true
-      }
-    ],
-    [
-      {
-        "packageName": "com.tradingview.tradingviewapp",
-        "targets": [
-          {
-            "version": "1.20.78.1.1002330"
           }
         ]
       }
@@ -20390,7 +20273,7 @@
         "packageName": "com.kevinforeman.nzb360",
         "targets": [
           {
-            "version": "24"
+            "version": "24.1"
           }
         ]
       }
@@ -20437,6 +20320,16 @@
     ],
     [
       {
+        "packageName": "jp.co.shueisha.mangaplus",
+        "targets": [
+          {
+            "version": "2.6.0"
+          }
+        ]
+      }
+    ],
+    [
+      {
         "packageName": "com.weawow",
         "targets": [
           {
@@ -20470,7 +20363,7 @@
         "packageName": "je.fit",
         "targets": [
           {
-            "version": "17.2.8"
+            "version": "17.2.9"
           }
         ]
       }
@@ -20570,7 +20463,7 @@
         "packageName": "com.life360.android.safetymapd",
         "targets": [
           {
-            "version": "26.26.0"
+            "version": "26.27.0"
           }
         ]
       }
@@ -20617,6 +20510,16 @@
     ],
     [
       {
+        "packageName": "com.digibites.accubattery",
+        "targets": [
+          {
+            "version": "2.1.8"
+          }
+        ]
+      }
+    ],
+    [
+      {
         "packageName": "com.ace.ex.file.manager",
         "targets": [
           {
@@ -20630,7 +20533,7 @@
         "packageName": "com.onesports.score",
         "targets": [
           {
-            "version": "4.2.6"
+            "version": "4.2.7"
           }
         ]
       }
@@ -20650,10 +20553,9 @@
         "packageName": "com.gombosdev.ampere",
         "targets": [
           {
-            "version": "v4.36.1"
+            "version": "v4.37.0"
           }
-        ],
-        "isPreRelease": true
+        ]
       }
     ],
     [
@@ -20663,8 +20565,7 @@
           {
             "version": "1.5.28"
           }
-        ],
-        "isPreRelease": true
+        ]
       }
     ],
     [
@@ -20679,13 +20580,22 @@
     ],
     [
       {
+        "packageName": "com.paget96.batteryguru",
+        "targets": [
+          {
+            "version": "2.5.0.5"
+          }
+        ]
+      }
+    ],
+    [
+      {
         "packageName": "com.sumyapplications.bluetooth.earphone",
         "targets": [
           {
-            "version": "7.10"
+            "version": "7.20"
           }
-        ],
-        "isPreRelease": true
+        ]
       }
     ],
     [
@@ -20693,7 +20603,17 @@
         "packageName": "apps.automan.blurwallpaper",
         "targets": [
           {
-            "version": "2.9.2"
+            "version": "2.9.4"
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "packageName": "com.calimoto.calimoto",
+        "targets": [
+          {
+            "version": "2026.07.3"
           }
         ]
       }
@@ -20704,6 +20624,26 @@
         "targets": [
           {
             "version": "2.4.281"
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "packageName": "com.calm.android",
+        "targets": [
+          {
+            "version": "6.100.1"
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "packageName": "com.funnmedia.calory",
+        "targets": [
+          {
+            "version": "3.6.2"
           }
         ]
       }
@@ -20725,8 +20665,7 @@
           {
             "version": "2.9.7"
           }
-        ],
-        "isPreRelease": true
+        ]
       }
     ],
     [
@@ -20764,7 +20703,7 @@
         "packageName": "com.eterno",
         "targets": [
           {
-            "version": "33.5.4"
+            "version": "34.0.4"
           }
         ]
       }
@@ -20786,8 +20725,7 @@
           {
             "version": "3.0.3"
           }
-        ],
-        "isPreRelease": true
+        ]
       }
     ],
     [
@@ -20795,7 +20733,7 @@
         "packageName": "com.fitbod.fitbod",
         "targets": [
           {
-            "version": "8.25.0-2"
+            "version": "8.26.0-0"
           }
         ]
       }
@@ -20892,13 +20830,22 @@
     ],
     [
       {
+        "packageName": "com.pryshedko.mtisland",
+        "targets": [
+          {
+            "version": "15.5"
+          }
+        ]
+      }
+    ],
+    [
+      {
         "packageName": "com.pryshedko.materialpods",
         "targets": [
           {
             "version": "6.70"
           }
-        ],
-        "isPreRelease": true
+        ]
       }
     ],
     [
@@ -20928,8 +20875,7 @@
           {
             "version": "16.4.60095"
           }
-        ],
-        "isPreRelease": true
+        ]
       }
     ],
     [
@@ -20964,13 +20910,12 @@
     ],
     [
       {
-        "packageName": "com.brightstripe.parcels",
+        "packageName": "ai.metaverselabs.obdandroid",
         "targets": [
           {
-            "version": "3.0.10"
+            "version": "4.9"
           }
-        ],
-        "isPreRelease": true
+        ]
       }
     ],
     [
@@ -21008,7 +20953,7 @@
         "packageName": "cn.danatech.xingseus",
         "targets": [
           {
-            "version": "5.30.0"
+            "version": "5.31.0"
           }
         ]
       }
@@ -21018,7 +20963,97 @@
         "packageName": "com.pocketprep.android.itcybersecurity",
         "targets": [
           {
-            "version": "3.27.2"
+            "version": "3.28.0"
+          }
+        ]
+      },
+      {
+        "packageName": "com.pocketprep.android.professional",
+        "targets": [
+          {
+            "version": "3.28.0"
+          }
+        ]
+      },
+      {
+        "packageName": "com.pocketprep.android.behavioralhealth",
+        "targets": [
+          {
+            "version": "3.28.0"
+          }
+        ]
+      },
+      {
+        "packageName": "com.pocketprep.android.medical",
+        "targets": [
+          {
+            "version": "3.28.0"
+          }
+        ]
+      },
+      {
+        "packageName": "com.pocketprep.android.nursingschool",
+        "targets": [
+          {
+            "version": "3.28.0"
+          }
+        ]
+      },
+      {
+        "packageName": "com.pocketprep.android.nursing",
+        "targets": [
+          {
+            "version": "3.28.0"
+          }
+        ]
+      },
+      {
+        "packageName": "com.pocketprep.android.ems",
+        "targets": [
+          {
+            "version": "3.28.0"
+          }
+        ]
+      },
+      {
+        "packageName": "com.pocketprep.android.automotive",
+        "targets": [
+          {
+            "version": "3.28.0"
+          }
+        ]
+      },
+      {
+        "packageName": "com.pocketprep.android.fitness",
+        "targets": [
+          {
+            "version": "3.28.0"
+          }
+        ]
+      },
+      {
+        "packageName": "com.pocketprep.android.essentials",
+        "targets": [
+          {
+            "version": "3.28.0"
+          }
+        ]
+      },
+      {
+        "packageName": "com.pocketprep.android.pocketprep",
+        "targets": [
+          {
+            "version": "3.28.0"
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "packageName": "net.podslink",
+        "targets": [
+          {
+            "version": "1.3.5"
           }
         ]
       }
@@ -21065,20 +21100,20 @@
     ],
     [
       {
-        "packageName": "com.mtv.sai",
+        "packageName": "com.appostrophe.scrl",
         "targets": [
           {
-            "version": "2.2.8"
+            "version": "1.23.1"
           }
         ]
       }
     ],
     [
       {
-        "packageName": "com.appostrophe.scrl",
+        "packageName": "com.consumedbycode.slopes",
         "targets": [
           {
-            "version": "1.22"
+            "version": "2026.14"
           }
         ]
       }
@@ -21150,8 +21185,17 @@
           {
             "version": "1.3.2"
           }
-        ],
-        "isPreRelease": true
+        ]
+      }
+    ],
+    [
+      {
+        "packageName": "com.theathletic",
+        "targets": [
+          {
+            "version": "13.141.0"
+          }
+        ]
       }
     ],
     [
@@ -21159,7 +21203,7 @@
         "packageName": "com.weather.Weather",
         "targets": [
           {
-            "version": "16.13.0"
+            "version": "16.14.1"
           }
         ]
       }
@@ -21190,6 +21234,16 @@
         "targets": [
           {
             "version": "1.17.1"
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "packageName": "com.tradingview.tradingviewapp",
+        "targets": [
+          {
+            "version": "1.20.79.0.1002355"
           }
         ]
       }
@@ -21281,8 +21335,7 @@
           {
             "version": "3.4.3"
           }
-        ],
-        "isPreRelease": true
+        ]
       }
     ],
     [
@@ -21302,8 +21355,7 @@
           {
             "version": "5.2.1"
           }
-        ],
-        "isPreRelease": true
+        ]
       }
     ],
     [
@@ -21423,8 +21475,7 @@
           {
             "version": "1.9-beta5"
           }
-        ],
-        "isPreRelease": true
+        ]
       }
     ],
     [
@@ -21434,8 +21485,7 @@
           {
             "version": "1.0.4"
           }
-        ],
-        "isPreRelease": true
+        ]
       }
     ],
     [
@@ -21480,6 +21530,26 @@
     ],
     [
       {
+        "packageName": "com.mtv.sai",
+        "targets": [
+          {
+            "version": "2.3.1"
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "packageName": "eu.darken.sdmse",
+        "targets": [
+          {
+            "version": "1.7.5-rc0"
+          }
+        ]
+      }
+    ],
+    [
+      {
         "packageName": "com.shexa.permissionmanager",
         "targets": [
           {
@@ -21505,8 +21575,7 @@
           {
             "version": "2.3.2"
           }
-        ],
-        "isPreRelease": true
+        ]
       }
     ],
     [
@@ -21571,17 +21640,6 @@
     ],
     [
       {
-        "packageName": "com.bluematter.qbitconnect",
-        "targets": [
-          {
-            "version": "2.0.1"
-          }
-        ],
-        "isPreRelease": true
-      }
-    ],
-    [
-      {
         "packageName": "com.thetransitapp.droid",
         "targets": [
           {
@@ -21625,7 +21683,7 @@
         "packageName": "com.guochao.faceshow",
         "targets": [
           {
-            "version": "3.2.81"
+            "version": "3.2.82"
           }
         ]
       }
@@ -21655,7 +21713,7 @@
         "packageName": "com.thegrizzlylabs.geniusscan.free",
         "targets": [
           {
-            "version": "7.40.0"
+            "version": "7.41.0"
           }
         ]
       }
@@ -21665,7 +21723,7 @@
         "packageName": "com.block.juggle",
         "targets": [
           {
-            "version": "10.3.9"
+            "version": "10.4.3"
           }
         ]
       }
@@ -21837,35 +21895,6 @@
           }
         ],
         "isPreRelease": true
-      }
-    ],
-    [
-      {
-        "packageName": "com.reddit.frontpage",
-        "targets": [
-          {
-            "version": "2026.27.0",
-            "isExperimental": true
-          },
-          {
-            "version": "2026.26.0",
-            "isExperimental": true
-          },
-          {
-            "version": "2026.25.0",
-            "isExperimental": true
-          },
-          {
-            "version": "2026.24.0",
-            "isExperimental": true
-          },
-          {
-            "version": "2026.14.0"
-          },
-          {
-            "version": "2026.04.0"
-          }
-        ]
       }
     ],
     [
