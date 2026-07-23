@@ -1,5 +1,5 @@
 {
-  "jman_tree_sha": "4b2fa5236a121adef3cf6ecf0d85ee9027be698d",
+  "jman_tree_sha": "0148bb22013db97aadd441907e19c3906b4db811",
   "jman_bundles": {
     "1fexd": {
       "sha": "4428619fe1755f86c0bd9d8fb5762fcc8c17b43a",
@@ -486,7 +486,7 @@
       "key": null
     },
     "rushiranpise": {
-      "sha": "985de865ca4abc4892b46e4eb0da141aec34e0f3",
+      "sha": "7756d801b1656bd536f289b482b4ff0bbd3d731e",
       "key": "github:rushiranpise/morphe-patches"
     },
     "rvx-morphed": {
@@ -570,7 +570,7 @@
       "key": "github:Xhehab/Xhehab-Patches"
     },
     "xob0t": {
-      "sha": "88996a73498efecaaa0b165404b672191a0b4b34",
+      "sha": "6a32ea759e3b2f064ebf9654dcda5bf6d5c3ae2f",
       "key": "github:xob0t/morphe-patches"
     },
     "xrogers": {

@@ -6874,7 +6874,7 @@
       "patches": [
         {
           "name": "AMOLED dark theme",
-          "description": "Makes the dark theme fully pure-black (AMOLED): backgrounds and surfaces/cards/bars become #000000. Dark mode only; borders, dividers and branded fills are kept for readability.",
+          "description": "Makes dark-theme page, app navigation and system bars pure black (AMOLED) while keeping elevated cards, sheets and controls gray so their boundaries remain visible.",
           "default": false,
           "compatiblePackagesKey": 581
         },
@@ -7054,7 +7054,7 @@
           "compatiblePackagesKey": 581
         }
       ],
-      "createdAt": "2026-07-23T00:54:44",
+      "createdAt": "2026-07-23T20:13:44",
       "targetApps": [
         "com.avito.android",
         "com.idamob.tinkoff.android",
@@ -9681,7 +9681,7 @@
           "compatiblePackagesKey": 388
         }
       ],
-      "createdAt": "2026-07-23T17:23:58",
+      "createdAt": "2026-07-23T18:35:27",
       "targetApps": [
         "ai.metaverselabs.obdandroid",
         "ai.topicfinder.podcastdiscovery",
