@@ -1,5 +1,5 @@
 {
-  "jman_tree_sha": "51618fb2eed4cb2fd0647bc6b37a93fbee644d89",
+  "jman_tree_sha": "aad0c80cc81e732b0bf5e9017cf4e73b2b65a790",
   "jman_bundles": {
     "1fexd": {
       "sha": "4428619fe1755f86c0bd9d8fb5762fcc8c17b43a",
@@ -214,7 +214,7 @@
       "key": "github:humzakh/HK-Morphe-Patches"
     },
     "hoo-dles": {
-      "sha": "21b5194ecab8f0107309c05c80aa8d51e679f36c",
+      "sha": "28d554274c7098737ca16153dc3a1760fb2a0af3",
       "key": "github:hoo-dles/morphe-patches"
     },
     "hoomans-morphe": {
@@ -410,7 +410,7 @@
       "key": "github:alejandrobellver/pichiwa-patches"
     },
     "piko": {
-      "sha": "20409b38cb4641d1b0ada87276c5d95e2f858ffb",
+      "sha": "1765dd814c4cc75fb278b2011e0f41ec2c8938a6",
       "key": "github:crimera/piko"
     },
     "piko-shim": {
@@ -486,7 +486,7 @@
       "key": null
     },
     "rushiranpise": {
-      "sha": "dba184694a80c2181e93a77fe6c58c1364cf7964",
+      "sha": "abfacde360469930a7528b25acd831774a160818",
       "key": "github:rushiranpise/morphe-patches"
     },
     "rvx-morphed": {
