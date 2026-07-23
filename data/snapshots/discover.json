@@ -1,5 +1,5 @@
 {
-  "jman_tree_sha": "d18c7c215e8b92d0965d71833899e2152d7a70a3",
+  "jman_tree_sha": "4b2fa5236a121adef3cf6ecf0d85ee9027be698d",
   "jman_bundles": {
     "1fexd": {
       "sha": "4428619fe1755f86c0bd9d8fb5762fcc8c17b43a",
@@ -50,7 +50,7 @@
       "key": "github:ameenalasady/photogrid-morphe"
     },
     "amplerevanced": {
-      "sha": "f1aa1e50b0b26a52cb3c7a3ab048cc1f147319f8",
+      "sha": "bd9c385e2fb586f914aa214689521d976bf59997",
       "key": "github:AmpleReVanced/revanced-patches"
     },
     "anddea": {
@@ -198,7 +198,7 @@
       "key": "github:franticg33k/morphe-patches"
     },
     "gmaps": {
-      "sha": "736354a64391ebff8d5ca2782a6197136858e006",
+      "sha": "9d96aa7b385646e5f97ff4231adc163cebbd5a48",
       "key": "github:fangkampanat/gmaps-patches"
     },
     "gryphous-morphe": {
@@ -246,7 +246,7 @@
       "key": "github:ImmortalZeus/ImmortalZeus-Morphe-Patches"
     },
     "imxeren": {
-      "sha": "551e63538ce140410d2eda6719e659f1a1c64cd8",
+      "sha": "b23ce541251e1b190d88bcbaa0478a44d7bd3bce",
       "key": "github:IMXEren/mix-patches"
     },
     "inotia00": {
@@ -486,7 +486,7 @@
       "key": null
     },
     "rushiranpise": {
-      "sha": "892ccdb8bd4838defe7d537e6bbecd1831ee15b4",
+      "sha": "985de865ca4abc4892b46e4eb0da141aec34e0f3",
       "key": "github:rushiranpise/morphe-patches"
     },
     "rvx-morphed": {
