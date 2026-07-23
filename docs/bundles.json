@@ -7045,7 +7045,7 @@
           "compatiblePackagesKey": 553
         }
       ],
-      "createdAt": "2026-07-23T00:01:20",
+      "createdAt": "2026-07-23T00:54:44",
       "targetApps": [
         "com.avito.android",
         "com.idamob.tinkoff.android",
@@ -10404,6 +10404,11 @@
           "compatiblePackagesKey": 82
         },
         {
+          "name": "Spoof device id",
+          "description": "Replaces the device id JioHotstar derives from Settings.Secure ANDROID_ID with a stable-per-install random UUID, so the re-signed build presents as a device the server has never flagged. This is the verified single source of both the X-HS-Device-Id request header and the /v2/start body device ids; ANDROID_ID otherwise survives an app-data clear (it is keyed to the signing key), which is why a flagged device kept getting the \"device logged out / suspicious activity\" page on every launch. The id is persisted, and regenerates on an app-data clear so a re-flagged device can be rotated. NOTE: the server also sees the connection IP — pair this with a clean (ideally residential) India IP; a flagged exit IP is not something the client can change. Do not run on an account you cannot afford to lose.",
+          "compatiblePackagesKey": 82
+        },
+        {
           "name": "Spoof device-integrity self-report",
           "description": "Forces JioHotstar's security-suite checks (VPN, proxy, root, debugger, open ports, suspicious files) to report false, so the device-integrity attestation the app sends to the server looks clean. Helps rooted/modded devices and complements the VPN bypass. Note: the attestation is also server-validated (signed nonce) and the server sees the connection IP, so this is not guaranteed to defeat a server-side check on its own.",
           "compatiblePackagesKey": 82
@@ -10434,7 +10439,7 @@
           "compatiblePackagesKey": 89
         }
       ],
-      "createdAt": "2026-07-22T16:15:56",
+      "createdAt": "2026-07-23T01:30:52",
       "targetApps": [
         "com.crazygames.crazygamesapp",
         "com.cry.analyzer",

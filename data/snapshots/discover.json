@@ -1,5 +1,5 @@
 {
-  "jman_tree_sha": "3488c3cc3b860140f618f83b7cdaee9be4004735",
+  "jman_tree_sha": "51618fb2eed4cb2fd0647bc6b37a93fbee644d89",
   "jman_bundles": {
     "1fexd": {
       "sha": "4428619fe1755f86c0bd9d8fb5762fcc8c17b43a",
@@ -134,7 +134,7 @@
       "key": null
     },
     "chiggi": {
-      "sha": "27355945e99d4e6e92d8f203bc6d68b40ec52f72",
+      "sha": "2ab22999b6597877d4291b32d58c467ba9af159d",
       "key": "github:durgesh0505/chiggi_morphe_patches"
     },
     "cobalt-morphe": {
@@ -570,7 +570,7 @@
       "key": "github:Xhehab/Xhehab-Patches"
     },
     "xob0t": {
-      "sha": "ecdefc10315de641a369428d9806e465cd2e2089",
+      "sha": "88996a73498efecaaa0b165404b672191a0b4b34",
       "key": "github:xob0t/morphe-patches"
     },
     "xrogers": {
