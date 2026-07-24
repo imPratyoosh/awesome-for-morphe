@@ -4630,7 +4630,7 @@
         "com.nytimes.crossword"
       ],
       "appUpdates": {},
-      "stars": 221,
+      "stars": 222,
       "updatedAt": 1784764800000,
       "firstSeen": 1780395687718,
       "appFirstSeen": {
@@ -4823,8 +4823,8 @@
         "com.urbandroid.kinestop": 1783291168540,
         "com.nytimes.crossword": 1783875617302
       },
-      "starsGained7d": 29,
-      "starsGained40d": 29
+      "starsGained7d": 30,
+      "starsGained40d": 30
     },
     {
       "source": "gitlab",
@@ -6157,7 +6157,7 @@
         "me.edgan.redditslide"
       ],
       "appUpdates": {},
-      "stars": 720,
+      "stars": 721,
       "updatedAt": 1775520000000,
       "firstSeen": 1767402720000,
       "appFirstSeen": {
@@ -6172,8 +6172,8 @@
         "org.cygnusx1.continuum": 1767402720000,
         "me.edgan.redditslide": 1767402720000
       },
-      "starsGained7d": 5,
-      "starsGained40d": 5
+      "starsGained7d": 6,
+      "starsGained40d": 6
     },
     {
       "source": "github",
@@ -8079,14 +8079,14 @@
       "appUpdates": {
         "com.zhiliaoapp.musically": 1781654400000
       },
-      "stars": 147,
+      "stars": 149,
       "updatedAt": 1781654400000,
       "firstSeen": 1780156086693,
       "appFirstSeen": {
         "com.zhiliaoapp.musically": 1780156086693
       },
-      "starsGained7d": 12,
-      "starsGained40d": 12
+      "starsGained7d": 14,
+      "starsGained40d": 14
     },
     {
       "source": "github",
@@ -9525,7 +9525,7 @@
         "com.google.android.apps.magazines": 1775088000000,
         "com.zhiliaoapp.musically": 1775088000000
       },
-      "stars": 1031,
+      "stars": 1033,
       "updatedAt": 1778630400000,
       "firstSeen": 1772385009000,
       "appFirstSeen": {
@@ -9563,8 +9563,8 @@
         "com.disney.disneyplus": 1773594609000,
         "ginlemon.iconpackstudio": 1773594609000
       },
-      "starsGained7d": 14,
-      "starsGained40d": 14
+      "starsGained7d": 16,
+      "starsGained40d": 16
     },
     {
       "source": "github",
@@ -12487,12 +12487,12 @@
       "patchCount": 4,
       "targetApps": [],
       "appUpdates": {},
-      "stars": 193,
+      "stars": 195,
       "updatedAt": 1784678400000,
       "firstSeen": 1783021319050,
       "appFirstSeen": {},
-      "starsGained7d": 8,
-      "starsGained40d": 8
+      "starsGained7d": 10,
+      "starsGained40d": 10
     },
     {
       "source": "github",
