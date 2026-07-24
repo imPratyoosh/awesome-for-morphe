@@ -1000,15 +1000,15 @@
         "com.instagram.android": 1784764800000,
         "com.twitter.android": 1784764800000
       },
-      "stars": 4408,
+      "stars": 4409,
       "updatedAt": 1782518400000,
       "firstSeen": 1773154796000,
       "appFirstSeen": {
         "com.twitter.android": 1773154796000,
         "com.instagram.android": 1773154796000
       },
-      "starsGained7d": 36,
-      "starsGained40d": 36
+      "starsGained7d": 37,
+      "starsGained40d": 37
     },
     {
       "source": "github",
@@ -1725,7 +1725,7 @@
         "ginlemon.flowerfree": 1770076800000,
         "com.simyasolutions.ling.universal": 1784678400000
       },
-      "stars": 857,
+      "stars": 859,
       "updatedAt": 1784073600000,
       "firstSeen": 1768941201000,
       "appFirstSeen": {
@@ -1783,8 +1783,8 @@
         "cn.ommiao.iconpacker": 1768941201000,
         "com.simyasolutions.ling.universal": 1784769617321
       },
-      "starsGained7d": 15,
-      "starsGained40d": 15
+      "starsGained7d": 17,
+      "starsGained40d": 17
     },
     {
       "source": "github",
@@ -4630,7 +4630,7 @@
         "com.nytimes.crossword"
       ],
       "appUpdates": {},
-      "stars": 222,
+      "stars": 224,
       "updatedAt": 1784764800000,
       "firstSeen": 1780395687718,
       "appFirstSeen": {
@@ -4823,8 +4823,8 @@
         "com.urbandroid.kinestop": 1783291168540,
         "com.nytimes.crossword": 1783875617302
       },
-      "starsGained7d": 30,
-      "starsGained40d": 30
+      "starsGained7d": 32,
+      "starsGained40d": 32
     },
     {
       "source": "gitlab",
@@ -5592,7 +5592,7 @@
         "fr.chargeprice.app": 1775433600000,
         "fr.tramb.park4night": 1753315200000
       },
-      "stars": 293,
+      "stars": 294,
       "updatedAt": 1784160000000,
       "firstSeen": 1773147404000,
       "appFirstSeen": {
@@ -5602,8 +5602,8 @@
         "fr.tramb.park4night": 1773147404000,
         "cz.seznam.mapy": 1773147404000
       },
-      "starsGained7d": 4,
-      "starsGained40d": 4
+      "starsGained7d": 5,
+      "starsGained40d": 5
     },
     {
       "source": "github",
@@ -6157,7 +6157,7 @@
         "me.edgan.redditslide"
       ],
       "appUpdates": {},
-      "stars": 721,
+      "stars": 723,
       "updatedAt": 1775520000000,
       "firstSeen": 1767402720000,
       "appFirstSeen": {
@@ -6172,8 +6172,8 @@
         "org.cygnusx1.continuum": 1767402720000,
         "me.edgan.redditslide": 1767402720000
       },
-      "starsGained7d": 6,
-      "starsGained40d": 6
+      "starsGained7d": 8,
+      "starsGained40d": 8
     },
     {
       "source": "github",
@@ -9525,7 +9525,7 @@
         "com.google.android.apps.magazines": 1775088000000,
         "com.zhiliaoapp.musically": 1775088000000
       },
-      "stars": 1033,
+      "stars": 1034,
       "updatedAt": 1778630400000,
       "firstSeen": 1772385009000,
       "appFirstSeen": {
@@ -9563,8 +9563,8 @@
         "com.disney.disneyplus": 1773594609000,
         "ginlemon.iconpackstudio": 1773594609000
       },
-      "starsGained7d": 16,
-      "starsGained40d": 16
+      "starsGained7d": 17,
+      "starsGained40d": 17
     },
     {
       "source": "github",
@@ -10013,7 +10013,7 @@
         "io.github.sds100.keymapper": 1784332800000,
         "com.mixapplications.rufus": 1783900800000
       },
-      "stars": 25,
+      "stars": 26,
       "updatedAt": 1783814400000,
       "firstSeen": 1780649325226,
       "appFirstSeen": {
@@ -10048,8 +10048,8 @@
         "com.mixapplications.ventoy_app": 1783953500646,
         "io.github.sds100.keymapper": 1784342313600
       },
-      "starsGained7d": 3,
-      "starsGained40d": 3
+      "starsGained7d": 4,
+      "starsGained40d": 4
     },
     {
       "source": "github",
@@ -11053,7 +11053,7 @@
         "com.brave.browser": 1784332800000,
         "com.medium.reader": 1783209600000
       },
-      "stars": 66,
+      "stars": 67,
       "updatedAt": 1784332800000,
       "firstSeen": 1783348412813,
       "appFirstSeen": {
@@ -11065,8 +11065,8 @@
         "com.Splitwise.SplitwiseMobile": 1783348412813,
         "com.overdevs.at4k": 1783348412813
       },
-      "starsGained7d": 7,
-      "starsGained40d": 7
+      "starsGained7d": 8,
+      "starsGained40d": 8
     },
     {
       "source": "github",
@@ -12151,6 +12151,13 @@
           "compatiblePackagesKey": 535
         },
         {
+          "name": "Hide professional sellers",
+          "description": "Adds a maximum seller review count to Avito search filters and hides or dims offers from sellers above that limit.",
+          "default": true,
+          "options": [],
+          "compatiblePackagesKey": 535
+        },
+        {
           "name": "Morphe settings",
           "description": "Adds a \"Настройки Morphe\" entry to Avito's settings that hosts the configuration for the other Morphe patches.",
           "default": false,
@@ -12289,13 +12296,13 @@
           "compatiblePackagesKey": 535
         }
       ],
-      "changelog": "## [1.7.3](https://github.com/xob0t/morphe-patches/compare/v1.7.2...v1.7.3) (2026-07-23)\n\n### 🐛 Bug Fixes\n\n* **avito:** blacken AMOLED system bars ([fa91acd](https://github.com/xob0t/morphe-patches/commit/fa91acd0284146105f9d699ee89fa251d19b47ae))\n\n## [1.7.3-dev.1](https://github.com/xob0t/morphe-patches/compare/v1.7.2...v1.7.3-dev.1) (2026-07-23)\n\n### 🐛 Bug Fixes\n\n* **avito:** blacken AMOLED system bars ([fa91acd](https://github.com/xob0t/morphe-patches/commit/fa91acd0284146105f9d699ee89fa251d19b47ae))\n\n## [1.7.2](https://github.com/xob0t/morphe-patches/compare/v1.7.1...v1.7.2) (2026-07-23)\n\n### 🐛 Bug Fixes\n\n* **avito:** harden blacklist controls and seller identity ([8a0c143](https://github.com/xob0t/morphe-patches/commit/8a0c1437f1cc8f349a920c717f3173d4788d1361))\n* **avito:** preserve cards in AMOLED theme ([eae4717](https://github.com/xob0t/morphe-patches/commit/eae47179884c18ec315e59185b0ed51b7307e898))\n\n## [1.7.2-dev.1](https://github.com/xob0t/morphe-patches/compare/v1.7.1...v1.7.2-dev.1) (2026-07-23)\n\n### 🐛 Bug Fixes\n\n* **avito:** harden blacklist controls and seller identity ([8a0c143](https://github.com/xob0t/morphe-patches/commit/8a0c1437f1cc8f349a920c717f3173d4788d1361))\n* **avito:** preserve cards in AMOLED theme ([eae4717](https://github.com/xob0t/morphe-patches/commit/eae47179884c18ec315e59185b0ed51b7307e898))\n\n## [1.7.1](https://github.com/xob0t/morphe-patches/compare/v1.7.0...v1.7.1) (2026-07-23)\n\n### 🐛 Bug Fixes\n\n* stub all TBank Executor.execN native calls (exec5/exec6) ([47abf03](https://github.com/xob0t/morphe-patches/commit/47abf034f63267e3324cd863b01b93ad6f81cb62))\n\n## [1.7.1-dev.1](https://github.com/xob0t/morphe-patches/compare/v1.7.0...v1.7.1-dev.1) (2026-07-23)\n\n### 🐛 Bug Fixes\n\n* stub all TBank Executor.execN native calls (exec5/exec6) ([47abf03](https://github.com/xob0t/morphe-patches/commit/47abf034f63267e3324cd863b01b93ad6f81cb62))\n\n## [1.7.0](https://github.com/xob0t/morphe-patches/compare/v1.6.1...v1.7.0) (2026-07-23)\n\n### 🐛 Bug Fixes\n\n* **avito:** harden fingerprints for 229.1 ([55beb08](https://github.com/xob0t/morphe-patches/commit/55beb08de2c1cab9715a9e53a861e258dd257082))\n* **avito:** hide sales promo in search results ([e226828](https://github.com/xob0t/morphe-patches/commit/e22682800023bd7a0a89cfa81d9333664fedfae4))\n* **avito:** restart after Favorites tab changes ([47be975](https://github.com/xob0t/morphe-patches/commit/47be975590c9f5cb362d26f6077a71f66c600d4d))\n* enforce strict targets for current app builds ([b8e3a38](https://github.com/xob0t/morphe-patches/commit/b8e3a38fc33a95aaf30347dc1f433d5e6c80d809))\n\n### ✨ New Features\n\n* **avito:** add kindness banner toggle ([9e10b25](https://github.com/xob0t/morphe-patches/commit/9e10b25155361768cb85adb70a16afafc54e0602))\n* **avito:** harden UI tweaks for 229.1 ([4b13452](https://github.com/xob0t/morphe-patches/commit/4b13452d965d82cf92fd310b6b00dfb2d56683d8))\n\n## [1.7.0-dev.1](https://github.com/xob0t/morphe-patches/compare/v1.6.1...v1.7.0-dev.1) (2026-07-22)\n\n### 🐛 Bug Fixes\n\n* **avito:** harden fingerprints for 229.1 ([55beb08](https://github.com/xob0t/morphe-patches/commit/55beb08de2c1cab9715a9e53a861e258dd257082))\n* **avito:** hide sales promo in search results ([e226828](https://github.com/xob0t/morphe-patches/commit/e22682800023bd7a0a89cfa81d9333664fedfae4))\n* **avito:** restart after Favorites tab changes ([47be975](https://github.com/xob0t/morphe-patches/commit/47be975590c9f5cb362d26f6077a71f66c600d4d))\n* enforce strict targets for current app builds ([b8e3a38](https://github.com/xob0t/morphe-patches/commit/b8e3a38fc33a95aaf30347dc1f433d5e6c80d809))\n\n### ✨ New Features\n\n* **avito:** add kindness banner toggle ([9e10b25](https://github.com/xob0t/morphe-patches/commit/9e10b25155361768cb85adb70a16afafc54e0602))\n* **avito:** harden UI tweaks for 229.1 ([4b13452](https://github.com/xob0t/morphe-patches/commit/4b13452d965d82cf92fd310b6b00dfb2d56683d8))\n\n## [1.6.1](https://github.com/xob0t/morphe-patches/compare/v1.6.0...v1.6.1) (2026-07-07)\n\n### 🐛 Bug Fixes\n\n* **avito:** hide profile prize portal junk ([73a6a30](https://github.com/xob0t/morphe-patches/commit/73a6a305a96abddf63ba556696f0ffea12436242))\n* support Avito 228.0 ([96f5dee](https://github.com/xob0t/morphe-patches/commit/96f5dee6a57336c3a72b54d460964b240b696a96))\n\n## [1.6.0](https://github.com/xob0t/morphe-patches/compare/v1.5.1...v1.6.0) (2026-06-23)\n\n### ✨ New Features\n\n* **avito:** enable Block listings and UI tweaks by default ([#25](https://github.com/xob0t/morphe-patches/issues/25)) ([6ca33dd](https://github.com/xob0t/morphe-patches/commit/6ca33dd5fb624f9a10a9a0ce2e93be90695a0b97))\n\n## [1.5.1](https://github.com/xob0t/morphe-patches/compare/v1.5.0...v1.5.1) (2026-06-22)\n\n### 🐛 Bug Fixes\n\n* **avito:** block toolbar icons readable on the light theme ([#23](https://github.com/xob0t/morphe-patches/issues/23)) ([ad2c8c7](https://github.com/xob0t/morphe-patches/commit/ad2c8c7eacdb291384270a1aa411e3b2301e5934))\n* **avito:** hide-subscriptions-tab toggle works on 226.5 + needs restart ([10afb9f](https://github.com/xob0t/morphe-patches/commit/10afb9fbd8d713304920a79e6af5ce69a7e064f2))\n\n## [1.5.1-dev.2](https://github.com/xob0t/morphe-patches/compare/v1.5.1-dev.1...v1.5.1-dev.2) (2026-06-22)\n\n### 🐛 Bug Fixes\n\n* **avito:** block toolbar icons readable on the light theme ([#23](https://github.com/xob0t/morphe-patches/issues/23)) ([ad2c8c7](https://github.com/xob0t/morphe-patches/commit/ad2c8c7eacdb291384270a1aa411e3b2301e5934))\n\n## [1.5.1-dev.1](https://github.com/xob0t/morphe-patches/compare/v1.5.0...v1.5.1-dev.1) (2026-06-22)\n\n### 🐛 Bug Fixes\n\n* **avito:** hide-subscriptions-tab toggle works on 226.5 + needs restart ([10afb9f](https://github.com/xob0t/morphe-patches/commit/10afb9fbd8d713304920a79e6af5ce69a7e064f2))\n\n## [1.5.0](https://github.com/xob0t/morphe-patches/compare/v1.4.0...v1.5.0) (2026-06-22)\n\n### 🐛 Bug Fixes\n\n* **avito:** long-press block no longer navigates on gallery tiles ([#18](https://github.com/xob0t/morphe-patches/issues/18)) ([31d5d7f](https://github.com/xob0t/morphe-patches/commit/31d5d7ff59f4b7ea51748391a0fc68eae4b21eb2))\n\n### ✨ New Features\n\n* **ads:** make ad surfaces mandatory so version drift fails the patch ([#20](https://github.com/xob0t/morphe-patches/issues/20)) ([c13b2a8](https://github.com/xob0t/morphe-patches/commit/c13b2a831cf23b53d768f6953943b9d39cc22908))\n* **avito:** AMOLED pure-black dark theme patch ([#19](https://github.com/xob0t/morphe-patches/issues/19)) ([d9e375c](https://github.com/xob0t/morphe-patches/commit/d9e375cc8ba87d8f010d2d2e5a5e5ef880af5184)), closes [#000000](https://github.com/xob0t/morphe-patches/issues/000000) [#0a0a0](https://github.com/xob0t/morphe-patches/issues/0a0a0) [#191919](https://github.com/xob0t/morphe-patches/issues/191919) [#1f1e1](https://github.com/xob0t/morphe-patches/issues/1f1e1) [d/#262624](https://github.com/d/morphe-patches/issues/262624) [#252525](https://github.com/xob0t/morphe-patches/issues/252525)\n* **avito:** expand offer descriptions by default ([#16](https://github.com/xob0t/morphe-patches/issues/16)) ([248d855](https://github.com/xob0t/morphe-patches/commit/248d85531e3dc1a29bb263a2cbdfcf091bea5509))\n* **avito:** one-tap undo bar for blocking offers/sellers ([#17](https://github.com/xob0t/morphe-patches/issues/17)) ([f4fe6a6](https://github.com/xob0t/morphe-patches/commit/f4fe6a67ce1220784279b3303899f6306f27a55d))\n\n## [1.5.0-dev.4](https://github.com/xob0t/morphe-patches/compare/v1.5.0-dev.3...v1.5.0-dev.4) (2026-06-22)\n\n### ✨ New Features\n\n* **ads:** make ad surfaces mandatory so version drift fails the patch ([#20](https://github.com/xob0t/morphe-patches/issues/20)) ([c13b2a8](https://github.com/xob0t/morphe-patches/commit/c13b2a831cf23b53d768f6953943b9d39cc22908))",
+      "changelog": "## [1.8.0](https://github.com/xob0t/morphe-patches/compare/v1.7.3...v1.8.0) (2026-07-24)\n\n### ✨ New Features\n\n* **avito:** filter professional sellers by review count ([8dc0513](https://github.com/xob0t/morphe-patches/commit/8dc051385b06621d1aba444a8a8167efe1295db3))\n\n## [1.8.0-dev.1](https://github.com/xob0t/morphe-patches/compare/v1.7.3...v1.8.0-dev.1) (2026-07-24)\n\n### ✨ New Features\n\n* **avito:** filter professional sellers by review count ([8dc0513](https://github.com/xob0t/morphe-patches/commit/8dc051385b06621d1aba444a8a8167efe1295db3))\n\n## [1.7.3](https://github.com/xob0t/morphe-patches/compare/v1.7.2...v1.7.3) (2026-07-23)\n\n### 🐛 Bug Fixes\n\n* **avito:** blacken AMOLED system bars ([fa91acd](https://github.com/xob0t/morphe-patches/commit/fa91acd0284146105f9d699ee89fa251d19b47ae))\n\n## [1.7.3-dev.1](https://github.com/xob0t/morphe-patches/compare/v1.7.2...v1.7.3-dev.1) (2026-07-23)\n\n### 🐛 Bug Fixes\n\n* **avito:** blacken AMOLED system bars ([fa91acd](https://github.com/xob0t/morphe-patches/commit/fa91acd0284146105f9d699ee89fa251d19b47ae))\n\n## [1.7.2](https://github.com/xob0t/morphe-patches/compare/v1.7.1...v1.7.2) (2026-07-23)\n\n### 🐛 Bug Fixes\n\n* **avito:** harden blacklist controls and seller identity ([8a0c143](https://github.com/xob0t/morphe-patches/commit/8a0c1437f1cc8f349a920c717f3173d4788d1361))\n* **avito:** preserve cards in AMOLED theme ([eae4717](https://github.com/xob0t/morphe-patches/commit/eae47179884c18ec315e59185b0ed51b7307e898))\n\n## [1.7.2-dev.1](https://github.com/xob0t/morphe-patches/compare/v1.7.1...v1.7.2-dev.1) (2026-07-23)\n\n### 🐛 Bug Fixes\n\n* **avito:** harden blacklist controls and seller identity ([8a0c143](https://github.com/xob0t/morphe-patches/commit/8a0c1437f1cc8f349a920c717f3173d4788d1361))\n* **avito:** preserve cards in AMOLED theme ([eae4717](https://github.com/xob0t/morphe-patches/commit/eae47179884c18ec315e59185b0ed51b7307e898))\n\n## [1.7.1](https://github.com/xob0t/morphe-patches/compare/v1.7.0...v1.7.1) (2026-07-23)\n\n### 🐛 Bug Fixes\n\n* stub all TBank Executor.execN native calls (exec5/exec6) ([47abf03](https://github.com/xob0t/morphe-patches/commit/47abf034f63267e3324cd863b01b93ad6f81cb62))\n\n## [1.7.1-dev.1](https://github.com/xob0t/morphe-patches/compare/v1.7.0...v1.7.1-dev.1) (2026-07-23)\n\n### 🐛 Bug Fixes\n\n* stub all TBank Executor.execN native calls (exec5/exec6) ([47abf03](https://github.com/xob0t/morphe-patches/commit/47abf034f63267e3324cd863b01b93ad6f81cb62))\n\n## [1.7.0](https://github.com/xob0t/morphe-patches/compare/v1.6.1...v1.7.0) (2026-07-23)\n\n### 🐛 Bug Fixes\n\n* **avito:** harden fingerprints for 229.1 ([55beb08](https://github.com/xob0t/morphe-patches/commit/55beb08de2c1cab9715a9e53a861e258dd257082))\n* **avito:** hide sales promo in search results ([e226828](https://github.com/xob0t/morphe-patches/commit/e22682800023bd7a0a89cfa81d9333664fedfae4))\n* **avito:** restart after Favorites tab changes ([47be975](https://github.com/xob0t/morphe-patches/commit/47be975590c9f5cb362d26f6077a71f66c600d4d))\n* enforce strict targets for current app builds ([b8e3a38](https://github.com/xob0t/morphe-patches/commit/b8e3a38fc33a95aaf30347dc1f433d5e6c80d809))\n\n### ✨ New Features\n\n* **avito:** add kindness banner toggle ([9e10b25](https://github.com/xob0t/morphe-patches/commit/9e10b25155361768cb85adb70a16afafc54e0602))\n* **avito:** harden UI tweaks for 229.1 ([4b13452](https://github.com/xob0t/morphe-patches/commit/4b13452d965d82cf92fd310b6b00dfb2d56683d8))\n\n## [1.7.0-dev.1](https://github.com/xob0t/morphe-patches/compare/v1.6.1...v1.7.0-dev.1) (2026-07-22)\n\n### 🐛 Bug Fixes\n\n* **avito:** harden fingerprints for 229.1 ([55beb08](https://github.com/xob0t/morphe-patches/commit/55beb08de2c1cab9715a9e53a861e258dd257082))\n* **avito:** hide sales promo in search results ([e226828](https://github.com/xob0t/morphe-patches/commit/e22682800023bd7a0a89cfa81d9333664fedfae4))\n* **avito:** restart after Favorites tab changes ([47be975](https://github.com/xob0t/morphe-patches/commit/47be975590c9f5cb362d26f6077a71f66c600d4d))\n* enforce strict targets for current app builds ([b8e3a38](https://github.com/xob0t/morphe-patches/commit/b8e3a38fc33a95aaf30347dc1f433d5e6c80d809))\n\n### ✨ New Features\n\n* **avito:** add kindness banner toggle ([9e10b25](https://github.com/xob0t/morphe-patches/commit/9e10b25155361768cb85adb70a16afafc54e0602))\n* **avito:** harden UI tweaks for 229.1 ([4b13452](https://github.com/xob0t/morphe-patches/commit/4b13452d965d82cf92fd310b6b00dfb2d56683d8))\n\n## [1.6.1](https://github.com/xob0t/morphe-patches/compare/v1.6.0...v1.6.1) (2026-07-07)\n\n### 🐛 Bug Fixes\n\n* **avito:** hide profile prize portal junk ([73a6a30](https://github.com/xob0t/morphe-patches/commit/73a6a305a96abddf63ba556696f0ffea12436242))\n* support Avito 228.0 ([96f5dee](https://github.com/xob0t/morphe-patches/commit/96f5dee6a57336c3a72b54d460964b240b696a96))\n\n## [1.6.0](https://github.com/xob0t/morphe-patches/compare/v1.5.1...v1.6.0) (2026-06-23)\n\n### ✨ New Features\n\n* **avito:** enable Block listings and UI tweaks by default ([#25](https://github.com/xob0t/morphe-patches/issues/25)) ([6ca33dd](https://github.com/xob0t/morphe-patches/commit/6ca33dd5fb624f9a10a9a0ce2e93be90695a0b97))\n\n## [1.5.1](https://github.com/xob0t/morphe-patches/compare/v1.5.0...v1.5.1) (2026-06-22)\n\n### 🐛 Bug Fixes\n\n* **avito:** block toolbar icons readable on the light theme ([#23](https://github.com/xob0t/morphe-patches/issues/23)) ([ad2c8c7](https://github.com/xob0t/morphe-patches/commit/ad2c8c7eacdb291384270a1aa411e3b2301e5934))\n* **avito:** hide-subscriptions-tab toggle works on 226.5 + needs restart ([10afb9f](https://github.com/xob0t/morphe-patches/commit/10afb9fbd8d713304920a79e6af5ce69a7e064f2))\n\n## [1.5.1-dev.2](https://github.com/xob0t/morphe-patches/compare/v1.5.1-dev.1...v1.5.1-dev.2) (2026-06-22)\n\n### 🐛 Bug Fixes\n\n* **avito:** block toolbar icons readable on the light theme ([#23](https://github.com/xob0t/morphe-patches/issues/23)) ([ad2c8c7](https://github.com/xob0t/morphe-patches/commit/ad2c8c7eacdb291384270a1aa411e3b2301e5934))\n\n## [1.5.1-dev.1](https://github.com/xob0t/morphe-patches/compare/v1.5.0...v1.5.1-dev.1) (2026-06-22)\n\n### 🐛 Bug Fixes\n\n* **avito:** hide-subscriptions-tab toggle works on 226.5 + needs restart ([10afb9f](https://github.com/xob0t/morphe-patches/commit/10afb9fbd8d713304920a79e6af5ce69a7e064f2))",
       "fullChangelogUrl": "https://github.com/xob0t/morphe-patches/blob/main/CHANGELOG.md",
       "repoDescription": null,
       "avatarUrl": "https://avatars.githubusercontent.com/u/32616886?v=4&size=168",
       "bundleIconUrl": null,
       "deepLink": "https://morphe.software/add-source?github=xob0t/morphe-patches",
-      "patchCount": 24,
+      "patchCount": 25,
       "targetApps": [
         "com.avito.android",
         "com.idamob.tinkoff.android",
@@ -12303,13 +12310,13 @@
         "com.wildberries.ru"
       ],
       "appUpdates": {
-        "com.avito.android": 1784764800000,
+        "com.avito.android": 1784851200000,
         "com.wildberries.ru": 1782000000000,
         "ru.ozon.app.android": 1782000000000,
         "com.idamob.tinkoff.android": 1780185600000
       },
       "stars": 24,
-      "updatedAt": 1784764800000,
+      "updatedAt": 1784851200000,
       "firstSeen": 1778236605000,
       "appFirstSeen": {
         "com.avito.android": 1778236605000,
@@ -12487,12 +12494,12 @@
       "patchCount": 4,
       "targetApps": [],
       "appUpdates": {},
-      "stars": 195,
+      "stars": 197,
       "updatedAt": 1784678400000,
       "firstSeen": 1783021319050,
       "appFirstSeen": {},
-      "starsGained7d": 10,
-      "starsGained40d": 10
+      "starsGained7d": 12,
+      "starsGained40d": 12
     },
     {
       "source": "github",
@@ -13007,16 +13014,16 @@
         "com.google.android.inputmethod.latin"
       ],
       "appUpdates": {
-        "com.google.android.inputmethod.latin": 1782777600000
+        "com.google.android.inputmethod.latin": 1784851200000
       },
-      "stars": 141,
+      "stars": 142,
       "updatedAt": 1782777600000,
       "firstSeen": 1775543003000,
       "appFirstSeen": {
         "com.google.android.inputmethod.latin": 1775543003000
       },
-      "starsGained7d": 5,
-      "starsGained40d": 5
+      "starsGained7d": 6,
+      "starsGained40d": 6
     },
     {
       "source": "github",
@@ -13136,14 +13143,14 @@
         "com.microsoft.emmx"
       ],
       "appUpdates": {},
-      "stars": 36,
+      "stars": 37,
       "updatedAt": 1784419200000,
       "firstSeen": 1780738576635,
       "appFirstSeen": {
         "com.microsoft.emmx": 1780738576635
       },
-      "starsGained7d": 2,
-      "starsGained40d": 2
+      "starsGained7d": 3,
+      "starsGained40d": 3
     },
     {
       "source": "github",
