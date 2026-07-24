@@ -1,5 +1,5 @@
 {
-  "jman_tree_sha": "0148bb22013db97aadd441907e19c3906b4db811",
+  "jman_tree_sha": "0dd530669727b8f94b03abde387e30142444df7f",
   "jman_bundles": {
     "1fexd": {
       "sha": "4428619fe1755f86c0bd9d8fb5762fcc8c17b43a",
@@ -258,7 +258,7 @@
       "key": "github:itsthejoker/itsthejoker-patches"
     },
     "jasonwu1994": {
-      "sha": "12f350f6ad4a1aac8d0084af346652beaba05aca",
+      "sha": "8c3725f60da984c94211c4a83abd925fc09dda21",
       "key": "github:jasonwu1994/Gboard-patches"
     },
     "joristdh": {
@@ -570,7 +570,7 @@
       "key": "github:Xhehab/Xhehab-Patches"
     },
     "xob0t": {
-      "sha": "6a32ea759e3b2f064ebf9654dcda5bf6d5c3ae2f",
+      "sha": "3305f5703f9a7288220461c1d6b92e39118dd762",
       "key": "github:xob0t/morphe-patches"
     },
     "xrogers": {

@@ -6316,23 +6316,8 @@
           "compatiblePackagesKey": 215
         },
         {
-          "name": "Chinese Online Voice Input",
-          "description": "強制啟用中文語音\nForce-enable Chinese voice input.",
-          "compatiblePackagesKey": 215
-        },
-        {
           "name": "Clipboard Enhancements",
           "description": "增強剪貼簿的保留時間、數量上限、預覽行數、倒數/建立時間、順序編號與欄數\nEnhance clipboard retention time, item count limit, preview lines, countdown/creation time labels, order index, and column count.",
-          "compatiblePackagesKey": 215
-        },
-        {
-          "name": "Clipboard Entity Extraction",
-          "description": "啟用 剪貼簿 > 顯示從最近複製文字中攝取的資訊，例如地址、電話號碼和其他項目\nEnable Clipboard > Show addresses, phone numbers, and other items pulled from recently copied text.",
-          "compatiblePackagesKey": 215
-        },
-        {
-          "name": "Clipboard Item Edit",
-          "description": "長按 剪貼簿 顯示編輯\nEnable Edit when long-pressing a clipboard item.",
           "compatiblePackagesKey": 215
         },
         {
@@ -6347,12 +6332,7 @@
         },
         {
           "name": "Enable Inline Autofill Suggestions",
-          "description": "啟用內嵌自動填入建議 / Enable Inline Autofill Suggestions",
-          "compatiblePackagesKey": 215
-        },
-        {
-          "name": "Enable Undo/Redo feature",
-          "description": "啟用 Undo/Redo 功能\nEnable the Undo/Redo feature.",
+          "description": "啟用內嵌自動填入建議\nEnable Inline Autofill Suggestions",
           "compatiblePackagesKey": 215
         },
         {
@@ -6416,7 +6396,7 @@
           "compatiblePackagesKey": 215
         }
       ],
-      "createdAt": "2026-06-30T22:42:36",
+      "createdAt": "2026-07-24T04:34:04",
       "targetApps": [
         "com.google.android.inputmethod.latin"
       ],
@@ -6958,6 +6938,11 @@
           "compatiblePackagesKey": 581
         },
         {
+          "name": "Hide professional sellers",
+          "description": "Adds a maximum seller review count to Avito search filters and hides or dims offers from sellers above that limit.",
+          "compatiblePackagesKey": 581
+        },
+        {
           "name": "Morphe settings",
           "description": "Adds a \"Настройки Morphe\" entry to Avito's settings that hosts the configuration for the other Morphe patches.",
           "default": false,
@@ -7054,7 +7039,7 @@
           "compatiblePackagesKey": 581
         }
       ],
-      "createdAt": "2026-07-23T20:13:44",
+      "createdAt": "2026-07-24T03:59:18",
       "targetApps": [
         "com.avito.android",
         "com.idamob.tinkoff.android",
@@ -18159,7 +18144,7 @@
         "packageName": "com.google.android.inputmethod.latin",
         "targets": [
           {
-            "version": "17.0.10.880768217-release-arm64-v8a"
+            "version": "17.7.7.932364120-release-arm64-v8a"
           }
         ]
       }
